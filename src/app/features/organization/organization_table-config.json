@@ -1,0 +1,37 @@
+{
+    "tableName": "Organization Table",
+    "tableHeaders": [
+        {
+            "field": "organizationType",
+            "header": "Organization Name",
+            "iseditable": false , "class":""
+        }
+        
+    ],
+    "PdfHeaders": [
+        {
+            "field": "org_id",
+            "header": "org_id"
+        },
+        {
+            "field": "organizationType",
+            "header": "org_name"
+        }
+    ],
+    "globalFilter": ["organizationType","dept"
+    ],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [10,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "resizableColumns": true,
+    "isActions": ["Edit", "Delete"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "isVisible":false,
+    "buttonlbl":"",
+    "textLength":16
+}

@@ -1,0 +1,87 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Add Organization",
+        "formName": "Form1",
+        "formType": "edit",
+        "formControls": [
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "id",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "orgIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            
+            {
+                
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Organization Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "orgNameInput",
+                "mandatoryMessage": "Code is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },
+            
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue ",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+           
+        ]
+    }
+}

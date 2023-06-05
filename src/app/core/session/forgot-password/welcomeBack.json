@@ -1,0 +1,54 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Welcome Back",
+        "formName": "Form1",
+        "formType": "edit",
+        "formControls": [
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "label": "",
+                "type": "staticText",
+                "data": "You can update your password now if you forgot it.",
+                "class": "col-md-12 my-1",
+                "placeholder": "********",
+                "formControlName": "note1",
+                "message": "Password is required",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 4,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "",
+                "type": "confirmPassword",
+                "inputType": "confirmPassword",
+                "class": "col-md-12 my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": "********",
+                "formControlName": "password",
+                "message": {
+                    "required": "Password is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ],
+        "formButtons": [
+            {
+                "type": "submit",
+                "label": "Update",
+                "class": "p-button-success-sm",
+                "icon": ""
+            }
+        ]
+    }
+}

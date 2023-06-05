@@ -1,0 +1,112 @@
+{
+  "masterData": {
+    "theme": {
+      "sidenavBG": "#174875",
+      "headerBG": "#EEEEEE",
+      "footerBG": "#EEEEEE"
+    },
+    "header": {
+      "logo": "../../assets/Techjivaa-svg-removebg.png",
+      "whiteLogo": "../../assets/Techjivaa-White-Logo.png",
+      "usericon": "../../assets/Icon.png",
+      "setting": "../../assets/setting.png",
+      "notification": {
+        "data": [
+          {
+            "title": "Final Presentation",
+            "msg": "Classify notifications by three levels: high, medium, and low."
+          },
+          {
+            "title": "Notification System",
+            "msg": "There are a few broadsteps to follow when designing a notification system."
+          },
+          {
+            "title": "Design Principle",
+            "msg": "When embarking on notification design, the essential design principle to keep in mind is that they must assist (not impede) people to perform tasks."
+          },
+          {
+            "title": "Final Presentation",
+            "msg": "Classify notifications by three levels: high, medium, and low."
+          },
+          {
+            "title": "Notification System",
+            "msg": "There are a few broadsteps to follow when designing a notification system."
+          },
+          {
+            "title": "Design Principle",
+            "msg": "When embarking on notification design, the essential design principle to keep in mind is that they must assist (not impede) people to perform tasks."
+          },
+          {
+            "title": "Final Presentation",
+            "msg": "Classify notifications by three levels: high, medium, and low."
+          },
+          {
+            "title": "Notification System",
+            "msg": "There are a few broadsteps to follow when designing a notification system."
+          },
+          {
+            "title": "Design Principle",
+            "msg": "When embarking on notification design, the essential design principle to keep in mind is that they must assist (not impede) people to perform tasks."
+          },
+          {
+            "title": "Final Presentation",
+            "msg": "Classify notifications by three levels: high, medium, and low."
+          },
+          {
+            "title": "Notification System",
+            "msg": "There are a few broadsteps to follow when designing a notification system."
+          },
+          {
+            "title": "Design Principle",
+            "msg": "When embarking on notification design, the essential design principle to keep in mind is that they must assist (not impede) people to perform tasks."
+          }
+        ]
+      },
+      "dp": "../../assets/userlogo.png"
+    },
+    "sidenavItems": [
+      {
+        "label": "TabularForm",
+        "icon": "pi pi-fw pi-file",
+        "children": [
+          {
+            "label": "New",
+            "icon": "pi pi-fw pi-file",
+            "routerLink": "/master-page/dashboard"
+          },
+          {
+            "label": "Left",
+            "icon": "pi pi-server",
+            "routerLink": "/master-page/user-management"
+          }
+        ]
+      },
+      {
+        "label": "GenericTable",
+        "icon": "pi pi-list",
+        "children": [
+          {
+            "label": "Table",
+            "icon": "pi pi-table",
+            "routerLink": "/master-page/user-management"
+          }
+        ]
+      },
+      {
+        "label": "Form",
+        "icon": "pi pi-fw pi-book",
+        "routerLink": "/master-page/worklist"
+      },
+      {
+        "label": "Cards",
+        "icon": "pi pi-fw pi-book",
+        "routerLink": "/master-page/card-demo"
+      }
+    ],
+    "footer": {
+      "logo": "../../assets/Techjivaa-svg-removebg.png",
+      "dp": "../../assets/userlogo.png",
+      "username": "Satyam Singh"
+    }
+  }
+}

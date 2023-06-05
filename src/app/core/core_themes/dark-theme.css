@@ -1,0 +1,1069 @@
+.butn-dark-blue {
+  background-color: #415988;
+  cursor: pointer;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #415988;
+  --bs-btn-border-color: #415988;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0445a7;
+  --bs-btn-hover-border-color: #0445a7;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0445a7;
+  --bs-btn-active-border-color: #0445a7;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #415988;
+  --bs-btn-disabled-border-color: #415988;
+  border-radius: 8px;
+  /* font-size: 14px; */
+}
+
+.butn-custom-dark-blue {
+  width: 100%;
+  height: 45px;
+  background-color: #415988;
+  cursor: pointer;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #415988;
+  --bs-btn-border-color: #415988;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0445a7;
+  --bs-btn-hover-border-color: #0445a7;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0445a7;
+  --bs-btn-active-border-color: #0445a7;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #415988;
+  --bs-btn-disabled-border-color: #415988;
+  border-radius: 8px;
+}
+
+.butn-prmry {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #4CA5FF;
+  cursor: pointer;
+  --bs-btn-border-color: #4CA5FF;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0b5ed7;
+  --bs-btn-hover-border-color: #0a58ca;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0a58ca;
+  --bs-btn-active-border-color: #0a53be;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #4CA5FF;
+  --bs-btn-disabled-border-color: #4CA5FF;
+  border-radius: 8px;
+  /* font-size: 14px; */
+}
+
+.butn-custom-prmry {
+  width: 100%;
+  height: 100%;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #4CA5FF;
+  cursor: pointer;
+  --bs-btn-border-color: #4CA5FF;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0b5ed7;
+  --bs-btn-hover-border-color: #0a58ca;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0a58ca;
+  --bs-btn-active-border-color: #0a53be;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #4CA5FF;
+  --bs-btn-disabled-border-color: #4CA5FF;
+  border-radius: 8px;
+  /* font-size: 14px; */
+}
+
+.butn-custom-orng {
+  width: 100%;
+  height: 100%;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #FFA06B;
+  cursor: pointer;
+  --bs-btn-border-color: #FFA06B;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #d8682b;
+  --bs-btn-hover-border-color: #d8682b;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #A77C0D;
+  --bs-btn-active-border-color: #d8682b;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #FFA06B;
+  --bs-btn-disabled-border-color: #FFA06B;
+  border-radius: 8px;
+  /* font-size: 14px; */
+}
+
+.butn-wrng {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #CD9C1D;
+  cursor: pointer;
+  --bs-btn-border-color: #CD9C1D;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #d8682b;
+  --bs-btn-hover-border-color: #d8682b;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #A77C0D;
+  --bs-btn-active-border-color: #d8682b;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #CD9C1D;
+  --bs-btn-disabled-border-color: #CD9C1D;
+  border-radius: 8px;
+  /* font-size: 14px; */
+}
+
+.butn-custom-wrng {
+  width: 100%;
+  height: 45px;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #CD9C1D;
+  cursor: pointer;
+  --bs-btn-border-color: #CD9C1D;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #d8682b;
+  --bs-btn-hover-border-color: #d8682b;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #A77C0D;
+  --bs-btn-active-border-color: #d8682b;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #CD9C1D;
+  --bs-btn-disabled-border-color: #CD9C1D;
+  border-radius: 8px;
+  /* font-size: 14px; */
+}
+
+.butn-custom-orange {
+  width: 100%;
+  height: 100%;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #FFA06B;
+  cursor: pointer;
+  --bs-btn-border-color: #FFA06B;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #d8682b;
+  --bs-btn-hover-border-color: #d8682b;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #A77C0D;
+  --bs-btn-active-border-color: #d8682b;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #FFA06B;
+  --bs-btn-disabled-border-color: #FFA06B;
+  border-radius: 8px;
+  /* font-size: 14px; */
+}
+
+.butn-dngr {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #dc3545;
+  --bs-btn-border-color: #dc3545;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #bb2d3b;
+  --bs-btn-hover-border-color: #b02a37;
+  --bs-btn-focus-shadow-rgb: 225, 83, 97;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #b02a37;
+  --bs-btn-active-border-color: #a52834;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #dc3545;
+  --bs-btn-disabled-border-color: #dc3545;
+  border-radius: 8px;
+  /* font-size: 14px; */
+}
+
+.butn-custom-dngr {
+  width: 100%;
+  height: 45px;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #dc3545;
+  --bs-btn-border-color: #dc3545;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #bb2d3b;
+  --bs-btn-hover-border-color: #b02a37;
+  --bs-btn-focus-shadow-rgb: 225, 83, 97;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #b02a37;
+  --bs-btn-active-border-color: #a52834;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #dc3545;
+  --bs-btn-disabled-border-color: #dc3545;
+  border-radius: 8px;
+  /* font-size: 14px; */
+}
+.butn-sucss {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #43CAA3;
+  --bs-btn-border-color: #43CAA3 !important;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #30b175;
+  --bs-btn-hover-border-color: #30b175;
+  --bs-btn-focus-shadow-rgb: 60, 153, 110;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #30b175;
+  --bs-btn-active-border-color: #30b175;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #46953F;
+  --bs-btn-disabled-border-color: #46953F;
+}
+
+.butn-custom-sucss {
+  width: 100%;
+  height: 45px;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #43CAA3;
+  --bs-btn-border-color: #43CAA3;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #30b175;
+  --bs-btn-hover-border-color: #30b175;
+  --bs-btn-focus-shadow-rgb: 60, 153, 110;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #30b175;
+  --bs-btn-active-border-color: #30b175;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #198754;
+  --bs-btn-disabled-border-color: #198754;
+}
+
+
+/*-----------------------Button-End--------------------------*/
+
+/* -----------Login CSS------------- */
+.custom-card-login {
+  background: #404040;
+}
+
+.wrapper {
+  background-color: #262626 !important;
+}
+
+/* .text-center{
+  margin-top: 25px;
+} */
+.static-text-size {
+  font-size: 12px;
+}
+
+.lbl-center-login {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 1rem;
+}
+
+.custom-label-login {
+  color: #9FA2B4;
+}
+
+.lbl-center-login-anchor {
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.3px;
+  color: #9FA2B4;
+}
+
+.lbl-center-login-signup {
+  font-style: normal;
+  letter-spacing: 0.3px;
+  color: white;
+}
+
+.butn-custom-dark-blue {
+  background-color: #4CA5FF;
+  cursor: pointer;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #4CA5FF;
+  --bs-btn-border-color: #4CA5FF;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0445a7;
+  --bs-btn-hover-border-color: #0445a7;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0445a7;
+  --bs-btn-active-border-color: #0445a7;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #4CA5FF;
+  --bs-btn-disabled-border-color: #4CA5FF;
+  border-radius: 8px;
+  border: none;
+  color: white;
+}
+
+.button-login-yellow {
+  display: block !important;
+  width: 100% !important;
+  height: 45px !important;
+  text-align: center !important;
+  background-color: #CD9C1D !important;
+  letter-spacing: 0.2px !important;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) !important;
+  box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24) !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  text-align: center !important;
+  letter-spacing: 0.2px !important;
+  color: #FFFFFF !important;
+}
+
+.input-box-login {
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  background-color: var(--bs-form-control-bg);
+  background-clip: padding-box;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.375rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  background-color: #EDF9FF;
+}
+
+
+/* staic text */
+.txt-sign-up {
+  color: #9FA2B4;
+}
+
+/* dark sidenav */
+
+/* a:focus {
+  color: #9FA2B4 !important;
+  text-decoration: none;
+  transition: all 0.3s;
+} */
+
+.sidebarMenu-custom {
+  background: #415988 !important;
+  width: auto;
+  transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+  transform-origin: bottom left;
+}
+
+.nav-list-item {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+/* .nav-item :active {
+  background-color: #CD9C1D;
+} */
+
+
+
+.nav-link {
+  display: block;
+  color: #ffffff !important;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+}
+
+.navbar {
+  /* padding: 10px 10px; */
+  border: none;
+  border-radius: 0;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #696969 !important;
+}
+
+.filterBG {
+  border: 1px solid #404040;
+  background-color: #404040;
+}
+
+/*-----------------------custom padding for signup & Dont have account---------------------*/
+.custom-padding-signup {
+  padding-right: 30px;
+  padding-left: 0;
+}
+
+.custom-padding-account {
+  padding-right: 0;
+  padding-left: 30px;
+}
+
+/*--------------------------------------------*/
+/*-------------------------cutom text--------------------------------------*/
+.custom-text {
+  color: white !important;
+}
+
+/*-------------------------Dark-Theme Table Color--------------------------------------*/
+.p-datatable.p-datatable-striped .p-datatable-tbody>tr:nth-child(odd) {
+  background-color: #262626 !important;
+  color: white !important;
+}
+
+.p-datatable.p-datatable-striped .p-datatable-tbody>tr:nth-child(even) {
+  background-color: #404040 !important;
+  color: white !important;
+}
+
+/*-------------------------Dark-Theme Table Color End--------------------------------------*/
+
+/*--------------------------Dark-Theme- Form-Color-----------------------------------------*/
+#content {
+  background-color: #262626;
+}
+
+/*--------------------------Dark-Theme- Form-Color-----------------------------------------*/
+
+.input-box {
+  background-color: #262626;
+  border-color: white;
+  color: white !important;
+}
+
+/* input[type=text]:focus {
+  box-shadow: 0 0 8px 0 dodgerBlue;
+} */
+
+input::placeholder {
+  opacity: 0.5;
+  color: #EEEEEE;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  /* border: 1px solid green; */
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #5E5E5E inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.custom-label {
+  color: #FAFAFA;
+}
+
+option:hover {
+  background-color: yellow !important;
+}
+
+.p-calendar {
+  background-color: #262626 !important;
+  border-color: #EEEEEE;
+  color: white !important;
+}
+
+.p-field-checkbox {
+  color: white;
+}
+
+.radio-button {
+  color: white;
+}
+
+.textarea-custom {
+  background-color: #262626 !important;
+  color: white;
+}
+
+.p {
+  color: white;
+}
+
+/*---------------------------------------sidebar css-------------------------------*/
+
+.p-sidebar-right.p-sidebar-md {
+  background-color: #404040;
+}
+
+.p-sidebar-right.p-sidebar-sm {
+  background-color: #404040;
+}
+
+.p-sidebar-right.p-sidebar-lg {
+  background-color: #404040;
+}
+
+
+/*-------------------------Checkbox-Start-------------------------------------*/
+
+.p-field-checkbox {
+  display: flex !important;
+}
+
+.checkbox-btn-vertical {
+  gap: 1.25rem !important;
+  align-items: center !important;
+  margin-bottom: 25px;
+}
+
+/*-------------------------Checkbox-End-------------------------------------*/
+.p-calendar-w-btn .p-inputtext {
+  color: white;
+}
+
+/*-------------------------Background Content CSS Start--------------------------------------*/
+#content {
+  background-color: #262626;
+}
+
+.p-datatable .p-datatable-header {
+  background: #262626 !important;
+  color: rgba(0, 0, 0, 0.87);
+  border: 1px solid #404040 !important;
+  border-width: 0 0 1px 0;
+  padding: 1rem 1rem;
+  font-weight: 500;
+}
+
+.tableFeatures {
+  background-color: #262626;
+  padding: 5px 5px;
+}
+
+/* @media only screen and (max-width: 600px) {
+  .tableFeatures {
+    overflow-x: scroll;
+  }
+} */
+@media only screen and (max-width: 600px) {
+  #content {
+    padding: 0px 30px 0px 0px;
+    margin-bottom: 10px;
+  }
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+  #content {
+    padding: 0px 30px 0px 0px;
+  }
+}
+
+@media all and (device-width: 1024px) and (device-height: 1366px) and (orientation:portrait) {
+  #content {
+    padding: 0px 10px 0px 0px;
+  }
+}
+
+@media all and (device-width: 820px) and (device-height: 1180px) and (orientation:portrait) {
+  #content {
+    padding: 0px 30px 0px 0px;
+  }
+}
+
+@media all and (device-width: 834px) and (device-height: 1194px) and (orientation:portrait) {
+  #content {
+    padding: 0px 30px 0px 0px;
+  }
+}
+
+/*-------------------------Background Content CSS End--------------------------------------*/
+
+/*-------------------------Custom - Dropdown / Calendar / Input-text Start--------------------------------------*/
+
+.p-dropdown {
+  background-color: #262626 !important;
+  border: 1px solid #e4e4e4 !important;
+  color: white !important;
+}
+
+
+
+.p-calendar-w-btn .p-datepicker-trigger.p-button span {
+  color: #e4e4e4 !important;
+}
+
+.p-input-icon-right>i:last-of-type {
+  color: #e4e4e4 !important;
+
+}
+
+.p-inputtext.p-password-input {
+  background-color: #262626 !important;
+  border: 1px solid #e4e4e4 !important;
+  color: white !important;
+  /* height: 40px !important; */
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+  border-color: #1885db !important;
+  background: #1885db !important;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  color: #262626 !important;
+  background: #2626261a !important;
+}
+
+.p-dropdown .p-dropdown-clear-icon {
+  color: rgb(255 0 0 / 63%) !important;
+}
+
+/*-------------------------Custom - Dropdown / Calendar / Input-text End--------------------------------------*/
+
+/*-------------------------Prime Ng Table Start--------------------------------------*/
+
+.p-datatable.p-datatable-gridlines:has(.p-datatable-thead):has(.p-datatable-tbody) .p-datatable-tbody>tr>td {
+  border: 1px solid #4E4D4D !important;
+}
+
+.p-datatable-thead th {
+  background: #404040 !important;
+  color: white !important;
+  border: 1px solid #4E4D4D !important;
+}
+
+.p-datatable .p-sortable-column .p-sortable-column-icon {
+  color: rgb(255 255 255) !important;
+  margin-left: 0.5rem !important;
+}
+
+.p-column-filter-menu-button {
+  color: white !important;
+}
+
+.p-paginator {
+  background: #262626 !important;
+  color: white !important;
+  border: 1px solid #4E4D4D !important;
+}
+
+.p-paginator .p-paginator-current {
+  color: white !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background-color: gray !important;
+  color: white !important;
+}
+
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-last {
+  color: white !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+  color: white !important;
+}
+
+.p-paginator .p-dropdown .p-dropdown-label {
+  color: white !important;
+}
+
+.p-dropdown .p-inputtext {
+  color: white !important;
+}
+
+.p-multiselect {
+  background: #262626 !important;
+  border: 1px solid rgb(255 255 255) !important;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+  border-radius: 4px;
+  color: white !important;
+}
+
+.pi-chevron-down:before {
+  content: "\e902";
+  color: white !important;
+}
+
+.p-inputtext {
+  background-color: #262626 !important;
+  color: white !important;
+  border-color: white !important;
+}
+
+.p-input-icon-left-search-icon>i:first-of-type {
+  color: white !important;
+}
+
+.p-datatable.p-datatable-hoverable-rows .p-datatable-tbody>tr:not(.p-highlight):hover {
+  color: rgb(157 161 155) !important;
+}
+
+.p-datatable-table {
+  cursor: pointer !important;
+}
+
+.p-datatable.p-datatable-gridlines:has(.p-datatable-thead):has(.p-datatable-tbody) .p-datatable-tbody>tr>td {
+  padding-left: 10px !important;
+}
+
+.p-datatable.p-datatable-sm .p-datatable-thead>tr>th {
+  padding-left: 10px !important;
+}
+
+/*-------------------------Prime Ng Table End--------------------------------------*/
+
+/*-------------------------Login  CSS Start--------------------------------------*/
+.pi-eye {
+  color: #9FA2B4 !important;
+}
+
+.backrground-logo-img {
+  background: url('../core_assets/Techjivaa-White-Logo.png');
+}
+
+.p-inputtext.p-password-input {
+  background-color: #262626;
+  border: 1px solid #5E5E5E;
+}
+
+.p-button.p-button-success,
+.p-buttonset.p-button-success>.p-button,
+.p-splitbutton.p-button-success>.p-button .p-datatable.p-datatable-gridlines:has(.p-datatable-thead):has(.p-datatable-tbody) .p-datatable-tbody>tr>td:last-child {
+  padding: 0px;
+}
+
+.p-button.p-button-success,
+.p-buttonset.p-button-success>.p-button,
+.p-splitbutton.p-button-success>.p-button {
+  color: #ffffff !important;
+  background: none !important;
+  border: 0 none;
+  padding: 0px;
+  font-size: 12px;
+}
+
+.pi-file-edit {
+  color: #F0D85B;
+}
+
+.p-button.p-button-warning,
+.p-buttonset.p-button-warning>.p-button,
+.p-splitbutton.p-button-warning>.p-button {
+  color: #ffffff !important;
+  background: none !important;
+  border: 0 none;
+  padding: 0px;
+  font-size: 12px;
+}
+
+.pi-file-edit {
+  color: #F0D85B;
+}
+
+.p-button.p-button-warning,
+.p-buttonset.p-button-warning>.p-button,
+.p-splitbutton.p-button-warning>.p-button {
+  color: #ffffff !important;
+  background: none !important;
+  border: 0 none;
+}
+
+/* .pi-trash {
+  color: #E91818;
+} */
+
+/*-------------------------Login  CSS End--------------------------------------*/
+.cst-label {
+  color: white !important;
+  font-size: 1.5rem !important;
+}
+
+/*----------------------------------Stepper Form Css------------------------*/
+.p-steps {
+  background-color: #404040 !important;
+}
+
+.p-steps .p-steps-item.p-highlight .p-menuitem-link .p-steps-number {
+  background-color: #46953F !important;
+  color: #ffffff;
+}
+
+.p-steps .p-steps-item.p-highlight .p-steps-title {
+  font-weight: 600;
+  color: #46953F !important;
+}
+
+.p-steps .p-steps-item:before {
+  border-top: 1px solid rgb(70 149 63) !important;
+}
+
+.p-steps .p-steps-item .p-menuitem-link .p-steps-title {
+  margin-top: 0.5rem;
+  color: rgb(70 149 63) !important;
+}
+
+.p-steps .p-steps-item .p-menuitem-link .p-steps-number {
+  background-color: #46953F !important;
+}
+
+.p-dialog .p-dialog-header {
+  background-color: #262626 !important;
+  color: white !important;
+}
+
+.p-dialog .p-dialog-content {
+  background-color: #262626 !important;
+}
+
+.p-tabview .p-tabview-panels {
+  background: none !important;
+  padding: 1rem;
+  border: 0 none;
+  color: rgb(255 255 255) !important;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.p-tabview .p-tabview-nav {
+  background: none !important;
+  border-bottom: 1px solid #CECECE !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  background: none !important;
+}
+
+.p-tabview-title {
+  color: white !important;
+}
+
+.p-tabview .p-tabview-nav .p-tabview-ink-bar {
+  z-index: 1;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 3px !important;
+  background-color: #ffffff !important;
+  transition: 500ms cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .p-inputtext {
+    margin: 0;
+    width: auto !important;
+  }
+}
+
+
+.p-dropdown {
+  position: static !important;
+}
+
+
+.p-multiselect {
+  position: static !important;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .flex-item-left {
+    flex: 0%;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+  .flex-item-right {
+    flex: 0%;
+  }
+
+  .modal-body {
+    /* color: white; */
+    background-color: #262626 !important;
+  }
+
+  .modal-header {
+    color: white !important;
+    background-color: #262626 !important;
+  }
+
+  .pi-times:before {
+    content: "\e90b";
+    color: white !important;
+  }
+
+  .pi-times:before {
+    content: "\e90b";
+    color: white !important;
+  }
+}
+
+.textarea-custom1 {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  background-clip: padding-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-bottom: 10px;
+  border-radius: 4px !important;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.textarea-custom1 {
+  background-color: #666666 !important;
+  color: white;
+}
+
+.input-box,
+.p-inputtext.p-password-input,
+.p-calendar,
+.p-dropdown,
+.p-inputtext,
+.p-multiselect,
+.textarea-custom 
+{
+  border-color:#4E4D4D !important ;
+}
+
+.p-multiselect {
+  border-color: #4E4D4D !important;
+}
+
+.error-txt-msg {
+  color: #F0D85B !important;
+}
+
+input::placeholder {
+  opacity: 0.5;
+  color: #BDBDBD !important;
+}
+
+/* --------------All realted to disable field css start------------------------------ */
+.textarea-custom1 {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  background-clip: padding-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-bottom: 10px;
+  border-radius: 4px !important;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.textarea-custom1 {
+  background-color: #EEEEEE;
+  color: #EEEEEE !important;
+  outline: 0;
+}
+
+.input-box1 {
+  display: block;
+  height: 30px;
+  cursor: pointer;
+  border: 1px solid #EEEEEE;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--bs-body-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.input-box1 {
+  background-color: #403E3E !important;
+  border: 1px solid #403E3E  !important;
+  color: #9a9a9a !important;
+  outline: 0 !important;
+}
+
+.p-field-checkbox1 {
+  color: black;
+  display: flex !important;
+  background-color: #403E3E  !important;
+}
+
+.radio-button1 {
+  text-indent: 0.75em !important;
+  align-items: center !important;
+  background-color: #403E3E  !important;
+}
+/* --------------All realted to disable field css End------------------------------ */
+
+.pi-times:before {
+  content: "\e90b";
+  color: white !important;
+}
+
+.p-card {
+  background-color: #262626 !important;
+  border: 1px solid gray;
+}
+.headerIcon {
+  font-size: 20px !important;
+  color:white;
+  margin-right: 20px;
+}
+/* -------------icons button classes with Hover start------------- */
+.icon-button-primary
+{
+  background-color: #4CA5FF !important; 
+  color: white !important;
+}
+.icon-button-warn
+{
+  background-color: #FFA06B !important; 
+  color: white !important;
+}
+.icon-button-succes
+{
+  background-color: #43CAA3 !important; 
+  color: white !important;
+}
+
+/* ----------Hover-------------- */
+.icon-button-primary:hover
+{
+  background-color: #0b5ed7 !important; 
+  color: white !important;
+}
+.icon-button-warn:hover
+{
+  background-color: #d8682b !important; 
+  color: white !important;
+}
+.icon-button-succes:hover
+{
+  background-color: #1f745c !important; 
+  color: white !important;
+}
+/* -------------icons button classes with Hover End------------- */
+.custom-height
+{height:300px}

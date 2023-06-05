@@ -1,0 +1,120 @@
+<div class="">
+    <p-table #dt id="dataTable" [value]="tableData" [resizableColumns]="config.resizableColumns" columnResizeMode="fit"
+        [rows]="config.rows" [paginator]="config.paginator" [columns]="selectedColumns" styleClass="{{config.stripped}}"
+        [showCurrentPageReport]="config.showCurrentPageReport" [rowsPerPageOptions]="config.rowsPerPageOptions"
+        [loading]="config.loading" [(selection)]="chekboxes" selectionMode="single"
+        [globalFilterFields]="config.globalFilter" [rowHover]="config.rowHover" dataKey="id"
+        currentPageReportTemplate="{first} to {last} of {totalRecords}">
+
+        <ng-template pTemplate="caption">
+            <div class="tableFeatures">
+                <div class="item1 mx-1">
+                    <span class="p-input-icon-left-search-icon me-2" style="width: 100%;">
+                        <i class="pi pi-search"></i>
+                        <input pInputText type="text" class="wrapper"
+                            (input)="dt.filterGlobal(($any($event.target).value), 'contains')"
+                            placeholder="Search keyword" />
+                    </span>
+                </div>
+                <div class="item4 mx-1">
+                    <p-multiSelect [options]="colNames" [(ngModel)]="selectedColumns" optionLabel="header"
+                        selectedItemsLabel="{0} " [style]="{ minWidth: '150px' }"
+                        placeholder="Choose Columns"></p-multiSelect>
+                </div>
+                <div class="item5 mx-1">
+                    <button class="btn butn-sucss me-1 wordwrap" pRipple (click)="AddNewProduct($event)">
+                        <i class="pi pi-plus" style="padding-right: 8px;"></i>{{config.buttonlbl}}</button>
+                    <button class="btn butn-wrng me-1" pTooltip="Export To PDF" tooltipPosition="top" pRipple
+                        (click)="exportPdf()"><i class="pi pi-file-pdf"></i></button>
+                    <button class="btn butn-sucss me-1" pTooltip="Export To Excel" tooltipPosition="top" pRipple
+                        (click)="exportExcel()"><i class="pi pi-file-excel"></i></button>
+                    <button class="btn butn-dngr me-1" pTooltip="Bulk Delete" tooltipPosition="top" pRipple
+                        (click)="ondeletechecked()"><i class="pi pi-trash"></i></button>
+                </div>
+            </div>
+        </ng-template>
+        <!-- Columns/Table Header -->
+        <ng-template pTemplate="header" let-columns style="padding: 0.25rem 0.25rem;">
+            <tr>
+                <th style="width: 1rem; text-align: center;" *ngIf="config.isCheckbox">
+                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                </th>
+                <th style="width : 7rem; padding: 0.25rem 0.25rem; text-align: center;" pSortableColumn="{{col.field}}"
+                    *ngFor="let col of columns" pResizableColumn>
+                    <div class="flex justify-content-center align-items-center">
+                        {{col.header}}
+                        <!-- <p-columnFilter type="text" field="{{col.field}}" display="menu"></p-columnFilter> -->
+                        <p-sortIcon type="text" field="{{col.field}}"></p-sortIcon>
+                    </div>
+                </th>
+                <th class=" text-center" *ngIf="config.isActions" style="width : 4rem;">
+                    Actions
+                </th>
+                <th style="width: 1rem" *ngIf="config.expand"></th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-rowData let-columns="columns" let-expanded="expanded">
+            <tr (click)="onRowClick(rowData)" id="chekboxes">
+                <td *ngIf="config.isCheckbox" style="padding: 0.25rem 0.25rem;width: 1rem; text-align: center;">
+                    <p-tableCheckbox [value]="rowData" name="abc" ngDefaultControl
+                        [(ngModel)]="chekboxes"></p-tableCheckbox>
+                </td>
+                <td *ngFor="let col of columns" style="padding: 0.25rem 0.25rem;" pEditableColumn class="{{col.class}}"
+                    [ngStyle]="{color: getColor(rowData[col.field])}">
+                    <p-cellEditor *ngIf="col.iseditable; else normalText">
+                        <ng-template pTemplate="input">
+                            <input pInputText type="text" [(ngModel)]="rowData[col.field]" (blur)="editT(rowData)">
+                        </ng-template>
+                        <ng-template pTemplate="output">
+                            <app-moreandless [wordLimit]="config.textLength"
+                                [text]="rowData[col.field] "></app-moreandless>
+                        </ng-template>
+                    </p-cellEditor>
+                    <ng-template #normalText>
+                        <!-- {{rowData[col.field]}} -->
+                        <app-moreandless [wordLimit]="config.textLength" [text]="rowData[col.field] "></app-moreandless>
+                    </ng-template>
+                </td>
+                <!-- <td *ngFor="let col of columns" style="padding: 0.25rem 0.25rem;">
+                    <ng-template *ngIf="!col.iseditable">
+                        {{rowData[col.field]}}
+                    </ng-template>
+                </td> -->
+                <td *ngIf="config.isActions" style="padding: 0.25rem 0.25rem; width: 4rem ; text-align: center;">
+                    <ng-container>
+                        <button *ngIf="config.isActions.includes('Edit')" pButton pRipple icon="pi pi-file-edit "
+                            class="p-button-rounded icon-pencil edit-btn " (click)="editProduct(rowData)"></button>
+                        <button *ngIf="config.isActions.includes('Delete')" pButton pRipple icon="pi pi-trash"
+                            class="p-button-rounded icon-delete icon-delete " (click)="ondelete(rowData)"></button>
+                        <button *ngIf="config.isActions.includes('Viewer')" pButton pRipple icon="pi pi-window-maximize"
+                            style="background-color: black;" routerLink="/dicom-viewer"
+                            class="p-button-rounded "></button>
+                    </ng-container>
+                </td>
+                <td *ngIf="config.expand" style="text-align: center;">
+                    <button type="button" pButton pRipple [pRowToggler]="rowData"
+                        class="p-button-text p-button-rounded p-button-plain p-button-circle"
+                        [icon]="expanded ? 'pi pi-chevron-up' : 'pi pi-angle-down'"></button>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+            <tr>
+                <td [attr.colspan]="12">
+                    <div class="ui-g ui-fluid" style="font-size:15px; padding:5px">
+                        <div class="ui-g-12 ui-md-9">
+                            <div class="ui-g">
+                                <div class="ui-g-12">
+                                    <b>Id :</b> {{rowData.id}}
+                                    <b>Category :</b> {{rowData.category}}
+                                    <ng-content></ng-content>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

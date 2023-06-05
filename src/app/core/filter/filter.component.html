@@ -1,0 +1,8 @@
+<div class="filterBG">
+  <app-form *ngIf="filterData" [editData]="editData" [formJSON]="filterData" (formData)="formData($event)" (btnEvent)="btnEvent($event)"></app-form>
+</div>
+
+<p-dialog header="FILTERS" [showHeader]="true" [position]="'top'" (onHide)="close()" [(visible)]="displayModal" [modal]="true"
+  [style]="{width: '20vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+  <app-form *ngIf="FData" [formJSON]="FData" [editData]="editData" (formData)="response($event)"></app-form>
+</p-dialog>

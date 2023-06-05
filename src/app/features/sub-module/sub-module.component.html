@@ -1,0 +1,11 @@
+<h3 class="cst-label" style="cursor: pointer;">Sub Module</h3>
+<app-super-grid
+    *ngIf="dataGrid"
+    [configurations]="configurations" 
+    [tableData]="dataGrid" 
+    [tableConfig] = "config"
+    [sidebarJSON] = "formdata"
+    (sideBarEvent)="sidebarData($event)"
+    (confirmAction)="confirmAction($event)"
+    (fiteredData)="fiteredData($event)">
+</app-super-grid>

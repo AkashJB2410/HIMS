@@ -1,0 +1,5 @@
+<div class="row">
+<div *ngFor="let ch of chartData" class="{{ch.class}}">
+    <p-chart type="{{ch.type}}" [data]="ch.Data" [options]="ch.Option"></p-chart>
+</div>
+</div>

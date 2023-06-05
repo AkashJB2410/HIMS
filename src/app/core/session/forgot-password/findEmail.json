@@ -1,0 +1,50 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Password Rest",
+        "formtitletext":"h3-text-centre",
+        "formName": "Form1",
+        "formType": "edit",
+        "formControls": [
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Email ID / Mobile No.",
+                "type": "text",
+                "inputType": "text",
+                "maxLength": 5,
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "id": "mobileinput",
+                "placeholder": "Email ID OR Mobile No.",
+                "formControlName": "emailMobileNo",
+                "mandatoryMessage": "Email ID OR Mobile No. is required",
+                "message": {
+                    "required": "Email ID OR Mobile No. is required",
+                    "pattern": "Please enter correct format"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "next",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Next",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,103 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Get Verification Code",
+        "formName": "Form1",
+        "formType": "edit",
+        "formControls": [
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "label": "",
+                "type": "staticText",
+                "data": "To help keep your account safe,Techjivaa wants to make sure it's really you trying to sign in ",
+                "class": "col-md-12 my-1",
+                "placeholder": "********",
+                "formControlName": "note1",
+                "message": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "label": "",
+                "type": "staticText",
+                "data": "Techjivaa will send a verification code to ",
+                "class": "col-md-12 my-1",
+                "placeholder": "********",
+                "formControlName": "note2",
+                "message": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "label": "",
+                "type": "staticText",
+                "data": "var",
+                "class": "col-md-12 my-1",
+                "placeholder": "********",
+                "formControlName": "note3",
+                "message": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "label": "",
+                "type": "staticText",
+                "data": "Standard rates apply.",
+                "class": "col-md-12 my-1",
+                "placeholder": "********",
+                "formControlName": "note4",
+                "message": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "cancel",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Cancel",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "submit",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Send",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+
+        ]
+    }
+}

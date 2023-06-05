@@ -1,0 +1,10 @@
+<app-filter *ngIf="configurations.isFilter" [filterData]="filterData" (selectedData)="fitereddata($event)"></app-filter>
+
+<app-generictable *ngIf="configurations.isTable && data" [config]="config" [tableData]="data" (onEdit)="editRow($event)"
+    (onDelete)="deleteRow($event)" (onDeletechecked)="BulkdeleteRow($event)" (inlineEdit)="inlineedit($event)"
+    (onAdd)="addRow($event)" (onRowClickData)="onRowClick($event)"><ng-content></ng-content></app-generictable>
+
+    <p-confirmDialog [position]="'top'" [style]="{width: '30vw'}"></p-confirmDialog>
+
+<app-sidebar *ngIf="visibleSidebar && configurations.isSideBar" [editRowData]="editRowData"
+    [visibleSidebar]="visibleSidebar" [sidebarJSON]="sidebarJSON" (sidebarData)="sidebarData($event)"></app-sidebar>

@@ -1,0 +1,167 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Sub Module Form",
+        "formName": "Form1",
+        "formType": "edit",
+        "formControls": [
+            {
+                "id": 0,
+                "isEditable": false,
+                "isVisible": false,
+                "label": "Id",
+                "type": "text",
+                "inputType": "number",
+                "class": "col-md-4  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": "",
+                "formControlName": "idInput",
+                "mandatoryMessage": "Code is required",
+                "message": "Code is required",                
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Select Master Module",
+                "type": "select",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Select Master Module",
+                "formControlName": "selectInput",
+                "values": [
+                    {
+                        "name": "Status List",
+                        "code": "0"
+                    }
+                ],
+                "message": {
+                    "required": "Status is required.",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Label",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter label...",
+                "formControlName": "labelInput",
+                "message": {
+                    "required": "Label is required",
+                    "pattern": "Only Alphabets are Allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z]+$"
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Icon",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter icon name...",
+                "formControlName": "iconInput",
+                "message": {
+                    "required": "Icon name is required",
+                    "pattern": "Only Alphabets and hyphen are Allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-z\\s-]+$"
+                }
+            },
+            
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Router Link",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter router Link...",
+                "formControlName": "routerLinkInput",
+                "message": {
+                    "required": "router Link is required",
+                    "pattern": "Numbers and special characters are not allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-z\\s-/]+$"
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Sequence",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter sequence...",
+                "formControlName": "sequenceInput",
+                "message": {
+                    "required": "Sequence is required",
+                    "pattern": "Alphabets are not Allowed"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[0-9]+$"
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue ",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

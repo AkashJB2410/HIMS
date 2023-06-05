@@ -1,0 +1,12 @@
+<h3 class="cst-label" style="cursor: pointer;">Organization</h3>
+<app-super-grid
+    *ngIf="data"
+    [configurations] ="configurations" 
+    [tableConfig] = "orgDetails"
+    [sidebarJSON] = "addneworganization"
+    [tableData]= "data"
+    (sideBarEvent)="sidebarData($event)"
+    (confirmAction)="confirmAction($event)"
+    >
+
+></app-super-grid>

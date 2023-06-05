@@ -1,0 +1,10 @@
+<app-super-grid
+    *ngIf="data"
+    [configurations]="configurations" 
+    [tableData]="data" 
+    [tableConfig] = "config"
+    [sidebarJSON] = "sidebarJSON"
+    (sideBarEvent)="sidebarData($event)"
+    (confirmAction)="confirmAction($event)"
+    (fiteredData)="fiteredData($event)">
+</app-super-grid>

@@ -1,0 +1,30 @@
+.content{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 32px;
+
+position: absolute;
+width: 448px;
+height: 204px;
+left: calc(50% - 448px/2);
+top: calc(50% - 204px/2);
+}
+.content1{
+    color: white;
+}
+.wrapper{
+    padding: 0 0 100px;
+    background-image:url('../core_assets/pagenotfound.png'); 
+    /* background-color: #738FA7; */
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(175 186 196);;
+}

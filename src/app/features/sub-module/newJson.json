@@ -1,0 +1,89 @@
+{
+    "form": {
+        "formName": "From1",
+        "formType": "edit",
+        "formClass": "row",
+        "formTitle": "Sub Module Form",
+        "formControls": [
+            {
+                "formControlName": "idInput",
+                "type": "text",
+                "isEditable": false,
+                "isVisible": false,
+                "label": "Id",
+                "inputType": "number",
+                "placeholder": "",
+                "values": null,
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                },
+                "message": {
+                    "required": "Code is required",
+                    "pattern": ""
+                },
+                "classes": "col-md-4  my-1",
+                "lblclass": "",
+                "valueclass": "input-box"
+            },
+            {
+                "formControlName": "selectInput",
+                "type": "select",
+                "isEditable": true,
+                "isVisible": true,
+                "label": "select",
+                "inputType": null,
+                "placeholder": "Select Master Module",
+                "values": null,
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                },
+                "message": {
+                    "required": "Status is required",
+                    "pattern": null
+                },
+                "classes": "col-md-12 my-1",
+                "lblclass": "",
+                "valueclass": "input-box"
+            },
+            {
+                "formControlName": "nameInput",
+                "type": "text",
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Name",
+                "inputType": "text",
+                "placeholder": "Enter name...",
+                "values": null,
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                },
+                "message": {
+                    "required": "Name is required",
+                    "pattern": ""
+                },
+                "classes": "col-md-12 my-1",
+                "lblclass": "",
+                "valueclass": "input-box"
+            }
+        ],
+        "formButtons": [
+            {
+                "type": "reset",
+                "label": "Back",
+                "classes": "p-button-danger-sm ",
+                "icon": "",
+                "isDisabled": false
+            },
+            {
+                "type": "save",
+                "label": "Submit",
+                "classes": "p-button-success-sm",
+                "icon": "",
+                "isDisabled": false
+            }
+        ]
+    }
+}

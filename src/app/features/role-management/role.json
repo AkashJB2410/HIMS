@@ -1,0 +1,101 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Role",
+        "formName": "Form1",
+        "formType": "edit",
+        "formControls": [
+            {
+                "id": 0,
+                "isEditable": false,
+                "isVisible": false,
+                "label": "Id",
+                "type": "text",
+                "inputType": "number",
+                "class": "col-md-6 my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": "",
+                "formControlName": "idInput",
+                "mandatoryMessage": "Code is required",
+                "message": "Code is required",                
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter name...",
+                "formControlName": "nameInput",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Description",
+                "type": "textarea",
+                "inputType": "textarea",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter description...",
+                "formControlName": "descriptionInput",
+                "message": {
+                    "required": "Description is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue ",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-4  ",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

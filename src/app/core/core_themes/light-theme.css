@@ -1,0 +1,1030 @@
+.butn-dark-blue {
+  background-color: #415988;
+  cursor: pointer;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #415988;
+  --bs-btn-border-color: #415988;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0445a7;
+  --bs-btn-hover-border-color: #0445a7;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0445a7;
+  --bs-btn-active-border-color: #0445a7;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #415988;
+  --bs-btn-disabled-border-color: #415988;
+  border-radius: 8px;
+}
+
+.butn-custom-dark-blue {
+  width: 100%;
+  height: 45px;
+  background-color: #415988;
+  cursor: pointer;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #415988;
+  --bs-btn-border-color: #415988;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0445a7;
+  --bs-btn-hover-border-color: #0445a7;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0445a7;
+  --bs-btn-active-border-color: #0445a7;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #415988;
+  --bs-btn-disabled-border-color: #415988;
+  border-radius: 8px;
+}
+
+.butn-prmry {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #4CA5FF;
+  cursor: pointer;
+  --bs-btn-border-color: #4CA5FF;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0b5ed7;
+  --bs-btn-hover-border-color: #0a58ca;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0a58ca;
+  --bs-btn-active-border-color: #0a53be;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #4CA5FF;
+  --bs-btn-disabled-border-color: #4CA5FF;
+  border-radius: 8px;
+}
+
+.butn-custom-prmry {
+  width: 100%;
+  height: 100%;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #4CA5FF;
+  cursor: pointer;
+  --bs-btn-border-color: #4CA5FF;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0b5ed7;
+  --bs-btn-hover-border-color: #0a58ca;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0a58ca;
+  --bs-btn-active-border-color: #0a53be;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #4CA5FF;
+  --bs-btn-disabled-border-color: #4CA5FF;
+  border-radius: 8px;
+}
+
+.butn-custom-orng {
+  width: 100%;
+  height: 45px;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #FFA06B;
+  cursor: pointer;
+  --bs-btn-border-color: #FFA06B;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #d8682b;
+  --bs-btn-hover-border-color: #d8682b;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #d8682b;
+  --bs-btn-active-border-color: #d8682b;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #FFA06B;
+  --bs-btn-disabled-border-color: #FFA06B;
+  border-radius: 8px;
+  
+}
+
+.butn-wrng {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #FFA06B;
+  cursor: pointer;
+  --bs-btn-border-color: #FFA06B;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #d8682b;
+  --bs-btn-hover-border-color: #d8682b;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #d8682b;
+  --bs-btn-active-border-color: #d8682b;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #CD9C1D;
+  --bs-btn-disabled-border-color: #CD9C1D;
+  border-radius: 8px;
+  /* font-size: 14px; */
+}
+
+.butn-custom-wrng {
+  width: 100%;
+  height: 45px;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #FFA06B;
+  cursor: pointer;
+  --bs-btn-border-color: #FFA06B;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #d8682b;
+  --bs-btn-hover-border-color:#d8682b;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #d8682b;
+  --bs-btn-active-border-color: #d8682b;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #CD9C1D;
+  --bs-btn-disabled-border-color: #CD9C1D;
+  border-radius: 8px;
+}
+
+.butn-custom-orange {
+  width: 100%;
+  height: 100%;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #FFA06B;
+  cursor: pointer;
+  --bs-btn-border-color: #FFA06B;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #d8682b;
+  --bs-btn-hover-border-color: #d8682b;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #d8682b;
+  --bs-btn-active-border-color: #d8682b;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #FFA06B;
+  --bs-btn-disabled-border-color: #FFA06B;
+  border-radius: 8px;
+}
+
+.butn-dngr {
+  --bs-btn-color: #ffff !important;
+  --bs-btn-bg: #D94302;
+  --bs-btn-border-color: #D94302;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #bb2d3b;
+  --bs-btn-hover-border-color: #b02a37;
+  --bs-btn-focus-shadow-rgb: 225, 83, 97;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #b02a37;
+  --bs-btn-active-border-color: #a52834;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #dc3545;
+  --bs-btn-disabled-border-color: #dc3545;
+  border-radius: 8px;
+}
+
+.butn-custom-dngr {
+  width: 100%;
+  height: 45px;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #D94302;
+  --bs-btn-border-color: #D94302;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #bb2d3b;
+  --bs-btn-hover-border-color: #b02a37;
+  --bs-btn-focus-shadow-rgb: 225, 83, 97;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #b02a37;
+  --bs-btn-active-border-color: #a52834;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #dc3545;
+  --bs-btn-disabled-border-color: #dc3545;
+  border-radius: 8px;
+}
+
+.butn-sucss {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #43CAA3;
+  --bs-btn-border-color: #43CAA3 !important;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #30b175;
+  --bs-btn-hover-border-color: #30b175;
+  --bs-btn-focus-shadow-rgb: 60, 153, 110;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #30b175;
+  --bs-btn-active-border-color: #30b175;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #46953F;
+  --bs-btn-disabled-border-color: #46953F;
+}
+
+.butn-custom-sucss {
+  width: 100%;
+  height: 45px;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #43CAA3;
+  --bs-btn-border-color: #43CAA3;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #30b175;
+  --bs-btn-hover-border-color: #30b175;
+  --bs-btn-focus-shadow-rgb: 60, 153, 110;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #30b175;
+  --bs-btn-active-border-color: #30b175;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #198754;
+  --bs-btn-disabled-border-color: #198754;
+}
+
+.butn-custom-dark-blue {
+  background-color: #4CA5FF;
+  cursor: pointer;
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #4CA5FF;
+  --bs-btn-border-color: #4CA5FF;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0445a7;
+  --bs-btn-hover-border-color: #0445a7;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0445a7;
+  --bs-btn-active-border-color: #0445a7;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #4CA5FF;
+  --bs-btn-disabled-border-color: #4CA5FF;
+  border-radius: 8px;
+  border: none;
+  color: white;
+}
+
+.button-login-yellow {
+  display: block !important;
+  width: 100% !important;
+  height: 45px !important;
+  text-align: center !important;
+  background-color: #CD9C1D !important;
+  letter-spacing: 0.2px !important;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) !important;
+  box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24) !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  text-align: center !important;
+  letter-spacing: 0.2px !important;
+  color: #FFFFFF !important;
+}
+
+/* ----------------------------All Button Css End--------------------------- */
+
+/* ------------------Realted To All Login page Css- Start---------------------- */
+.wrapper-login{
+  background-color: #B8C0CC !important ;
+}
+.custom-card-login{
+  background: #FFFFFF !important;
+}
+.input-box-login {
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  background-color: var(--bs-form-control-bg);
+  background-clip: padding-box;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.375rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  background-color: #EDF9FF;
+}
+
+.lbl-center-login {
+  color: black;
+}
+
+.lbl-center-text {
+  color: #767676;
+  margin-right: 15px;
+}
+
+.custom-label-login {
+  color: #9FA2B4;
+}
+
+.lbl-center-login-anchor {
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  color: #9FA2B4;
+}
+
+.lbl-center-statictext {
+  color: #9FA2B4;
+}
+
+.pi-eye {
+  color: #9FA2B4 !important;
+}
+
+.backrground-logo-img {
+  background: url('../core_assets/Techjivaa-White-Logo.png');
+  color: black;
+}
+
+.p-button.p-button-success,
+.p-buttonset.p-button-success>.p-button,
+.p-splitbutton.p-button-success>.p-button {
+  color: black !important;
+  background: none !important;
+  border: 0 none;
+}
+
+.p-button.p-button-warning,
+.p-buttonset.p-button-warning>.p-button,
+.p-splitbutton.p-button-warning>.p-button {
+  color: black !important;
+  background: none !important;
+  border: 0 none;
+}
+
+/* .pi-trash {
+  color: #E91818;
+} */
+
+/* .text-center{
+  margin-top: 25px;
+} */
+.static-text-size {
+  font-size: 12px;
+}
+
+/*------------In Login card Input password Start-------------*/
+
+.p-inputtext.p-password-input {
+  background-color: #EDF9FF !important;
+  border: 1px solid #e4e4e4 !important;
+  color: #9a9a9a !important;
+  /* height: 36px !important; */
+}
+
+/*-----------In Login card Input password End---------------*/
+
+/*-----------------------custom padding for signup & Dont have account---------------------*/
+.custom-padding-signup {
+  padding-right: 30px;
+  padding-left: 0;
+}
+
+.custom-padding-account {
+  padding-right: 0;
+  padding-left: 30px;
+}
+
+/* staic text */
+.txt-sign-up {
+  color: #9FA2B4;
+}
+
+/* ----------------------------------Realted To All Login page Css End---------------------------------- */
+
+/*---------------In Form password eye icon colour Start-------------------------------*/
+.p-input-icon-right>i:last-of-type {
+  color: #9FA2B4 !important;
+  /*---------------In Form password eye icon colour End-------------------------------*/
+}
+
+/*-------------------------Super Grid CSS Start--------------------------------------*/
+.p-datatable .p-datatable-header {
+  background: white !important;
+  color: #e4e4e4 !important; 
+  /* border: none !important; */
+  border-width: 0 0 1px 0;
+  padding: 1rem 1rem;
+  font-weight: 500;
+}
+
+.tableFeatures {
+  background-color: none !important;
+  padding: 5px 5px;
+}
+
+/*-------------------------Super Grid CSS End-----------------------------------------*/
+
+/*--------------------------Light-Theme-filter-Backgound Color start-----------------------------------------*/
+.filterBG {
+  border: 1px solid #F5FAFF;
+  background-color: #F5FAFF;
+  
+}
+
+/*--------------------------Light-Theme-filter-Backgound Color start-----------------------------------------*/
+#content {
+  background-color: white;
+}
+
+/*-------------------------Light-Theme-Form-Backgound Color End--------------------------------------------*/
+
+/* ---------------------stepper Form backgound colour Start--------------------------------- */
+.p-steps ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  background-color: #F5FAFF;
+  display: flex;
+}
+
+/* ---------------------stepper Form backgound colour End--------------------------------- */
+
+/* ---------------------stepper Form line colour Start--------------------------------- */
+.p-steps .p-steps-item:before {
+  content: " ";
+  border-top: 1px solid #6DC871 !important;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  display: block;
+  position: absolute;
+  margin-top: -1rem;
+}
+
+/* ---------------------stepper Form line colour End--------------------------------- */
+
+/* ------------------on trigger input blue line hide- Start------------------------ */
+.p-inputtext:enabled:focus {
+  box-shadow: inset 0 0 0 1px, inset 0 0 0 1px, inset 0 0 0 1px, inset 0 0 0 1px !important;
+}
+
+/* ------------------on trigger dropdown blue line hide- End------------------------ */
+
+
+/* -----------Stepper form name----------------- */
+.textcolour {
+  color: black;
+  margin-top: 5rem !important;
+}
+
+/* -----------Stepper form name End----------------- */
+
+/* ----Stepper form round Icon and Number colour Start -------------- */
+
+.p-steps .p-steps-item.p-highlight .p-steps-number {
+  background-color: #30b175 !important;
+  color: #ffffff;
+}
+
+/* ----Stepper form round Icon and Number colour End -------------- */
+
+/* ------------------on trigger dropdown blue line hide- Start------------------------ */
+.p-dropdown:not(.p-disabled).p-focus {
+  box-shadow: inset 0 0 0 1px,
+    inset 0 0 0 1px, inset 0 0 0 1px !important;
+}
+
+/* ------------------on trigger dropdown blue line hide- End------------------------ */
+
+/*---------------------------All Realted To Generic Table Css Start --------------------------------------------- */
+
+.p-datatable.p-datatable-gridlines:has(.p-datatable-thead):has(.p-datatable-tbody) .p-datatable-tbody>tr>td {
+  border: 1px solid #e7e7e7 !important;
+}
+
+.p-tabview .p-tabview-nav .p-tabview-ink-bar {
+  z-index: 1;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background-color: #415988 !important;
+  transition: 500ms cubic-bezier(0.35, 0, 0.25, 1);
+}
+
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #415988 !important;
+}
+
+.p-datatable-table {
+  cursor: pointer !important;
+}
+
+/* -------Table Heading Start---------- */
+.p-datatable-thead th {
+  background: #F0F0F0 !important;
+  color: black !important;
+  /* border: 1px solid #AFB1B5 !important; */
+}
+
+/* -------Table Heading End---------- */
+
+/* ------- In Table sort Icon colour Start---------- */
+.p-datatable .p-sortable-column .p-sortable-column-icon {
+  color: black !important;
+  margin-left: 0.5rem !important;
+}
+
+/* ------- In Table sort Icon colour End---------- */
+
+/* ------- In Table filter Icon colour Start---------- */
+.p-column-filter-menu-button {
+  color: black !important;
+}
+
+/* ------- In Table filter Icon colour End---------- */
+
+/*----------Ligth-Theme Table Row Color start-------------------------*/
+.p-datatable.p-datatable-striped .p-datatable-tbody>tr:nth-child(odd) {
+
+  background-color: white !important;
+  color: black !important;
+}
+
+.p-datatable.p-datatable-striped .p-datatable-tbody>tr:nth-child(even) {
+  background-color: #F0F8FF !important;
+  color: black !important;
+}
+
+.p-datatable.p-datatable-hoverable-rows .p-datatable-tbody>tr:not(.p-highlight):hover {
+  color: black !important;
+  background-color: #F0F0F0 !important;
+
+}
+
+/*---------Light-Theme Table Row Color End--------------------------*/
+
+/*----------In Table search Icon Color Start-----------------------------*/
+.p-input-icon-left-search-icon>i:first-of-type {
+  left: 1rem;
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/*--------In Table search Icon Color End-------------------------------*/
+
+/* ----------------On table edit icon colour start--------------------------------*/
+.pi-file-edit {
+  color: #6774BD !important;
+}
+
+/* ----------------On table edit icon colour End-------------------------------- */
+
+/*---------------------------All Realted To Generic Table Css End --------------------------------------------- */
+
+/* -----------------------------side bar Colour Start -------------------------------------- */
+.p-sidebar-right.p-sidebar-md {
+  background-color: #F5F5F5;
+}
+
+/* -------In side bar Main title colour start --------- */
+.cst-label {
+  color: black !important;
+  font-size: 1.5rem !important;
+}
+
+/* -------In side bar Main title colour End --------- */
+
+/* -----------------------------side bar Colour End-------------------------------------------*/
+
+/* -----------------------All Related To Dropdown Css Start------------------------------ */
+.p-dropdown {
+  background-color: #EDF9FF !important;
+  border: 1px solid #e4e4e4 !important;
+  color: white !important;
+}
+
+.dropdown {
+  background-image: url("../core_assets/download.png") !important;
+}
+
+.p-dropdown .p-dropdown-trigger {
+  color: #e4e4e4 !important;
+}
+
+.p-dropdown .p-inputtext {
+  color: #A4A3A3 !important;
+}
+
+.p-dropdown.p-dropdown-clearable .p-dropdown-label {
+  color: #9a9a9a !important;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  color: black !important;
+  background: #EDF9FF !important;
+}
+
+/* -------- In Dropdown Cross Icon Colour start------------*/
+.p-dropdown .p-dropdown-clear-icon {
+  color: rgb(255 0 0 / 63%) !important;
+}
+
+/* -------- In Dropdown Cross Icon Colour End--------------*/
+
+/* -------- In Dropdown Arraow Icon Colour start------------*/
+.pi-chevron-down:before {
+  content: "\e902";
+  color: #999999 !important;
+}
+
+/* -------- In Dropdown Arraow Icon Colour End------------*/
+
+/* -----------------------All Related To Dropdown Css End------------------------------ */
+
+/* -----------------------All Related To Multiselect Css Start-------------------------- */
+.p-multiselect {
+  background: #EDF9FF !important;
+  border: 1px solid #A4A3A3 !important;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+  border-radius: 4px;
+  color: #9a9a9a !important;
+}
+
+/* ------------------when click on multiselect backgound colour start----------------------- */
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item.p-highlight {
+  color: black !important;
+  background: white !important;
+}
+
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item:not(.p-highlight):not(.p-disabled):hover {
+  color: black !important;
+  background: #EDF9FF !important;
+}
+
+/* ------------------when click on multiselect backgound colour End----------------------- */
+/* -----------------------All Related To Multiselect Css End-------------------------- */
+
+/* -----------------------All Related To Input  Css Start-------------------------- */
+.input-box {
+  background-color: #EDF9FF;
+ border: 1px solid #e2e2e4 !important;
+  color: #9a9a9a !important;
+  outline: 0 !important;
+}
+
+input::placeholder {
+  opacity: 0.5;
+  color: #BDBDBD !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: black !important;
+  -webkit-box-shadow: 0 0 0px 1000px #EDF9FF inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.custom-label {
+  color: #030303;
+}
+
+option:hover {
+  background-color: yellow !important;
+}
+
+.p {
+  color: white;
+}
+
+.p-inputtext {
+  background-color: #EDF9FF !important;
+  color: #9a9a9a !important;
+  border-color: #E2E2E2 !important;
+}
+
+/* -----------------------All Related To Input  Css End-------------------------- */
+
+/*---------------------All Related To check-box-Button Css-start-------------------------------*/
+
+.p-field-checkbox {
+  color: black;
+  display: flex !important;
+}
+
+.checkbox-btn-vertical {
+  gap: 1.25rem !important;
+  align-items: center !important;
+  margin-bottom: 25px;
+}
+
+/* -------------After Click on checkbox colour Start--------------------- */
+.p-checkbox .p-checkbox-box.p-highlight {
+  border-color: #1885db !important;
+  background: #1885db !important;
+}
+
+/* ------------After Click on checkbox colour End------------------------ */
+
+/*---------------------All Related To check-box-Button Css-End-------------------------------*/
+
+/*-------------------------All Related To Radio-Button Css-start-------------------------------*/
+.radio-button-inline {
+  display: flex !important;
+  text-indent: 0.75em !important;
+  align-items: center !important;
+}
+
+.radio-button-vertical {
+  text-indent: 0.75em !important;
+  align-items: center !important;
+}
+
+/* -------- Radio button Text colour start ------------*/
+.radio-button {
+  color: black;
+}
+
+/* -------- Radio button Text colour End ------------*/
+/*-------------------------All Related To Radio-Button Css-End-------------------------------*/
+
+/*-------------------------All Related To textArea-Button Css-start-------------------------*/
+.textarea-custom {
+  background-color: #EDF9FF !important;
+  color: #9a9a9a !important;
+  outline: 0;
+}
+
+/*-------------------------All Related To textArea-Button Css-End-------------------------*/
+
+/* -----------------------Input Calender Background Start-------------------------------- */
+.p-calendar {
+  background-color: #EDF9FF !important;
+  border-color: #EEEEEE;
+  color: white !important;
+}
+
+.p-calendar-w-btn .p-inputtext {
+  color: #9a9a9a !important;
+}
+
+.p-calendar-w-btn .p-datepicker-trigger.p-button span {
+  color: #999999 !important;
+}
+
+/* -----------------------Input Calender Background End-------------------------------- */
+
+/* -----------------------All Related To sideNav Css Start------------------------------ */
+
+.sidebarMenu-custom {
+  background: #415988 !important;
+  width: auto;
+  transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+  transform-origin: bottom left;
+}
+
+.nav-link {
+  display: block;
+  color: #ffffff !important;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+}
+
+.nav-list-item {
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+
+.navbar {
+  /* padding: 10px 10px; */
+  border: none;
+  border-radius: 0;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #F4F3F3 !important;
+}
+
+/* -----------------------All Related To sideNav Css End------------------------------ */
+
+/* -------------------All Related To Paginator Css Start------------------------------ */
+.p-paginator {
+  background: white !important;
+  color: white !important;
+  border: 1px solid #e4e4e4 !important;
+}
+
+.p-paginator .p-paginator-current {
+  color: black !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background-color: gray !important;
+  color: white !important;
+}
+
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-last {
+  color: black !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+  color: black !important;
+}
+
+.p-paginator .p-dropdown .p-dropdown-label {
+  color: black !important;
+}
+
+/* -------------------All Related To Paginator Css End------------------------------ */
+
+/*-------------------------Universal-Css-Start-------------------------------------*/
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.centre {
+  justify-content: center;
+  display: flex;
+  padding: 10px 0px 10px 0px;
+
+}
+
+.centre {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*-------------------------Universal-Css-End-------------------------------------*/
+.custom-grid-dropdown {
+  background-color: #5C5C5C;
+
+}
+
+/* NOTE
+for custom input box size use w-25 , w-50, w-75 on column of it
+ */
+/*------------------------- In form (paragraph)text colour start-----------------------------------*/
+.custom-text {
+  color: #000000 !important;
+}
+
+/*-------------------------In form (paragraph)text colour End-------------------------------------*/
+.icons {
+  font-size: 18px;
+  color: #415988 !important;
+  cursor: pointer;
+}
+
+
+.lbl-center-login-signup {
+  font-style: normal;
+  letter-spacing: 0.3px;
+  color: #4CA5FF;
+}
+
+.pi-ellipsis-v {
+  color: #9a9a9a !important;
+}
+/* ----------------------All field border colour start---------------------------------- */
+.input-box,
+.p-inputtext.p-password-input,
+.p-calendar,
+.p-dropdown,
+.p-inputtext,
+.p-multiselect,
+.textarea-custom 
+{
+  border-color:#D8D8D8 !important ;
+}
+.p-multiselect {
+  border-color: #D8D8D8 !important;
+
+}
+/* ----------------------All field border colour start---------------------------------- */
+
+/* --------------------In generic table last coloum arrow css start---------------------------------- */
+.p-button.p-button-text.p-button-plain.p-button-circle {
+  color: #FFFFFF !important;
+  background-color: #8CC5FF;
+}
+
+.p-button.p-button-text.p-button-plain.p-button-circle:hover {
+  color: black !important;
+  background-color: #8CC5FF !important;
+}
+/* --------------------In generic table last coloum arrow css End---------------------------------- */
+
+/* -------------------In from error message colour start------------------------ */
+.error-txt-msg
+{
+  color:red !important;
+}
+/* -------------------In from error message colour End------------------------ */
+
+/* --------------All realted to disable field css start------------------------------ */
+.textarea-custom1 {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  background-clip: padding-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin-bottom: 10px;
+  border-radius: 4px !important;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.textarea-custom1 {
+  background-color: #EEEEEE;
+  color: #EEEEEE !important;
+  outline: 0;
+}
+.input-box1 {
+  display: block;
+  height: 32px;
+  cursor: pointer;
+  border: 1px solid #EEEEEE;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--bs-body-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.input-box1 {
+  background-color: #EEEEEE !important;
+  /* border: 1px solid #e2e2e4 !important; */
+  color: #9a9a9a !important;
+  outline: 0 !important;
+}
+.p-field-checkbox1 {
+  color: black;
+  display: flex !important;
+  background-color: #EEEEEE !important;
+}
+.radio-button1 {
+  text-indent: 0.75em !important;
+  align-items: center !important;
+  background-color: #ebebeb !important;
+}
+/* --------------All realted to disable field css End------------------------------ */
+.headerIcon {
+  font-size: 20px !important;
+  color: #415988;
+  margin-right: 20px;
+}
+/* -------------icons classes start------------- */
+
+/* -------------icons classes End------------- */
+
+/* -------------icons button classes with Hover start------------- */
+.icon-button-primary
+{
+  background-color: #4CA5FF !important; 
+  color: white !important;
+}
+.icon-button-warn
+{
+  background-color: #FFA06B !important; 
+  color: white !important;
+}
+.icon-button-succes
+{
+  background-color: #43CAA3 !important; 
+  color: white !important;
+}
+
+/* -----------Hover----------------- */
+.icon-button-primary:hover
+{
+  background-color: #0b5ed7 !important; 
+  color: white !important;
+}
+.icon-button-warn:hover
+{
+  background-color: #d8682b !important; 
+  color: white !important;
+}
+.icon-button-succes:hover
+{
+  background-color: #1f745c !important; 
+  color: white !important;
+}
+/* -------------icons button classes with Hover End------------- */
+.imgUpload
+{
+height: 40px !important;
+width: 150px !important;
+}

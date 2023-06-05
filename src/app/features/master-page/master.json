@@ -1,0 +1,74 @@
+{
+  "masterData": {
+    "theme": {
+      "sidenavBG": "#174875",
+      "headerBG": "#EEEEEE",
+      "footerBG": "#EEEEEE"
+    },
+    "header": {
+      "logo": "../../assets/sahaj.pngs",
+      "whiteLogo": "../../assets/sahaj.png",
+      "usericon": "../../assets/Icon.png",
+      "setting": "../../assets/setting.png",
+      "notification": {
+        "data": [
+          {
+            "data": "Home"
+          },
+          {
+            "data": "AboutAbout"
+          },
+          {
+            "data": "Gallery"
+          },
+          {
+            "data": "Account"
+          },
+          {
+            "data": "Others"
+          }
+        ]
+      },
+      "dp": "../../assets/userlogo.png"
+    },
+    "sidenavItems": [
+      {
+        "label": "Administration",
+        "icon": "pi pi-box",
+        "children": [
+          {
+            "label": "Role Management",
+            "icon": "pi pi-user-edit",
+            "routerLink": "/master-page/role-management"
+          },
+          {
+            "label": "Master Module",
+            "icon": "pi pi-id-card",
+            "routerLink": "/master-page/master-module"
+          },
+          {
+            "label": "Sub Module",
+            "icon": "pi pi-folder-open",
+            "routerLink": "/master-page/sub-module"
+          },
+         
+          {
+            "label": "Organization",
+            "icon": "pi pi-building",
+            "routerLink": "/master-page/organization"
+          }
+        ]
+      },
+      {
+        "label": "Registration",
+        "icon": "pi pi-slack",
+        "routerLink": "/master-page/registration-form"
+      }
+    ],
+    "footer": {
+      "logo": "../../assets/Techjivaa-svg-removebg.png",
+      "dp": "../../assets/userlogo.png",
+      "username": "Satyam Singh"
+    }
+  }
+}

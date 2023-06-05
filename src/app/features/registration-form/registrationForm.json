@@ -1,0 +1,576 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Registration Form",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar": "p-sidebar-lg",
+        "formControls": [
+            {
+                "id": 10,
+                "isEditable": false,
+                "isVisible": true,
+                "label": "Patient UID",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Patient UID",
+                "formControlName": "PatientUID",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Mobile No.",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Mobile No.",
+                "formControlName": "MobileNo",
+                "message": {
+                    "required": "Mobile No. is required",
+                    "pattern": "Please re-enter using a valid 10-digit mobile number."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^\\+d{0,9}\\d{12}$"
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Identification Type",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "IdentificationTypeDrop",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Aadhar Card",
+                        "code": "Aadhar Card"
+                    },
+                    {
+                        "name": "ABHA ID",
+                        "code": "ABHA ID"
+                    },
+                    {
+                        "name": "Passport",
+                        "code": "Passport"
+                    },
+                    {
+                        "name": "Pan Card",
+                        "code": "Pan Card"
+                    },
+                    {
+                        "name": "Voter Card",
+                        "code": "Voter Card"
+                    },
+                    {
+                        "name": "Ration Card",
+                        "code": "Ration Card"
+                    },
+                    {
+                        "name": "ANC Number",
+                        "code": "ANC Number"
+                    },
+                    {
+                        "name": "CHS Number",
+                        "code": "CHS Number"
+                    },
+                    {
+                        "name": "Army Identify Card",
+                        "code": "Army Identify Card"
+                    },
+                    {
+                        "name": "Driving Licence",
+                        "code": "Driving Licence"
+                    },
+                    {
+                        "name": "Other",
+                        "code": "Other"
+                    }
+                ],
+                "message": {
+                    "required": "Identification Type is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": false,
+                "isVisible": true,
+                "label": "Identification Number",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Identification Number",
+                "formControlName": "identificationNo",
+                "message": {
+                    "required": "Identification Number is required",
+                    "pattern": "Text is not allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 5,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Title",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "title",
+                "message": {
+                    "required": "Title is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Mr",
+                        "code": "Mr"
+                    },
+                    {
+                        "name": "Mrs.",
+                        "code": "Mrs."
+                    },
+                    {
+                        "name": "B/O Boy",
+                        "code": "B/O Boy"
+                    },
+                    {
+                        "name": "B/O Girl",
+                        "code": "B/O Girl"
+                    },
+                    {
+                        "name": "Dr.",
+                        "code": "Dr."
+                    },
+                    {
+                        "name": "Dr. Mr",
+                        "code": "Dr. Mr"
+                    },
+                    {
+                        "name": "Dr. Ms",
+                        "code": "Dr. Ms"
+                    },
+                    {
+                        "name": "Miss.",
+                        "code": "Miss."
+                    },
+                    {
+                        "name": "Master",
+                        "code": "Master"
+                    },
+                    {
+                        "name": "Smt.",
+                        "code": "Smt."
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 6,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "First Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter First Name...",
+                "formControlName": "firstName",
+                "message": {
+                    "required": "First Name is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z]+$"
+                }
+            },
+            {
+                "id": 7,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Middle Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Middle Name...",
+                "formControlName": "middleName",
+                "message": {
+                    "required": "Middle Name is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },
+            {
+                "id": 8,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Last Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Last Name...",
+                "formControlName": "lastName",
+                "message": {
+                    "required": "Last Name is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "",
+                "inputType": "radio",
+                "type": "radio",
+                "class": "col-md-1  my-1",
+                "lblclass": "custom-label",
+                "valueclass": " radio-button",
+                "placeholder": "********",
+                "formControlName": "DOBRad",
+                "message": {
+                    "required": "DOB is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "DOB",
+                        "code": "DOB",
+                        "editable": false
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 9,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "",
+                "type": "date",
+                "format": "MM-dd",
+                "class": "col-md-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "custom-p-calendar",
+                "value": "04/22/2023",
+                "placeholder": "",
+                "formControlName": "userBirthdate",
+                "message": {
+                    "required": "Date is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Age",
+                "inputType": "radio",
+                "type": "radio",
+                "class": "col-md-1  my-1",
+                "lblclass": "custom-label",
+                "valueclass": " radio-button",
+                "placeholder": "********",
+                "formControlName": "DOBRad",
+                "message": {
+                    "required": "Age is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "",
+                        "code": "Age",
+                        "editable": false
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 8,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Age",
+                "formControlName": "ageText",
+                "message": {
+                    "required": "Age is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 11,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Year",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "YearDrop",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Year",
+                        "code": "Year"
+                    },
+                    {
+                        "name": "Months",
+                        "code": "Months"
+                    },
+                    {
+                        "name": "Days",
+                        "code": "Days"
+                    }
+                ],
+                "message": {
+                    "required": "Year is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 12,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Gender",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "genderDrop",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Male",
+                        "code": "M"
+                    },
+                    {
+                        "name": "Female",
+                        "code": "F"
+                    },
+                    {
+                        "name": "Other",
+                        "code": "o"
+                    }
+                ],
+                "message": {
+                    "required": "Gender is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            
+            {
+                "id": 13,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Address",
+                "type": "textarea",
+                "inputType": "textarea",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "textarea-custom",
+                "placeholder": "",
+                "formControlName": "address",
+                "message": {
+                    "required": "Address is required",
+                    "pattern": "invalid"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
+                }
+            },
+            {
+                "id": 14,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Pin Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Pin Code...",
+                "formControlName": "lastName",
+                "message": {
+                    "required": "Pin Code is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[0-9]\\d{5}$"
+                }
+            },
+            {
+                "id": 0,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Email ID",
+                "type": "text",
+                "inputType": "email",
+                "maxLength": 5,
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "xyz123@example.com",
+                "formControlName": "userEmail",
+                "message": {
+                    "required": "Email is required",
+                    "pattern": "Please enter correct format"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Blood Group",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "stateDrop",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "A+",
+                        "code": "A+"
+                    },
+                    {
+                        "name": "B+",
+                        "code": "B+"
+                    },
+                    {
+                        "name": "o+",
+                        "code": "o+"
+                    },
+                    {
+                        "name": "AB+",
+                        "code": "AB+"
+                    },
+                    {
+                        "name": "A-",
+                        "code": "A-"
+                    },
+                    {
+                        "name": "B-",
+                        "code": "B-"
+                    },
+                    {
+                        "name": "o-",
+                        "code": "o-"
+                    },
+                    {
+                        "name": "AB-",
+                        "code": "AB-"
+                    }
+                ],
+                "message": {
+                    "required": "Blood Group is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

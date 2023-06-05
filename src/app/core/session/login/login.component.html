@@ -1,0 +1,20 @@
+<section class="wrapper-login" id="bg">
+    <div class="{{loginForm.classContainer}}">
+        <div class="row">
+            <div class="{{loginForm.cardClass}}">
+                <div class="{{loginForm.cardColorCSS}}">
+                    <div class="{{loginForm.logoCSS}}">
+                        <img src="{{loginForm.backgroundImg}}" alt="" class="{{loginForm.backgroundImgCSS}}">
+                    </div>
+                    <div class="lbl-center-login" *ngIf="timerFlag" >
+                        Try logging in after {{display}} mins.
+                    </div>
+                    <div class="lbl-center-login" *ngIf="timerFlag2" >
+                        Now login with your correct password.
+                    </div>
+                    <app-form [formJSON]="loginForm" (formData)="onSubmit($event)" (changeEvents)="oncheck($event)"></app-form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

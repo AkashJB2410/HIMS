@@ -1,0 +1,110 @@
+{
+    "items": [
+        {
+            "label": "Personal",
+            "formLabel": "form1"
+        },
+        {
+            "label": "Seat",
+            "formLabel": "form2"
+        },
+        {
+            "label": "Payment"
+        },
+        {
+            "label": "Confirmation"
+        }
+    ],
+    "Forms": [
+        {
+            
+            "dataCompo": {
+                "row": "row text-center",
+                "type": "forms",
+                "formGroup": "loginForm",
+                "Data": [
+                    {
+                        "label": "Email",
+                        "type": "text",
+                        "inputType": "email",
+                        "maxLength": 5,
+                        "class": "col-md-6 mx-auto",
+                        "id": "emailInput",
+                        "placeholder": "mailto:name@example.com",
+                        "name": "Email",
+                        "formControlName": "email",
+                        "controlName": "email",
+                        "mandatory": "yes",
+                        "mandatoryMessage": "Password is required",
+                        "validations": [
+                            {
+                                "name": "required",
+                                "validator": "regex",
+                                "message": "Password is required"
+                            }
+                        ],
+                        "isEditable": true,
+                        "isVisible": true,
+                        "defaultValue": [
+                            {
+                                "value": ""
+                            },
+                            {
+                                "value": ""
+                            }
+                        ],
+                        "dataset": ""
+                    },
+                    {
+                        "label": "Birth month",
+                        "type": "text",
+                        "inputType": "month",
+                        "col": "col-md-6 mx-auto",
+                        "id": "emailInput",
+                        "placeholder": "enter Birth Date",
+                        "name": "Email",
+                        "formControlName": "email",
+                        "controlName": "email",
+                        "validations": [
+                            {
+                                "name": "required",
+                                "validator": "required",
+                                "message": "Password is required"
+                            }
+                        ],
+                        "value": ""
+                    }
+                ]
+            }
+        },
+        {
+           
+            "dataCompo": {
+                "row": "row text-center",
+                "type": "forms",
+                "formGroup": "loginForm",
+                "Data": [
+                    {
+                        "label": "Birth month",
+                        "type": "text",
+                        "inputType": "month",
+                        "col": "col-md-6 mx-auto",
+                        "id": "emailInput",
+                        "placeholder": "enter Birth Date",
+                        "name": "Email",
+                        "formControlName": "email",
+                        "controlName": "email",
+                        "validations": [
+                            {
+                                "name": "required",
+                                "validator": "required",
+                                "message": "Password is required"
+                            }
+                        ],
+                        "value": ""
+                    }
+                ]
+            }
+        }
+    ]
+}
