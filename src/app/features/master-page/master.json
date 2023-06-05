@@ -33,6 +33,541 @@
     },
     "sidenavItems": [
       {
+        "label": "Registration",
+        "icon": "pi pi-slack",
+        "routerLink": "/master-page/registration-form"
+      },
+      {
+        "label": "Home",
+        "icon": "bi bi-house",
+        "routerLink": "/master-page/home"
+      },
+      {
+        "label": "Emergency",
+        "icon": "bi bi-calendar-plus",
+        "children": [
+          {
+            "label": "Emergency Quick Registration",
+            "icon": "",
+            "routerLink": "/master-page/emergency-quick-registration"
+          },
+          {
+            "label": "ER Patient List",
+            "icon": "",
+            "routerLink": "/master-page/er-patient-list"
+          },
+          {
+            "label": "ER Discharge Patient List",
+            "icon": "",
+            "routerLink": "/master-page/er-discharge-patient-list"
+          },
+          {
+            "label": "ER Cancel Patient List",
+            "icon": "",
+            "routerLink": "/master-page/cancel-patient-list"
+          }
+        ]
+      },
+      {
+        "label": "ABHA",
+        "icon": "bi bi-file-person",
+        "children": [
+          {
+            "label": "Create ABHA ID",
+            "icon": "",
+            "routerLink": "/master-page/create-abha-id"
+          },
+          {
+            "label": "Patient List",
+            "icon": "",
+            "routerLink": "/master-page/patient-list"
+          }
+        ]
+      },
+      {
+        "label": "Token-List",
+        "icon": "bi bi-person-lines-fill",
+        "children": [
+          {
+            "label": "Patients Waiting",
+            "icon": "",
+            "routerLink": "/master-page/patients-waiting"
+          },
+          {
+            "label": "Token Display",
+            "icon": "",
+            "routerLink": "/master-page/token-display"
+          }
+        ]
+      },
+      {
+        "label": "OPD",
+        "icon": "bi bi-person-up",
+        "children": [
+          {
+            "label": "Quick Patient Reg + Visit",
+            "icon": "",
+            "routerLink": "/master-page/quick-patient-reg-visit"
+          },
+          {
+            "label": "queue",
+            "icon": "",
+            "routerLink": "/master-page/queue"
+          },
+          {
+            "label": "Appointment",
+            "icon": "",
+            "routerLink": "/master-page/appointment"
+          },
+          {
+            "label": "Appointment List",
+            "icon": "",
+            "routerLink": "/master-page/appointment-list"
+          },
+          {
+            "label": "Registration",
+            "icon": "",
+            "routerLink": "/master-page/registration"
+          },
+          {
+            "label": "Registration List",
+            "icon": "",
+            "routerLink": "/master-page/registration-list"
+          },
+          {
+            "label": "OPD Visit List",
+            "icon": "",
+            "routerLink": "/master-page/opd-visit-list"
+          },
+          {
+            "label": "Feedback Visit List",
+            "icon": "",
+            "routerLink": "/master-page/feedback-visit-list"
+          },
+          {
+            "label": "Reports",
+            "icon": "",
+            "children": [
+              {
+                "label": "List of Registration Report",
+                "icon": "",
+                "routerLink": "/master-page/list-of-registration-report"
+              },
+              {
+                "label": "list of Visit Report",
+                "icon": "",
+                "routerLink": "/master-page/list-of-visit-report"
+              },
+              {
+                "label": "Haspathal Report",
+                "icon": "",
+                "routerLink": "/master-page/haspathal-report"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "IPD",
+        "icon": "bi bi-person-down",
+        "children": [
+          {
+            "label": "IPD Quick Registration",
+            "icon": "",
+            "routerLink": "/master-page/ipd-quick-registration"
+          },
+          {
+            "label": "Admission Request",
+            "icon": "",
+            "children": [
+              {
+                "label": "New Admission Request",
+                "icon": "",
+                "routerLink": "/master-page/new-admission-request"
+              }, 
+              {
+                "label": "List of Admission Request",
+                "icon": "",
+                "routerLink": "/master-page/list-of-admission-request"
+              }
+            ]
+          },
+          {
+            "label": "Admission List",
+            "icon": "",
+            "children": [
+              {
+                "label": "Admission List",
+                "icon": "",
+                "routerLink": "/master-page/admission-list"
+              }, 
+              {
+                "label": "Discharge List",
+                "icon": "",
+                "routerLink": "/master-page/discharge-list"
+              }, 
+              {
+                "label": "Admission Cancel List",
+                "icon": "",
+                "routerLink": "/master-page/admission-cancel-list"
+              }
+            ]
+          },
+          {
+            "label": "Bed Management",
+            "icon": "",
+            "children": [
+              {
+                "label": "Bed Transfer",
+                "icon": "",
+                "routerLink": "/master-page/bed-transfer"
+              }, 
+              {
+                "label": "Under Maintenance",
+                "icon": "",
+                "routerLink": "/master-page/under-maintenance"
+              }, 
+              {
+                "label": "Graphical View",
+                "icon": "",
+                "routerLink": "/master-page/graphical-view"
+              }
+            ]
+          },
+          {
+            "label": "Discharge",
+            "icon": "",
+            "routerLink": "/master-page/discharge"
+          },
+          {
+            "label": "Discharge Summary",
+            "icon": "",
+            "routerLink": "/master-page/discharge-summary"
+          },
+          {
+            "label": "Reports",
+            "icon": "",
+            "children": [
+              {
+                "label": "IPD Addmission Report",
+                "icon": "",
+                "routerLink": "/master-page/ipd-admission-report"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "OT",
+        "icon": "bi bi-heart-pulse",
+        "children": [
+          {
+            "label": "OT Schedule",
+            "icon": "",
+            "routerLink": "/master-page/ot-schedule"
+          },
+          {
+            "label": "OT Request",
+            "icon": "",
+            "routerLink": "/master-page/ot-request"
+          },
+          {
+            "label": "OT Schedule List",
+            "icon": "",
+            "routerLink": "/master-page/ot-schedule-list"
+          }
+        ]
+      },
+      {
+        "label": "Labour_Room",
+        "icon": "bi bi-people",
+        "children": [
+          {
+            "label": "Labour Room Schedule",
+            "icon": "",
+            "routerLink": "/master-page/labour-room-schedule"
+          },
+          {
+            "label": "Labour Room Request",
+            "icon": "",
+            "routerLink": "/master-page/labour-room-request"
+          },
+          {
+            "label": "Labour Room Details",
+            "icon": "",
+            "routerLink": "/master-page/labour-room-details"
+          },
+          {
+            "label": "Schedule List",
+            "icon": "",
+            "routerLink": "/master-page/schedule-list"
+          },
+          {
+            "label": "Labour Room Finalized List",
+            "icon": "",
+            "routerLink": "/master-page/labour-room-finalized-list"
+          }
+        ]
+      },
+      {
+        "label": "Nursing_Station",
+        "icon": "bi bi-clipboard-pulse",
+        "children": [
+          {
+            "label": "Documents",
+            "icon": "",
+            "children": [
+              {
+                "label": "Birth Certificate",
+                "icon": "",
+                "routerLink": "/master-page/birth-certificate"
+              },
+              {
+                "label": "Still Birth Certificate",
+                "icon": "",
+                "routerLink": "/master-page/still-birth-certificate"
+              },
+              {
+                "label": "Death Certificate",
+                "icon": "",
+                "routerLink": "/master-page/death-certificate"
+              },
+              {
+                "label": "Post Mortem Certificate",
+                "icon": "",
+                "routerLink": "/master-page/post-mortem-certificate"
+              }
+            ]
+          },
+          {
+            "label": "Nursing Console",
+            "icon": "",
+            "routerLink": "/master-page/nursing-console"
+          },
+          {
+            "label": "Add Charges for Nurse / Doctor",
+            "icon": "",
+            "routerLink": "/master-page/add-charges-for-nurse-doctor"
+          },
+          {
+            "label": "Inpatient Issue",
+            "icon": "",
+            "routerLink": "/master-page/inpatient-issue"
+          }
+        ]
+      },
+      {
+        "label": "Billing",
+        "icon": "bi bi-receipt",
+        "children": [
+          {
+            "label": "Bill List",
+            "icon": "",
+            "routerLink": "/master-page/bill-list"
+          },
+          {
+            "label": "Cancelled Bill List",
+            "icon": "",
+            "routerLink": "/master-page/cancelled-bill-list"
+          },
+          {
+            "label": "Bill Refund",
+            "icon": "",
+            "routerLink": "/master-page/bill-refund"
+          },
+          {
+            "label": "Advance",
+            "icon": "",
+            "routerLink": "/master-page/advance"
+          },
+          {
+            "label": "Company Bill Settlement",
+            "icon": "",
+            "routerLink": "/master-page/company-bill-settlement"
+          },
+          {
+            "label": "Bill",
+            "icon": "",
+            "routerLink": "/master-page/"
+          }
+        ]
+      },
+      {
+        "label": "Investigation",
+        "icon": "bi bi-binoculars",
+        "children": [
+          {
+            "label": "Laboratory",
+            "icon": "",
+            "routerLink": "/master-page/"
+          },
+          {
+            "label": "Radiology",
+            "icon": "",
+            "routerLink": "/master-page/"
+          }
+        ]
+      },
+      {
+        "label": "Inventory",
+        "icon": "bi bi-bag-plus",
+        "children": [
+          {
+            "label": "Transfer",
+            "icon": "",
+            "routerLink": "/master-page/"
+          },
+          {
+            "label": "Opening Balance",
+            "icon": "",
+            "routerLink": "/master-page/opening-balance"
+          },
+          {
+            "label": "Item Enquiry",
+            "icon": "",
+            "routerLink": "/master-page/item-enquiry"
+          },
+          {
+            "label": "Quotation",
+            "icon": "",
+            "routerLink": "/master-page/quotation"
+          },
+          {
+            "label": "Generate PO",
+            "icon": "",
+            "routerLink": "/master-page/generate-po"
+          },
+          {
+            "label": "Good Receive Note",
+            "icon": "",
+            "routerLink": "/master-page/good-receive-note"
+          },
+          {
+            "label": "Return Items",
+            "icon": "",
+            "routerLink": "/master-page/return-items"
+          },
+          {
+            "label": "Current Stock",
+            "icon": "",
+            "routerLink": "/master-page/current-stock"
+          },
+          {
+            "label": "Stock Consumption",
+            "icon": "",
+            "routerLink": "/master-page/stock-consumption"
+          },
+          {
+            "label": "Adjust Stock",
+            "icon": "",
+            "routerLink": "/master-page/adjust-stock"
+          },
+          {
+            "label": "Scrap Sale",
+            "icon": "",
+            "routerLink": "/master-page/scrap-sale"
+          },
+          {
+            "label": "Reports",
+            "icon": "",
+            "routerLink": "/master-page/"
+          }
+        ]
+      },
+      {
+        "label": "Pharmacy",
+        "icon": "bi bi-capsule-pill",
+        "children": [
+          {
+            "label": "Pharmacy Pending List",
+            "icon": "",
+            "routerLink": "/master-page/pharmacy-pending-list"
+          },
+          {
+            "label": "Pharmacy Sale",
+            "icon": "",
+            "routerLink": "/master-page/pharmacy-sale"
+          },
+          {
+            "label": "Pharmacy Bill List",
+            "icon": "",
+            "routerLink": "/master-page/pharmacy-bill-list"
+          },
+          {
+            "label": "Pharmacy Queue",
+            "icon": "",
+            "routerLink": "/master-page/pharmacy-queue"
+          },
+          {
+            "label": "Pharmacy Sale Return",
+            "icon": "",
+            "routerLink": "/master-page/pharmacy-sale-return"
+          },
+          {
+            "label": "Pharmacy Bill Settlement",
+            "icon": "",
+            "routerLink": "/master-page/pharmacy-bill-settlement"
+          },
+          {
+            "label": "Pharmacy Bill Edit",
+            "icon": "",
+            "routerLink": "/master-page/pharmacy-bill-edit"
+          },
+          {
+            "label": "Nursing Indent",
+            "icon": "",
+            "routerLink": "/master-page/nursing-indent"
+          },
+          {
+            "label": "Reports",
+            "icon": "",
+            "routerLink": "/master-page/"
+          }
+        ]
+      },
+      {
+        "label": "Ambulance Requisition",
+        "icon": "bi bi-bus-front",
+        "routerLink": "/master-page/ambulance-requisition"
+      },
+      {
+        "label": "Form",
+        "icon": "bi bi-file-earmark-plus",
+        "children": [
+          {
+            "label": "OPD Application Form",
+            "icon": "",
+            "routerLink": "/master-page/opd-application-form"
+          },
+          {
+            "label": "IPD Application Form",
+            "icon": "",
+            "routerLink": "/master-page/ipd-application-form"
+          },
+          {
+            "label": "EMG Application Form",
+            "icon": "",
+            "routerLink": "/master-page/emg-application-form"
+          }
+        ]
+      },
+      {
+        "label": "FAQ",
+        "icon": "bi bi-question-octagon",
+        "routerLink": ""
+      },
+      {
+        "label": "Configuration",
+        "icon": "bi bi-gear",
+        "children": [
+          {
+            "label": "All Masters",
+            "icon": "",
+            "routerLink": "/master-page/all-masters"
+          }
+        ]
+      },
+      {
         "label": "Administration",
         "icon": "pi pi-box",
         "children": [
@@ -58,11 +593,6 @@
             "routerLink": "/master-page/organization"
           }
         ]
-      },
-      {
-        "label": "Registration",
-        "icon": "pi pi-slack",
-        "routerLink": "/master-page/registration-form"
       }
     ],
     "footer": {
