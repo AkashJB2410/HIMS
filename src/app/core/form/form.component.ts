@@ -51,7 +51,8 @@ export class FormComponent implements OnInit {
   }
 
   catpchaValue(data: any, id: any) {
-    id.fieldValue = data;
+    var ctrl = this.form.get(id.fieldName);
+    ctrl.setValue(data);
   }
 
   confirmPassword(data: any, id: any) {
