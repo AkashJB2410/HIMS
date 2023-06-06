@@ -388,7 +388,28 @@
           {
             "label": "Bill",
             "icon": "",
-            "routerLink": "/master-page/"
+            "children": [
+              {
+                "label": "EMG Bill",
+                "icon": "",
+                "routerLink": "/master-page/emg-bill"
+              },
+              {
+                "label": "OPD Bill",
+                "icon": "",
+                "routerLink": "/master-page/opd-bill"
+              },
+              {
+                "label": "IPD Charges",
+                "icon": "",
+                "routerLink": "/master-page/ipd-charges"
+              },
+              {
+                "label": "IPD Bill",
+                "icon": "",
+                "routerLink": "/master-page/ipd-bill"
+              }
+            ]
           }
         ]
       },
@@ -399,12 +420,39 @@
           {
             "label": "Laboratory",
             "icon": "",
-            "routerLink": "/master-page/"
+            "children": [
+              {
+                "label": "Lab Order List",
+                "icon": "",
+                "routerLink": "/master-page/lab-order-list"
+              },
+              {
+                "label": "Lab Order List",
+                "icon": "",
+                "routerLink": "/master-page/lab-order-list"
+              },
+              {
+                "label": "Lab Consumption Report",
+                "icon": "",
+                "routerLink": "/master-page/lab-consumption"
+              }
+            ]
           },
           {
             "label": "Radiology",
             "icon": "",
-            "routerLink": "/master-page/"
+            "children": [
+              {
+                "label": "Lab Order",
+                "icon": "",
+                "routerLink": "/master-page/lab-order"
+              },
+              {
+                "label": "PACS",
+                "icon": "",
+                "routerLink": "/master-page/pacs"
+              }
+            ]
           }
         ]
       },
@@ -415,7 +463,23 @@
           {
             "label": "Transfer",
             "icon": "",
-            "routerLink": "/master-page/"
+            "children": [
+              {
+                "label": "Requisition",
+                "icon": "",
+                "routerLink": "/master-page/requisition"
+              },
+              {
+                "label": "Transfer",
+                "icon": "",
+                "routerLink": "/master-page/transfer"
+              },
+              {
+                "label": "Receive",
+                "icon": "",
+                "routerLink": "/master-page/receive"
+              }
+            ]
           },
           {
             "label": "Opening Balance",
@@ -470,7 +534,13 @@
           {
             "label": "Reports",
             "icon": "",
-            "routerLink": "/master-page/"
+            "children": [
+              {
+                "label": "Current Stock Report",
+                "icon": "",
+                "routerLink": "/master-page/current-stock-report"
+              }
+            ]
           }
         ]
       },
@@ -521,7 +591,13 @@
           {
             "label": "Reports",
             "icon": "",
-            "routerLink": "/master-page/"
+            "children": [
+              {
+                "label": "Pharmacy Sales Report",
+                "icon": "",
+                "routerLink": "/master-page/pharmacy-sales-report"
+              }
+            ]
           }
         ]
       },

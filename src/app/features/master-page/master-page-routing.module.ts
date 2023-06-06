@@ -88,6 +88,21 @@ const routes: Routes = [
       { path: 'still-birth-certificate', loadChildren: () => import('./../still-birth-certificate/still-birth-certificate.module').then( m => m.StillBirthCertificateModule)},
       { path: 'death-certificate', loadChildren: () => import('./../death-certificate/death-certificate.module').then( m => m.DeathCertificateModule)},
       { path: 'post-mortem-certificate', loadChildren: () => import('./../post-mortem-certificate/post-mortem-certificate.module').then( m => m.PostMortemCertificateModule)},
+      { path: 'emg-bill', loadChildren: () => import('./../emg-bill/emg-bill.module').then( m => m.EmgBillModule)},
+      { path: 'opd-bill', loadChildren: () => import('./../opd-bill/opd-bill.module').then( m => m.OpdBillModule)},
+      { path: 'ipd-charges', loadChildren: () => import('./../ipd-charges/ipd-charges.module').then( m => m.IpdChargesModule)},
+      { path: 'ipd-bill', loadChildren: () => import('./../ipd-bill/ipd-bill.module').then( m => m.IpdBillModule)},
+      { path: 'lab-order-list', loadChildren: () => import('./../lab-order-list/lab-order-list.module').then( m => m.LabOrderListModule)},
+      { path: 'lab-reports', loadChildren: () => import('./../lab-reports/lab-reports.module').then( m => m.LabReportsModule)},
+      { path: 'lab-consumption-report', loadChildren: () => import('./../lab-consumption-report/lab-consumption-report.module').then( m => m.LabConsumptionReportModule)},
+      { path: 'lab-order', loadChildren: () => import('./../lab-order/lab-order.module').then( m => m.LabOrderModule)},
+      { path: 'pacs', loadChildren: () => import('./../pacs/pacs.module').then( m => m.PacsModule)},
+      { path: 'requisition', loadChildren: () => import('./../requisition/requisition.module').then( m => m.RequisitionModule)},
+      { path: 'transfer', loadChildren: () => import('./../transfer/transfer.module').then( m => m.TransferModule)},
+      { path: 'receive', loadChildren: () => import('./../receive/receive.module').then( m => m.ReceiveModule)},
+      { path: 'current-stock-report', loadChildren: () => import('./../current-stock-report/current-stock-report.module').then( m => m.CurrentStockReportModule)},
+      { path: 'pharmacy-sales-report', loadChildren: () => import('./../pharmacy-sales-report/pharmacy-sales-report.module').then( m => m.PharmacySalesReportModule)},
+
     ],
     // canActivate: [AuthGuardGuard]
   }];

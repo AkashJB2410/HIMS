@@ -93,6 +93,20 @@ import { BirthCertificateComponent } from './features/birth-certificate/birth-ce
 import { StillBirthCertificateComponent } from './features/still-birth-certificate/still-birth-certificate.component';
 import { DeathCertificateComponent } from './features/death-certificate/death-certificate.component';
 import { PostMortemCertificateComponent } from './features/post-mortem-certificate/post-mortem-certificate.component';
+import { EmgBillComponent } from './features/emg-bill/emg-bill.component';
+import { OpdBillComponent } from './features/opd-bill/opd-bill.component';
+import { IpdChargesComponent } from './features/ipd-charges/ipd-charges.component';
+import { IpdBillComponent } from './features/ipd-bill/ipd-bill.component';
+import { LabOrderListComponent } from './features/lab-order-list/lab-order-list.component';
+import { LabReportsComponent } from './features/lab-reports/lab-reports.component';
+import { LabConsumptionReportComponent } from './features/lab-consumption-report/lab-consumption-report.component';
+import { LabOrderComponent } from './features/lab-order/lab-order.component';
+import { PacsComponent } from './features/pacs/pacs.component';
+import { RequisitionComponent } from './features/requisition/requisition.component';
+import { TransferComponent } from './features/transfer/transfer.component';
+import { ReceiveComponent } from './features/receive/receive.component';
+import { CurrentStockReportComponent } from './features/current-stock-report/current-stock-report.component';
+import { PharmacySalesReportComponent } from './features/pharmacy-sales-report/pharmacy-sales-report.component';
 
 @NgModule({
   declarations: [
@@ -177,6 +191,20 @@ import { PostMortemCertificateComponent } from './features/post-mortem-certifica
     StillBirthCertificateComponent,
     DeathCertificateComponent,
     PostMortemCertificateComponent,
+    EmgBillComponent,
+    OpdBillComponent,
+    IpdChargesComponent,
+    IpdBillComponent,
+    LabOrderListComponent,
+    LabReportsComponent,
+    LabConsumptionReportComponent,
+    LabOrderComponent,
+    PacsComponent,
+    RequisitionComponent,
+    TransferComponent,
+    ReceiveComponent,
+    CurrentStockReportComponent,
+    PharmacySalesReportComponent,
   ],
   imports: [
     CommonModule,
