@@ -34,7 +34,7 @@
     "sidenavItems": [
       {
         "label": "Registration",
-        "icon": "pi pi-slack",
+        "icon": "bi bi-person-add",
         "routerLink": "/master-page/registration-form"
       },
       {
@@ -645,27 +645,27 @@
       },
       {
         "label": "Administration",
-        "icon": "pi pi-box",
+        "icon": "bi bi-diagram-3",
         "children": [
           {
             "label": "Role Management",
-            "icon": "pi pi-user-edit",
+            "icon": "",
             "routerLink": "/master-page/role-management"
           },
           {
             "label": "Master Module",
-            "icon": "pi pi-id-card",
+            "icon": "",
             "routerLink": "/master-page/master-module"
           },
           {
             "label": "Sub Module",
-            "icon": "pi pi-folder-open",
+            "icon": "",
             "routerLink": "/master-page/sub-module"
           },
          
           {
             "label": "Organization",
-            "icon": "pi pi-building",
+            "icon": "",
             "routerLink": "/master-page/organization"
           }
         ]
