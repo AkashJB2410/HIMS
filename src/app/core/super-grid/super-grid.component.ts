@@ -1,6 +1,5 @@
-import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ConfirmationService, PrimeNGConfig } from 'primeng/api';
+import { ConfirmationService } from 'primeng/api';
 
 @Component({
   selector: 'app-super-grid',
@@ -19,7 +18,8 @@ export class SuperGridComponent implements OnInit {
   filterData: any;
   editRowData: any;
   deleteRowData: any;
-  bulkdelete:any
+  bulkdelete: any;
+  isActiveData: any;
   @Input() configurations: any;
   @Input() tableConfig: any;
   @Input() tableData: any;
@@ -32,8 +32,11 @@ export class SuperGridComponent implements OnInit {
   @Output() inlineEdit = new EventEmitter;
   @Output() rowClickData = new EventEmitter;
   @Output() Bulkdelete = new EventEmitter;
+  @Output() isActive = new EventEmitter<string>();
+  @Output() onEdit = new EventEmitter<string>();
+  @Output() onAdd = new EventEmitter<string>();
 
-  constructor(private confirmationService: ConfirmationService, private primengConfig: PrimeNGConfig) { }
+  constructor(private confirmationService: ConfirmationService) { }
 
   ngOnInit(): void {
     this.config = this.tableConfig;
@@ -54,11 +57,16 @@ export class SuperGridComponent implements OnInit {
 
   editRow(e: any) {
     this.editRowData = e;
+    this.onEdit.emit("edit");
     this.visibleSidebar = true
   }
-
+  isactive(e: any) {
+    this.isActiveData = e;
+    this.isActive.emit(e);
+  }
   addRow(e: any) {
     this.editRowData = e;
+    this.onAdd.emit("add");
     this.visibleSidebar = true
   }
 
@@ -97,13 +105,13 @@ export class SuperGridComponent implements OnInit {
       accept: () => {
         this.confirmAction.emit(this.deleteRowData);
         this.Bulkdelete.emit(this.bulkdelete);
-
       },
       reject: () => {
         this.confirmAction.emit(false);
       }
     });
   }
+
   fitereddata(e: any) {
     this.fiteredData.emit(e);
   }

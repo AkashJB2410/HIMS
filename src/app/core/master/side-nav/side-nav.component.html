@@ -3,7 +3,7 @@
     [style.backgroundColor]="list.theme.sidenavBG">
     <div class="sideBarOrta">
       <ul class="nav flex-column">
-        <li> <img *ngIf="!status" src="../../../../assets/Techjivaa-White-Logo.png"
+        <li> <img *ngIf="!status" src="assets/esahaj darkpng.png"
             class="img img-fluid img-responsive openlogo" alt="Logo">
         </li>
         <li> <img *ngIf="status" src="../../../../assets/halflogoTechjivaa.png"
@@ -22,15 +22,39 @@
               <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
                 [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{item.label}}</span> <i
                 id="{{item.label}}" [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
-                class="pi pi-angle-down downarrow"></i>
+                class="bi bi-chevron-down downarrow"></i>
             </a>
             <ul class="collapse nav flex-column" id="{{item.label}}" data-bs-parent="#menu">
               <li class="w-100" *ngFor="let childItem of item.children" (click)="setStateAsActiveChild(childItem)"
-                routerLink="{{childItem.routerLink}}" style="cursor: pointer;">
-                <a [class.childMenu]="childItem === activeStatechild" class="sidenav-menu"><i class="{{childItem.icon}}"
-                    pTooltip="{{item.label}}"></i>
-                  <span
-                    [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight ms-1'">{{childItem.label}}</span></a>
+                style="cursor: pointer;">
+                <ng-container *ngIf="childItem.children == null; else list1">
+                  <a [class.parentMenu]="childItem === activeState" [href]="'#'+childItem.label"
+                    data-bs-toggle="collapse" class="sidenav-menu " routerLink="{{childItem.routerLink}}"
+                    pTooltip="{{childItem.label}}">
+                    <i class="{{childItem.icon}}"></i> <span class="d-sm-inline ms-2"
+                      [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{childItem.label}}</span>
+                  </a>
+                </ng-container>
+                <ng-template #list1>
+                  <a [class.parentMenu]="childItem === activeState" [href]="'#'+childItem.label"
+                    data-bs-toggle="collapse" class="sidenav-menu" pTooltip="{{childItem.label}}">
+                    <i class="{{childItem.icon}}"></i> <span class="d-sm-inline ms-2"
+                      [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{childItem.label}}</span>
+                    <i id="{{childItem.label}}"
+                      [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
+                      class="pi pi-angle-down downarrow"></i>
+                  </a>
+                  <ul class="collapse nav flex-column" id="{{childItem.label}}" data-bs-parent="#menu">
+                    <li class="w-100" *ngFor="let child of childItem.children"
+                      (click)="setStateAsActiveChild(childItem)" routerLink="{{child.routerLink}}"
+                      style="cursor: pointer;">
+                      <a [class.childMenu]="child === activeStatechild" class="sidenav-menu"><i class="{{child.icon}}"
+                          pTooltip="{{child.label}}"></i>
+                        <span
+                          [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight ms-1'">{{child.label}}</span></a>
+                    </li>
+                  </ul>
+                </ng-template>
               </li>
             </ul>
           </ng-template>
