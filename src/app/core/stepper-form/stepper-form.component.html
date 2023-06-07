@@ -4,7 +4,7 @@
         </p-steps>
     </div>
     <div class="" *ngFor="let data of stepperJSON.Form; let i = index">
-        <app-form *ngIf="activeIndex == i" [formJSON]="stepperJSON.Form[i] " (formData)="stapperValue($event)"
+        <app-form *ngIf="activeIndex == i" [formJSON]="stepperJSON.Form[i]" (formData)="stepperValue($event)"
             (btnEvent)="buttonClick($event)" [editData]="StoredData[i]"></app-form>
     </div>
 </div>

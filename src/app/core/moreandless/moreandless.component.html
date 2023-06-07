@@ -1,9 +1,10 @@
 <span *ngIf="text.length <= wordLimit && num">{{text}}</span>
 <span *ngIf="text.length > wordLimit && !showMore  && num">
-    {{text.substring(0,wordLimit)}}...<span class="font-weight-bold text-primary hand" (click)="showMore=true">show
-        more</span>
+    {{text.substring(0,wordLimit)}}<span class="font-weight-bold text-primary hand" (click)="showMore=true"><img
+            src="../../../assets/seemore Logo.png" style="margin-left: 11px !important;"></span>
 </span>
 <span *ngIf="text.length >  wordLimit && showMore  && num">{{text}}
-    <span class="font-weight-bold text-primary hand" (click)="showMore=false">show less</span>
+    <span class="font-weight-bold text-primary hand" (click)="showMore=false"><img
+            src="../../../assets/seemore Logo.png" style="margin-left: 11px !important;"></span>
 </span>
 <span *ngIf="!num">{{text}}</span>

@@ -99,7 +99,7 @@
   --bs-btn-disabled-bg: #FFA06B;
   --bs-btn-disabled-border-color: #FFA06B;
   border-radius: 8px;
-  
+
 }
 
 .butn-wrng {
@@ -131,7 +131,7 @@
   --bs-btn-border-color: #FFA06B;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #d8682b;
-  --bs-btn-hover-border-color:#d8682b;
+  --bs-btn-hover-border-color: #d8682b;
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   --bs-btn-active-color: #fff;
   --bs-btn-active-bg: #d8682b;
@@ -281,12 +281,14 @@
 /* ----------------------------All Button Css End--------------------------- */
 
 /* ------------------Realted To All Login page Css- Start---------------------- */
-.wrapper-login{
-  background-color: #B8C0CC !important ;
+.wrapper-login {
+  background-color: #B8C0CC !important;
 }
-.custom-card-login{
+
+.custom-card-login {
   background: #FFFFFF !important;
 }
+
 .input-box-login {
   display: block;
   cursor: pointer;
@@ -317,7 +319,7 @@
 }
 
 .custom-label-login {
-  color: #9FA2B4;
+  color: #585E6A;
 }
 
 .lbl-center-login-anchor {
@@ -405,7 +407,7 @@
 /*-------------------------Super Grid CSS Start--------------------------------------*/
 .p-datatable .p-datatable-header {
   background: white !important;
-  color: #e4e4e4 !important; 
+  color: #e4e4e4 !important;
   /* border: none !important; */
   border-width: 0 0 1px 0;
   padding: 1rem 1rem;
@@ -423,7 +425,7 @@
 .filterBG {
   border: 1px solid #F5FAFF;
   background-color: #F5FAFF;
-  
+
 }
 
 /*--------------------------Light-Theme-filter-Backgound Color start-----------------------------------------*/
@@ -664,7 +666,7 @@
 /* -----------------------All Related To Input  Css Start-------------------------- */
 .input-box {
   background-color: #EDF9FF;
- border: 1px solid #e2e2e4 !important;
+  border: 1px solid #e2e2e4 !important;
   color: #9a9a9a !important;
   outline: 0 !important;
 }
@@ -775,7 +777,8 @@ option:hover {
 /* -----------------------All Related To sideNav Css Start------------------------------ */
 
 .sidebarMenu-custom {
-  background: #415988 !important;
+   /* background: #415988 !important; */
+   background:#0463A8 !important;
   width: auto;
   transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
   transform-origin: bottom left;
@@ -889,6 +892,7 @@ for custom input box size use w-25 , w-50, w-75 on column of it
 .pi-ellipsis-v {
   color: #9a9a9a !important;
 }
+
 /* ----------------------All field border colour start---------------------------------- */
 .input-box,
 .p-inputtext.p-password-input,
@@ -896,14 +900,15 @@ for custom input box size use w-25 , w-50, w-75 on column of it
 .p-dropdown,
 .p-inputtext,
 .p-multiselect,
-.textarea-custom 
-{
-  border-color:#D8D8D8 !important ;
+.textarea-custom {
+  border-color: #D8D8D8 !important;
 }
+
 .p-multiselect {
   border-color: #D8D8D8 !important;
 
 }
+
 /* ----------------------All field border colour start---------------------------------- */
 
 /* --------------------In generic table last coloum arrow css start---------------------------------- */
@@ -916,13 +921,14 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   color: black !important;
   background-color: #8CC5FF !important;
 }
+
 /* --------------------In generic table last coloum arrow css End---------------------------------- */
 
 /* -------------------In from error message colour start------------------------ */
-.error-txt-msg
-{
-  color:red !important;
+.error-txt-msg {
+  color: red !important;
 }
+
 /* -------------------In from error message colour End------------------------ */
 
 /* --------------All realted to disable field css start------------------------------ */
@@ -941,11 +947,13 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   border-radius: 4px !important;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
+
 .textarea-custom1 {
   background-color: #EEEEEE;
   color: #EEEEEE !important;
   outline: 0;
 }
+
 .input-box1 {
   display: block;
   height: 32px;
@@ -969,62 +977,130 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   color: #9a9a9a !important;
   outline: 0 !important;
 }
+
 .p-field-checkbox1 {
   color: black;
   display: flex !important;
   background-color: #EEEEEE !important;
 }
+
 .radio-button1 {
   text-indent: 0.75em !important;
   align-items: center !important;
   background-color: #ebebeb !important;
 }
+
 /* --------------All realted to disable field css End------------------------------ */
 .headerIcon {
   font-size: 20px !important;
   color: #415988;
   margin-right: 20px;
 }
+.headerIcon1 {
+  font-size: 20px !important;
+  color: #415988;
+}
+
+.bi-gear::before {
+  font-size: 20px;
+  color: #415988;
+  font-weight: bold;
+
+}
+
+.bi-info-circle::before {
+  font-size: 20px;
+  color: #415988;
+  font-weight: bold;
+
+}
+
+
 /* -------------icons classes start------------- */
 
 /* -------------icons classes End------------- */
 
 /* -------------icons button classes with Hover start------------- */
-.icon-button-primary
-{
-  background-color: #4CA5FF !important; 
+.icon-button-primary {
+  background-color: #4CA5FF !important;
   color: white !important;
 }
-.icon-button-warn
-{
-  background-color: #FFA06B !important; 
+
+.icon-button-warn {
+  background-color: #FFA06B !important;
   color: white !important;
 }
-.icon-button-succes
-{
-  background-color: #43CAA3 !important; 
+
+.icon-button-succes {
+  background-color: #43CAA3 !important;
   color: white !important;
 }
 
 /* -----------Hover----------------- */
-.icon-button-primary:hover
-{
-  background-color: #0b5ed7 !important; 
+.icon-button-primary:hover {
+  background-color: #0b5ed7 !important;
   color: white !important;
 }
-.icon-button-warn:hover
-{
-  background-color: #d8682b !important; 
+
+.icon-button-warn:hover {
+  background-color: #d8682b !important;
   color: white !important;
 }
-.icon-button-succes:hover
-{
-  background-color: #1f745c !important; 
+
+.icon-button-succes:hover {
+  background-color: #1f745c !important;
   color: white !important;
 }
+
 /* -------------icons button classes with Hover End------------- */
-.imgUpload
-{
-height: 40px !important;
-width: 150px !important;
+
+.imgUpload {
+  display: block;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.7;
+  background-clip: padding-box;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+input[type="file"]::file-selector-button {
+  border: 2px solid #4CA5FF;
+  padding: 0.2em 0.4em;
+  height: 40px;
+  width: 100%;
+  color: white !important;
+  border-radius: 8px !important;
+  background-color: #4CA5FF;
+
+}
+
+input[type='file'] {
+  color: rgba(0, 0, 0, 0)
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #0445a7;
+  border: 2px solid #0445a7;
+
+}
+
+/* ----------------- */
+
+.imgUpload1 {
+  display: block;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.7;
+  background-clip: padding-box;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }

@@ -1,6 +1,6 @@
 {
     "loginForm": {
-        "backgroundImg": "../../../../assets/Techjivaa-Light-Logo.png",
+        "backgroundImg": "assets/sahaj.png",
         "backgroundImgCSS": "img img-responsive  img-fluid logo-img",
         "backgroundColour": "#b6c1c8",
         "classContainer": "container center-card",
