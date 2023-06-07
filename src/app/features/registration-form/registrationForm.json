@@ -38,9 +38,51 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Mobile No.",
-                "formControlName": "MobileNo",
+                "formControlName": "mobileNoInput",
                 "message": {
                     "required": "Mobile No. is required",
+                    "pattern": "Please re-enter using a valid 10-digit mobile number."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^\\+d{0,9}\\d{12}$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "ABHA ID",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter ABHA Id",
+                "formControlName": "abhaIdInput",
+                "message": {
+                    "required": "ABHA ID is required",
+                    "pattern": "Please re-enter using a valid 10-digit mobile number."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^\\+d{0,9}\\d{12}$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "ABHA Address",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter ABHA Address",
+                "formControlName": "abhaAddressInput",
+                "message": {
+                    "required": "ABHA address is required",
                     "pattern": "Please re-enter using a valid 10-digit mobile number."
                 },
                 "validations": {
@@ -59,57 +101,8 @@
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
-                "formControlName": "IdentificationTypeDrop",
-                "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    },
-                    {
-                        "name": "Aadhar Card",
-                        "code": "Aadhar Card"
-                    },
-                    {
-                        "name": "ABHA ID",
-                        "code": "ABHA ID"
-                    },
-                    {
-                        "name": "Passport",
-                        "code": "Passport"
-                    },
-                    {
-                        "name": "Pan Card",
-                        "code": "Pan Card"
-                    },
-                    {
-                        "name": "Voter Card",
-                        "code": "Voter Card"
-                    },
-                    {
-                        "name": "Ration Card",
-                        "code": "Ration Card"
-                    },
-                    {
-                        "name": "ANC Number",
-                        "code": "ANC Number"
-                    },
-                    {
-                        "name": "CHS Number",
-                        "code": "CHS Number"
-                    },
-                    {
-                        "name": "Army Identify Card",
-                        "code": "Army Identify Card"
-                    },
-                    {
-                        "name": "Driving Licence",
-                        "code": "Driving Licence"
-                    },
-                    {
-                        "name": "Other",
-                        "code": "Other"
-                    }
-                ],
+                "formControlName": "selectIdentificationType",
+                "values": [ ],
                 "message": {
                     "required": "Identification Type is required",
                     "pattern": ""
@@ -130,7 +123,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Identification Number",
-                "formControlName": "identificationNo",
+                "formControlName": "identificationNoInput",
                 "message": {
                     "required": "Identification Number is required",
                     "pattern": "Text is not allowed."
@@ -151,56 +144,12 @@
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
-                "formControlName": "title",
+                "formControlName": "selectTitle",
                 "message": {
                     "required": "Title is required",
                     "pattern": ""
                 },
                 "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    },
-                    {
-                        "name": "Mr",
-                        "code": "Mr"
-                    },
-                    {
-                        "name": "Mrs.",
-                        "code": "Mrs."
-                    },
-                    {
-                        "name": "B/O Boy",
-                        "code": "B/O Boy"
-                    },
-                    {
-                        "name": "B/O Girl",
-                        "code": "B/O Girl"
-                    },
-                    {
-                        "name": "Dr.",
-                        "code": "Dr."
-                    },
-                    {
-                        "name": "Dr. Mr",
-                        "code": "Dr. Mr"
-                    },
-                    {
-                        "name": "Dr. Ms",
-                        "code": "Dr. Ms"
-                    },
-                    {
-                        "name": "Miss.",
-                        "code": "Miss."
-                    },
-                    {
-                        "name": "Master",
-                        "code": "Master"
-                    },
-                    {
-                        "name": "Smt.",
-                        "code": "Smt."
-                    }
                 ],
                 "validations": {
                     "required": true,
@@ -218,7 +167,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter First Name...",
-                "formControlName": "firstName",
+                "formControlName": "firstNameInput",
                 "message": {
                     "required": "First Name is required",
                     "pattern": "Numbers not allowed."
@@ -239,7 +188,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Middle Name...",
-                "formControlName": "middleName",
+                "formControlName": "middleNameInput",
                 "message": {
                     "required": "Middle Name is required",
                     "pattern": "Numbers not allowed."
@@ -260,7 +209,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Last Name...",
-                "formControlName": "lastName",
+                "formControlName": "lastNameInput",
                 "message": {
                     "required": "Last Name is required",
                     "pattern": "Numbers not allowed."
@@ -380,7 +329,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
-                "formControlName": "YearDrop",
+                "formControlName": "selectYear",
                 "values": [
                     {
                         "name": "Select an Option",
@@ -419,25 +368,8 @@
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
-                "formControlName": "genderDrop",
-                "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    },
-                    {
-                        "name": "Male",
-                        "code": "M"
-                    },
-                    {
-                        "name": "Female",
-                        "code": "F"
-                    },
-                    {
-                        "name": "Other",
-                        "code": "o"
-                    }
-                ],
+                "formControlName": "selectGender",
+                "values": [],
                 "message": {
                     "required": "Gender is required",
                     "pattern": ""
@@ -459,7 +391,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "textarea-custom",
                 "placeholder": "",
-                "formControlName": "address",
+                "formControlName": "addressInput",
                 "message": {
                     "required": "Address is required",
                     "pattern": "invalid"
@@ -480,7 +412,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Pin Code...",
-                "formControlName": "lastName",
+                "formControlName": "pinCodeInput",
                 "message": {
                     "required": "Pin Code is required",
                     "pattern": "Numbers not allowed."
@@ -502,7 +434,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "xyz123@example.com",
-                "formControlName": "userEmail",
+                "formControlName": "emailInput",
                 "message": {
                     "required": "Email is required",
                     "pattern": "Please enter correct format"
@@ -523,45 +455,8 @@
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
-                "formControlName": "stateDrop",
-                "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    },
-                    {
-                        "name": "A+",
-                        "code": "A+"
-                    },
-                    {
-                        "name": "B+",
-                        "code": "B+"
-                    },
-                    {
-                        "name": "o+",
-                        "code": "o+"
-                    },
-                    {
-                        "name": "AB+",
-                        "code": "AB+"
-                    },
-                    {
-                        "name": "A-",
-                        "code": "A-"
-                    },
-                    {
-                        "name": "B-",
-                        "code": "B-"
-                    },
-                    {
-                        "name": "o-",
-                        "code": "o-"
-                    },
-                    {
-                        "name": "AB-",
-                        "code": "AB-"
-                    }
-                ],
+                "formControlName": "selectBlood",
+                "values": [ ],
                 "message": {
                     "required": "Blood Group is required",
                     "pattern": ""
@@ -570,7 +465,38 @@
                     "required": true,
                     "pattern": ""
                 }
+            },
+            {
+                "isVisible": true,
+                "type": "button",
+                "subtype": "submit",
+                "class": "col-md-2",
+                "valueclass": "butn-custom-wrng",
+                "btnLabel": "Submit",
+                "icon": "pi pi-check",
+                "isDisabled": false,
+                "formControlName":"btn1",
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isVisible": true,
+                "type": "button",
+                "subtype": "cancel",
+                "btnLabel": "Cancel",
+                "class": "col-md-2",
+                "valueclass": "butn-custom-dark-blue",
+                "icon": "pi pi-times",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
             }
+           
         ]
     }
 }

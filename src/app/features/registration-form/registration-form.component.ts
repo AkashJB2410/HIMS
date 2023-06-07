@@ -4,7 +4,7 @@ import registrationForm from "./registrationForm.json";
 import { MessageService } from 'primeng/api';
 import { RegistrationFormService } from './registration-form.service';
 import * as role_table_config from './registrationForm_table_config.json';
-import roleData from './registrationForm.json';
+import rgistrationData from './registrationForm.json';
 
 @Component({
   selector: 'app-registration-form',
@@ -22,11 +22,13 @@ export class RegistrationFormComponent implements OnInit {
   configurations: any;
   tableConfig: any;
   isdataReady = false;
-  sidebarJSON: any = roleData;
+  sidebarJSON: any = rgistrationData;
+  formdata: any;
 
   constructor(private messageService: MessageService, private http: RegistrationFormService) { }
 
   ngOnInit(): void {
+    this.assignDropDownOptions();
     this.configurations = {
       "isFilter": true,
       "isTable": true,
@@ -37,6 +39,104 @@ export class RegistrationFormComponent implements OnInit {
     // this.data = roleData;
     this.getConfigForTable();
   }
+
+  assignDropDownOptions() {
+    this.formdata = Object.assign({}, rgistrationData);
+    this.formdata.form.formControls.forEach((data: any) => {
+      // if (data.formControlName === "selectIdentificationType") {
+      //   data.values = [];
+      //   let defaultObj = {
+      //     "name": "Select Role",
+      //     "code": "0"
+      //   }
+      //   data.values.push(defaultObj);
+      //   this.http.GetAllRoleData().subscribe(item => {
+      //     item.forEach((e: any) => {
+      //       let obj = {
+      //         "name": e.role_Name,
+      //         "code": e.role_Id
+      //       }
+      //       data.values.push(obj);
+      //     })
+      //   })
+      // }
+      if (data.formControlName === "selectTitle") {
+        data.values = [];
+        let defaultObj = {
+          "name": "Select Title",
+          "code": "0"
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllTitleData().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.title_Type,
+              "code": e.titleId
+            }
+            data.values.push(obj);
+          })
+        })
+      }
+      // if (data.formControlName === "selectYear") {
+      //   data.values = [];
+      //   let defaultObj = {
+      //     "name": "Select Sub Module",
+      //     "code": "0"
+      //   }
+      //   data.values.push(defaultObj);
+      //   this.http.GetAllSubModuleData().subscribe(item => {
+      //     item.forEach((e: any) => {
+      //       console.log("sub module ==>> ==>>",e)
+      //       let obj = {
+      //         "name": e.label,
+      //         "code": e.submodule_Id
+      //       }
+      //       data.values.push(obj);
+      //     })
+      //   })
+      // }
+      if (data.formControlName === "selectGender") {
+        data.values = [];
+        let defaultObj = {
+          "name": "Select Sub Module",
+          "code": "0"
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllmstGenderData().subscribe(item => {
+          item.forEach((e: any) => {
+            console.log("sub module ==>> ==>>",e)
+            let obj = {
+              "name": e.gender_Type,
+              "code": e.id
+            }
+            data.values.push(obj);
+          })
+        })
+      }
+      if (data.formControlName === "selectBlood") {
+        data.values = [];
+        let defaultObj = {
+          "name": "Select Sub Module",
+          "code": "0"
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllBloodGroupData().subscribe(item => {
+          item.forEach((e: any) => {
+            console.log("bloodGroup ==>> ==>>",e)
+            let obj = {
+              "name": e.bloodGroup,
+              "code": e.bloodgroupId
+            }
+            data.values.push(obj);
+          })
+        })
+      }
+      
+    })
+
+  }
+
+
   buttonClick(e: any) {
     if (e == 'next') {
       console.log(e)
@@ -45,7 +145,7 @@ export class RegistrationFormComponent implements OnInit {
     }
   }
   getAllRoleData() {
-    this.http.GetAllRoleData().subscribe(res => {
+    this.http.GetAllUserData().subscribe(res => {
       this.data = res;
       this.isdataReady = true;
     })
@@ -64,13 +164,13 @@ export class RegistrationFormComponent implements OnInit {
     // this.messageService.add({ severity: 'success', summary: 'Message form User component', detail: 'Deleted Sucessfully' });
     // console.log(e)
     this.data = undefined;
-    this.deleteRoleData(e.role_Id);
+    this.deleteUSerData(e.role_Id);
 
     this.messageService.add({ severity: 'success', summary: 'Message form User component', detail: 'Deleted Sucessfully' });
     console.log("Deleted" + JSON.stringify(e))
   }
-  deleteRoleData(roleId: any) {
-    this.http.deleteRoleData(roleId)
+  deleteUSerData(roleId: any) {
+    this.http.deleteUserData(roleId)
       .subscribe(data => {
         this.getAllRoleData();
         console.log("data" + data)
@@ -83,20 +183,20 @@ export class RegistrationFormComponent implements OnInit {
     } else if (e.idInput == true) {
       console.log(e)
      
-      this.submitRoleData(e);
+      this.submitUserData(e);
       this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
 
     } else {
       console.log(e);
-      this.updateRoleData(e);
+      this.updateUserData(e);
       this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data updated successfull.' });
 
     }
 
 
   }
-  submitRoleData(roleData: any) {
-    this.http.saveRoleData(roleData)
+  submitUserData(roleData: any) {
+    this.http.saveUserData(roleData)
       .subscribe(data => {
         this.data = undefined;
         this.getAllRoleData();
@@ -104,8 +204,8 @@ export class RegistrationFormComponent implements OnInit {
       })
   }
 
-  updateRoleData(roleData: any) {
-    this.http.updateRoleData(roleData)
+  updateUserData(roleData: any) {
+    this.http.updateUserData(roleData)
       .subscribe(data => {
         this.data = undefined;
         this.getAllRoleData();
