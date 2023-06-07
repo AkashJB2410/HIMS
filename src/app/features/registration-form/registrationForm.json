@@ -45,7 +45,7 @@
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^\\+d{0,9}\\d{12}$"
+                    "pattern": "^[a-zA-Z0-9@.,\\s-]+$"
                 }
             },
             {

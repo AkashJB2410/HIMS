@@ -17,7 +17,7 @@ const routes: Routes = [
       { path: 'er-patient-list', loadChildren: () => import('./../er-patient-list/er-patient-list.module').then(m => m.ErPatientListModule)},
       { path: 'er-discharge-patient-list', loadChildren: () => import('./../er-discharge-patient-list/er-discharge-patient-list.module').then(m => m.ErDischargePatientListModule)},
       { path: 'cancel-patient-list', loadChildren: () => import('./../cancel-patient-list/cancel-patient-list.module').then( m => m.CancelPatientListModule)},
-      { path: 'all-masters', loadChildren: () => import('./../all-masters/all-masters.module').then( m => m.AllMastersModule)},
+      { path: 'configuration/all-masters', loadChildren: () => import('./../all-masters/all-masters.module').then( m => m.AllMastersModule)},
       { path: 'create-abha-id', loadChildren: () => import('./../create-abha-id/create-abha-id.module').then( m => m.CreateAbhaIdModule)},
       { path: 'patient-list', loadChildren: () => import('./../patient-list/patient-list.module').then( m => m.PatientListModule)},
       { path: 'patients-waiting', loadChildren: () => import('./../patients-waiting/patients-waiting.module').then( m => m.PatientsWaitingModule)},
@@ -102,7 +102,22 @@ const routes: Routes = [
       { path: 'receive', loadChildren: () => import('./../receive/receive.module').then( m => m.ReceiveModule)},
       { path: 'current-stock-report', loadChildren: () => import('./../current-stock-report/current-stock-report.module').then( m => m.CurrentStockReportModule)},
       { path: 'pharmacy-sales-report', loadChildren: () => import('./../pharmacy-sales-report/pharmacy-sales-report.module').then( m => m.PharmacySalesReportModule)},
-
+      { path: 'radiology-confirmation', loadChildren: () => import('./../radiology-cofirmation/radiology-cofirmation.module').then( m => m.RadiologyCofirmationModule)},
+      { path: 'quick-radiology-confirmation', loadChildren: () => import('./../quick-radiology-confirmation/quick-radiology-confirmation.module').then( m => m.QuickRadiologyConfirmationModule)},
+      { path: 'additional-charges', loadChildren: () => import('./../additional-charges/additional-charges.module').then( m => m.AdditionalChargesModule)},
+      { path: 'radiology-reports', loadChildren: () => import('./../radiology-reports/radiology-reports.module').then( m => m.RadiologyReportsModule)},
+      { path: 'results-update', loadChildren: () => import('./../results-update/results-update.module').then( m => m.ResultsUpdateModule)},
+      { path: 'dispatch-govt', loadChildren: () => import('./../dispatch-govt/dispatch-govt.module').then( m => m.DispatchGovtModule)},
+      { path: 'covid-billing-summary', loadChildren: () => import('./../covid-billing-summary/covid-billing-summary.module').then( m => m.CovidBillingSummaryModule)},
+      { path: 'cash-flow', loadChildren: () => import('./../cash-flow/cash-flow.module').then( m => m.CashFlowModule)},
+      { path: 'batch-list', loadChildren: () => import('./../batch-list/batch-list.module').then( m => m.BatchListModule)},
+      { path: 'batch-results-entry', loadChildren: () => import('./../batch-results-entry/batch-results-entry.module').then( m => m.BatchResultsEntryModule)},
+      { path: 'qa-approval', loadChildren: () => import('./../pacs/pacs.module').then( m => m.PacsModule)},
+      { path: 'bulk-report-download', loadChildren: () => import('./../bulk-report-download/bulk-report-download.module').then( m => m.BulkReportDownloadModule)},
+      { path: 'covid-walk-in-registrations', loadChildren: () => import('./../covid-walk-in-registrations/covid-walk-in-registrations.module').then( m => m.CovidWalkInRegistrationsModule)},
+      { path: 'covid-walk-in-search', loadChildren: () => import('./../covid-walk-in-search/covid-walk-in-search.module').then( m => m.CovidWalkInSearchModule)},
+      { path: 'configuration/all-masters/bank-master', loadChildren: () => import('./../bank-master/bank-master.module').then( m => m.BankMasterModule)},
+      
     ],
     // canActivate: [AuthGuardGuard]
   }];

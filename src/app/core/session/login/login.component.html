@@ -12,7 +12,7 @@
                     <div class="lbl-center-login" *ngIf="timerFlag2" >
                         Now login with your correct password.
                     </div>
-                    <app-form [formJSON]="loginForm" (formData)="onSubmit($event)" (changeEvents)="oncheck($event)"></app-form>
+                    <app-form *ngIf="jaadu" [formJSON]="loginForm" (formData)="onSubmit($event)" (changeEvents)="oncheck($event)"></app-form>
                 </div>
             </div>
         </div>

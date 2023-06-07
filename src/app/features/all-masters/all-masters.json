@@ -1,0 +1,41 @@
+{
+    "tabular": [
+        {
+            "header": "Unit Configuration",
+            "type": "form"
+        }
+    ],
+    "Form": [
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12",
+                        "lblclass": "",
+                        "id": "anchor",
+                        "placeholder": "/master-page/configuration/all-masters/bank-master",
+                        "formControlName": "Bank Master",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
+            

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import tabularData from './all-masters.json'
 
 @Component({
   selector: 'app-all-masters',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllMastersComponent implements OnInit {
 
+  tabularSideData=tabularData;
   constructor() { }
 
   ngOnInit(): void {
