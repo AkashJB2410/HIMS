@@ -1,11 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators
-} from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormControlTypes, IFormField } from './form.interface';
 import { CustomDatePipe } from '../shared/service/custom-date.pipe';
 import { FormService } from '../shared/service/form.service';
@@ -13,8 +8,8 @@ import { FormService } from '../shared/service/form.service';
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-
 })
+
 export class FormComponent implements OnInit {
   form: FormGroup;
   formControls: IFormField[] = [];
@@ -26,7 +21,7 @@ export class FormComponent implements OnInit {
   dateFormat: any;
   date = new Date();
   events: any = [];
-  regex: Array<string> = ['int', 'email', 'num', 'alpha', 'alphanum'];
+  regex: Array<string> = ['int', 'num', 'alpha', 'alphanum'];
   formValid: boolean = false;
   primeNgComponents: Array<string> = ['month', 'select', 'radio', 'checkbox', 'date', 'dateRange', 'password'];
   @Input() formJSON: any;
@@ -50,13 +45,14 @@ export class FormComponent implements OnInit {
     });
   }
 
-  catpchaValue(data: any, id: any) {
-    var ctrl = this.form.get(id.fieldName);
-    ctrl.setValue(data);
+  catpchaValue(value: any, control: any) {
+    var ctrl = this.form.get(control.fieldName);
+    ctrl.setValue(value);
   }
 
-  confirmPassword(data: any, id: any) {
-    id.fieldValue = data;
+  confirmPassword(value: any, control: any) {
+    var ctrl = this.form.get(control.fieldName);
+    ctrl.setValue(value);
   }
 
   onImageUpload(event: any, id: any) {
@@ -74,8 +70,9 @@ export class FormComponent implements OnInit {
     this.changeEvents.emit(this.events);
   }
 
-  dependentDrop(event: any, id: any) {
-    id.fieldValue = event;
+  dependentDrop(value: any, control: any) {
+    var ctrl = this.form.get(control.fieldName);
+    ctrl.setValue(value);
   }
 
   renderForm(data: any) {
@@ -95,6 +92,7 @@ export class FormComponent implements OnInit {
   }
 
   setData(data: any) {
+    var ctrl = this.form.get(data.formData.formControlName);
     this.form.controls[data.formData.formControlName].setValue(data.value);
   }
 
@@ -137,8 +135,9 @@ export class FormComponent implements OnInit {
     let controls = this.formJSON.form.formControls;
     controls.forEach((control: any, i: any) => {
       if (control.validations != undefined) {
-        if (!this.regex.includes(control.validations.pattern)) {
-          control.validations.pattern = new RegExp(control.validations.pattern);
+        if (!this.regex.includes(control.validations.pattern) && control.validations.pattern != "") {
+          const noSpecial: RegExp = /^[14]+$/
+          control.validations.pattern = noSpecial;
         }
       }
       let ctrl = <IFormField>{

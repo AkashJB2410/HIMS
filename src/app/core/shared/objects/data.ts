@@ -416,6 +416,102 @@ export const data =
             "inventoryStatus": "INSTOCK",
             "rating": 5,
             "date":"2023-05-02"
+        },    {
+            "id": "1031",
+            "code": "f230fh0g3",
+            "name": "Zbyan",
+            "description": "Product Description",
+            "image": "bamboo-watch.jpg",
+            "price": 65,
+            "category": "Accessories",
+            "quantity": 24,
+            "inventoryStatus": "INSTOCK",
+            "rating": 5,
+            "date":"2023-05-02"
+        },    {
+            "id": "1031",
+            "code": "f230fh0g3",
+            "name": "Zbyan",
+            "description": "Product Description",
+            "image": "bamboo-watch.jpg",
+            "price": 65,
+            "category": "Accessories",
+            "quantity": 24,
+            "inventoryStatus": "INSTOCK",
+            "rating": 5,
+            "date":"2023-05-02"
+        },    {
+            "id": "1031",
+            "code": "f230fh0g3",
+            "name": "Zbyan",
+            "description": "Product Description",
+            "image": "bamboo-watch.jpg",
+            "price": 65,
+            "category": "Accessories",
+            "quantity": 24,
+            "inventoryStatus": "INSTOCK",
+            "rating": 5,
+            "date":"2023-05-02"
+        },    {
+            "id": "1031",
+            "code": "f230fh0g3",
+            "name": "Zbyan",
+            "description": "Product Description",
+            "image": "bamboo-watch.jpg",
+            "price": 65,
+            "category": "Accessories",
+            "quantity": 24,
+            "inventoryStatus": "INSTOCK",
+            "rating": 5,
+            "date":"2023-05-02"
+        },    {
+            "id": "1031",
+            "code": "f230fh0g3",
+            "name": "Zbyan",
+            "description": "Product Description",
+            "image": "bamboo-watch.jpg",
+            "price": 65,
+            "category": "Accessories",
+            "quantity": 24,
+            "inventoryStatus": "INSTOCK",
+            "rating": 5,
+            "date":"2023-05-02"
+        }, {
+            "id": "1031",
+            "code": "f230fh0g3",
+            "name": "Zbyan",
+            "description": "Product Description",
+            "image": "bamboo-watch.jpg",
+            "price": 65,
+            "category": "Accessories",
+            "quantity": 24,
+            "inventoryStatus": "INSTOCK",
+            "rating": 5,
+            "date":"2023-05-02"
+        }, {
+            "id": "1031",
+            "code": "f230fh0g3",
+            "name": "Zbyan",
+            "description": "Product Description",
+            "image": "bamboo-watch.jpg",
+            "price": 65,
+            "category": "Accessories",
+            "quantity": 24,
+            "inventoryStatus": "INSTOCK",
+            "rating": 5,
+            "date":"2023-05-02"
+        }, {
+            "id": "1031",
+            "code": "f230fh0g3",
+            "name": "Zbyan",
+            "description": "Product Description",
+            "image": "bamboo-watch.jpg",
+            "price": 65,
+            "category": "Accessories",
+            "quantity": 24,
+            "inventoryStatus": "INSTOCK",
+            "rating": 5,
+            "date":"2023-05-02"
         }
     ]
 

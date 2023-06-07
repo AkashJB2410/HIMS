@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   userDetails: any;
   headerData: any
   themeOptins: any[];
+  Information:any[];
   selectedTheme: any;
 
   @Input() headerInput: any;
@@ -26,10 +27,16 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     private elementRef: ElementRef) { }
 
   ngOnInit(): void {
+
     this.list = this.headerInput;
     this.userDetails = JSON.parse(this.decrypt.transform(sessionStorage.getItem('loggedUser')));
     this.headerData = this.list.header
     this.themeOptins = [
+      {
+      label: '',
+      icon:'bi bi-gear ',
+      class:'headerIcon1',
+      items:[
       {
         label: 'Theme',
         items: [
@@ -45,8 +52,61 @@ export class HeaderComponent implements OnInit, AfterViewInit {
           }
         ]
       }
-    ];
+    ]}]
+    this.Information = [
+      {
+        label: '',
+        icon:'bi bi-info-circle ',
+        class:'headerIcon1',
+        items:[
+      {
+          label: 'Traning ',
+          items: [
+              {
+                  label: 'Traning ',
+                  theme:'dark-theme',
+              
+              },
+              {
+                  label: 'Traning Videos',
+                  theme:'light-theme',
+                  
+    
+                  
+              }
+          ],
+      },{
+        label:'Traning',
+        items: [
+          {
+              label: 'Traning',
+              theme:'dark-theme',
+          
+          },
+          {
+              label: 'Traning Video',
+              theme:'light-theme',
+              items: [
+                {
+                    label: 'Traning ',
+                    theme:'dark-theme',
+                
+                },
+                {
+                    label: 'Traning ',
+                    theme:'light-theme',
+      
+                    
+                }
+            ],
+              
+          }
+      ],
+      }
+        
+    ]}]
   }
+  
 
   ngAfterViewInit() {
     let s = document.createElement('script');

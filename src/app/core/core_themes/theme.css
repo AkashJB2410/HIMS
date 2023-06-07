@@ -4,7 +4,7 @@
 
 body {
   font-family: 'Manrope', sans-serif;
-  font-size: 13px;
+  font-size: 11px;
 }
 
 .modal-backdrop {
@@ -23,7 +23,7 @@ body {
   background: #ffffff;
   color: #212529;
   transition: box-shadow 0.15s;
-  height: 35px !important;
+  /* height: 35px !important; */
 }
 
 /* .p-datatable.p-datatable-striped .p-datatable-tbody>tr:nth-child(even) {
@@ -877,7 +877,7 @@ body {
 }
 
 .custom-label {
-  font-size: 13px;
+  font-size: 11px;
   /* font-weight: 700; */
   line-height: 15px;
   letter-spacing: 0.3px;
@@ -1427,8 +1427,7 @@ body {
   font-size: 12px;
   line-height: 15px;
   letter-spacing: 0.3px;
-  text-transform: uppercase;
-  color: #9FA2B4;
+  color: #585E6A;
 }
 
 .logo-img {
@@ -1459,7 +1458,7 @@ body {
   font-size: 24px;
   line-height: 30px;
   margin-top: 1rem;
-  margin-bottom: 0px;
+  margin-bottom: 1rem;
 }
 
 .lbl-center-text {
@@ -1756,6 +1755,10 @@ body {
   padding: 10px 35px !important;
 }
 
+.p-dialog {
+  margin-top: 7rem !important;
+}
+
 /*-------------------------Login CSS End--------------------------------------*/
 
 .p-dialog .p-dialog-header {
@@ -1875,7 +1878,7 @@ body {
 /* -------------------------Size for elements-------------------------------------- */
 .p-component,
 .p-component * {
-  font-size: 12px !important;
+  font-size: 11px !important;
 }
 
 .p-datatable.p-datatable-sm .p-datatable-tbody>tr>td {
@@ -1883,11 +1886,11 @@ body {
 }
 
 .btn {
-  font-size: 13px !important;
+  font-size: 11px !important;
 }
 
 .pi {
-  font-size: 13px !important;
+  font-size: 11px !important;
 }
 
 .p-input-icon-left-search-icon,
@@ -2009,8 +2012,8 @@ body {
 
 .p-checkbox .p-checkbox-box {
   border: 1px solid #757575 !important;
-  width: 15px !important;
-  height: 15px !important;
+  width: 13px !important;
+  height: 13px !important;
   margin-top: 1px;
 }
 
@@ -2236,6 +2239,68 @@ body {
 }
 
 .p-overlaypanel {
-  max-height: 30rem ;
+  max-height: 30rem;
   overflow-y: scroll;
+}
+
+.p-component-overlay {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.lbl-center-forgot-password {
+  text-align: center;
+  /* color: red; */
+  font-size: 22px;
+  line-height: 30px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.p-menubar {
+  background: transparent;
+  color: rgba(0, 0, 0, 0.87);
+  border: none !important;
+  border-radius: 4px;
+  padding: 0rem !important;
+  top: 20px
+}
+
+.p-menubar .p-submenu-list {
+  display: block;
+  left: 100%;
+  width: 150% !important;
+  padding: 0rem !important;
+}
+
+.bi-gear::before {
+  font-size: 20px !important;
+}
+.bi-info-circle::before {
+  font-size: 20px;
+}
+
+.p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link {
+  padding: 1rem;
+  color: rgba(0, 0, 0, 0.87);
+  border-radius: 4px;
+  transition: none;
+  -webkit-user-select: none;
+  user-select: none;
+  top: -6px !important;
+}
+
+.pi-angle-down:before {
+  display: none;
+}
+.lbl-center-forgot-password{
+  text-align: center;
+    /* color: red; */
+    font-size: 22px;
+    line-height: 30px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.p-menubar .p-menuitem-link {
+  padding:0.7rem 0.7rem !important;
+
 }
