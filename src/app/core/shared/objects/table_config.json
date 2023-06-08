@@ -24,7 +24,7 @@
     "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
     "isCheckbox" : true,
     "resizableColumns": true,
-    "isActions": ["Edit", "Delete" ,"Viewer"],
+    "isActions": ["Edit", "Delete" ,"Viewer" ,"isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "expand":true,
     "buttonlbl":"New Product",

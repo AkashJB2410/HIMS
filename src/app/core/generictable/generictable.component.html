@@ -90,7 +90,7 @@
                         <button *ngIf="config.isActions.includes('Viewer')" pButton pRipple icon="pi pi-window-maximize"
                             style="background-color: black;" routerLink="/dicom-viewer"
                             class="p-button-rounded "></button>
-                            <button *ngIf="config.isActions.includes('Edit')" pButton pRipple icon="pi pi-box "
+                            <button *ngIf="config.isActions.includes('isActive')" pButton pRipple icon="pi pi-box "
                              class="p-button-rounded icon-pencil edit-btn " (click)="active(rowData)"></button>
                     </ng-container>
                 </td>

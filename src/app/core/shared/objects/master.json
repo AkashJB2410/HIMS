@@ -62,25 +62,31 @@
           }
         ]
       },
-      "dp": "../../assets/userlogo.png"
+      "dp": "../../assets/userlogo.png",
+      "sidenavLogo":"/assets/Techjivaa-White-Logo.png",
+      "onlyLogo":"/assets/halflogoTechjivaa.png"
     },
     "sidenavItems": [
+      {
+        "logo": "../../assets/Techjivaa-svg-removebg.png"
+
+      },
       {
         "label": "TabularForm",
         "icon": "bi bi-person-up",
         "children": [
           {
             "label": "New",
-            "icon": "",
+            "icon": "bi bi-person-up",
             "routerLink": "/master-page/dashboard"
           },
           {
             "label": "Group",
-            "icon": "",
+            "icon": "pi pi-fw pi-book",
             "children": [
               {
                 "label": "Sub child",
-                "icon": "",
+                "icon": "bi bi-person-up",
                 "routerLink": "/master-page/user-management"
               }
             ]
@@ -93,7 +99,7 @@
         "children": [
           {
             "label": "Table",
-            "icon": "",
+            "icon": "bi bi-person-up",
             "routerLink": "/master-page/user-management"
           }
         ]

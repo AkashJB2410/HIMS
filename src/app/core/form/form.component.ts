@@ -70,6 +70,13 @@ export class FormComponent implements OnInit {
     this.changeEvents.emit(this.events);
   }
 
+  blurValue(event: any, data: any){
+    this.events = [];
+    this.events.push(event.value);
+    this.events.push(data);
+    this.changeEvents.emit(this.events);
+  }
+
   dependentDrop(value: any, control: any) {
     var ctrl = this.form.get(control.fieldName);
     ctrl.setValue(value);
