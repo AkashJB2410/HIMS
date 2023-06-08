@@ -715,7 +715,7 @@
           {
             "label": "All Masters",
             "icon": "",
-            "routerLink": "/master-page/configuration/all-masters"
+            "routerLink": "/master-page/all-masters"
           }
         ]
       },
@@ -723,11 +723,6 @@
         "label": "Administration",
         "icon": "bi bi-diagram-3",
         "children": [
-          {
-            "label": "Role Management",
-            "icon": "",
-            "routerLink": "/master-page/role-management"
-          },
           {
             "label": "Master Module",
             "icon": "",
@@ -737,12 +732,6 @@
             "label": "Sub Module",
             "icon": "",
             "routerLink": "/master-page/sub-module"
-          },
-         
-          {
-            "label": "Organization",
-            "icon": "",
-            "routerLink": "/master-page/organization"
           }
         ]
       }

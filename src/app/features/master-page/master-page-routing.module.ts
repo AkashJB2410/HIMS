@@ -6,10 +6,10 @@ const routes: Routes = [
   {
     path: '', component: MasterPageComponent,
     children: [
-      { path: 'role-management', loadChildren: () => import('./../role-management/role-management.module').then(m => m.RoleManagementModule) },
+      { path: 'all-masters/role-management', loadChildren: () => import('./../role-management/role-management.module').then(m => m.RoleManagementModule) },
       { path: 'master-module', loadChildren: () => import('./../master-module/master-module.module').then(m => m.MasterModuleModule) },
       { path: 'sub-module', loadChildren: () => import('./../sub-module/sub-module.module').then(m => m.SubModuleModule) },
-      { path: 'organization', loadChildren:()=> import('./../organization/organizationModule').then(m=>m.OrganizationModule)},
+      { path: 'all-masters/organization', loadChildren:()=> import('./../organization/organizationModule').then(m=>m.OrganizationModule)},
       { path: 'registration-form', loadChildren:()=> import('./../registration-form/registration-form.module').then(m=>m.RegistrationFormModule)},
 
       { path: 'home', loadChildren: () => import('./../home/home.module').then(m => m.HomeModule)},
@@ -17,7 +17,7 @@ const routes: Routes = [
       { path: 'er-patient-list', loadChildren: () => import('./../er-patient-list/er-patient-list.module').then(m => m.ErPatientListModule)},
       { path: 'er-discharge-patient-list', loadChildren: () => import('./../er-discharge-patient-list/er-discharge-patient-list.module').then(m => m.ErDischargePatientListModule)},
       { path: 'cancel-patient-list', loadChildren: () => import('./../cancel-patient-list/cancel-patient-list.module').then( m => m.CancelPatientListModule)},
-      { path: 'configuration/all-masters', loadChildren: () => import('./../all-masters/all-masters.module').then( m => m.AllMastersModule)},
+      { path: 'all-masters', loadChildren: () => import('./../all-masters/all-masters.module').then( m => m.AllMastersModule)},
       { path: 'create-abha-id', loadChildren: () => import('./../create-abha-id/create-abha-id.module').then( m => m.CreateAbhaIdModule)},
       { path: 'patient-list', loadChildren: () => import('./../patient-list/patient-list.module').then( m => m.PatientListModule)},
       { path: 'patients-waiting', loadChildren: () => import('./../patients-waiting/patients-waiting.module').then( m => m.PatientsWaitingModule)},
@@ -116,8 +116,7 @@ const routes: Routes = [
       { path: 'bulk-report-download', loadChildren: () => import('./../bulk-report-download/bulk-report-download.module').then( m => m.BulkReportDownloadModule)},
       { path: 'covid-walk-in-registrations', loadChildren: () => import('./../covid-walk-in-registrations/covid-walk-in-registrations.module').then( m => m.CovidWalkInRegistrationsModule)},
       { path: 'covid-walk-in-search', loadChildren: () => import('./../covid-walk-in-search/covid-walk-in-search.module').then( m => m.CovidWalkInSearchModule)},
-      { path: 'configuration/all-masters/bank-master', loadChildren: () => import('./../bank-master/bank-master.module').then( m => m.BankMasterModule)},
-      
+      { path: 'all-masters/bank-master', loadChildren: () => import('./../bank-master/bank-master.module').then( m => m.BankMasterModule)},      
     ],
     // canActivate: [AuthGuardGuard]
   }];

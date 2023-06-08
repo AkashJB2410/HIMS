@@ -3,7 +3,7 @@
         "class": "row",
         "formTitle": "Add Organization",
         "formName": "Form1",
-        "formType": "edit",
+        "sidebar": "p-sidebar-sm",
         "formControls": [
             {
                 "isEditable": true,
@@ -50,13 +50,15 @@
             },
             
             {
+                "id": 2,
                 "isEditable": true,
                 "isVisible": true,
+                "transient": true,
                 "type": "button",
-                "subtype": "reset",
-                "btnLabel": "Back",
-                "class": "col-md-4",
-                "valueclass": "butn-custom-dark-blue ",
+                "subtype": "save",
+                "class": "col-md-6",
+                "valueclass": "btn-primary-custombutton-sm",
+                "btnLabel": "Save",
                 "icon": "",
                 "isDisabled": false,
                 "formControlName": "",
@@ -66,13 +68,15 @@
                 }
             },
             {
+                "id": 3,
                 "isEditable": true,
                 "isVisible": true,
+                "transient": true,
                 "type": "button",
-                "subtype": "save",
-                "class": "col-md-4",
-                "valueclass": "butn-custom-dark-blue",
-                "btnLabel": "Save",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-6",
+                "valueclass": "btn-warning-custombutton-sm",
                 "icon": "",
                 "isDisabled": false,
                 "formControlName": "",

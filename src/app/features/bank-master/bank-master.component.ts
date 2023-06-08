@@ -17,6 +17,7 @@ export class BankMasterComponent implements OnInit {
   visibleSiderbar: boolean = false;
   table_Data: any;
   sidebar_Update_Input: any = bank_Master_Form;
+  saveMethod: boolean = false;
   constructor(private messageService:MessageService, private http:BankMasterService) { }
 
   ngOnInit(): void {
@@ -45,25 +46,49 @@ export class BankMasterComponent implements OnInit {
     this.visibleSiderbar=true;
   }
 
+  saveBankMaster(data:any){
+    this.saveMethod = true;
+  }
+
+  editBankMaster(data:any){
+  }
+
+  isActive(data:any){
+    
+    if(data.is_Deleted){
+      this.http.reactiveBankMaster(data)
+        .subscribe(b_Data => {
+          this.table_Data = undefined;
+          this.getAllBankMaster();
+        })
+        this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Bank Master Enable Successfully' });  
+    }
+    else if(!data.is_Deleted){
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Bank Master is already Active' });
+    }
+  }
+
   confirmAction(e:any){
     if(e.is_Active==true){
       this.table_Data=undefined;
       this.deleteBankMaster(e);
       this.messageService.add({ severity: 'success', summary: 'Disabled', detail: 'Bank Master Disabled Successfully' });
     }
+    else if (e.is_Active==false){
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Bank Master is already Disabled' });
+    }
     else{}
   }
 
   sidebarData(e:any){
-    console.log(e);
-    
-    if (e == 'reset') {
-    } else if (e.bankId == true) {
+    if(e=='reset'){}
+    else if (this.saveMethod) {
       this.addBankMaster(e);
       this.messageService.add({ severity: 'success', summary: 'Added', detail: 'Bank Master Added Successfully' });
+      this.saveMethod=false;
     } else {
-      this.updateBankMaster(e);
-      this.messageService.add({ severity: 'success', summary: 'Updated', detail: 'Bank Master Updated Successfully.' });  
+        this.updateBankMaster(e);
+        this.messageService.add({ severity: 'success', summary: 'Updated', detail: 'Bank Master Updated Successfully.' });
     }
   }
 

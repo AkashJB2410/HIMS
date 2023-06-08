@@ -6,6 +6,10 @@
             "header":"Sr. No.","iseditable": false , "class":""
         },
         {
+            "field":"bankId",
+            "header":"Uniqe Code","iseditable": false , "class":""
+        },
+        {
             "field":"bankName",
             "header":"Bank Name","iseditable": false , "class":""
         },
@@ -27,9 +31,13 @@
         {
             "field":"is_Active",
             "header":"Active Status"
+        },
+        {
+            "field":"bankId",
+            "header":"Uniqe Code"
         }
     ],
-    "globalFilter":["bankId","bankName","is_Active"],
+    "globalFilter":["bankId","bankName","is_Active","bankId"],
     "rows" : 10,
     "showCurrentPageReport" : true,
     "rowsPerPageOptions" : [10,25,50],

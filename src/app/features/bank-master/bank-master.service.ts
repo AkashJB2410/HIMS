@@ -39,4 +39,9 @@ export class BankMasterService {
     const url = "http://localhost:8081/api/v1/deleteMstBank/"+bank_Master;
     return this.http.delete<any>(url);
   }
+
+  reactiveBankMaster(bank_Master:any){
+    const url = "http://localhost:8081/api/v1/reactiveMstBank/"+bank_Master.bankId;
+    return this.http.post<any>(url, bank_Master)
+  }
 }
