@@ -1,0 +1,54 @@
+{
+    "listClass":"col-md-2",
+    "cardClass":"col-md-10",
+    "tabular": [
+        {
+            "id":0,
+            "label": "Admission Configuration"
+        },
+        {
+            "id":1,
+            "label": "Discharge Configuration"
+        },
+        {
+            "id":2,
+            "label": "Billing Configuration"
+        },
+        {
+            "id":3,
+            "label": "Docter Schedule"
+        },
+        {
+            "id":4,
+            "label": "EMR Configuration"
+        },
+        {
+            "id":5,
+            "label": "Inventory Configuration"
+        },
+        {
+            "id":6,
+            "label": "OT Configuration"
+        },
+        {
+            "id":7,
+            "label": "Pathology Configuration"
+        },
+        {
+            "id":8,
+            "label": "Radiology Configuration"
+        },
+        {
+            "id":9,
+            "label": "Patient Configuration"
+        },
+        {
+            "id":10,
+            "label": "Unit Configuration"
+        },
+        {
+            "id":11,
+            "label": "Nursing Station Configuration"
+        }
+    ]
+}

@@ -69,6 +69,62 @@
         ]
       },
       {
+        "label": "COVID_19",
+        "icon": "bi bi-virus",
+        "children": [
+          {
+            "label": "Results Update",
+            "icon": "",
+            "routerLink": "/master-page/results-update"
+          },
+          {
+            "label": "Dispatch - Govt.",
+            "icon": "",
+            "routerLink": "/master-page/dispatch-govt"
+          },
+          {
+            "label": "COVID Billing Summary",
+            "icon": "",
+            "routerLink": "/master-page/covid-billing-summary"
+          },
+          {
+            "label": "Cash Flow",
+            "icon": "",
+            "routerLink": "/master-page/cash-flow"
+          },
+          {
+            "label": "Batch List",
+            "icon": "",
+            "routerLink": "/master-page/batch-list"
+          },
+          {
+            "label": "Batch Results Entry",
+            "icon": "",
+            "routerLink": "/master-page/batch-results-entry"
+          },
+          {
+            "label": "QA Approval",
+            "icon": "",
+            "routerLink": "/master-page/qa-approval"
+          },
+          {
+            "label": "Bulk Report Download",
+            "icon": "",
+            "routerLink": "/master-page/bulk-report-download"
+          },
+          {
+            "label": "COVID Walk-In Registrations",
+            "icon": "",
+            "routerLink": "/master-page/covid-walk-in-registrations"
+          },
+          {
+            "label": "COVID Walk-In Search",
+            "icon": "",
+            "routerLink": "/master-page/covid-walk-in-search"
+          }
+        ]
+      },
+      {
         "label": "ABHA",
         "icon": "bi bi-file-person",
         "children": [
@@ -451,6 +507,26 @@
                 "label": "PACS",
                 "icon": "",
                 "routerLink": "/master-page/pacs"
+              },
+              {
+                "label": "Radiology Confirmation",
+                "icon": "",
+                "routerLink": "/master-page/radiology-confirmation"
+              },
+              {
+                "label": "Quick Radiology Confirmation",
+                "icon": "",
+                "routerLink": "/master-page/quick-radiology-confirmation"
+              },
+              {
+                "label": "Additional Charges",
+                "icon": "",
+                "routerLink": "/master-page/additional-charges"
+              },
+              {
+                "label": "Radiology Reports",
+                "icon": "",
+                "routerLink": "/master-page/radiology-reports"
               }
             ]
           }
@@ -648,11 +724,6 @@
         "icon": "bi bi-diagram-3",
         "children": [
           {
-            "label": "Role Management",
-            "icon": "",
-            "routerLink": "/master-page/role-management"
-          },
-          {
             "label": "Master Module",
             "icon": "",
             "routerLink": "/master-page/master-module"
@@ -661,12 +732,6 @@
             "label": "Sub Module",
             "icon": "",
             "routerLink": "/master-page/sub-module"
-          },
-         
-          {
-            "label": "Organization",
-            "icon": "",
-            "routerLink": "/master-page/organization"
           }
         ]
       }

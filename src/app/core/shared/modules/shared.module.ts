@@ -69,6 +69,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { CardsComponent } from '../../cards/cards.component';
 import {MenubarModule} from 'primeng/menubar';
 import {TabMenuModule} from 'primeng/tabmenu';
+import { VerticalTabularComponent } from '../../vertical-tabular/vertical-tabular.component';
 
 @NgModule({
     declarations: [
@@ -101,7 +102,8 @@ import {TabMenuModule} from 'primeng/tabmenu';
         ChartsComponent,
         MoreandlessComponent,
         SuperFormComponent,
-        CardsComponent
+        CardsComponent,
+        VerticalTabularComponent
     ],
     imports: [
         CommonModule,
@@ -177,7 +179,7 @@ import {TabMenuModule} from 'primeng/tabmenu';
         MoreandlessComponent,
         SuperFormComponent,
         CardsComponent,
-
+VerticalTabularComponent,
         //============= Core Imports =============
 
         FormsModule,

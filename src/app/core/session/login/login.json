@@ -122,6 +122,28 @@
                     }
                 },
                 {
+                    "id": 6,
+                    "isEditable": true,
+                    "isVisible": true,
+                    "transient": true,
+                    "label": "Organization Type",
+                    "type": "select",
+                    "class": "col-md-12  my-1",
+                    "lblclass": "custom-label",
+                    "valueclass": "",
+                    "placeholder": "Select",
+                    "formControlName": "organization",
+                    "values": [],
+                    "message": {
+                        "required": "",
+                        "pattern": ""
+                    },
+                    "validations": {
+                        "required": false,
+                        "pattern": ""
+                    }
+                },
+                {
                     "isEditable": true,
                     "isVisible": true,
                     "transient": false,
