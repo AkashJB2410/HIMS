@@ -434,16 +434,22 @@ a.article :hover {
     bottom: 0;
 }
 
-
-li a.parentMenu {
-    background-color: #CD9C1D;
-}
-
 li a.childMenu {
     color: #CD9C1D !important;
 
 }
+li a.parentMenu {
+    background-color: #CD9C1D;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
 
+li a.subchildMenu {
+    background-color: #CD9C1D;
+    border-radius: 4px;
+
+}
 .downarrow {
     margin-left: 80px !important;
 }
@@ -452,6 +458,12 @@ li a.childMenu {
     position: absolute;
     bottom: 60px;
     left: 0;
+}
+.subchildMargin{
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 /* .inboxContainer {

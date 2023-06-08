@@ -1119,3 +1119,15 @@ input[type="file"]::file-selector-button:hover {
   border: 2px solid #0445a7;
 
 }
+ul p.verticaltab{
+  background-color: #CD9C1D;
+  color: black;
+  padding:3px;
+  border-radius: 4px;
+}
+.verticalTabular{
+  color: white;
+}
+.verticalCards{
+  color: white;
+}

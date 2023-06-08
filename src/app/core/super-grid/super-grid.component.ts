@@ -33,8 +33,8 @@ export class SuperGridComponent implements OnInit {
   @Output() rowClickData = new EventEmitter;
   @Output() Bulkdelete = new EventEmitter;
   @Output() isActive = new EventEmitter<string>();
-  @Output() onEdit = new EventEmitter<string>();
-  @Output() onAdd = new EventEmitter<string>();
+  @Output() onEdit = new EventEmitter<any>();
+  @Output() onAdd = new EventEmitter<any>();
 
   constructor(private confirmationService: ConfirmationService) { }
 
@@ -57,7 +57,8 @@ export class SuperGridComponent implements OnInit {
 
   editRow(e: any) {
     this.editRowData = e;
-    this.onEdit.emit("edit");
+    let edit = "edit"
+    this.onEdit.emit({edit,e});
     this.visibleSidebar = true
   }
   isactive(e: any) {
@@ -66,7 +67,8 @@ export class SuperGridComponent implements OnInit {
   }
   addRow(e: any) {
     this.editRowData = e;
-    this.onAdd.emit("add");
+    let add = "add"
+    this.onAdd.emit({add, e});
     this.visibleSidebar = true
   }
 

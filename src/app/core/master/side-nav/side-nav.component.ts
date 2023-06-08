@@ -17,6 +17,7 @@ export class SideNavComponent implements OnInit {
   @Input() toggle: any;
   @Input() masterJSON: any;
   expandCollapse: boolean = true;
+  activeStateSubchild: any;
 
   clickEvent() {
     this.status = !this.status;
@@ -57,8 +58,11 @@ export class SideNavComponent implements OnInit {
   setStateAsActive(item: any) {
     this.activeState = item;
   }
-  setStateAsActiveChild(childItem: any) {
-    this.activeStatechild = childItem;
+  setStateAsActiveSubchild(SubChilditem: any) {
+    this.activeStateSubchild = SubChilditem;
+  }
+  setStateAsActiveChild(childItems: any) {
+    this.activeStatechild = childItems;
   }
   // arrowToggle(item: any) {
   //   this.arrowShow = true;
