@@ -6,10 +6,10 @@ const routes: Routes = [
   {
     path: '', component: MasterPageComponent,
     children: [
-      { path: 'role-management', loadChildren: () => import('./../role-management/role-management.module').then(m => m.RoleManagementModule) },
+      { path: 'all-masters/role-management', loadChildren: () => import('./../role-management/role-management.module').then(m => m.RoleManagementModule) },
       { path: 'master-module', loadChildren: () => import('./../master-module/master-module.module').then(m => m.MasterModuleModule) },
       { path: 'sub-module', loadChildren: () => import('./../sub-module/sub-module.module').then(m => m.SubModuleModule) },
-      { path: 'organization', loadChildren:()=> import('./../organization/organizationModule').then(m=>m.OrganizationModule)},
+      { path: 'all-masters/organization', loadChildren:()=> import('./../organization/organizationModule').then(m=>m.OrganizationModule)},
       { path: 'registration-form', loadChildren:()=> import('./../registration-form/registration-form.module').then(m=>m.RegistrationFormModule)},
 
       { path: 'home', loadChildren: () => import('./../home/home.module').then(m => m.HomeModule)},
@@ -102,7 +102,21 @@ const routes: Routes = [
       { path: 'receive', loadChildren: () => import('./../receive/receive.module').then( m => m.ReceiveModule)},
       { path: 'current-stock-report', loadChildren: () => import('./../current-stock-report/current-stock-report.module').then( m => m.CurrentStockReportModule)},
       { path: 'pharmacy-sales-report', loadChildren: () => import('./../pharmacy-sales-report/pharmacy-sales-report.module').then( m => m.PharmacySalesReportModule)},
-
+      { path: 'radiology-confirmation', loadChildren: () => import('./../radiology-cofirmation/radiology-cofirmation.module').then( m => m.RadiologyCofirmationModule)},
+      { path: 'quick-radiology-confirmation', loadChildren: () => import('./../quick-radiology-confirmation/quick-radiology-confirmation.module').then( m => m.QuickRadiologyConfirmationModule)},
+      { path: 'additional-charges', loadChildren: () => import('./../additional-charges/additional-charges.module').then( m => m.AdditionalChargesModule)},
+      { path: 'radiology-reports', loadChildren: () => import('./../radiology-reports/radiology-reports.module').then( m => m.RadiologyReportsModule)},
+      { path: 'results-update', loadChildren: () => import('./../results-update/results-update.module').then( m => m.ResultsUpdateModule)},
+      { path: 'dispatch-govt', loadChildren: () => import('./../dispatch-govt/dispatch-govt.module').then( m => m.DispatchGovtModule)},
+      { path: 'covid-billing-summary', loadChildren: () => import('./../covid-billing-summary/covid-billing-summary.module').then( m => m.CovidBillingSummaryModule)},
+      { path: 'cash-flow', loadChildren: () => import('./../cash-flow/cash-flow.module').then( m => m.CashFlowModule)},
+      { path: 'batch-list', loadChildren: () => import('./../batch-list/batch-list.module').then( m => m.BatchListModule)},
+      { path: 'batch-results-entry', loadChildren: () => import('./../batch-results-entry/batch-results-entry.module').then( m => m.BatchResultsEntryModule)},
+      { path: 'qa-approval', loadChildren: () => import('./../pacs/pacs.module').then( m => m.PacsModule)},
+      { path: 'bulk-report-download', loadChildren: () => import('./../bulk-report-download/bulk-report-download.module').then( m => m.BulkReportDownloadModule)},
+      { path: 'covid-walk-in-registrations', loadChildren: () => import('./../covid-walk-in-registrations/covid-walk-in-registrations.module').then( m => m.CovidWalkInRegistrationsModule)},
+      { path: 'covid-walk-in-search', loadChildren: () => import('./../covid-walk-in-search/covid-walk-in-search.module').then( m => m.CovidWalkInSearchModule)},
+      { path: 'all-masters/bank-master', loadChildren: () => import('./../bank-master/bank-master.module').then( m => m.BankMasterModule)},      
     ],
     // canActivate: [AuthGuardGuard]
   }];

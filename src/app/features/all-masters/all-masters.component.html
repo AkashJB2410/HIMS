@@ -1,1 +1,29 @@
 <p>all-masters works!</p>
+<app-vertical-tabular [tabularData]="tabularSideData" (renderComponents)="renderComponents($event)">
+    <div *ngIf="unitFlag">
+    <div class="row">
+        <div class="col-md-3 mb-1" *ngFor="let cards of allUnit.Forms">
+            <app-cards>
+                <app-form [formJSON]="cards"></app-form>
+            </app-cards>
+        </div>
+    </div><br>
+</div>
+
+    <div class="row" *ngIf="otFlag">
+        <div class="col-md-4">
+            <app-cards>
+               OT Configurations
+            </app-cards>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="emrFlag">
+        <div class="col-md-4">
+            <app-cards>
+               EMR Configurations
+            </app-cards>
+        </div>
+    </div>
+
+</app-vertical-tabular>

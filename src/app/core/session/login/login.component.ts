@@ -19,9 +19,12 @@ export class LoginComponent implements OnInit {
   timerFlag = false;
   timerFlag2 = false;
   rmCheck=false;
+  formdata: any;
+  jaadu=false;
   constructor(private router: Router, private messageService: MessageService, private http: SessionService, private encrypt: EncryptPipe, private form$: FormService) { }
 
   ngOnInit() {
+    this.jaadu=true;
     this.loginForm = data.loginForm;
     localStorage.clear();
     sessionStorage.clear();
@@ -54,7 +57,7 @@ export class LoginComponent implements OnInit {
 
   btn(a: any) {
     if (a == 3) {
-      this.loginForm.form.formControls[5].isDisabled = true;
+      this.loginForm.form.formControls[6].isDisabled = true;
     } else {
       this.messageService.add({ severity: 'error', summary: 'Error', detail: " btn msg" });
     }
@@ -66,6 +69,37 @@ export class LoginComponent implements OnInit {
         this.rmCheck = true;
       }
     })
+    this.formdata = Object.assign({}, data);
+    this.formdata.loginForm.form.formControls.forEach((data:any) => {
+      if(data.formControlName == 'organization'){
+        data.values =[
+          {
+            "name" : "Select",
+            "code" : ""
+          }
+        ];
+        this.http.orgData().subscribe(item => {
+          item.forEach((e:any) => {
+            let obj ={
+              "name":e.organization_Type,
+              "code":e.organization_Id
+            }
+            data.values.push(obj);
+            
+          })
+        })
+      }
+    })
+    this.refersh()
+  }
+
+  refersh(){
+    this.jaadu=false;
+    this.m()
+  }
+
+  m(){
+    this.jaadu=true;
   }
 
   onSubmit(e: any) {

@@ -107,6 +107,21 @@ import { TransferComponent } from './features/transfer/transfer.component';
 import { ReceiveComponent } from './features/receive/receive.component';
 import { CurrentStockReportComponent } from './features/current-stock-report/current-stock-report.component';
 import { PharmacySalesReportComponent } from './features/pharmacy-sales-report/pharmacy-sales-report.component';
+import { RadiologyCofirmationComponent } from './features/radiology-cofirmation/radiology-cofirmation.component';
+import { QuickRadiologyConfirmationComponent } from './features/quick-radiology-confirmation/quick-radiology-confirmation.component';
+import { AdditionalChargesComponent } from './features/additional-charges/additional-charges.component';
+import { RadiologyReportsComponent } from './features/radiology-reports/radiology-reports.component';
+import { ResultsUpdateComponent } from './features/results-update/results-update.component';
+import { DispatchGovtComponent } from './features/dispatch-govt/dispatch-govt.component';
+import { CovidBillingSummaryComponent } from './features/covid-billing-summary/covid-billing-summary.component';
+import { CashFlowComponent } from './features/cash-flow/cash-flow.component';
+import { BatchListComponent } from './features/batch-list/batch-list.component';
+import { BatchResultsEntryComponent } from './features/batch-results-entry/batch-results-entry.component';
+import { QaApprovalComponent } from './features/qa-approval/qa-approval.component';
+import { BulkReportDownloadComponent } from './features/bulk-report-download/bulk-report-download.component';
+import { CovidWalkInRegistrationsComponent } from './features/covid-walk-in-registrations/covid-walk-in-registrations.component';
+import { CovidWalkInSearchComponent } from './features/covid-walk-in-search/covid-walk-in-search.component';
+import { BankMasterComponent } from './features/bank-master/bank-master.component';
 
 @NgModule({
   declarations: [
@@ -205,6 +220,21 @@ import { PharmacySalesReportComponent } from './features/pharmacy-sales-report/p
     ReceiveComponent,
     CurrentStockReportComponent,
     PharmacySalesReportComponent,
+    RadiologyCofirmationComponent,
+    QuickRadiologyConfirmationComponent,
+    AdditionalChargesComponent,
+    RadiologyReportsComponent,
+    ResultsUpdateComponent,
+    DispatchGovtComponent,
+    CovidBillingSummaryComponent,
+    CashFlowComponent,
+    BatchListComponent,
+    BatchResultsEntryComponent,
+    QaApprovalComponent,
+    BulkReportDownloadComponent,
+    CovidWalkInRegistrationsComponent,
+    CovidWalkInSearchComponent,
+    BankMasterComponent,
   ],
   imports: [
     CommonModule,

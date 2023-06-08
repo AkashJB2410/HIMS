@@ -143,7 +143,7 @@ export class FormComponent implements OnInit {
     controls.forEach((control: any, i: any) => {
       if (control.validations != undefined) {
         if (!this.regex.includes(control.validations.pattern) && control.validations.pattern != "") {
-          const noSpecial: RegExp = /^[14]+$/
+          const noSpecial: RegExp = /^[a-zA-z]/
           control.validations.pattern = noSpecial;
         }
       }
