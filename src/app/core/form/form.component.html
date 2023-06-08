@@ -12,7 +12,7 @@
                             class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
                             [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
                             [(ngModel)]="formData.fieldValue" placeholder="{{formData.placeholder}}"
-                            [pKeyFilter]="formData.validations.pattern" (blur)="changeEvent($event, formData)">
+                            (blur)="blurValue($event.target, formData)">
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.MONTH">
                         <p-calendar inputId="{{formData.fieldName}}" [(ngModel)]="formData.fieldValue"
@@ -73,7 +73,7 @@
                         <textarea id="{{formData.fieldName}}" name="{{formData.fieldName}}" rows={{formData.row}}
                             [ngClass]="formData.editable ? formData.valueclass : 'textarea-custom1'"
                             [formControlName]="formData.fieldName" [(ngModel)]="formData.fieldValue"
-                            placeholder="{{formData.placeholder}}" (blur)="changeEvent($event, formData)"></textarea>
+                            placeholder="{{formData.placeholder}}" (blur)="blurValue($event, formData)"></textarea>
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.ANCHOR">
                         <a type="anchor" class="{{formData.lblclass}}" id="{{formData.fieldName}}"
@@ -86,7 +86,7 @@
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.IMAGEUPLOAD">
                         <input id="{{formData.fieldName}}" type="file" name="{{formData.fieldName}}"
-                          [ngClass]="formData.editable ? formData.valueclass : 'imgUpload1'"
+                            [ngClass]="formData.editable ? formData.valueclass : 'imgUpload1'"
                             class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
                             [(ngModel)]="formData.fieldValue" accept="image/*"
                             (change)="onImageUpload($event, formData); changeEvent($event, formData)" />
@@ -139,5 +139,3 @@
         </div>
     </form>
 </div>
-
-

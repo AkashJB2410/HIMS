@@ -1436,9 +1436,9 @@ body {
 }
 
 .openlogo {
-  width: 57%;
-  height: 66px;
-  margin-bottom: 35px;
+  width: 60%;
+  height: 100%;
+  /* margin-bottom: 35px; */
   margin-left: 35px;
   margin-top: 25px;
 }
@@ -2303,4 +2303,12 @@ body {
 .p-menubar .p-menuitem-link {
   padding:0.7rem 0.7rem !important;
 
+}
+
+.togglefix
+{
+  height: 22px;
+  width: 22px;
+  margin-left: 18em;
+  cursor: pointer;
 }
