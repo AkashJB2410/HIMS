@@ -6,6 +6,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./vertical-tabular.component.css']
 })
 export class VerticalTabularComponent implements OnInit {
+  activeState: any;
 
   constructor() { }
   @Input() tabularData: any;
@@ -16,5 +17,8 @@ export class VerticalTabularComponent implements OnInit {
   
   render(list:any){
     this.renderComponents.emit(list);
+  }
+  setActive(items:any){
+    this.activeState = items;
   }
 }

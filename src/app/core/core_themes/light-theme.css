@@ -1104,3 +1104,14 @@ input[type="file"]::file-selector-button:hover {
   appearance: none;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
+ul p.verticaltab{
+  background-color: #CD9C1D;
+  color: white;
+  padding:3px;
+  border-radius: 4px;
+}
+.arrow
+{
+  height: 15px !important;
+  width: 20px;
+}

@@ -1,4 +1,6 @@
 {
+    "listClass":"col-md-2",
+    "cardClass":"col-md-10",
     "tabular": [
         {
             "id":0,
