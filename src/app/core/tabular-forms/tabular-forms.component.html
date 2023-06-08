@@ -1,16 +1,10 @@
-<p-tabView [(activeIndex)]="index">
-    <p-tabPanel [header]="item.header" *ngFor="let item of tabularData; let i = index" [selected]="i == 0">
-        <div *ngIf="item.type=='form'">
-            <app-form [formJSON]="tabularJSON.Form[i]" (formData)="tabularValue($event)"
-                (btnEvent)="buttonClick($event)" (changeEvents)="changeEvent($event)"></app-form>
-        </div>
-        <!-- <div *ngIf="item.type=='super-grid'">
-            <app-super-grid *ngIf="tableData" [configurations]="configurations" [tableData]="tableData" [tableConfig]="config"
-                [filterJSON]="filterData" [sidebarJSON]="tabularJSON.Grid[0]" (sideBarEvent)="sidebarData($event)"
-                (confirmAction)="confirmAction($event)" (fiteredData)="fiteredData($event)">
-            </app-super-grid>
-        </div> -->
-
+<!-- <p-tabMenu [model]="tabularData" (onChange)="handleChange($event)"></p-tabMenu> -->
+<!-- <p-tabView [(activeIndex)]="index" (onChange)="handleChange($event)">
+    <p-tabPanel header="{{item.header}}" *ngFor="let item of tabularData">
+        <ng-content></ng-content>
     </p-tabPanel>
-</p-tabView>
+</p-tabView> -->
+
+<p-tabMenu #tab [model]="tabularData" (click)="handleChange(tab)"></p-tabMenu>
+<ng-content></ng-content>
 

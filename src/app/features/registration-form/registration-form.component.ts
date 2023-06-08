@@ -12,7 +12,7 @@ import rgistrationData from './registrationForm.json';
   styleUrls: ['./registration-form.component.css']
 })
 export class RegistrationFormComponent implements OnInit {
- 
+
   toast: any = {};
   showToast: any;
   Message: any;
@@ -43,28 +43,28 @@ export class RegistrationFormComponent implements OnInit {
   assignDropDownOptions() {
     this.formdata = Object.assign({}, rgistrationData);
     this.formdata.form.formControls.forEach((data: any) => {
-      // if (data.formControlName === "selectIdentificationType") {
-      //   data.values = [];
-      //   let defaultObj = {
-      //     "name": "Select Role",
-      //     "code": "0"
-      //   }
-      //   data.values.push(defaultObj);
-      //   this.http.GetAllRoleData().subscribe(item => {
-      //     item.forEach((e: any) => {
-      //       let obj = {
-      //         "name": e.role_Name,
-      //         "code": e.role_Id
-      //       }
-      //       data.values.push(obj);
-      //     })
-      //   })
-      // }
+      if (data.formControlName === "selectIdentificationType") {
+        data.values = [];
+        let defaultObj = {
+          "name": "Select Role",
+          "code": "0"
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllIdentificationTypeData().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.identification_Type,
+              "code": e.identificationTypeId
+            }
+            data.values.push(obj);
+          })
+        })
+      }
       if (data.formControlName === "selectTitle") {
         data.values = [];
         let defaultObj = {
           "name": "Select Title",
-          "code": "0"
+          "code": ""
         }
         data.values.push(defaultObj);
         this.http.GetAllTitleData().subscribe(item => {
@@ -104,7 +104,7 @@ export class RegistrationFormComponent implements OnInit {
         data.values.push(defaultObj);
         this.http.GetAllmstGenderData().subscribe(item => {
           item.forEach((e: any) => {
-            console.log("sub module ==>> ==>>",e)
+            console.log("sub module ==>> ==>>", e)
             let obj = {
               "name": e.gender_Type,
               "code": e.id
@@ -122,16 +122,77 @@ export class RegistrationFormComponent implements OnInit {
         data.values.push(defaultObj);
         this.http.GetAllBloodGroupData().subscribe(item => {
           item.forEach((e: any) => {
-            console.log("bloodGroup ==>> ==>>",e)
+            console.log("bloodGroup ==>> ==>>", e)
             let obj = {
-              "name": e.bloodGroup,
+              "name": e.bloodgroupName,
               "code": e.bloodgroupId
             }
             data.values.push(obj);
           })
         })
       }
-      
+      if (data.formControlName === "selectTaluka") {
+        data.values = [];
+        let defaultObj = {
+          "name": "Select Taluka",
+          "code": ""
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllMstTalukaData().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.taluka,
+              "code": e.talukaId
+            }
+            data.values.push(obj);
+          })
+        })
+      }
+      if (data.formControlName === "selectState") {
+        // data.values = [];
+        data.values.forEach((a: any) => {
+          if (a.label === "State") {
+            a.values = [];
+            let defaultObj = {
+              "name": "Select State",
+              "code": ""
+            }
+            a.values.push(defaultObj);
+            this.http.GetAllMstStateData().subscribe(item => {
+              item.forEach((e: any) => {
+                console.log("state ==>> ==>>", e)
+                let obj = {
+                  "name": e.stateName,
+                  "code": e.stateId
+                }
+                a.values.push(obj);
+              })
+            })
+          }
+          if (a.label === "Districts") {
+            a.values = [];
+            let defaultObj = {
+              "name": "Select Districts",
+              "code": "",
+              "Mcode": ""
+            }
+            a.values.push(defaultObj);
+            this.http.GetAllMstDistrictData().subscribe(item => {
+              item.forEach((e: any) => {
+                console.log("state ==>> ==>>", e)
+                let obj = {
+                  "name": e.stateName,
+                  "code": e.district,
+                  "Mcode": e.stateId_stateId
+                }
+                a.values.push(obj);
+              })
+            })
+          }
+        })
+
+      }
+
     })
 
   }
@@ -182,7 +243,7 @@ export class RegistrationFormComponent implements OnInit {
       console.log(e)
     } else if (e.idInput == true) {
       console.log(e)
-     
+
       this.submitUserData(e);
       this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
 

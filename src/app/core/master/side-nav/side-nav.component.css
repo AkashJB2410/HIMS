@@ -369,7 +369,7 @@ a.article :hover {
 .sidenav-menu {
     display: flex;
     color: #ffffff !important;
-    padding: 5px 17px;
+    padding: 5px 10px;
     text-decoration: none;
 }
 
@@ -454,9 +454,9 @@ li a.childMenu {
     left: 0;
 }
 
-.inboxContainer {
+/* .inboxContainer {
     position: sticky;
     overflow-y: scroll;
     height: 100vh;
     overflow-x: hidden;
-}
+} */

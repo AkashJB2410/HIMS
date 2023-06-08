@@ -74,6 +74,7 @@
 
 .dividerCss {
   color: #CD9C1D;
+  padding: none !important;
 }
 
 .butn-custom-wrng {
@@ -124,11 +125,13 @@
 :host ::ng-deep .p-tieredmenu {
   z-index: 1001;
   transform-origin: center top;
-  top: 35.5px;
-  left: 956.25px !important;
-  width: 111px;
+  top: 40.5px;
+  left:901.25px !important;
+  width: 15%;
 }
-
+:host ::ng-deep .p-submenu  {
+ width: 100px !important;
+}
 .flexNotification {
   display: flex;
   padding-top: 1rem;
@@ -156,4 +159,11 @@
   border-bottom: 1px solid #f2efef;
   margin-bottom: 7px;
   cursor: pointer
+}
+:host ::ng-deep .p-tieredmenu{
+  padding: 2px;
+  z-index: 1001;
+  transform-origin: center top;
+  left: 1001px !important;
+
 }

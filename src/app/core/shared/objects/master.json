@@ -67,17 +67,23 @@
     "sidenavItems": [
       {
         "label": "TabularForm",
-        "icon": "pi pi-fw pi-file",
+        "icon": "bi bi-person-up",
         "children": [
           {
             "label": "New",
-            "icon": "pi pi-fw pi-file",
+            "icon": "",
             "routerLink": "/master-page/dashboard"
           },
           {
-            "label": "Left",
-            "icon": "pi pi-server",
-            "routerLink": "/master-page/user-management"
+            "label": "Group",
+            "icon": "",
+            "children": [
+              {
+                "label": "Sub child",
+                "icon": "",
+                "routerLink": "/master-page/user-management"
+              }
+            ]
           }
         ]
       },
@@ -87,7 +93,7 @@
         "children": [
           {
             "label": "Table",
-            "icon": "pi pi-table",
+            "icon": "",
             "routerLink": "/master-page/user-management"
           }
         ]

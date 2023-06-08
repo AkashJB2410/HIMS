@@ -31,29 +31,28 @@ export class StepperFormComponent implements OnInit {
       this.StoredData[i] = [];
     }
   }
+  
   step(e: any) {
     this.activeIndex = e;
     this.form = true;
     this.formData = this.stepperJSON.Form[this.activeIndex];
   }
-  stapperValue(event: any) {
+  
+  stepperValue(event: any) {
     this.data = event;
   }
+  
   buttonClick(e: any) {
     if (e == 'next') {
       this.StoredData[this.activeIndex] = this.data;
       this.activeIndex += 1
     } else if (e == 'cancel') {
       this.StoredData[this.activeIndex] = this.data;
-      console.log(this.StoredData)
       this.activeIndex -= 1
     } else if (e == 'submit') {
-      this.show();
+      this.StoredData[this.activeIndex] = this.data;
       this.stepperEmitData.emit(this.StoredData)
     }
   }
-  show() {
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
-  }
-
+  
 }

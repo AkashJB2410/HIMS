@@ -12,7 +12,7 @@
                             class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
                             [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
                             [(ngModel)]="formData.fieldValue" placeholder="{{formData.placeholder}}"
-                            [pKeyFilter]="formData.validations.pattern"  (blur)="changeEvent($event, formData)">
+                            [pKeyFilter]="formData.validations.pattern" (blur)="changeEvent($event, formData)">
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.MONTH">
                         <p-calendar inputId="{{formData.fieldName}}" [(ngModel)]="formData.fieldValue"
@@ -27,7 +27,8 @@
                         <p-password inputId="{{formData.fieldName}}" [formControlName]="formData.fieldName"
                             [placeholder]="formData.placeholder" class="{{formData.valueclass}}"
                             [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
-                            [(ngModel)]="formData.fieldValue" [toggleMask]="true" (onClick)="changeEvent($event, formData)" ></p-password>
+                            [(ngModel)]="formData.fieldValue" [toggleMask]="true"
+                            (onClick)="changeEvent($event, formData)"></p-password>
                     </div>
                     <p-dropdown *ngIf="formData.fieldType == formStaticText.SELECT" [options]="formData.values"
                         [inputId]="formData.fieldName" [formControlName]="formData.fieldName"
@@ -65,8 +66,8 @@
                             [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
                             [name]="formData.fieldName" class="{{formData.valueclass}}"
                             [formControlName]="formData.fieldName" [(ngModel)]="formData.fieldValue"
-                            [showButtonBar]="false" [showIcon]="true" selectionMode="range"
-                            [readonlyInput]="true"  (onClick)="changeEvent($event, formData)"></p-calendar>
+                            [showButtonBar]="false" [showIcon]="true" selectionMode="range" [readonlyInput]="true"
+                            (onClick)="changeEvent($event, formData)"></p-calendar>
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.TEXTAREA">
                         <textarea id="{{formData.fieldName}}" name="{{formData.fieldName}}" rows={{formData.row}}
@@ -85,6 +86,7 @@
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.IMAGEUPLOAD">
                         <input id="{{formData.fieldName}}" type="file" name="{{formData.fieldName}}"
+                          [ngClass]="formData.editable ? formData.valueclass : 'imgUpload1'"
                             class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
                             [(ngModel)]="formData.fieldValue" accept="image/*"
                             (change)="onImageUpload($event, formData); changeEvent($event, formData)" />
@@ -104,7 +106,7 @@
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.CONFIRMPASSWORD">
                         <app-re-enter id="{{formData.fieldName}}"
-                            (confirmPass)="confirmPassword($event, formData)" ></app-re-enter>
+                            (confirmPass)="confirmPassword($event, formData)"></app-re-enter>
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.CAPTCHA" class="{{formData.valueclass}}">
                         <app-captcha id="{{formData.fieldName}}"
@@ -123,10 +125,12 @@
                         style="color: red;">
                         {{formData.message.required}}
                     </div>
-                    <div class="error-txt-msg" *ngIf="form.controls[formData.fieldName].hasError('required') && form.controls[formData.fieldName].touched">
+                    <div class="error-txt-msg"
+                        *ngIf="form.controls[formData.fieldName].hasError('required') && form.controls[formData.fieldName].touched">
                         {{formData.message.required}}
                     </div>
-                    <div class="error-txt-msg" *ngIf="form.controls[formData.fieldName].hasError('pattern') && form.controls[formData.fieldName].touched">
+                    <div class="error-txt-msg"
+                        *ngIf="form.controls[formData.fieldName].hasError('pattern') && form.controls[formData.fieldName].touched">
                         {{formData.message.pattern}}
                     </div>
                 </div>
@@ -135,3 +139,5 @@
         </div>
     </form>
 </div>
+
+

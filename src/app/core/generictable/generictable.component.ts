@@ -45,6 +45,8 @@ export class GenerictableComponent implements OnInit {
   @Output() inlineEdit = new EventEmitter<string>();
   @Output() onAdd = new EventEmitter<string>();
   @Output() onRowClickData = new EventEmitter<string>();
+  @Output() isActive = new EventEmitter<string>();
+
 
   constructor() { }
 
@@ -130,7 +132,9 @@ export class GenerictableComponent implements OnInit {
   }
 
   exportPdf() {
-    const doc = new jsPDF('p', 'pt');
+    this.exportColumns,
+    this._selectedColumns;
+    const doc = new jsPDF('p', 'pt', 'a2');
     if (this.chekboxes.length == 0) {
       (doc as any)['autoTable'](this.exportColumns, this.tableData);
     } else {
@@ -165,6 +169,9 @@ export class GenerictableComponent implements OnInit {
     }
     return color;
   }
+  active(e:any){
+    this.isActive.emit(e);
 
+  }
 }
 

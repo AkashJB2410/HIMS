@@ -272,7 +272,7 @@
 }
 
 .custom-label-login {
-  color: #9FA2B4;
+  color: white;
 }
 
 .lbl-center-login-anchor {
@@ -363,7 +363,8 @@
 } */
 
 .sidebarMenu-custom {
-  background: #415988 !important;
+  /* background: #415988 !important; */
+  background:#0463A8 !important;
   width: auto;
   transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
   transform-origin: bottom left;
@@ -1031,6 +1032,21 @@ input::placeholder {
   color:white;
   margin-right: 20px;
 }
+.headerIcon1 {
+  font-size: 20px !important;
+  color:white;
+}
+.bi-gear::before {
+  
+  font-size: 20px;
+  color:white;
+  font-weight: bold;
+}
+.bi-info-circle::before {
+  font-size: 20px;
+  color:white;
+  font-weight: bold;
+}
 /* -------------icons button classes with Hover start------------- */
 .icon-button-primary
 {
@@ -1067,3 +1083,39 @@ input::placeholder {
 /* -------------icons button classes with Hover End------------- */
 .custom-height
 {height:300px}
+
+
+.imgUpload {
+  display: block;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.7;
+  background-clip: padding-box;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+input[type="file"]::file-selector-button {
+  border: 2px solid #4CA5FF;
+  padding: 0.2em 0.4em;
+  height: 40px;
+  width: 100%;
+  color: white !important;
+  border-radius: 8px !important;
+  background-color: #4CA5FF;
+
+}
+
+input[type='file'] {
+  color: rgba(0, 0, 0, 0)
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #0445a7;
+  border: 2px solid #0445a7;
+
+}

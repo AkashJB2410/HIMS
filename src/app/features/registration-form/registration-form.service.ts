@@ -12,7 +12,7 @@ export class RegistrationFormService {
   PostCall(url: any, param: any): Observable<any> {
     const headers = new HttpHeaders().set('Content-type', 'application/json');
     return this.http.post<any>(url, param, { headers })
-  } 
+  }
   GetAllUserData() {
     const url = "http://localhost:8080/api/v1/allUserData";
     return this.http.get<any>(url);
@@ -29,61 +29,113 @@ export class RegistrationFormService {
     const url = "http://localhost:8080/api/v1/allMstGender";
     return this.http.get<any>(url);
   }
+  GetAllIdentificationTypeData() {
+    const url = "http://localhost:8080/api/v1/allIdentificationType";
+    return this.http.get<any>(url);
+  }
+  GetAllMstStateData() {
+    const url = "http://localhost:8080/api/v1/allMstState";
+    return this.http.get<any>(url);
+  }
+  GetAllMstDistrictData() {
+    const url = "http://localhost:8080/api/v1/allMstDistrict";
+    return this.http.get<any>(url);
+  }
+  GetAllMstTalukaData() {
+    const url = "http://localhost:8080/api/v1/allMstTaluka";
+    return this.http.get<any>(url);
+  }
   
-  saveUserData(data:any): Observable<any> {
-    const param = {
-      // "employee_Id": data.idInput,
-      "role_Name":data.nameInput,
-      "role_Description": data.descriptionInput
-      // "employee_Mobile_No": data.mobileNoInput,
-      // "employee_address": data.addressInput
 
-      // userId 
-// abhaAddress  
-// abhaId  
-// age int 
-// birthDuration  
-// created_By  
-// created_Date  
-// dob 
-// emailId  
-// firstName  
-// identificationNo  
-// is_Active 
-// is_Deleted 
-// lastName  
-// middleName  
-// mobileNo bigint 
-// modified_By  
-// modified_Date 
-// identificationType_identificationTypeId int 
-// mstBloodGroup_bloodgroupId int 
-// mstDistrict_districtId int 
-// mstDoctor_doctorId int 
-// mstGender_id int 
-// mstState_stateId int 
-// mstTitle_titleId int 
-// mstWardDetails_id
+  saveUserData(data: any): Observable<any> {
+    const param = {
+      "abhaAddress": data.nameInput,
+      "abhaId": data.nameInput,
+      "age": data.nameInput,
+      "birthDuration": data.nameInput,
+      "emailId": data.nameInput,
+      "firstName": data.nameInput,
+      "identificationNo": data.nameInput,
+      "is_Active": data.nameInput,
+      "lastName": data.nameInput,
+      "middleName": data.nameInput,
+      "mobileNo": data.nameInput,
+      "identificationType_identificationTypeId": {
+        "identificationTypeId": data.nameInput,
+      },
+      "mstBloodGroup_bloodgroupId": {
+        "bloodgroupId": data.nameInput,
+      },
+      "mstDistrict_districtId": {
+        "districtId": data.nameInput,
+      },
+      "mstDoctor_doctorId": {
+        "doctorId": data.nameInput,
+      },
+      "mstGender_id": {
+        "mstGenderId": data.nameInput,
+      },
+      "mstState_stateId": {
+        "stateId": data.nameInput,
+      },
+      "mstTitle_titleId": {
+        "titleId": data.nameInput,
+      },
+      "mstWardDetails_id": {
+        "mstWardDetailsid": data.nameInput,
+      }
     };
-    
+
     const url = "http://localhost:8080/api/v1/addUser";
     return this.PostCall(url, param);
   }
 
-  deleteUserData(roleId:any){
-    const url = "http://localhost:8080/api/v1/deleteUser/"+ roleId;
+  deleteUserData(roleId: any) {
+    const url = "http://localhost:8080/api/v1/deleteUser/" + roleId;
     return this.http.delete<any>(url);
   }
 
-  updateUserData(data:any){
+  updateUserData(data: any) {
     const param = {
-      "role_Id": data.idInput,
-      // "permissions": [],
-      "role_Name":data.nameInput,
-      "role_Description": data.descriptionInput
+      "userId": data.nameInput,
+      "abhaAddress": data.nameInput,
+      "abhaId": data.nameInput,
+      "age": data.nameInput,
+      "birthDuration": data.nameInput,
+      "emailId": data.nameInput,
+      "firstName": data.nameInput,
+      "identificationNo": data.nameInput,
+      "is_Active": data.nameInput,
+      "lastName": data.nameInput,
+      "middleName": data.nameInput,
+      "mobileNo": data.nameInput,
+      "identificationType_identificationTypeId": {
+        "identificationTypeId": data.nameInput,
+      },
+      "mstBloodGroup_bloodgroupId": {
+        "bloodgroupId": data.nameInput,
+      },
+      "mstDistrict_districtId": {
+        "districtId": data.nameInput,
+      },
+      "mstDoctor_doctorId": {
+        "doctorId": data.nameInput,
+      },
+      "mstGender_id": {
+        "mstGenderId": data.nameInput,
+      },
+      "mstState_stateId": {
+        "stateId": data.nameInput,
+      },
+      "mstTitle_titleId": {
+        "titleId": data.nameInput,
+      },
+      "mstWardDetails_id": {
+        "mstWardDetailsid": data.nameInput,
+      }
     };
-    const url = "http://localhost:8080/api/v1/role/userUpdate/"+data.idInput;
-    return this.http.put<any>(url,param);
+    const url = "http://localhost:8080/api/v1/role/userUpdate/" + data.idInput;
+    return this.http.put<any>(url, param);
   }
 
 }
