@@ -6,8 +6,8 @@
             "header":"Sr. No.","iseditable": false , "class":""
         },
         {
-            "field":"bankName",
-            "header":"Bank Name","iseditable": false , "class":""
+            "field":"esName",
+            "header":"Employee Name","iseditable": false , "class":""
         },
         {
             "field":"is_Active",
@@ -21,15 +21,15 @@
             "header":"Sr. No."
         },
         {
-            "field":"bankName",
-            "header":"Bank Name"
+            "field":"esName",
+            "header":"Employee Name"
         },
         {
             "field":"is_Active",
             "header":"Active Status"
         }
     ],
-    "globalFilter":["bankId","bankName","is_Active","bankId"],
+    "globalFilter":["srNo","esName","is_Active"],
     "rows" : 10,
     "showCurrentPageReport" : true,
     "rowsPerPageOptions" : [10,25,50],
@@ -42,6 +42,6 @@
     "isActions": ["Edit", "Delete", "isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
-    "buttonlbl":"Add Brank Master",
+    "buttonlbl":"Add Employee",
     "textLength":16
 }

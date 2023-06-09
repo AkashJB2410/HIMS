@@ -141,12 +141,12 @@ export class FormComponent implements OnInit {
     }
     let controls = this.formJSON.form.formControls;
     controls.forEach((control: any, i: any) => {
-      if (control.validations != undefined) {
-        if (!this.regex.includes(control.validations.pattern) && control.validations.pattern != "") {
-          const noSpecial: RegExp = /^[a-zA-z]/
-          control.validations.pattern = noSpecial;
-        }
-      }
+      // if (control.validations != undefined) {
+      //   if (!this.regex.includes(control.validations.pattern) && control.validations.pattern != "") {
+      //     const noSpecial: RegExp = /^[a-zA-z]/
+      //     control.validations.pattern = noSpecial;
+      //   }
+      // }
       let ctrl = <IFormField>{
         label: control.label || '',
         fieldName: control.formControlName || '',

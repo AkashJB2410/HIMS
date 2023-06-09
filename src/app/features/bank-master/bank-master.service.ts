@@ -10,7 +10,7 @@ export class BankMasterService {
   constructor(private http:HttpClient) { }
 
   getAllBankMaster(){
-    const url="http://localhost:8080/api/v1/allMstBank";
+    const url="http://localhost:8081/api/v1/allMstBank";
     return this.http.get<any>(url);
   }
 
@@ -23,7 +23,7 @@ export class BankMasterService {
     const param={
       "bankName": bank_Master.bankName
     };
-    const url = "http://localhost:8080/api/v1/addMstBank";
+    const url = "http://localhost:8081/api/v1/addMstBank";
     return this.PostCall(url, param)
   }
 
@@ -31,17 +31,17 @@ export class BankMasterService {
     const param={
       "bankName": bank_Master.bankName
     };
-    const url = "http://localhost:8080/api/v1/updateMstBank/"+bank_Master.bankId;
+    const url = "http://localhost:8081/api/v1/updateMstBank/"+bank_Master.bankId;
     return this.http.put<any>(url, param);
   }
 
   deleteBankMaster(bank_Master:any){
-    const url = "http://localhost:8080/api/v1/deleteMstBank/"+bank_Master;
+    const url = "http://localhost:8081/api/v1/deleteMstBank/"+bank_Master;
     return this.http.delete<any>(url);
   }
 
   reactiveBankMaster(bank_Master:any){
-    const url = "http://localhost:8080/api/v1/reactiveMstBank/"+bank_Master.bankId;
+    const url = "http://localhost:8081/api/v1/reactiveMstBank/"+bank_Master.bankId;
     return this.http.post<any>(url, bank_Master)
   }
 }

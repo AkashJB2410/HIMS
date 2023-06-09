@@ -14,20 +14,20 @@ export class ActionRoleService {
     return this.http.post<any>(url, param, { headers })
   }
   GetAllActionRoleData() {
-    const url = "http://localhost:8080/api/v1/allActionRole";
+    const url = "http://localhost:8081/api/v1/allActionRole";
     return this.http.get<any>(url);
   }
   GetAllMstRoleData() {
-    const url = "http://localhost:8080/api/v1/allMstRole";
+    const url = "http://localhost:8081/api/v1/allMstRole";
     return this.http.get<any>(url);
   }
 
   GetAllActionModuleData() {
-    const url = "http://localhost:8080/api/v1/allActionModule";
+    const url = "http://localhost:8081/api/v1/allActionModule";
     return this.http.get<any>(url);
   }
   GetAllActionSubModuleData() {
-    const url = "http://localhost:8080/api/v1/allActionSubModuleMst";
+    const url = "http://localhost:8081/api/v1/allActionSubModuleMst";
     return this.http.get<any>(url);
   }
 
@@ -66,12 +66,12 @@ export class ActionRoleService {
       
      
     // };
-    const url = "http://localhost:8080/api/v1/addActionRole";
+    const url = "http://localhost:8081/api/v1/addActionRole";
     return this.PostCall(url, data);
   }
 
   deleteActionRoleData(idInput: any) {
-    const url = "http://localhost:8080/api/v1/deleteActionRole/" + idInput;
+    const url = "http://localhost:8081/api/v1/deleteActionRole/" + idInput;
     return this.http.delete<any>(url);
   }
 
@@ -91,7 +91,7 @@ export class ActionRoleService {
             "arSearch": data.searchCheckbox[0],
             "arApprove": data.approveCheckbox[0],
     }
-    const url = "http://localhost:4200/api/v1/updateActionRole/";
+    const url = "http://localhost:8081/api/v1/updateActionRole/";
     return this.http.put<any>(url, param);
   }
 }

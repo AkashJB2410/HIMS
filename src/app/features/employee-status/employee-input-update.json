@@ -1,7 +1,7 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Role",
+        "formTitle": "",
         "formName": "Form1",
         "sidebar": "p-sidebar-sm",
         "formControls": [
@@ -9,14 +9,14 @@
                 "id": 0,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Role ID",
+                "label": "Employee ID",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12  my-1",
                 "lblclass": "",
                 "valueclass": "input-box",
                 "placeholder": "",
-                "formControlName": "roleId",
+                "formControlName": "esId",
                 "message": "Code is required",                
                 "validations": {
                     "required": false,
@@ -24,41 +24,24 @@
                 }
             },
             {
-                "id": 0,
+                "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Role Name",
+                "label": "Enter Employee Name",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-12  my-1",
-                "lblclass": "",
-                "valueclass": "input-box",
-                "placeholder": "",
-                "formControlName": "roleName",
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 0,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Role Description",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-12  my-1",
-                "lblclass": "",
-                "valueclass": "input-box",
-                "placeholder": "",
-                "formControlName": "roleDescription",   
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Employee Name",
+                "formControlName": "esName",
                 "message": {
-                    "required": "Plase Enter Role Description",
-                    "pattern": "Only Letters and Number are Allowed"
-                },             
+                    "required": "Plase Enter Bank Name",
+                    "pattern": "Only Alphabete are Allowed"
+                },
                 "validations": {
-                    "required": false,
-                    "pattern": "^[a-zA-Z0-9]+$"
+                    "required": true,
+                    "pattern": "^[A-Za-z]+$"
                 }
             },
             {

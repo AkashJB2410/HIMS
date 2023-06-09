@@ -14,37 +14,37 @@ export class RoleManagementService {
   }
   //  
   GetAllRoleData() {
-    const url = "http://localhost:8080/api/v1/allRoleData";
+    const url = "http://localhost:8081/api/v1/allMstRole";
     return this.http.get<any>(url);
   }
 
   saveRoleData(data:any): Observable<any> {
     const param = {
-      // "employee_Id": data.idInput,
-      "role_Name":data.nameInput,
-      "role_Description": data.descriptionInput
-      // "employee_Mobile_No": data.mobileNoInput,
-      // "employee_address": data.addressInput
+      "roleName": data.roleName,
+      "roleDescription": data.roleDescription
     };
     
-    const url = "http://localhost:8080/api/v1/addRole";
+    const url = "http://localhost:8081/api/v1/addMstRole";
     return this.PostCall(url, param);
   }
 
-  deleteRoleData(roleId:any){
-    const url = "http://localhost:8080/api/v1/deleteRole/"+ roleId;
+  deleteRoleData(role:any){
+    const url = "http://localhost:8081/api/v1/deleteMstRole/"+ role.roleId;
     return this.http.delete<any>(url);
   }
 
   updateRoleData(data:any){
     const param = {
-      "role_Id": data.idInput,
-      // "permissions": [],
-      "role_Name":data.nameInput,
-      "role_Description": data.descriptionInput
+      "roleName": data.roleName,
+      "roleDescription": data.roleDescription
     };
-    const url = "http://localhost:8080/api/v1/role/update";
+    const url = "http://localhost:8081/api/v1/updateMstRole/"+data.roleId;
     return this.http.put<any>(url,param);
+  }
+
+  reactiveRole(data:any){
+    const url = "http://localhost:8081/api/v1/reactiveMstRole/"+data.roleId;
+    return this.http.post<any>(url, data)
   }
 
 }
