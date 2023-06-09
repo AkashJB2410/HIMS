@@ -120,7 +120,7 @@ const routes: Routes = [
       { path: 'all-masters/action-button', loadChildren: () => import('./../action-button/action-button.module').then( m => m.ActionButtonModule)},  
       { path: 'all-masters/action-module', loadChildren: () => import('./../action-module/actionModule').then( m => m.ActionModule)},
       { path: 'all-masters/bank-branch-master', loadChildren: () => import('./../bank-branch-master/bank-branch-master.module').then( m => m.BankBranchMasterModule)},
-
+      { path: 'all-masters/action-role', loadChildren: () => import('./../action-role/action-role.module').then( m => m.ActionRoleModule)},     
     ],
     // canActivate: [AuthGuardGuard]
   }];

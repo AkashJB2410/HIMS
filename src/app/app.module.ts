@@ -128,6 +128,8 @@ import { ActionModuleComponent } from './features/action-module/action-module.co
 import { BankBranchMasterComponent } from './features/bank-branch-master/bank-branch-master.component';
 import { ActionButtonModule } from './features/action-button/action-button.module';
 import { ActionModule } from './features/action-module/actionModule';
+import { ActionRoleComponent } from './features/action-role/action-role.component';
+
 
 @NgModule({
   declarations: [
@@ -243,7 +245,8 @@ import { ActionModule } from './features/action-module/actionModule';
     BankMasterComponent,
     ActionButtonComponent,
     ActionModuleComponent,
-    BankBranchMasterComponent
+    BankBranchMasterComponent,
+    ActionRoleComponent
   ],
   imports: [
     CommonModule,
