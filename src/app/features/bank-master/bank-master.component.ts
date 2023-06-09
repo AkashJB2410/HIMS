@@ -54,7 +54,6 @@ export class BankMasterComponent implements OnInit {
   }
 
   isActive(data:any){
-    
     if(data.is_Deleted){
       this.http.reactiveBankMaster(data)
         .subscribe(b_Data => {

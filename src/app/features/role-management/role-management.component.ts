@@ -15,9 +15,6 @@ import roleData from './role.json';
 })
 export class RoleManagementComponent implements OnInit {
 
-  toast: any = {};
-  showToast: any;
-  Message: any;
   data: any;
   config: any;
   visibleSidebar: boolean = false;
@@ -25,7 +22,7 @@ export class RoleManagementComponent implements OnInit {
   tableConfig: any;
   isdataReady = false;
   sidebarJSON: any = roleData;
-
+  saveMethod: boolean = false;
   constructor(private messageService: MessageService, private http: RoleManagementService) { }
 
   ngOnInit(): void {
@@ -50,6 +47,10 @@ export class RoleManagementComponent implements OnInit {
     this.http.GetAllRoleData().subscribe(res => {
       this.data = res;
       this.isdataReady = true;
+      for(let i=0; i<this.data.length;i++){
+        this.data[i].srNo=i+1;
+      }
+      this.data;
     })
   }
 
@@ -61,15 +62,38 @@ export class RoleManagementComponent implements OnInit {
   editRow(e: any) {
     this.visibleSidebar = true;
   }
+  saveRole(data:any){
+    this.saveMethod = true;
+  }
+
+  editRole(data:any){
+
+  }
+
+  isActive(data:any){
+    if(data.is_Deleted){
+      this.http.reactiveRole(data)
+        .subscribe(b_Data => {
+          this.data = undefined;
+          this.getAllRoleData();
+        })
+        this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Role Enable Successfully' });  
+    }
+    else if(!data.is_Deleted){
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Role is already Active' });
+    }
+  }
 
   confirmAction(e: any) {
-    // this.messageService.add({ severity: 'success', summary: 'Message form User component', detail: 'Deleted Sucessfully' });
-    // console.log(e)
-    this.data = undefined;
-    this.deleteRoleData(e.role_Id);
-
-    this.messageService.add({ severity: 'success', summary: 'Message form User component', detail: 'Deleted Sucessfully' });
-    console.log("Deleted" + JSON.stringify(e))
+    if(e.is_Active==true){
+      this.data=undefined;
+      this.deleteRoleData(e);
+      this.messageService.add({ severity: 'success', summary: 'Disabled', detail: 'Role Disabled Successfully' });
+    }
+    else if (e.is_Active==false){
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Role is already Disabled' });
+    }
+    else{}
   }
   deleteRoleData(roleId: any) {
     this.http.deleteRoleData(roleId)
@@ -82,16 +106,17 @@ export class RoleManagementComponent implements OnInit {
     console.log("From User Management ==> ", e);
     if (e == 'reset') {
       console.log(e)
-    } else if (e.idInput == true) {
+    } else if (this.saveMethod) {
       console.log(e)
      
       this.submitRoleData(e);
-      this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+      this.messageService.add({ severity: 'success', summary: 'Added', detail: 'Role Added Successfully' });
+      this.saveMethod = false;
 
     } else {
       console.log(e);
       this.updateRoleData(e);
-      this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data updated successfull.' });
+      this.messageService.add({ severity: 'success', summary: 'Updated', detail: 'Role Updated Successfully.' });
 
     }
 

@@ -122,6 +122,7 @@ import { BulkReportDownloadComponent } from './features/bulk-report-download/bul
 import { CovidWalkInRegistrationsComponent } from './features/covid-walk-in-registrations/covid-walk-in-registrations.component';
 import { CovidWalkInSearchComponent } from './features/covid-walk-in-search/covid-walk-in-search.component';
 import { BankMasterComponent } from './features/bank-master/bank-master.component';
+import { EmployeeStatusComponent } from './features/employee-status/employee-status.component';
 
 @NgModule({
   declarations: [
@@ -235,6 +236,7 @@ import { BankMasterComponent } from './features/bank-master/bank-master.componen
     CovidWalkInRegistrationsComponent,
     CovidWalkInSearchComponent,
     BankMasterComponent,
+    EmployeeStatusComponent,
   ],
   imports: [
     CommonModule,
