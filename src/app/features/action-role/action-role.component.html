@@ -1,0 +1,21 @@
+
+<h3 class="cst-label">Action Role</h3>
+<!-- <app-filter *ngIf="configurations.isFilter" [filterData]="filterData" (selectedData)="fiteredData($event)"></app-filter> -->
+
+<app-super-grid
+    *ngIf="data"
+    [configurations]="configurations" 
+    [tableData]="data" 
+    [tableConfig] = "config"
+    [sidebarJSON] = "formdata"
+    (sideBarEvent)="sidebarData($event)"
+    (confirmAction)="confirmAction($event)"
+    (onAdd)="saveActionRole($event)"
+    (onEdit)="editActionRole($event)"
+    (Bulkdelete)="BulkDeleteRow($event)" 
+    (changeEvents)="changeCheckBox($event)"
+    >
+</app-super-grid>
+<p-toast></p-toast>
+
+
