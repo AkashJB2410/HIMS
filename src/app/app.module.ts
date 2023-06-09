@@ -1,3 +1,4 @@
+import { BankBranchMasterModule } from './features/bank-branch-master/bank-branch-master.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -122,6 +123,11 @@ import { BulkReportDownloadComponent } from './features/bulk-report-download/bul
 import { CovidWalkInRegistrationsComponent } from './features/covid-walk-in-registrations/covid-walk-in-registrations.component';
 import { CovidWalkInSearchComponent } from './features/covid-walk-in-search/covid-walk-in-search.component';
 import { BankMasterComponent } from './features/bank-master/bank-master.component';
+import { ActionButtonComponent } from './features/action-button/action-button.component';
+import { ActionModuleComponent } from './features/action-module/action-module.component';
+import { BankBranchMasterComponent } from './features/bank-branch-master/bank-branch-master.component';
+import { ActionButtonModule } from './features/action-button/action-button.module';
+import { ActionModule } from './features/action-module/actionModule';
 
 @NgModule({
   declarations: [
@@ -235,6 +241,9 @@ import { BankMasterComponent } from './features/bank-master/bank-master.componen
     CovidWalkInRegistrationsComponent,
     CovidWalkInSearchComponent,
     BankMasterComponent,
+    ActionButtonComponent,
+    ActionModuleComponent,
+    BankBranchMasterComponent
   ],
   imports: [
     CommonModule,
@@ -246,7 +255,10 @@ import { BankMasterComponent } from './features/bank-master/bank-master.componen
     MasterModuleModule,
     RoleManagementModule,
     OrganizationModule,
-    RegistrationFormModule
+    RegistrationFormModule,
+    ActionButtonModule,
+    ActionModule,
+    BankBranchMasterModule
 
   ],
   providers: [

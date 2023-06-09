@@ -1,0 +1,13 @@
+<h3>Action Buttons</h3>
+<app-super-grid  
+*ngIf="data"
+[configurations] ="configurations" 
+[tableConfig] = "table"
+[sidebarJSON] = "addNew"
+[tableData]= "data"
+(sideBarEvent)="sidebarData($event)"
+(confirmAction)="confirmAction($event)"
+(onAdd)="onAdd($event)"
+(onEdit)="onAdd($event)"
+(isActive)="isActive($event)">
+</app-super-grid>
