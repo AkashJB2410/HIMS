@@ -29,7 +29,9 @@
           }
         ]
       },
-      "dp": "../../assets/userlogo.png"
+      "dp": "../../assets/userlogo.png",
+      "sidenavLogo":"/assets/esahaj darkpng.png"
+
     },
     "sidenavItems": [
       {
