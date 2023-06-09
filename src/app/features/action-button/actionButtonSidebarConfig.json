@@ -1,71 +1,57 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Role",
+        "formTitle": "Add Action Button",
         "formName": "Form1",
+        "formType": "edit",
         "sidebar": "p-sidebar-sm",
         "formControls": [
             {
-                "id": 0,
                 "isEditable": true,
-                "isVisible": true,
-                "label": "Role ID",
+                "isVisible": false,
+                "label": "id",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-12  my-1",
+                "class": "col-md-6 my-1",
                 "lblclass": "",
                 "valueclass": "input-box",
-                "placeholder": "",
-                "formControlName": "roleId",
-                "message": "Code is required",                
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 0,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Role Name",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-12  my-1",
-                "lblclass": "",
-                "valueclass": "input-box",
-                "placeholder": "",
-                "formControlName": "roleName",
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 0,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Role Description",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-12  my-1",
-                "lblclass": "",
-                "valueclass": "input-box",
-                "placeholder": "",
-                "formControlName": "roleDescription",   
+                "placeholder": "Enter ID",
+                "formControlName": "actionButtonIdInput",
                 "message": {
-                    "required": "Plase Enter Role Description",
-                    "pattern": "Only Letters and Number are Allowed"
-                },             
+                    "required": "Id is required",
+                    "pattern": ""
+                },
                 "validations": {
                     "required": false,
-                    "pattern": "^[a-zA-Z0-9]+$"
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Action Button Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Button Name",
+                "formControlName": "actionButtonNameInput",
+                "mandatoryMessage": "Code is required",
+                "message": {
+                    "required": "Action Button Name is required",
+                    "pattern": "Numbers are not allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
                 }
             },
             {
                 "id": 2,
                 "isEditable": true,
                 "isVisible": true,
-                "transient": true,
+                "transient": false,
                 "type": "button",
                 "subtype": "save",
                 "class": "col-md-6",
@@ -83,7 +69,7 @@
                 "id": 3,
                 "isEditable": true,
                 "isVisible": true,
-                "transient": true,
+                "transient": false,
                 "type": "button",
                 "subtype": "reset",
                 "btnLabel": "Back",

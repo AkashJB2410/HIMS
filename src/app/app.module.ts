@@ -1,3 +1,4 @@
+import { BankBranchMasterModule } from './features/bank-branch-master/bank-branch-master.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -123,6 +124,13 @@ import { CovidWalkInRegistrationsComponent } from './features/covid-walk-in-regi
 import { CovidWalkInSearchComponent } from './features/covid-walk-in-search/covid-walk-in-search.component';
 import { BankMasterComponent } from './features/bank-master/bank-master.component';
 import { EmployeeStatusComponent } from './features/employee-status/employee-status.component';
+import { ActionButtonComponent } from './features/action-button/action-button.component';
+import { ActionModuleComponent } from './features/action-module/action-module.component';
+import { BankBranchMasterComponent } from './features/bank-branch-master/bank-branch-master.component';
+import { ActionButtonModule } from './features/action-button/action-button.module';
+import { ActionModule } from './features/action-module/actionModule';
+import { ActionRoleComponent } from './features/action-role/action-role.component';
+
 
 @NgModule({
   declarations: [
@@ -237,6 +245,10 @@ import { EmployeeStatusComponent } from './features/employee-status/employee-sta
     CovidWalkInSearchComponent,
     BankMasterComponent,
     EmployeeStatusComponent,
+    ActionButtonComponent,
+    ActionModuleComponent,
+    BankBranchMasterComponent,
+    ActionRoleComponent
   ],
   imports: [
     CommonModule,
@@ -248,7 +260,10 @@ import { EmployeeStatusComponent } from './features/employee-status/employee-sta
     MasterModuleModule,
     RoleManagementModule,
     OrganizationModule,
-    RegistrationFormModule
+    RegistrationFormModule,
+    ActionButtonModule,
+    ActionModule,
+    BankBranchMasterModule
 
   ],
   providers: [

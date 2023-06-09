@@ -42,6 +42,6 @@
     "isActions": ["Edit", "Delete", "isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
-    "buttonlbl":"",
+    "buttonlbl":"Add Employee",
     "textLength":16
 }

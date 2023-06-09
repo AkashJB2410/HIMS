@@ -1,0 +1,45 @@
+{
+    "tableName": "Action Role Table",
+    "tableHeaders": [
+        {"field": "arId","header": "Id","iseditable": false , "class":""} ,
+        {"field": "arRoleId_Name","header": "Role","iseditable": true,"class":""},
+        {"field": "arActionModuleMst","header": "Action Module","iseditable": true,"class":""},
+        {"field": "arActionSubModuleMst","header": "Action sub Module","iseditable": true,"class":""},
+        {"field": "arAdd","header": "Add","iseditable": true, "class":""},
+        {"field": "arApprove","header": "Approve","iseditable": false, "class":""},
+        {"field": "arDelete","header": "Delete","iseditable": false, "class":""},
+        {"field": "arEdit","header": "Edit","iseditable": false, "class":""},
+        {"field": "arSearch","header": "Search","iseditable": false,"class":""},
+        {"field": "arView","header": "View","iseditable": false,"class":""},
+        {"field": "is_Active","header": "isActive","iseditable": false,"class":""}
+    ],
+    "PdfHeaders": [
+        {"field": "arId","header": "Id"} ,
+        {"field": "arRoleId_Name","header": "Role"},
+        {"field": "arActionModuleMst","header": "Action Module"},
+        {"field": "arActionSubModuleMst","header": "Action sub Module"},
+        {"field": "arAdd","header": "Add"},
+        {"field": "arApprove","header": "Approve"},
+        {"field": "arDelete","header": "Delete"},
+        {"field": "arEdit","header": "Edit"},
+        {"field": "arSearch","header": "Search"},
+        {"field": "arView","header": "View"},
+        {"field": "is_Active","header": "isActive"}
+    ],
+
+    "globalFilter": ["arId","arRoleId","arActionSubModuleMst","arAdd" ,"arApprove","arDelete","arEdit","arSearch","arView"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [10,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "resizableColumns": true,
+    "isActions": ["Edit", "Delete","isActive" ],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "expand":false,
+    "buttonlbl":"Add Action Role",
+    "textLength":16
+}

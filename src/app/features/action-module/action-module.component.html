@@ -1,0 +1,14 @@
+<h3>Action Module</h3>
+
+<app-super-grid  
+*ngIf="data"
+[configurations] ="configurations" 
+[tableConfig] = "table"
+[sidebarJSON] = "addNew"
+[tableData]= "data"
+(sideBarEvent)="sidebarData($event)"
+(confirmAction)="confirmAction($event)"
+(editRow)="editRow($event)"
+(addRow)="addRow($event)"
+(isActive)="isActive($event)">
+</app-super-grid>

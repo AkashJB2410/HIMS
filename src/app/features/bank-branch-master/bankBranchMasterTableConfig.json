@@ -1,0 +1,76 @@
+{
+    "tableName": "Bank Brach Table",
+    "tableHeaders": [
+        {
+            "field": "bbId",
+            "header": "Branch Id",
+            "iseditable": false,
+            "class": ""
+        },
+
+        {
+            "field": "bbBankId_name",
+            "header": "Master Bank Name",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "bankBranchName",
+            "header": "Bank Branch Name",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "is_Active",
+            "header": "Is Active",
+            "iseditable": false,
+            "class": ""
+        }
+    ],
+    "PdfHeaders": [
+        {
+            "field": "bbId",
+            "header": "Bank Branch Id"
+        },
+        {
+            "field": "bankBranchName",
+            "header": "Bank Branch Name"
+        },
+        {
+            "field": "is_Active",
+            "header": "Is Active"
+        },
+        {
+            "field": "smtId",
+            "header": "Master Bank Name"
+        }
+    ],
+    "globalFilter": [
+        "bankBranchName",
+        "bbId",
+        "is_Active",
+        "smtId"
+    ],
+    "rows": 10,
+    "showCurrentPageReport": true,
+    "rowsPerPageOptions": [
+        10,
+        25,
+        50
+    ],
+    "paginator": true,
+    "rowHover": true,
+    "loading": false,
+    "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox": true,
+    "resizableColumns": true,
+    "isActions": [
+        "Edit",
+        "Delete",
+        "isActive"
+    ],
+    "editicon": "../../../assets/icons/Group 1823.png",
+    "isVisible": false,
+    "buttonlbl": "Add Brank Branch Master",
+    "textLength": 16
+}

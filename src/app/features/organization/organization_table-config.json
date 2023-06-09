@@ -90,6 +90,6 @@
     "isActions": ["Edit", "Delete", "isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
-    "buttonlbl":"",
+    "buttonlbl":"Add Organization",
     "textLength":16
 }

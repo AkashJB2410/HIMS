@@ -1,0 +1,169 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Add Bank Branch",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar": "p-sidebar-sm",
+        "formControls": [
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": " Bank Branch Id",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "bbId",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 6,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Master Bank",
+                "type": "select",
+                "class": "col-md-12  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select",
+                "formControlName": "bankName",
+                "values": [],
+                "message": {
+                    "required": "Master Bank is required",
+                    "pattern": "Numbers are not allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Bank Branch Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "bankBranchName",
+                "mandatoryMessage": "Code is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },
+           
+            
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Is Active",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " ",
+                "formControlName": "is_Active",
+                "mandatoryMessage": "Code is required",
+                "message": {
+                    "required": "Is Active is required",
+                    "pattern": "Numbers are not allowed."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Is Deleted",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " ",
+                "formControlName": "is_Deleted",
+                "mandatoryMessage": "Code is required",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },
+            
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-6",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-6",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "label": "",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-12 my-5",
+                "placeholder": "********",
+                "formControlName": "note2",
+                "message": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}
