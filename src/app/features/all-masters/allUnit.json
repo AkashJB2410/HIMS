@@ -55,7 +55,7 @@
                         "class": "col-md-12 ",
                         "lblclass": "lbl-end ",
                         "id": "anchor",
-                        "placeholder": "/master-page/all-masters/bank-master",
+                        "placeholder": "/master-page/all-masters/action-button",
                         "formControlName": "Action Button",
                         "message": {
                             "required": "",
@@ -125,7 +125,7 @@
                         "class": "col-md-12 ",
                         "lblclass": "lbl-end ",
                         "id": "anchor",
-                        "placeholder": "/master-page/all-masters/bank-master",
+                        "placeholder": "/master-page/all-masters/action-module",
                         "formControlName": "Action Module",
                         "message": {
                             "required": "",
@@ -475,7 +475,7 @@
                         "class": "col-md-12 ",
                         "lblclass": "lbl-end ",
                         "id": "anchor",
-                        "placeholder": "/master-page/all-masters/bank-master",
+                        "placeholder": "/master-page/all-masters/bank-branch-master",
                         "formControlName": "Bank Branch Master",
                         "message": {
                             "required": "",
