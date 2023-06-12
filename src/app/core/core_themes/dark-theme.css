@@ -727,7 +727,7 @@ option:hover {
 }
 
 .backrground-logo-img {
-  background: url('../core_assets/Techjivaa-White-Logo.png');
+  background: url('../../../assets/core_assets/Techjivaa-White-Logo.png');
 }
 
 .p-inputtext.p-password-input {
@@ -784,7 +784,6 @@ option:hover {
 /*-------------------------Login  CSS End--------------------------------------*/
 .cst-label {
   color: white !important;
-  font-size: 1.5rem !important;
 }
 
 /*----------------------------------Stepper Form Css------------------------*/
@@ -1130,4 +1129,11 @@ ul p.verticaltab{
 }
 .verticalCards{
   color: white;
+}
+.image {
+  background-image: url('/assets/darkThemeLogo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  width: 100%;
 }

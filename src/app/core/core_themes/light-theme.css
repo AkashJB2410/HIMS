@@ -338,7 +338,7 @@
 }
 
 .backrground-logo-img {
-  background: url('../core_assets/Techjivaa-White-Logo.png');
+  background: url('../../../assets/core_assets/Techjivaa-White-Logo.png');
   color: black;
 }
 
@@ -588,7 +588,6 @@
 /* -------In side bar Main title colour start --------- */
 .cst-label {
   color: black !important;
-  font-size: 1.5rem !important;
 }
 
 /* -------In side bar Main title colour End --------- */
@@ -603,7 +602,7 @@
 }
 
 .dropdown {
-  background-image: url("../core_assets/download.png") !important;
+  background-image: url("../../../assets/core_assets/download.png") !important;
 }
 
 .p-dropdown .p-dropdown-trigger {
@@ -1114,4 +1113,11 @@ ul p.verticaltab{
 {
   height: 15px !important;
   width: 20px;
+}
+.image {
+  background-image: url('/assets/Techjivaa-Light-Logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  width: 100%;
 }

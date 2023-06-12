@@ -3,17 +3,19 @@
     [style.backgroundColor]="list.theme.sidenavBG">
     <div class="sideBarOrta">
       <ul class="nav flex-column">
-
-        <li> <img *ngIf="!status" src="{{list.header.sidenavLogo}}" class="img img-fluid img-responsive openlogo"
-            alt="Logo">
+        <li>
+          <div class="sidenavLogo" *ngIf="!status">
+            <img  src="{{list.header.sidenavLogo}}" class="img img-fluid img-responsive openlogo"
+              alt="Logo">
+          </div>
         </li>
         <li> <img *ngIf="status" src="{{list.header.onlyLogo}}" class="img img-fluid img-responsive collapsedLogo"
             alt="Logo">
         </li>
         <div class="nav-item" class="toggle" (click)="clickEvent()">
-          <a *ngIf="!status" class="sidenav-menu"><i><img src="../../../../assets/toggle button.png"
+          <a *ngIf="!status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/toggle button.png"
                 class="togglefix"></i></a>
-          <a *ngIf="status" class="sidenav-menu"><i><img src="../../../../assets/toggle button.png"></i></a>
+          <a *ngIf="status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/toggle button.png"></i></a>
         </div>
         <li class="nav-item" *ngFor="let item of list.sidenavItems" (click)="setStateAsActive(item)">
           <ng-container *ngIf="item.children == null ; else list">
