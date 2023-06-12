@@ -31,7 +31,6 @@
       },
       "dp": "../../assets/userlogo.png",
       "sidenavLogo":"/assets/esahaj darkpng.png"
-
     },
     "sidenavItems": [
       {
@@ -712,7 +711,7 @@
       },
       {
         "label": "Configuration",
-        "icon": "bi bi-gear",
+        "icon": "bi bi-gear-wide",
         "children": [
           {
             "label": "All Masters",

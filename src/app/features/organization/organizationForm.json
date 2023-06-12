@@ -3,19 +3,19 @@
         "class": "row",
         "formTitle": "Add Organization",
         "formName": "Form1",
-        "sidebar": "p-sidebar-sm",
+        "sidebar": "p-sidebar-md",
         "formControls": [
             {
                 "isEditable": true,
-                "isVisible": false,
-                "label": "id",
+                "isVisible": true,
+                "label": "Organization ID",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-6 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
                 "placeholder": "Enter ID",
-                "formControlName": "orgIdInput",
+                "formControlName": "orgId",
                 "message": {
                     "required": "Id is required",
                     "pattern": ""
@@ -25,30 +25,132 @@
                     "pattern": ""
                 }
             },
-            
             {
-                
+                "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Organization Name",
+                "label": "Enter Organization Name",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-12  my-1",
-                "lblclass": "",
-                "valueclass": "input-box",
-                "placeholder": " Enter Name",
-                "formControlName": "orgNameInput",
-                "mandatoryMessage": "Code is required",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Organization Name",
+                "formControlName": "orgName",
                 "message": {
-                    "required": "Name is required",
-                    "pattern": "Numbers are not allowed."
-                },                
+                    "required": "Plase Enter Organization Name",
+                    "pattern": "Only Alphabete are allow"
+                },
                 "validations": {
                     "required": true,
-                    "pattern": "^[a-zA-Z ]*$"
+                    "pattern": "^[A-Za-z]+$"
                 }
             },
-            
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Organization Email",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Organization Email",
+                "formControlName": "orgEmail",
+                "message": {
+                    "required": "Plase Enter Organization Email",
+                    "pattern": "Enter a Vaild Email"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,6}$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Organization Mobile No.",
+                "type": "text",
+                "inputType": "number",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Organization Mobile No.",
+                "formControlName": "orgMobile",
+                "message": {
+                    "required": "Plase Enter Organization Mobile No.",
+                    "pattern": "Enter a Vaild Mobile Number with Country Code"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^(\\+91|91)[6-9]\\d{9}$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Organization Address",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Organization Address",
+                "formControlName": "orgAddress",
+                "message": {
+                    "required": "Plase Enter Organization Address",
+                    "pattern": "Only Alphanumeric, dot, comma, backslash, space, and hyphen are Allowed"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Organization Contact Person",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Organization Contact Person",
+                "formControlName": "orgContactPerson",
+                "message": {
+                    "required": "Plase Enter Organization Contact Person",
+                    "pattern": "Only Capital Letters are Allowed"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Z]+$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Organization Phone No.",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Organization Phone No.",
+                "formControlName": "orgPhone",
+                "message": {
+                    "required": "Plase Enter Organization Phone No.",
+                    "pattern": "Enter a Vaild Mobile Number"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[6-9]\\d{9}$"
+                }
+            },
             {
                 "id": 2,
                 "isEditable": true,
@@ -56,8 +158,8 @@
                 "transient": true,
                 "type": "button",
                 "subtype": "save",
-                "class": "col-md-6",
-                "valueclass": "btn-primary-custombutton-sm",
+                "class": "col-md-3",
+                "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",
                 "isDisabled": false,
@@ -75,8 +177,8 @@
                 "type": "button",
                 "subtype": "reset",
                 "btnLabel": "Back",
-                "class": "col-md-6",
-                "valueclass": "btn-warning-custombutton-sm",
+                "class": "col-md-3",
+                "valueclass": "button-login-yellow",
                 "icon": "",
                 "isDisabled": false,
                 "formControlName": "",
@@ -85,7 +187,6 @@
                     "pattern": ""
                 }
             }
-           
         ]
     }
 }

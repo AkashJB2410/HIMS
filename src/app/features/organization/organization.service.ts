@@ -16,34 +16,47 @@ export class OrganizationServiceService {
   
 
   GetAllOrgData() {
-    const url = "http://localhost:8080/api/v1/allOrganizationData";
+    const url = "http://localhost:8081/api/v1/allMstOrgStatus";
     return this.http.get<any>(url);
   }
 
   updateOrgData(data: any) {
-    const param = {      
-      "organizationType":data.orgNameInput,
-      "organization_Id":data.orgIdInput
+    const param = {
+        "orgName": data.orgName,
+        "orgEmail": data.orgEmail,
+        "orgMobile": data.orgMobile,
+        "orgAddress": data.orgAddress,
+        "orgContactPerson": data.orgContactPerson,
+        "orgPhone": data.orgPhone
     };
-    const url = "http://localhost:8080/api/v1/organization/"+data.orgIdInput;
+    const url = "http://localhost:8081/api/v1/updateMstOrgStatus/"+data.orgId;
     return this.http.put<any>(url, param);
   }
 
   saveOrgData(data: any): Observable<any> {
     console.log("save data"+ data);
-    const param = {      
-      "organizationType":data.orgNameInput,
-      
+    const param = {     
+      "orgName": data.orgName,
+      "orgEmail": data.orgEmail,
+      "orgMobile": data.orgMobile,
+      "orgAddress": data.orgAddress,
+      "orgContactPerson": data.orgContactPerson,
+      "orgPhone": data.orgPhone
     };
-    const url = "http://localhost:8080/api/v1/addOrganization";
+    const url = "http://localhost:8081/api/v1/addMstOrgStatus";
     return this.PostCall(url, param);
   }
 
 
-  deleteOrgData(organization_Id: any) {
-    const url = "http://localhost:8080/api/v1/deleteOrganization/" + organization_Id;
-    // http://localhost:8080/api/v1/deletecOrganization/
+  deleteOrgData(orgId: any) {
+    const url = "http://localhost:8081/api/v1/deleteMstOrgStatus/" + orgId;
     return this.http.delete<any>(url);
+  }
+
+  reactiveOrgData(org:any){
+    const url = "http://localhost:8081/api/v1/reactiveMstOrgStatus/"+org.orgId
+    ;
+    return this.http.post<any>(url, org)
   }
 
 }

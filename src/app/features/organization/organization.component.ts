@@ -24,6 +24,7 @@ export class OrganizationComponent implements OnInit {
   config: any;
   visibleSidebar: boolean = true;
   isdataReady = false;
+  saveMethod: boolean=false;
   constructor(private messageService: MessageService,private http: OrganizationServiceService) { }
   
   ngOnInit(): void {
@@ -54,19 +55,43 @@ export class OrganizationComponent implements OnInit {
     this.visibleSidebar = true;
   }
 
+  saveOrg(e:any){
+    this.saveMethod = true;
+  }
+
+  editOrg(e:any){
+
+  }
+
+  isActive(data:any){
+    
+    if(data.is_Deleted){
+      this.http.reactiveOrgData(data)
+        .subscribe(b_Data => {
+          this.data = undefined;
+          this.getAllOrgData();
+        })
+        this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Organization Enable Successfully' });  
+    }
+    else if(!data.is_Deleted){
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Organization is already Active' });
+    }
+  }
+
 
   sidebarData(e: any) {
     console.log("From User Management ==> ", e);
     if (e == 'reset') {
       console.log(e)
-    } else if (e.orgIdInput == true) {
+    } else if (this.saveMethod) {
       console.log(e)      
       this.submitOrgData(e);
-      this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+      this.messageService.add({ severity: 'success', summary: 'Added', detail: 'Organization Added Successfully' });
+      this.saveMethod=false;
     } else {
       console.log(e);      
       this.updateOrgData(e);
-      this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data updated successfull.' });      
+      this.messageService.add({ severity: 'success', summary: 'Updated', detail: 'Organization Updated Successfully.' });      
     }
   }  
 
@@ -85,6 +110,10 @@ export class OrganizationComponent implements OnInit {
     this.http.GetAllOrgData().subscribe(res => {
       this.data = res;
       this.isdataReady = true;
+      for(let i=0; i<this.data.length;i++){
+        this.data[i].srNo=i+1;
+      }
+      this.data;
     })
   }
 
@@ -98,8 +127,8 @@ export class OrganizationComponent implements OnInit {
   }
 
 
-  deleteOrgData(organization_Id: any) {
-    this.http.deleteOrgData(organization_Id)
+  deleteOrgData(orgData: any) {
+    this.http.deleteOrgData(orgData.orgId)
       .subscribe(data => {
         this.data = undefined;
         this.getAllOrgData();
@@ -108,10 +137,15 @@ export class OrganizationComponent implements OnInit {
   }
   
   confirmAction(e: any) {
-    // this.data = undefined;
-    this.deleteOrgData(e.organization_Id);    
-    this.messageService.add({ severity: 'success', summary: 'Message form User component', detail: 'Deleted Sucessfully' });
-    console.log("Deleted" + JSON.stringify(e))
+    if(e.is_Active==true){
+      this.data=undefined;
+    this.deleteOrgData(e);    
+    this.messageService.add({ severity: 'success', summary: 'Disabled', detail: 'Organization Disabled Successfully' });
+    }
+    else if (e.is_Active==false){
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Organization is already Disabled' });
+    }
+    else{}
   }
 
   

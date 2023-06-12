@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import personalization from "./personalization.json";
+import { ThemeService } from '../shared/service/theme.service';
 
 @Component({
   selector: 'app-master',
@@ -14,12 +16,16 @@ export class MasterComponent implements OnInit {
   status: boolean = false;
   statusLink: boolean = false;
   toggle: any;
+  personalization: any;
 
   @Input() masterJSON: any;
 
-  constructor() { }
+  constructor(private themeService: ThemeService) { }
 
   ngOnInit(): void {
+    localStorage.setItem('personalization', JSON.stringify(personalization));
+    this.personalization = personalization; 
+    this.changeTheme();
     this.list = this.masterJSON.masterData;
   }
 
@@ -30,5 +36,9 @@ export class MasterComponent implements OnInit {
   toggleNavbar(event: boolean) {
     this.navbarOpen = event;
   }
-  
+
+  changeTheme() {
+    this.themeService.switchTheme(this.personalization.theme);
+  }
+
 }

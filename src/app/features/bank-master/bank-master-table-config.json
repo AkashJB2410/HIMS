@@ -3,11 +3,7 @@
     "tableHeaders":[
         {
             "field":"srNo",
-            "header":"Sr. No.","iseditable": false , "class":""
-        },
-        {
-            "field":"bankId",
-            "header":"Uniqe Code","iseditable": false , "class":""
+            "header":"Sr. No.","iseditable": false , "class":"text-center"
         },
         {
             "field":"bankName",
@@ -21,7 +17,7 @@
     ],
     "PdfHeaders":[
         {
-            "field":"bankId",
+            "field":"srNo",
             "header":"Sr. No."
         },
         {
@@ -31,10 +27,6 @@
         {
             "field":"is_Active",
             "header":"Active Status"
-        },
-        {
-            "field":"bankId",
-            "header":"Uniqe Code"
         }
     ],
     "globalFilter":["bankId","bankName","is_Active","bankId"],
@@ -50,6 +42,6 @@
     "isActions": ["Edit", "Delete", "isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
-    "buttonlbl":"",
+    "buttonlbl":"Add Brank Master",
     "textLength":16
 }

@@ -123,12 +123,14 @@ import { BulkReportDownloadComponent } from './features/bulk-report-download/bul
 import { CovidWalkInRegistrationsComponent } from './features/covid-walk-in-registrations/covid-walk-in-registrations.component';
 import { CovidWalkInSearchComponent } from './features/covid-walk-in-search/covid-walk-in-search.component';
 import { BankMasterComponent } from './features/bank-master/bank-master.component';
+import { EmployeeStatusComponent } from './features/employee-status/employee-status.component';
 import { ActionButtonComponent } from './features/action-button/action-button.component';
 import { ActionModuleComponent } from './features/action-module/action-module.component';
 import { BankBranchMasterComponent } from './features/bank-branch-master/bank-branch-master.component';
 import { ActionButtonModule } from './features/action-button/action-button.module';
 import { ActionModule } from './features/action-module/actionModule';
 import { ActionRoleComponent } from './features/action-role/action-role.component';
+import { ActionSubModuleComponent } from './features/action-sub-module/action-sub-module.component';
 
 
 @NgModule({
@@ -243,10 +245,12 @@ import { ActionRoleComponent } from './features/action-role/action-role.componen
     CovidWalkInRegistrationsComponent,
     CovidWalkInSearchComponent,
     BankMasterComponent,
+    EmployeeStatusComponent,
     ActionButtonComponent,
     ActionModuleComponent,
     BankBranchMasterComponent,
-    ActionRoleComponent
+    ActionRoleComponent,
+    ActionSubModuleComponent
   ],
   imports: [
     CommonModule,
