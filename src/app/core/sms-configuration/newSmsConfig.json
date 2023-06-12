@@ -1,0 +1,156 @@
+{
+    "form": {
+        "formName": "Form1",
+        "formType": "edit",
+        "formClass": "row",
+        "formTitle": "SMS Configuration",
+        "formControls": [
+            {
+                "formControlType": "idInput",
+                "type": "text",
+                "isEditable": false,
+                "isVisible": false,
+                "label": "Id",
+                "inputType": "number",
+                "maxLength": 5,
+                "placeholder": "",
+                "values": null,
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                },
+                "message": {
+                    "required": "Code is required",
+                    "pattern": "Code is required"
+                },
+                "classes": "col-md-4  my-1",
+                "lblclass": "",
+                "valueclass": "input-box"
+            },
+            {
+                "formControlType": "toNumberInput",
+                "type": "text",
+                "isEditable": true,
+                "isVisible": true,
+                "label": "to_Number",
+                "inputType": "number",
+                "maxLength": 5,
+                "placeholder": "",
+                "values": null,
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                },
+                "message": {
+                    "required": "to_Number is required",
+                    "pattern": ""
+                },
+                "classes": "col-md-12 my-1",
+                "lblclass": "",
+                "valueclass": "input-box"
+            },
+            {
+                "formControlType": "smsMessageInput",
+                "type": "text",
+                "isEditable": true,
+                "isVisible": true,
+                "label": "SMS message",
+                "inputType": "text",
+                "maxLength": 3,
+                "placeholder": "Enter sms_message...",
+                "values": null,
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                },
+                "message": {
+                    "required": "sms_message is required",
+                    "pattern": ""
+                },
+                "classes": "col-md-12 my-1",
+                "lblclass": "",
+                "valueclass": "input-box"
+            },
+            {
+                "formControlType": "Date is required",
+                "type": "date",
+                "isEditable": true,
+                "isVisible": true,
+                "label": "date_time",
+                "inputType": "text",
+                "maxLength": 5,
+                "placeholder": "",
+                "values": null,
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                },
+                "message": {
+                    "required": "Date is required",
+                    "pattern": ""
+                },
+                "classes": "col-md-12 my-1",
+                "lblclass": "",
+                "valueclass": "input-box"
+            },
+            {
+                "formControlType": "smsStatusInput",
+                "type": "text",
+                "isEditable": true,
+                "isVisible": true,
+                "label": "sms_status",
+                "inputType": "text",
+                "maxLength": 4,
+                "placeholder": "Enter sms_status...",
+                "values": null,
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                },
+                "message": {
+                    "required": "sms_status is required",
+                    "pattern": ""
+                },
+                "classes": "col-md-12 my-1",
+                "lblclass": "",
+                "valueclass": "input-box"
+            },
+            {
+                "formControlType": "retryCountInput",
+                "type": "text",
+                "isEditable": true,
+                "isVisible": true,
+                "label": "retry_count",
+                "inputType": "text",
+                "maxLength": 3,
+                "placeholder": "Enter retry_count...",
+                "values": null,
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                },
+                "message": {
+                    "required": "retry_count is required",
+                    "pattern": ""
+                },
+                "classes": "col-md-12 my-1",
+                "lblclass": "",
+                "valueclass": "input-box"
+            }
+        ],
+        "formButtons": [
+            {
+                "type": "reset",
+                "label": "Back",
+                "classes": "p-button-danger-sm ",
+                "icon": ""
+            },
+            {
+                "type": "save",
+                "label": "Submit",
+                "classes": "p-button-success-sm",
+                "icon": ""
+            }
+        ]
+    }
+}

@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <h4 class="{{formJson.titlelblclass}}">{{formJson.formTitle}}</h4>
+    <h6 class="cst-label">{{formJson.formTitle}}</h6>
     <form [formGroup]="form">
         <div class="{{formJson.class}}">
             <!-- <span *ngIf="formValid" style="color: red;">Please fill all required fields</span> -->
@@ -12,13 +12,14 @@
                             class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
                             [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
                             [(ngModel)]="formData.fieldValue" placeholder="{{formData.placeholder}}"
-                            (blur)="blurValue($event.target, formData)">
+                           (blur)="blurValue($event.target, formData)">
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.MONTH">
                         <p-calendar inputId="{{formData.fieldName}}" [(ngModel)]="formData.fieldValue"
                             [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
                             [formControlName]="formData.fieldName" [showIcon]="true" view="month" dateFormat="mm/yy"
-                            [readonlyInput]="true" (onClick)="changeEvent($event, formData)"></p-calendar>
+                            [readonlyInput]="true" (onClick)="changeEvent($event, formData)">
+                        </p-calendar>
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.STATICTEXT">
                         <p id="{{formData.fieldName}}" class="{{formData.valueclass}}">{{formData.data}}</p>
@@ -28,20 +29,23 @@
                             [placeholder]="formData.placeholder" class="{{formData.valueclass}}"
                             [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
                             [(ngModel)]="formData.fieldValue" [toggleMask]="true"
-                            (onClick)="changeEvent($event, formData)"></p-password>
+                            (onClick)="changeEvent($event, formData)">
+                        </p-password>
                     </div>
                     <p-dropdown *ngIf="formData.fieldType == formStaticText.SELECT" [options]="formData.values"
                         [inputId]="formData.fieldName" [formControlName]="formData.fieldName"
                         [ngClass]="formData.editable ? formData.valueclass : 'input-box1 '"
                         [(ngModel)]="formData.fieldValue" optionLabel="name" optionValue="code" [showClear]="true"
                         class="{{formData.valueclass}}" [showClear]="false"
-                        (onChange)="changeEvent($event, formData)"></p-dropdown>
+                        (onChange)="changeEvent($event, formData)">
+                    </p-dropdown>
                     <div class="{{formData.valueclass}}" *ngIf="formData.fieldType === formStaticText.RADIO">
                         <div *ngFor="let opt of formData.values">
                             <p-radioButton name="{{formData.fieldName}}" value="{{opt.code}}"
                                 [(ngModel)]="formData.fieldValue" inputId="{{opt.code}}"
                                 (onClick)="changeEvent($event, formData)"
-                                formControlName="{{formData.fieldName}}"></p-radioButton>
+                                formControlName="{{formData.fieldName}}">
+                            </p-radioButton>
                             <label for="{{opt.code}}">{{opt.name}}</label>
                         </div>
                     </div>
@@ -51,7 +55,8 @@
                         <div *ngFor="let opt of formData.values" class="p-field-checkbox">
                             <p-checkbox [name]="formData.fieldName" [formControlName]="formData.fieldName"
                                 [value]="opt.code" [(ngModel)]="formData.fieldValue" [inputId]="opt.code"
-                                (onChange)="changeEvent($event, formData)"></p-checkbox>
+                                (onChange)="changeEvent($event, formData)">
+                            </p-checkbox>
                             <label class="ms-1" for="{{opt.code}}">{{opt.name}}</label>
                         </div>
                     </div>
@@ -59,7 +64,8 @@
                         <p-calendar inputId="{{formData.fieldName}}" [name]="formData.fieldName "
                             [formControlName]="formData.fieldName" class="{{formData.valueclass}}"
                             [(ngModel)]="formData.fieldValue" [showButtonBar]="true" [showIcon]="true" inputId="icon"
-                            (onSelect)="changeEvent($event, formData)"></p-calendar>
+                            (onSelect)="changeEvent($event, formData)">
+                        </p-calendar>
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.DATERANGE">
                         <p-calendar inputId="{{formData.fieldName}}" [dateFormat]="formData.format"
@@ -67,7 +73,8 @@
                             [name]="formData.fieldName" class="{{formData.valueclass}}"
                             [formControlName]="formData.fieldName" [(ngModel)]="formData.fieldValue"
                             [showButtonBar]="false" [showIcon]="true" selectionMode="range" [readonlyInput]="true"
-                            (onClick)="changeEvent($event, formData)"></p-calendar>
+                            (onClick)="changeEvent($event, formData)">
+                        </p-calendar>
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.TEXTAREA">
                         <textarea id="{{formData.fieldName}}" name="{{formData.fieldName}}" rows={{formData.row}}
@@ -86,7 +93,7 @@
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.IMAGEUPLOAD">
                         <input id="{{formData.fieldName}}" type="file" name="{{formData.fieldName}}"
-                            [ngClass]="formData.editable ? formData.valueclass : 'imgUpload1'"
+                          [ngClass]="formData.editable ? formData.valueclass : 'imgUpload1'"
                             class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
                             [(ngModel)]="formData.fieldValue" accept="image/*"
                             (change)="onImageUpload($event, formData); changeEvent($event, formData)" />
@@ -139,3 +146,5 @@
         </div>
     </form>
 </div>
+
+

@@ -62,13 +62,15 @@ import { KeyFilterModule } from 'primeng/keyfilter';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import { FormService } from '../service/form.service';
 import { DecryptPipe, EncryptPipe } from '../pipes/encrypt-decrypt.pipe';
-import { CustomDatePipe } from '../service/custom-date.pipe';
+import { CustomDatePipe } from '../pipes/custom-date.pipe';
 import { UserService } from '../service/user.service';
 import { SuperFormComponent } from '../../super-form/super-form.component';
 import { FileUploadModule } from 'primeng/fileupload';
 import { CardsComponent } from '../../cards/cards.component';
 import {MenubarModule} from 'primeng/menubar';
 import {TabMenuModule} from 'primeng/tabmenu';
+import { EmailConfigurationComponent } from '../../email-configuration/email-configuration.component';
+import { SmsConfigurationComponent } from '../../sms-configuration/sms-configuration.component';
 import { VerticalTabularComponent } from '../../vertical-tabular/vertical-tabular.component';
 
 @NgModule({
@@ -103,6 +105,8 @@ import { VerticalTabularComponent } from '../../vertical-tabular/vertical-tabula
         MoreandlessComponent,
         SuperFormComponent,
         CardsComponent,
+        EmailConfigurationComponent,
+        SmsConfigurationComponent,
         VerticalTabularComponent
     ],
     imports: [
@@ -146,7 +150,7 @@ import { VerticalTabularComponent } from '../../vertical-tabular/vertical-tabula
         FileUploadModule,
         TieredMenuModule,
         MenubarModule,
-        TabMenuModule
+        TabMenuModule,
     ],
     exports: [
         //============= Core Components =============
@@ -179,7 +183,9 @@ import { VerticalTabularComponent } from '../../vertical-tabular/vertical-tabula
         MoreandlessComponent,
         SuperFormComponent,
         CardsComponent,
-VerticalTabularComponent,
+        EmailConfigurationComponent,
+        SmsConfigurationComponent,
+        VerticalTabularComponent,
         //============= Core Imports =============
 
         FormsModule,
