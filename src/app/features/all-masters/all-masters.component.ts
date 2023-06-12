@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import tabularData from './all-masters.json'
 import allUnit from './allUnit.json'
 
@@ -7,46 +7,74 @@ import allUnit from './allUnit.json'
   templateUrl: './all-masters.component.html',
   styleUrls: ['./all-masters.component.css']
 })
-export class AllMastersComponent implements OnInit {
+export class AllMastersComponent implements OnInit, DoCheck {
 
   tabularSideData=tabularData;
   allUnit = allUnit;
-  admiFlag:boolean=false;
-  disFlag:boolean=false;
-  billFlag:boolean=false;
-  docFlag:boolean=false;
-  emrFlag:boolean=false;
-  invFlag:boolean=false;
-  otFlag:boolean=false;
-  pathFlag:boolean=false;
-  radFlag:boolean=false;
-  patFlag:boolean=false;
-  unitFlag:boolean=false;
-  nurFlag:boolean=false;
-  tabData=[0,1,2,3,4,5,6,7,8,9,10,11];
+  allFlag = {
+  admiFlag:false,
+  disFlag:false,
+  billFlag:false,
+  docFlag:false,
+  emrFlag:false,
+  invFlag:false,
+  otFlag:false,
+  pathFlag:false,
+  radFlag:false,
+  patFlag:false,
+  unitFlag:false,
+  nurFlag:false
+  }
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+  }
+
+  ngDoCheck(){
+  }
+
+defaultSelecter(e:Object){
+  let count:number;
+  count++;
+  if(count>1){
+    this.renderComponents(e);
+  }
+}
+
+  restFlag(){
+    this.allFlag = {
+      admiFlag:false,
+      disFlag:false,
+      billFlag:false,
+      docFlag:false,
+      emrFlag:false,
+      invFlag:false,
+      otFlag:false,
+      pathFlag:false,
+      radFlag:false,
+      patFlag:false,
+      unitFlag:false,
+      nurFlag:false
+      }
   }
 
   renderComponents(e: any) { 
+    this.defaultSelecter(e);
     switch (e.label) {
-      case "Admission Configuration": this.admiFlag=true, this.disFlag=false, this.billFlag=false, this.docFlag=false, this.emrFlag=false, this.invFlag=false, this.otFlag=false, this.pathFlag=false, this.radFlag=false, this.patFlag=false, this.unitFlag=false, this.nurFlag=false; break
-      case "Discharge Configuration": this.admiFlag=false, this.disFlag=true, this.billFlag=false, this.docFlag=false, this.emrFlag=false, this.invFlag=false, this.otFlag=false, this.pathFlag=false, this.radFlag=false, this.patFlag=false, this.unitFlag=false, this.nurFlag=false; break
-      case "Billing Configuration": this.admiFlag=false, this.disFlag=false, this.billFlag=true, this.docFlag=false, this.emrFlag=false, this.invFlag=false, this.otFlag=false, this.pathFlag=false, this.radFlag=false, this.patFlag=false, this.unitFlag=false, this.nurFlag=false; break
-      case "Doctor Schedule": this.admiFlag=false, this.disFlag=false, this.billFlag=false, this.docFlag=true, this.emrFlag=false, this.invFlag=false, this.otFlag=false, this.pathFlag=false, this.radFlag=false, this.patFlag=false, this.unitFlag=false, this.nurFlag=false; break
-      case "EMR Configuration": this.admiFlag=false, this.disFlag=false, this.billFlag=false, this.docFlag=false, this.emrFlag=true, this.invFlag=false, this.otFlag=false, this.pathFlag=false, this.radFlag=false, this.patFlag=false, this.unitFlag=false, this.nurFlag=false; break
-      case "Inventory Configuration": this.admiFlag=false, this.disFlag=false, this.billFlag=false, this.docFlag=false, this.emrFlag=false, this.invFlag=true, this.otFlag=false, this.pathFlag=false, this.radFlag=false, this.patFlag=false, this.unitFlag=false, this.nurFlag=false; break
-      case "OT Configuration": this.admiFlag=false, this.disFlag=false, this.billFlag=false, this.docFlag=false, this.emrFlag=false, this.invFlag=false, this.otFlag=true, this.pathFlag=false, this.radFlag=false, this.patFlag=false, this.unitFlag=false, this.nurFlag=false; break
-      case "Pathology Configuration":this.admiFlag=false, this.disFlag=false, this.billFlag=false, this.docFlag=false, this.emrFlag=false, this.invFlag=false, this.otFlag=false, this.pathFlag=true, this.radFlag=false, this.patFlag=false, this.unitFlag=false, this.nurFlag=false; break
-      case "Radiology Configuration":this.admiFlag=false, this.disFlag=false, this.billFlag=false, this.docFlag=false, this.emrFlag=false, this.invFlag=false, this.otFlag=false, this.pathFlag=false, this.radFlag=true, this.patFlag=false, this.unitFlag=false, this.nurFlag=false; break
-      case "Patient Configuration":this.admiFlag=false, this.disFlag=false, this.billFlag=false, this.docFlag=false, this.emrFlag=false, this.invFlag=false, this.otFlag=false, this.pathFlag=false, this.radFlag=false, this.patFlag=true, this.unitFlag=false, this.nurFlag=false; break
-      case "Unit Configuration": this.admiFlag=false, this.disFlag=false, this.billFlag=false, this.docFlag=false, this.emrFlag=false, this.invFlag=false, this.otFlag=false, this.pathFlag=false, this.radFlag=false, this.patFlag=false, this.unitFlag=true, this.nurFlag=false; break
-      case "Nursing Station Configutation":this.admiFlag=false, this.disFlag=false, this.billFlag=false, this.docFlag=false, this.emrFlag=false, this.invFlag=false, this.otFlag=false, this.pathFlag=false, this.radFlag=false, this.patFlag=false, this.unitFlag=false, this.nurFlag=true; break
+      case "Admission Configuration": this.restFlag(); this.allFlag.admiFlag=true; break
+      case "Discharge Configuration": this.restFlag(); this.allFlag.disFlag=true; break
+      case "Billing Configuration": this.restFlag(); this.allFlag.billFlag=true; break
+      case "Doctor Schedule": this.restFlag(); this.allFlag.docFlag=true; break
+      case "EMR Configuration": this.restFlag(); this.allFlag.emrFlag=true; break
+      case "Inventory Configuration":this.restFlag(); this.allFlag.invFlag=true; break
+      case "OT Configuration":this.restFlag(); this.allFlag.otFlag=true; break
+      case "Pathology Configuration":this.restFlag(); this.allFlag.pathFlag=true; break
+      case "Radiology Configuration":this.restFlag(); this.allFlag.radFlag=true; break
+      case "Patient Configuration":this.restFlag(); this.allFlag.patFlag=true; break
+      case "Unit Configuration":this.restFlag(); this.allFlag.unitFlag=true; break
+      case "Nursing Station Configutation":this.restFlag(); this.allFlag.nurFlag=true; break
       default:
         break;
     }
-
   }
-
 }

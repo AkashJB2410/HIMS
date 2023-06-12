@@ -6,8 +6,8 @@
             "header":"Sr. No.","iseditable": false , "class":"text-center"
         },
         {
-            "field":"bankName",
-            "header":"Bank Name","iseditable": false , "class":""
+            "field":"actionSubModuleName",
+            "header":"Sub_Module","iseditable": false , "class":""
         },
         {
             "field":"is_Active",
@@ -21,15 +21,15 @@
             "header":"Sr. No."
         },
         {
-            "field":"bankName",
-            "header":"Bank Name"
+            "field":"actionSubModuleName",
+            "header":"Sub_Module"
         },
         {
             "field":"is_Active",
             "header":"Active Status"
         }
     ],
-    "globalFilter":["bankId","bankName","is_Active","bankId"],
+    "globalFilter":["srNo","actionSubModuleName","is_Active"],
     "rows" : 10,
     "showCurrentPageReport" : true,
     "rowsPerPageOptions" : [10,25,50],
@@ -42,6 +42,6 @@
     "isActions": ["Edit", "Delete", "isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
-    "buttonlbl":"Add Brank Master",
+    "buttonlbl":"Add Sub_Module",
     "textLength":16
 }

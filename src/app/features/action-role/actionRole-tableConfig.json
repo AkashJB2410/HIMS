@@ -1,7 +1,7 @@
 {
     "tableName": "Action Role Table",
     "tableHeaders": [
-        {"field": "arId","header": "Id","iseditable": false , "class":""} ,
+        {"field": "arId","header": "Id","iseditable": false , "class":"text-center"} ,
         {"field": "arRoleId_Name","header": "Role","iseditable": true,"class":""},
         {"field": "arActionModuleMst","header": "Action Module","iseditable": true,"class":""},
         {"field": "arActionSubModuleMst","header": "Action sub Module","iseditable": true,"class":""},

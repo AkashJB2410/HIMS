@@ -4,7 +4,7 @@
         {
             "field":"srNo",
             "header":"Sr. No.",
-            "iseditable": false , "class":""
+            "iseditable": false , "class":"text-center"
         },
         {
             "field": "orgName",

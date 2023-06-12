@@ -1,6 +1,6 @@
 
 <app-vertical-tabular [tabularData]="tabularSideData" (renderComponents)="renderComponents($event)">
-    <div *ngIf="unitFlag">
+    <div *ngIf="allFlag.unitFlag">
     <div class="row">
         <div class="col-md-3 mb-1" *ngFor="let cards of allUnit.Forms">
             <app-cards>
@@ -10,7 +10,7 @@
     </div><br>
 </div>
 
-    <div class="row" *ngIf="otFlag">
+    <div class="row" *ngIf="allFlag.otFlag">
         <div class="col-md-4">
             <app-cards>
                OT Configurations
@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <div class="row" *ngIf="emrFlag">
+    <div class="row" *ngIf="allFlag.emrFlag">
         <div class="col-md-4">
             <app-cards>
                EMR Configurations
