@@ -5,7 +5,7 @@
             "field": "srNumber",
             "header": "Sr.Number",
             "iseditable": false,
-            "class": ""
+            "class": "text-center"
         },
         {
             "field": "actionModuleName",
