@@ -1,0 +1,11 @@
+<h6 class="cst-label" style="cursor: pointer;">Email Configurations</h6>
+<app-super-grid
+    *ngIf="data"
+    [configurations]="configurations" 
+    [tableData]="data" 
+    [tableConfig] = "config"
+    [sidebarJSON] = "sidebarJSON"
+    (sideBarEvent)="sidebarData($event)"
+    (confirmAction)="confirmAction($event)"
+    (fiteredData)="fiteredData($event)">
+</app-super-grid>

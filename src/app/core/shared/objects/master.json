@@ -69,7 +69,6 @@
     "sidenavItems": [
       {
         "logo": "../../assets/Techjivaa-svg-removebg.png"
-
       },
       {
         "label": "TabularForm",
@@ -113,6 +112,22 @@
         "label": "Cards",
         "icon": "pi pi-fw pi-book",
         "routerLink": "/master-page/card-demo"
+      },
+      {
+        "label": "Configuration",
+        "icon": "pi pi-fw pi-book",
+        "children": [
+          {
+            "label": "Email Configurations",
+            "icon": "",
+            "routerLink": "configurations/email-configuration"
+          },
+          {
+            "label": "SMS Configurations",
+            "icon": "",
+            "routerLink": "configurations/sms-configuration"
+          }
+        ]
       }
     ],
     "footer": {

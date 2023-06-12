@@ -472,3 +472,12 @@ li a.subchildMenu {
     height: 100vh;
     overflow-x: hidden;
 } */
+
+.sidenavLogo{
+    width: 260px;
+    height: 80px;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
