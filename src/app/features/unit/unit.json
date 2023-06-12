@@ -1,0 +1,702 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Unit",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar":"p-sidebar-sm",
+        "formControls": [
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "is_Active",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "actionModuleIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Unit Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            }, 
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Unit Postfix",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "actionModuleIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Center Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },  
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Unit Email",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "actionModuleIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Unit Mobile",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },  
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Unit Phone",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "actionModuleIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Unit Contact Person",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            }, 
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Address",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "actionModuleIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Address Area",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            }, 
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Country",
+                "type": "dropdown",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "actionModuleIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "State",
+                "type": "dropdown",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },  
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "City",
+                "type": "dropdown",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "actionModuleIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Address Zip",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            }, 
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Unit Organization",
+                "type": "dropdown",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "actionModuleIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Unit Contact Person",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            }, 
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Unit Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "actionModuleIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Unit Clinic Contact No",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            }, 
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Unit Contact Person",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            }, 
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Unit Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "actionModuleIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Unit Clinic Contact No",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },     
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Unit Pharmacy License No",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            }, 
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Pharmacy Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "actionModuleIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Unit Pharmacy Gst No",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },     
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Unit Clinic Registration No",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            }, 
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Unit Shop And Establishment No",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "actionModuleIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Unit Trade No",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },  
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Unit Server",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            }, 
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Unit Database",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "actionModuleIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            { 
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Unit Fax No",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": " Enter Name",
+                "formControlName": "actionModuleNameInput",
+                "mandatoryMessage": "Name is required",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Numbers are not allowed."
+                },                
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            }, 
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Unit Cluster",
+                "type": "dropdown",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "actionModuleIdInput",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "Submit",
+                "class": "col-md-6",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },             
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "Reset",
+                "class": "col-md-6",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-6",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

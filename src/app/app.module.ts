@@ -131,6 +131,7 @@ import { ActionButtonModule } from './features/action-button/action-button.modul
 import { ActionModule } from './features/action-module/actionModule';
 import { ActionRoleComponent } from './features/action-role/action-role.component';
 import { ActionSubModuleComponent } from './features/action-sub-module/action-sub-module.component';
+import { UnitComponent } from './features/unit/unit.component';
 
 
 @NgModule({
@@ -250,7 +251,8 @@ import { ActionSubModuleComponent } from './features/action-sub-module/action-su
     ActionModuleComponent,
     BankBranchMasterComponent,
     ActionRoleComponent,
-    ActionSubModuleComponent
+    ActionSubModuleComponent,
+    UnitComponent
   ],
   imports: [
     CommonModule,
