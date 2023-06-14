@@ -1,10 +1,9 @@
 <nav class="navbar navbar-expand px-2 navCss" [style.backgroundColor]="list.theme.headerBG">
-   
     <div class="navbar-collapse">
     </div>
     <ul class="navbar-nav ">
         <li>
-            <i class="bi bi-bell headerIcon" (click)="op.toggle($event)"></i>
+            <i class="bi bi-bell headerIcon"  pTooltip="Notifications" tooltipPosition="bottom" (click)="op.toggle($event)"></i>
             <p-overlayPanel #op [showCloseIcon]="false" [style]="{width: '22rem'}">
                 <div class="flexNotification">
                     <h4 class="item1">Notifications</h4>
@@ -27,8 +26,6 @@
         </li>
         </p-tieredMenu>
         </li>
-
-
          <li>
             <i (click)="menu.toggle($event)" class="bi bi-gear headerIcon"></i>
             <p-tieredMenu class="themes" #menu [model]="themeOptins" [popup]="true">
@@ -41,17 +38,17 @@
         </p-tieredMenu>
         </li> -->
         <li>
-            <p-menubar #menu [model]="Information">
+            <p-menubar pTooltip="Help" tooltipPosition="bottom"  #menu [model]="Information">
                 <a class="mr-3 cursor-pointer"></a>
             </p-menubar>
         </li>
         <li>
-            <p-menubar #menu [model]="themeOptins">
+            <p-menubar #menu pTooltip="Setting" tooltipPosition="bottom" [model]="themeOptins">
                 <a (click)="changeTheme('dark-theme')" class="mr-3 cursor-pointer"></a>
             </p-menubar>
         </li>
         <li>
-            <img src="{{list.header.dp}}" (click)="op1.toggle($event)" class="userlogo" alt="Profile Pic">
+            <img src="{{list.header.dp}}"  pTooltip="Profile" tooltipPosition="bottom" (click)="op1.toggle($event)" class="userlogo" alt="Profile Pic">
             <p-overlayPanel #op1 [showCloseIcon]="false">
                 <ul class="profileItems">
                     <li><i class="pi pi-user iconcss"></i>{{userDetails.userName}}</li>

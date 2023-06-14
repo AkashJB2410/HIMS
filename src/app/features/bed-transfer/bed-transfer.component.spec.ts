@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BedTransderComponent } from './bed-transder.component';
+import { BedTransferComponent } from './bed-transfer.component';
 
-describe('BedTransderComponent', () => {
-  let component: BedTransderComponent;
-  let fixture: ComponentFixture<BedTransderComponent>;
+describe('BedTransferComponent', () => {
+  let component: BedTransferComponent;
+  let fixture: ComponentFixture<BedTransferComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BedTransderComponent ]
+      declarations: [ BedTransferComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BedTransderComponent);
+    fixture = TestBed.createComponent(BedTransferComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
