@@ -77,28 +77,28 @@ export class RegistrationFormComponent implements OnInit {
           })
         })
       }
-      // if (data.formControlName === "selectYear") {
-      //   data.values = [];
-      //   let defaultObj = {
-      //     "name": "Select Sub Module",
-      //     "code": "0"
-      //   }
-      //   data.values.push(defaultObj);
-      //   this.http.GetAllSubModuleData().subscribe(item => {
-      //     item.forEach((e: any) => {
-      //       console.log("sub module ==>> ==>>",e)
-      //       let obj = {
-      //         "name": e.label,
-      //         "code": e.submodule_Id
-      //       }
-      //       data.values.push(obj);
-      //     })
-      //   })
-      // }
+      if (data.formControlName === "selectYear") {
+        data.values = [];
+        let defaultObj = {
+          "name": "Select an Option",
+          "code": "0"
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllMstDurationData().subscribe(item => {
+          item.forEach((e: any) => {
+            console.log("sub module ==>> ==>>", e)
+            let obj = {
+              "name": e.durationType,
+              "code": e.durationId
+            }
+            data.values.push(obj);
+          })
+        })
+      }
       if (data.formControlName === "selectGender") {
         data.values = [];
         let defaultObj = {
-          "name": "Select Sub Module",
+          "name": "Select Gender",
           "code": "0"
         }
         data.values.push(defaultObj);
@@ -116,7 +116,7 @@ export class RegistrationFormComponent implements OnInit {
       if (data.formControlName === "selectBlood") {
         data.values = [];
         let defaultObj = {
-          "name": "Select Sub Module",
+          "name": "Select Blood",
           "code": "0"
         }
         data.values.push(defaultObj);
@@ -126,23 +126,6 @@ export class RegistrationFormComponent implements OnInit {
             let obj = {
               "name": e.bloodgroupName,
               "code": e.bloodgroupId
-            }
-            data.values.push(obj);
-          })
-        })
-      }
-      if (data.formControlName === "selectTaluka") {
-        data.values = [];
-        let defaultObj = {
-          "name": "Select Taluka",
-          "code": ""
-        }
-        data.values.push(defaultObj);
-        this.http.GetAllMstTalukaData().subscribe(item => {
-          item.forEach((e: any) => {
-            let obj = {
-              "name": e.taluka,
-              "code": e.talukaId
             }
             data.values.push(obj);
           })
@@ -160,7 +143,6 @@ export class RegistrationFormComponent implements OnInit {
             a.values.push(defaultObj);
             this.http.GetAllMstStateData().subscribe(item => {
               item.forEach((e: any) => {
-                console.log("state ==>> ==>>", e)
                 let obj = {
                   "name": e.stateName,
                   "code": e.stateId
@@ -179,11 +161,10 @@ export class RegistrationFormComponent implements OnInit {
             a.values.push(defaultObj);
             this.http.GetAllMstDistrictData().subscribe(item => {
               item.forEach((e: any) => {
-                console.log("state ==>> ==>>", e)
                 let obj = {
-                  "name": e.stateName,
-                  "code": e.district,
-                  "Mcode": e.stateId_stateId
+                  "name": e.districtName,
+                  "code": e.districtId,
+                  "Mcode": e.stateId.stateId
                 }
                 a.values.push(obj);
               })
@@ -192,18 +173,113 @@ export class RegistrationFormComponent implements OnInit {
         })
 
       }
-
+      if (data.formControlName === "selectTaluka") {
+        data.values = [];
+        let defaultObj = {
+          "name": "Select Taluka",
+          "code": ""
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllMstTalukaData().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.talukaName,
+              "code": e.talukaId
+            }
+            data.values.push(obj);
+          })
+        })
+      }
+      if (data.formControlName === "selectVillage") {
+        data.values = [];
+        let defaultObj = {
+          "name": "Select Village",
+          "code": ""
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllVillageData().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.villageName,
+              "code": e.villageid
+            }
+            data.values.push(obj);
+          })
+        })
+      }
+      if (data.formControlName === "selectDepartment") {
+        data.values = [];
+        let defaultObj = {
+          "name": "Select Department",
+          "code": ""
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllMstTalukaData().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.talukaName,
+              "code": e.talukaId
+            }
+            data.values.push(obj);
+          })
+        })
+      }
+      if (data.formControlName === "selectSubDepartment") {
+        data.values = [];
+        let defaultObj = {
+          "name": "Select Sub-Department",
+          "code": ""
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllMstTalukaData().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.talukaName,
+              "code": e.talukaId
+            }
+            data.values.push(obj);
+          })
+        })
+      }
+      if (data.formControlName === "selectDoctor") {
+        data.values = [];
+        let defaultObj = {
+          "name": "Select Doctor",
+          "code": ""
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllDoctorData().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.doctorName,
+              "code": e.doctorId
+            }
+            data.values.push(obj);
+          })
+        })
+      }
+      if (data.formControlName === "selectWard") {
+        data.values = [];
+        let defaultObj = {
+          "name": "Select Ward",
+          "code": ""
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllWardData().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.wardDetails,
+              "code": e.mstWardDetailsid
+            }
+            data.values.push(obj);
+          })
+        })
+      }
     })
-
   }
-
-
-  buttonClick(e: any) {
-    if (e == 'next') {
-      console.log(e)
-    } else if (e == 'cancel') {
-      console.log(e)
-    }
+  
+  changeSelectItem(e: any) {
+    console.log("e => ", e)
   }
   getAllRoleData() {
     this.http.GetAllUserData().subscribe(res => {

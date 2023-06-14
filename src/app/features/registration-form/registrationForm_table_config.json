@@ -21,6 +21,6 @@
     "isActions": ["Edit", "Delete"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
-    "buttonlbl":"Add Role",
+    "buttonlbl":"",
     "textLength":16
 }

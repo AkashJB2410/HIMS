@@ -329,24 +329,7 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "selectYear",
-                "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    },
-                    {
-                        "name": "Year",
-                        "code": "Year"
-                    },
-                    {
-                        "name": "Months",
-                        "code": "Months"
-                    },
-                    {
-                        "name": "Days",
-                        "code": "Days"
-                    }
-                ],
+                "values": [ ],
                 "message": {
                     "required": "Year is required",
                     "pattern": ""
@@ -482,55 +465,11 @@
                 "values": [
                     {
                         "label": "State",
-                        "values": [
-                            {
-                                "name": "Select an Option",
-                                "code": ""
-                            },
-                            {
-                                "name": "Maharashtra",
-                                "code": "MH"
-                            },
-                            {
-                                "name": "Bihar",
-                                "code": "BH"
-                            }
-                        ]
+                        "values": []
                     },
                     {
                         "label": "Districts",
-                        "values": [
-                            {
-                                "name": "Select an Option",
-                                "code": "",
-                                "Mcode": ""
-                            },
-                            {
-                                "name": "Pune",
-                                "code": "Pun",
-                                "Mcode": "MH"
-                            },
-                            {
-                                "name": "Satara",
-                                "code": "Sat",
-                                "Mcode": "MH"
-                            },
-                            {
-                                "name": "Sangli",
-                                "code": "San",
-                                "Mcode": "MH"
-                            },
-                            {
-                                "name": "Patna",
-                                "code": "Pat",
-                                "Mcode": "BH"
-                            },
-                            {
-                                "name": "Mujjafarpur",
-                                "code": "Muj",
-                                "Mcode": "BH"
-                            }
-                        ]
+                        "values": []
                     }
                 ],
                 "validations": {
@@ -561,53 +500,148 @@
                 }
             },
             {
-                "id": 6,
+                "id": 11,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Village",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-4 my-1",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-3  my-1",
                 "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter Village Name...",
-                "formControlName": "villageNameInput",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectVillage",
+                "values": [],
                 "message": {
-                    "required": "Village Name is required",
-                    "pattern": "Numbers not allowed."
+                    "required": "Village is required",
+                    "pattern": ""
                 },
-                "validations": {
-                    "required": true,
-                    "pattern": "^[A-Za-z]+$"
-                }
-            },
-            {
-                "isVisible": true,
-                "type": "button",
-                "subtype": "submit",
-                "class": "col-md-2",
-                "valueclass": "butn-custom-wrng",
-                "btnLabel": "Submit",
-                "icon": "pi pi-check",
-                "isDisabled": false,
-                "formControlName": "btn1",
                 "validations": {
                     "required": true,
                     "pattern": ""
                 }
             },
             {
+                "id": 11,
+                "isEditable": true,
                 "isVisible": true,
+                "label": "Department",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectDepartment",
+                "values": [],
+                "message": {
+                    "required": "Department is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 11,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Sub-Department",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectSubDepartment",
+                "values": [],
+                "message": {
+                    "required": "Sub-Department is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 11,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Doctor",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectDoctor",
+                "values": [],
+                "message": {
+                    "required": "Doctor is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 11,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Ward",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectWard",
+                "values": [],
+                "message": {
+                    "required": "Ward is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
                 "type": "button",
-                "subtype": "cancel",
-                "btnLabel": "Cancel",
-                "class": "col-md-2",
+                "subtype": "save",
+                "class": "col-md-6",
                 "valueclass": "butn-custom-dark-blue",
-                "icon": "pi pi-times",
+                "btnLabel": "Save",
+                "icon": "",
                 "isDisabled": false,
                 "formControlName": "",
                 "validations": {
-                    "required": true,
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-6",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
                     "pattern": ""
                 }
             }

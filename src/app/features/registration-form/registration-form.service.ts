@@ -45,6 +45,23 @@ export class RegistrationFormService {
     const url = "http://localhost:8080/api/v1/allMstTaluka";
     return this.http.get<any>(url);
   }
+  GetAllMstDurationData() {
+    const url = "http://localhost:8080/api/v1/allDurationData";
+    return this.http.get<any>(url);
+  }
+  GetAllDoctorData() {
+    const url = "http://localhost:8080/api/v1/alldoctorData";
+    return this.http.get<any>(url);
+  }
+  GetAllWardData() {
+    const url = "http://localhost:8080/api/v1/allMstWardDetails";
+    return this.http.get<any>(url);
+  }
+  GetAllVillageData() {
+    const url = "http://localhost:8080/api/v1/allvillageData";
+    return this.http.get<any>(url);
+  }
+
   
 
   saveUserData(data: any): Observable<any> {
