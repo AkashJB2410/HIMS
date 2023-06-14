@@ -2,7 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormControlTypes, IFormField } from './form.interface';
-import { CustomDatePipe } from '../shared/service/custom-date.pipe';
+import { CustomDatePipe } from '../shared/pipes/custom-date.pipe';
 import { FormService } from '../shared/service/form.service';
 
 @Component({
@@ -11,6 +11,7 @@ import { FormService } from '../shared/service/form.service';
 })
 
 export class FormComponent implements OnInit {
+[x: string]: any;
   form: FormGroup;
   formControls: IFormField[] = [];
   formJson: any;
@@ -43,6 +44,7 @@ export class FormComponent implements OnInit {
     this.form$.renderNewForm.subscribe(data => {
       this.renderForm(data);
     });
+    
   }
 
   catpchaValue(value: any, control: any) {
@@ -80,11 +82,16 @@ export class FormComponent implements OnInit {
   dependentDrop(value: any, control: any) {
     var ctrl = this.form.get(control.fieldName);
     ctrl.setValue(value);
+    this.events = [];
+    this.events.push(control);
+    this.events.push(value);
+    this.changeEvents.emit(this.events);
   }
 
   renderForm(data: any) {
     if (data.funtonality == 'isVisible') {
-      this.visibility(data);
+      // this.visibility(data);
+      this.addControl(data);
     } else if (data.funtonality == 'isEditable') {
       this.enableDisableElement(data);
     } else if (data.funtonality == 'autofill') {
@@ -126,6 +133,12 @@ export class FormComponent implements OnInit {
     }
   }
 
+  addControl(data: any) {
+    this.form.get(data.formData.formControlName)
+    this.form.addControl('nationality', this.formBuilder.control('genderDrop', [Validators.required]));
+    // ctrl.addControl(data.formData.formControlName, this.group);
+  }
+
   ngOnDestroy() {
     this.formJson = [];
     this.form.reset();
@@ -141,12 +154,12 @@ export class FormComponent implements OnInit {
     }
     let controls = this.formJSON.form.formControls;
     controls.forEach((control: any, i: any) => {
-      if (control.validations != undefined) {
-        if (!this.regex.includes(control.validations.pattern) && control.validations.pattern != "") {
-          const noSpecial: RegExp = /^[a-zA-z]/
-          control.validations.pattern = noSpecial;
-        }
-      }
+      // if (control.validations != undefined) {
+      //   if (!this.regex.includes(control.validations.pattern) && control.validations.pattern != "") {
+      //     const pattern: RegExp = control.validations.pattern;
+      //     control.validations.pattern = pattern;
+      //   }
+      // }
       let ctrl = <IFormField>{
         label: control.label || '',
         fieldName: control.formControlName || '',
@@ -198,9 +211,10 @@ export class FormComponent implements OnInit {
           delete this.form.value[element.fieldName];
         }
         if (element.fieldType == 'date') {
+          var format = JSON.parse(localStorage.getItem('personalization'));
           this.form.value[element.fieldName] = this.datepipe.transform(
             element.fieldValue,
-            element.format
+            format.dateFormat
           );
         }
       });

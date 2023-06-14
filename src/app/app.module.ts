@@ -1,3 +1,4 @@
+import { BankBranchMasterModule } from './features/bank-branch-master/bank-branch-master.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -85,7 +86,7 @@ import { ListOfAdmissionRequestComponent } from './features/list-of-admission-re
 import { AdmissionListComponent } from './features/admission-list/admission-list.component';
 import { DischargeListComponent } from './features/discharge-list/discharge-list.component';
 import { AdmissionCancelListComponent } from './features/admission-cancel-list/admission-cancel-list.component';
-import { BedTransderComponent } from './features/bed-transder/bed-transder.component';
+import { BedTransferComponent } from './features/bed-transfer/bed-transfer.component';
 import { UnderMaintenanceComponent } from './features/under-maintenance/under-maintenance.component';
 import { GraphicalViewComponent } from './features/graphical-view/graphical-view.component';
 import { IpdAdimissionReportComponent } from './features/ipd-adimission-report/ipd-adimission-report.component';
@@ -122,9 +123,16 @@ import { BulkReportDownloadComponent } from './features/bulk-report-download/bul
 import { CovidWalkInRegistrationsComponent } from './features/covid-walk-in-registrations/covid-walk-in-registrations.component';
 import { CovidWalkInSearchComponent } from './features/covid-walk-in-search/covid-walk-in-search.component';
 import { BankMasterComponent } from './features/bank-master/bank-master.component';
+import { EmployeeStatusComponent } from './features/employee-status/employee-status.component';
+import { ActionButtonComponent } from './features/action-button/action-button.component';
+import { ActionModuleComponent } from './features/action-module/action-module.component';
+import { BankBranchMasterComponent } from './features/bank-branch-master/bank-branch-master.component';
+import { ActionButtonModule } from './features/action-button/action-button.module';
+import { ActionModule } from './features/action-module/actionModule';
 import { ActionRoleComponent } from './features/action-role/action-role.component';
 import { DepartmentComponent } from './features/department/department.component';
 import { ChildrenComponent } from './features/children/children.component';
+import { ActionSubModuleComponent } from './features/action-sub-module/action-sub-module.component';
 
 @NgModule({
   declarations: [
@@ -201,7 +209,7 @@ import { ChildrenComponent } from './features/children/children.component';
     AdmissionListComponent,
     DischargeListComponent,
     AdmissionCancelListComponent,
-    BedTransderComponent,
+    BedTransferComponent,
     UnderMaintenanceComponent,
     GraphicalViewComponent,
     IpdAdimissionReportComponent,
@@ -240,7 +248,14 @@ import { ChildrenComponent } from './features/children/children.component';
     BankMasterComponent,
     ActionRoleComponent,
     DepartmentComponent,
-    ChildrenComponent
+    ChildrenComponent,
+    EmployeeStatusComponent,
+    ActionButtonComponent,
+    ActionModuleComponent,
+    BankBranchMasterComponent,
+    ActionRoleComponent,
+    ActionSubModuleComponent,
+    BedTransferComponent
   ],
   imports: [
     CommonModule,
@@ -252,7 +267,10 @@ import { ChildrenComponent } from './features/children/children.component';
     MasterModuleModule,
     RoleManagementModule,
     OrganizationModule,
-    RegistrationFormModule
+    RegistrationFormModule,
+    ActionButtonModule,
+    ActionModule,
+    BankBranchMasterModule
 
   ],
   providers: [

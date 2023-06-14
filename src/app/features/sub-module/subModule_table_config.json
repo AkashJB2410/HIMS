@@ -25,6 +25,6 @@
     "isActions": ["Edit", "Delete"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
-    "buttonlbl":"",
+    "buttonlbl":"Add SubModule",
     "textLength":16
 }

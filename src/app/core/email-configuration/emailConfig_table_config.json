@@ -1,0 +1,75 @@
+{
+    "tableName": "Email Configuration Table",
+    "tableHeaders": [
+        {
+            "field": "to_mailId","header": "To MailId","iseditable": false , "class":""
+        },
+        {
+            "field": "subject",
+            "header": "Email Subject","iseditable": false , "class":""
+        },
+        {
+            "field": "mail_body",
+            "header": "Mail Body","iseditable": false , "class":""
+        },
+        {
+            "field": "date_time",
+            "header": "Date","iseditable": false , "class":""
+        },
+        {
+            "field": "email_status",
+            "header": "Email Status","iseditable": false , "class":""
+        },
+        {
+            "field": "retry_count",
+            "header": "Retry Count",
+            "iseditable": false, "class":"text-center"
+        }
+    ],
+    "getColors":[
+        { "status":"INSTOCK", "color": "#119C2B"},
+        { "status":"LOWSTOCK", "color": "#FF792E"},
+        { "status":"OUTOFSTOCK", "color": "red"}
+    ],
+    "PdfHeaders": [
+        {
+            "field": "to_mailId",
+            "header": "To MailId"
+        },
+        {
+            "field": "subject",
+            "header": "Email Subject"
+        },
+        {
+            "field": "mail_body",
+            "header": "Mail Body"
+        },
+        {
+            "field": "date_time",
+            "header": "Date"
+        },
+        {
+            "field": "email_status",
+            "header": "Email Status"
+        },
+        {
+            "field": "retry_count",
+            "header": "Retry Count"
+        } 
+    ],
+    "globalFilter": ["to_mailId","subject,mail_body","date_time","email_status","retry_count" ],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [10,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "resizableColumns": true,
+    "isActions": ["Edit", "Delete"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "isVisible":false,
+    "buttonlbl":"New Configuration",
+    "textLength":16
+}

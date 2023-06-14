@@ -113,6 +113,20 @@ export class ActionRoleComponent implements OnInit {
     })
   }
 
+  // isActive(data:any){
+    
+  //   if(data.is_Deleted){
+  //     this.http.reactiveOrgData(data)
+  //       .subscribe(b_Data => {
+  //         this.data = undefined;
+  //         this.getAllActionRoleData();
+  //       })
+  //       this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Organization Enable Successfully' });  
+  //   }
+  //   else if(!data.is_Deleted){
+  //     this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Organization is already Active' });
+  //   }
+  // }
   getAllActionRoleData() {
     this.actionRole = [];
     this.data = undefined;

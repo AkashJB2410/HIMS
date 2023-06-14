@@ -16,7 +16,7 @@ top: calc(50% - 204px/2);
 }
 .wrapper{
     padding: 0 0 100px;
-    background-image:url('../core_assets/pagenotfound.png'); 
+    background-image:url('../../../assets/core_assets/pagenotfound.png'); 
     /* background-color: #738FA7; */
     background-position: bottom center;
     background-repeat: no-repeat;

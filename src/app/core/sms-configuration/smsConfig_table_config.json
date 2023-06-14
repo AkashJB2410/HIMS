@@ -1,0 +1,62 @@
+{
+    "tableName": "SMS Configuration Table",
+    "tableHeaders": [
+        {
+            "field": "to_Number",
+            "header": "To Number","iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "sms_message",
+            "header": "SMS Message","iseditable": false , "class":""
+        },
+        {
+            "field": "date_time",
+            "header": "Date","iseditable": false , "class":""
+        },
+        {
+            "field": "sms_status",
+            "header": "SMS Status","iseditable": false , "class":""
+        },
+        {
+            "field": "retry_count",
+            "header": "Retry Count","iseditable": false , "class":"text-center"
+        }
+    ],
+    "PdfHeaders": [
+        {
+            "field": "to_Number",
+            "header": "To Number"
+        },
+        {
+            "field": "sms_message",
+            "header": "SMS Message"
+        },
+        {
+            "field": "date_time",
+            "header": "Date"
+        },
+        {
+            "field": "sms_status",
+            "header": "SMS Status"
+        },
+        {
+            "field": "retry_count",
+            "header": "Retry Count"
+        }
+    ],
+    "globalFilter": ["sms_message","to_Number","date_time","sms_status","retry_count"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [10,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "resizableColumns": true,
+    "isActions": ["Edit", "Delete"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "isVisible":false,
+    "buttonlbl":"New Configuration",
+    "textLength":16
+}

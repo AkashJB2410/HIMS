@@ -1,0 +1,12 @@
+<app-super-grid
+    *ngIf="table_Data"
+    [configurations]="configurations"
+    [tableData]="table_Data"
+    [tableConfig] = "table_Config"
+    [sidebarJSON]="sidebar_Update_Input"
+    (sideBarEvent)="sidebarData($event)"
+    (confirmAction)="confirmAction($event)"
+    (onAdd)="saveActionSubModule($event)"
+    (onEdit)="editActionSubModule($event)"
+    (isActive)="isActive($event)"
+></app-super-grid>

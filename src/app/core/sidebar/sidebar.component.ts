@@ -22,6 +22,7 @@ export class SidebarComponent implements OnInit {
   @Input() sidebarJSON: any;
 
   @Output() sidebarData = new EventEmitter<boolean>;
+  @Output() changeEvents = new EventEmitter<boolean>;
 
   constructor() { }
 
@@ -38,8 +39,9 @@ export class SidebarComponent implements OnInit {
   formData(e: any) {
     this.data = e;
   }
+  
   onHide(e: any) {
-  this.sidebarData.emit(e);
+    this.sidebarData.emit(e);
   }
 
   buttonEvent(e: any) {
@@ -48,5 +50,9 @@ export class SidebarComponent implements OnInit {
     } else {
       this.sidebarData.emit(e);
     }
+  }
+
+  changeEvent(event: any){
+    this.changeEvents.emit(event);
   }
 }

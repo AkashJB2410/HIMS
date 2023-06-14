@@ -87,7 +87,7 @@
                 "values": [
                 ],
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -280,7 +280,7 @@
                 "type": "button",
                 "subtype": "save",
                 "class": "col-md-6",
-                "valueclass": "btn-primary-custombutton-sm",
+                "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",
                 "isDisabled": false,
@@ -299,7 +299,7 @@
                 "subtype": "reset",
                 "btnLabel": "Back",
                 "class": "col-md-6",
-                "valueclass": "btn-warning-custombutton-sm",
+                "valueclass": "button-login-yellow",
                 "icon": "",
                 "isDisabled": false,
                 "formControlName": "",

@@ -7,4 +7,4 @@
 <p-confirmDialog [position]="'top'" [style]="{width: '30vw'}"></p-confirmDialog>
 
 <app-sidebar *ngIf="visibleSidebar && configurations.isSideBar" [editRowData]="editRowData"
-    [visibleSidebar]="visibleSidebar" [sidebarJSON]="sidebarJSON" (sidebarData)="sidebarData($event)"></app-sidebar>
+    [visibleSidebar]="visibleSidebar" [sidebarJSON]="sidebarJSON" (sidebarData)="sidebarData($event)" (changeEvents)="changeEvent($event)"></app-sidebar>

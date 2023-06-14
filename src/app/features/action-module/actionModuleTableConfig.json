@@ -1,0 +1,63 @@
+{
+    "tableName": "Action Module Table",
+    "tableHeaders": [
+        {
+            "field": "srNumber",
+            "header": "Sr.Number",
+            "iseditable": false,
+            "class": "text-center"
+        },
+        {
+            "field": "actionModuleName",
+            "header": "Action Module Name",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "is_Active",
+            "header": "IsActive",
+            "iseditable": false,
+            "class": ""
+        }
+        
+    ],
+    "PdfHeaders": [
+        {
+            "field": "actionModuleId",
+            "header": "Action Module Id"
+        },
+        {
+            "field": "actionModuleName",
+            "header": "Action Module Name"
+        },
+        {
+            "field": "is_Active",
+            "header": "IsActive"
+        }
+    ],
+    "globalFilter": [
+        "actionId","actionModuleName","is_Active"
+    ],
+    "rows": 10,
+    "showCurrentPageReport": true,
+    "rowsPerPageOptions": [
+        10,
+        25,
+        50
+    ],
+    "paginator": true,
+    "rowHover": true,
+    "loading": false,
+    "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox": true,
+    "resizableColumns": true,
+    "isActions": [
+        "Edit",
+        "Delete",
+        "isActive"
+    ],
+    "editicon": "../../../assets/icons/Group 1823.png",
+    "isVisible": false,
+    "buttonlbl": "Add Action Module",
+    "textLength": 16
+}

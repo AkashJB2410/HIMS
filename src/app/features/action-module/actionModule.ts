@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { BedTransderRoutingModule } from './bed-transder-routing.module';
-
+import { ActionRoutingModule } from './actionModule.Routing.Module';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    BedTransderRoutingModule
+    ActionRoutingModule
   ]
 })
-export class BedTransderModule { }
+export class ActionModule { }

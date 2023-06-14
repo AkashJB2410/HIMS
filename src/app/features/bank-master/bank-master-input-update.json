@@ -7,7 +7,7 @@
         "formControls": [
             {
                 "id": 0,
-                "isEditable": false,
+                "isEditable": true,
                 "isVisible": true,
                 "label": "Id",
                 "type": "text",
@@ -17,7 +17,6 @@
                 "valueclass": "input-box",
                 "placeholder": "",
                 "formControlName": "bankId",
-                "mandatoryMessage": "Code is required",
                 "message": "Code is required",                
                 "validations": {
                     "required": false,
@@ -38,11 +37,11 @@
                 "formControlName": "bankName",
                 "message": {
                     "required": "Plase Enter Bank Name",
-                    "pattern": "Only Alphabete are allow"
+                    "pattern": "Only Alphabete are Allowed"
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "/^[a-zA-Z ]/"
+                    "pattern": "^[A-Za-z]+$"
                 }
             },
             {
@@ -53,7 +52,7 @@
                 "type": "button",
                 "subtype": "save",
                 "class": "col-md-6",
-                "valueclass": "btn-primary-custombutton-sm",
+                "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",
                 "isDisabled": false,
@@ -72,7 +71,7 @@
                 "subtype": "reset",
                 "btnLabel": "Back",
                 "class": "col-md-6",
-                "valueclass": "btn-warning-custombutton-sm",
+                "valueclass": "button-login-yellow",
                 "icon": "",
                 "isDisabled": false,
                 "formControlName": "",

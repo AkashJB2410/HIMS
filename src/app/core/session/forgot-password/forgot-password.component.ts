@@ -253,7 +253,7 @@ export class ForgotPasswordComponent implements OnInit {
     if (this.mobileIsPresent) {
       this.http.updatePassword(this.goubleMobileNo, this.confirmedPass)
         .subscribe(data => {
-          if (data.update == "sucess") {
+          if (data.update == "success") {
             this.messageService.add({ severity: 'success', summary: 'success', detail: 'Update the password successfully.' });
             this.router.navigateByUrl('');
           } else {
@@ -264,7 +264,7 @@ export class ForgotPasswordComponent implements OnInit {
     else {
       this.http.updatePassword(this.goubleEmailVar, this.confirmedPass)
         .subscribe(data => {
-          if (data.update == "sucess") {
+          if (data.update == "success") {
             this.messageService.add({ severity: 'success', summary: 'success', detail: 'Update the password successfully.' });
             this.router.navigateByUrl('');
           } else {

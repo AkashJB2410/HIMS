@@ -6,5 +6,9 @@
     [tableConfig] = "config"
     [sidebarJSON] = "sidebarJSON"
     (sideBarEvent)="sidebarData($event)"
-    (confirmAction)="confirmAction($event)">
+    (confirmAction)="confirmAction($event)"
+    (onAdd)="saveRole($event)"
+    (onEdit)="editRole($event)"
+    (isActive)="isActive($event)"
+    >
 </app-super-grid>
