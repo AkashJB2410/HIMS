@@ -80,7 +80,7 @@ const routes: Routes = [
       { path: 'admission-list', loadChildren: () => import('./../admission-list/admission-list.module').then( m => m.AdmissionListModule)},
       { path: 'discharge-list', loadChildren: () => import('./../discharge-list/discharge-list.module').then( m => m.DischargeListModule)},
       { path: 'admission-cancel-list', loadChildren: () => import('./../admission-cancel-list/admission-cancel-list.module').then( m => m.AdmissionCancelListModule)},
-      { path: 'bed-transfer', loadChildren: () => import('./../bed-transder/bed-transder.module').then( m => m.BedTransderModule)},
+      { path: 'bed-transfer', loadChildren: () => import('../bed-transfer/bed-transfer.module').then( m => m.BedTransferModule)},
       { path: 'under-maintenance', loadChildren: () => import('./../under-maintenance/under-maintenance.module').then( m => m.UnderMaintenanceModule)},
       { path: 'graphical-view', loadChildren: () => import('./../graphical-view/graphical-view.module').then( m => m.GraphicalViewModule)},
       { path: 'ipd-admission-report', loadChildren: () => import('./../ipd-adimission-report/ipd-adimission-report.module').then( m => m.IpdAdimissionReportModule)},
@@ -124,7 +124,8 @@ const routes: Routes = [
       { path: 'all-masters/bank-branch-master', loadChildren: () => import('./../bank-branch-master/bank-branch-master.module').then( m => m.BankBranchMasterModule)},
       { path: 'all-masters/action-role', loadChildren: () => import('./../action-role/action-role.module').then( m => m.ActionRoleModule)},
       { path: 'all-masters/action-sub-module', loadChildren: () => import('./../action-sub-module/action-sub-module.module').then( m => m.ActionSubModuleModule)},
-      { path: 'all-masters/unit', loadChildren: () => import('./../unit/unit.module').then( m => m.UnitModule)},     
+      { path: 'all-masters/unit', loadChildren: () => import('./../unit/unit.module').then( m => m.UnitModule)}, 
+      { path: 'group-module', loadChildren: () => import('./../group-module/group-module.module').then( m => m.GroupModuleModule)},    
     ],
     // canActivate: [AuthGuardGuard]
   }];

@@ -13,24 +13,58 @@
       "notification": {
         "data": [
           {
-            "data": "Home"
+            "title": "Final Presentation",
+            "msg": "Classify notifications by three levels: high, medium, and low."
           },
           {
-            "data": "AboutAbout"
+            "title": "Notification System",
+            "msg": "There are a few broadsteps to follow when designing a notification system."
           },
           {
-            "data": "Gallery"
+            "title": "Design Principle",
+            "msg": "When embarking on notification design, the essential design principle to keep in mind is that they must assist (not impede) people to perform tasks."
           },
           {
-            "data": "Account"
+            "title": "Final Presentation",
+            "msg": "Classify notifications by three levels: high, medium, and low."
           },
           {
-            "data": "Others"
+            "title": "Notification System",
+            "msg": "There are a few broadsteps to follow when designing a notification system."
+          },
+          {
+            "title": "Design Principle",
+            "msg": "When embarking on notification design, the essential design principle to keep in mind is that they must assist (not impede) people to perform tasks."
+          },
+          {
+            "title": "Final Presentation",
+            "msg": "Classify notifications by three levels: high, medium, and low."
+          },
+          {
+            "title": "Notification System",
+            "msg": "There are a few broadsteps to follow when designing a notification system."
+          },
+          {
+            "title": "Design Principle",
+            "msg": "When embarking on notification design, the essential design principle to keep in mind is that they must assist (not impede) people to perform tasks."
+          },
+          {
+            "title": "Final Presentation",
+            "msg": "Classify notifications by three levels: high, medium, and low."
+          },
+          {
+            "title": "Notification System",
+            "msg": "There are a few broadsteps to follow when designing a notification system."
+          },
+          {
+            "title": "Design Principle",
+            "msg": "When embarking on notification design, the essential design principle to keep in mind is that they must assist (not impede) people to perform tasks."
           }
         ]
       },
       "dp": "../../assets/userlogo.png",
-      "sidenavLogo":"/assets/esahaj darkpng.png"
+      "sidenavLogo":"/assets/esahaj darkpng.png",
+      "onlyLogo":"/assets/halflogoTechjivaa.png"
     },
     "sidenavItems": [
       {
@@ -46,7 +80,7 @@
       {
         "label": "Emergency",
         "icon": "bi bi-calendar-plus",
-        "children": [
+        "group": [
           {
             "label": "Emergency Quick Registration",
             "icon": "",
@@ -72,7 +106,7 @@
       {
         "label": "COVID_19",
         "icon": "bi bi-virus",
-        "children": [
+        "group": [
           {
             "label": "Results Update",
             "icon": "",
@@ -128,7 +162,7 @@
       {
         "label": "ABHA",
         "icon": "bi bi-file-person",
-        "children": [
+        "group": [
           {
             "label": "Create ABHA ID",
             "icon": "",
@@ -144,7 +178,7 @@
       {
         "label": "Token-List",
         "icon": "bi bi-person-lines-fill",
-        "children": [
+        "group": [
           {
             "label": "Patients Waiting",
             "icon": "",
@@ -160,7 +194,7 @@
       {
         "label": "OPD",
         "icon": "bi bi-person-up",
-        "children": [
+        "group": [
           {
             "label": "Quick Patient Reg + Visit",
             "icon": "",
@@ -204,7 +238,7 @@
           {
             "label": "Reports",
             "icon": "",
-            "children": [
+            "subModule": [
               {
                 "label": "List of Registration Report",
                 "icon": "",
@@ -227,16 +261,16 @@
       {
         "label": "IPD",
         "icon": "bi bi-person-down",
-        "children": [
+        "group": [
           {
             "label": "IPD Quick Registration",
             "icon": "",
             "routerLink": "/master-page/ipd-quick-registration"
           },
           {
-            "label": "Admission Request",
+            "label": "AdmissionRequest",
             "icon": "",
-            "children": [
+            "subModule": [
               {
                 "label": "New Admission Request",
                 "icon": "",
@@ -250,9 +284,9 @@
             ]
           },
           {
-            "label": "Admission List",
+            "label": "AdmissionList",
             "icon": "",
-            "children": [
+            "subModule": [
               {
                 "label": "Admission List",
                 "icon": "",
@@ -271,9 +305,9 @@
             ]
           },
           {
-            "label": "Bed Management",
+            "label": "BedManagement",
             "icon": "",
-            "children": [
+            "subModule": [
               {
                 "label": "Bed Transfer",
                 "icon": "",
@@ -304,7 +338,7 @@
           {
             "label": "Reports",
             "icon": "",
-            "children": [
+            "subModule": [
               {
                 "label": "IPD Addmission Report",
                 "icon": "",
@@ -317,7 +351,7 @@
       {
         "label": "OT",
         "icon": "bi bi-heart-pulse",
-        "children": [
+        "group": [
           {
             "label": "OT Schedule",
             "icon": "",
@@ -338,7 +372,7 @@
       {
         "label": "Labour_Room",
         "icon": "bi bi-people",
-        "children": [
+        "group": [
           {
             "label": "Labour Room Schedule",
             "icon": "",
@@ -369,11 +403,11 @@
       {
         "label": "Nursing_Station",
         "icon": "bi bi-clipboard-pulse",
-        "children": [
+        "group": [
           {
             "label": "Documents",
             "icon": "",
-            "children": [
+            "subModule": [
               {
                 "label": "Birth Certificate",
                 "icon": "",
@@ -416,7 +450,7 @@
       {
         "label": "Billing",
         "icon": "bi bi-receipt",
-        "children": [
+        "group": [
           {
             "label": "Bill List",
             "icon": "",
@@ -445,7 +479,7 @@
           {
             "label": "Bill",
             "icon": "",
-            "children": [
+            "subModule": [
               {
                 "label": "EMG Bill",
                 "icon": "",
@@ -473,11 +507,11 @@
       {
         "label": "Investigation",
         "icon": "bi bi-binoculars",
-        "children": [
+        "group": [
           {
             "label": "Laboratory",
             "icon": "",
-            "children": [
+            "subModule": [
               {
                 "label": "Lab Order List",
                 "icon": "",
@@ -498,7 +532,7 @@
           {
             "label": "Radiology",
             "icon": "",
-            "children": [
+            "subModule": [
               {
                 "label": "Lab Order",
                 "icon": "",
@@ -536,11 +570,11 @@
       {
         "label": "Inventory",
         "icon": "bi bi-bag-plus",
-        "children": [
+        "group": [
           {
             "label": "Transfer",
             "icon": "",
-            "children": [
+            "subModule": [
               {
                 "label": "Requisition",
                 "icon": "",
@@ -611,7 +645,7 @@
           {
             "label": "Reports",
             "icon": "",
-            "children": [
+            "subModule": [
               {
                 "label": "Current Stock Report",
                 "icon": "",
@@ -624,7 +658,7 @@
       {
         "label": "Pharmacy",
         "icon": "bi bi-capsule-pill",
-        "children": [
+        "group": [
           {
             "label": "Pharmacy Pending List",
             "icon": "",
@@ -668,7 +702,7 @@
           {
             "label": "Reports",
             "icon": "",
-            "children": [
+            "subModule": [
               {
                 "label": "Pharmacy Sales Report",
                 "icon": "",
@@ -686,7 +720,7 @@
       {
         "label": "Form",
         "icon": "bi bi-file-earmark-plus",
-        "children": [
+        "group": [
           {
             "label": "OPD Application Form",
             "icon": "",
@@ -712,7 +746,7 @@
       {
         "label": "Configuration",
         "icon": "bi bi-gear-wide",
-        "children": [
+        "group": [
           {
             "label": "All Masters",
             "icon": "",
@@ -723,7 +757,7 @@
       {
         "label": "Administration",
         "icon": "bi bi-diagram-3",
-        "children": [
+        "group": [
           {
             "label": "Master Module",
             "icon": "",
@@ -733,6 +767,11 @@
             "label": "Sub Module",
             "icon": "",
             "routerLink": "/master-page/sub-module"
+          },
+          {
+            "label": "Group Module",
+            "icon": "",
+            "routerLink": "/master-page/group-module"
           }
         ]
       }

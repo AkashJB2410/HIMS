@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <h6 class="cst-label">{{formJson.formTitle}}</h6>
+    <h6>{{formJson.formTitle}}</h6>
     <form [formGroup]="form">
         <div class="{{formJson.class}}">
             <!-- <span *ngIf="formValid" style="color: red;">Please fill all required fields</span> -->
@@ -8,10 +8,11 @@
                     <label for="{{formData.fieldName}}" class="{{formData.lblclass}}">{{formData.label}}</label>
 
                     <div *ngIf="formData.fieldType == formStaticText.TEXT">
-                        <input type="{{formData.inputType}}" id="{{formData.fieldName}}" name="{{formData.fieldName}}"
+                        <input type="{{formData.inputType}}"  id="{{formData.fieldName}}" name="{{formData.fieldName}}"
                             class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
                             [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
                             [(ngModel)]="formData.fieldValue" placeholder="{{formData.placeholder}}"
+
                            (blur)="blurValue($event.target, formData)">
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.MONTH">
@@ -22,15 +23,14 @@
                         </p-calendar>
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.STATICTEXT">
-                        <p id="{{formData.fieldName}}" class="{{formData.valueclass}}">{{formData.data}}</p>
+                        <p id="{{formData.fieldName}}" class="{{formData.valueclass}}" >{{formData.data}}</p>
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.PASSWORD">
                         <p-password inputId="{{formData.fieldName}}" [formControlName]="formData.fieldName"
                             [placeholder]="formData.placeholder" class="{{formData.valueclass}}"
                             [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
-                            [(ngModel)]="formData.fieldValue" [toggleMask]="true"
-                            (onClick)="changeEvent($event, formData)">
-                        </p-password>
+                            [(ngModel)]="formData.fieldValue" [feedback]="false" [toggleMask]="true"
+                            (onClick)="changeEvent($event, formData)"></p-password>
                     </div>
                     <p-dropdown *ngIf="formData.fieldType == formStaticText.SELECT" [options]="formData.values"
                         [inputId]="formData.fieldName" [formControlName]="formData.fieldName"

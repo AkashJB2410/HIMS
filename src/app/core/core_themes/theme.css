@@ -1569,6 +1569,7 @@ body {
   /* margin-bottom: 10px; */
   /* border-radius: 0.375rem; */
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  padding: 0.375rem 0.75rem !important;
 }
 
 /*-----------------------Input-Box-End--------------------------*/
@@ -1597,7 +1598,9 @@ body {
   -moz-appearance: none;
   appearance: none;
 }
-
+.p-dropdown .p-inputtext{
+  padding: 0.375rem 0.75rem !important;
+}
 /*-------------------------Dropdown End-------------------------------------*/
 /*-------------------------textarea-Start-------------------------------------*/
 
@@ -2251,7 +2254,7 @@ body {
   font-size: 22px;
   line-height: 30px;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .p-menubar {
@@ -2292,6 +2295,25 @@ body {
   display: none;
 }
 
+.togglefix
+{
+  height: 22px;
+  width: 22px;
+  margin-left: 18em;
+  cursor: pointer;
+}
+.p-breadcrumb ul li .p-menuitem-link .p-menuitem-text {
+  color: rgba(0, 0, 0, 0.87);
+  margin-left: 4px !important;
+}
+.p-breadcrumb {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  padding: 0.5rem !important;
+  margin-top: 5px !important;
+}
+
 .lbl-center-forgot-password {
   text-align: center;
   /* color: red; */
@@ -2318,4 +2340,28 @@ body {
 
 .p-card .p-card-body {
   padding: 0.25rem !important;
+}
+
+/* ::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 5px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: rgb(160, 160, 160); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0f0f0f; 
+} */
+
+.lgn-txt {
+  text-align: center !important;
+  font-size: 12px !important;
+  margin-top: -20px !important;
 }

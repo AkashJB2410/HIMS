@@ -5,9 +5,9 @@
         {"field": "name","header": "Name","iseditable": true, "class":""},
         {"field": "inventoryStatus","header": "Inventory Status","iseditable": false, "class":""},
         {"field": "category","header": "Category","iseditable": false, "class":""},
-        {"field": "quantity","header": "Quantity","iseditable": false, "class":"text-center"},
-        {"field": "date","header": "Date","iseditable": false,"class":""},
-        {"field": "name","header": "Name","iseditable": true,"class":""}
+        {"field": "quantity","header": "Quantity","iseditable": false, "class":"text-center"}
+
+
     ],
     "getColors":[
         { "status":"INSTOCK", "color": "#119C2B"},
