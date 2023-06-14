@@ -130,8 +130,8 @@ import { BankBranchMasterComponent } from './features/bank-branch-master/bank-br
 import { ActionButtonModule } from './features/action-button/action-button.module';
 import { ActionModule } from './features/action-module/actionModule';
 import { ActionRoleComponent } from './features/action-role/action-role.component';
+import { DepartmentComponent } from './features/department/department.component';
 import { ActionSubModuleComponent } from './features/action-sub-module/action-sub-module.component';
-
 
 @NgModule({
   declarations: [
@@ -245,6 +245,8 @@ import { ActionSubModuleComponent } from './features/action-sub-module/action-su
     CovidWalkInRegistrationsComponent,
     CovidWalkInSearchComponent,
     BankMasterComponent,
+    ActionRoleComponent,
+    DepartmentComponent,
     EmployeeStatusComponent,
     ActionButtonComponent,
     ActionModuleComponent,
