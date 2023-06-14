@@ -117,7 +117,10 @@ const routes: Routes = [
       { path: 'covid-walk-in-registrations', loadChildren: () => import('./../covid-walk-in-registrations/covid-walk-in-registrations.module').then( m => m.CovidWalkInRegistrationsModule)},
       { path: 'covid-walk-in-search', loadChildren: () => import('./../covid-walk-in-search/covid-walk-in-search.module').then( m => m.CovidWalkInSearchModule)},
       { path: 'all-masters/bank-master', loadChildren: () => import('./../bank-master/bank-master.module').then( m => m.BankMasterModule)}, 
-      { path: 'all-masters/action-role', loadChildren: () => import('./../action-role/action-role.module').then( m => m.ActionRoleModule)},     
+      { path: 'all-masters/action-role', loadChildren: () => import('./../action-role/action-role.module').then( m => m.ActionRoleModule)}, 
+      { path: 'all-masters/department', loadChildren: () => import('./../department/department.module').then( m => m.DepartmentModule)},     
+      { path: 'children', loadChildren: () => import('./../children/children.module').then( m => m.ChildrenModule)},     
+
     ],
     // canActivate: [AuthGuardGuard]
   }];

@@ -732,6 +732,11 @@
             "label": "Sub Module",
             "icon": "",
             "routerLink": "/master-page/sub-module"
+          },
+          {
+            "label": "Children",
+            "icon": "",
+            "routerLink": "/master-page/children"
           }
         ]
       }

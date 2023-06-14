@@ -685,7 +685,7 @@
                         "class": "col-md-12 ",
                         "lblclass": "lbl-end ",
                         "id": "anchor",
-                        "placeholder": "/master-page/all-masters/bank-master",
+                        "placeholder": "/master-page/all-masters/department",
                         "formControlName": "Department",
                         "message": {
                             "required": "",

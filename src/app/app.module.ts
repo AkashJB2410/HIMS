@@ -123,6 +123,8 @@ import { CovidWalkInRegistrationsComponent } from './features/covid-walk-in-regi
 import { CovidWalkInSearchComponent } from './features/covid-walk-in-search/covid-walk-in-search.component';
 import { BankMasterComponent } from './features/bank-master/bank-master.component';
 import { ActionRoleComponent } from './features/action-role/action-role.component';
+import { DepartmentComponent } from './features/department/department.component';
+import { ChildrenComponent } from './features/children/children.component';
 
 @NgModule({
   declarations: [
@@ -236,7 +238,9 @@ import { ActionRoleComponent } from './features/action-role/action-role.componen
     CovidWalkInRegistrationsComponent,
     CovidWalkInSearchComponent,
     BankMasterComponent,
-    ActionRoleComponent
+    ActionRoleComponent,
+    DepartmentComponent,
+    ChildrenComponent
   ],
   imports: [
     CommonModule,
