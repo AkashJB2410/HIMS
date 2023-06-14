@@ -24,6 +24,7 @@ export class RegistrationFormComponent implements OnInit {
   isdataReady = false;
   sidebarJSON: any = rgistrationData;
   formdata: any;
+  flag: any;
 
   constructor(private messageService: MessageService, private http: RegistrationFormService) { }
 
@@ -277,7 +278,9 @@ export class RegistrationFormComponent implements OnInit {
       }
     })
   }
-  
+  events(e: any){
+    this.flag = e;
+  }
   changeSelectItem(e: any) {
     console.log("e => ", e)
   }
