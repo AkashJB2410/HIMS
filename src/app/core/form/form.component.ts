@@ -11,6 +11,7 @@ import { FormService } from '../shared/service/form.service';
 })
 
 export class FormComponent implements OnInit {
+[x: string]: any;
   form: FormGroup;
   formControls: IFormField[] = [];
   formJson: any;
@@ -43,6 +44,7 @@ export class FormComponent implements OnInit {
     this.form$.renderNewForm.subscribe(data => {
       this.renderForm(data);
     });
+    
   }
 
   catpchaValue(value: any, control: any) {
@@ -80,11 +82,16 @@ export class FormComponent implements OnInit {
   dependentDrop(value: any, control: any) {
     var ctrl = this.form.get(control.fieldName);
     ctrl.setValue(value);
+    this.events = [];
+    this.events.push(control);
+    this.events.push(value);
+    this.changeEvents.emit(this.events);
   }
 
   renderForm(data: any) {
     if (data.funtonality == 'isVisible') {
-      this.visibility(data);
+      // this.visibility(data);
+      this.addControl(data);
     } else if (data.funtonality == 'isEditable') {
       this.enableDisableElement(data);
     } else if (data.funtonality == 'autofill') {
@@ -124,6 +131,12 @@ export class FormComponent implements OnInit {
     } else {
       document.getElementById("id" + data.formData.formControlName).style.display = "none";
     }
+  }
+
+  addControl(data: any) {
+    this.form.get(data.formData.formControlName)
+    this.form.addControl('nationality', this.formBuilder.control('genderDrop', [Validators.required]));
+    // ctrl.addControl(data.formData.formControlName, this.group);
   }
 
   ngOnDestroy() {

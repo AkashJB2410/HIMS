@@ -86,7 +86,7 @@ import { ListOfAdmissionRequestComponent } from './features/list-of-admission-re
 import { AdmissionListComponent } from './features/admission-list/admission-list.component';
 import { DischargeListComponent } from './features/discharge-list/discharge-list.component';
 import { AdmissionCancelListComponent } from './features/admission-cancel-list/admission-cancel-list.component';
-import { BedTransderComponent } from './features/bed-transder/bed-transder.component';
+import { BedTransferComponent } from './features/bed-transfer/bed-transfer.component';
 import { UnderMaintenanceComponent } from './features/under-maintenance/under-maintenance.component';
 import { GraphicalViewComponent } from './features/graphical-view/graphical-view.component';
 import { IpdAdimissionReportComponent } from './features/ipd-adimission-report/ipd-adimission-report.component';
@@ -208,7 +208,7 @@ import { ActionSubModuleComponent } from './features/action-sub-module/action-su
     AdmissionListComponent,
     DischargeListComponent,
     AdmissionCancelListComponent,
-    BedTransderComponent,
+    BedTransferComponent,
     UnderMaintenanceComponent,
     GraphicalViewComponent,
     IpdAdimissionReportComponent,
@@ -250,7 +250,8 @@ import { ActionSubModuleComponent } from './features/action-sub-module/action-su
     ActionModuleComponent,
     BankBranchMasterComponent,
     ActionRoleComponent,
-    ActionSubModuleComponent
+    ActionSubModuleComponent,
+    BedTransferComponent
   ],
   imports: [
     CommonModule,

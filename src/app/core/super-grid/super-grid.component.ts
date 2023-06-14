@@ -35,6 +35,7 @@ export class SuperGridComponent implements OnInit {
   @Output() isActive = new EventEmitter<string>();
   @Output() onEdit = new EventEmitter<any>();
   @Output() onAdd = new EventEmitter<any>();
+  @Output() changeEvents = new EventEmitter<any>();
 
   constructor(private confirmationService: ConfirmationService) { }
 
@@ -89,6 +90,9 @@ export class SuperGridComponent implements OnInit {
     }
   }
 
+  changeEvent(event: any){
+    this.changeEvents.emit(event);
+  }
   selectedData(fiteredData: any) {
     this.fiteredData.emit(fiteredData);
   }

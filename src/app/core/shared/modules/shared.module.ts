@@ -69,9 +69,12 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { CardsComponent } from '../../cards/cards.component';
 import {MenubarModule} from 'primeng/menubar';
 import {TabMenuModule} from 'primeng/tabmenu';
+import {PickListModule} from 'primeng/picklist';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
 import { EmailConfigurationComponent } from '../../email-configuration/email-configuration.component';
 import { SmsConfigurationComponent } from '../../sms-configuration/sms-configuration.component';
 import { VerticalTabularComponent } from '../../vertical-tabular/vertical-tabular.component';
+import {CascadeSelectModule} from 'primeng/cascadeselect';
 
 @NgModule({
     declarations: [
@@ -151,6 +154,9 @@ import { VerticalTabularComponent } from '../../vertical-tabular/vertical-tabula
         TieredMenuModule,
         MenubarModule,
         TabMenuModule,
+        PickListModule,
+        BreadcrumbModule,
+        CascadeSelectModule
     ],
     exports: [
         //============= Core Components =============
@@ -225,7 +231,10 @@ import { VerticalTabularComponent } from '../../vertical-tabular/vertical-tabula
         FileUploadModule,
         CardModule,
         MenubarModule,
-        TabMenuModule
+        TabMenuModule,
+        PickListModule,
+        BreadcrumbModule,
+        CascadeSelectModule
     ],
     providers: [
         MessageService,
