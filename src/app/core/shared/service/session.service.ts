@@ -7,7 +7,7 @@ import * as myConstants from "../objects/constants";
   providedIn: 'root'
 })
 export class SessionService {
-
+  
   email="raghvendrapala839@gmail.com";
   constructor(private http: HttpClient) { }
 
@@ -23,8 +23,7 @@ export class SessionService {
   }
 
   Logincheck(obj: any): Observable<any> {
-    // const url = myConstants.LOCALHOSTURL + "api/v1/login";
-    const url="http://localhost:8080/api/v1/login";
+    const url = myConstants.LOCALHOSTURL + "api/v1/login";
     return this.PostCall(url, obj);
   }
 

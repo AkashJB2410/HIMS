@@ -37,7 +37,6 @@ export class GenerictableComponent implements OnInit {
   chekboxes: any = [];
   @Input() config: any;
   @Input() tableData: any[];
-
   @Output() onCheckboxClick = new EventEmitter<string>();
   @Output() onEdit = new EventEmitter<string>();
   @Output() onDelete = new EventEmitter<string>();
