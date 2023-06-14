@@ -1,0 +1,135 @@
+{
+    "tableName": "Unit Table",
+    "tableHeaders": [
+        {
+            "field": "srNumber",
+            "header": "Sr.Number",
+            "iseditable": false,
+            "class": "text-center"
+        },
+        {
+            "field": "unitName",
+            "header": "Unit Name",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "unitEmail",
+            "header": "Unit Email",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "unitMobile",
+            "header": "Unit Mobile",
+            "iseditable": false,
+            "class": "text-center"
+        },
+        {
+            "field": "unitPhone",
+            "header": "Unit Phone",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "unitContactPerson",
+            "header": "Unit Contact Person",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "unitPharmacyLicenseNo",
+            "header": "Unit Pharmacy License No",
+            "iseditable": false,
+            "class": "text-center"
+        },
+        {
+            "field": "unitClinicRegistrationNo",
+            "header": "Unit Clinic Registration No",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "unitShopAndEstablishmentNo",
+            "header": "Unit Shop And Establishment No",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "unitTradeNo",
+            "header": "Unit Trade No",
+            "iseditable": false,
+            "class": "text-center"
+        },
+        {
+            "field": "unitServer",
+            "header": "Unit Server",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "unitDatabase",
+            "header": "Unit Database",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "unitFaxNo",
+            "header": "Unit Fax No",
+            "iseditable": false,
+            "class": "text-center"
+        },
+        {
+            "field": "actionModuleName",
+            "header": "Action Module Name",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "is_Active",
+            "header": "IsActive",
+            "iseditable": false,
+            "class": ""
+        }
+    ],
+    "PdfHeaders": [
+        {
+            "field": "unitId",
+            "header": "Unit Id"
+        },
+        {
+            "field": "unitName",
+            "header": "Unit Name"
+        },
+        {
+            "field": "is_Active",
+            "header": "IsActive"
+        }
+    ],
+    "globalFilter": [
+        "unitId", "unitName","unitEmail","unitMobile","unitPhone","unitContactPerson","unitPharmacyLicenseNo","unitClinicRegistrationNo",
+        "unitShopAndEstablishmentNo","unitTradeNo","unitServer","unitDatabase","unitFaxNo","actionModuleName","is_Active"
+    ],
+    "rows": 10,
+    "showCurrentPageReport": true,
+    "rowsPerPageOptions": [
+        10,
+        25,
+        50
+    ],
+    "paginator": true,
+    "rowHover": true,
+    "loading": false,
+    "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox": true,
+    "resizableColumns": true,
+    "isActions": [
+        "Edit",
+        "Delete",
+        "isActive"
+    ],
+    "editicon": "../../../assets/icons/Group 1823.png",
+    "isVisible": false,
+    "buttonlbl": "Add Unit",
+    "textLength": 16
+}

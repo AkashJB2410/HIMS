@@ -1,0 +1,106 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Unit",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar":"p-sidebar-lg",
+        "formControls": [
+            {
+                "isEditable": true,
+                "isVisible": false,
+                "label": "is_Active",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-4 my-1",
+                "lblclass": "custom-label",
+                "valueclass":"input-box",
+                "placeholder": "Enter id",
+                "formControlName": "isActive",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }, {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Unit Cluster",
+                "type": "select",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass":"custom-label",
+                "valueclass":"input-box",
+                "placeholder": "Enter unit cluster",
+                "formControlName": "unitCluster",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "",
+                "type": "statictext",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"custom-label",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "staic",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "Submit",
+                "class": "col-md-2",
+                "valueclass": "butn-custom-dark-blue ",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },            
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-2",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}
