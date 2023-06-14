@@ -131,7 +131,6 @@ import { ActionButtonModule } from './features/action-button/action-button.modul
 import { ActionModule } from './features/action-module/actionModule';
 import { ActionRoleComponent } from './features/action-role/action-role.component';
 import { DepartmentComponent } from './features/department/department.component';
-import { ChildrenComponent } from './features/children/children.component';
 import { ActionSubModuleComponent } from './features/action-sub-module/action-sub-module.component';
 
 @NgModule({
@@ -248,7 +247,6 @@ import { ActionSubModuleComponent } from './features/action-sub-module/action-su
     BankMasterComponent,
     ActionRoleComponent,
     DepartmentComponent,
-    ChildrenComponent,
     EmployeeStatusComponent,
     ActionButtonComponent,
     ActionModuleComponent,

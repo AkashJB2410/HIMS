@@ -9,6 +9,7 @@
                 "id": 0,
                 "isEditable": false,
                 "isVisible": true,
+                "transient": false,
                 "label": "Id",
                 "type": "text",
                 "inputType": "text",
@@ -28,6 +29,7 @@
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
+                "transient": false,
                 "label": "Enter Department Name",
                 "type": "text",
                 "inputType": "text",
@@ -42,7 +44,7 @@
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "/^[a-zA-Z ]/"
+                    "pattern": "^[A-Za-z]+$"
                 }
             },
             {
@@ -53,11 +55,10 @@
                 "type": "button",
                 "subtype": "save",
                 "class": "col-md-6",
-                "valueclass": "btn-primary-custombutton-sm",
+                "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",
                 "isDisabled": false,
-                "formControlName": "",
                 "validations": {
                     "required": false,
                     "pattern": ""
@@ -72,10 +73,9 @@
                 "subtype": "reset",
                 "btnLabel": "Back",
                 "class": "col-md-6",
-                "valueclass": "btn-warning-custombutton-sm",
+                "valueclass": "butn-custom-wrng",
                 "icon": "",
                 "isDisabled": false,
-                "formControlName": "",
                 "validations": {
                     "required": false,
                     "pattern": ""

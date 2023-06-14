@@ -3,15 +3,19 @@
     "tableName": "Department Table",
     "tableHeaders":[
         {
+            "field": "srNumber","header": "srNumber","iseditable": false,"class":""
+        },
+        {
             "field":"departmentId","header":"Id","iseditable": false , "class":""
         },
         {
             "field":"departmentName", "header":"Department Name","iseditable": false , "class":""
         },
-        { 
-            "field":"is_Active","header":"Active Status","iseditable": false , "class":""
+        {
+            "field": "is_Active","header": "isActive","iseditable": false,"class":""
         }
-       
+
+
     ],
     "PdfHeaders":[
         {
@@ -21,7 +25,7 @@
             "field":"departmentName","header":"Department Name"
         },
         {
-            "field":"is_Active", "header":"Active Status"
+            "field":"is_Active", "header":"isActive"
         }
      
     ],

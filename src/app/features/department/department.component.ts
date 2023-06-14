@@ -43,6 +43,9 @@ export class DepartmentComponent implements OnInit {
       this.table_Data = res;
       console.log('All data=>',res)
       this.isDataReady = true;
+      for (let i = 0; i < this.table_Data.length; i++) {
+        this.table_Data[i].srNumber = i + 1;
+      }
       // for(let i=0; i<this.table_Data.length;i++){
       //   this.table_Data[i].srNo=i+1;
       // }
@@ -79,7 +82,7 @@ export class DepartmentComponent implements OnInit {
   confirmAction(e:any){
     if(e.is_Active==true){
       this.table_Data=undefined;
-      this.deleteDepartment(e);
+      this.deleteDepartment(e.departmentId);
       // this.messageService.add({ severity: 'success', summary: 'Disabled', detail: 'Bank Master Disabled Successfully' });
     }
     else if (e.is_Active==false){
@@ -89,13 +92,14 @@ export class DepartmentComponent implements OnInit {
   }
 
   sidebarData(e:any){
-    if(e=='reset'){}
+    if(e =='reset'){}
     else if (this.saveMethod) {
-      this.addDepartment(e);
+      this.addDepartment(e.departmentId);
+      console.log("sidebardata =>" , e)
       // this.messageService.add({ severity: 'success', summary: 'Added', detail: 'Bank Master Added Successfully' });
       this.saveMethod=false;
     } else {
-        // this.updateDepartment(e);
+        this.updateDepartment(e.departmentId);
         // this.messageService.add({ severity: 'success', summary: 'Updated', detail: 'Bank Master Updated Successfully.' });
     }
   }
@@ -108,17 +112,17 @@ export class DepartmentComponent implements OnInit {
       })
   }
 
-  updateDepartment(department:any){
-    this.http.updateDepartment(department)
+  updateDepartment(e:any){
+    this.http.updateDepartment(e.departmentId)
       .subscribe(d_Data => {
-        console.log('update fill=>',department)
+        console.log('update fill=>',e)
         this.table_Data = undefined;
         this.getAllDepartment();
       })
   }
 
   deleteDepartment(e:any){
-    this.http.deleteDepartment(e.departmentId)
+    this.http.deleteDepartment(e)
       .subscribe(d_Data => {
         this.getAllDepartment();
       })

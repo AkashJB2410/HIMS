@@ -29,19 +29,19 @@ export class DepartmentService {
 
   updateDepartment(department:any){
     const param={
-      "departmentName": department.departmentName
+      "department": department.departmentName
     };
     const url = "http://localhost:8080/api/v1/updateMstDepartment"+department.departmentId;
     return this.http.put<any>(url, param);
   }
 
-  deleteDepartment(department:any){
-    const url = "http://localhost:8080/api/v1/deleteMstDepartment"+department;
+  deleteDepartment(departmentId:any){
+    const url = "http://localhost:8080/api/v1/deleteMstDepartment/"+departmentId;
     return this.http.delete<any>(url);
   }
 
   reactiveDepartment(department:any){
-    const url = "http://localhost:8080/api/v1/reactiveMstDepartment"+department.departmentId;
+    const url = "http://localhost:8080/api/v1/reactiveMstDepartment/"+department.departmentId;
     return this.http.post<any>(url, department)
   }
 }
