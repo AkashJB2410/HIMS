@@ -119,6 +119,7 @@ const routes: Routes = [
       { path: 'all-masters/bank-master', loadChildren: () => import('./../bank-master/bank-master.module').then( m => m.BankMasterModule)},
       { path: 'all-masters/employee-status', loadChildren: () => import('./../employee-status/employee-status.module').then( m => m.EmployeeStatusModule)},      
       { path: 'all-masters/bank-master', loadChildren: () => import('./../bank-master/bank-master.module').then( m => m.BankMasterModule)}, 
+      { path: 'all-masters/department', loadChildren: () => import('./../department/department.module').then( m => m.DepartmentModule)},    
       { path: 'all-masters/action-button', loadChildren: () => import('./../action-button/action-button.module').then( m => m.ActionButtonModule)},  
       { path: 'all-masters/action-module', loadChildren: () => import('./../action-module/actionModule').then( m => m.ActionModule)},
       { path: 'all-masters/bank-branch-master', loadChildren: () => import('./../bank-branch-master/bank-branch-master.module').then( m => m.BankBranchMasterModule)},
