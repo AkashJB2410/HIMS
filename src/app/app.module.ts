@@ -132,6 +132,7 @@ import { ActionModule } from './features/action-module/actionModule';
 import { ActionRoleComponent } from './features/action-role/action-role.component';
 import { DepartmentComponent } from './features/department/department.component';
 import { ActionSubModuleComponent } from './features/action-sub-module/action-sub-module.component';
+import { SubDepartmentComponent } from './features/sub-department/sub-department.component';
 
 @NgModule({
   declarations: [
@@ -253,7 +254,8 @@ import { ActionSubModuleComponent } from './features/action-sub-module/action-su
     BankBranchMasterComponent,
     ActionRoleComponent,
     ActionSubModuleComponent,
-    BedTransferComponent
+    BedTransferComponent,
+    SubDepartmentComponent
   ],
   imports: [
     CommonModule,

@@ -218,7 +218,7 @@ export class FormComponent implements OnInit {
           );
         }
       });
-      this.formData.emit(this.form.value);
+      this.formData.emit(this.form.getRawValue());
       this.btnEvent.emit(event);
     } else {
       this.formValid = true;

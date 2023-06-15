@@ -125,6 +125,8 @@ const routes: Routes = [
       { path: 'all-masters/bank-branch-master', loadChildren: () => import('./../bank-branch-master/bank-branch-master.module').then( m => m.BankBranchMasterModule)},
       { path: 'all-masters/action-role', loadChildren: () => import('./../action-role/action-role.module').then( m => m.ActionRoleModule)},
       { path: 'all-masters/action-sub-module', loadChildren: () => import('./../action-sub-module/action-sub-module.module').then( m => m.ActionSubModuleModule)},     
+      { path: 'all-masters/sub-department', loadChildren: () => import('./../sub-department/sub-department.module').then( m => m.SubDepartmentModule)},     
+    
     ],
     // canActivate: [AuthGuardGuard]
   }];
