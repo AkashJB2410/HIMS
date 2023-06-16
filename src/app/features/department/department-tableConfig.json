@@ -1,0 +1,47 @@
+
+{
+    "tableName": "Department Table",
+    "tableHeaders":[
+        {
+            "field": "srNumber","header": "srNumber","iseditable": false,"class":""
+        },
+        {
+            "field":"departmentId","header":"Id","iseditable": false , "class":""
+        },
+        {
+            "field":"departmentName", "header":"Department Name","iseditable": false , "class":""
+        },
+        {
+            "field": "is_Active","header": "isActive","iseditable": false,"class":""
+        }
+
+
+    ],
+    "PdfHeaders":[
+        {
+           "field":"departmentId","header":"Id"
+        },
+        {
+            "field":"departmentName","header":"Department Name"
+        },
+        {
+            "field":"is_Active", "header":"isActive"
+        }
+     
+    ],
+    "globalFilter":["departmentId","departmentName","is_Active"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [10,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "resizableColumns": true,
+    "isActions": ["Edit", "Delete", "isActive"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "isVisible":false,
+    "buttonlbl":"",
+    "textLength":16
+}

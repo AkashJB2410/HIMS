@@ -1,0 +1,13 @@
+<h2>department</h2>
+<app-super-grid
+    *ngIf="table_Data"
+    [configurations]="configurations"
+    [tableData]="table_Data"
+    [tableConfig] = "config"
+    [sidebarJSON]="sidebar_Update_Input"
+    (sideBarEvent)="sidebarData($event)"
+    (confirmAction)="confirmAction($event)"
+    (onAdd)="saveDepartment($event)"
+    (onEdit)="editDepartment($event)"
+    (isActive)="isActive($event)"
+></app-super-grid>
