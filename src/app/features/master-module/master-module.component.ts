@@ -1,20 +1,73 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { MasterModuleService } from './master-module.service';
-import mstModuleData from './mstModule.json';
-import * as mstModule_table_config from './mstModule_table_config.json';
+import mstModuleData from './masterModuleSidebarConfig.json';
+import * as mstModule_table_config from './masterModuleTableConfig.json';
 
 @Component({
   selector: 'app-master-module',
   templateUrl: './master-module.component.html',
   // styleUrls: ['./master-module.component.css']
-  styles: [`
-  :host ::ng-deep .p-component-overlay {
-    width: 100%;
-  }
-`]
+  
 })
 export class MasterModuleComponent implements OnInit {
+  checkBoxClick(event: any) {
+    console.log("event click ==>",event);
+  }
+
+  ondeletechecked(e:any){
+    console.log("event click ==>",e);
+  }
+
+  onDelete(e:any){
+    console.log(e,"abdkansksaldx");
+  }
+  Bulkdelete(e:any){
+    if(e.length==1){
+      if(e[0].is_Deleted==false){
+        this.deleteRoleData(e[0].moduleId);
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Message form User component',
+          detail: 'Deleted Sucessfully',
+        });
+      }else{
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Message form User component',
+          detail: 'Allready Deleted',
+        });
+      }
+    }else{
+      let a:boolean;
+      for(let i=0;i<e.length;i++){
+        if(e[i].is_Deleted==false){
+          this.deleteRoleData(e[i].moduleId);
+          a=true;
+        }
+      }
+
+      if(a==true){
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Message form User component',
+          detail: 'Deleted Sucessfully',
+        });
+        a=false;
+      }else{
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Message form User component',
+          detail: 'Allready Deleted',
+        });
+
+      }
+
+    }
+
+  }
+
+
 
   toast: any = {};
   showToast: any;
@@ -26,15 +79,19 @@ export class MasterModuleComponent implements OnInit {
   tableConfig: any;
   isdataReady = false;
   sidebarJSON: any = mstModuleData;
+  st: any;
 
-  constructor(private messageService: MessageService, private http: MasterModuleService) { }
+  constructor(
+    private messageService: MessageService,
+    private http: MasterModuleService
+  ) {}
 
   ngOnInit(): void {
     this.configurations = {
-      "isFilter": true,
-      "isTable": true,
-      "isSideBar": true,
-      "isConfirmation": true
+      isFilter: true,
+      isTable: true,
+      isSideBar: true,
+      isConfirmation: true,
     };
     this.getAllMstModuleData();
     // this.data = roleData;
@@ -42,16 +99,24 @@ export class MasterModuleComponent implements OnInit {
   }
   buttonClick(e: any) {
     if (e == 'next') {
-      console.log(e)
+      console.log(e);
     } else if (e == 'cancel') {
-      console.log(e)
+      console.log(e);
     }
   }
   getAllMstModuleData() {
-    this.http.GetAllMstModuleData().subscribe(res => {
+    this.http.GetAllMstModuleData().subscribe((res) => {
       this.data = res;
       this.isdataReady = true;
-    })
+    });
+
+    // icon: 'tree';
+    // is_Active: true;
+    // is_Deleted: false;
+    // label: null;
+    // moduleId: 1;
+    // routerLink: 'asdsfe';
+    // sequence: '31';
   }
 
   getConfigForTable() {
@@ -62,53 +127,97 @@ export class MasterModuleComponent implements OnInit {
   editRow(e: any) {
     this.visibleSidebar = true;
   }
-
-  confirmAction(e: any) {
-    this.deleteRoleData(e.module_Id);
-    this.messageService.add({ severity: 'success', summary: 'Message form User component', detail: 'Deleted Sucessfully' });
-    console.log("Deleted" + JSON.stringify(e))
+  onEdit(st: any) {
+    this.st = st;
+    console.log(st);
   }
-  deleteRoleData(moduleId: any) {
-    this.http.deleteMstModule(moduleId)
-      .subscribe(data => {
+
+  isActive(e: any) {
+    if (e.is_Deleted == false) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Message form User component',
+        detail: 'Allready Enabled',
+      });
+    } else {
+      this.http.isActiveData(e).subscribe((data) => {
         this.data = undefined;
         this.getAllMstModuleData();
-        console.log("data" + data)
-      })
+        console.log('data' + data);
+      });
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Message form User component',
+        detail: 'Enabled Sucessfully',
+      });
+    }
+  }
+
+  confirmAction(e: any) {
+   if(e==false){
+    this.getAllMstModuleData();
+   }else{
+    if (e.is_Deleted) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Message form User component',
+        detail: 'Allready Deleted',
+      });
+    } else {
+      this.deleteRoleData(e.moduleId);
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Message form User component',
+        detail: 'Deleted Sucessfully',
+      });
+    }
+    console.log('Deleted' + JSON.stringify(e));
+   }
+  }
+  deleteRoleData(moduleId: any) {
+    this.http.deleteMstModule(moduleId).subscribe((data) => {
+      this.data = undefined;
+      this.getAllMstModuleData();
+      console.log('data' + data);
+    });
   }
   sidebarData(e: any) {
-    console.log("From User Management ==> ", e);
+    console.log('From User Management ==> ', e);
     if (e == 'reset') {
-      console.log(e)
+      console.log(e);
     } else if (e.idInput == true) {
-      console.log(e)
+      console.log(e);
       this.submitMstModuleData(e);
-      this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+      this.messageService.add({
+        severity: 'success',
+        summary: 'success',
+        detail: 'Data save successfull.',
+      });
     } else {
       console.log(e);
       this.updateMstModuleData(e);
-      this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data updated successfull.' });
-      
+      this.messageService.add({
+        severity: 'success',
+        summary: 'success',
+        detail: 'Data updated successfull.',
+      });
     }
-
-
   }
+
   submitMstModuleData(roleData: any) {
-    this.http.saveMstModuleData(roleData)
-      .subscribe(data => {
-        this.data = undefined;
-        this.getAllMstModuleData();
-        console.log("data" + data)
-      })
-  }
-
-  updateMstModuleData(roleData:any){
-    this.http.updateMstModule(roleData)
-    .subscribe(data => {
+    this.http.saveMstModuleData(roleData).subscribe((data) => {
       this.data = undefined;
       this.getAllMstModuleData();
-      console.log("data" + data)
-    })
+      console.log('data' + data);
+    });
+  }
+
+  updateMstModuleData(idInput: any) {
+    this.http.updateMstModule(idInput).subscribe((data) => {
+      this.data = undefined;
+      this.getAllMstModuleData();
+      console.log('data' + data);
+    });
   }
 
   fiteredData(e: any) {
@@ -119,4 +228,3 @@ export class MasterModuleComponent implements OnInit {
     //   })
   }
 }
-

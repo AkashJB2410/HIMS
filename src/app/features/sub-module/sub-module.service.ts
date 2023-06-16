@@ -23,17 +23,20 @@ export class SubModuleService {
     return this.http.get<any>(url);
   }
 
+  GetAllGroupModuleData() {
+    const url = "http://localhost:8080/api/v1/allMstGroupData";
+    return this.http.get<any>(url);
+  }
+
   saveSubModuleData(data: any): Observable<any> {
     const param = {
-      "mstModules": {
-        "module_Id": data.selectInput,
-      },
-      "icon": data.iconInput,
       "label": data.labelInput,
+      "icon": data.iconInput,      
       "routerLink": data.routerLinkInput,
-      // "sequence": data.sequenceInput
-      
-      // "module_Id":data.selectInput
+      "sequence": data.sequenceInput,
+      "mstGroup": {
+        "groupId": data.selectInput[1],
+      }      
     };
 
     const url = "http://localhost:8080/api/v1/addSubModule";
@@ -47,16 +50,24 @@ export class SubModuleService {
 
   updateSubModule(data: any) {
     const param = {
-      "submodule_Id": data.idInput,
-      "mstModules": {
-        "module_Id": data.selectInput,
-      },
+      "submodule_Id": data.idInput,      
       "icon": data.iconInput,
       "label": data.labelInput,
       "routerLink": data.routerLinkInput,
-      "sequence": data.sequenceInput
+      "sequence": data.sequenceInput,
+      "mstGroup": {
+        "moduleId": data.selectInput[1],
+      },
     };
-    const url = "http://localhost:8080/api/v1/subModule/update";
+    const url = "http://localhost:8080/api/v1/submodule"+data.idInput;
     return this.http.put<any>(url, param);
+  }
+
+  isActiveData(data: any) {
+    const param={
+      "submodule_Id":data.submoduleId
+    }
+    const url = "http://localhost:8080/api/v1/reActiveSubModule/" + data.submoduleId;
+    return this.PostCall(url,param);  
   }
 }
