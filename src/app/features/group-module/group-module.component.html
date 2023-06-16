@@ -1,5 +1,6 @@
 
-<h3 class="cst-label" style="cursor: pointer;">Group</h3>
+
+<h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Group</h3>
 <app-super-grid 
     *ngIf="data"
     [configurations]="configurations" 
@@ -8,7 +9,10 @@
     [sidebarJSON]="groupFormData" 
     (sideBarEvent)="sidebarData($event)" 
     (confirmAction)="confirmAction($event)"
+    (Bulkdelete)="BulkDeleteRows($event)"
     (editRow)="editRow($event)" 
     (addRow)="addRow($event)" 
-    (isActive)="isActive($event)">
+    (isActive)="isActive($event)"
+    (onAdd)="onAdd($event)"
+    (onEdit)="onAdd($event)">
 </app-super-grid>

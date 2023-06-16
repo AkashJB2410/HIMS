@@ -14,48 +14,63 @@ export class GroupModuleService {
     return this.http.post<any>(url, param, { headers })
   }
 
-
   GetAllGroupData() {
-    const url = "http://localhost:8081/api/v1/allMstUnit";
+    const url = "http://localhost:8080/api/v1/allMstGroupData";
     return this.http.get<any>(url);
   }
-
-  GetAllMSTModuleData() {
-    const url = "http://localhost:8081/api/v1/allMstCountry";
+  GetAllMasterModuleData() {
+    const url = "http://localhost:8080/api/v1/allModuleData";
     return this.http.get<any>(url);
   }
   updateGroupData(data: any) {
-    const param = {      
-      "actionId":data.actionModuleIdInput,
-      "actionModuleName":data.actionModuleNameInput,
+    const param = {
+      "groupId":data.groupId,
+      "icon": data.icon,
+      "lable": data.lable,
+      "routerLink": data.routerLink,
+      "sequence": data.sequence   ,
+      "mstModule": {
+        "moduleId": data.selectmstModule,
+      },
     };
     console.log(param);
-    
-    const url = "http://localhost:8081/api/v1/updateMstUnit/"+data.actionModuleIdInput;
+
+    const url = "http://localhost:8080/api/v1/updatedMstGroup/" + data.groupId;
     return this.http.put<any>(url, param);
   }
 
   saveGroupData(data: any): Observable<any> {
-    console.log("save data"+ data);
+    console.log("save data" + data);
     const param = {
-      "actionModuleName":data.actionModuleNameInput,     
+      "icon": data.icon,
+      "mstModule": {
+        "moduleId": data.selectmstModule,
+      },
+      "lable": data.lable,
+      "routerLink": data.routerLink,
+      "sequence": data.sequence
     };
-    const url = "http://localhost:8081/api/v1/addMstUnit";
+    const url = "http://localhost:8080/api/v1/addMstGroup";
     return this.PostCall(url, param);
   }
 
-  deleteGroupData(actionId: any) {
-    const url = "http://localhost:8081/api/v1/deleteMstUnit/" + actionId;
-    console.log(actionId);
-    return this.http.delete<any>(url);    
+  deleteGroupData(groupId: any) {
+    const url = "http://localhost:8080/api/v1/deletedMstGroup/" + groupId;
+    console.log(groupId);
+    return this.http.delete<any>(url);
   }
+  // deleteAllGroupData(groupId: any) {
+  //   const url = "http://localhost:8080/api/v1/deletedMstGroup/" + groupId;
+  //   console.log(groupId);
+  //   return this.http.delete<any>(url);
+  // }
 
   isActiveData(data: any) {
-    const param={
-      "actionModuleId":data.actionModuleId
+    const param = {
+      "groupId": data.groupId
     }
-    const url = "http://localhost:8081/api/v1/reactiveMstUnit/" + data.actionModuleId;
-    console.log(data.actionModuleId);
-    return this.PostCall(url,param);  
+    const url = "http://localhost:8080/api/v1/reActive/" + data.groupId;
+    console.log(data.groupId);
+    return this.PostCall(url, param);
   }
 }

@@ -26,7 +26,7 @@ export class UnitComponent implements OnInit {
       "isSideBar": true,
       "isConfirmation": true
     };
-    this.getConfigForTable();
+    this.tableConfig = unitTable
     this.getAllUnit();
     this.assignOptions();
   }
@@ -133,6 +133,38 @@ export class UnitComponent implements OnInit {
             let obj = {
               "name": e.countryName,
               "code": e.countryId
+            }
+            data.values.push(obj);
+          })
+        })
+      }
+      if (data.formControlName === "unitCluster") {
+        let defaultObj = {
+          "name": "Select Cluster",
+          "code": "0"
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllClusterData().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.clusterName,
+              "code": e.clusterId
+            }
+            data.values.push(obj);
+          })
+        })
+      }
+      if (data.formControlName === "unitOrganization") {
+        let defaultObj = {
+          "name": "Select Organization",
+          "code": "0"
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllOrganizationData().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.orgName,
+              "code": e.orgId
             }
             data.values.push(obj);
           })

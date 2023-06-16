@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import groupForm from './group_form.json';
+import groupTable from './groupTableConfig.json';
 import { GroupModuleService } from './group-module.service';
 import { MessageService } from 'primeng/api';
 @Component({
@@ -15,87 +16,181 @@ export class GroupModuleComponent implements OnInit {
   data: any;
   formdata: any;
   isdataReady = false;
-  constructor(private messageService: MessageService ,private http: GroupModuleService) { }
+  groupData: any = [];
+  flag: any;
+  constructor(private messageService: MessageService, private http: GroupModuleService) { }
 
   ngOnInit(): void {
+    this.configurations = {
+      "isFilter": false,
+      "isTable": true,
+      "isSideBar": true,
+      "isConfirmation": true
+    };
+    this.tableConfig = groupTable;
+    // this.getConfigForTable();
+    this.getAllGroup();
+    this.assignOptions();
   }
+
+  onAdd(e: any) {
+    this.flag = e;
+  }
+
   isActive(event: string) {
     console.log(event);
     this.http.isActiveData(event).subscribe((data) => {
-      this.data = undefined;      
+      this.data = undefined;
       this.getAllGroup();
     });
   }
+
   editRow(e: any) {
     this.visibleSidebar = true;
   }
 
-  addRow(e:any){
+  getConfigForTable() {
+    this.tableConfig = groupTable;
+  }
+  addRow(e: any) {
     this.visibleSidebar = true;
+  }
+  BulkDeleteRows(e: any) {
+    this.groupData = [];
+ 
+    if (e != '') {
+      e.forEach((data:any) => {
+        if(data.is_Active!=false){
+        let obj ={
+          "groupId": data.groupId,
+        }
+        this.deleteGroup(obj.groupId);
+      } else{
+        this.messageService.add({
+          severity: 'error',
+          summary: 'selected Rows',
+          detail: ' Deleted.',
+        });
+      }
+      });
+      this.messageService.add({
+        severity: 'success',
+        summary: 'success',
+        detail: 'Delete All Data successfull.',
+      });
+    }else{
+      this.messageService.add({
+        severity: 'error',
+        summary: 'select Rows',
+        detail: 'Rows are not selected.',
+      });
+    }
+ 
   }
   sidebarData(e: any) {
     console.log('From User Management ==> ', e);
-    if (e == 'reset') {
-      console.log(e);
-    } else if (e.actionModuleIdInput == true) {
-      console.log(e);
-      this.submitGroup(e);
-      this.messageService.add({
-        severity: 'success',
-        summary: 'success',
-        detail: 'Data save successfull.',
-      });
-    } else {
-      console.log(e);
-      this.updateGroup(e);
-      this.messageService.add({
-        severity: 'success',
-        summary: 'success',
-        detail: 'Data updated successfull.',
-      });
+    if (e != 'reset') {
+      if (this.flag == "edit") {
+        console.log(e);
+        this.updateGroup(e);
+        this.messageService.add({
+          severity: 'success',
+          summary: 'success',
+          detail: 'Data updated successfull.',
+        });
+      } else {
+        console.log(e);
+        this.submitGroup(e);
+        this.messageService.add({
+          severity: 'success',
+          summary: 'success',
+          detail: 'Data save successfull.',
+        });
+      }
     }
   }
+
   confirmAction(e: any) {
-    this.deleteGroup(e.actionModuleId);
+    if(e != false){
+    this.deleteGroup(e.groupId);
     this.messageService.add({
       severity: 'success',
       summary: 'Message form User component',
       detail: 'Deleted Sucessfully',
     });
-    console.log('Deleted' + JSON.stringify(e));
   }
+  }
+
   getAllGroup() {
+    this.data = undefined;
+    this.groupData = [];
     this.http.GetAllGroupData().subscribe((res) => {
-      this.data = res;
-      console.log(this.data);      
+      // for (let i = 0; i < this.data.length; i++) {
+      //   this.data[i].srNumber = i + 1;
+      // }
+      res.forEach((e: any) => {
+        let obj = {
+          "groupId": e.groupId,
+          "mstModule": e.mstModule.moduleId,
+          "lable": e.lable,
+          "icon": e.icon,
+          "routerLink": e.routerLink,
+          "sequence": e.sequence,
+          "is_Active": e.is_Active,
+          "mstModule_name": e.mstModule.label,
+        }
+        this.groupData.push(obj);
+        console.log("objet ==>", obj);
+      })
+      this.data = [...this.groupData];
       this.isdataReady = true;
-      for (let i = 0; i < this.data.length; i++) {
-        this.data[i].srNumber = i + 1;
+    })
+  }
+
+  updateGroup(groupId: any) {
+    this.http.updateGroupData(groupId).subscribe((data) => {
+      this.data = undefined;
+      this.getAllGroup();
+      console.log('data' + data);
+    });
+  }
+
+  deleteGroup(groupId: any) {
+    this.http.deleteGroupData(groupId).subscribe((data) => {
+      this.data = undefined;
+      this.getAllGroup();
+      console.log('data' + data);
+    });
+  }
+
+  submitGroup(groupId: any) {
+    this.http.saveGroupData(groupId).subscribe((data) => {
+      this.data = undefined;
+      this.getAllGroup();
+      console.log('data' + data);
+    });
+  }
+
+  assignOptions() {
+    this.formdata = Object.assign({}, groupForm);
+    this.formdata.form.formControls.forEach((data: any) => {
+      data.values = [];
+      if (data.formControlName === "selectmstModule") {
+        let defaultObj = {
+          "name": "Select Master Module",
+          "code": "0"
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllMasterModuleData().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.label,
+              "code": e.moduleId
+            }
+            data.values.push(obj);
+          })
+        })
       }
-    });
-  }
-
-  updateGroup(actionModuleIdInput: any) {
-    this.http.updateGroupData(actionModuleIdInput).subscribe((data) => {
-      this.data = undefined;
-      this.getAllGroup();
-      console.log('data' + data);
-    });
-  }
-
-  deleteGroup(actionModuleIdInput: any) {
-    this.http.deleteGroupData(actionModuleIdInput).subscribe((data) => {
-      this.data = undefined;
-      this.getAllGroup();
-      console.log('data' + data);  
-    });
-  }
-
-  submitGroup(actionModuleData: any) {
-    this.http.saveGroupData(actionModuleData).subscribe((data) => {
-      this.data = undefined;
-      this.getAllGroup();
-      console.log('data' + data);
-    });
+    })
   }
 }

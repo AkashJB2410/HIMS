@@ -2,94 +2,100 @@
     "tableName": "Unit Table",
     "tableHeaders": [
         {
-            "field": "srNumber",
-            "header": "Sr.Number",
+            "field": "unitId",
+            "header": "Unit Id",
             "iseditable": false,
             "class": "text-center"
         },
         {
             "field": "unitName",
-            "header": "Unit Name",
+            "header": "Name",
             "iseditable": false,
             "class": ""
         },
         {
             "field": "unitEmail",
-            "header": "Unit Email",
+            "header": "Email",
             "iseditable": false,
             "class": ""
         },
         {
             "field": "unitMobile",
-            "header": "Unit Mobile",
+            "header": "Mobile",
             "iseditable": false,
             "class": "text-center"
         },
         {
             "field": "unitPhone",
-            "header": "Unit Phone",
+            "header": "Phone",
             "iseditable": false,
             "class": ""
         },
         {
             "field": "unitContactPerson",
-            "header": "Unit Contact Person",
+            "header": "Contact Person",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "unitOrg",
+            "header": "Org Unit",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "unitcode",
+            "header": "Unit Code",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "unitClinicContactNo",
+            "header": "Unit Clinic Contact No",
             "iseditable": false,
             "class": ""
         },
         {
             "field": "unitPharmacyLicenseNo",
-            "header": "Unit Pharmacy License No",
+            "header": "Pharmacy License No",
             "iseditable": false,
             "class": "text-center"
         },
         {
             "field": "unitClinicRegistrationNo",
-            "header": "Unit Clinic Registration No",
+            "header": "Clinic Registration No",
             "iseditable": false,
             "class": ""
         },
         {
             "field": "unitShopAndEstablishmentNo",
-            "header": "Unit Shop And Establishment No",
+            "header": "Shop And Establishment No",
             "iseditable": false,
             "class": ""
         },
         {
             "field": "unitTradeNo",
-            "header": "Unit Trade No",
+            "header": "Trade No",
             "iseditable": false,
             "class": "text-center"
         },
         {
             "field": "unitServer",
-            "header": "Unit Server",
+            "header": "Server",
             "iseditable": false,
             "class": ""
         },
         {
             "field": "unitDatabase",
-            "header": "Unit Database",
+            "header": "Database",
             "iseditable": false,
             "class": ""
         },
         {
             "field": "unitFaxNo",
-            "header": "Unit Fax No",
+            "header": "Fax No",
             "iseditable": false,
             "class": "text-center"
-        },
-        {
-            "field": "actionModuleName",
-            "header": "Action Module Name",
-            "iseditable": false,
-            "class": ""
-        },
-        {
-            "field": "is_Active",
-            "header": "IsActive",
-            "iseditable": false,
-            "class": ""
         }
     ],
     "PdfHeaders": [
@@ -107,7 +113,7 @@
         }
     ],
     "globalFilter": [
-        "unitId", "unitName","unitEmail","unitMobile","unitPhone","unitContactPerson","unitPharmacyLicenseNo","unitClinicRegistrationNo",
+        "unitId", "unitName","unitEmail","unitMobile","unitPhone","unitContactPerson","unitOrg","unitcode","unitClinicContactNo","unitPharmacyLicenseNo","unitClinicRegistrationNo",
         "unitShopAndEstablishmentNo","unitTradeNo","unitServer","unitDatabase","unitFaxNo","actionModuleName","is_Active"
     ],
     "rows": 10,

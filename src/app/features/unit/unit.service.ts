@@ -23,6 +23,17 @@ export class UnitService {
     const url = "http://localhost:8081/api/v1/allMstCountry";
     return this.http.get<any>(url);
   }
+
+  GetAllClusterData() {
+    const url = "http://localhost:8081/api/v1/allMstCluster";
+    return this.http.get<any>(url);
+  }
+
+  GetAllOrganizationData() {
+    const url = "http://localhost:8081/api/v1/allMstOrgStatus";
+    return this.http.get<any>(url);
+  }
+
   updateUnitData(data: any) {
     const param = {      
       "actionId":data.actionModuleIdInput,
