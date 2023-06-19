@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MasterPageComponent } from './master-page.component';
+import { ApplicationConfigComponent } from '../application-config/application-config.component';
 
 const routes: Routes = [
   {
@@ -127,6 +128,7 @@ const routes: Routes = [
       { path: 'all-masters/action-sub-module', loadChildren: () => import('./../action-sub-module/action-sub-module.module').then( m => m.ActionSubModuleModule)},     
       { path: 'all-masters/sub-department', loadChildren: () => import('./../sub-department/sub-department.module').then( m => m.SubDepartmentModule)},     
       { path: 'all-masters/unit', loadChildren: () => import('./../unit/unit.module').then( m => m.UnitModule)}, 
+      { path: 'all-masters/application-config', loadChildren: () => import('./../application-config/application-config.module').then( m => m.ApplicationConfigModule)}, 
       { path: 'group-module', loadChildren: () => import('./../group-module/group-module.module').then( m => m.GroupModuleModule)},    
     ],
     // canActivate: [AuthGuardGuard]

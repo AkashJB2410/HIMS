@@ -135,6 +135,7 @@ import { ActionSubModuleComponent } from './features/action-sub-module/action-su
 import { SubDepartmentComponent } from './features/sub-department/sub-department.component';
 import { UnitComponent } from './features/unit/unit.component';
 import { GroupModuleComponent } from './features/group-module/group-module.component';
+import { ApplicationConfigComponent } from './features/application-config/application-config.component';
 
 @NgModule({
   declarations: [
@@ -259,7 +260,8 @@ import { GroupModuleComponent } from './features/group-module/group-module.compo
     BedTransferComponent,
     SubDepartmentComponent,
     UnitComponent,
-    GroupModuleComponent
+    GroupModuleComponent,
+    ApplicationConfigComponent
   ],
   imports: [
     CommonModule,

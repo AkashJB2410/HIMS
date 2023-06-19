@@ -7,7 +7,7 @@
     },
     "header": {
       "logo": "../../assets/Techjivaa-svg-removebg.png",
-      "whiteLogo": "../../assets/Techjivaa-White-Logo.png",
+      "whiteLogo": "../../assets/core_assets/medimazefull.png",
       "usericon": "../../assets/Icon.png",
       "setting": "../../assets/setting.png",
       "notification": {
@@ -64,7 +64,7 @@
       },
       "dp": "../../assets/userlogo.png",
       "sidenavLogo":"/assets/Techjivaa-White-Logo.png",
-      "onlyLogo":"/assets/halflogoTechjivaa.png"
+      "onlyLogo":"/assets//core_assets/medimazesmall.png"
     },
     "sidenavItems": [
       {

@@ -1,78 +1,85 @@
 <div class="wrapper">
   <div class="sidebarMenu-custom" [ngClass]="status ? 'darSideBar' : 'genisSideBar'"
     [style.backgroundColor]="list.theme.sidenavBG">
-    <div class="sideBarOrta">
-      <ul class="nav flex-column">
+    <div class="sideBarOrta ">
+      <ul id="sidebar_menu" class="nav flex-column">
         <li>
           <div class="sidenavLogo" *ngIf="!status">
-            <img src="{{list.header.sidenavLogo}}" class="img img-fluid img-responsive openlogo" alt="Logo">
+            <img src="{{list.header.whiteLogo}}" class="img img-fluid img-responsive openlogo" alt="Logo">
           </div>
         </li>
-        <li> <img *ngIf="status" src="{{list.header.onlyLogo}}" class="img img-fluid img-responsive collapsedLogo"
+        <div  *ngIf="status">
+        <li> <img src="{{list.header.onlyLogo}}" class="img img-fluid img-responsive collapsedLogo"
             alt="Logo">
         </li>
+      </div>
         <div class="nav-item" class="toggle" (click)="clickEvent()">
-          <a *ngIf="!status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/toggle button.png"
-            pTooltip="Collapse" tooltipPosition="top"  class="togglefix"></i></a>
+          <a *ngIf="!status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/toggle button.png"pTooltip="Collapse" tooltipPosition="top"  class="togglefix"></i></a>
+         
           <a *ngIf="status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/toggle button.png"  pTooltip="Expand Sidenav" tooltipPosition="top"  ></i></a>
         </div>
       </ul>
-      <ul class="nav flex-column" >
-        <li class="nav-item" *ngFor="let item of list.sidenavItems" (click)="setStateAsActive(item)">
-          <ng-container *ngIf="item.group == null ; else list">
-            <a [class.parentMenu]="item === activeState" [href]="'#'+item.label" data-bs-toggle="collapse"
-              class="sidenav-menu" routerLink="{{item.routerLink}}" pTooltip="{{item.label}}">
-              <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
-                [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{item.label}}</span> </a>
-          </ng-container>
-          <ng-template #list>
-            <a [class.parentMenu]="item === activeState" [href]="'#'+item.label" data-bs-toggle="collapse"
-              class="sidenav-menu" pTooltip="{{item.label}}">
-              <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
-                [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
-                style="margin-right: auto;">{{item.label}}</span> <i id="{{item.label}}"childItemsub-module
-                [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
-                class="bi bi-chevron-down downarrow"></i>
-            </a>
-            <ul class="collapse nav flex-column" id="{{item.label}}" data-bs-parent="#menu">
-              <li class="w-100" *ngFor="let childItem of item.group" (click)="setStateAsActiveChild(childItem)"
-                style="cursor: pointer;">
-                <ng-container *ngIf="childItem.subModule == null; else list1">
-                  <a [class.childMenu]="childItem === activeStatechild" [href]="'#'+childItem.label"
-                    data-bs-toggle="collapse" class="sidenav-menu " routerLink="{{childItem.routerLink}}"
-                    pTooltip="{{childItem.label}}">
-                    <i class="{{childItem.icon}}"></i> <span class="d-sm-inline ms-2"
-                      [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{childItem.label}}</span>
-                  </a>
-                </ng-container>
-                <ng-template #list1>
-                  <a [class.childMenu]="childItem === activeStatechild" [href]="'#'+childItem.label"
-                    data-bs-toggle="collapse" class="sidenav-menu" pTooltip="{{childItem.label}}">
-                    <i class="{{childItem.icon}}"></i> <span class="d-sm-inline ms-2"
-                      [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
-                      style="margin-right: auto;">{{childItem.label}}</span>
-                    <i id="{{item.label}}" [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
-                      class="bi bi-chevron-down downarrow"></i>
-                  </a>
-                  <ul class="collapse nav flex-column" id="{{childItem.label}}" data-bs-parent="#menu">
-                    <div class="subchildMargin">
-                      <li class="w-100" *ngFor="let child of childItem.subModule"
-                        (click)="setStateAsActiveSubchild(child)" routerLink="{{child.routerLink}}"
-                        style="cursor: pointer;">
-                        <a [class.subchildMenu]="child === activeStateSubchild" class="sidenav-menu"><i
-                            class="{{child.icon}}" pTooltip="{{child.label}}"></i>
-                          <span
-                            [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight ms-1'">{{child.label}}</span>
-                        </a>
-                      </li>
-                    </div>
-                  </ul>
-                </ng-template>
-              </li>
-            </ul>
-          </ng-template>
-        </li>
-      </ul>
+      <div class="scroll">
+        <ul id="sidebar_menu" class="nav flex-column" >
+          <li class="nav-item" *ngFor="let item of list.sidenavItems" (click)="setStateAsActive(item)">
+            <ng-container *ngIf="item.group == null ; else list">
+              <a [class.parentMenu]="item === activeState" [href]="'#'+item.label" data-bs-toggle="collapse"
+                class="sidenav-menu" routerLink="{{item.routerLink}}" pTooltip="{{item.label}}">
+                <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
+                  [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{item.label}}</span> </a>
+            </ng-container>
+            <ng-template #list>
+              <a [class.parentMenu]="item === activeState" [href]="'#'+item.label" data-bs-toggle="collapse"
+                class="sidenav-menu " pTooltip="{{item.label}}">
+                <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
+                  [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
+                  style="margin-right: auto;">{{item.label}}</span> <i id="{{item.label}}"childItemsub-module
+                  [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
+                  class="bi bi-chevron-down downarrow"></i>
+              </a>
+              <ul class="collapse nav flex-column" id="{{item.label}}" data-bs-parent="#menu">
+                <li class="w-100" *ngFor="let childItem of item.group" (click)="setStateAsActiveChild(childItem)"
+                  style="cursor: pointer;">
+                  <ng-container *ngIf="childItem.subModule == null; else list1">
+                    <a [class.childMenu]="childItem === activeStatechild" [href]="'#'+childItem.label"
+                      data-bs-toggle="collapse" class="sidenav-menu vsm-dropdown" routerLink="{{childItem.routerLink}}"
+                      pTooltip="{{childItem.label}}">
+                      <i class="{{childItem.icon}}"></i> <span class="d-sm-inline ms-2"
+                        [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{childItem.label}}</span>
+                    </a>
+                  </ng-container>
+                  <ng-template #list1>
+                    <a [class.childMenu]="childItem === activeStatechild" [href]="'#'+childItem.label"
+                      data-bs-toggle="collapse" class="sidenav-menu " pTooltip="{{childItem.label}}">
+                      <i class="{{childItem.icon}}"></i> <span class="d-sm-inline ms-2"
+                        [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
+                        style="margin-right: auto;">{{childItem.label}}</span>
+                      <i id="{{item.label}}" [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
+                        class="bi bi-chevron-down downarrow"></i>
+                    </a>
+                    <ul class="collapse nav flex-column " id="{{childItem.label}}" data-bs-parent="#menu">
+                      <div class="subchildMargin">
+                        <li class="w-100" *ngFor="let child of childItem.subModule"
+                          (click)="setStateAsActiveSubchild(child)" routerLink="{{child.routerLink}}"
+                          style="cursor: pointer;">
+                          <a [class.subchildMenu]="child === activeStateSubchild" class="sidenav-menu vsm-dropdown"><i
+                              class="{{child.icon}} " pTooltip="{{child.label}}"></i>
+                            <span
+                              [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight ms-1'">{{child.label}}</span>
+                          </a>
+                        </li>
+                      </div>
+                    </ul>
+                  </ng-template>
+                </li>
+              </ul>
+            </ng-template>
+          </li>
+  
+        </ul>
+      </div>
+     
+
       <!-- <ul class="nav flex-column mt-0">
         <li class="nav-item" class="toggleclass" style="cursor: pointer;" (click)="clickEvent()">
           <a *ngIf="!status" class="sidenav-menu"><i class="pi pi-angle-double-left"
@@ -86,9 +93,12 @@
     <app-header [headerInput]="list" (navToggle)="clickEvent()"></app-header>
     <div class="inboxContainer">
       <div class="container-fluid">
-        <p-breadcrumb [model]="items" [home]="home"></p-breadcrumb>
-        <router-outlet></router-outlet>
+        <!-- <p-breadcrumb [model]="items.itemsList" ></p-breadcrumb> -->
+        <router-outlet></router-outlet>     
       </div>
     </div>
+    <footer><h6 class="footer">Design & Developed by Techjivaa Software Pvt Ltd</h6></footer>
+
   </div>
+
 </div>

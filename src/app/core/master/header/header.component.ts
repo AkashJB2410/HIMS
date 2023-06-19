@@ -132,5 +132,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   profile(e: any) {
   }
-
+  setting(){
+    this.router.navigateByUrl('/master-page/settings');
+  }
 }
