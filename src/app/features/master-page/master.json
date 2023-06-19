@@ -63,8 +63,8 @@
         ]
       },
       "dp": "../../assets/userlogo.png",
-      "sidenavLogo":"/assets/esahaj darkpng.png",
-      "onlyLogo":"/assets/halflogoTechjivaa.png"
+      "sidenavLogo":"/assets/medimazefull.png",
+      "onlyLogo":"/assets/medimazesmall.png"
     },
     "sidenavItems": [
       {
@@ -769,9 +769,9 @@
             "routerLink": "/master-page/sub-module"
           },
           {
-            "label": "Children",
+            "label": "Group Module",
             "icon": "",
-            "routerLink": "/master-page/children"
+            "routerLink": "/master-page/group-module"
           }
         ]
       }
