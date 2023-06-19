@@ -1,5 +1,5 @@
-<div class="container-fluid">
-    <h6>{{formJson.formTitle}}</h6>
+<div class="">
+    <h6 class="{{formJson.formTitleClass}}"><i class="{{formJson.formTitleLogo}}"></i>{{formJson.formTitle}}</h6>
     <form [formGroup]="form">
         <div class="{{formJson.class}}">
             <!-- <span *ngIf="formValid" style="color: red;">Please fill all required fields</span> -->
@@ -29,8 +29,9 @@
                         <p-password inputId="{{formData.fieldName}}" [formControlName]="formData.fieldName"
                             [placeholder]="formData.placeholder" class="{{formData.valueclass}}"
                             [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
-                            [(ngModel)]="formData.fieldValue" [feedback]="false" [toggleMask]="true"
-                            (onClick)="changeEvent($event, formData)"></p-password>
+                            [(ngModel)]="formData.fieldValue" [toggleMask]="true"
+                            (onClick)="changeEvent($event, formData)">
+                        </p-password>
                     </div>
                     <p-dropdown *ngIf="formData.fieldType == formStaticText.SELECT" [options]="formData.values"
                         [inputId]="formData.fieldName" [formControlName]="formData.fieldName"

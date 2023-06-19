@@ -4,16 +4,16 @@
         "formTitle": "Registration Form",
         "formName": "Form1",
         "formType": "edit",
-        "sidebar": "p-sidebar-md",
+        "sidebar": "p-sidebar-lg",
         "formControls": [
             {
                 "id": 10,
                 "isEditable": false,
-                "isVisible": true,
+                "isVisible": false,
                 "label": "Patient UID",
                 "inputType": "text",
                 "type": "text",
-                "class": "col-md-4 my-1",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Patient UID",
@@ -34,7 +34,7 @@
                 "label": "Mobile No.",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-4 my-1",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Mobile No.",
@@ -55,18 +55,18 @@
                 "label": "ABHA ID",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-4 my-1",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter ABHA Id",
                 "formControlName": "abhaIdInput",
                 "message": {
                     "required": "ABHA ID is required",
-                    "pattern": "Please re-enter using a valid 10-digit mobile number."
+                    "pattern": "Please re-enter using a valid 14-digit ABHA Id."
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^\\+d{0,9}\\d{12}$"
+                    "pattern": "^[1-9]{2}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
                 }
             },
             {
@@ -76,18 +76,18 @@
                 "label": "ABHA Address",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-4 my-1",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter ABHA Address",
                 "formControlName": "abhaAddressInput",
                 "message": {
                     "required": "ABHA address is required",
-                    "pattern": "Please re-enter using a valid 10-digit mobile number."
+                    "pattern": "Please re-enter valid ABHA Address."
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^\\+d{0,9}\\d{12}$"
+                    "pattern": ""
                 }
             },
             {
@@ -97,7 +97,7 @@
                 "label": "Identification Type",
                 "type": "select",
                 "value": "M",
-                "class": "col-md-4  my-1",
+                "class": "col-md-3  my-1",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
@@ -119,17 +119,17 @@
                 "label": "Identification Number",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-4 my-1",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Identification Number",
                 "formControlName": "identificationNoInput",
                 "message": {
                     "required": "Identification Number is required",
-                    "pattern": "Text is not allowed."
+                    "pattern": "Pattern is not match"
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -140,7 +140,7 @@
                 "label": "Title",
                 "type": "select",
                 "value": "M",
-                "class": "col-md-4  my-1",
+                "class": "col-md-3  my-1",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
@@ -162,7 +162,7 @@
                 "label": "First Name",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-4 my-1",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter First Name...",
@@ -183,7 +183,7 @@
                 "label": "Middle Name",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-4 my-1",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Middle Name...",
@@ -204,7 +204,7 @@
                 "label": "Last Name",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-4 my-1",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Last Name...",
@@ -248,7 +248,7 @@
             },
             {
                 "id": 9,
-                "isEditable": true,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "",
                 "type": "date",
@@ -272,7 +272,7 @@
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Age",
+                "label": "",
                 "inputType": "radio",
                 "type": "radio",
                 "class": "col-md-1  my-1",
@@ -286,7 +286,7 @@
                 },
                 "values": [
                     {
-                        "name": "",
+                        "name": "Age",
                         "code": "Age",
                         "editable": false
                     }
@@ -298,7 +298,7 @@
             },
             {
                 "id": 8,
-                "isEditable": true,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "",
                 "type": "text",
@@ -340,12 +340,12 @@
                 }
             },
             {
-                "id": 12,
+                "id": 10,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Gender",
+                "label": "Group",
                 "type": "select",
-                "value": "M",
+                "value": "",
                 "class": "col-md-3  my-1",
                 "lblclass": "custom-label",
                 "valueclass": "",
@@ -367,7 +367,7 @@
                 "isVisible": true,
                 "label": "Blood Group",
                 "type": "select",
-                "value": "M",
+                "value": "",
                 "class": "col-md-3  my-1",
                 "lblclass": "custom-label",
                 "valueclass": "",
@@ -440,11 +440,11 @@
                 "formControlName": "pinCodeInput",
                 "message": {
                     "required": "Pin Code is required",
-                    "pattern": "Numbers not allowed."
+                    "pattern": "Please re-enter valid pin code."
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[0-9]\\d{5}$"
+                    "pattern": "^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$"
                 }
             },
             {
@@ -610,13 +610,56 @@
                 }
             },
             {
+                "id": 10,
+                "isEditable": false,
+                "isVisible": false,
+                "label": "Is_Active",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Is_Active",
+                "formControlName": "isActiveInput",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": false,
+                "label": "",
+                "inputType": "",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-12",
+                "lblclass": "lbl-center-statictext ",
+                "valueclass": "static-text-size lbl-end",
+                "placeholder": "",
+                "formControlName": "anchor",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
                 "id": 2,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,
                 "type": "button",
                 "subtype": "save",
-                "class": "col-md-6",
+                "class": "col-md-3",
                 "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",
@@ -635,7 +678,7 @@
                 "type": "button",
                 "subtype": "reset",
                 "btnLabel": "Back",
-                "class": "col-md-6",
+                "class": "col-md-3",
                 "valueclass": "button-login-yellow",
                 "icon": "",
                 "isDisabled": false,

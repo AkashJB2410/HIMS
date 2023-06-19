@@ -49,6 +49,14 @@ export class RegistrationFormService {
     const url = "http://localhost:8080/api/v1/allDurationData";
     return this.http.get<any>(url);
   }
+  GetAllMstDepartment() {
+    const url = "http://localhost:8080/api/v1/allMstDepartment";
+    return this.http.get<any>(url);
+  }
+  GetAllSubDepartmentData() {
+    const url = "http://localhost:8080/api/v1/allsubDepartmentData";
+    return this.http.get<any>(url);
+  }
   GetAllDoctorData() {
     const url = "http://localhost:8080/api/v1/alldoctorData";
     return this.http.get<any>(url);
@@ -66,40 +74,50 @@ export class RegistrationFormService {
 
   saveUserData(data: any): Observable<any> {
     const param = {
-      "abhaAddress": data.nameInput,
-      "abhaId": data.nameInput,
-      "age": data.nameInput,
-      "birthDuration": data.nameInput,
-      "emailId": data.nameInput,
-      "firstName": data.nameInput,
-      "identificationNo": data.nameInput,
-      "is_Active": data.nameInput,
-      "lastName": data.nameInput,
-      "middleName": data.nameInput,
-      "mobileNo": data.nameInput,
+      "userId": data.PatientUID,
+          "abhaAddress": data.abhaAddressInput,
+          "abhaId": data.abhaIdInput,
+          "address": data.addressInput,
+          "age": data.ageText,
+          "birthDuration_Id": data.selectYear.durationId,
+          "birthDuration_Type": data.selectYear.durationType,
+          "dob": data.userBirthdate,
+          "emailId": data.emailInput,
+          "firstName": data.firstNameInput,
+          "identificationNo": data.identificationNoInput,
+          // "imagedata": data.,
+          // "imageType": data.,
+
+          "lastName": data.lastNameInput,
+          "middleName": data.middleNameInput,
+          "mobileNo": data.mobileNoInput,
+
+          "pincode": data.pinCodeInput,
+          "userImage": data.userImage,
+          
       "identificationType_identificationTypeId": {
-        "identificationTypeId": data.nameInput,
+        "identificationTypeId": data.selectIdentificationType,
       },
       "mstBloodGroup_bloodgroupId": {
-        "bloodgroupId": data.nameInput,
+        "bloodgroupId": data.selectBlood,
       },
       "mstDistrict_districtId": {
-        "districtId": data.nameInput,
+        "districtId": data.selectState[1],
       },
       "mstDoctor_doctorId": {
-        "doctorId": data.nameInput,
+        "doctorId": data.selectDoctor,
       },
       "mstGender_id": {
-        "mstGenderId": data.nameInput,
+        "mstGenderId": data.selectGender,
       },
       "mstState_stateId": {
-        "stateId": data.nameInput,
+        "stateId": data.selectState[0],
       },
       "mstTitle_titleId": {
-        "titleId": data.nameInput,
+        "titleId": data.selectTitle,
       },
       "mstWardDetails_id": {
-        "mstWardDetailsid": data.nameInput,
+        "mstWardDetailsid": data.selectWard,
       }
     };
 

@@ -75,6 +75,9 @@ import { EmailConfigurationComponent } from '../../email-configuration/email-con
 import { SmsConfigurationComponent } from '../../sms-configuration/sms-configuration.component';
 import { VerticalTabularComponent } from '../../vertical-tabular/vertical-tabular.component';
 import {CascadeSelectModule} from 'primeng/cascadeselect';
+import { HomePageComponent } from 'src/app/core/home-page/home-page.component';
+
+
 
 @NgModule({
     declarations: [
@@ -110,7 +113,8 @@ import {CascadeSelectModule} from 'primeng/cascadeselect';
         CardsComponent,
         EmailConfigurationComponent,
         SmsConfigurationComponent,
-        VerticalTabularComponent
+        VerticalTabularComponent,
+        HomePageComponent
     ],
     imports: [
         CommonModule,
@@ -192,6 +196,7 @@ import {CascadeSelectModule} from 'primeng/cascadeselect';
         EmailConfigurationComponent,
         SmsConfigurationComponent,
         VerticalTabularComponent,
+        HomePageComponent,
         //============= Core Imports =============
 
         FormsModule,

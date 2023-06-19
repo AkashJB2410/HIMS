@@ -220,7 +220,10 @@ a.article :hover {
     transition: 0.4s;
     text-align: center;
 }
-
+/* .darSideBar:hover{
+    width:270px;
+    overflow: visible;
+} */
 /* .darSideBar:hover {
     width: 250px;
     transition: 0.4s;
@@ -463,15 +466,15 @@ li a.subchildMenu {
     margin-left: 10px;
     margin-right: 20px;
     margin-bottom: 5px;
-    margin-top: 5px;
+ 
 }
 
-/* .inboxContainer {
+.inboxContainer {
     position: sticky;
-    overflow-y: scroll;
-    height: 100vh;
+    /* overflow-y: scroll; */
+    /* height: 100%; */
     overflow-x: hidden;
-} */
+}
 
 .sidenavLogo{
     width: 260px;
@@ -481,3 +484,47 @@ li a.subchildMenu {
     justify-content: center;
     align-items: center;
 }
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background: #CD9C1D;
+    border-radius: 5px;
+    height: 50px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #e7af21;
+    border-radius: 5px;
+}
+.nav .vsm-dropdown::before {
+    content: '';
+    height: 100%;
+    opacity: 1;
+    width: 1px;
+    background: #e0f3ff;
+    position: absolute;
+    left: 30px;
+    /* top: 0; */
+    border-radius: 15px;
+}
+.nav .vsm-dropdown::before {
+    content: '';
+    height: 100%;
+    opacity: 1;
+    width: 1px;
+    background: #e0f3ff;
+    position: absolute;
+    left: 19px;
+    /* top: 0; */
+    border-radius: 15px;
+}
+.vsm-dropdown {
+    position: relative;
+}
+#sidebar_menu li a:hover{
+    background-color: #CD9C1D!important;
+    color: white!important;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-left: 5px;
+}  

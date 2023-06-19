@@ -661,11 +661,11 @@
 
 /* -----------------------All Related To Input  Css Start-------------------------- */
 .input-box {
-  background-color:#F9F9F9;
+  background-color: #F9F9F9;
   border: 1px solid #C6C6C6 !important;
   color: #9a9a9a !important;
   outline: 0 !important;
- 
+
 }
 
 input::placeholder {
@@ -747,7 +747,7 @@ option:hover {
 
 /*-------------------------All Related To textArea-Button Css-start-------------------------*/
 .textarea-custom {
-  background-color:  #F9F9F9 !important;
+  background-color: #F9F9F9 !important;
   color: #9a9a9a !important;
   outline: 0;
 }
@@ -775,9 +775,12 @@ option:hover {
 
 .sidebarMenu-custom {
   /* background: #415988 !important; */
-  background: #0463A8 !important;
-  width: auto;
+  /* background:#0463A8 !important; */
+  background: linear-gradient(180deg, #4D5D9A 0%, #1A2242 100%) !important;
+  /* background: #232E43!important; */
   transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+  transform-origin: bottom left;
+  width: auto;
   transform-origin: bottom left;
 }
 
@@ -941,19 +944,19 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   -moz-appearance: none;
   appearance: none;
   margin-bottom: 10px;
-  border-radius: 4px !important;
+  border-radius: 5px !important;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .textarea-custom1 {
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   color: #EEEEEE !important;
   outline: 0;
 }
 
 .input-box1 {
   display: block;
-  height: 32px;
+  height: 30px !;
   cursor: pointer;
   border: 1px solid #EEEEEE;
   border-radius: 4px;
@@ -969,7 +972,7 @@ for custom input box size use w-25 , w-50, w-75 on column of it
 }
 
 .input-box1 {
-  background-color: #EEEEEE !important;
+  background-color: hsla(0, 6%, 85%, 0.932) !important;
   /* border: 1px solid #e2e2e4 !important; */
   color: #9a9a9a !important;
   outline: 0 !important;
@@ -1122,16 +1125,51 @@ ul p.verticaltab {
   height: 100px;
   width: 100%;
 }
-.footer{
+
+.footer {
   position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(238, 238, 238);
-  color: black;
+  background: linear-gradient(180deg, #E1E1E1 0%, rgba(225, 225, 225, 0) 100%);  color: black;
   text-align: center;
-  font-size:12px;
+  font-size: 12px;
   height: 3%;
   padding: 5px;
 } 
+/* .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #E1E1E1; 
+   color: black;
+} */
+.formclass {
+  color: white !important;
+  height: 27px;
+  width: 400px;
+  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
+  font-size: 17px !important;
+  padding-top: 4px;
+  padding-bottom:24px;
+}
 
+.formclass::before, .divider::after {
+  flex: 1;
+  height: 29px;
+  width: 5px;
+  content: '';
+  padding: 2px;
+  background-color: rgb(252, 252, 252);
+  margin: 7px;
+}
+.bi-file-earmark-medical::before {
+  content: "\f373";
+  padding-right: 10px !important;
+  vertical-align: 0px;
+}
+
+.p-breadcrumb .p-menuitem-link {
+   padding: 0rem !important
+}
