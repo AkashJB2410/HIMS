@@ -2,11 +2,9 @@
     <p-table #dt id="dataTable" [value]="tableData" [resizableColumns]="config.resizableColumns" columnResizeMode="fit"
         [rows]="config.rows" [paginator]="config.paginator" [columns]="selectedColumns" styleClass="{{config.stripped}}"
         [showCurrentPageReport]="config.showCurrentPageReport" [rowsPerPageOptions]="config.rowsPerPageOptions"
-        [loading]="config.loading" [(selection)]="chekboxes" selectionMode="single"
-        [globalFilterFields]="config.globalFilter" [rowHover]="config.rowHover" [autoLayout]="true"
-        dataKey="id"
-        currentPageReportTemplate="{first} to {last} of {totalRecords}">
-
+        [loading]="config.loading" [(selection)]="chekboxes" selectionMode="single" [globalFilterFields]="config.globalFilter" [rowHover]="config.rowHover" dataKey="id"
+        currentPageReportTemplate="{first} to {last} of {totalRecords}" (click)="disableContextMenu()"
+        oncontextmenu="return false;">
         <ng-template pTemplate="caption">
             <div class="tableFeatures">
                 <div class="item1 mx-1">
@@ -45,7 +43,8 @@
                     <div class="flex justify-content-center align-items-center">
                         {{col.header}}
                         <!-- <p-columnFilter type="text" field="{{col.field}}" display="menu"></p-columnFilter> -->
-                        <p-sortIcon type="text"  pTooltip="Sort" tooltipPosition="top" style="float: right;" field="{{col.field}}"></p-sortIcon>
+                        <p-sortIcon type="text" pTooltip="Sort" tooltipPosition="top" style="float: right;"
+                            field="{{col.field}}"></p-sortIcon>
                     </div>
                 </th>
                 <th class=" text-center" *ngIf="config.isActions" style="width : 4rem;">
@@ -56,7 +55,7 @@
         </ng-template>
 
         <ng-template pTemplate="body" let-rowData let-columns="columns" let-expanded="expanded">
-            <tr (click)="onRowClick(rowData)" id="chekboxes">
+            <tr (click)="onRowClick(rowData)" id="chekboxes" (contextmenu)="onrightClick($event)">
                 <td *ngIf="config.isCheckbox" style="padding: 0.25rem 0.25rem;width: 1rem; text-align: center;">
                     <p-tableCheckbox [value]="rowData" name="abc" ngDefaultControl
                         [(ngModel)]="chekboxes"></p-tableCheckbox>
@@ -84,20 +83,23 @@
                 </td> -->
                 <td *ngIf="config.isActions" style="padding: 0.25rem 0.25rem; width: 4rem ; text-align: center;">
                     <ng-container>
-                        <button *ngIf="config.isActions.includes('Edit')" pTooltip="Edit" tooltipPosition="top" pButton pRipple icon="pi pi-file-edit "
-                            class="p-button-rounded icon-pencil edit-btn "  (click)="editProduct(rowData)"></button>
-                        <button *ngIf="config.isActions.includes('Delete')" pTooltip="Delete Row"  tooltipPosition="top" pButton pRipple icon="pi pi-trash"
-                            class="p-button-rounded icon-delete icon-delete " (click)="ondelete(rowData)"></button>
-                        <button *ngIf="config.isActions.includes('Viewer')" pTooltip="Viewer" tooltipPosition="top" pButton pRipple icon="pi pi-window-maximize"
-                            style="background-color: black;" routerLink="/dicom-viewer"
-                            class="p-button-rounded "></button>
-                            <button *ngIf="config.isActions.includes('isActive')" pTooltip="Is Active"  tooltipPosition="top" pButton pRipple icon="pi pi-box "
-                             class="p-button-rounded icon-pencil edit-btn " (click)="active(rowData)"></button>
+                        <button *ngIf="config.isActions.includes('Edit')" pTooltip="Edit" tooltipPosition="top" pButton
+                            pRipple icon="pi pi-file-edit " class="p-button-rounded icon-pencil edit-btn "
+                            (click)="editProduct(rowData)"></button>
+                        <button *ngIf="config.isActions.includes('Delete')" pTooltip="Delete Row" tooltipPosition="top"
+                            pButton pRipple icon="pi pi-trash" class="p-button-rounded icon-delete icon-delete "
+                            (click)="ondelete(rowData)"></button>
+                        <button *ngIf="config.isActions.includes('Viewer')" pTooltip="Viewer" tooltipPosition="top"
+                            pButton pRipple icon="pi pi-window-maximize" style="background-color: black;"
+                            routerLink="/dicom-viewer" class="p-button-rounded "></button>
+                        <button *ngIf="config.isActions.includes('isActive')" pTooltip="Is Active" tooltipPosition="top"
+                            pButton pRipple icon="pi pi-box " class="p-button-rounded icon-pencil edit-btn "
+                            (click)="active(rowData)"></button>
                     </ng-container>
                 </td>
                 <td *ngIf="config.expand" style="text-align: center;">
-                    <button type="button"  pTooltip="Expand" tooltipPosition="top" pButton pRipple [pRowToggler]="rowData"
-                        class="p-button-text p-button-rounded p-button-plain p-button-circle"
+                    <button type="button" pTooltip="Expand" tooltipPosition="top" pButton pRipple
+                        [pRowToggler]="rowData" class="p-button-text p-button-rounded p-button-plain p-button-circle"
                         [icon]="expanded ? 'bi bi-chevron-up' : 'bi bi-chevron-down'"></button>
                 </td>
             </tr>
@@ -120,4 +122,14 @@
             </tr>
         </ng-template>
     </p-table>
+</div>
+
+<div *ngIf="contextmenu" style="position: absolute;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);"
+    [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}">
+    <ul class="nav flex-column" style="background-color: white;
+    width: 100px;
+    padding: 7px;">
+        <li>Edit</li>
+        <li>Delete</li>
+    </ul>
 </div>

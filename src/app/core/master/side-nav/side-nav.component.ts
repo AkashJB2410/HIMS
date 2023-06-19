@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import  Breadcrumbs  from '../../../features/registration-form/breadcrumb.json';
 
 @Component({
   selector: 'app-side-nav',
@@ -18,7 +19,6 @@ export class SideNavComponent implements OnInit {
   @Input() masterJSON: any;
   expandCollapse: boolean = true;
   activeStateSubchild: any;
-  home: { icon: string; };
 
   clickEvent() {
     this.status = !this.status;
@@ -40,19 +40,12 @@ export class SideNavComponent implements OnInit {
   header: { title: string; logo: string; };
   activeState: any
   activeStatechild: any
-  items: { label: string ,icon:string, routerLink: string}[];
-
+  items:any= Breadcrumbs
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.list = this.masterJSON.masterData;
-    this.items = [
-      {label: 'Dashboard', icon: 'pi pi-home', routerLink: '/master-page/dashboard'},
-      {label: 'Tabular Form',icon: 'pi pi-home', routerLink: '/master-page/user-management'},
-      {label: 'Cards', icon: 'pi pi-home', routerLink: '/master-page/card-demo'},
-      {label: 'Vertical Tabular', icon: 'pi pi-home' ,routerLink: '/master-page/worklist'}
-  ];
   }
 
   toggleNavbar(event: boolean) {

@@ -5,6 +5,7 @@ import { MessageService } from 'primeng/api';
 import { RegistrationFormService } from './registration-form.service';
 import * as role_table_config from './registrationForm_table_config.json';
 import roleData from './registrationForm.json';
+import Breadcrumbs from './breadcrumb.json'
 
 @Component({
   selector: 'app-registration-form',
@@ -23,6 +24,7 @@ export class RegistrationFormComponent implements OnInit {
   tableConfig: any;
   isdataReady = false;
   sidebarJSON: any = roleData;
+  items:any= Breadcrumbs
 
   constructor(private messageService: MessageService, private http: RegistrationFormService) { }
 
