@@ -134,6 +134,7 @@ import { DepartmentComponent } from './features/department/department.component'
 import { ActionSubModuleComponent } from './features/action-sub-module/action-sub-module.component';
 import { UnitComponent } from './features/unit/unit.component';
 import { GroupModuleComponent } from './features/group-module/group-module.component';
+import { ApplicationConfigComponent } from './features/application-config/application-config.component';
 
 @NgModule({
   declarations: [
@@ -256,7 +257,8 @@ import { GroupModuleComponent } from './features/group-module/group-module.compo
     ActionRoleComponent,
     ActionSubModuleComponent,
     UnitComponent,
-    GroupModuleComponent
+    GroupModuleComponent,
+    ApplicationConfigComponent
   ],
   imports: [
     CommonModule,

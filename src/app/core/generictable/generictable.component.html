@@ -68,8 +68,9 @@
                             <input pInputText type="text" [(ngModel)]="rowData[col.field]" (blur)="editT(rowData)">
                         </ng-template>
                         <ng-template pTemplate="output">
-                            <app-moreandless [wordLimit]="config.textLength"
-                                [text]="rowData[col.field] "></app-moreandless>
+                            <!-- <app-moreandless [wordLimit]="config.textLength"
+                                [text]="rowData[col.field] "></app-moreandless> -->
+                                {{rowData[col.field]}}
                         </ng-template>
                     </p-cellEditor>
                     <ng-template #normalText>

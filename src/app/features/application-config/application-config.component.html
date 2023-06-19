@@ -1,10 +1,10 @@
-<h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Group</h3>
+<h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Application Configuration</h3>
 <app-super-grid 
     *ngIf="data"
     [configurations]="configurations" 
     [tableData]="data" 
     [tableConfig]="tableConfig"
-    [sidebarJSON]="groupFormData" 
+    [sidebarJSON]="ApplictionFormData" 
     (sideBarEvent)="sidebarData($event)" 
     (confirmAction)="confirmAction($event)"
     (Bulkdelete)="BulkDeleteRows($event)"

@@ -20,7 +20,7 @@ export class UnitService {
   }
 
   GetAllCountryData() {
-    const url = "http://localhost:8081/api/v1/allMstCountry";
+    const url = "http://localhost:8082/api/v1/allMstCountry";
     return this.http.get<any>(url);
   }
 
