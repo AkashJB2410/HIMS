@@ -3,7 +3,8 @@ import { MessageService } from 'primeng/api';
 import ApplictionForm from './ApplicationConfig_Form.json';
 import ApplictionTable from './ApplicationConfig_TableConfig.json';
 import { ApplicationConfigService } from './application-config.service';
-import { error } from '@rxweb/reactive-form-validators';
+import Application_breadcrumb from './Application_breadcrumb.json'
+
 @Component({
   selector: 'app-application-config',
   templateUrl: './application-config.component.html',
@@ -13,6 +14,7 @@ export class ApplicationConfigComponent implements OnInit {
   tableConfig: any;
   visibleSidebar: boolean = true;
   ApplictionFormData: any = ApplictionForm;
+  Application_breadcrumb=Application_breadcrumb
   configurations: any;
   data: any;
   isdataReady = false;
