@@ -74,14 +74,14 @@ export class SubDepartmentComponent implements OnInit {
     this.subDepartment=[];
     
     this.http.getAllSubDepartment().subscribe(res => {
-      this.data = res;
       res.forEach((e: any) => {
+        console.log("res => ",e)
         let obj = {
+          "subDepartmentId": e.subDepartmentId,
           "mstDepartment": e.mstDepartment.departmentId,
           "subDepartment" : e.subDepartment,
-          "subDepartmentId": e.subDepartmentId ,
+          "is_Active":e.is_Active,
           "departmentName":e.mstDepartment.departmentName,
-          "is_Active":e.is_Active
         }
         this.subDepartment.push(obj);
         for (let i = 0; i < this.subDepartment.length; i++) {
@@ -90,6 +90,7 @@ export class SubDepartmentComponent implements OnInit {
         
       })
       this.data = [...this.subDepartment];
+      console.log("res data => ",this.data)
       this.isdataReady= true
       console.log("data ==>", this.data);
     })
@@ -195,17 +196,29 @@ export class SubDepartmentComponent implements OnInit {
         console.log("data" + d_Data)
       })
   }
-
+  
   BulkDeleteRow(e: any) {
     this.data = [];
     if (e != '') {
       e.forEach((data: any) => {
-        let obj = {
-          "subDepartmentId": data.subDepartmentId,
+        if (data.is_Active != false) {
+          let obj = {
+            "subDepartmentId": data.subDepartmentId,
+          }
+          this.deleteSubDepartment(obj.subDepartmentId);
+        } else {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'selected Rows',
+            detail: ' Deleted.',
+          });
         }
-        this.deleteSubDepartment(obj.subDepartmentId);
       });
-
+      this.messageService.add({
+        severity: 'success',
+        summary: 'success',
+        detail: 'Delete All Data successfull.',
+      });
     } else {
       this.messageService.add({
         severity: 'error',
@@ -213,6 +226,30 @@ export class SubDepartmentComponent implements OnInit {
         detail: 'Rows are not selected.',
       });
     }
+
   }
+  // BulkDeleteRow(e: any) {
+  //   this.data = [];
+  //   if (e != '') {
+  //     e.forEach((data: any) => {
+  //       let obj = {
+  //         "subDepartmentId": data.subDepartmentId,
+  //       }
+  //       this.deleteSubDepartment(obj.subDepartmentId);
+  //       this.messageService.add({
+  //         severity: 'success',
+  //         summary: 'success',
+  //         detail: 'Delete All Data successfull.',
+  //       });
+  //     });
+
+  //   } else {
+  //     this.messageService.add({
+  //       severity: 'error',
+  //       summary: 'select Rows',
+  //       detail: 'Rows are not selected.',
+  //     });
+  //   }
+  // }
 
 }

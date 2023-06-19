@@ -2,15 +2,13 @@
 {
     "tableName": "Department Table",
     "tableHeaders":[
-        {"field": "srNumber","header": "srNumber","iseditable": false , "class":""},
-        {"field":"subDepartmentId","header":"Id","iseditable": false , "class":""},
+        {"field": "subDepartmentId","header": "Id","iseditable": false , "class":""},
         {"field":"departmentName", "header":"Depatment Name","iseditable": false , "class":""},
         {"field":"subDepartment", "header":"Sub Depatment Name","iseditable": false , "class":""},
         {"field": "is_Active","header": "isActive","iseditable": false,"class":""}
     ],
     "PdfHeaders":[
         {"field": "srNumber","header": "srNumber"},
-        {"field":"subDepartmentId","header":"Id"},
         {"field":"subDepartment","header":"Sub-Depatment Name"},
         {"field":"is_Active", "header":"isActive"}
     ],
