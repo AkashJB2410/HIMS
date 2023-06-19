@@ -1,4 +1,9 @@
-<!-- <h3 class="cst-label">Patient Registration</h3> -->
+
+<div class="inboxContainer">
+    <div class="container-fluid">
+        <p-breadcrumb [model]="items.itemsList"></p-breadcrumb>
+    </div>
+</div>
 <h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Patient Registration</h3>
 <!-- <app-filter *ngIf="configurations.isFilter" [filterData]="filterData" (selectedData)="fiteredData($event)"></app-filter> -->
 
@@ -14,5 +19,6 @@
     (onAdd)="onAddEdit($event)"        
     (onEdit)="onAddEdit($event)" 
     (isActive)="isActive($event)">
+
 </app-super-grid>
 <p-toast></p-toast>

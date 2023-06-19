@@ -48,8 +48,10 @@ export class MasterModuleComponent implements OnInit {
     }
   }
   getAllMstModuleData() {
+    
     this.http.GetAllMstModuleData().subscribe(res => {
       this.data = res;
+      console.log("get all data",res)
       this.isdataReady = true;
     })
   }

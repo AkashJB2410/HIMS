@@ -6,6 +6,7 @@ import { RegistrationFormService } from './registration-form.service';
 import * as role_table_config from './registrationForm_table_config.json';
 import rgistrationData from './registrationForm.json';
 import { FormService } from 'src/app/core/shared/service/form.service';
+import Breadcrumbs from './breadcrumb.json';
 
 @Component({
   selector: 'app-registration-form',
@@ -29,6 +30,7 @@ export class RegistrationFormComponent implements OnInit {
   flag: any;
   gridData: any[];
   isAddEditFlag:any;
+  items:any= Breadcrumbs;
 
   constructor(private messageService: MessageService, private http: RegistrationFormService, private form$: FormService) { }
 

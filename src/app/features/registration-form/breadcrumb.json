@@ -1,24 +1,9 @@
 {
     "itemsList": [
         {
-            "label": "Dashboard",
-            "icon": "pi pi-home",
-            "routerLink": "/master-page/dashboard"
-        },
-        {
-            "label": "Tabular Form",
-            "icon": "",
-            "routerLink": "/master-page/dashboard"
-        },
-        {
-            "label": "Cards",
-            "icon": "",
-            "routerLink": "/master-page/dashboard"
-        },
-        {
-            "label": "Dashboard",
-            "icon": "",
-            "routerLink": "/master-page/dashboard"
-        }
+            "label": "Registration",
+            "icon": "bi bi-person-add",
+            "routerLink": "/master-page/registration-form"
+          }
     ]
 }
