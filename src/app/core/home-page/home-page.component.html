@@ -1,0 +1,10 @@
+<div class="{{homelist.Row}}">
+    <div class="{{HomeList.listClass}} {{HomeList.Css}}" *ngFor="let HomeList of homelist.HomeList">
+        <div class="{{HomeList.imgcss}}">
+            <p-card  routerLink="{{HomeList.routerLink}}">
+                <img src="{{HomeList.image}}">
+            </p-card>
+        </div>
+     <h6 class="{{HomeList.LabelCss}}">{{HomeList.label}}</h6> 
+    </div>
+</div>

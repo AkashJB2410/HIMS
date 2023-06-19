@@ -7,7 +7,7 @@
     },
     "header": {
       "logo": "../../assets/sahaj.pngs",
-      "whiteLogo": "../../assets/sahaj.png",
+      "whiteLogo": "../../assets/core_assets/medimazefull.png",
       "usericon": "../../assets/Icon.png",
       "setting": "../../assets/setting.png",
       "notification": {
