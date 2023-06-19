@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import groupForm from './group_form.json';
-import groupTable from './groupTableConfig.json';
+import groupTable from './group_TableConfig.json';
 import { GroupModuleService } from './group-module.service';
 import { MessageService } from 'primeng/api';
 @Component({
@@ -38,7 +38,6 @@ export class GroupModuleComponent implements OnInit {
   }
 
   isActive(event: string) {
-    console.log(event);
     this.http.isActiveData(event).subscribe((data) => {
       this.data = undefined;
       this.getAllGroup();
@@ -88,10 +87,8 @@ export class GroupModuleComponent implements OnInit {
  
   }
   sidebarData(e: any) {
-    console.log('From User Management ==> ', e);
     if (e != 'reset') {
       if (this.flag == "edit") {
-        console.log(e);
         this.updateGroup(e);
         this.messageService.add({
           severity: 'success',
@@ -99,7 +96,6 @@ export class GroupModuleComponent implements OnInit {
           detail: 'Data updated successfull.',
         });
       } else {
-        console.log(e);
         this.submitGroup(e);
         this.messageService.add({
           severity: 'success',
@@ -140,7 +136,6 @@ export class GroupModuleComponent implements OnInit {
           "mstModule_name": e.mstModule.label,
         }
         this.groupData.push(obj);
-        console.log("objet ==>", obj);
       })
       this.data = [...this.groupData];
       this.isdataReady = true;
@@ -151,7 +146,6 @@ export class GroupModuleComponent implements OnInit {
     this.http.updateGroupData(groupId).subscribe((data) => {
       this.data = undefined;
       this.getAllGroup();
-      console.log('data' + data);
     });
   }
 
@@ -159,7 +153,6 @@ export class GroupModuleComponent implements OnInit {
     this.http.deleteGroupData(groupId).subscribe((data) => {
       this.data = undefined;
       this.getAllGroup();
-      console.log('data' + data);
     });
   }
 
@@ -167,7 +160,6 @@ export class GroupModuleComponent implements OnInit {
     this.http.saveGroupData(groupId).subscribe((data) => {
       this.data = undefined;
       this.getAllGroup();
-      console.log('data' + data);
     });
   }
 

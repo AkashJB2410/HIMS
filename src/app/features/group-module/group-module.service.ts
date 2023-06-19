@@ -59,12 +59,7 @@ export class GroupModuleService {
     console.log(groupId);
     return this.http.delete<any>(url);
   }
-  // deleteAllGroupData(groupId: any) {
-  //   const url = "http://localhost:8080/api/v1/deletedMstGroup/" + groupId;
-  //   console.log(groupId);
-  //   return this.http.delete<any>(url);
-  // }
-
+  
   isActiveData(data: any) {
     const param = {
       "groupId": data.groupId
