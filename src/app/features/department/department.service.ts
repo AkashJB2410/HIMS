@@ -21,17 +21,19 @@ export class DepartmentService {
 
   addDepartment(department:any):Observable<any>{
     const param={
+      "departmentId":department.departmentId,
       "departmentName": department.departmentName
     };
-    const url = "http://localhost:8081/api/v1/addMstDepartment";
+    const url = "http://localhost:8081/api/v1/addMstDepartment/";
     return this.PostCall(url, param)
   }
 
   updateDepartment(department:any){
     const param={
-      "department": department.departmentName
+      "departmentId":department.departmentId,
+      "departmentName": department.departmentName
     };
-    const url = "http://localhost:8081/api/v1/updateMstDepartment"+department.departmentId;
+    const url = "http://localhost:8081/api/v1/updateMstDepartment/"+ department.departmentId;
     return this.http.put<any>(url, param);
   }
 
@@ -41,8 +43,8 @@ export class DepartmentService {
   }
 
   reactiveDepartment(department:any){
-    const url = "http://localhost:8081/api/v1/reactiveMstDepartment/"+department.departmentId;
-    return this.http.post<any>(url, department)
+    const url = "http://localhost:8081/api/v1/reactiveMstDepartment/"+ department.departmentId;
+    return this.http.post<any>(url,department)
   }
 }
 

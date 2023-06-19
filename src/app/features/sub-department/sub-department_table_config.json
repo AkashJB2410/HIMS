@@ -2,21 +2,19 @@
 {
     "tableName": "Department Table",
     "tableHeaders":[
-        {"field": "srNumber","header": "srNumber","iseditable": false,"class":""},
+        {"field": "srNumber","header": "srNumber","iseditable": false , "class":""},
         {"field":"subDepartmentId","header":"Id","iseditable": false , "class":""},
-        {"field":"departmentName", "header":"Department Name","iseditable": false , "class":""},
-        {"field":"subDepartment", "header":"Sub-Depatment Name","iseditable": false , "class":"" },
+        {"field":"departmentName", "header":"Depatment Name","iseditable": false , "class":""},
+        {"field":"subDepartment", "header":"Sub Depatment Name","iseditable": false , "class":""},
         {"field": "is_Active","header": "isActive","iseditable": false,"class":""}
-
     ],
     "PdfHeaders":[
         {"field": "srNumber","header": "srNumber"},
         {"field":"subDepartmentId","header":"Id"},
-        {"field":"departmentName", "header":"Department Name","iseditable": false , "class":""},
-        { "field":"subDepartment","header":"Sub-Depatment Name"},
+        {"field":"subDepartment","header":"Sub-Depatment Name"},
         {"field":"is_Active", "header":"isActive"}
     ],
-    "globalFilter":["subDepartmentId","departmentName","subDepartment","is_Active"],
+    "globalFilter":["subDepartmentId","subDepartment","mstDepartment","is_Active"],
     "rows" : 10,
     "showCurrentPageReport" : true,
     "rowsPerPageOptions" : [10,25,50],

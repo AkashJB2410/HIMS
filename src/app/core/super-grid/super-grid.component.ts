@@ -59,7 +59,7 @@ export class SuperGridComponent implements OnInit {
   editRow(e: any) {
     this.editRowData = e;
     let edit = "edit"
-    this.onEdit.emit({edit,e});
+    this.onEdit.emit("edit");
     this.visibleSidebar = true
   }
   isactive(e: any) {
@@ -69,7 +69,7 @@ export class SuperGridComponent implements OnInit {
   addRow(e: any) {
     this.editRowData = e;
     let add = "add"
-    this.onAdd.emit({add, e});
+    this.onAdd.emit("add");
     this.visibleSidebar = true
   }
 

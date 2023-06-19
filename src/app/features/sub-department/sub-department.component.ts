@@ -7,6 +7,9 @@ import {
 } from './sub-department.service';
 import sub_department_Table_Config from './sub-department_table_config.json';
 import sub_department_Form from './sub-department.json'
+import {
+  MessageService
+} from 'primeng/api';
 
 @Component({
   selector: 'app-sub-department',
@@ -19,14 +22,14 @@ export class SubDepartmentComponent implements OnInit {
   subDepartment: any = [] = [];
   config: any;
   configurations: any;
+  isdataReady = false;
   table_Config: any;
-  isDataReady: boolean = false;
   visibleSiderbar: boolean = false;
   table_Data: any;
   editMethod: boolean = false;
   sidebar_Update_Input: any = sub_department_Form;
-  saveMethod: boolean = false;
-  constructor(private http: SubDepartmentService) {}
+  saveMethod: any;
+  constructor(private http: SubDepartmentService, private messageService: MessageService) {}
 
   ngOnInit(): void {
     this.assignDropDownOptions();
@@ -36,11 +39,9 @@ export class SubDepartmentComponent implements OnInit {
       "isSideBar": true,
       "isConfirmation": true
     };
-    // this.table_Config = const department_Config: any
     this.getConfigForTable();
     this.getAllSubDepartment();
   }
-
   getConfigForTable() {
     this.config = sub_department_Table_Config;
   }
@@ -69,31 +70,37 @@ export class SubDepartmentComponent implements OnInit {
   }
 
   getAllSubDepartment() {
-    this.subDepartment = [];
+    this.data = undefined;
+    this.subDepartment=[];
+    
     this.http.getAllSubDepartment().subscribe(res => {
-      this.table_Data = res;
+      this.data = res;
       res.forEach((e: any) => {
-        console.log('All data=>', e)
         let obj = {
-          "subDepartmentId": e.subDepartmentId,
-          "subDepartment": e.subDepartment,
-          "mstDepartment": e.mstDepartment
+          "mstDepartment": e.mstDepartment.departmentId,
+          "subDepartment" : e.subDepartment,
+          "subDepartmentId": e.subDepartmentId ,
+          "departmentName":e.mstDepartment.departmentName,
+          "is_Active":e.is_Active
         }
         this.subDepartment.push(obj);
+        for (let i = 0; i < this.subDepartment.length; i++) {
+          this.subDepartment[i].srNumber = i + 1;
+        }
+        
       })
-      // this.isDataReady = true;
-      // for (let i = 0; i < this.table_Data.length; i++) {
-      //   this.table_Data[i].srNumber = i + 1;
-      // }
+      this.data = [...this.subDepartment];
+      this.isdataReady= true
+      console.log("data ==>", this.data);
     })
-
   }
+
   editRow(e: any) {
     this.visibleSiderbar = true;
   }
 
   saveDepartment(data: any) {
-    this.saveMethod = true;
+    this.saveMethod = data;
   }
 
   editDepartment(data: any) {
@@ -101,37 +108,62 @@ export class SubDepartmentComponent implements OnInit {
   }
 
   isActive(data: any) {
-    if (data.is_Deleted) {
+    if (!data.is_Deleted) {
       this.http.reactiveSubDepartment(data)
         .subscribe(d_Data => {
           this.table_Data = undefined;
           this.getAllSubDepartment();
         })
-      // this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Bank Master Enable Successfully' });  
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Enable',
+        detail: 'Sub Department Enable Successfully'
+      });
     } else if (!data.is_Deleted) {
-      // this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Bank Master is already Active' });
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Sub Department is already Active'
+      });
     }
   }
 
   confirmAction(e: any) {
     if (e.is_Active == true) {
-      this.table_Data = undefined;
-      this.deleteSubDepartment(e.departmentId);
-      // this.messageService.add({ severity: 'success', summary: 'Disabled', detail: 'Bank Master Disabled Successfully' });
+      this.deleteSubDepartment(e.subDepartmentId);
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Disabled',
+        detail: 'Department Disabled Successfully'
+      });
     } else if (e.is_Active == false) {
-      // this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Bank Master is already Disabled' });
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Department is already Disabled'
+      });
     } else {}
   }
 
   sidebarData(e: any) {
-    if (e == 'reset') {} else if (this.saveMethod) {
-      this.addSubDepartment(e.departmentId);
-      console.log("sidebardata =>", e)
-      // this.messageService.add({ severity: 'success', summary: 'Added', detail: 'Bank Master Added Successfully' });
-      this.saveMethod = false;
-    } else {
-      this.updateSubDepartment(e.departmentId);
-      // this.messageService.add({ severity: 'success', summary: 'Updated', detail: 'Bank Master Updated Successfully.' });
+    if (e != 'reset') {
+      if (this.saveMethod == "add") {
+        this.addSubDepartment(e);
+        console.log("sidebardata =>", e)
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Added',
+          detail: 'Department Added Successfully'
+        });
+        this.saveMethod = false;
+      } else {
+        this.updateSubDepartment(e);
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Updated',
+          detail: 'Department Updated Successfully.'
+        });
+      }
     }
   }
 
@@ -140,24 +172,47 @@ export class SubDepartmentComponent implements OnInit {
       .subscribe(b_Data => {
         this.table_Data = undefined;
         this.getAllSubDepartment();
+        console.log("data" + b_Data)
+
       })
   }
 
   updateSubDepartment(e: any) {
-    this.http.updateSubDepartment(e.departmentId)
+    this.http.updateSubDepartment(e)
       .subscribe(d_Data => {
         console.log('update fill=>', e)
         this.table_Data = undefined;
         this.getAllSubDepartment();
+        console.log("data" + d_Data)
       })
   }
 
   deleteSubDepartment(e: any) {
     this.http.deleteSubDepartment(e)
       .subscribe(d_Data => {
+        this.table_Data = undefined;
         this.getAllSubDepartment();
+        console.log("data" + d_Data)
       })
   }
 
+  BulkDeleteRow(e: any) {
+    this.data = [];
+    if (e != '') {
+      e.forEach((data: any) => {
+        let obj = {
+          "subDepartmentId": data.subDepartmentId,
+        }
+        this.deleteSubDepartment(obj.subDepartmentId);
+      });
+
+    } else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'select Rows',
+        detail: 'Rows are not selected.',
+      });
+    }
+  }
 
 }

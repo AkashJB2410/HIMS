@@ -7,7 +7,9 @@
     [sidebarJSON]="sidebar_Update_Input"
     (sideBarEvent)="sidebarData($event)"
     (confirmAction)="confirmAction($event)"
-    (onAdd)="saveDepartment($event)"
-    (onEdit)="editDepartment($event)"
+    (onAdd)="eventMethod($event)"
+    (onEdit)="eventMethod($event)"
     (isActive)="isActive($event)"
+    (Bulkdelete)="BulkDeleteRow($event)" 
 ></app-super-grid>
+<p-toast></p-toast>

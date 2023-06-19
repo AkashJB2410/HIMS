@@ -32,27 +32,36 @@ export class SubDepartmentService {
 
   addSubDepartment(department:any):Observable<any>{
     const param={
-      "departmentName": department.departmentName
+      
+  // "mstDepartment":department.selectDepartment,
+  //     "subDepartment": department.subDepartment
+      "mstDepartment":{
+        "departmentId":department.selectDepartment
+    },
+      "subDepartment": department.subDepartment
     };
-    const url = "http://localhost:8081/api/v1/addsubDepartment";
+    const url = "http://localhost:8081/api/v1/addsubDepartment/";
     return this.PostCall(url, param)
   }
 
   updateSubDepartment(department:any){
     const param={
-      "department": department.departmentName
+      "subDepartmentId":department.subDepartmentId,
+      "mstDepartment":department.selectDepartment,
+      "subDepartment": department.subDepartment
+      
     };
-    const url = "http://localhost:8081/api/v1/subDepartment"+department.departmentId;
+    const url = "http://localhost:8081/api/v1/subDepartment"+department.subDepartmentId;
     return this.http.put<any>(url, param);
   }
 
-  deleteSubDepartment(departmentId:any){
-    const url = "http://localhost:8081/api/v1/subDepartment/"+departmentId;
+  deleteSubDepartment(subDepartmentId:any){
+    const url = "http://localhost:8081/api/v1/subDepartment/"+subDepartmentId;
     return this.http.delete<any>(url);
   }
 
   reactiveSubDepartment(department:any){
-    const url = "http://localhost:8081/api/v1/reActive/"+department.departmentId;
+    const url = "http://localhost:8081/api/v1/reActive/"+department.subDepartmentId;
     return this.http.post<any>(url, department)
   }
 }
