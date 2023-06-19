@@ -1,4 +1,9 @@
-
+<div class="inboxContainer">
+    <div class="container-fluid">
+        <p-breadcrumb [model]="items.itemsList"></p-breadcrumb>
+    </div>
+</div>
+<h3 class="cst-label">All Masters</h3>
 <app-vertical-tabular [tabularData]="tabularSideData" (renderComponents)="renderComponents($event)">
     <div *ngIf="allFlag.unitFlag">
     <div class="row">

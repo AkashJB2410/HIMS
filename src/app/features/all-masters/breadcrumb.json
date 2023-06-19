@@ -1,0 +1,9 @@
+{
+    "itemsList": [
+        {
+            "label": "All Masters",
+            "icon": "",
+            "routerLink": "/master-page/all-masters"
+          }
+    ]
+}
