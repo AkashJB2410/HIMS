@@ -15,7 +15,6 @@ import { SubModuleService } from './sub-module.service';
 `]
 })
 export class SubModuleComponent implements OnInit {
-
   toast: any = {};
   showToast: any;
   Message: any;

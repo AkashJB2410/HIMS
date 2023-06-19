@@ -10,7 +10,7 @@ export class DepartmentService {
   constructor(private http:HttpClient) { }
 
   getAllDepartment(){
-    const url="http://localhost:8080/api/v1/allMstDepartment";
+    const url="http://localhost:8081/api/v1/allMstDepartment";
     return this.http.get<any>(url);
   }
 
@@ -21,28 +21,30 @@ export class DepartmentService {
 
   addDepartment(department:any):Observable<any>{
     const param={
+      "departmentId":department.departmentId,
       "departmentName": department.departmentName
     };
-    const url = "http://localhost:8080/api/v1/addMstDepartment";
+    const url = "http://localhost:8081/api/v1/addMstDepartment/";
     return this.PostCall(url, param)
   }
 
   updateDepartment(department:any){
     const param={
-      "department": department.departmentName
+      "departmentId":department.departmentId,
+      "departmentName": department.departmentName
     };
-    const url = "http://localhost:8080/api/v1/updateMstDepartment"+department.departmentId;
+    const url = "http://localhost:8081/api/v1/updateMstDepartment/"+ department.departmentId;
     return this.http.put<any>(url, param);
   }
 
   deleteDepartment(departmentId:any){
-    const url = "http://localhost:8080/api/v1/deleteMstDepartment/"+departmentId;
+    const url = "http://localhost:8081/api/v1/deleteMstDepartment/"+departmentId;
     return this.http.delete<any>(url);
   }
 
   reactiveDepartment(department:any){
-    const url = "http://localhost:8080/api/v1/reactiveMstDepartment/"+department.departmentId;
-    return this.http.post<any>(url, department)
+    const url = "http://localhost:8081/api/v1/reactiveMstDepartment/"+ department.departmentId;
+    return this.http.post<any>(url,department)
   }
 }
 

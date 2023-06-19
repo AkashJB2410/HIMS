@@ -132,6 +132,7 @@ import { ActionModule } from './features/action-module/actionModule';
 import { ActionRoleComponent } from './features/action-role/action-role.component';
 import { DepartmentComponent } from './features/department/department.component';
 import { ActionSubModuleComponent } from './features/action-sub-module/action-sub-module.component';
+import { SubDepartmentComponent } from './features/sub-department/sub-department.component';
 import { UnitComponent } from './features/unit/unit.component';
 import { GroupModuleComponent } from './features/group-module/group-module.component';
 import { ApplicationConfigComponent } from './features/application-config/application-config.component';
@@ -256,6 +257,8 @@ import { ApplicationConfigComponent } from './features/application-config/applic
     BankBranchMasterComponent,
     ActionRoleComponent,
     ActionSubModuleComponent,
+    BedTransferComponent,
+    SubDepartmentComponent,
     UnitComponent,
     GroupModuleComponent,
     ApplicationConfigComponent
