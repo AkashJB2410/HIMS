@@ -7,6 +7,8 @@ import {
 } from './sub-department.service';
 import sub_department_Table_Config from './sub-department_table_config.json';
 import sub_department_Form from './sub-department.json'
+import breadcrumb from './breadcrumb.json'
+
 import {
   MessageService
 } from 'primeng/api';
@@ -29,6 +31,7 @@ export class SubDepartmentComponent implements OnInit {
   editMethod: boolean = false;
   sidebar_Update_Input: any = sub_department_Form;
   saveMethod: any;
+  breadcrumb=breadcrumb;
   constructor(private http: SubDepartmentService, private messageService: MessageService) {}
 
   ngOnInit(): void {
