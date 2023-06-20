@@ -3,7 +3,7 @@ import subModuleData from './subModuleSidebarConfig.json';
 import * as subModule_table_config from './subModuleTableConfig.json';
 import { MessageService } from 'primeng/api';
 import { SubModuleService } from './sub-module.service';
-
+import Application_breadcrumb from './breadcrum.json'
 @Component({
   selector: 'app-sub-module',
   templateUrl: './sub-module.component.html',
@@ -50,7 +50,7 @@ export class SubModuleComponent implements OnInit {
       }
     }
   }
-
+  Application_breadcrumb=Application_breadcrumb
   toast: any = {};
   showToast: any;
   Message: any;

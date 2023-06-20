@@ -3,7 +3,7 @@ import { MessageService } from 'primeng/api';
 import { MasterModuleService } from './master-module.service';
 import mstModuleData from './masterModuleSidebarConfig.json';
 import * as mstModule_table_config from './masterModuleTableConfig.json';
-
+import Application_breadcrumb from './breadcrum.json'
 @Component({
   selector: 'app-master-module',
   templateUrl: './master-module.component.html',
@@ -68,7 +68,7 @@ export class MasterModuleComponent implements OnInit {
   }
 
 
-
+  Application_breadcrumb=Application_breadcrumb
   toast: any = {};
   showToast: any;
   Message: any;
