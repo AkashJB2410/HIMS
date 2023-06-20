@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import  Breadcrumbs  from '../../../features/registration-form/breadcrumb.json';
 
 @Component({
   selector: 'app-side-nav',
@@ -40,7 +39,6 @@ export class SideNavComponent implements OnInit {
   header: { title: string; logo: string; };
   activeState: any
   activeStatechild: any
-  items:any= Breadcrumbs
 
   constructor(private router: Router) { }
 

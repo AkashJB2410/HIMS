@@ -304,49 +304,6 @@
         ]
       },
       {
-        "label": "TabularForm",
-        "icon": "bi bi-person-up",
-        "group": [
-          {
-            "label": "New",
-            "icon": "bi bi-person-up",
-            "routerLink": "/master-page/dashboard"
-          },
-          {
-            "label": "Group",
-            "icon": "pi pi-fw pi-book",
-            "subModule": [
-              {
-                "label": "Sub child",
-                "icon": "bi bi-person-up",
-                "routerLink": "/master-page/user-management"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "label": "GenericTable",
-        "icon": "pi pi-list",
-        "group": [
-          {
-            "label": "Table",
-            "icon": "bi bi-person-up",
-            "routerLink": "/master-page/user-management"
-          }
-        ]
-      },
-      {
-        "label": "Form",
-        "icon": "pi pi-fw pi-book",
-        "routerLink": "/master-page/worklist"
-      },
-      {
-        "label": "Cards",
-        "icon": "pi pi-fw pi-book",
-        "routerLink": "/master-page/card-demo"
-      },
-      {
         "label": "Configuration",
         "icon": "pi pi-fw pi-book",
         "group": [
@@ -361,51 +318,7 @@
             "routerLink": "configurations/sms-configuration"
           }
         ]
-      },
-      {
-        "label": "TabularForm",
-        "icon": "bi bi-person-up",
-        "group": [
-          {
-            "label": "New",
-            "icon": "bi bi-person-up",
-            "routerLink": "/master-page/dashboard"
-          },
-          {
-            "label": "Group",
-            "icon": "pi pi-fw pi-book",
-            "subModule": [
-              {
-                "label": "Sub child",
-                "icon": "bi bi-person-up",
-                "routerLink": "/master-page/user-management"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "label": "GenericTable",
-        "icon": "pi pi-list",
-        "group": [
-          {
-            "label": "Table",
-            "icon": "bi bi-person-up",
-            "routerLink": "/master-page/user-management"
-          }
-        ]
-      },
-      {
-        "label": "Form",
-        "icon": "pi pi-fw pi-book",
-        "routerLink": "/master-page/worklist"
-      },
-      {
-        "label": "Cards",
-        "icon": "pi pi-fw pi-book",
-        "routerLink": "/master-page/card-demo"
-      },
-      {
+      },{
         "label": "Configuration",
         "icon": "pi pi-fw pi-book",
         "group": [
@@ -420,51 +333,127 @@
             "routerLink": "configurations/sms-configuration"
           }
         ]
-      },
-      {
-        "label": "TabularForm",
-        "icon": "bi bi-person-up",
+      },{
+        "label": "Configuration",
+        "icon": "pi pi-fw pi-book",
         "group": [
           {
-            "label": "New",
-            "icon": "bi bi-person-up",
-            "routerLink": "/master-page/dashboard"
+            "label": "Email Configurations",
+            "icon": "",
+            "routerLink": "configurations/email-configuration"
           },
           {
-            "label": "Group",
-            "icon": "pi pi-fw pi-book",
-            "subModule": [
-              {
-                "label": "Sub child",
-                "icon": "bi bi-person-up",
-                "routerLink": "/master-page/user-management"
-              }
-            ]
+            "label": "SMS Configurations",
+            "icon": "",
+            "routerLink": "configurations/sms-configuration"
           }
         ]
-      },
-      {
-        "label": "GenericTable",
-        "icon": "pi pi-list",
+      },{
+        "label": "Configuration",
+        "icon": "pi pi-fw pi-book",
         "group": [
           {
-            "label": "Table",
-            "icon": "bi bi-person-up",
-            "routerLink": "/master-page/user-management"
+            "label": "Email Configurations",
+            "icon": "",
+            "routerLink": "configurations/email-configuration"
+          },
+          {
+            "label": "SMS Configurations",
+            "icon": "",
+            "routerLink": "configurations/sms-configuration"
           }
         ]
-      },
-      {
-        "label": "Form",
+      },{
+        "label": "Configuration",
         "icon": "pi pi-fw pi-book",
-        "routerLink": "/master-page/worklist"
-      },
-      {
-        "label": "Cards",
+        "group": [
+          {
+            "label": "Email Configurations",
+            "icon": "",
+            "routerLink": "configurations/email-configuration"
+          },
+          {
+            "label": "SMS Configurations",
+            "icon": "",
+            "routerLink": "configurations/sms-configuration"
+          }
+        ]
+      },{
+        "label": "Configuration",
         "icon": "pi pi-fw pi-book",
-        "routerLink": "/master-page/card-demo"
-      },
-      {
+        "group": [
+          {
+            "label": "Email Configurations",
+            "icon": "",
+            "routerLink": "configurations/email-configuration"
+          },
+          {
+            "label": "SMS Configurations",
+            "icon": "",
+            "routerLink": "configurations/sms-configuration"
+          }
+        ]
+      },{
+        "label": "Configuration",
+        "icon": "pi pi-fw pi-book",
+        "group": [
+          {
+            "label": "Email Configurations",
+            "icon": "",
+            "routerLink": "configurations/email-configuration"
+          },
+          {
+            "label": "SMS Configurations",
+            "icon": "",
+            "routerLink": "configurations/sms-configuration"
+          }
+        ]
+      },{
+        "label": "Configuration",
+        "icon": "pi pi-fw pi-book",
+        "group": [
+          {
+            "label": "Email Configurations",
+            "icon": "",
+            "routerLink": "configurations/email-configuration"
+          },
+          {
+            "label": "SMS Configurations",
+            "icon": "",
+            "routerLink": "configurations/sms-configuration"
+          }
+        ]
+      },{
+        "label": "Configuration",
+        "icon": "pi pi-fw pi-book",
+        "group": [
+          {
+            "label": "Email Configurations",
+            "icon": "",
+            "routerLink": "configurations/email-configuration"
+          },
+          {
+            "label": "SMS Configurations",
+            "icon": "",
+            "routerLink": "configurations/sms-configuration"
+          }
+        ]
+      },{
+        "label": "Configuration",
+        "icon": "pi pi-fw pi-book",
+        "group": [
+          {
+            "label": "Email Configurations",
+            "icon": "",
+            "routerLink": "configurations/email-configuration"
+          },
+          {
+            "label": "SMS Configurations",
+            "icon": "",
+            "routerLink": "configurations/sms-configuration"
+          }
+        ]
+      },{
         "label": "Configuration",
         "icon": "pi pi-fw pi-book",
         "group": [

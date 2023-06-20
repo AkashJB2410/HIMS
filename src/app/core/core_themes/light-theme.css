@@ -369,6 +369,11 @@
   font-size: 12px;
 }
 
+.captcha-btn-refresh
+{
+  color:black !important;
+}
+
 /*------------In Login card Input password Start-------------*/
 
 .p-inputtext.p-password-input {
@@ -1126,7 +1131,7 @@ ul p.verticaltab {
   width: 100%;
 }
 
-.footer {
+/* .footer {
   position: relative;
   left: 0;
   bottom: 0;
@@ -1136,7 +1141,7 @@ ul p.verticaltab {
   font-size: 12px;
   height: 3%;
   padding: 5px;
-} 
+}  */
 /* .footer {
   position: absolute;
   bottom: 0;

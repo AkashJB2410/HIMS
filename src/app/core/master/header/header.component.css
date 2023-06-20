@@ -27,7 +27,9 @@
   width: 40px;
   border-radius: 50%;
 }
-
+.fixed-top{
+  position: sticky !important;
+}
 .clogo {
   height: 45px;
   width: 100px;
