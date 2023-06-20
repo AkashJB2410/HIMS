@@ -9,6 +9,7 @@ import { SubModuleService } from './sub-module.service';
   templateUrl: './sub-module.component.html',
 })
 export class SubModuleComponent implements OnInit {
+
   Bulkdelete(e: any) {
     if (e.length == 1) {
       if (e[0].is_Active == true) {
@@ -49,6 +50,7 @@ export class SubModuleComponent implements OnInit {
       }
     }
   }
+
   toast: any = {};
   showToast: any;
   Message: any;

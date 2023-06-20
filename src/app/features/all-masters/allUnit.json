@@ -405,8 +405,8 @@
                         "class": "col-md-12 ",
                         "lblclass": "lbl-end ",
                         "id": "anchor",
-                        "placeholder": "/master-page/all-masters/bank-master",
-                        "formControlName": "Application Configuration",
+                        "placeholder": "/master-page/all-masters/application-config",
+                        "formControlName": "applicationConfiguration",
                         "message": {
                             "required": "",
                             "pattern": ""
@@ -685,7 +685,7 @@
                         "class": "col-md-12 ",
                         "lblclass": "lbl-end ",
                         "id": "anchor",
-                        "placeholder": "/master-page/all-masters/bank-master",
+                        "placeholder": "/master-page/all-masters/department",
                         "formControlName": "Department",
                         "message": {
                             "required": "",
@@ -1455,7 +1455,7 @@
                         "class": "col-md-12 ",
                         "lblclass": "lbl-end ",
                         "id": "anchor",
-                        "placeholder": "/master-page/all-masters/bank-master",
+                        "placeholder": "/master-page/all-masters/sub-department",
                         "formControlName": "Sub Department",
                         "message": {
                             "required": "",
@@ -1595,7 +1595,7 @@
                         "class": "col-md-12 ",
                         "lblclass": "lbl-end ",
                         "id": "anchor",
-                        "placeholder": "/master-page/all-masters/bank-master",
+                        "placeholder": "/master-page/all-masters/unit",
                         "formControlName": "Unit",
                         "message": {
                             "required": "",

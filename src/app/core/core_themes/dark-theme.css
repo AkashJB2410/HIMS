@@ -272,7 +272,7 @@
 }
 
 .custom-label-login {
-  color: white;
+  color: #9FA2B4 !important;
 }
 
 .lbl-center-login-anchor {
@@ -364,12 +364,13 @@
 
 .sidebarMenu-custom {
   /* background: #415988 !important; */
-  background:#0463A8 !important;
+  /* background:#0463A8 !important; */
+  background: linear-gradient(180deg, #4D5D9A 0%, #1A2242 100%)!important;
+  /* background: #232E43!important; */
   width: auto;
   transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
   transform-origin: bottom left;
 }
-
 .nav-list-item {
   display: flex;
   align-items: center;

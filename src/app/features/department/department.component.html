@@ -1,0 +1,15 @@
+<h3>department</h3>
+<app-super-grid
+    *ngIf="table_Data"
+    [configurations]="configurations"
+    [tableData]="table_Data"
+    [tableConfig] = "config"
+    [sidebarJSON]="sidebar_Update_Input"
+    (sideBarEvent)="sidebarData($event)"
+    (confirmAction)="confirmAction($event)"
+    (onAdd)="eventMethod($event)"
+    (onEdit)="eventMethod($event)"
+    (isActive)="isActive($event)"
+    (Bulkdelete)="BulkDeleteRow($event)" 
+></app-super-grid>
+<p-toast></p-toast>

@@ -120,6 +120,7 @@ export class ActionRoleComponent implements OnInit {
   //     this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Organization is already Active' });
   //   }
   // }
+
   getAllActionRoleData() {
     this.actionRole = [];
     this.data = undefined;
@@ -247,17 +248,17 @@ export class ActionRoleComponent implements OnInit {
   }
 
   BulkDeleteRow(e: any) {
-    //   e.forEach((ele: any) => {
-    //     this.http.deleteActionRoleData(ele.roleId)
-    //       .subscribe(data => {
-    //         // this.data = undefined;
-    //         this.getAllActionRoleData();
-    //         console.log("data" + data)
-    //       });
-    //   });
-    //   console.log("Deleted data =>", e);
-    // }
-  }
+      e.forEach((ele: any) => {
+        this.http.deleteActionRoleData(ele.roleId)
+          .subscribe(data => {
+            this.data = undefined;
+            this.getAllActionRoleData();
+            console.log("data" + data)
+          });
+      });
+      console.log("Deleted data =>", e);
+    }
+ 
 
   changeCheckBox(e: any) {
     e.forEach((res: any) => {

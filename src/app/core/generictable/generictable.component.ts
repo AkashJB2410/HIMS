@@ -1,7 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Table } from 'primeng/table';
 import { data } from '../shared/objects/data';
-// import * as table_config from '../../shared/objects/table_config.json';
 import * as XLSX from 'xlsx';
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
@@ -9,8 +8,8 @@ import "jspdf-autotable";
 @Component({
   selector: 'app-generictable',
   templateUrl: './generictable.component.html',
-
 })
+
 export class GenerictableComponent implements OnInit {
   status: any = false;
   rowObject: any = []
@@ -27,13 +26,9 @@ export class GenerictableComponent implements OnInit {
   _selectedColumns: any;
   selectedOptions: any;
   Fdata: any;
-
-  bulkOpt = [
-    { name: 'Bulk Actions', code: '' },
-    { name: 'Move to Trash', code: 'NY' },
-    { name: 'Excel Export', code: 'NY' },
-    { name: 'Some Action', code: 'RM' }
-  ];
+  contextmenu = false;
+  contextmenuX = 0;
+  contextmenuY = 0;
   chekboxes: any = [];
   @Input() config: any;
   @Input() tableData: any[];
@@ -45,7 +40,6 @@ export class GenerictableComponent implements OnInit {
   @Output() onAdd = new EventEmitter<string>();
   @Output() onRowClickData = new EventEmitter<string>();
   @Output() isActive = new EventEmitter<string>();
-
 
   constructor() { }
 
@@ -62,8 +56,18 @@ export class GenerictableComponent implements OnInit {
 
     this.pdfName = this.config.tableName
     this._selectedColumns = this.colNames;
-
   }
+  
+  onrightClick(event: any) {
+    this.contextmenuX = event.pageX
+    this.contextmenuY = event.pageY
+    this.contextmenu = true;
+  }
+  //disables the menu
+  disableContextMenu() {
+    this.contextmenu = false;
+  }
+
   next() {
     this.first = this.first + this.rows;
   }
@@ -87,6 +91,7 @@ export class GenerictableComponent implements OnInit {
   clear(table: Table) {
     table.clear();
   }
+  
   editProduct(row: any) {
     this.rowData = row
     this.visibleSidebar = true;
@@ -147,16 +152,17 @@ export class GenerictableComponent implements OnInit {
   }
 
   set selectedColumns(val: any[]) {
-    //restore original order
     this._selectedColumns = this.colNames.filter((col: any) => val.includes(col));
   }
 
   onRowClick(row_Data: any) {
     this.onRowClickData.emit(row_Data);
   }
+  
   bulkAction() {
     console.log(this.chekboxes);
   }
+  
   getColor(row: any) {
     let color = "";
     if (this.config.getColors) {
@@ -168,9 +174,10 @@ export class GenerictableComponent implements OnInit {
     }
     return color;
   }
+  
   active(e:any){
     this.isActive.emit(e);
-
   }
+
 }
 

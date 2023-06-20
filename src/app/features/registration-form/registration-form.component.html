@@ -1,14 +1,17 @@
-
+<div class="inboxContainer">
+    <div class="container-fluid">
+        <p-breadcrumb [model]="items.itemsList"></p-breadcrumb>
+    </div>
+</div>
 <h3 class="cst-label">Patient Registration</h3>
 <!-- <app-filter *ngIf="configurations.isFilter" [filterData]="filterData" (selectedData)="fiteredData($event)"></app-filter> -->
 
-<app-super-grid
-    *ngIf="data"
+<app-super-grid *ngIf="data" 
     [configurations]="configurations" 
     [tableData]="data" 
-    [tableConfig] = "config"
-    [sidebarJSON] = "sidebarJSON"
-    (sideBarEvent)="sidebarData($event)"
+    [tableConfig]="config"
+    [sidebarJSON]="sidebarJSON" 
+    (sideBarEvent)="sidebarData($event)" 
     (confirmAction)="confirmAction($event)">
 </app-super-grid>
 <p-toast></p-toast>

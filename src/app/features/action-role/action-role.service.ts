@@ -32,40 +32,6 @@ export class ActionRoleService {
   }
 
   saveActionRoleData(data: any): Observable<any> {
-  //   {
-        
-  //     "arActionSubModuleMst": {
-  //         "asmId": "1"
-         
-  //     },
-  //     "arRoleId": {
-  //         "roleId": "1"
-  //     },
-     
-  //     "arAdd": true,
-  //     "arView": true,
-  //     "arEdit": true,
-  //     "arDelete": true,
-  //     "arSearch": true,
-  //     "arApprove": true
-  // }
-    // const param = {
-    //   // "arId": data.idInput,
-    //   "arActionSubModuleMst": {
-    //     "asmId": data.selectActionSubModule
-    //   },
-    //   "arRoleId": {
-    //     "roleId": data.selectRole
-    //   },
-    //   "arAdd": data.addCheckbox[0],
-    //   "arView": data.viewCheckbox[0],
-    //   "arEdit": data.editCheckbox[0],
-    //   "arDelete": data.deleteCheckbox[0],
-    //   "arSearch": data.searchCheckbox[0],
-    //   "arApprove": data.approveCheckbox[0],
-      
-     
-    // };
     const url = "http://localhost:8081/api/v1/addActionRole";
     return this.PostCall(url, data);
   }
