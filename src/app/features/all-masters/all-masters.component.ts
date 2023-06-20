@@ -10,6 +10,7 @@ import Breadcrumbs from './breadcrumb.json';
   styleUrls: ['./all-masters.component.css']
 })
 export class AllMastersComponent implements OnInit, DoCheck {
+  title:any="action";
   items:any= Breadcrumbs
   tabularSideData=tabularData;
   allUnit = allUnit;

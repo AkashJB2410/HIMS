@@ -9,7 +9,7 @@
         {"field": "age","header": "Age","iseditable": false , "class":""},
         {"field": "mobileNo","header": "MobileNo","iseditable": false , "class":""},
         {"field": "doctorName","header": "Doctor","iseditable": false , "class":""},
-        {"field": "is_Active","header": "is_Active","iseditable": false , "class":""}
+        {"field": "is_Active","header": "Is_Active","iseditable": false , "class":""}
     ],
     "PdfHeaders": [
         {"field": "userId","header": "userId"},
