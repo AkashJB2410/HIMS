@@ -1,0 +1,14 @@
+{
+    "itemsList": [
+        {
+            "label": "Administrations",
+            "icon": "",
+            "routerLink": ""
+        },
+        {
+            "label": "Sub Module",
+            "icon": "",
+            "routerLink": "/master-page/sub-module"
+        }
+    ]
+}

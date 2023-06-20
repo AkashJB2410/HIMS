@@ -31,19 +31,31 @@ export class MasterModuleService {
   }
 
   deleteMstModule(idInput:any){
-    const url = "http://localhost:8080/api/v1/module/"+ idInput;
+    const url = "http://localhost:8080/api/v1/deleteModule/"+ idInput;
     return this.http.delete<any>(url);
   }
 
   updateMstModule(data:any){
     const param = {
-      "module_Id": data.idInput,
-      "icon": data.iconInput,
-      "label": data.labelInput,
+      "moduleId": data.idInput,  
+      "label": data.labelInput,    
+      "icon": data.iconInput,      
       "routerLink": data.routerLinkInput,
       "sequence": data.sequenceInput
     };
-    const url = "http://localhost:8080/api/v1/module/update";
+    const url = "http://localhost:8080/api/v1/updatedModule/"+data.idInput;
     return this.http.put<any>(url,param);
   }
+
+
+
+  isActiveData(data: any) {
+    const param={
+      "moduleId":data.moduleId
+    }
+    const url = "http://localhost:8080/api/v1/reActiveModule/" + data.moduleId;
+    console.log(data.abId);
+    return this.PostCall(url,param);  
+  }
+
 }
