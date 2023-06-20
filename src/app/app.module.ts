@@ -135,6 +135,7 @@ import { ActionSubModuleComponent } from './features/action-sub-module/action-su
 import { UnitComponent } from './features/unit/unit.component';
 import { GroupModuleComponent } from './features/group-module/group-module.component';
 import { ApplicationConfigComponent } from './features/application-config/application-config.component';
+import { LovValueComponent } from './features/lov-value/lov-value.component';
 
 @NgModule({
   declarations: [
@@ -258,7 +259,8 @@ import { ApplicationConfigComponent } from './features/application-config/applic
     ActionSubModuleComponent,
     UnitComponent,
     GroupModuleComponent,
-    ApplicationConfigComponent
+    ApplicationConfigComponent,
+    LovValueComponent
   ],
   imports: [
     CommonModule,

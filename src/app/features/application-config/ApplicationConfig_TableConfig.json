@@ -47,7 +47,7 @@
     "globalFilter": [
         "applicationId","keyname","keyvalue","is_Active"
     ],
-    "rows": 10,
+    "rows": 50,
     "showCurrentPageReport": true,
     "rowsPerPageOptions": [
         10,

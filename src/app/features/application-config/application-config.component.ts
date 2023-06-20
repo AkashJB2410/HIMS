@@ -14,7 +14,7 @@ export class ApplicationConfigComponent implements OnInit {
   tableConfig: any;
   visibleSidebar: boolean = true;
   ApplictionFormData: any = ApplictionForm;
-  Application_breadcrumb=Application_breadcrumb
+  Application_breadcrumb = Application_breadcrumb
   configurations: any;
   data: any;
   isdataReady = false;
@@ -38,13 +38,6 @@ export class ApplicationConfigComponent implements OnInit {
 
   onAdd(e: any) {
     this.flag = e;
-  }
-
-  isActive(event: string) {
-    this.http.isActiveData(event).subscribe((data) => {
-      this.data = undefined;
-      this.getAllApplication();
-    });
   }
 
   editRow(e: any) {
@@ -86,8 +79,7 @@ export class ApplicationConfigComponent implements OnInit {
         detail: 'Rows are not selected.',
       });
     }
-
-  }
+  } 
   sidebarData(e: any) {
     if (e != 'reset') {
       if (this.flag == "edit") {
@@ -99,11 +91,9 @@ export class ApplicationConfigComponent implements OnInit {
         });
       } else {
         this.submitApplication(e);
-
       }
     }
   }
-
   confirmAction(e: any) {
     if (e != false) {
       this.deleteApplication(e.applicationId);
@@ -134,7 +124,13 @@ export class ApplicationConfigComponent implements OnInit {
   }
 
   updateApplication(applicationId: any) {
-    this.http.updateApplicationData(applicationId).subscribe((data) => {
+    const param = {
+      "applicationId": applicationId.applicationId,
+      "keyname": applicationId.keyname,
+      "keyvalue": applicationId.keyvalue,
+      "is_Active": applicationId.is_Active,
+    };
+    this.http.updateApplicationData(param).subscribe((data) => {
       this.data = undefined;
       this.getAllApplication();
     });
@@ -147,8 +143,19 @@ export class ApplicationConfigComponent implements OnInit {
     });
   }
 
+  isActive(event: string) {
+    this.http.isActiveData(event).subscribe((data) => {
+      this.data = undefined;
+      this.getAllApplication();
+    });
+  }
+
   submitApplication(applicationId: any) {
-    this.http.saveApplicationData(applicationId).subscribe((resData) => {
+    const param = {
+      "keyname": applicationId.keyname,
+      "keyvalue": applicationId.keyvalue,
+    };
+    this.http.saveApplicationData(param).subscribe((resData) => {
       this.data = undefined;
       this.getAllApplication();
       if (resData.id != "") {
@@ -158,11 +165,10 @@ export class ApplicationConfigComponent implements OnInit {
           detail: 'Data save successfull.',
         });
       }
-    },(error) => {                              //Error callback
-        console.log('error caught in component : ', error.error.error)
-        this.errorFlag = true;
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: "This key name is alredy exit" });
-
-      });
-    }
+    }, (error) => {                              //Error callback
+      console.log('error caught in component : ', error.error.error)
+      this.errorFlag = true;
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: "This key name is alredy exit" });
+    });
   }
+}

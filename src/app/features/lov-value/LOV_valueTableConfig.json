@@ -2,40 +2,34 @@
     "tableName": "Unit Table",
     "tableHeaders": [
         {
-            "field": "groupId",
+            "field": "lovlistId",
             "header": "ID",
             "iseditable": false,
             "class": "text-center"
         },
         {
-            "field": "mstModule_name",
-            "header": "Mst Module",
+            "field": "selectlovType",
+            "header": "LOV Type ID",
             "iseditable": false,
             "class": "text-center"
         },
         {
-            "field": "lable",
-            "header": "Label",
+            "field": "description",
+            "header": "Description",
             "iseditable": false,
             "class": ""
         },
         {
-            "field": "icon",
-            "header": "Icon",
+            "field": "typeoffield",
+            "header": "Type Of Field",
             "iseditable": false,
             "class": ""
         },
         {
-            "field": "routerLink",
-            "header": "Router Link",
+            "field": "value",
+            "header": "Value",
             "iseditable": false,
             "class": ""
-        },
-        {
-            "field": "sequence",
-            "header": "Sequence",
-            "iseditable": false,
-            "class": "text-center"
         },
         {
             "field": "is_Active",
@@ -46,28 +40,24 @@
     ],
     "PdfHeaders": [
         {
-            "field": "groupId",
-            "header": "Id"
+            "field": "lovlistId",
+            "header": "ID"
         },
         {
-            "field": "mstModule_name",
-            "header": "Mst Module"
+            "field": "selectlovType",
+            "header": "LOV Type ID"
         },
         {
-            "field": "lable",
-            "header": "Label"
+            "field": "description",
+            "header": "Description"
         },
         {
-            "field": "icon",
-            "header": "Icon"
+            "field": "typeoffield",
+            "header": "Type Of Field"
         },
         {
-            "field": "routerLink",
-            "header": "Router Link"
-        },
-        {
-            "field": "sequence",
-            "header": "Sequence"
+            "field": "value",
+            "header": "Value"
         },
         {
             "field": "is_Active",
@@ -75,11 +65,10 @@
         }
     ],
     "globalFilter": [
-        "groupId",
-        "icon",
-        "labelControl",
-        "mstModuleID",
-        "routerlink",
+        "lovlistId",
+        "selectlovType",
+        "typeoffield",
+        "value",
         "is_Active"
     ],
     "rows": 50,
@@ -102,6 +91,6 @@
     ],
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
-    "buttonlbl": "Add group",
+    "buttonlbl": "Add LOV Value",
     "textLength": 16
 }

@@ -10,15 +10,15 @@
             {
                 "isEditable": false,
                 "isVisible": true,
-                "transient": true,
-                "label": "ID",
+                "transient": false,
+                "label": "LOV List ID",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter groupId",
-                "formControlName": "groupId",
+                "formControlName": "lovlistId",
                 "message": {
                     "required": "groupId is required",
                     "pattern": "pattern is not match"
@@ -32,15 +32,15 @@
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
-                "label": "MstModule_ModuleID",
+                "label": "LOV TypeID",
                 "type": "select",
                 "class": "col-md-12  my-1",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
-                "formControlName": "selectmstModule",
+                "formControlName": "selectlovType",
                 "message": {
-                    "required": "ModuleID is required",
+                    "required": "lovtypeID is required",
                     "pattern": "pattern is not match"
                 },
                 "values": [
@@ -57,16 +57,16 @@
             {
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Label",
+                "label": "Description",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter unit cluster",
-                "formControlName": "lable",
+                "formControlName": "description",
                 "message": {
-                    "required": "lable is required",
+                    "required": "description is required",
                     "pattern": "pattern is not match"
                 },
                 "validations": {
@@ -77,16 +77,16 @@
             {
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Icon",
+                "label": "Type Of Field",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter icon name",
-                "formControlName": "icon",
+                "formControlName": "typeoffield",
                 "message": {
-                    "required": "icon is required",
+                    "required": "description is required",
                     "pattern": "pattern is not match"
                 },
                 "validations": {
@@ -94,48 +94,27 @@
                     "pattern": "^[A-Za-z\\s-/]+$"
                 }
             },
-           
-           
             {
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Router Link",
+                "label": "Value",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Enter router link",
-                "formControlName": "routerLink",
+                "placeholder": "Enter unit cluster",
+                "formControlName": "value",
                 "message": {
-                    "required": "routerLink is required",
-                    "pattern": "pattern is not match"
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Sequence",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-12 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter Sequence",
-                "formControlName": "sequence",
-                "message": {
-                    "required": "sequence is required",
+                    "required": "value is required",
                     "pattern": "pattern is not match"
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[0-9]+$"
+                    "pattern": ""
                 }
             },
+           
             {
                 "isEditable": false,
                 "isVisible": false,

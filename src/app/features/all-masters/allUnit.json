@@ -406,7 +406,7 @@
                         "lblclass": "lbl-end ",
                         "id": "anchor",
                         "placeholder": "/master-page/all-masters/application-config",
-                        "formControlName": "applicationConfiguration",
+                        "formControlName": "Application Configuration",
                         "message": {
                             "required": "",
                             "pattern": ""
@@ -897,6 +897,76 @@
                         "id": "anchor",
                         "placeholder": "/master-page/all-masters/bank-master",
                         "formControlName": "Import Data",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "LOV Value",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-database-down",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/lov-value",
+                        "formControlName": "LOV Value",
                         "message": {
                             "required": "",
                             "pattern": ""

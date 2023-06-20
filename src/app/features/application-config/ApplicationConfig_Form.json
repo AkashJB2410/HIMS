@@ -40,7 +40,7 @@
                 "placeholder": "Enter unit cluster",
                 "formControlName": "keyname",
                 "message": {
-                    "required": "lable is required",
+                    "required": "keyname is required",
                     "pattern": "pattern is not match"
                 },
                 "validations": {
@@ -60,7 +60,7 @@
                 "placeholder": "Enter icon name",
                 "formControlName": "keyvalue",
                 "message": {
-                    "required": "icon is required",
+                    "required": "keyvalue is required",
                     "pattern": "pattern is not match"
                 },
                 "validations": {
