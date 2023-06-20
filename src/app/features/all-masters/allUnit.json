@@ -1679,6 +1679,76 @@
         
                 ]
             }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "LOV type",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-info",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/lov-type",
+                        "formControlName": "LOV type",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
         }
     ]
 }

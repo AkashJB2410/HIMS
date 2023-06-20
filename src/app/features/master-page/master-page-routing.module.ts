@@ -129,7 +129,8 @@ const routes: Routes = [
       { path: 'all-masters/sub-department', loadChildren: () => import('./../sub-department/sub-department.module').then( m => m.SubDepartmentModule)},     
       { path: 'all-masters/unit', loadChildren: () => import('./../unit/unit.module').then( m => m.UnitModule)}, 
       { path: 'all-masters/application-config', loadChildren: () => import('./../application-config/application-config.module').then( m => m.ApplicationConfigModule)}, 
-      { path: 'group-module', loadChildren: () => import('./../group-module/group-module.module').then( m => m.GroupModuleModule)},    
+      { path: 'group-module', loadChildren: () => import('./../group-module/group-module.module').then( m => m.GroupModuleModule)},   
+      {path: 'all-masters/lov-type', loadChildren:()=> import('./../lov-type/lov-type.module').then(m=>m.LovTypeModule)} 
     ],
     // canActivate: [AuthGuardGuard]
   }];

@@ -136,6 +136,7 @@ import { SubDepartmentComponent } from './features/sub-department/sub-department
 import { UnitComponent } from './features/unit/unit.component';
 import { GroupModuleComponent } from './features/group-module/group-module.component';
 import { ApplicationConfigComponent } from './features/application-config/application-config.component';
+import { LovTypeComponent } from './features/lov-type/lov-type.component';
 
 @NgModule({
   declarations: [
@@ -261,7 +262,8 @@ import { ApplicationConfigComponent } from './features/application-config/applic
     SubDepartmentComponent,
     UnitComponent,
     GroupModuleComponent,
-    ApplicationConfigComponent
+    ApplicationConfigComponent,
+    LovTypeComponent
   ],
   imports: [
     CommonModule,

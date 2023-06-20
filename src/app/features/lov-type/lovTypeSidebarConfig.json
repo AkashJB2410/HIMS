@@ -1,0 +1,126 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "LOV type Module",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar":"p-sidebar-sm",
+        "formControls": [
+            {
+                "id": 0,
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Id",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": "",
+                "formControlName": "idInput",
+                "mandatoryMessage": "Id is required",
+                "message": "Id is required",                
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter Code",
+                "formControlName": "codeInput",
+                "message": {
+                    "required": "Code is required",
+                    "pattern": "Only Alphabets & Numbers are Allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z _0-9- ]+$"
+                }
+            },
+            
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter name",
+                "formControlName": "nameInput",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Only Alphabets and Numbers are Allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-z\\s- 0-9]+$"
+                }
+            },
+            
+            
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Description",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter Description",
+                "formControlName": "descriptionInput",
+                "message": {
+                    "required": "Descriptions required",
+                    "pattern": "Only Numbers and Alphabates are allowed."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-z\\s-/ _/0-9]+$"
+                }
+            },
+            
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-4  ",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-wrng",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}
