@@ -1137,6 +1137,8 @@ ul p.verticaltab {
   height: 3%;
   padding: 5px;
 } 
+<<<<<<< HEAD
+=======
 /* .footer {
   position: absolute;
   bottom: 0;
@@ -1145,6 +1147,7 @@ ul p.verticaltab {
   background-color: #E1E1E1; 
    color: black;
 } */
+>>>>>>> f248a23f6a33e6316e32dd26834294ca04a1e02c
 .formclass {
   color: white !important;
   height: 27px;
@@ -1154,6 +1157,29 @@ ul p.verticaltab {
   padding-top: 4px;
   padding-bottom:24px;
 }
+<<<<<<< HEAD
+
+.formclass::before, .divider::after {
+  flex: 1;
+  height: 29px;
+  width: 5px;
+  content: '';
+  padding: 2px;
+  background-color: rgb(252, 252, 252);
+  margin: 7px;
+}
+.bi-file-earmark-medical::before {
+  content: "\f373";
+  padding-right: 10px !important;
+  vertical-align: 0px;
+}
+
+.p-breadcrumb .p-menuitem-link {
+   padding: 0rem !important
+}
+
+=======
+>>>>>>> f248a23f6a33e6316e32dd26834294ca04a1e02c
 
 .formclass::before, .divider::after {
   flex: 1;
