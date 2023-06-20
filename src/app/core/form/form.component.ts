@@ -4,6 +4,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { FormControlTypes, IFormField } from './form.interface';
 import { CustomDatePipe } from '../shared/pipes/custom-date.pipe';
 import { FormService } from '../shared/service/form.service';
+import { Observable, Subscriber, observable } from 'rxjs';
+import { file } from '@rxweb/reactive-form-validators';
 
 @Component({
   selector: 'app-form',
@@ -11,7 +13,7 @@ import { FormService } from '../shared/service/form.service';
 })
 
 export class FormComponent implements OnInit {
-[x: string]: any;
+  [x: string]: any;
   form: FormGroup;
   formControls: IFormField[] = [];
   formJson: any;
@@ -44,7 +46,7 @@ export class FormComponent implements OnInit {
     this.form$.renderNewForm.subscribe(data => {
       this.renderForm(data);
     });
-    
+
   }
 
   catpchaValue(value: any, control: any) {
@@ -58,13 +60,14 @@ export class FormComponent implements OnInit {
   }
 
   onImageUpload(event: any, id: any) {
-    id.fieldValue = event.target.files[0];
+     id.fieldValue = event.target.files[0];
+
   }
 
   onFilesUpload(event: any, id: any) {
     id.fieldValue = event.target.files;
-  }
 
+  }
   changeEvent(event: any, data: any) {
     this.events = [];
     this.events.push(event);
@@ -72,7 +75,7 @@ export class FormComponent implements OnInit {
     this.changeEvents.emit(this.events);
   }
 
-  blurValue(event: any, data: any){
+  blurValue(event: any, data: any) {
     this.events = [];
     this.events.push(event.value);
     this.events.push(data);
@@ -90,14 +93,16 @@ export class FormComponent implements OnInit {
 
   renderForm(data: any) {
     if (data.funtonality == 'isVisible') {
-      // this.visibility(data);
-      this.addControl(data);
+      this.visibility(data);
+      // this.addControl(data);
     } else if (data.funtonality == 'isEditable') {
       this.enableDisableElement(data);
     } else if (data.funtonality == 'autofill') {
       this.setData(data);
     } else if (data.funtonality == 'resetControl') {
       this.resetControl(data);
+    } else if (data.funtonality == 'validations') {
+      this.addValidations(data);
     }
   }
 
@@ -130,6 +135,15 @@ export class FormComponent implements OnInit {
       document.getElementById("id" + data.formData.formControlName).style.display = "block";
     } else {
       document.getElementById("id" + data.formData.formControlName).style.display = "none";
+    }
+  }
+
+  addValidations(data: any) {
+    let ctrl = this.form.get(data.formData.formControlName);
+    if (data.value.required && data.value.pattern != "") {
+      ctrl.addValidators([Validators.required, Validators.pattern(data.value.pattern)]);
+    } else {
+      ctrl.addValidators(Validators.pattern(data.value.pattern));
     }
   }
 
@@ -180,7 +194,7 @@ export class FormComponent implements OnInit {
         icon: control.icon || '',
         isDisabled: control.isDisabled || '',
         btnLabel: control.btnLabel || '',
-        fieldValue: this.data[i] || '',
+        fieldValue:control.defaultValue ?  control.defaultValue  : this.data[i] ,
         row: control.row || '',
         icons: control.icons || '',
         transient: control.transient || false,
@@ -218,7 +232,7 @@ export class FormComponent implements OnInit {
           );
         }
       });
-      this.formData.emit(this.form.value);
+      this.formData.emit(this.form.getRawValue());
       this.btnEvent.emit(event);
     } else {
       this.formValid = true;

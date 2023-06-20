@@ -1,0 +1,23 @@
+.card-cst {
+    box-shadow: 0 5px 3px 1px rgba(204, 197, 185, .5);
+    color: #252422;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    background-color: #F9F9F9;
+    border: 1px solid #C6C6C6;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card-cst .card-body-cst {
+    padding: 15px 15px 15px 15px;
+}
+
+.text-value {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.3px;
+    color: #030303;
+}

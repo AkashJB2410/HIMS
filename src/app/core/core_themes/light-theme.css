@@ -369,6 +369,11 @@
   font-size: 12px;
 }
 
+.captcha-btn-refresh
+{
+  color:black !important;
+}
+
 /*------------In Login card Input password Start-------------*/
 
 .p-inputtext.p-password-input {
@@ -1126,7 +1131,7 @@ ul p.verticaltab {
   width: 100%;
 }
 
-.footer {
+/* .footer {
   position: relative;
   left: 0;
   bottom: 0;
@@ -1136,9 +1141,8 @@ ul p.verticaltab {
   font-size: 12px;
   height: 3%;
   padding: 5px;
-} 
-<<<<<<< HEAD
-=======
+}  */
+
 /* .footer {
   position: absolute;
   bottom: 0;
@@ -1147,7 +1151,6 @@ ul p.verticaltab {
   background-color: #E1E1E1; 
    color: black;
 } */
->>>>>>> f248a23f6a33e6316e32dd26834294ca04a1e02c
 .formclass {
   color: white !important;
   height: 27px;
@@ -1157,7 +1160,6 @@ ul p.verticaltab {
   padding-top: 4px;
   padding-bottom:24px;
 }
-<<<<<<< HEAD
 
 .formclass::before, .divider::after {
   flex: 1;
@@ -1178,8 +1180,6 @@ ul p.verticaltab {
    padding: 0rem !important
 }
 
-=======
->>>>>>> f248a23f6a33e6316e32dd26834294ca04a1e02c
 
 .formclass::before, .divider::after {
   flex: 1;
