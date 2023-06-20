@@ -1,4 +1,6 @@
-<h3 class="cst-label" style="cursor: pointer;">Sub Module</h3>
+
+<p-breadcrumb [model]="Application_breadcrumb.itemsList" ></p-breadcrumb>
+<h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Sub Module</h3>
 <app-super-grid
     *ngIf="dataGrid"
     [configurations]="configurations" 
@@ -7,5 +9,8 @@
     [sidebarJSON] = "formdata"
     (sideBarEvent)="sidebarData($event)"
     (confirmAction)="confirmAction($event)"
-    (fiteredData)="fiteredData($event)">
+    (fiteredData)="fiteredData($event)"
+    (isActive)="isActive($event)"
+    (Bulkdelete)="Bulkdelete($event)">
 </app-super-grid>
+<p-toast></p-toast>

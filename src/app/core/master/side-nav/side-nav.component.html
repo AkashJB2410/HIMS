@@ -8,19 +8,20 @@
             <img src="{{list.header.whiteLogo}}" class="img img-fluid img-responsive openlogo" alt="Logo">
           </div>
         </li>
-        <div  *ngIf="status">
-        <li> <img src="{{list.header.onlyLogo}}" class="img img-fluid img-responsive collapsedLogo"
-            alt="Logo">
-        </li>
-      </div>
+        <div *ngIf="status">
+          <li> <img src="{{list.header.onlyLogo}}" class="img img-fluid img-responsive collapsedLogo" alt="Logo">
+          </li>
+        </div>
         <div class="nav-item" class="toggle" (click)="clickEvent()">
-          <a *ngIf="!status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/toggle button.png"pTooltip="Collapse" tooltipPosition="top"  class="togglefix"></i></a>
-         
-          <a *ngIf="status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/toggle button.png"  pTooltip="Expand Sidenav" tooltipPosition="top"  ></i></a>
+          <a *ngIf="!status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/toggle button.png"
+                pTooltip="Collapse" tooltipPosition="top" class="togglefix"></i></a>
+
+          <a *ngIf="status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/toggle button.png"
+                pTooltip="Expand Sidenav" tooltipPosition="top"></i></a>
         </div>
       </ul>
       <div class="scroll">
-        <ul id="sidebar_menu" class="nav flex-column" >
+        <ul id="sidebar_menu" class="nav flex-column">
           <li class="nav-item" *ngFor="let item of list.sidenavItems" (click)="setStateAsActive(item)">
             <ng-container *ngIf="item.group == null ; else list">
               <a [class.parentMenu]="item === activeState" [href]="'#'+item.label" data-bs-toggle="collapse"
@@ -33,7 +34,7 @@
                 class="sidenav-menu " pTooltip="{{item.label}}">
                 <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
                   [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
-                  style="margin-right: auto;">{{item.label}}</span> <i id="{{item.label}}"childItemsub-module
+                  style="margin-right: auto;">{{item.label}}</span> <i id="{{item.label}}" childItemsub-module
                   [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
                   class="bi bi-chevron-down downarrow"></i>
               </a>
@@ -75,10 +76,10 @@
               </ul>
             </ng-template>
           </li>
-  
+
         </ul>
       </div>
-     
+
 
       <!-- <ul class="nav flex-column mt-0">
         <li class="nav-item" class="toggleclass" style="cursor: pointer;" (click)="clickEvent()">
@@ -91,14 +92,11 @@
   </div>
   <div id="content">
     <app-header [headerInput]="list" (navToggle)="clickEvent()"></app-header>
-    <div class="inboxContainer">
+    <div class="">
       <div class="container-fluid">
-        <!-- <p-breadcrumb [model]="items.itemsList" ></p-breadcrumb> -->
         <router-outlet></router-outlet>     
       </div>
     </div>
     <!-- <footer><h6 class="footer">Design & Developed by Techjivaa Software Pvt Ltd</h6></footer> -->
-
   </div>
-
 </div>

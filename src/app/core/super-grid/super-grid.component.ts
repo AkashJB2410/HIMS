@@ -25,7 +25,6 @@ export class SuperGridComponent implements OnInit {
   @Input() tableData: any;
   @Input() filterJSON: any;
   @Input() sidebarJSON: any;
-
   @Output() sideBarEvent = new EventEmitter;
   @Output() confirmAction = new EventEmitter;
   @Output() fiteredData = new EventEmitter;
@@ -58,17 +57,17 @@ export class SuperGridComponent implements OnInit {
 
   editRow(e: any) {
     this.editRowData = e;
-    let edit = "edit"
     this.onEdit.emit("edit");
     this.visibleSidebar = true
   }
+  
   isactive(e: any) {
     this.isActiveData = e;
     this.isActive.emit(e);
   }
+  
   addRow(e: any) {
     this.editRowData = e;
-    let add = "add"
     this.onAdd.emit("add");
     this.visibleSidebar = true
   }
@@ -93,6 +92,7 @@ export class SuperGridComponent implements OnInit {
   changeEvent(event: any){
     this.changeEvents.emit(event);
   }
+  
   selectedData(fiteredData: any) {
     this.fiteredData.emit(fiteredData);
   }

@@ -1,40 +1,50 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MessageService, PrimeNGConfig } from 'primeng/api';
-
+import toaster from './toaster.json'
+import { takeUntil } from 'rxjs';
 @Component({
   selector: 'app-toast',
   templateUrl: './toast.component.html',
   styleUrls: ['./toast.component.css']
 })
 export class ToastComponent implements OnInit {
+  toasterData:any;
 
-  @Input() message:any;
+  @Input() message: any;
+  constructor(private messageService: MessageService, private primengConfig: PrimeNGConfig) { }
 
-  constructor(private messageService: MessageService,
-    private primengConfig: PrimeNGConfig) { }
+
 
   ngOnInit() {
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
+    this.toasterData=toaster;
+    console.log("toasterData",this.toasterData)
     this.primengConfig.ripple = true;
-    if(this.message.type == 'success'){
-      this.showSuccess();
-    }
   }
 
-  showSuccess() {
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
-  }
 
-  showInfo() {
-    this.messageService.add({ severity: 'info', summary: 'Info', detail: 'Message Content' });
-  }
 
-  showWarn() {
-    this.messageService.add({ severity: 'warn', summary: 'Warn', detail: 'Message Content' });
+  onReject() {
+    this.messageService.clear('c');
   }
-
-  showError() {
-    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Message Content' });
+  onConfirm() {
+    this.messageService.clear('c');
   }
+ 
 
+  // showConfirm() {
+  //   this.messageService.clear();
+  //   this.messageService.add({ key:'c',severity:this.toasterData.severity,summary:this.toasterData.title,detail:this.toasterData.description,life:this.toasterData.life});
+  // }
+
+
+
+  showConfirm() {
+    this.messageService.clear();
+    this.messageService.add({key: 'c', sticky: true, severity:'warn', summary:'Are you sure?', detail:'Confirm to proceed'});
+}
+
+showTopCenter() {
+  this.messageService.add({key: 'tc', severity:'info', summary: 'Info', detail: 'Message Content'});
+}
+  
 }

@@ -1,0 +1,130 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Unit",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar":"p-sidebar-sm",
+        "formControls": [
+           
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "transient": false,
+                "label": "Application ID",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter groupId",
+                "formControlName": "applicationId",
+                "message": {
+                    "required": "groupId is required",
+                    "pattern": "pattern is not match"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Key Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter unit cluster",
+                "formControlName": "keyname",
+                "message": {
+                    "required": "lable is required",
+                    "pattern": "pattern is not match"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Key Value",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter icon name",
+                "formControlName": "keyvalue",
+                "message": {
+                    "required": "icon is required",
+                    "pattern": "pattern is not match"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[A-Za-z\\s-/]+$"
+                }
+            },
+            {
+                "isEditable": false,
+                "isVisible": false,
+                "transient": false,
+                "label": "is_Active",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "valueclass":"input-box",
+                "placeholder": "Enter id",
+                "formControlName": "is_Active",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue ",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },            
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-4",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

@@ -21,7 +21,7 @@ export class UnitComponent implements OnInit {
 
   ngOnInit(): void {
     this.configurations = {
-      "isFilter": true,
+      "isFilter": false,
       "isTable": true,
       "isSideBar": true,
       "isConfirmation": true

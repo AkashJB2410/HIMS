@@ -1,0 +1,108 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "",
+        "formName": "Form1",
+        "sidebar": "p-sidebar-sm",
+        "formControls": [
+            {
+                "id": 0,
+                "isEditable": false,
+                "isVisible": true,
+                "transient": false,
+                "label": "Id",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": "",
+                "formControlName": "subDepartmentId",
+                "mandatoryMessage": "Code is required",
+                "message": "Code is required",                
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Department",
+                "type": "select",
+                "class": "col-md-12  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectDepartment",
+                "message": {
+                    "required": "Department is required",
+                    "pattern": ""
+                },
+                "values": [
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Enter Sub Department Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Sub Department Name",
+                "formControlName": "subDepartment",
+                "message": {
+                    "required": "Plase Enter Sub Department Name",
+                    "pattern": "Only Alphabete are allow"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z]+$"
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-6",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-6",
+                "valueclass": "butn-custom-wrng",
+                "icon": "",
+                "isDisabled": false,
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

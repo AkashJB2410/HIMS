@@ -32,10 +32,10 @@
             "class": ""
         },
         {
-            "field":"sequence",
-            "header":"Sequence",
-            "iseditable":false,
-            "class":"text-center"
+            "field": "sequence",
+            "header": "Sequence",
+            "iseditable": false,
+            "class": "text-center"
         },
         {
             "field": "is_Active",
@@ -50,8 +50,24 @@
             "header": "Group Id"
         },
         {
+            "field": "mstModule_name",
+            "header": "Mst Module"
+        },
+        {
             "field": "lable",
             "header": "Label"
+        },
+        {
+            "field": "icon",
+            "header": "Icon"
+        },
+        {
+            "field": "routerLink",
+            "header": "Router Link"
+        },
+        {
+            "field": "sequence",
+            "header": "Sequence"
         },
         {
             "field": "is_Active",
@@ -59,7 +75,12 @@
         }
     ],
     "globalFilter": [
-        "groupId","icon","labelControl","mstModuleID","routerlink","is_Active"
+        "groupId",
+        "icon",
+        "labelControl",
+        "mstModuleID",
+        "routerlink",
+        "is_Active"
     ],
     "rows": 10,
     "showCurrentPageReport": true,

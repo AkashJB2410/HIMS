@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import  homePageList  from '../../features/registration-form/breadcrumb.json'
+import { Component, OnInit, Input } from '@angular/core';
+
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -7,11 +7,12 @@ import  homePageList  from '../../features/registration-form/breadcrumb.json'
 })
 export class HomePageComponent implements OnInit {
   
-  homelist: any = homePageList;
+  @Input() homelist:any;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.homelist
   }
 
 }

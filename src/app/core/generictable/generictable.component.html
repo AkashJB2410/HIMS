@@ -21,7 +21,7 @@
                         placeholder="Choose Columns"></p-multiSelect>
                 </div>
                 <div class="item5 mx-1">
-                    <button class="btn butn-sucss me-1 wordwrap" pRipple (click)="AddNewProduct($event)">
+                    <button class="btn butn-sucss me-1 wordwrap"  pRipple (click)="AddNewProduct($event)">
                         <i class="pi pi-plus" style="padding-right: 8px;"></i>{{config.buttonlbl}}</button>
                     <button class="btn butn-wrng me-1" pTooltip="Export To PDF" tooltipPosition="top" pRipple
                         (click)="exportPdf()"><i class="pi pi-file-pdf"></i></button>
@@ -82,19 +82,19 @@
                     </ng-template>
                 </td> -->
                 <td *ngIf="config.isActions" style="padding: 0.25rem 0.25rem; width: 4rem ; text-align: center;">
-                    <ng-container>
-                        <button *ngIf="config.isActions.includes('Edit')" pTooltip="Edit" tooltipPosition="top" pButton
+                    <ng-container>   
+                        <button *ngIf="config.isActions.includes('Edit')" pTooltip="Edit" tooltipPosition="left" pButton
                             pRipple icon="pi pi-file-edit " class="p-button-rounded icon-pencil edit-btn "
                             (click)="editProduct(rowData)"></button>
-                        <button *ngIf="config.isActions.includes('Delete')" pTooltip="Delete Row" tooltipPosition="top"
+                        <button *ngIf="config.isActions.includes('Delete')"  pTooltip="Delete" tooltipPosition="left"
                             pButton pRipple icon="pi pi-trash" class="p-button-rounded icon-delete icon-delete "
                             (click)="ondelete(rowData)"></button>
-                        <button *ngIf="config.isActions.includes('Viewer')" pTooltip="Viewer" tooltipPosition="top"
+                        <button *ngIf="config.isActions.includes('Viewer')" pTooltip="Viewer" tooltipPosition="left"
                             pButton pRipple icon="pi pi-window-maximize" style="background-color: black;"
                             routerLink="/dicom-viewer" class="p-button-rounded "></button>
-                        <button *ngIf="config.isActions.includes('isActive')" pTooltip="Is Active" tooltipPosition="top"
+                        <button *ngIf="config.isActions.includes('isActive')" pTooltip="Active" tooltipPosition="left"
                             pButton pRipple icon="pi pi-box " class="p-button-rounded icon-pencil edit-btn "
-                            (click)="active(rowData)"></button>
+                            (click)="active(rowData)"></button>           
                     </ng-container>
                 </td>
                 <td *ngIf="config.expand" style="text-align: center;">
@@ -133,3 +133,4 @@
         <li>Delete</li>
     </ul>
 </div>
+<p-toast></p-toast>
