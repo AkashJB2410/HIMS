@@ -6,8 +6,8 @@
 <h3 class="cst-label">All Masters</h3>
 <app-vertical-tabular [tabularData]="tabularSideData" (renderComponents)="renderComponents($event)">
   <div *ngIf="allFlag.unitFlag">
-    <div class="row">
-      <div class="col-md-4 mb-1 cardsize" *ngFor="let cards of allUnitList.card">
+    <div class="row ">
+      <div class="col-md-4 mb-1 " *ngFor="let cards of allUnitList.card">
         <app-cards [title]="title" routerLink="{{cards.routerLink}}">
           <div class="row no-gutters align-items-center">
             <div class="col-auto">
