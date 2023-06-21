@@ -34,7 +34,6 @@ export class ActionRoleComponent implements OnInit {
   flagSearch: boolean = false;
   ActionRole_breadcrumb =ActionRole_breadcrumb;
 
-
   constructor(
     private messageService: MessageService,
     private http: ActionRoleService
@@ -156,6 +155,10 @@ export class ActionRoleComponent implements OnInit {
           arActionSubModuleMst: e.arActionSubModuleMst.actionSubModuleName,
         };
         this.actionRole.push(obj);
+        for (let i = 0; i < this.actionRole.length; i++) {
+          this.actionRole[i].srNumber = i + 1;
+        }
+        
       });
       this.data = [...this.actionRole];
       console.log('data', this.data);

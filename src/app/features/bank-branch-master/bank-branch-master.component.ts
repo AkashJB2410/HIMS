@@ -200,6 +200,9 @@ export class BankBranchMasterComponent implements OnInit {
           "bbBankId_name": e.bbBankId.bankName,
         };
         this.branch.push(obj);
+        for (let i = 0; i < this.branch.length; i++) {
+          this.branch[i].srNumber = i + 1;
+        }
       });
       this.data = [...this.branch];
       console.log('data =>', this.data);

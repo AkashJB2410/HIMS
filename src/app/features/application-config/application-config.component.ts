@@ -127,6 +127,9 @@ export class ApplicationConfigComponent implements OnInit {
           "is_Active": e.is_Active,
         }
         this.applicationData.push(obj);
+        for (let i = 0; i < this.applicationData.length; i++) {
+          this.applicationData[i].srNumber = i + 1;
+        }
       })
       this.data = [...this.applicationData];
       this.isdataReady = true;
