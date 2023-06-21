@@ -57,7 +57,7 @@
   },
    {
     "label": "Employment Status",
-    "routerLink": "/master-page/all-masters/action-button",
+    "routerLink": "/master-page/all-masters/employee-status",
     "imgSrc": "assets/core_assets/card-icon.png"
   },
    {

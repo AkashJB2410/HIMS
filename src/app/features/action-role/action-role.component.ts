@@ -3,6 +3,7 @@ import { ActionRoleService } from './action-role.service';
 import actionroleTableConfig from './actionRole-tableConfig.json';
 import { MessageService } from 'primeng/api';
 import actionroleFormData from './action-role.json';
+import ActionRole_breadcrumb from './actionRole-breadcrumb.json'
 
 @Component({
   selector: 'app-action-role',
@@ -31,6 +32,8 @@ export class ActionRoleComponent implements OnInit {
   flagDelete: boolean = false;
   flagEdit: boolean = false;
   flagSearch: boolean = false;
+  ActionRole_breadcrumb =ActionRole_breadcrumb;
+
 
   constructor(
     private messageService: MessageService,

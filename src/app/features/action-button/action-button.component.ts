@@ -3,6 +3,8 @@ import addnew from './actionButtonSidebarConfig.json';
 import table from './actionButtonTableConfig.json';
 import { MessageService } from 'primeng/api';
 import { ActionButtonService } from './action-button.service';
+import Action_breadcrumb from './actionButton-breadcrumb.json'
+
 @Component({
   selector: 'app-action-button',
   templateUrl: './action-button.component.html',
@@ -30,6 +32,7 @@ export class ActionButtonComponent implements OnInit {
   data: any;
   isdataReady = false;
   abId: any;
+  Action_breadcrumb =Action_breadcrumb;
   constructor(
     private messageService: MessageService,
     private http: ActionButtonService

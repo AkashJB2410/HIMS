@@ -3,7 +3,7 @@ import { MessageService } from 'primeng/api';
 import { EmployeeStatusService } from './employee-status.service';
 import  emp_Table_Config  from './employee-table-config.json'
 import emp_Data from './employee-input-update.json'
-
+import Employee_status_breadcrumb from './employee-status-breadcrumb.json'
 
 @Component({
   selector: 'app-employee-status',
@@ -19,6 +19,7 @@ export class EmployeeStatusComponent implements OnInit {
   table_Data: any;
   sidebar_Update_Input: any = emp_Data;
   saveMethod: boolean = false;
+  Employee_status_breadcrumb =Employee_status_breadcrumb;
   constructor(private messageService:MessageService, private http:EmployeeStatusService) { }
   ngOnInit(): void {
     this.configurations={
