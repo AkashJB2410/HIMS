@@ -3,6 +3,7 @@ import organizationDetails from './organization_table-config.json'
 import addneworg from './organizationForm.json'
 import { MessageService } from 'primeng/api';
 import { OrganizationServiceService } from './organization.service';
+import organization_breadcrumb from './organization-breadcrumb.json'
 
 @Component({
   selector: 'app-organization',
@@ -25,6 +26,7 @@ export class OrganizationComponent implements OnInit {
   visibleSidebar: boolean = true;
   isdataReady = false;
   saveMethod: boolean=false;
+  organization_breadcrumb =organization_breadcrumb;
   constructor(private messageService: MessageService,private http: OrganizationServiceService) { }
   
   ngOnInit(): void {

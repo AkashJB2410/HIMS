@@ -3,6 +3,7 @@ import { MessageService } from 'primeng/api';
 import unitTable from './unit_TableConfig.json';
 import unitForm from './unit_form.json';
 import { UnitService } from './unit.service';
+import unit_breadcrumb from './unit-breadcrumb.json'
 @Component({
   selector: 'app-unit',
   templateUrl: './unit.component.html',
@@ -17,6 +18,7 @@ export class UnitComponent implements OnInit {
   data: any;
   formdata: any;
   isdataReady = false;
+  unit_breadcrumb =unit_breadcrumb;
   constructor(private messageService: MessageService ,private http: UnitService) { }
 
   ngOnInit(): void {
