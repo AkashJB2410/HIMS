@@ -6,6 +6,27 @@
         "formType": "edit",
         "sidebar":"p-sidebar-lg",
         "formControls": [
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "transient": false,
+                "label": "Unit ID",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter lovlistId",
+                "formControlName": "unitId",
+                "message": {
+                    "required": "unitId is required",
+                    "pattern": "pattern is not match"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
             { 
                 "isEditable": true,
                 "isVisible": true,
@@ -228,7 +249,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": " Enter state",
-                "formControlName": "state",
+                "formControlName": "selectstate",
                 "mandatoryMessage": "State is required",
                 "message": {
                     "required": "State is required",
@@ -255,7 +276,7 @@
                 "lblclass":"custom-label",
                 "valueclass":"",
                 "placeholder": "Enter city",
-                "formControlName": "city",
+                "formControlName": "selectcity",
                 "mandatoryMessage": "City is required",
                 "message": {
                     "required": "City is required",
