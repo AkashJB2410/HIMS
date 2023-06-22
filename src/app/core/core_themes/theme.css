@@ -2420,9 +2420,11 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
 .cardDesign {
   height: 20px !important;
 }
+
 .verticalCardImage {
   margin-right: 15px;
 }
@@ -2438,16 +2440,17 @@ body {
 .cardHeight {
   height: 400px;
 }
+
 .Activebutton {
   height: 18px;
   width: 18px;
   margin-left: 5px;
 }
 
-.p-sidebar .p-sidebar-header
-{
+.p-sidebar .p-sidebar-header {
   padding: 0rem !important;
 }
+
 .spacer {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -2462,6 +2465,29 @@ body {
 
 .contextMenus:hover {
   background-color: #C7E3FF;
+}
+
+.card-scroll::-webkit-scrollbar-thumb:hover {
+  background: #e7af21;
+  border-radius: 5px;
+}
+
+.design:hover {
+  transform: scale(1.1);
+  width: 90%;
+  margin: auto;
+  background-color: #374476 !important;
+  color: white;
+}
+
+.cardsizes {
+  margin: auto;
+}
+
+.verticalCards {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  border: 2px solid #374476 !important;
 
 }
 
@@ -2480,7 +2506,6 @@ body {
   min-width: 1rem !important;
   height: 1rem !important;
   border-radius: 20px;
-  line-height:1rem !important;
-  font-size:8px !important
-
+  line-height: 1rem !important;
+  font-size: 8px !important
 }
