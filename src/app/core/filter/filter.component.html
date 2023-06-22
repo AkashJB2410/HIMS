@@ -1,8 +1,25 @@
 <div class="filterBG">
-  <app-form *ngIf="filterData" [editData]="editData" [formJSON]="filterData" (formData)="formData($event)" (btnEvent)="btnEvent($event)"></app-form>
+  <ul>
+    <li *ngFor="let a of filtersArray" (click)="renderFilter(a)">{{a.filtername}}</li>
+  </ul>
+  <app-form *ngIf="filterData" [editData]="editData" [formJSON]="filterData" (formData)="formData($event)"
+    (btnEvent)="btnEvent($event)"></app-form>
 </div>
 
 <p-dialog [showHeader]="false" [position]="'top'" (onHide)="close()" [(visible)]="displayModal" [modal]="true"
   [style]="{width: '20vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
   <app-form *ngIf="FData" [formJSON]="FData" [editData]="editData" (formData)="response($event)"></app-form>
+</p-dialog>
+
+<p-dialog header="Save filter" #cd [position]="'top'" [closable] ="true" (onHide)="close()" [(visible)]="saveFilter" [modal]="true"
+  [style]="{width: '20vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+  <label for="email" class="label-txt">Filter name</label>
+  <input type="text" pInputText [(ngModel)]="filterName">
+    <ng-template pTemplate="header">
+      <h3>Save Filter</h3>
+  </ng-template>
+  <ng-template pTemplate="footer">
+      <button type="button" pButton icon="pi pi-times" label="Save" (click)="saveFilterData()"></button>
+      <button type="button" pButton icon="pi pi-check" label="Cancel"></button>
+  </ng-template>
 </p-dialog>

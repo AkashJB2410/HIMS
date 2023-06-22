@@ -8,21 +8,29 @@ import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@
 export class VerticalTabularComponent implements OnInit, AfterViewInit {
   activeState: any;
   activeList: any;
-  constructor() { }
-  ngAfterViewInit(): void {
-    this.activeState = JSON.parse( localStorage.getItem('activeState'))
-  }
   @Input() tabularData: any;
   @Output() renderComponents = new EventEmitter<any>();
+  constructor() { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    let item  = localStorage.getItem('activeState');
+    let defaultLi = document.getElementById(item);
+    defaultLi.className = 'design my-1 active';
+  }
   
-  }
-  render(list:any){
+  ngOnInit(): void {}
+  
+  render(list: any) {
+    localStorage.setItem('activeState',list.label);
+    this.tabularData.tabular.forEach((element: any) => {
+      if (list.label == element.label) {
+        let li = document.getElementById(list.label);
+        li.className = 'design my-1 active';
+      } else {
+        let li = document.getElementById(element.label);
+        li.className = 'design my-1';
+      }
+    });
     this.renderComponents.emit(list);
-  }
-  setActive(items:any){
-    this.activeState = items;
-    localStorage.setItem('activeState',JSON.stringify(items));
   }
 }

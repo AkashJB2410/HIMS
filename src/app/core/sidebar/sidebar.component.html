@@ -1,5 +1,5 @@
 <p-sidebar [(visible)]="visibleSidebar" position="right" styleClass="{{sidebarJSON.form.sidebar}}" [dismissible]="false"
-    (onHide)="onHide($event)">
+    (onHide)="onHide($event)" >
     <app-form *ngIf="sidebarJSON.form != undefined" [formJSON]="sidebarJSON" [editData]="editRowData"
         (formData)="formData($event)" (btnEvent)="buttonEvent($event)" (changeEvents)="changeEvent($event)"></app-form>
     <app-form *ngIf="sidebarJSON.Forms != undefined" [formJSON]="sidebarJSON" [editData]="editRowData"

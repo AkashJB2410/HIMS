@@ -24,14 +24,14 @@
     },
     "sidenavItems": [
       {
-        "label": "Registration",
-        "icon": "bi bi-person-add",
-        "routerLink": "/master-page/registration-form"
-      },
-      {
         "label": "Home",
         "icon": "bi bi-house",
         "routerLink": "/master-page/home"
+      },
+      {
+        "label": "Registration",
+        "icon": "bi bi-person-add",
+        "routerLink": "/master-page/registration-form"
       },
       {
         "label": "Emergency",

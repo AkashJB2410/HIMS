@@ -435,7 +435,7 @@
 
 /*--------------------------Light-Theme-filter-Backgound Color start-----------------------------------------*/
 #content {
-  background-color: white;
+  background-color: #EEEEEE;
 }
 
 /*-------------------------Light-Theme-Form-Backgound Color End--------------------------------------------*/
@@ -621,7 +621,7 @@
 
 .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
   color: black !important;
-  background: #EDF9FF !important;
+  background: #bdbdbd82 !important;
 }
 
 /* -------- In Dropdown Cross Icon Colour start------------*/
@@ -683,7 +683,7 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-text-fill-color: black !important;
-  -webkit-box-shadow: 0 0 0px 1000px #EDF9FF inset;
+  -webkit-box-shadow: 0 0 0px 1000px #BDBDBD inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -806,7 +806,7 @@ option:hover {
   border: none;
   border-radius: 0;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  background-color: #F4F3F3 !important;
+  background: linear-gradient(0deg, #D6D6D6 0%, #FAFAFA 67.26%);
 }
 
 /* -----------------------All Related To sideNav Css End------------------------------ */
@@ -1142,7 +1142,6 @@ ul p.verticaltab {
   height: 3%;
   padding: 5px;
 }  */
-
 /* .footer {
   position: absolute;
   bottom: 0;
@@ -1158,7 +1157,7 @@ ul p.verticaltab {
   background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
   font-size: 17px !important;
   padding-top: 4px;
-  padding-bottom:24px;
+  padding-bottom:23px;
 }
 
 .formclass::before, .divider::after {
@@ -1168,7 +1167,7 @@ ul p.verticaltab {
   content: '';
   padding: 2px;
   background-color: rgb(252, 252, 252);
-  margin: 7px;
+  margin: 6px;
 }
 .bi-file-earmark-medical::before {
   content: "\f373";
@@ -1181,21 +1180,61 @@ ul p.verticaltab {
 }
 
 
-.formclass::before, .divider::after {
-  flex: 1;
-  height: 29px;
-  width: 5px;
-  content: '';
-  padding: 2px;
-  background-color: rgb(252, 252, 252);
-  margin: 7px;
-}
-.bi-file-earmark-medical::before {
-  content: "\f373";
-  padding-right: 10px !important;
-  vertical-align: 0px;
+
+.p-toast .p-toast-message.p-toast-message-warn
+{
+  background-color: white !important;
+  color: #000000 !important;
 }
 
-.p-breadcrumb .p-menuitem-link {
-   padding: 0rem !important
+.p-toast .p-toast-message.p-toast-message-error
+{
+  background-color: white !important;
+  color: #000000 !important;
+}
+.p-toast .p-toast-message.p-toast-message-success
+{
+  background-color: white !important;
+  color: #000000 !important;
+}
+.p-toast .p-toast-message.p-toast-message-info
+{
+  background-color: white !important;
+  color: #000000 !important;
+}
+.p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon
+{
+  color: #01648E !important;
+  font-size: 20px !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-warn .p-toast-message-icon
+{
+  color: #C27605 !important;
+  font-size:20px !important;
+}
+.p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon
+{
+  color: #F30C0C !important;
+  font-size: 20px !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon
+{
+  color: white !important;
+  height: 20px !important;
+  width: 20px;
+  background-color: #289900 !important;
+  border-radius: 9px !important;
+  padding-top: 4px !important;
+  padding-left: 4px;
+}
+
+.p-toast .p-toast-message .p-toast-icon-close {
+  width: 2rem;
+  height: 1rem !important;
+  font-size: 1rem !important;
+  border-radius: 50%;
+  background: transparent;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
 }
