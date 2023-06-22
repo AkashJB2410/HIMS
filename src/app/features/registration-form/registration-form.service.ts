@@ -20,7 +20,7 @@ export class RegistrationFormService {
     return this.http.post<any>(url, param)
   }
 
-  
+
   GetAllUserData() {
     const url = "http://localhost:8082/api/v1/allUserData";
     return this.http.get<any>(url);
@@ -58,11 +58,11 @@ export class RegistrationFormService {
     return this.http.get<any>(url);
   }
   GetAllMstDepartment() {
-    const url = "http://localhost:8082/api/v1/allMstDepartment";
+    const url = "http://localhost:8081/api/v1/allMstDepartment";
     return this.http.get<any>(url);
   }
   GetAllSubDepartmentData() {
-    const url = "http://localhost:8082/api/v1/allsubDepartmentData";
+    const url = "http://localhost:8081/api/v1/allsubDepartmentData";
     return this.http.get<any>(url);
   }
   GetAllDoctorData() {
@@ -77,37 +77,90 @@ export class RegistrationFormService {
     const url = "http://localhost:8082/api/v1/allvillageData";
     return this.http.get<any>(url);
   }
+  GetAllRelativeTitle() {
+    const url = "http://localhost:8083/api/v1/allRelativeTitle";
+    return this.http.get<any>(url);
+  }
 
-
-
-  saveUserData(data: any): Observable<any> {
-
+  uploadImg(data: any): Observable<any> {
     const formData: FormData = new FormData();
-    formData.append("firstName", data.firstNameInput);
-    formData.append("mobileNo", data.mobileNoInput);
-    formData.append("userImage", data.imgUpl);
-    formData.append("middleName", data.middleNameInput);
-    formData.append("lastName", data.lastNameInput);
-    formData.append("dob", data.userBirthdate);
-    formData.append("age", data.ageText);
-    formData.append("abhaId", data.abhaIdInput);
-    formData.append("abhaAddress", data.abhaAddressInput);
-    formData.append("emailId", data.emailInput);
-    formData.append("pincode", data.pinCodeInput);
-    formData.append("address", data.addressInput);
-    formData.append("identificationNo", data.identificationNoInput);
-    formData.append("titleId", data.selectTitle);
-    formData.append("identificationTypeId", data.selectIdentificationType);
-    formData.append("mstGenderId", data.selectGender);
-    formData.append("bloodgroupId", data.selectBlood);
-    formData.append("stateId", data.selectState[0]);
-    formData.append("districtId", data.selectState[1]);
-    formData.append("doctorId", data.selectDoctor);
-    formData.append("durationId", data.selectYear);
-    formData.append("mstWardDetailsid", data.selectWard);
-
-    const url = "http://localhost:8082/api/v1/addUser";
+    formData.append("file", data);
+    const url = "http://localhost:8082/api/v1/uploadImage";
     return this.PostWithImageCall(url, formData);
+  }
+
+  saveMstRelation(data: any, img: any): Observable<any> {
+    const param = {
+      "relationName": data,
+      "relativeTitleId": {
+        "relativeTitleId": data
+      }
+
+    };
+    const url = "http://localhost:8083/api/v1/addMstRelation";
+    return this.PostCall(url, param);
+  }
+
+  saveUserData(data: any, img: any): Observable<any> {
+    const param = {
+      "mobileNo": data.mobileNoInput,
+      "firstName": data.firstNameInput,
+      "middleName": data.middleNameInput,
+      "lastName": data.lastNameInput,
+      "dob": data.userBirthdate,
+      "age": data.ageText,
+      "emailId": data.emailInput,
+      "pincode": data.pinCodeInput,
+      "address": data.addressInput,
+      "identificationNo": data.identificationNoInput,
+      "userImage": img,
+      "departmentId": "1",
+      "departmentName": "Orthopedics",
+      "subDepartmentId": "1",
+      "subDepartment": "Administrator",
+      "relationId": "1",
+      "relationName": "Sagar",
+      "mstTitle": {
+          "titleId": data.selectTitle,
+          
+      },
+      "identificationType": {
+          "identificationTypeId": data.selectIdentificationType
+        
+      },
+      "mstGender": {
+          "mstGenderId": data.selectGender,
+         
+      },
+      "mstBloodGroup": {
+          "bloodgroupId": data.selectBlood,
+          
+      },
+      "mstState": {
+          "stateId": data.selectState[0],
+          
+         
+      },
+      "mstDistrict": {
+          "districtId": data.selectState[1],
+        
+      },
+      "mstDoctor": {
+          "doctorId": data.selectDoctor,
+         
+      },
+      "mstDuration": {
+          "durationId": data.selectYear,
+          
+      },
+      "mstWardDetails": {
+          "mstWardDetailsid": data.selectWard,
+        
+  
+      }
+    };
+    const url = "http://localhost:8082/api/v1/addUser";
+    return this.PostCall(url, param);
   }
 
   deleteUserData(roleId: any) {
@@ -117,45 +170,74 @@ export class RegistrationFormService {
 
   updateUserData(data: any) {
     const param = {
-      "userId": data.nameInput,
-      "abhaAddress": data.nameInput,
-      "abhaId": data.nameInput,
-      "age": data.nameInput,
-      "birthDuration": data.nameInput,
-      "emailId": data.nameInput,
-      "firstName": data.nameInput,
-      "identificationNo": data.nameInput,
-      "is_Active": data.nameInput,
-      "lastName": data.nameInput,
-      "middleName": data.nameInput,
-      "mobileNo": data.nameInput,
-      "identificationType_identificationTypeId": {
-        "identificationTypeId": data.nameInput,
+      "userId": data.PatientUID,
+      "mobileNo": data.mobileNoInput,
+      "firstName": data.firstNameInput,
+      "middleName": data.middleNameInput,
+      "lastName": data.lastNameInput,
+      "dob": data.userBirthdate,
+      "age": data.ageText,
+      "emailId": data.emailInput,
+      "pincode": data.pinCodeInput,
+      "address": data.addressInput,
+      "identificationNo": data.identificationNoInput,
+      "userImage": data.imgUpl,
+      "departmentId": "1",
+      "departmentName": "Orthopedics",
+      "subDepartmentId": "1",
+      "subDepartment": "Administrator",
+      "relationId": "1",
+      "relationName": "Sagar",
+      "mstTitle": {
+          "titleId": data.selectTitle,
+          
       },
-      "mstBloodGroup_bloodgroupId": {
-        "bloodgroupId": data.nameInput,
+      "identificationType": {
+          "identificationTypeId": data.selectIdentificationType
+        
       },
-      "mstDistrict_districtId": {
-        "districtId": data.nameInput,
+      "mstGender": {
+          "mstGenderId": data.selectGender,
+         
       },
-      "mstDoctor_doctorId": {
-        "doctorId": data.nameInput,
+      "mstBloodGroup": {
+          "bloodgroupId": data.selectBlood,
+          
       },
-      "mstGender_id": {
-        "mstGenderId": data.nameInput,
+      "mstState": {
+          "stateId": data.selectState[0],
+          
+         
       },
-      "mstState_stateId": {
-        "stateId": data.nameInput,
+      "mstDistrict": {
+          "districtId": data.selectState[1],
+        
       },
-      "mstTitle_titleId": {
-        "titleId": data.nameInput,
+      "mstDoctor": {
+          "doctorId": data.selectDoctor,
+         
       },
-      "mstWardDetails_id": {
-        "mstWardDetailsid": data.nameInput,
+      "mstDuration": {
+          "durationId": data.selectYear,
+          
+      },
+      "mstWardDetails": {
+          "mstWardDetailsid": data.selectWard,
+        
+  
       }
     };
     const url = "http://localhost:8080/api/v1/role/userUpdate/" + data.idInput;
     return this.http.put<any>(url, param);
   }
+
+  isActiveData(data: any) {
+    const param = {
+      "userId": data.userId
+    }
+    const url = "http://localhost:8082/api/v1/reactiveUser/" + data.userId;
+    return this.PostCall(url, param);
+  }
+
 
 }

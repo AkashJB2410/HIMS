@@ -29,8 +29,10 @@ export class RegistrationFormComponent implements OnInit {
   isForm: any = true;
   flag: any;
   gridData: any[];
-  isAddEditFlag:any;
-  items:any= Breadcrumbs;
+  isAddEditFlag: any;
+  items: any = Breadcrumbs;
+  imgName: any
+  dateOfBirth: any
 
   constructor(private messageService: MessageService, private http: RegistrationFormService, private form$: FormService) { }
 
@@ -92,7 +94,6 @@ export class RegistrationFormComponent implements OnInit {
         data.values.push(defaultObj);
         this.http.GetAllMstDurationData().subscribe(item => {
           item.forEach((e: any) => {
-            console.log("sub module ==>> ==>>", e)
             let obj = {
               "name": e.durationType,
               "code": e.durationId
@@ -110,7 +111,6 @@ export class RegistrationFormComponent implements OnInit {
         data.values.push(defaultObj);
         this.http.GetAllmstGenderData().subscribe(item => {
           item.forEach((e: any) => {
-            console.log("sub module ==>> ==>>", e)
             let obj = {
               "name": e.gender_Type,
               "code": e.mstGenderId
@@ -128,7 +128,6 @@ export class RegistrationFormComponent implements OnInit {
         data.values.push(defaultObj);
         this.http.GetAllBloodGroupData().subscribe(item => {
           item.forEach((e: any) => {
-            console.log("bloodGroup ==>> ==>>", e)
             let obj = {
               "name": e.bloodgroupName,
               "code": e.bloodgroupId
@@ -220,11 +219,12 @@ export class RegistrationFormComponent implements OnInit {
           "code": ""
         }
         data.values.push(defaultObj);
-        this.http.GetAllMstTalukaData().subscribe(item => {
+        this.http.GetAllMstDepartment().subscribe(item => {
+          console.log("department => ", item)
           item.forEach((e: any) => {
             let obj = {
-              "name": e.talukaName,
-              "code": e.talukaId
+              "name": e.departmentName,
+              "code": e.departmentId
             }
             data.values.push(obj);
           })
@@ -237,11 +237,12 @@ export class RegistrationFormComponent implements OnInit {
           "code": ""
         }
         data.values.push(defaultObj);
-        this.http.GetAllMstTalukaData().subscribe(item => {
+        this.http.GetAllSubDepartmentData().subscribe(item => {
+          console.log("Sub department => ", item)
           item.forEach((e: any) => {
             let obj = {
-              "name": e.talukaName,
-              "code": e.talukaId
+              "name": e.subDepartment,
+              "code": e.subDepartmentId
             }
             data.values.push(obj);
           })
@@ -259,6 +260,23 @@ export class RegistrationFormComponent implements OnInit {
             let obj = {
               "name": e.doctorName,
               "code": e.doctorId
+            }
+            data.values.push(obj);
+          })
+        })
+      }
+      if (data.formControlName === "selectRelativeTitle") {
+        data.values = [];
+        let defaultObj = {
+          "name": "Select Relative Title",
+          "code": ""
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllRelativeTitle().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.relativeTitleType,
+              "code": e.relativeTitleId
             }
             data.values.push(obj);
           })
@@ -290,76 +308,101 @@ export class RegistrationFormComponent implements OnInit {
   changeSelectItem(e: any) {
     console.log("changeSelectItem e => ", e)
     if (e[1].fieldName == "selectIdentificationType" && e[0].value != "") {
-      this.form$.reRenderForm(this.formData.form.formControls[5], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[3], true, 'isEditable');
       if (e[0].value == "1") {
         let validations = {
           "required": true,
           "pattern": "^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[5], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
       } else if (e[0].value == "2") {
         let validations = {
           "required": true,
           "pattern": "^[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[5], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
       } else if (e[0].value == "3") {
         let validations = {
           "required": true,
-          "pattern": "[A-Z]{5}[0-9]{4}[A-Z]{1}"
+          "pattern": "[A-Z]{3}[0-9]{4}[A-Z]{1}"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[5], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
       } else if (e[0].value == "4") {
         let validations = {
           "required": true,
           "pattern": "^[A-Z]{3}[0-9]{7}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[5], validations, 'validations');
-      } else if (e[0].value == "5") {
+        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
+      } else if (e[0].value == "3") {
         let validations = {
           "required": true,
           "pattern": "^\\d{10,12}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[5], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
       } else if (e[0].value == "6") {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[5], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
       }
       else if (e[0].value == "7") {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[5], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
       } else if (e[0].value == "8") {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[5], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
       } else if (e[0].value == "9") {
         let validations = {
           "required": true,
           "pattern": "^(([A-Z]{2}[0-9]{2})( )|([A-Z]{2}-[0-9]{2}))((19|20)[0-9][0-9])[0-9]{7}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[5], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
       } else if (e[0].value == "10") {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[5], validations, 'validations');
-      }else if (e[0].value == "11") {
+        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
+      } else if (e[0].value == "11") {
         let validations = {
           "required": true,
           "pattern": "^[1-9]{2}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[5], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
       }
+    }
 
+    if (e[1].fieldName == "selectTitle") {
+      if (e[0].value == "0") {
+        // this.form$.reRenderForm(this.formData.form.formControls[13], "1", 'autofill');
+      } else if (e[0].value == "1") {
+        this.form$.reRenderForm(this.formData.form.formControls[13], "1", 'autofill');
+      } else if (e[0].value == "2") {
+        this.form$.reRenderForm(this.formData.form.formControls[13], "2", 'autofill');
+      } else if (e[0].value == "3") {
+        this.form$.reRenderForm(this.formData.form.formControls[13], "1", 'autofill');
+      } else if (e[0].value == "4") {
+        this.form$.reRenderForm(this.formData.form.formControls[13], "2", 'autofill');
+      } else if (e[0].value == "5") {
+        this.form$.reRenderForm(this.formData.form.formControls[13], "1", 'autofill');
+      } else if (e[0].value == "6") {
+        this.form$.reRenderForm(this.formData.form.formControls[13], "1", 'autofill');
+      } else if (e[0].value == "7") {
+        this.form$.reRenderForm(this.formData.form.formControls[13], "2", 'autofill');
+      } else if (e[0].value == "8") {
+        this.form$.reRenderForm(this.formData.form.formControls[13], "2", 'autofill');
+      } else if (e[0].value == "9") {
+        this.form$.reRenderForm(this.formData.form.formControls[13], "1", 'autofill');
+      } else if (e[0].value == "10") {
+        this.form$.reRenderForm(this.formData.form.formControls[13], "2", 'autofill');
+      }
     }
 
     if (e[1].fieldName == "DOBRad" && e[0].value == "DOB") {
@@ -370,9 +413,26 @@ export class RegistrationFormComponent implements OnInit {
       this.form$.reRenderForm(this.formData.form.formControls[13], true, 'isEditable');
       this.form$.reRenderForm(this.formData.form.formControls[11], false, 'isEditable');
     }
+    if (e[1].fieldName == "IPDRad" && e[0].value == "IPD") {
+      this.form$.reRenderForm(this.formData.form.formControls[26], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[27], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[28], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[29], true, 'isEditable');
+    }
+
+    if (e[1].fieldName == "imgUpl") {
+      let fileDta = e[0].target.files[0];
+      this.http.uploadImg(fileDta).subscribe(res => {
+        console.log("upload img data =>", res)
+        this.imgName = res.ImageName;
+      })
+    }
+    // if (e[1].fieldName == "userBirthdate") {
+    //   console.log("date of birth => ", e)
+    // }
+
   }
   getAllUserData() {
-
     this.data = undefined;
     this.gridData = [];
     this.http.GetAllUserData().subscribe(res => {
@@ -380,54 +440,68 @@ export class RegistrationFormComponent implements OnInit {
         console.log("user data => ", e)
         let obj = {
           "userId": e.userId,
-          "abhaAddress": e.abhaAddress,
-          "abhaId": e.abhaId,
-          "address": e.address,
-          "age": e.age,
-          "dob": e.dob,
-          "emailId": e.emailId,
-          "firstName": e.firstName,
-          "identificationNo": e.identificationNo,
-          "imagedata": e.imageData,
-          "imageType": e.imageType,
-
-          "lastName": e.lastName,
-          "middleName": e.middleName,
           "mobileNo": e.mobileNo,
+          "identificationType_Id": e.identificationType.identificationTypeId,
+          "identificationNo": e.identificationNo,
+          "staticText": "1",
+          "titleId": e.mstTitle.titleId,
 
+          "firstName": e.firstName,
+
+          "middleName": e.middleName,
+          "lastName": e.lastName,
+          "RDODOB": "true",
+          "dob": e.dob,
+          "RDOage": "true",
+          "age": e.age,
+          "durationId": e.mstDuration.durationId,
+          "mstGenderId": e.mstGender.mstGenderId,
+          "bloodgroupId": e.mstBloodGroup.bloodgroupId,
+          "emailId": e.emailId,
+          "address": e.address,
           "pincode": e.pincode,
+
+          "stateId": e.mstState.stateId,
+          "districtId": e.mstDistrict.districtId,
+
+          "departmentId": e.departmentId,
+          "subDepartmentId": e.subDepartmentId,
+          "doctorId": e.mstDoctor.doctorId,
           "userImage": e.userImage,
+          "relationId": e.relationId,
+          "relationName": e.relationName,
+          "identificationType": e.identificationType.identification_Type,
+          "departmentName": e.departmentName,
 
-          "identificationType_Id":e.identificationType.identificationTypeId,
-          "identificationType":e.identificationType.identification_Type,
+          "subDepartment": e.subDepartment,
+          "bloodgroupName": e.mstBloodGroup.bloodgroupName,
 
-          "bloodgroupId":e.mstBloodGroup.bloodgroupId,
-          "bloodgroupName":e.mstBloodGroup.bloodgroupName,
 
-          "districtId":e.mstDistrict.districtId,
-          "districtName":e.mstDistrict.districtName,
+          "districtName": e.mstDistrict.districtName,
 
-          "doctorId":e.mstDoctor.doctorId,
-          "doctorName":e.mstDoctor.doctorName,
 
-          
-          "durationId":e.mstDuration.durationId,
-          "durationType":e.mstDuration.durationType,
+          "doctorName": e.mstDoctor.doctorName,
 
-          "gender_Type":e.mstGender.gender_Type,
-          "mstGenderId":e.mstGender.mstGenderId,
 
-          "stateId":e.mstState.stateId,
-          "stateName":e.mstState.stateName,
-          "titleId":e.mstTitle.titleId,
-          "title_Type":e.mstTitle.title_Type,
-          
-          "mstWardDetailsid":e.mstWardDetails.mstWardDetailsid,
-          "wardDetails":e.mstWardDetails.wardDetails
-        
+
+          "durationType": e.mstDuration.durationType,
+
+          "gender_Type": e.mstGender.gender_Type,
+
+
+
+          "stateName": e.mstState.stateName,
+
+
+          "title_Type": e.mstTitle.title_Type,
+
+          "mstWardDetailsid": e.mstWardDetails.mstWardDetailsid,
+          "wardDetails": e.mstWardDetails.wardDetails,
+
+          "is_Active": e.is_Active
+
         }
         this.gridData.push(obj);
-        console.log("objet ==>", obj);
       })
       this.data = [...this.gridData];
       this.isdataReady = true;
@@ -447,53 +521,84 @@ export class RegistrationFormComponent implements OnInit {
     // this.messageService.add({ severity: 'success', summary: 'Message form User component', detail: 'Deleted Sucessfully' });
     // console.log(e)
     this.data = undefined;
-    this.deleteUSerData(e.role_Id);
+    this.deleteUserData(e.userId);
 
     this.messageService.add({ severity: 'success', summary: 'Message form User component', detail: 'Deleted Sucessfully' });
     console.log("Deleted" + JSON.stringify(e))
   }
-  deleteUSerData(roleId: any) {
-    this.http.deleteUserData(roleId)
+  deleteUserData(userId: any) {
+    this.http.deleteUserData(userId)
       .subscribe(data => {
         this.getAllUserData();
-        console.log("data" + data)
       })
   }
-  isActive(e:any){}
+  isActive(event: string) {
+    this.http.isActiveData(event).subscribe((data) => {
+      this.data = undefined;
+      this.getAllUserData();
+    });
+  }
 
-  onAddEdit(e:any){
-this.isAddEditFlag=e;
+  BulkDeleteRows(e: any) {
+    this.data = [];
+    if (e != '') {
+      e.forEach((data: any) => {
+        if (data.is_Active != false) {
+          let obj = {
+            "userId": data.userId,
+          }
+          this.deleteUserData(obj.userId);
+        } else {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'selected Rows',
+            detail: ' Deleted.',
+          });
+        }
+      });
+      this.messageService.add({
+        severity: 'success',
+        summary: 'success',
+        detail: 'Delete All Data successfull.',
+      });
+    } else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'select Rows',
+        detail: 'Rows are not selected.',
+      });
+    }
+
+  }
+
+  onAddEdit(e: any) {
+    this.isAddEditFlag = e;
   }
   sidebarData(e: any) {
-    console.log("From User Management ==> ", e);
     if (this.isAddEditFlag == "add") {
-      console.log(e)
-      this.submitUserData(e);
+      this.submitUserData(e, this.imgName);
       this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
 
     } else {
-      console.log(e);
       this.updateUserData(e);
       this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data updated successfull.' });
 
     }
   }
 
-  submitUserData(roleData: any) {
-    this.http.saveUserData(roleData)
+  submitUserData(userData: any, img: any) {
+    this.http.saveUserData(userData, img)
       .subscribe(data => {
         this.data = undefined;
         this.getAllUserData();
-        console.log("data" + data)
       })
   }
 
-  updateUserData(roleData: any) {
-    this.http.updateUserData(roleData)
+  updateUserData(userId: any) {
+    this.http.updateUserData(userId)
       .subscribe(data => {
         this.data = undefined;
         this.getAllUserData();
-        console.log("data" + data)
       })
   }
 
@@ -504,5 +609,44 @@ this.isAddEditFlag=e;
     //     this.data = data;
     //   })
   }
+
+  // getAge(dateString) {
+  //   let now, today, yearNow, monthNow, dateNow, dob, yearDob, monthDob, dateDob, monthAge, dateAge, yearAge;
+  //   now = new Date();
+  //   today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  //   yearNow = now.getFullYear();
+  //   monthNow = now.getMonth();
+  //   dateNow = now.getDate();
+  //   dob = new Date(dateString.substring(6, 10),
+  //     dateString.substring(0, 2) - 1,
+  //     dateString.substring(3, 5)
+  //   );
+  //   yearDob = dob.getFullYear();
+  //   monthDob = dob.getMonth();
+  //   dateDob = dob.getDate();
+  //   monthAge = 0;
+  //   dateAge = 0;
+  //   yearAge = yearNow - yearDob;
+  //   if (monthNow >= monthDob) {
+  //     monthAge = monthNow - monthDob;
+  //   } else {
+  //     yearAge--;
+  //     monthAge = 12 + monthNow - monthDob;
+  //   }
+  //   if (dateNow >= dateDob) {
+  //     dateAge = dateNow - dateDob;
+  //   } else {
+  //     monthAge--;
+  //     dateAge = 31 + dateNow - dateDob;
+  //     if (monthAge < 0) {
+  //       monthAge = 11;
+  //       yearAge--;
+  //     }
+  //   }
+  //   this.getage = yearAge;
+  //   this.agemon = monthAge;
+  //   this.agedday = dateAge;
+  
+  // }
 }
 

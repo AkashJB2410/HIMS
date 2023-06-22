@@ -32,7 +32,7 @@
     "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
     "isCheckbox" : true,
     "resizableColumns": true,
-    "isActions": ["Edit", "Delete"],
+    "isActions": ["Edit", "Delete","isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
     "buttonlbl":"",

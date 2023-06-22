@@ -7,7 +7,7 @@
         "sidebar": "p-sidebar-lg",
         "formControls": [
             {
-                "id": 10,
+                "id": 0,
                 "isEditable": false,
                 "isVisible": false,
                 "label": "Patient UID",
@@ -21,6 +21,113 @@
                 "message": {
                     "required": "",
                     "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 4,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Title",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-1 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectTitle",
+                "message": {
+                    "required": "Title is required",
+                    "pattern": ""
+                },
+                "values": [],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 13,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Gender",
+                "type": "select",
+                "value": "",
+                "class": "col-md-2  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectGender",
+                "values": [],
+                "message": {
+                    "required": "Gender is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 5,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "First Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter First Name...",
+                "formControlName": "firstNameInput",
+                "message": {
+                    "required": "First Name is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z]+$"
+                }
+            },
+            {
+                "id": 6,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Middle Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Middle Name...",
+                "formControlName": "middleNameInput",
+                "message": {
+                    "required": "Middle Name is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },
+            {
+                "id": 7,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Last Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Last Name...",
+                "formControlName": "lastNameInput",
+                "message": {
+                    "required": "Last Name is required",
+                    "pattern": "Numbers not allowed."
                 },
                 "validations": {
                     "required": false,
@@ -49,49 +156,29 @@
                 }
             },
             {
-                "id": 1,
+                "id": 15,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "ABHA ID",
+                "label": "Email ID",
                 "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1",
+                "inputType": "email",
+                "maxLength": 5,
+                "class": "col-md-3  my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Enter ABHA Id",
-                "formControlName": "abhaIdInput",
+                "placeholder": "xyz123@example.com",
+                "formControlName": "emailInput",
                 "message": {
-                    "required": "ABHA ID is required",
-                    "pattern": "Please re-enter using a valid 14-digit ABHA Id."
+                    "required": "Email is required",
+                    "pattern": "Please enter correct format"
                 },
                 "validations": {
                     "required": false,
-                    "pattern": "^[1-9]{2}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
+                    "pattern": "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
                 }
             },
             {
-                "id": 1,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "ABHA Address",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter ABHA Address",
-                "formControlName": "abhaAddressInput",
-                "message": {
-                    "required": "ABHA address is required",
-                    "pattern": "Please re-enter valid ABHA Address."
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 10,
+                "id": 2,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Identification Type",
@@ -113,7 +200,7 @@
                 }
             },
             {
-                "id": 1,
+                "id": 3,
                 "isEditable": false,
                 "isVisible": true,
                 "label": "Identification Number",
@@ -134,92 +221,7 @@
                 }
             },
             {
-                "id": 5,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Title",
-                "type": "select",
-                "value": "M",
-                "class": "col-md-3  my-1",
-                "lblclass": "custom-label",
-                "valueclass": "",
-                "placeholder": "Select option",
-                "formControlName": "selectTitle",
-                "message": {
-                    "required": "Title is required",
-                    "pattern": ""
-                },
-                "values": [],
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 6,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "First Name",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter First Name...",
-                "formControlName": "firstNameInput",
-                "message": {
-                    "required": "First Name is required",
-                    "pattern": "Numbers not allowed."
-                },
-                "validations": {
-                    "required": true,
-                    "pattern": "^[A-Za-z]+$"
-                }
-            },
-            {
-                "id": 7,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Middle Name",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter Middle Name...",
-                "formControlName": "middleNameInput",
-                "message": {
-                    "required": "Middle Name is required",
-                    "pattern": "Numbers not allowed."
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": "^[a-zA-Z ]*$"
-                }
-            },
-            {
                 "id": 8,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Last Name",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter Last Name...",
-                "formControlName": "lastNameInput",
-                "message": {
-                    "required": "Last Name is required",
-                    "pattern": "Numbers not allowed."
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 1,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "",
@@ -269,7 +271,7 @@
                 }
             },
             {
-                "id": 1,
+                "id": 10,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "",
@@ -297,7 +299,7 @@
                 }
             },
             {
-                "id": 8,
+                "id": 11,
                 "isEditable": false,
                 "isVisible": true,
                 "label": "",
@@ -318,7 +320,7 @@
                 }
             },
             {
-                "id": 11,
+                "id": 12,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Year",
@@ -339,30 +341,9 @@
                     "pattern": ""
                 }
             },
+            
             {
-                "id": 10,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Gender",
-                "type": "select",
-                "value": "",
-                "class": "col-md-3  my-1",
-                "lblclass": "custom-label",
-                "valueclass": "",
-                "placeholder": "Select option",
-                "formControlName": "selectGender",
-                "values": [],
-                "message": {
-                    "required": "Gender is required",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 10,
+                "id": 14,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Blood Group",
@@ -384,29 +365,7 @@
                 }
             },
             {
-                "id": 0,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Email ID",
-                "type": "text",
-                "inputType": "email",
-                "maxLength": 5,
-                "class": "col-md-3  my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "xyz123@example.com",
-                "formControlName": "emailInput",
-                "message": {
-                    "required": "Email is required",
-                    "pattern": "Please enter correct format"
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
-                }
-            },
-            {
-                "id": 13,
+                "id": 16,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Address",
@@ -427,27 +386,7 @@
                 }
             },
             {
-                "id": 14,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Pin Code",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter Pin Code...",
-                "formControlName": "pinCodeInput",
-                "message": {
-                    "required": "Pin Code is required",
-                    "pattern": "Please re-enter valid pin code."
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": "^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$"
-                }
-            },
-            {
+                "id": 18,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -478,7 +417,7 @@
                 }
             },
             {
-                "id": 11,
+                "id": 19,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Taluka",
@@ -500,7 +439,7 @@
                 }
             },
             {
-                "id": 11,
+                "id": 20,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Village",
@@ -522,7 +461,61 @@
                 }
             },
             {
-                "id": 11,
+                "id": 17,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Pin Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Pin Code...",
+                "formControlName": "pinCodeInput",
+                "message": {
+                    "required": "Pin Code is required",
+                    "pattern": "Please re-enter valid pin code."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$"
+                }
+            },
+            {
+                "id": 25,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "",
+                "inputType": "radio",
+                "type": "radio",
+                "class": "col-md-1  my-1",
+                "lblclass": "custom-label",
+                "valueclass": " radio-button",
+                "placeholder": "********",
+                "formControlName": "IPDRad",
+                "message": {
+                    "required": "IPD is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "OPD",
+                        "code": "OPD",
+                        "editable": false
+                    },
+                    {
+                        "name": "IPD",
+                        "code": "IPD",
+                        "editable": false
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 21,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Department",
@@ -544,7 +537,7 @@
                 }
             },
             {
-                "id": 11,
+                "id": 22,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Sub-Department",
@@ -566,7 +559,7 @@
                 }
             },
             {
-                "id": 11,
+                "id": 23,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Doctor",
@@ -589,6 +582,7 @@
             },
             
             {
+                "id": 24,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -610,41 +604,13 @@
                 }
             },
             {
-                "id": 1,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "",
-                "inputType": "radio",
-                "type": "radio",
-                "class": "col-md-1  my-1",
-                "lblclass": "custom-label",
-                "valueclass": " radio-button",
-                "placeholder": "********",
-                "formControlName": "IPDRad",
-                "message": {
-                    "required": "IPD is required",
-                    "pattern": ""
-                },
-                "values": [
-                    {
-                        "name": "IPD",
-                        "code": "IPD",
-                        "editable": false
-                    }
-                ],
-                "validations": {
-                    "required": true,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 11,
-                "isEditable": true,
+                "id": 26,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Relative Title",
                 "type": "select",
                 "value": "M",
-                "class": "col-md-3  my-1",
+                "class": "col-md-2  my-1",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
@@ -660,8 +626,8 @@
                 }
             },
             {
-                "id": 6,
-                "isEditable": true,
+                "id": 27,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Relative First Name",
                 "type": "text",
@@ -681,8 +647,8 @@
                 }
             },
             {
-                "id": 8,
-                "isEditable": true,
+                "id": 28,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Relative Last Name",
                 "type": "text",
@@ -702,8 +668,8 @@
                 }
             },
             {
-                "id": 11,
-                "isEditable": true,
+                "id": 29,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Ward",
                 "type": "select",
@@ -724,7 +690,7 @@
                 }
             },
             {
-                "id": 10,
+                "id": 30,
                 "isEditable": false,
                 "isVisible": false,
                 "label": "Is_Active",
@@ -745,29 +711,7 @@
                 }
             },
             {
-                "id": 10,
-                "isEditable": true,
-                "isVisible": false,
-                "label": "",
-                "inputType": "",
-                "type": "staticText",
-                "data": "",
-                "class": "col-md-12",
-                "lblclass": "lbl-center-statictext ",
-                "valueclass": "static-text-size lbl-end",
-                "placeholder": "",
-                "formControlName": "anchor",
-                "message": {
-                    "required": "",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 2,
+                "id": 32,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,
@@ -785,7 +729,7 @@
                 }
             },
             {
-                "id": 3,
+                "id": 33,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,
