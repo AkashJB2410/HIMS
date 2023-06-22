@@ -66,6 +66,11 @@
     "imgSrc": "assets/core_assets/card-icon.png"
   },
   {
+    "label": "LOV Value",
+    "routerLink": "/master-page/all-masters/lov-value",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+  {
     "label": "Manage Staff",
     "routerLink": "/master-page/all-masters/bank-master",
     "imgSrc": "assets/core_assets/card-icon.png"
