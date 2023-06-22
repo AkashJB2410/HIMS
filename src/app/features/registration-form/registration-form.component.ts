@@ -308,74 +308,74 @@ export class RegistrationFormComponent implements OnInit {
   changeSelectItem(e: any) {
     console.log("changeSelectItem e => ", e)
     if (e[1].fieldName == "selectIdentificationType" && e[0].value != "") {
-      this.form$.reRenderForm(this.formData.form.formControls[3], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[10], true, 'isEditable');
       if (e[0].value == "1") {
         let validations = {
           "required": true,
           "pattern": "^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[10], validations, 'validations');
       } else if (e[0].value == "2") {
         let validations = {
           "required": true,
           "pattern": "^[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[10], validations, 'validations');
       } else if (e[0].value == "3") {
         let validations = {
           "required": true,
           "pattern": "[A-Z]{3}[0-9]{4}[A-Z]{1}"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[10], validations, 'validations');
       } else if (e[0].value == "4") {
         let validations = {
           "required": true,
           "pattern": "^[A-Z]{3}[0-9]{7}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[10], validations, 'validations');
       } else if (e[0].value == "3") {
         let validations = {
           "required": true,
           "pattern": "^\\d{10,12}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[10], validations, 'validations');
       } else if (e[0].value == "6") {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[10], validations, 'validations');
       }
       else if (e[0].value == "7") {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[10], validations, 'validations');
       } else if (e[0].value == "8") {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[10], validations, 'validations');
       } else if (e[0].value == "9") {
         let validations = {
           "required": true,
           "pattern": "^(([A-Z]{2}[0-9]{2})( )|([A-Z]{2}-[0-9]{2}))((19|20)[0-9][0-9])[0-9]{7}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[10], validations, 'validations');
       } else if (e[0].value == "10") {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[10], validations, 'validations');
       } else if (e[0].value == "11") {
         let validations = {
           "required": true,
           "pattern": "^[1-9]{2}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[3], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[10], validations, 'validations');
       }
     }
 
@@ -383,41 +383,41 @@ export class RegistrationFormComponent implements OnInit {
       if (e[0].value == "0") {
         // this.form$.reRenderForm(this.formData.form.formControls[13], "1", 'autofill');
       } else if (e[0].value == "1") {
-        this.form$.reRenderForm(this.formData.form.formControls[13], "1", 'autofill');
+        this.form$.reRenderForm(this.formData.form.formControls[3], "1", 'autofill');
       } else if (e[0].value == "2") {
-        this.form$.reRenderForm(this.formData.form.formControls[13], "2", 'autofill');
+        this.form$.reRenderForm(this.formData.form.formControls[3], "2", 'autofill');
       } else if (e[0].value == "3") {
-        this.form$.reRenderForm(this.formData.form.formControls[13], "1", 'autofill');
+        this.form$.reRenderForm(this.formData.form.formControls[3], "1", 'autofill');
       } else if (e[0].value == "4") {
-        this.form$.reRenderForm(this.formData.form.formControls[13], "2", 'autofill');
+        this.form$.reRenderForm(this.formData.form.formControls[3], "2", 'autofill');
       } else if (e[0].value == "5") {
-        this.form$.reRenderForm(this.formData.form.formControls[13], "1", 'autofill');
+        this.form$.reRenderForm(this.formData.form.formControls[3], "1", 'autofill');
       } else if (e[0].value == "6") {
-        this.form$.reRenderForm(this.formData.form.formControls[13], "1", 'autofill');
+        this.form$.reRenderForm(this.formData.form.formControls[3], "1", 'autofill');
       } else if (e[0].value == "7") {
-        this.form$.reRenderForm(this.formData.form.formControls[13], "2", 'autofill');
+        this.form$.reRenderForm(this.formData.form.formControls[3], "2", 'autofill');
       } else if (e[0].value == "8") {
-        this.form$.reRenderForm(this.formData.form.formControls[13], "2", 'autofill');
+        this.form$.reRenderForm(this.formData.form.formControls[3], "2", 'autofill');
       } else if (e[0].value == "9") {
-        this.form$.reRenderForm(this.formData.form.formControls[13], "1", 'autofill');
+        this.form$.reRenderForm(this.formData.form.formControls[3], "1", 'autofill');
       } else if (e[0].value == "10") {
-        this.form$.reRenderForm(this.formData.form.formControls[13], "2", 'autofill');
+        this.form$.reRenderForm(this.formData.form.formControls[3], "2", 'autofill');
       }
     }
 
     if (e[1].fieldName == "DOBRad" && e[0].value == "DOB") {
-      this.form$.reRenderForm(this.formData.form.formControls[11], true, 'isEditable');
-      this.form$.reRenderForm(this.formData.form.formControls[13], false, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[12], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[14], false, 'isEditable');
 
     } else if (e[1].fieldName == "DOBRad" && e[0].value == "Age") {
-      this.form$.reRenderForm(this.formData.form.formControls[13], true, 'isEditable');
-      this.form$.reRenderForm(this.formData.form.formControls[11], false, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[14], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[12], false, 'isEditable');
     }
     if (e[1].fieldName == "IPDRad" && e[0].value == "IPD") {
-      this.form$.reRenderForm(this.formData.form.formControls[26], true, 'isEditable');
-      this.form$.reRenderForm(this.formData.form.formControls[27], true, 'isEditable');
-      this.form$.reRenderForm(this.formData.form.formControls[28], true, 'isEditable');
-      this.form$.reRenderForm(this.formData.form.formControls[29], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[30], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[31], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[32], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[33], true, 'isEditable');
     }
 
     if (e[1].fieldName == "imgUpl") {
