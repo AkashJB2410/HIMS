@@ -75,10 +75,8 @@ import { EmailConfigurationComponent } from '../../email-configuration/email-con
 import { SmsConfigurationComponent } from '../../sms-configuration/sms-configuration.component';
 import { VerticalTabularComponent } from '../../vertical-tabular/vertical-tabular.component';
 import {CascadeSelectModule} from 'primeng/cascadeselect';
+import {InputSwitchModule} from 'primeng/inputswitch';
 import { HomePageComponent } from 'src/app/core/home-page/home-page.component';
-
-
-
 @NgModule({
     declarations: [
         ConfirmBoxComponent,
@@ -160,7 +158,8 @@ import { HomePageComponent } from 'src/app/core/home-page/home-page.component';
         TabMenuModule,
         PickListModule,
         BreadcrumbModule,
-        CascadeSelectModule
+        CascadeSelectModule,
+        InputSwitchModule
     ],
     exports: [
         //============= Core Components =============

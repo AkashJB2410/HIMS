@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand px-2 navCss" [style.backgroundColor]="list.theme.headerBG">
+<nav class="navbar navbar-expand fixed-top px-2 navCss" [style.backgroundColor]="list.theme.headerBG">
     <div class="navbar-collapse">
     </div>
     <ul class="navbar-nav ">
@@ -37,16 +37,16 @@
         </li>
         </p-tieredMenu>
         </li> -->
-        <li>
+        <!-- <li>
             <p-menubar pTooltip="Help" tooltipPosition="bottom"  #menu [model]="Information">
                 <a class="mr-3 cursor-pointer"></a>
             </p-menubar>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
             <p-menubar #menu pTooltip="Setting" tooltipPosition="bottom" [model]="themeOptins">
                 <a (click)="changeTheme('dark-theme')" class="mr-3 cursor-pointer"></a>
             </p-menubar>
-        </li>
+        </li> -->
         <li>
             <img src="{{list.header.dp}}"  pTooltip="Profile" tooltipPosition="bottom" (click)="op1.toggle($event)" class="userlogo" alt="Profile Pic">
             <p-overlayPanel #op1 [showCloseIcon]="false">

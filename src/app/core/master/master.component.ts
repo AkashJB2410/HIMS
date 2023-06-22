@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import personalization from "./personalization.json";
 import { ThemeService } from '../shared/service/theme.service';
 
@@ -17,9 +17,8 @@ export class MasterComponent implements OnInit {
   statusLink: boolean = false;
   toggle: any;
   personalization: any;
-
   @Input() masterJSON: any;
-
+  @Output() notification = new EventEmitter<any>();
   constructor(private themeService: ThemeService) { }
 
   ngOnInit(): void {
@@ -41,4 +40,7 @@ export class MasterComponent implements OnInit {
     this.themeService.switchTheme(this.personalization.theme);
   }
 
+  notificationEvent(e: any) {
+    this.notification.emit(e)
+  }
 }

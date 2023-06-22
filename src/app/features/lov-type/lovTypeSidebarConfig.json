@@ -63,7 +63,7 @@
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[a-z\\s- 0-9]+$"
+                    "pattern": "^[a-zA-Z\\s- 0-9]+$"
                 }
             },
             
@@ -84,8 +84,8 @@
                     "pattern": "Only Numbers and Alphabates are allowed."
                 },
                 "validations": {
-                    "required": false,
-                    "pattern": "^[a-z\\s-/ _/0-9]+$"
+                    "required": true,
+                    "pattern": "^[a-zA-Z\\s-/ _/0-9]+$"
                 }
             },
             

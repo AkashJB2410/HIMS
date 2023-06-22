@@ -94,22 +94,48 @@ export class LovTypeComponent implements OnInit {
   }
 
 
+  // confirmAction(e: any) {
+
+    
+  //   if (e.is_Deleted) {
+  //     this.messageService.add({
+  //       severity: 'error',
+  //       summary: 'Message form User component',
+  //       detail: 'Allready Deleted',
+  //     });
+  //   } else {
+  //     this.deleteMstLov(e.lovTypeId);
+  //     this.messageService.add({
+  //       severity: 'success',
+  //       summary: 'Message form User component',
+  //       detail: 'Deleted Sucessfully',
+  //     });
+  //   }
+  //    console.log('Deleted' + JSON.stringify(e));
+  // }
+
+
+
   confirmAction(e: any) {
-    if (e.is_Deleted) {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Message form User component',
-        detail: 'Allready Deleted',
-      });
-    } else {
-      this.deleteMstLov(e.lovTypeId);
-      this.messageService.add({
-        severity: 'success',
-        summary: 'Message form User component',
-        detail: 'Deleted Sucessfully',
-      });
+    if (e == false) {
+      this.getAllMstLovTypeData();
+    } else {      
+      if (e.is_Deleted) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Message form User component',
+          detail: 'Allready Deleted',
+        });
+      } else {
+        this.deleteMstLov(e.lovTypeId);
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Message form User component',
+          detail: 'Deleted Sucessfully',
+        });
+      }
     }
-     console.log('Deleted' + JSON.stringify(e));
+    console.log('Deleted' + JSON.stringify(e));
   }
    
 

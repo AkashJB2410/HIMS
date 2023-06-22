@@ -466,7 +466,6 @@ body {
 
 .p-inputtext {
   font-family: 'Manrope', sans-serif;
-  ;
   font-size: 1rem;
   color: rgba(0, 0, 0, 0.87);
   background: #ffffff;
@@ -481,10 +480,10 @@ body {
 .p-paginator {
   display: flex;
   align-items: center;
-  justify-content: start !important;
+  justify-content: end !important;
   flex-wrap: wrap;
   font-size: 12px !important;
-  padding: 0px 0px !important;
+  padding: 0px -1px !important;
 }
 
 .p-paginator .p-paginator-pages .p-paginator-page {
@@ -1748,7 +1747,7 @@ body {
   padding-top: 10px;
   height: 58px;
   width: 171px;
-  margin-left: 18%;
+  margin:auto ;
   margin-bottom: 1rem;
   background-image: url('../../../assets/core_assets/captcha-bg.png');
   text-align: center;
@@ -1790,7 +1789,7 @@ body {
 
 .captcha-btn-refresh {
   float: right;
-  margin-top: 25px;
+  margin-top: -22px;
   height: 23px;
   margin-right: -2rem;
 }
@@ -2402,13 +2401,12 @@ body {
 
 .p-card .p-card-body {
   padding: 0.25rem !important;
+  margin: 2px;
 }
-
 .homepageCss {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-
 .labelcss {
   text-align: center;
   color: white;
@@ -2417,11 +2415,30 @@ body {
   margin-right: 12px;
 
 }
-.imgcenter{
+.imgcenter {
   display: flex;
   justify-content: center;
 }
+
 .scroll{
   height: 85vh;
   overflow-y: scroll;
 }
+.cardDesign{
+  height: 20px !important;
+}
+.verticalCardImage{
+  margin-right: 15px;
+}
+.fixed-bottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+}
+.cardHeight{
+  height:400px;
+}
+
+
