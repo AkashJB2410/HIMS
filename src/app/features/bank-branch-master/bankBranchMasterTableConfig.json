@@ -1,12 +1,7 @@
 {
     "tableName": "Bank Brach Table",
     "tableHeaders": [
-        {
-            "field": "bbId",
-            "header": "Branch Id",
-            "iseditable": false,
-            "class": ""
-        },
+        {"field": "srNumber","header": "Sr Number","iseditable": false , "class":"text-center"},
 
         {
             "field": "bbBankId_name",
@@ -28,6 +23,7 @@
         }
     ],
     "PdfHeaders": [
+        {"field": "srNumber","header": "srNumber"},
         {
             "field": "bbId",
             "header": "Bank Branch Id"

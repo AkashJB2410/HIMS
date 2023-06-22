@@ -128,9 +128,13 @@ const routes: Routes = [
       { path: 'all-masters/action-sub-module', loadChildren: () => import('./../action-sub-module/action-sub-module.module').then( m => m.ActionSubModuleModule)},     
       { path: 'all-masters/sub-department', loadChildren: () => import('./../sub-department/sub-department.module').then( m => m.SubDepartmentModule)},     
       { path: 'all-masters/unit', loadChildren: () => import('./../unit/unit.module').then( m => m.UnitModule)}, 
+
       { path: 'all-masters/application-config', loadChildren: () => import('./../application-config/application-config.module').then( m => m.ApplicationConfigModule)}, 
       { path: 'group-module', loadChildren: () => import('./../group-module/group-module.module').then( m => m.GroupModuleModule)},   
-      {path: 'all-masters/lov-type', loadChildren:()=> import('./../lov-type/lov-type.module').then(m=>m.LovTypeModule)} 
+      {path: 'all-masters/lov-type', loadChildren:()=> import('./../lov-type/lov-type.module').then(m=>m.LovTypeModule)} ,
+
+      
+      { path: 'all-masters/lov-value', loadChildren: () => import('./../lov-value/lov-value-routing.module').then( m => m.LovValueRoutingModule)},
     ],
     // canActivate: [AuthGuardGuard]
   }];

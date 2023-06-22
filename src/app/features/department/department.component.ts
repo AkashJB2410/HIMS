@@ -10,6 +10,7 @@ import department_Form from './department.json'
 import {
   MessageService
 } from 'primeng/api';
+import breadcrumb from './department-breadcrumb.json'
 
 @Component({
   selector: 'app-department',
@@ -27,6 +28,7 @@ export class DepartmentComponent implements OnInit {
   editMethod: boolean = false;
   sidebar_Update_Input: any = department_Form;
   saveMethod: any;
+  breadcrumb=breadcrumb;
   constructor(private http: DepartmentService, private messageService: MessageService) {}
 
   ngOnInit(): void {

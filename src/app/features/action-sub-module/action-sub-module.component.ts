@@ -3,6 +3,7 @@ import { ActionSubModuleService } from './action-sub-module.service';
 import { MessageService } from 'primeng/api';
 import action_Sub_Module_Form from './action-sub-module-input-from.json';
 import action_Sub_Module_Table_Config from './action-sub-module-table-config.json'
+import ActionSubModule_breadcrumb from './actionSub-breadcrumb.json'
 
 @Component({
   selector: 'app-action-sub-module',
@@ -18,6 +19,8 @@ export class ActionSubModuleComponent implements OnInit {
   table_Data: any;
   sidebar_Update_Input: any = action_Sub_Module_Form;
   saveMethod: boolean = false;
+  ActionSubModule_breadcrumb =ActionSubModule_breadcrumb;
+
   constructor(private messageService:MessageService, private http:ActionSubModuleService) { }
 
   ngOnInit(): void {

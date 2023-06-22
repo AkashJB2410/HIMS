@@ -2440,5 +2440,43 @@ body {
 .cardHeight{
   height:400px;
 }
+/*--------------------------*/
+.card-scroll{
+overflow-y:scroll;
+}
 
 
+.card-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.card-scroll::-webkit-scrollbar-thumb {
+  background: #CD9C1D;
+  border-radius: 5px;
+  height: 40px;
+}
+
+.card-scroll::-webkit-scrollbar-thumb:hover {
+  background: #e7af21;
+  border-radius: 5px;
+}
+.design:hover {
+  transform: scale(1.1);
+  width: 90%;
+  margin: auto;
+  background-color: #374476!important;
+  color: white;
+}
+.cardsize{
+  margin: auto;
+  }
+ 
+  .verticalCards {
+    margin-left: 10px!important;
+    margin-right: 10px!important;
+    border: 2px solid #374476!important;
+
+  }
+  .p-card .p-card-body{
+    padding: 1.25rem !important;
+  }

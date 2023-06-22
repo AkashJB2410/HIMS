@@ -3,6 +3,7 @@ import { MessageService } from 'primeng/api';
 import { BankMasterService } from './bank-master.service';
 import bank_Master_Table_Config from './bank-master-table-config.json';
 import bank_Master_Form from './bank-master-input-update.json'
+import BankMaster_breadcrumb from './bank-master-breadcrumb.json'
 
 @Component({
   selector: 'app-bank-master',
@@ -18,6 +19,8 @@ export class BankMasterComponent implements OnInit {
   table_Data: any;
   sidebar_Update_Input: any = bank_Master_Form;
   saveMethod: boolean = false;
+  BankMaster_breadcrumb = BankMaster_breadcrumb;
+
   constructor(private messageService:MessageService, private http:BankMasterService) { }
 
   ngOnInit(): void {

@@ -1,34 +1,41 @@
 <div class="inboxContainer">
-    <div class="container-fluid">
-        <p-breadcrumb [model]="items.itemsList"></p-breadcrumb>
-    </div>
+  <div class="container-fluid">
+    <p-breadcrumb [model]="items.itemsList"></p-breadcrumb>
+  </div>
 </div>
 <h3 class="cst-label">All Masters</h3>
 <app-vertical-tabular [tabularData]="tabularSideData" (renderComponents)="renderComponents($event)">
-    <div *ngIf="allFlag.unitFlag">
-    <div class="row">
-        <div class="col-md-3 mb-1" *ngFor="let cards of allUnit.Forms">
-            <app-cards>
-                <app-form [formJSON]="cards"></app-form>
-            </app-cards>
-        </div>
+  <div *ngIf="allFlag.unitFlag">
+    <div class="row ">
+      <div class="col-md-4 mb-1 " *ngFor="let cards of allUnitList.card">
+        <app-cards [title]="title" routerLink="{{cards.routerLink}}">
+          <div class="row no-gutters align-items-center">
+            <div class="col-auto">
+              <img src="assets/core_assets/card-icon.png" width="25px" height="30px">
+            </div>
+            <div class="col mr-2">
+              <div class="text-value font-weight-bold mb-1">{{cards.label}}</div>
+            </div>
+          </div>
+        </app-cards>
+      </div>
     </div><br>
-</div>
+  </div>
 
-    <div class="row" *ngIf="allFlag.otFlag">
-        <div class="col-md-4">
-            <app-cards>
-               OT Configurations
-            </app-cards>
-        </div>
+  <div class="row" *ngIf="allFlag.otFlag">
+    <div class="col-md-4">
+      <app-cards>
+        OT Configurations
+      </app-cards>
     </div>
+  </div>
 
-    <div class="row" *ngIf="allFlag.emrFlag">
-        <div class="col-md-4">
-            <app-cards>
-               EMR Configurations
-            </app-cards>
-        </div>
+  <div class="row" *ngIf="allFlag.emrFlag">
+    <div class="col-md-4">
+      <app-cards>
+        EMR Configurations
+      </app-cards>
     </div>
+  </div>
 
 </app-vertical-tabular>
