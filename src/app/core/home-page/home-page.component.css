@@ -1,0 +1,30 @@
+.card-home {
+    background: #FFFFFF;
+    border: 1px solid #C6C6C6;
+    border-radius: 5px;
+    box-shadow: 2px 4px 8px 0px rgba(46, 61, 73, 0.2);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.card-title {
+    padding-top: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 19px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: #030303;
+    margin-bottom: 0px;
+}
+
+.card-title:hover {
+    background-color: #f3f3f3 !important;
+}
+
+.card-home :hover {
+    background: #f3f3f3;
+    border-radius: 5px;
+}

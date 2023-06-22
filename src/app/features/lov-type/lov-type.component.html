@@ -1,0 +1,14 @@
+
+<p-breadcrumb [model]="Application_breadcrumb.itemsList" ></p-breadcrumb>
+<h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>LOV Type Module</h3>
+<app-super-grid
+    *ngIf="data"
+    [configurations]="configurations" 
+    [tableData]="data" 
+    [tableConfig] = "config"
+    [sidebarJSON] = "sidebarJSON"
+    (sideBarEvent)="sidebarData($event)"
+    (confirmAction)="confirmAction($event)"
+    (isActive)="isActive($event)"
+    (Bulkdelete)="Bulkdelete($event)">
+</app-super-grid>

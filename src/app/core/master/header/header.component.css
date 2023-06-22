@@ -27,9 +27,11 @@
   width: 40px;
   border-radius: 50%;
 }
-.fixed-top{
+
+.fixed-top {
   position: sticky !important;
 }
+
 .clogo {
   height: 45px;
   width: 100px;
@@ -54,7 +56,7 @@
 }
 
 .userlogo {
-  height: 35px;
+  height: 30px;
   border-radius: 20px;
 }
 
@@ -121,19 +123,21 @@
 }
 
 .navCss {
-  height: 50px;
+  height: 46px;
 }
 
 :host ::ng-deep .p-tieredmenu {
   z-index: 1001;
   transform-origin: center top;
   top: 40.5px;
-  left:901.25px !important;
+  left: 901.25px !important;
   width: 15%;
 }
-:host ::ng-deep .p-submenu  {
- width: 100px !important;
+
+:host ::ng-deep .p-submenu {
+  width: 100px !important;
 }
+
 .flexNotification {
   display: flex;
   padding-top: 1rem;
@@ -148,9 +152,8 @@
 }
 
 .item2 {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.75rem !important;
-  margin-top: 6px;
   text-decoration: underline;
   justify-content: end;
   display: flex;
@@ -162,10 +165,20 @@
   margin-bottom: 7px;
   cursor: pointer
 }
-:host ::ng-deep .p-tieredmenu{
+
+:host ::ng-deep .p-tieredmenu {
   padding: 2px;
   z-index: 1001;
   transform-origin: center top;
   left: 1001px !important;
 
+}
+.ViewAllCss {
+  color: #4499ef;
+  font-weight: 600;
+  text-align: center;
+}
+.notiMsg{
+  color:grey;
+  font-size: 11px !important;
 }
