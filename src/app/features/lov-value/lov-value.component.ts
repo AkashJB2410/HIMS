@@ -1,26 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import groupForm from './group_form.json';
-import groupTable from './group_TableConfig.json';
-import Group_breadcrumb from './Group_breadcrumb.json';
-import { GroupModuleService } from './group-module.service';
 import { MessageService } from 'primeng/api';
+import LOVForm from './LOV_valueForm.json';
+import LOVTable from './LOV_valueTableConfig.json';
+import { LovValueService } from './lov-value.service';
+import LOV_breadcrumb from './LOV_valueBreadcrumb.json'
+
 @Component({
-  selector: 'app-group-module',
-  templateUrl: './group-module.component.html',
-  styleUrls: ['./group-module.component.css']
+  selector: 'app-lov-value',
+  templateUrl: './lov-value.component.html',
+  styleUrls: ['./lov-value.component.css']
 })
-export class GroupModuleComponent implements OnInit {
+export class LovValueComponent implements OnInit {
+
   tableConfig: any;
   visibleSidebar: boolean = true;
-  groupFormData: any = groupForm;
-  Group_breadcrumb=Group_breadcrumb
+  LOVFormData: any = LOVForm;
+  LOV_breadcrumb=LOV_breadcrumb
   configurations: any;
   data: any;
   formdata: any;
   isdataReady = false;
-  groupData: any = [];
+  LOVData: any = [];
   flag: any;
-  constructor(private messageService: MessageService, private http: GroupModuleService) { }
+  constructor(private messageService: MessageService, private http: LovValueService) { }
 
   ngOnInit(): void {
     this.configurations = {
@@ -29,9 +31,9 @@ export class GroupModuleComponent implements OnInit {
       "isSideBar": true,
       "isConfirmation": true
     };
-    this.tableConfig = groupTable;
+    this.tableConfig = LOVTable;
     // this.getConfigForTable();
-    this.getAllGroup();
+    this.getAllLovValue();
     this.assignOptions();
   }
 
@@ -42,7 +44,7 @@ export class GroupModuleComponent implements OnInit {
   isActive(event: string) {
     this.http.isActiveData(event).subscribe((data) => {
       this.data = undefined;
-      this.getAllGroup();
+      this.getAllLovValue();
     });
   }
 
@@ -51,21 +53,21 @@ export class GroupModuleComponent implements OnInit {
   }
 
   getConfigForTable() {
-    this.tableConfig = groupTable;
+    this.tableConfig = LOVTable;
   }
   addRow(e: any) {
     this.visibleSidebar = true;
   }
   BulkDeleteRows(e: any) {
-    this.groupData = [];
+    this.LOVData = [];
  
     if (e != '') {
       e.forEach((data:any) => {
         if(data.is_Active!=false){
         let obj ={
-          "groupId": data.groupId,
+          "lovListId": data.lovListId,
         }
-        this.deleteGroup(obj.groupId);
+        this.deleteLovValue(obj.lovListId);
       } else{
         this.messageService.add({
           severity: 'error',
@@ -91,18 +93,18 @@ export class GroupModuleComponent implements OnInit {
   sidebarData(e: any) {
     if (e != 'reset') {
       if (this.flag == "edit") {
-        this.updateGroup(e);
+        this.updateLovValue(e);
         this.messageService.add({
           severity: 'success',
           summary: 'success',
-          detail: 'Data updated successfully.',
+          detail: 'Data updated successfull.',
         });
       } else {
-        this.submitGroup(e);
+        this.submitLovValue(e);
         this.messageService.add({
           severity: 'success',
           summary: 'success',
-          detail: 'Data saved successfully.',
+          detail: 'Data save successfull.',
         });
       }
     }
@@ -110,7 +112,7 @@ export class GroupModuleComponent implements OnInit {
 
   confirmAction(e: any) {
     if(e != false){
-    this.deleteGroup(e.groupId);
+    this.deleteLovValue(e.lovListId);
     this.messageService.add({
       severity: 'success',
       summary: 'Message form User component',
@@ -119,67 +121,66 @@ export class GroupModuleComponent implements OnInit {
   }
   }
 
-  getAllGroup() {
+  getAllLovValue() {
     this.data = undefined;
-    this.groupData = [];
-    this.http.GetAllGroupData().subscribe((res) => {
+    this.LOVData = [];
+    this.http.GetAllLovValueData().subscribe((res) => {
       // for (let i = 0; i < this.data.length; i++) {
       //   this.data[i].srNumber = i + 1;
       // }
       res.forEach((e: any) => {
         let obj = {
-          "groupId": e.groupId,
-          "mstModule": e.mstModule.moduleId,
-          "lable": e.lable,
-          "icon": e.icon,
-          "routerLink": e.routerLink,
-          "sequence": e.sequence,
+          "lovListId": e.lovListId,
+          "lovTypeId": e.mstLovType.lovTypeId,
+          "value": e.value,
+          "typeOfField": e.typeOfField,
+          "description": e.description,
+          "lovTypeName": e.mstLovType.name,
           "is_Active": e.is_Active,
-          "mstModule_name": e.mstModule.label,
         }
-        this.groupData.push(obj);
+        this.LOVData.push(obj);
       })
-      this.data = [...this.groupData];
+      this.data = [...this.LOVData];
       this.isdataReady = true;
     })
   }
 
-  updateGroup(groupId: any) {
-    this.http.updateGroupData(groupId).subscribe((data) => {
+  updateLovValue(LOV_ValueId: any) {
+    this.http.updateLovValueData(LOV_ValueId).subscribe((data) => {
       this.data = undefined;
-      this.getAllGroup();
+      this.getAllLovValue();
     });
   }
 
-  deleteGroup(groupId: any) {
-    this.http.deleteGroupData(groupId).subscribe((data) => {
+  deleteLovValue(LOV_ValueId: any) {
+    this.http.deleteLovValueData(LOV_ValueId).subscribe((data) => {
       this.data = undefined;
-      this.getAllGroup();
+      this.getAllLovValue();
     });
   }
 
-  submitGroup(groupId: any) {
-    this.http.saveGroupData(groupId).subscribe((data) => {
+  submitLovValue(LOV_ValueId: any) {
+    this.http.saveLovValueData(LOV_ValueId).subscribe((data) => {
       this.data = undefined;
-      this.getAllGroup();
+      this.getAllLovValue();
     });
   }
 
   assignOptions() {
-    this.formdata = Object.assign({}, groupForm);
+    this.formdata = Object.assign({}, LOVForm);
     this.formdata.form.formControls.forEach((data: any) => {
       data.values = [];
-      if (data.formControlName === "selectmstModule") {
+      if (data.formControlName === "selectlovType") {
         let defaultObj = {
-          "name": "Select Master Module",
+          "name": "Select LOV Type",
           "code": "0"
         }
         data.values.push(defaultObj);
-        this.http.GetAllMasterModuleData().subscribe(item => {
+        this.http.GetAllLovTypeData().subscribe(item => {
           item.forEach((e: any) => {
             let obj = {
-              "name": e.label,
-              "code": e.moduleId
+              "name": e.name,
+              "code": e.lovTypeId
             }
             data.values.push(obj);
           })

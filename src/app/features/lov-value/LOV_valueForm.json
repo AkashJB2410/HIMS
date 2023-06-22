@@ -1,7 +1,7 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Unit",
+        "formTitle": "LOV Value",
         "formName": "Form1",
         "formType": "edit",
         "sidebar":"p-sidebar-sm",
@@ -11,14 +11,14 @@
                 "isEditable": false,
                 "isVisible": true,
                 "transient": false,
-                "label": "Application ID",
+                "label": "LOV List ID",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Enter groupId",
-                "formControlName": "applicationId",
+                "placeholder": "Enter lovlistId",
+                "formControlName": "lovlistId",
                 "message": {
                     "required": "groupId is required",
                     "pattern": "pattern is not match"
@@ -31,16 +31,42 @@
             {
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Key Name",
+                "transient": false,
+                "label": "LOV TypeID",
+                "type": "select",
+                "class": "col-md-12  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectlovType",
+                "message": {
+                    "required": "lovtypeID is required",
+                    "pattern": "pattern is not match"
+                },
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Value",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Enter unit cluster",
-                "formControlName": "keyname",
+                "placeholder": "Enter value",
+                "formControlName": "value",
                 "message": {
-                    "required": "keyname is required",
+                    "required": "value is required",
                     "pattern": "pattern is not match"
                 },
                 "validations": {
@@ -51,16 +77,16 @@
             {
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Key Value",
+                "label": "Type Of Field",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Enter icon name",
-                "formControlName": "keyvalue",
+                "placeholder": "Enter type of field",
+                "formControlName": "typeOfField",
                 "message": {
-                    "required": "keyvalue is required",
+                    "required": "description is required",
                     "pattern": "pattern is not match"
                 },
                 "validations": {
@@ -68,6 +94,29 @@
                     "pattern": "^[A-Za-z\\s-/]+$"
                 }
             },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Description",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter description",
+                "formControlName": "description",
+                "message": {
+                    "required": "description is required",
+                    "pattern": "pattern is not match"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            
+            
+           
             {
                 "isEditable": false,
                 "isVisible": false,

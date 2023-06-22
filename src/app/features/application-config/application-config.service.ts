@@ -20,31 +20,17 @@ export class ApplicationConfigService {
   }
 
   updateApplicationData(data: any) {
-    const param = {
-      "applicationId": data.applicationId,
-      "keyname": data.keyname,
-      "keyvalue": data.keyvalue,
-      "is_Active": data.is_Active,
-    };
-    console.log(param);
-
     const url = "http://localhost:8081/api/v1/updateAppConfg/" + data.applicationId;
-    return this.http.put<any>(url, param);
+    return this.http.put<any>(url, data);
   }
 
   saveApplicationData(data: any): Observable<any> {
-    console.log("save data" + data);
-    const param = {
-      "keyname": data.keyname,
-      "keyvalue": data.keyvalue,
-    };
     const url = "http://localhost:8081/api/v1/addAppConfig";
-    return this.PostCall(url, param);
+    return this.PostCall(url, data);
   }
 
   deleteApplicationData(applicationId: any) {
     const url = "http://localhost:8081/api/v1/deleteAppConfig/" + applicationId;
-    console.log(applicationId);
     return this.http.delete<any>(url);
   }
   
@@ -53,7 +39,6 @@ export class ApplicationConfigService {
       "applicationId": data.applicationId
     }
     const url = "http://localhost:8081/api/v1/reactiveAppConfig/" + data.applicationId;
-    console.log(data.applicationId);
     return this.PostCall(url, param);
   }
 }

@@ -1,7 +1,7 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Unit",
+        "formTitle": "Group Form",
         "formName": "Form1",
         "formType": "edit",
         "sidebar":"p-sidebar-sm",
@@ -10,8 +10,8 @@
             {
                 "isEditable": false,
                 "isVisible": true,
-                "transient": false,
-                "label": "GroupID",
+                "transient": true,
+                "label": "ID",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
