@@ -1,7 +1,7 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Unit",
+        "formTitle": "Application Config",
         "formName": "Form1",
         "formType": "edit",
         "sidebar":"p-sidebar-sm",

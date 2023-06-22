@@ -439,30 +439,36 @@ export class RegistrationFormComponent implements OnInit {
       res.forEach((e: any) => {
         console.log("user data => ", e)
         let obj = {
-          "userId": e.userId,
-          "mobileNo": e.mobileNo,
-          "identificationType_Id": e.identificationType.identificationTypeId,
-          "identificationNo": e.identificationNo,
           "staticText": "1",
+          "userId": e.userId,
           "titleId": e.mstTitle.titleId,
-
+          "mstGenderId": e.mstGender.mstGenderId,
           "firstName": e.firstName,
-
           "middleName": e.middleName,
           "lastName": e.lastName,
+          "mobileNo": e.mobileNo,
+          "emailId": e.emailId,
+          "identificationType_Id": e.identificationType.identificationTypeId,
+          "identificationNo": e.identificationNo,
+          
+
+          
           "RDODOB": "true",
           "dob": e.dob,
           "RDOage": "true",
           "age": e.age,
           "durationId": e.mstDuration.durationId,
-          "mstGenderId": e.mstGender.mstGenderId,
+         
           "bloodgroupId": e.mstBloodGroup.bloodgroupId,
-          "emailId": e.emailId,
+          "staticText2": "1",
           "address": e.address,
-          "pincode": e.pincode,
-
           "stateId": e.mstState.stateId,
           "districtId": e.mstDistrict.districtId,
+          "taluka":"Ambegaon",
+          "village":"Ambegaon",
+          "pincode": e.pincode,
+          "staticText3": "1",
+          "IPDRad": "true",
 
           "departmentId": e.departmentId,
           "subDepartmentId": e.subDepartmentId,
@@ -470,6 +476,8 @@ export class RegistrationFormComponent implements OnInit {
           "userImage": e.userImage,
           "relationId": e.relationId,
           "relationName": e.relationName,
+          "relationLastName":"Gupta",
+          "mstWardDetailsid": e.mstWardDetails.mstWardDetailsid,
           "identificationType": e.identificationType.identification_Type,
           "departmentName": e.departmentName,
 
@@ -495,7 +503,7 @@ export class RegistrationFormComponent implements OnInit {
 
           "title_Type": e.mstTitle.title_Type,
 
-          "mstWardDetailsid": e.mstWardDetails.mstWardDetailsid,
+          
           "wardDetails": e.mstWardDetails.wardDetails,
 
           "is_Active": e.is_Active

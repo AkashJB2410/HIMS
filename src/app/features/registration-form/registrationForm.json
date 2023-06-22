@@ -1,7 +1,7 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Registration Form",
+        "formTitle": "Patient Registration",
         "formTitleClass": "formclass",
         "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",

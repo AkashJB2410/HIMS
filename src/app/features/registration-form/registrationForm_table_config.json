@@ -1,7 +1,6 @@
 {
     "tableName": "Registration Table",
     "tableHeaders": [
-        {"field": "userId","header": "userId","iseditable": false , "class":""},
         {"field": "firstName","header": "FirstName","iseditable": false , "class":""},
         {"field": "middleName","header": "MiddleName","iseditable": false , "class":""},
         {"field": "lastName","header": "LastName","iseditable": false , "class":""},
@@ -35,6 +34,6 @@
     "isActions": ["Edit", "Delete","isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
-    "buttonlbl":"",
+    "buttonlbl":"Registration",
     "textLength":16
 }
