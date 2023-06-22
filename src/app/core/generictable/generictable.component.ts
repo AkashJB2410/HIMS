@@ -12,7 +12,7 @@ import { MessageService } from 'primeng/api';
 })
 
 export class GenerictableComponent implements OnInit {
-  checked:true
+  checked: true
   status: any = false;
   rowObject: any = []
   exportColumns: any;
@@ -31,6 +31,13 @@ export class GenerictableComponent implements OnInit {
   contextmenu = false;
   contextmenuX = 0;
   contextmenuY = 0;
+  contextMenus: any = [
+    { "menu": "Edit", "img": "../../../assets/core_assets/edit.png" },
+    { "menu": "Duplicate", "img": "../../../assets/core_assets/duplicate.png" },
+    { "menu": "Mark as favourite", "img": "../../../assets/core_assets/Starfavourite.png" },
+    { "menu": "Remove", "img": "../../../assets/core_assets/bin.png" },
+    { "menu": "Properties", "img": "../../../assets/core_assets/tool.png" }
+  ]
   chekboxes: any = [];
   @Input() config: any;
   @Input() tableData: any[];
@@ -46,11 +53,12 @@ export class GenerictableComponent implements OnInit {
   constructor(private toast: MessageService) { }
 
   ngOnInit() {
-    if (this.tableData == undefined)
+    if (this.tableData == undefined )
       this.tableData = data;
 
     if (this.config == undefined)
       this.config = this.config;
+     
 
     this.exportColumns = this.config.tableHeaders.map((config: any) => ({ title: config.header, dataKey: config.field }));
     this.colNames = this.config.tableHeaders
@@ -59,15 +67,24 @@ export class GenerictableComponent implements OnInit {
     this.pdfName = this.config.tableName
     this._selectedColumns = this.colNames;
   }
-  
-  onrightClick(event: any) {
-    this.contextmenuX = event.pageX
-    this.contextmenuY = event.pageY
+
+  onrightClick(event: any, rowdata: any) {
+    // this.contextmenuX = event.pageX - 245;
+    // this.contextmenuY = event.pageY - 40;
+    this.rowData = rowdata;
+    this.contextmenuX = event.pageX;
+    this.contextmenuY = event.pageY;
     this.contextmenu = true;
   }
+  
   //disables the menu
   disableContextMenu() {
     this.contextmenu = false;
+  }
+
+  rightClick(list: any){
+    this.disableContextMenu();
+    alert(JSON.stringify(this.rowData));
   }
 
   next() {
@@ -93,9 +110,8 @@ export class GenerictableComponent implements OnInit {
   clear(table: Table) {
     table.clear();
   }
-  
+
   editProduct(row: any) {
-    this.toast.add({ severity: 'warn', summary: 'Warn', detail: 'Message Content' });
     this.rowData = row
     this.visibleSidebar = true;
     this.onEdit.emit(this.rowData);
@@ -140,7 +156,7 @@ export class GenerictableComponent implements OnInit {
 
   exportPdf() {
     this.exportColumns,
-    this._selectedColumns;
+      this._selectedColumns;
     const doc = new jsPDF('p', 'pt', 'a2');
     if (this.chekboxes.length == 0) {
       (doc as any)['autoTable'](this.exportColumns, this.tableData);
@@ -161,11 +177,11 @@ export class GenerictableComponent implements OnInit {
   onRowClick(row_Data: any) {
     this.onRowClickData.emit(row_Data);
   }
-  
+
   bulkAction() {
     console.log(this.chekboxes);
   }
-  
+
   getColor(row: any) {
     let color = "";
     if (this.config.getColors) {
@@ -177,8 +193,8 @@ export class GenerictableComponent implements OnInit {
     }
     return color;
   }
-  
-  active(e:any){
+
+  active(e: any) {
     this.isActive.emit(e);
   }
 

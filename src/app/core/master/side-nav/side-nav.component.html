@@ -13,10 +13,11 @@
           </li>
         </div>
         <div class="nav-item" class="toggle" (click)="clickEvent()">
-          <a *ngIf="!status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/toggle button.png"
+          <a *ngIf="!status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/Toggle.png"
                 pTooltip="Collapse" tooltipPosition="top" class="togglefix"></i></a>
-          <a *ngIf="status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/toggle button.png"
-                pTooltip="Expand Sidenav" tooltipPosition="top"></i></a>
+          <a *ngIf="status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/Toggle.png"
+                pTooltip="Expand Sidenav" tooltipPosition="top" style=" -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);"></i></a> 
         </div>
       </ul>
       <div class="scroll">
@@ -114,7 +115,8 @@
   <div id="content">
     <app-header [headerInput]="list" (navToggle)="clickEvent()" (notification)="notificationEvent($event)"></app-header>
     <div class="">
-      <div class="container-fluid">
+      <div class="container-fluid spacer">
+        <!-- <p-breadcrumb [model]="items.itemsList" ></p-breadcrumb> -->
         <router-outlet></router-outlet>
       </div>
     </div>

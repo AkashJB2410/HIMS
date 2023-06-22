@@ -7,15 +7,15 @@ import * as myConstants from "../objects/constants";
   providedIn: 'root'
 })
 export class SessionService {
-  email="raghvendrapala839@gmail.com";
+  email = "raghvendrapala839@gmail.com";
   constructor(private http: HttpClient) { }
 
-  orgData(){
+  orgData() {
     this.email
-    const url=myConstants.LOCALHOSTURL +"api/v1/organizationData?emailId="+this.email;
+    const url = myConstants.LOCALHOSTURL + "api/v1/organizationData?emailId=" + this.email;
     return this.http.get<any>(url);
   }
-  
+
   headers = new HttpHeaders().set('Content-type', 'application/json');
 
   Logincheck(obj: any): Observable<any> {
@@ -61,43 +61,55 @@ export class SessionService {
     return this.http.post<any>(url, param, { headers })
   }
 
-  verifyOTP(otp: any, emailId: any): Observable<any> {
-    if (emailId.charAt(0) == '+') {
-      const param = {
-        "mobileNo": emailId,
+  verifyOTP(otp: any, data: any): Observable<any> {
+    var param = {};
+    if (data.emailId != '') {
+      param = {
+        "emailId": data.emailId,
         "otp": otp
       };
-      const url = myConstants.LOCALHOSTURL + "api/v1/verifyOTP";
-      const headers = new HttpHeaders().set('Content-type', 'application/json');
-      return this.http.post<any>(url, param, { headers })
-    }
-    else {
-      const param = {
-        "emailId": emailId,
+    } else {
+      param = {
+        "mobileNo": data.mobileNo,
         "otp": otp
       };
-      const url = myConstants.LOCALHOSTURL + "api/v1/verifyOTP";
-      const headers = new HttpHeaders().set('Content-type', 'application/json');
-      return this.http.post<any>(url, param, { headers })
     }
+    const url = myConstants.LOCALHOSTURL + "api/v1/verifyOTP";
+    const headers = new HttpHeaders().set('Content-type', 'application/json');
+    return this.http.post<any>(url, param, { headers })
+
   }
 
-  updatePassword(emailId: any, password: any): Observable<any> {
-    if (emailId.charAt(0) == '+') {
-      const param = {
-        "mobileNo": emailId,
+  updatePassword(data: any, password: any): Observable<any> {
+    var param = {};
+    if (data.emailId != '') {
+      param = {
+        "emailId": data.emailId,
         "password": password
       };
-      const url = myConstants.LOCALHOSTURL + "api/v1/passwordUpdate";
-      return this.http.put<any>(url, param);
-    }
-    else {
-      const param = {
-        "emailId": emailId,
+    } else {
+      param = {
+        "mobileNo": data.mobileNo,
         "password": password
       };
-      const url = myConstants.LOCALHOSTURL + "api/v1/passwordUpdate";
-      return this.http.put<any>(url, param);
     }
+    const url = myConstants.LOCALHOSTURL + "api/v1/passwordUpdate";
+    return this.http.put<any>(url, param);
+  }
+
+  // orgData(email: any) {
+  //   const url = myConstants.LOCALHOSTURL + "api/v1/organizationData?emailId=" + email;
+  //   return this.http.get<any>(url);
+  // }
+  
+  addPersonalization(dateFormat: any, currency: any, theme: any): Observable<any> {
+    const param = {
+      "dateFormat": dateFormat,
+      "currency": currency,
+      "theme": theme
+    };
+    const url = myConstants.LOCALHOSTURL + "api/v1/addPersonalization";
+    return this.http.post<any>(url, param);
+
   }
 }

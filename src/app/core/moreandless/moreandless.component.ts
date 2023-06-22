@@ -14,7 +14,6 @@ export class MoreandlessComponent implements OnInit {
   constructor() {
     this.showMore = false;
   }
-
   ngOnInit(): void {
     if (this.text != null) {
       if (typeof this.text == 'string') {
