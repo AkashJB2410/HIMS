@@ -1,0 +1,28 @@
+{
+    "listClass":"col-md-3 pe-0",
+    "cardClass":"col-md-9 ps-0",
+    "tabular": [
+        {
+            "label": "Training",
+            "image":"/assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+        },
+        {
+            "label": "Registration",
+            "image":"/assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+
+        },
+        {
+            "label": "OPD",
+            "image":"/assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+
+        },
+        {
+            "label": "IPD",
+            "image":"/assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+        }
+    ]
+}

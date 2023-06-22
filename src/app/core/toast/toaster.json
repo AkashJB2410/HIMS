@@ -2,20 +2,6 @@
     "severity": "success",
     "title": "Are you sure?",
     "description": "aaaaaaaaaaaaaaaaaaaaaaaa",
-    "life":50000,
-    "sticky":true,
-    "button": [
-        {
-            "subtype": "cancel",
-            "btnLabel": "Cancel",
-            "class": "p-col-6",
-            "valueclass": "butn-custom-dark-blue"
-        },
-        {
-            "subtype": "submit",
-            "class": "p-col-6",
-            "valueclass": "butn-custom-wrng",
-            "btnLabel": "Submit"
-        }
-    ]
+    "life":5000
+ 
 }

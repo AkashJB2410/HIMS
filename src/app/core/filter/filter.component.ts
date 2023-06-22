@@ -19,8 +19,10 @@ export class FilterComponent implements OnInit {
   data: any;
   editData: any;
   displayModal: boolean;
+  saveFilter: boolean;
   FData: any;
-
+  filterName: any;
+  filtersArray: any = [];
   constructor(
     private primengConfig: PrimeNGConfig,
     private mess: MessageService
@@ -128,7 +130,10 @@ export class FilterComponent implements OnInit {
         this.data = data;
       }
       this.isPopup = this.flag;
-    } else {
+    } else if (e == 'submit') {
+      this.saveFilter = true;
+    }
+    else {
       this.displayModal = true;
       this.filterData = undefined;
       let data = JSON.parse(localStorage.getItem('newFilterData'));
@@ -165,4 +170,21 @@ export class FilterComponent implements OnInit {
     localStorage.setItem('editData', JSON.stringify(e));
     this.displayModal = false;
   }
+
+  saveFilterData() {
+    this.saveFilter = false;
+    let filterObj = {
+      "filtername": this.filterName,
+      "CreatedBy": "Satyam Singh",
+      "filterJson": JSON.parse(localStorage.getItem('newFilterData'))
+    }
+    this.filterName = '';
+    this.filtersArray.push(filterObj);
+  }
+
+  renderFilter(data: any) {
+    this.filterData = undefined;
+    this.filterData = data.filterJson;
+  }
+
 }

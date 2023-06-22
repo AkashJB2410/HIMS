@@ -1,0 +1,188 @@
+{
+    "Row": "row",
+    "HomeList": [
+    {
+      "label": "IPD",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "OPD",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Sub child",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "OPD",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Sub child",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Sub child",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "IPD",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "OPD",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Sub child",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "OPD",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Sub child",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Sub child",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "IPD",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "OPD",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Sub child",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "OPD",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Sub child",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+
+    },
+    {
+      "label": "Sub child",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../assets/core_assets/medical.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    }
+  
+  ]
+  
+}

@@ -62,6 +62,32 @@ export class FormComponent implements OnInit {
   onImageUpload(event: any, id: any) {
      id.fieldValue = event.target.files[0];
 
+          // covert base 64 image code
+  //   const file = (event.target as HTMLInputElement).files[0];
+  //   this.covertToBase64(file, id);
+  // }
+
+  // covertToBase64(file: File, cntrl: any) {
+  //   const observable = new Observable((subscriber: Subscriber<any>) => {
+  //     this.readFile(file, subscriber);
+  //    });
+  //   observable.subscribe((d) => {
+  //     cntrl.fieldValue = d;
+  //     console.log(d);
+  //   })
+  // }
+  // readFile(file: File, subscriber: Subscriber<any>) {
+  //   const filereader = new FileReader();
+  //   filereader.readAsDataURL(file);
+  //   filereader.onload = () => {
+  //     subscriber.next(filereader.result);
+  //     subscriber.complete()
+  //   };
+  //   filereader.onerror = (error) => {
+  //     subscriber.error(error);
+  //     subscriber.complete();
+  //   }
+
   }
 
   onFilesUpload(event: any, id: any) {

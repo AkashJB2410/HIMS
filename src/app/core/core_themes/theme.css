@@ -1747,7 +1747,7 @@ body {
   padding-top: 10px;
   height: 58px;
   width: 171px;
-  margin:auto ;
+  margin: auto;
   margin-bottom: 1rem;
   background-image: url('../../../assets/core_assets/captcha-bg.png');
   text-align: center;
@@ -2347,9 +2347,7 @@ body {
   padding: 0.25rem 0 !important;
 }
 
-.p-card .p-card-body {
-  padding: 0.25rem !important;
-}
+
 
 /* ::-webkit-scrollbar {
   width: 5px;
@@ -2389,24 +2387,20 @@ body {
 
 }
 
-.togglefix {
-  height: 22px;
-  cursor: pointer;
-  margin-left: 19em;
-}
-
 .p-card .p-card-content {
   padding: 0.25rem 0 !important;
 }
 
 .p-card .p-card-body {
-  padding: 0.25rem !important;
+  padding: 1rem !important;
   margin: 2px;
 }
+
 .homepageCss {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
 .labelcss {
   text-align: center;
   color: white;
@@ -2415,21 +2409,26 @@ body {
   margin-right: 12px;
 
 }
+
 .imgcenter {
   display: flex;
   justify-content: center;
 }
 
-.scroll{
+.scroll {
   height: 85vh;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
-.cardDesign{
+
+.cardDesign {
   height: 20px !important;
 }
-.verticalCardImage{
+
+.verticalCardImage {
   margin-right: 15px;
 }
+
 .fixed-bottom {
   position: fixed;
   right: 0;
@@ -2437,46 +2436,76 @@ body {
   left: 0;
   z-index: 1030;
 }
-.cardHeight{
-  height:400px;
-}
-/*--------------------------*/
-.card-scroll{
-overflow-y:scroll;
+
+.cardHeight {
+  height: 400px;
 }
 
-
-.card-scroll::-webkit-scrollbar {
-  width: 5px;
+.Activebutton {
+  height: 18px;
+  width: 18px;
+  margin-left: 5px;
 }
 
-.card-scroll::-webkit-scrollbar-thumb {
-  background: #CD9C1D;
-  border-radius: 5px;
-  height: 40px;
+.p-sidebar .p-sidebar-header {
+  padding: 0rem !important;
+}
+
+.spacer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.contextMenus {
+  padding: 5px 5px;
+  cursor: pointer;
+}
+
+.contextMenus:hover {
+  background-color: #C7E3FF;
 }
 
 .card-scroll::-webkit-scrollbar-thumb:hover {
   background: #e7af21;
   border-radius: 5px;
 }
+
 .design:hover {
   transform: scale(1.1);
   width: 90%;
   margin: auto;
-  background-color: #374476!important;
+  background-color: #374476 !important;
   color: white;
 }
-.cardsizes{
-  margin: auto;
-  }
- 
-  .verticalCards {
-    margin-left: 10px!important;
-    margin-right: 10px!important;
-    border: 2px solid #374476!important;
 
-  }
-  .p-card .p-card-body{
-    padding: 1.25rem !important;
-  }
+.cardsizes {
+  margin: auto;
+}
+
+.verticalCards {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  border: 2px solid #374476 !important;
+
+}
+
+.contextMenusImgs {
+  margin-right: 10px;
+}
+
+.p-divider.p-divider-horizontal {
+  margin: 4px !important;
+}
+
+/*---------------login page css-------------------*/
+.p-badge {
+  background: #e53b3b !important;
+  color: #ffffff;
+  min-width: 1rem !important;
+  height: 1rem !important;
+  border-radius: 20px;
+  line-height: 1rem !important;
+  font-size: 8px !important
+}

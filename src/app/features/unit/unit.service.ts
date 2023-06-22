@@ -23,7 +23,14 @@ export class UnitService {
     const url = "http://localhost:8082/api/v1/allMstCountry";
     return this.http.get<any>(url);
   }
-
+  GetAllStateData() {
+    const url = "http://localhost:8082/api/v1/allMstState";
+    return this.http.get<any>(url);
+  }
+  GetAllCityData() {
+    const url = "http://localhost:8082/api/v1/allMstCity";
+    return this.http.get<any>(url);
+  }
   GetAllClusterData() {
     const url = "http://localhost:8081/api/v1/allMstCluster";
     return this.http.get<any>(url);
@@ -36,17 +43,44 @@ export class UnitService {
 
   updateUnitData(data: any) {
     const param = {      
-      "actionId":data.actionModuleIdInput,
-      "actionModuleName":data.actionModuleNameInput,
+      "unitId": data.unitId,
+      "unitName": data.unitName,
+      "unitpostfix": data.unitpostfix,
+      "unitcenter": data.unitcenter,
+      "unitAddress": data.unitAddress,
+      "unitEmail": data.unitEmail,
+      "unitMobile": data.unitMobile,
+      "unitPhone": data.unitPhone,
+      "unitContactPerson": data.unitContactPerson,
+      "mstOrg": data.mstOrg,
+      "unitCode": data.unitCode,
+      "unitClinicContactNo": data.unitClinicContactNo,
+      "unitPharmacyLicenseNo": data.unitPharmacyLicenseNo,
+      "unitPharmacyStoreName": data.unitPharmacyStoreName,
+      "unitPharmacyGstNo": data.unitPharmacyGstNo,
+      "unitClinicRegistrationNo": data.unitClinicRegistrationNo,
+      "unitShopAndEstablishmentNo": data.unitShopAndEstablishmentNo,
+      "unitTradeNo": data.unitTradeNo,
+      "unitServer": data.unitServer,
+      "unitDatabase": data.unitDatabase,
+      "unitFaxNo": data.unitFaxNo,
+      "unitWebSite": data.unitWebSite,
+      "countryId": data.countryId,
+      "countryName": data.countryName,
+      "cityId": data.cityId,
+      "cityName": data.cityName,
+      "stateId": data.stateId,
+      "stateName": data.stateName,
+      "unitClusterId": data.unitClusterId,
+      "unitAddressZip": data.unitAddressZip,
+      "unitAddressArea": data.unitAddressArea,
+      "unitXHipId": data.unitXHipId,
     };
-    console.log(param);
-    
-    const url = "http://localhost:8081/api/v1/updateMstUnit/"+data.actionModuleIdInput;
+    const url = "http://localhost:8081/api/v1/updateMstUnit/"+data.unitId;
     return this.http.put<any>(url, param);
   }
 
   saveUnitData(data: any): Observable<any> {
-    console.log("save data"+ data);
     const param = {
       "actionModuleName":data.actionModuleNameInput,     
     };
@@ -54,18 +88,16 @@ export class UnitService {
     return this.PostCall(url, param);
   }
 
-  deleteUnitData(actionId: any) {
-    const url = "http://localhost:8081/api/v1/deleteMstUnit/" + actionId;
-    console.log(actionId);
+  deleteUnitData(unitId: any) {
+    const url = "http://localhost:8081/api/v1/deleteMstUnit/" + unitId;
     return this.http.delete<any>(url);    
   }
 
   isActiveData(data: any) {
     const param={
-      "actionModuleId":data.actionModuleId
+      "unitId":data.unitId
     }
-    const url = "http://localhost:8081/api/v1/reactiveMstUnit/" + data.actionModuleId;
-    console.log(data.actionModuleId);
+    const url = "http://localhost:8081/api/v1/reactiveMstUnit/" + data.unitId;
     return this.PostCall(url,param);  
   }
 }
