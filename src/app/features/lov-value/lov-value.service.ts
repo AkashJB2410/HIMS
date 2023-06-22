@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LovValueService  {
+export class LovValueService {
 
   constructor(private http: HttpClient) { }
 
@@ -24,48 +24,42 @@ export class LovValueService  {
   }
   updateLovValueData(data: any) {
     const param = {
-      "groupId":data.groupId,
-      "icon": data.icon,
-      "lable": data.lable,
-      "routerLink": data.routerLink,
-      "sequence": data.sequence   ,
-      "mstModule": {
-        "moduleId": data.selectmstModule,
+      "description": data.description,
+      "lovListId": data.lovlistId,
+      "mstLovType": {
+        "lovTypeId": data.selectlovType,
       },
+      "typeOfField": data.typeOfField,
+      "value": data.value,
     };
-    console.log(param);
-
-    const url = "http://localhost:8081/api/v1/updatedMstGroup/" + data.groupId;
+    const url = "http://localhost:8081/api/v1/updateMstLovList/" + data.lovlistId;
     return this.http.put<any>(url, param);
   }
 
   saveLovValueData(data: any): Observable<any> {
-    console.log("save data" + data);
     const param = {
-      "icon": data.icon,
-      "mstModule": {
-        "moduleId": data.selectmstModule,
+      "description": data.description,
+      "lovListId": data.lovlistId,
+      "mstLovType": {
+        "lovTypeId": data.selectlovType,
       },
-      "lable": data.lable,
-      "routerLink": data.routerLink,
-      "sequence": data.sequence
+      "typeOfField": data.typeOfField,
+      "value": data.value,
     };
-    const url = "http://localhost:8081/api/v1/addMstGroup";
+    const url = "http://localhost:8081/api/v1/addMstLovList";
     return this.PostCall(url, param);
   }
 
-  deleteLovValueData(groupId: any) {
-    const url = "http://localhost:8081/api/v1/deletedMstGroup/" + groupId;
-    console.log(groupId);
+  deleteLovValueData(lovListId: any) {
+    const url = "http://localhost:8081/api/v1/deleteMstLovList/" + lovListId;
     return this.http.delete<any>(url);
   }
-  
+
   isActiveData(data: any) {
     const param = {
-      "groupId": data.groupId
+      "lovListId": data.lovListId
     }
-    const url = "http://localhost:8081/api/v1/reActive/" + data.groupId;
-    console.log(data.groupId);
+    const url = "http://localhost:8081/api/v1/reactiveMstLovList/" + data.lovListId;
     return this.PostCall(url, param);
   }
 }

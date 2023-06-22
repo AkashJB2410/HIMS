@@ -1,17 +1,17 @@
 <div class="row">
-   
-        <div class={{tabularData.listClass}}>
-            <p-card>
-            <ul (click)="render(list)" class="verticalTabular" style="cursor: pointer;" (click)="setActive(list)" *ngFor="let list of tabularData.tabular">
-                <p [class.verticaltab]="list === activeState" >{{list.label}}</p>
-            </ul>
-        </p-card>
+    <div class={{tabularData.listClass}}>
+        <div class="cardDesign" *ngFor="let list of tabularData.tabular" (click)="setActive(list)">
+                <ul (click)="render(list)" class="verticalTabular ulDesign"   style="cursor: pointer;">
+                    <p [class.verticaltab]="list === activeState" class="design"> <img src="{{list.image}}"
+                            class="{{list.imgCss}}"> {{list.label}} </p>
+                </ul>
         </div>
-        <div class={{tabularData.cardClass}}>
-            <p-card class="verticalCards" header="card" >
-            <ng-content></ng-content>
-        </p-card>
+    </div>
+    <div class={{tabularData.cardClass}}>
+        <div class="cardDesign">
+            <p-card class="verticalCards card" header="card">
+                <ng-content></ng-content>
+           </p-card>
         </div>
-    
-    
+    </div>
 </div>

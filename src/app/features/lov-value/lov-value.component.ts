@@ -65,9 +65,9 @@ export class LovValueComponent implements OnInit {
       e.forEach((data:any) => {
         if(data.is_Active!=false){
         let obj ={
-          "groupId": data.groupId,
+          "lovListId": data.lovListId,
         }
-        this.deleteLovValue(obj.groupId);
+        this.deleteLovValue(obj.lovListId);
       } else{
         this.messageService.add({
           severity: 'error',
@@ -112,7 +112,7 @@ export class LovValueComponent implements OnInit {
 
   confirmAction(e: any) {
     if(e != false){
-    this.deleteLovValue(e.groupId);
+    this.deleteLovValue(e.lovListId);
     this.messageService.add({
       severity: 'success',
       summary: 'Message form User component',
@@ -131,12 +131,12 @@ export class LovValueComponent implements OnInit {
       res.forEach((e: any) => {
         let obj = {
           "lovListId": e.lovListId,
+          "lovTypeId": e.mstLovType.lovTypeId,
           "value": e.value,
-          "description": e.description,
           "typeOfField": e.typeOfField,
-          "mstLovType": e.mstLovType.lovTypeId,
+          "description": e.description,
+          "lovTypeName": e.mstLovType.name,
           "is_Active": e.is_Active,
-          "mstLovType_name": e.mstLovType.name,
         }
         this.LOVData.push(obj);
       })
@@ -179,7 +179,7 @@ export class LovValueComponent implements OnInit {
         this.http.GetAllLovTypeData().subscribe(item => {
           item.forEach((e: any) => {
             let obj = {
-              "name": e.value,
+              "name": e.name,
               "code": e.lovTypeId
             }
             data.values.push(obj);

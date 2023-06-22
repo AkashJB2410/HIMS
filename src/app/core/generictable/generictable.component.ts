@@ -4,6 +4,7 @@ import { data } from '../shared/objects/data';
 import * as XLSX from 'xlsx';
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-generictable',
@@ -11,6 +12,7 @@ import "jspdf-autotable";
 })
 
 export class GenerictableComponent implements OnInit {
+  checked:true
   status: any = false;
   rowObject: any = []
   exportColumns: any;
@@ -41,7 +43,7 @@ export class GenerictableComponent implements OnInit {
   @Output() onRowClickData = new EventEmitter<string>();
   @Output() isActive = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(private toast: MessageService) { }
 
   ngOnInit() {
     if (this.tableData == undefined)
@@ -93,6 +95,7 @@ export class GenerictableComponent implements OnInit {
   }
   
   editProduct(row: any) {
+    this.toast.add({ severity: 'warn', summary: 'Warn', detail: 'Message Content' });
     this.rowData = row
     this.visibleSidebar = true;
     this.onEdit.emit(this.rowData);

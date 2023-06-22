@@ -7,24 +7,21 @@ import * as myConstants from "../objects/constants";
   providedIn: 'root'
 })
 export class SessionService {
-  
   email="raghvendrapala839@gmail.com";
   constructor(private http: HttpClient) { }
-
-  PostCall(url: any, param: any): Observable<any> {
-    const headers = new HttpHeaders().set('Content-type', 'application/json');
-    return this.http.post<any>(url, param, { headers })
-  }
 
   orgData(){
     this.email
     const url=myConstants.LOCALHOSTURL +"api/v1/organizationData?emailId="+this.email;
     return this.http.get<any>(url);
   }
+  
+  headers = new HttpHeaders().set('Content-type', 'application/json');
 
   Logincheck(obj: any): Observable<any> {
     const url = myConstants.LOCALHOSTURL + "api/v1/login";
-    return this.PostCall(url, obj);
+    const headers = new HttpHeaders().set('Content-type', 'application/json');
+    return this.http.post<any>(url, obj, { headers })
   }
 
   GetAllCollectionData() {
@@ -32,38 +29,36 @@ export class SessionService {
     return this.http.get<any>(url);
   }
 
-  verifyEmailId(emailId: any): Observable<any> {
-    if (emailId.charAt(0) == '+') {
-      const param = {
-        "mobileNo": emailId
+  verifyEmailId(data: any): Observable<any> {
+    var param = {};
+    if (data.emailId != '') {
+      param = {
+        "emailId": data.emailId
       };
-      const url = myConstants.LOCALHOSTURL + "api/v1/verify";
-      return this.PostCall(url, param);
-    }
-    else {
-      const param = {
-        "emailId": emailId
+    } else {
+      param = {
+        "mobileNo": data.mobileNo
       };
-      const url = myConstants.LOCALHOSTURL + "api/v1/verify";
-      return this.PostCall(url, param);
     }
+    const url = myConstants.LOCALHOSTURL + "api/v1/verify";
+    const headers = new HttpHeaders().set('Content-type', 'application/json');
+    return this.http.post<any>(url, param, { headers })
   }
 
-  sendOTP(emailId: any): Observable<any> {
-    if (emailId.charAt(0) == '+') {
-      const param = {
-        "mobileNo": emailId
+  sendOTP(data: any): Observable<any> {
+    var param = {};
+    if (data.emailId != '') {
+      param = {
+        "emailId": data.emailId
       };
-      const url = myConstants.LOCALHOSTURL + "api/v1/sendOTP";
-      return this.PostCall(url, param);
-    }
-    else {
-      const param = {
-        "emailId": emailId
+    } else {
+      param = {
+        "mobileNo": data.mobileNo
       };
-      const url = myConstants.LOCALHOSTURL + "api/v1/sendOTP";
-      return this.PostCall(url, param);
     }
+    const url = myConstants.LOCALHOSTURL + "api/v1/sendOTP";
+    const headers = new HttpHeaders().set('Content-type', 'application/json');
+    return this.http.post<any>(url, param, { headers })
   }
 
   verifyOTP(otp: any, emailId: any): Observable<any> {
@@ -73,7 +68,8 @@ export class SessionService {
         "otp": otp
       };
       const url = myConstants.LOCALHOSTURL + "api/v1/verifyOTP";
-      return this.PostCall(url, param);
+      const headers = new HttpHeaders().set('Content-type', 'application/json');
+      return this.http.post<any>(url, param, { headers })
     }
     else {
       const param = {
@@ -81,10 +77,11 @@ export class SessionService {
         "otp": otp
       };
       const url = myConstants.LOCALHOSTURL + "api/v1/verifyOTP";
-      return this.PostCall(url, param);
+      const headers = new HttpHeaders().set('Content-type', 'application/json');
+      return this.http.post<any>(url, param, { headers })
     }
   }
-  
+
   updatePassword(emailId: any, password: any): Observable<any> {
     if (emailId.charAt(0) == '+') {
       const param = {

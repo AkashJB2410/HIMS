@@ -16,12 +16,14 @@ export class MoreandlessComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log()
-    if (typeof this.text == 'string') {
-      this.num = true;
-    }else{
-      this.num = false;
+    if (this.text != null) {
+      if (typeof this.text == 'string') {
+        this.num = true;
+      } else {
+        this.num = false;
+      }
+    } else {
+      this.text = " ";
     }
   }
-
 }

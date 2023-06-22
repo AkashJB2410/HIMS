@@ -1,0 +1,14 @@
+{
+    "itemsList": [
+        {
+            "label": "Adminitration",
+            "icon": "",
+            "routerLink": ""
+        },
+        {
+            "label": "Group Module",
+            "icon": "",
+            "routerLink": "/master-page/group-module"
+        }
+    ]
+}

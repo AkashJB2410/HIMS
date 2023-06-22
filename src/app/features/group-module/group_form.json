@@ -1,7 +1,7 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Unit",
+        "formTitle": "Group Form",
         "formName": "Form1",
         "formType": "edit",
         "sidebar":"p-sidebar-sm",

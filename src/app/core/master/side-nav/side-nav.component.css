@@ -41,6 +41,9 @@ body {
     width: 100%;
     align-items: stretch;
     perspective: 1500px;
+    position: relative;
+    top: 0;
+    height: 100vh;
 }
 
 .bg-custom-1 {
@@ -220,6 +223,7 @@ a.article :hover {
     transition: 0.4s;
     text-align: center;
 }
+
 /* .darSideBar:hover{
     width:270px;
     overflow: visible;
@@ -441,6 +445,7 @@ li a.childMenu {
     color: #CD9C1D !important;
 
 }
+
 li a.parentMenu {
     background-color: #CD9C1D;
     border-radius: 4px;
@@ -453,6 +458,7 @@ li a.subchildMenu {
     border-radius: 4px;
 
 }
+
 .downarrow {
     margin-left: 80px !important;
 }
@@ -462,21 +468,20 @@ li a.subchildMenu {
     bottom: 60px;
     left: 0;
 }
-.subchildMargin{
+
+.subchildMargin {
     margin-left: 10px;
     margin-right: 20px;
     margin-bottom: 5px;
- 
-}
 
+}
+/* 
 .inboxContainer {
     position: sticky;
-    /* overflow-y: scroll; */
-    /* height: 100%; */
     overflow-x: hidden;
-}
+} */
 
-.sidenavLogo{
+.sidenavLogo {
     width: 260px;
     height: 80px;
     margin-top: 1rem;
@@ -484,18 +489,22 @@ li a.subchildMenu {
     justify-content: center;
     align-items: center;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     width: 5px;
 }
-::-webkit-scrollbar-thumb{
+
+::-webkit-scrollbar-thumb {
     background: #CD9C1D;
     border-radius: 5px;
     height: 50px;
 }
-::-webkit-scrollbar-thumb:hover{
+
+::-webkit-scrollbar-thumb:hover {
     background: #e7af21;
     border-radius: 5px;
 }
+
 .nav .vsm-dropdown::before {
     content: '';
     height: 100%;
@@ -507,6 +516,7 @@ li a.subchildMenu {
     /* top: 0; */
     border-radius: 15px;
 }
+
 .nav .vsm-dropdown::before {
     content: '';
     height: 100%;
@@ -518,13 +528,15 @@ li a.subchildMenu {
     /* top: 0; */
     border-radius: 15px;
 }
+
 .vsm-dropdown {
     position: relative;
 }
-#sidebar_menu li a:hover{
-    background-color: #CD9C1D!important;
-    color: white!important;
+
+#sidebar_menu li a:hover {
+    background-color: #CD9C1D !important;
+    color: white !important;
     border-radius: 4px;
     margin-right: 5px;
     margin-left: 5px;
-}  
+}

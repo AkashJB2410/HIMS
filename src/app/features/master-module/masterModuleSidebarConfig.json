@@ -1,49 +1,25 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Sub Module Form",
+        "formTitle": "Master Module",
         "formName": "Form1",
         "formType": "edit",
+        "sidebar":"p-sidebar-sm",
         "formControls": [
             {
                 "id": 0,
-                "isEditable": false,
+                "isEditable": true,
                 "isVisible": false,
                 "label": "Id",
                 "type": "text",
-                "inputType": "number",
-                "class": "col-md-4  my-1",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
                 "lblclass": "",
                 "valueclass": "input-box",
                 "placeholder": "",
                 "formControlName": "idInput",
                 "mandatoryMessage": "Code is required",
                 "message": "Code is required",                
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Select Master Module",
-                "type": "select",
-                "class": "col-md-12 my-1",
-                "lblclass":"",
-                "valueclass":"input-box",
-                "placeholder": "Select Master Module",
-                "formControlName": "selectInput",
-                "values": [
-                    {
-                        "name": "Status List",
-                        "code": "0"
-                    }
-                ],
-                "message": {
-                    "required": "Status is required.",
-                    "pattern": ""
-                },
                 "validations": {
                     "required": false,
                     "pattern": ""
@@ -62,13 +38,14 @@
                 "formControlName": "labelInput",
                 "message": {
                     "required": "Label is required",
-                    "pattern": "Only Alphabets are Allowed."
+                    "pattern": "Only Alphabets & Numbers are Allowed."
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[a-zA-Z]+$"
+                    "pattern": "^[a-zA-Z _0-9- ]+$"
                 }
             },
+            
             {
                 "isEditable": true,
                 "isVisible": true,
@@ -82,13 +59,14 @@
                 "formControlName": "iconInput",
                 "message": {
                     "required": "Icon name is required",
-                    "pattern": "Only Alphabets and hyphen are Allowed."
+                    "pattern": "Only Alphabets and Numbers are Allowed."
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[a-z\\s-]+$"
+                    "pattern": "^[a-z\\s- 0-9]+$"
                 }
             },
+            
             
             {
                 "isEditable": true,
@@ -103,11 +81,11 @@
                 "formControlName": "routerLinkInput",
                 "message": {
                     "required": "router Link is required",
-                    "pattern": "Numbers and special characters are not allowed."
+                    "pattern": "Only Numbers and Alphabates are allowed."
                 },
                 "validations": {
-                    "required": true,
-                    "pattern": "^[a-z\\s-/]+$"
+                    "required": false,
+                    "pattern": "^[a-z\\s-/ _/0-9]+$"
                 }
             },
             {
@@ -127,17 +105,18 @@
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[0-9]+$"
+                    "pattern": "^[0-9 ]+$"
                 }
             },
+            
             {
                 "isEditable": true,
                 "isVisible": true,
                 "type": "button",
-                "subtype": "reset",
-                "btnLabel": "Back",
-                "class": "col-md-4",
-                "valueclass": "butn-custom-dark-blue ",
+                "subtype": "save",
+                "class": "col-md-4  ",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
                 "icon": "",
                 "isDisabled": false,
                 "formControlName": "",
@@ -150,10 +129,10 @@
                 "isEditable": true,
                 "isVisible": true,
                 "type": "button",
-                "subtype": "save",
+                "subtype": "reset",
+                "btnLabel": "Back",
                 "class": "col-md-4",
-                "valueclass": "butn-custom-dark-blue",
-                "btnLabel": "Save",
+                "valueclass": "butn-custom-wrng",
                 "icon": "",
                 "isDisabled": false,
                 "formControlName": "",

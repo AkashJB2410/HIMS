@@ -2,32 +2,32 @@
     "tableName": "Unit Table",
     "tableHeaders": [
         {
-            "field": "lovlistId",
+            "field": "lovListId",
             "header": "ID",
             "iseditable": false,
             "class": "text-center"
         },
         {
-            "field": "selectlovType",
-            "header": "LOV Type ID",
+            "field": "lovTypeName",
+            "header": "LOV Type Name",
             "iseditable": false,
             "class": "text-center"
         },
         {
-            "field": "description",
-            "header": "Description",
+            "field": "value",
+            "header": "Value",
             "iseditable": false,
             "class": ""
         },
         {
-            "field": "typeoffield",
+            "field": "typeOfField",
             "header": "Type Of Field",
             "iseditable": false,
             "class": ""
         },
         {
-            "field": "value",
-            "header": "Value",
+            "field": "description",
+            "header": "Description",
             "iseditable": false,
             "class": ""
         },
@@ -44,15 +44,15 @@
             "header": "ID"
         },
         {
-            "field": "selectlovType",
-            "header": "LOV Type ID"
+            "field": "lovTypeName",
+            "header": "LOV Type Name"
         },
         {
             "field": "description",
             "header": "Description"
         },
         {
-            "field": "typeoffield",
+            "field": "typeOfField",
             "header": "Type Of Field"
         },
         {
@@ -66,8 +66,8 @@
     ],
     "globalFilter": [
         "lovlistId",
-        "selectlovType",
-        "typeoffield",
+        "lovTypeId",
+        "typeOfField",
         "value",
         "is_Active"
     ],

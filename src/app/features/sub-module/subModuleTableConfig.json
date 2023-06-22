@@ -1,0 +1,104 @@
+{
+    "tableName": "SubModule Table",
+    "tableHeaders": [
+        
+        {
+            "field": "mstLabel",
+            "header": "MstrModule",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "groupLabel",
+            "header": "GrpModule",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "label",
+            "header": "SubModule",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "icon",
+            "header": "Icon",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "routerLink",
+            "header": "RouterLink",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "SubModuleSequence",
+            "header": "Sequence",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "is_Active",
+            "header": "isActive",
+            "iseditable": false,
+            "class": ""
+        }
+    ],
+    "PdfHeaders": [
+        {
+            "field": "mstLabel",
+            "header": "Master Module"
+        },
+        {
+            "field": "groupLabel",
+            "header": "Group Module"
+        },
+        {
+            "field": "label",
+            "header": "Label"
+        },
+        {
+            "field": "icon",
+            "header": "Icon"
+        },
+        {
+            "field": "routerLink",
+            "header": "Router Link"
+        },
+        {
+            "field": "SubModuleSequence",
+            "header": "Sequence"
+        }
+    ],
+    "globalFilter": [
+        "mstLabel",
+        "icon",
+        "label",
+        "routerLink",
+        "SubModuleSequence",
+        "groupLabel"
+    ],
+    "rows": 10,
+    "showCurrentPageReport": true,
+    "rowsPerPageOptions": [
+        10,
+        25,
+        50
+    ],
+    "paginator": true,
+    "rowHover": true,
+    "loading": false,
+    "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox": true,
+    "resizableColumns": true,
+    "isActions": [
+        "Edit",
+        "Delete",
+        "isActive"
+    ],
+    "editicon": "../../../assets/icons/Group 1823.png",
+    "isVisible": false,
+    "buttonlbl": "Add SubModule",
+    "textLength": 16
+}

@@ -1,0 +1,16 @@
+<p-breadcrumb [model]="breadcrumb.itemsList" ></p-breadcrumb>
+<h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Sub Department</h3>
+<app-super-grid
+    *ngIf="data"
+    [configurations]="configurations"
+    [tableData]="data"
+    [tableConfig] = "config"
+    [sidebarJSON]="sidebar_Update_Input"
+    (sideBarEvent)="sidebarData($event)"
+    (confirmAction)="confirmAction($event)"
+    (onAdd)="saveDepartment($event)"
+    (onEdit)="editDepartment($event)"
+    (isActive)="isActive($event)"
+    (Bulkdelete)="BulkDeleteRow($event)" 
+></app-super-grid>
+<p-toast></p-toast>

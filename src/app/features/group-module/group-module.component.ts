@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import groupForm from './group_form.json';
 import groupTable from './group_TableConfig.json';
+import Group_breadcrumb from './Group_breadcrumb.json';
 import { GroupModuleService } from './group-module.service';
 import { MessageService } from 'primeng/api';
 @Component({
@@ -12,6 +13,7 @@ export class GroupModuleComponent implements OnInit {
   tableConfig: any;
   visibleSidebar: boolean = true;
   groupFormData: any = groupForm;
+  Group_breadcrumb=Group_breadcrumb
   configurations: any;
   data: any;
   formdata: any;
@@ -93,14 +95,14 @@ export class GroupModuleComponent implements OnInit {
         this.messageService.add({
           severity: 'success',
           summary: 'success',
-          detail: 'Data updated successfull.',
+          detail: 'Data updated successfully.',
         });
       } else {
         this.submitGroup(e);
         this.messageService.add({
           severity: 'success',
           summary: 'success',
-          detail: 'Data save successfull.',
+          detail: 'Data saved successfully.',
         });
       }
     }
