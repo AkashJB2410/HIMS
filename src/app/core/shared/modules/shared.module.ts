@@ -77,6 +77,8 @@ import { VerticalTabularComponent } from '../../vertical-tabular/vertical-tabula
 import {CascadeSelectModule} from 'primeng/cascadeselect';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import { HomePageComponent } from 'src/app/core/home-page/home-page.component';
+import {BadgeModule} from 'primeng/badge';
+
 @NgModule({
     declarations: [
         ConfirmBoxComponent,
@@ -159,7 +161,8 @@ import { HomePageComponent } from 'src/app/core/home-page/home-page.component';
         PickListModule,
         BreadcrumbModule,
         CascadeSelectModule,
-        InputSwitchModule
+        InputSwitchModule,
+        BadgeModule
     ],
     exports: [
         //============= Core Components =============
@@ -238,7 +241,8 @@ import { HomePageComponent } from 'src/app/core/home-page/home-page.component';
         TabMenuModule,
         PickListModule,
         BreadcrumbModule,
-        CascadeSelectModule
+        CascadeSelectModule,
+        BadgeModule
     ],
     providers: [
         MessageService,

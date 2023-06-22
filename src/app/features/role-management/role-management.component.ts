@@ -3,6 +3,7 @@ import { MessageService, PrimeNGConfig } from 'primeng/api';
 import { RoleManagementService } from './role-management.service';
 import * as role_table_config from './role_table_config.json';
 import roleData from './role.json';
+import role_breadcrumb from './role-breadcrumb.json'
 
 @Component({
   selector: 'app-role-management',
@@ -23,6 +24,7 @@ export class RoleManagementComponent implements OnInit {
   isdataReady = false;
   sidebarJSON: any = roleData;
   saveMethod: boolean = false;
+  role_breadcrumb =role_breadcrumb;
   constructor(private messageService: MessageService, private http: RoleManagementService) { }
 
   ngOnInit(): void {

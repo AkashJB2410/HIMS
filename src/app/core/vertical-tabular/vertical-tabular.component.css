@@ -1,27 +1,28 @@
-ul p.verticaltab {
-    background-color: #374476;;
+.verticaltab {
+    background-color: #374476;
     color: white;
     padding: 10px;
     border-radius: 4px;
-    background-image: url("/assets/verticaltabyellow.png") !important;
+    background-image: url("/assets/core_assets/verticalCard.png");
     background-repeat: no-repeat;
     background-position: left 0.75rem center;
-
 }
-.design{
-    margin-top: 25px;
-    border: red;
-    margin-bottom: 1rem;
-    background-color: #DEDEDE;
+
+.active{
+    background-color:  #374476 !important;
+    color: white;
     padding: 10px;
+    border-radius: 4px;
+    background-image: url("/assets/core_assets/verticaltabyellow.png") !important;
+    background-repeat: no-repeat;
+    background-position: left 0.75rem center;
+}
+
+.design {
+    border: red;
+    background-color: #DEDEDE;
+    padding: 9px;
     border-radius: 1px;
     height: 40px;
+    list-style-type: none;
 }
-
-::ng-deep.card{
-    margin: 25px;
-    padding: 0px !important;
-  }
-  ::ng-deep.ulDesign{
-    padding: 0px;
-  }

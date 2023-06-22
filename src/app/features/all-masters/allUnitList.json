@@ -1,0 +1,123 @@
+{
+  "card": [
+    {
+    "label": "Action Button",
+    "routerLink": "/master-page/all-masters/action-button",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+  {
+    "label": "Action Module",
+    "routerLink": "/master-page/all-masters/action-module",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+   {
+    "label": "Action Role",
+    "routerLink": "/master-page/all-masters/action-role",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  }, 
+  {
+    "label": "Action SubModule",
+    "routerLink": "/master-page/all-masters/action-sub-module",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+   {
+    "label": "Action User Role",
+    "routerLink": "/master-page/all-masters/bank-master",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+   {
+    "label": "Application Configuration",
+    "routerLink": "/master-page/all-masters/application-config",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+   {
+    "label": "Bank Branch Master",
+    "routerLink": "/master-page/all-masters/bank-branch-master",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+  {
+    "label": "Bank Master",
+    "routerLink": "/master-page/all-masters/bank-master",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+   {
+    "label": "Cluster",
+    "routerLink": "/master-page/all-masters/bank-master",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  }, 
+  {
+    "label": "Department",
+    "routerLink": "/master-page/all-masters/department",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+   {
+    "label": "Designation",
+    "routerLink": "/master-page/all-masters/employee-status",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+   {
+    "label": "Employment Status",
+    "routerLink": "/master-page/all-masters/employee-status",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+   {
+    "label": "Import Data",
+    "routerLink": "/master-page/all-masters/bank-master",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+  {
+    "label": "Manage Staff",
+    "routerLink": "/master-page/all-masters/bank-master",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+   {
+    "label": "Organization",
+    "routerLink": "/master-page/all-masters/organization",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+   {
+    "label": "Police Station",
+    "routerLink": "/master-page/all-masters/bank-master",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+   {
+    "label": "Role",
+    "routerLink": "/master-page/all-masters/role-management",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  }, 
+  {
+    "label": "Social Status",
+    "routerLink": "/master-page/all-masters/bank-master",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  }, 
+  {
+    "label": "Speciality",
+    "routerLink": "/master-page/all-masters/bank-master",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+  {
+    "label": "Staff",
+    "routerLink": "/master-page/all-masters/bank-master",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+  {
+    "label": "Sub Department",
+    "routerLink": "/master-page/all-masters/sub-department",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+    
+  {
+    "label": "Super Speciality",
+    "routerLink": "/master-page/all-masters/bank-master",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+   {
+    "label": "Unit",
+    "routerLink": "/master-page/all-masters/unit",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  }
+
+
+]
+
+}

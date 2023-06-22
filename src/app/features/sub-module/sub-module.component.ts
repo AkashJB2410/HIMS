@@ -168,19 +168,22 @@ export class SubModuleComponent implements OnInit {
     this.http.GetAllSubModuleData().subscribe((res) => {
       res.forEach((e: any) => {
         let obj = {
-          submoduleId: e.subModuleId,
-          label: e.label,
-          icon: e.icon,
-          routerLink: e.routerLink,
-          SubModuleSequence: e.sequence,
+          
 
-          mstLabel: e.mstGroup.mstModule.label,
-          mstId: e.mstGroup.mstModule.moduleId,
+          "submoduleId": e.subModuleId,
+          "label": e.label,
+          "icon": e.icon,
+          "routerLink": e.routerLink,
+          "SubModuleSequence": e.sequence,
 
-          groupLabel: e.mstGroup.lable,
-          groupId: e.mstGroup.groupId,
+          
+          "mstId": e.mstGroup.mstModule.moduleId,
+          "mstLabel": e.mstGroup.mstModule.label,
 
-          is_Active: e.is_Active,
+          "groupId": e.mstGroup.groupId,
+          "groupLabel": e.mstGroup.lable,
+
+          "is_Active": e.is_Active,
         };
         this.gridData.push(obj);
         console.log('objet ==>', obj);

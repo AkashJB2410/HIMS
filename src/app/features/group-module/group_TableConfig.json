@@ -3,7 +3,7 @@
     "tableHeaders": [
         {
             "field": "groupId",
-            "header": "GroupID",
+            "header": "ID",
             "iseditable": false,
             "class": "text-center"
         },
@@ -47,7 +47,7 @@
     "PdfHeaders": [
         {
             "field": "groupId",
-            "header": "Group Id"
+            "header": "Id"
         },
         {
             "field": "mstModule_name",
@@ -82,7 +82,7 @@
         "routerlink",
         "is_Active"
     ],
-    "rows": 10,
+    "rows": 50,
     "showCurrentPageReport": true,
     "rowsPerPageOptions": [
         10,

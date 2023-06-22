@@ -2,7 +2,8 @@
     <p-table #dt id="dataTable" [value]="tableData" [resizableColumns]="config.resizableColumns" columnResizeMode="fit"
         [rows]="config.rows" [paginator]="config.paginator" [columns]="selectedColumns" styleClass="{{config.stripped}}"
         [showCurrentPageReport]="config.showCurrentPageReport" [rowsPerPageOptions]="config.rowsPerPageOptions"
-        [loading]="config.loading" [(selection)]="chekboxes" selectionMode="single" [globalFilterFields]="config.globalFilter" [rowHover]="config.rowHover" dataKey="id"
+        [loading]="config.loading" [(selection)]="chekboxes" selectionMode="single"
+        [globalFilterFields]="config.globalFilter" [rowHover]="config.rowHover" dataKey="id"
         currentPageReportTemplate="{first} to {last} of {totalRecords}" (click)="disableContextMenu()"
         oncontextmenu="return false;">
         <ng-template pTemplate="caption">
@@ -15,13 +16,13 @@
                             placeholder="Search keyword" />
                     </span>
                 </div>
-                <div class="item4 mx-1">
-                    <p-multiSelect [options]="colNames" [(ngModel)]="selectedColumns" optionLabel="header"
-                        selectedItemsLabel="{0} columns selected" [style]="{ minWidth: '150px' }"
+                <div class="col-md-1 mx-1">
+                    <p-multiSelect [options]="colNames" pTooltip="Selected Columns" tooltipPosition="top" [(ngModel)]="selectedColumns" optionLabel="header"
+                        selectedItemsLabel="{0} columns selected" [style]="{ minWidth: '50px' }"
                         placeholder="Choose Columns"></p-multiSelect>
                 </div>
                 <div class="item5 mx-1">
-                    <button class="btn butn-sucss me-1 wordwrap"  pRipple (click)="AddNewProduct($event)">
+                    <button class="btn butn-sucss me-1 wordwrap" pRipple (click)="AddNewProduct($event)">
                         <i class="pi pi-plus" style="padding-right: 8px;"></i>{{config.buttonlbl}}</button>
                     <button class="btn butn-wrng me-1" pTooltip="Export To PDF" tooltipPosition="top" pRipple
                         (click)="exportPdf()"><i class="pi pi-file-pdf"></i></button>
@@ -38,7 +39,7 @@
                 <th style="width: 1rem; text-align: center; max-width: 1rem;" *ngIf="config.isCheckbox">
                     <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                 </th>
-                <th style="width : 7rem; padding: 0.25rem 1.0rem;" pSortableColumn="{{col.field}}"
+                <th style="width : 7rem; padding: 0.25rem 0.25rem;" pSortableColumn="{{col.field}}"
                     *ngFor="let col of columns" pResizableColumn>
                     <div class="flex justify-content-center align-items-center">
                         {{col.header}}
@@ -55,7 +56,7 @@
         </ng-template>
 
         <ng-template pTemplate="body" let-rowData let-columns="columns" let-expanded="expanded">
-            <tr (click)="onRowClick(rowData)" id="chekboxes" (contextmenu)="onrightClick($event)">
+            <tr (click)="onRowClick(rowData)" id="chekboxes" (contextmenu)="onrightClick($event, rowData)">
                 <td *ngIf="config.isCheckbox" style="padding: 0.25rem 0.25rem;width: 1rem; text-align: center;">
                     <p-tableCheckbox [value]="rowData" name="abc" ngDefaultControl
                         [(ngModel)]="chekboxes"></p-tableCheckbox>
@@ -72,7 +73,7 @@
                         </ng-template>
                     </p-cellEditor>
                     <ng-template #normalText>
-                        <!-- {{rowData[col.field]}} -->
+                        <!-- {{rowData[col.field] }} -->
                         <app-moreandless [wordLimit]="config.textLength" [text]="rowData[col.field] "></app-moreandless>
                     </ng-template>
                 </td>
@@ -82,19 +83,19 @@
                     </ng-template>
                 </td> -->
                 <td *ngIf="config.isActions" style="padding: 0.25rem 0.25rem; width: 4rem ; text-align: center;">
-                    <ng-container>   
+                    <ng-container>
                         <button *ngIf="config.isActions.includes('Edit')" pTooltip="Edit" tooltipPosition="left" pButton
                             pRipple icon="pi pi-file-edit " class="p-button-rounded icon-pencil edit-btn "
                             (click)="editProduct(rowData)"></button>
-                        <button *ngIf="config.isActions.includes('Delete')"  pTooltip="Delete" tooltipPosition="left"
+                        <button *ngIf="config.isActions.includes('Delete')" pTooltip="Delete" tooltipPosition="left"
                             pButton pRipple icon="pi pi-trash" class="p-button-rounded icon-delete icon-delete "
                             (click)="ondelete(rowData)"></button>
                         <button *ngIf="config.isActions.includes('Viewer')" pTooltip="Viewer" tooltipPosition="left"
                             pButton pRipple icon="pi pi-window-maximize" style="background-color: black;"
                             routerLink="/dicom-viewer" class="p-button-rounded "></button>
-                        <button *ngIf="config.isActions.includes('isActive')" pTooltip="Active" tooltipPosition="left"
-                            pButton pRipple icon="pi pi-box " class="p-button-rounded icon-pencil edit-btn "
-                            (click)="active(rowData)"></button>           
+                        <a *ngIf="config.isActions.includes('isActive')"><i><img
+                                    src="../../../assets/core_assets/on-button.png" class="Activebutton"
+                                    (click)="active(rowData)" pTooltip="Viewer" tooltipPosition="left"></i></a>
                     </ng-container>
                 </td>
                 <td *ngIf="config.expand" style="text-align: center;">
@@ -127,10 +128,9 @@
 <div *ngIf="contextmenu" style="position: absolute;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);"
     [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}">
     <ul class="nav flex-column" style="background-color: white;
-    width: 100px;
+    width: 250px;
     padding: 7px;">
-        <li>Edit</li>
-        <li>Delete</li>
+        <li class="contextMenus" *ngFor="let list of contextMenus" (click)="rightClick(list)"><img class="contextMenusImgs" [src]="list.img"
+                alt="">{{list.menu}}</li>
     </ul>
 </div>
-<p-toast></p-toast>

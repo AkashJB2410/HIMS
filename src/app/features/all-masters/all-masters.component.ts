@@ -1,6 +1,6 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
 import tabularData from './all-masters.json';
-import allUnit from './allUnit.json';
+import allUnitList from './allUnitList.json';
 import Breadcrumbs from './breadcrumb.json';
 
 
@@ -10,10 +10,11 @@ import Breadcrumbs from './breadcrumb.json';
   styleUrls: ['./all-masters.component.css']
 })
 export class AllMastersComponent implements OnInit, DoCheck {
-  title:any="action";
+
+  title:any="title"
   items:any= Breadcrumbs
   tabularSideData=tabularData;
-  allUnit = allUnit;
+  allUnitList:any =allUnitList;
   allFlag = {
   admiFlag:false,
   disFlag:false,

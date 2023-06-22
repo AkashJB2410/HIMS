@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import table from './bankBranchMasterTableConfig.json';
 import addnew from './bankBranchMasterSidebarConfig.json';
 import { MessageService } from 'primeng/api';
+import bank_branch_master_breadcrumb from './bank-branch-master-breadcrumb.json'
 
 @Component({
   selector: 'app-bank-branch-master',
@@ -66,6 +67,8 @@ export class BankBranchMasterComponent implements OnInit {
   isdataReady = false;
   formData: any;
   branch: any = [];
+  bank_branch_master_breadcrumb = bank_branch_master_breadcrumb;
+
   constructor(
     private messageService: MessageService,
     private http: BankBranchMasterService
@@ -197,6 +200,9 @@ export class BankBranchMasterComponent implements OnInit {
           "bbBankId_name": e.bbBankId.bankName,
         };
         this.branch.push(obj);
+        for (let i = 0; i < this.branch.length; i++) {
+          this.branch[i].srNumber = i + 1;
+        }
       });
       this.data = [...this.branch];
       console.log('data =>', this.data);
