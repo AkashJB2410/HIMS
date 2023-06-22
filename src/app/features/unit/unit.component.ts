@@ -56,7 +56,7 @@ export class UnitComponent implements OnInit {
     console.log('From User Management ==> ', e);
     if (e == 'reset') {
       console.log(e);
-    } else if (e.actionModuleIdInput == true) {
+    } else if (e.unitId == true) {
       console.log(e);
       this.submitUnit(e);
       this.messageService.add({
@@ -76,7 +76,7 @@ export class UnitComponent implements OnInit {
   }
 
   confirmAction(e: any) {
-    this.deleteUnit(e.actionModuleId);
+    this.deleteUnit(e.unitId);
     this.messageService.add({
       severity: 'success',
       summary: 'Message form User component',
@@ -96,24 +96,24 @@ export class UnitComponent implements OnInit {
     });
   }
 
-  updateUnit(actionModuleIdInput: any) {
-    this.http.updateUnitData(actionModuleIdInput).subscribe((data) => {
+  updateUnit(unitId: any) {
+    this.http.updateUnitData(unitId).subscribe((data) => {
       this.data = undefined;
       this.getAllUnit();
       console.log('data' + data);
     });
   }
 
-  deleteUnit(actionModuleIdInput: any) {
-    this.http.deleteUnitData(actionModuleIdInput).subscribe((data) => {
+  deleteUnit(unitId: any) {
+    this.http.deleteUnitData(unitId).subscribe((data) => {
       this.data = undefined;
       this.getAllUnit();
       console.log('data' + data);  
     });
   }
 
-  submitUnit(actionModuleData: any) {
-    this.http.saveUnitData(actionModuleData).subscribe((data) => {
+  submitUnit(unitId: any) {
+    this.http.saveUnitData(unitId).subscribe((data) => {
       this.data = undefined;
       this.getAllUnit();
       console.log('data' + data);
@@ -135,6 +135,38 @@ export class UnitComponent implements OnInit {
             let obj = {
               "name": e.countryName,
               "code": e.countryId
+            }
+            data.values.push(obj);
+          })
+        })
+      }
+      if (data.formControlName === "selectstate") {
+        let defaultObj = {
+          "name": "Select State",
+          "code": "0"
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllCountryData().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.stateName,
+              "code": e.stateId
+            }
+            data.values.push(obj);
+          })
+        })
+      }
+      if (data.formControlName === "selectcity") {
+        let defaultObj = {
+          "name": "Select City",
+          "code": "0"
+        }
+        data.values.push(defaultObj);
+        this.http.GetAllCountryData().subscribe(item => {
+          item.forEach((e: any) => {
+            let obj = {
+              "name": e.cityName,
+              "code": e.cityId
             }
             data.values.push(obj);
           })
