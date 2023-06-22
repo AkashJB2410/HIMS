@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,15 +13,16 @@ export class SideNavComponent implements OnInit {
   open: boolean = true
   collapse: boolean = false
   node: any
-  ariaexpanded:boolean = false;
+  ariaexpanded: boolean = false;
   @Input() toggle: any;
   @Input() masterJSON: any;
+  @Output() notification = new EventEmitter<any>();
   expandCollapse: boolean = true;
   activeStateSubchild: any;
 
   clickEvent() {
     this.status = !this.status;
-    this.ariaexpanded= !this.ariaexpanded
+    this.ariaexpanded = !this.ariaexpanded
     if (this.statusLink) {
       setTimeout(() => {
         this.statusLink = false;
@@ -73,4 +74,7 @@ export class SideNavComponent implements OnInit {
   //     this.arrowShow = false;
   //   } 
   // }
+  notificationEvent(e: any) {
+    this.notification.emit(e)
+  }
 }

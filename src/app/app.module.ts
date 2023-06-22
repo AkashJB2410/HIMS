@@ -136,8 +136,8 @@ import { SubDepartmentComponent } from './features/sub-department/sub-department
 import { UnitComponent } from './features/unit/unit.component';
 import { GroupModuleComponent } from './features/group-module/group-module.component';
 import { ApplicationConfigComponent } from './features/application-config/application-config.component';
+import { LovTypeComponent } from './features/lov-type/lov-type.component';
 import { LovValueComponent } from './features/lov-value/lov-value.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -263,6 +263,7 @@ import { LovValueComponent } from './features/lov-value/lov-value.component';
     UnitComponent,
     GroupModuleComponent,
     ApplicationConfigComponent,
+    LovTypeComponent,
     LovValueComponent
   ],
   imports: [

@@ -1,4 +1,3 @@
-import { TagContentType } from '@angular/compiler';
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { DecryptPipe } from '../../shared/pipes/encrypt-decrypt.pipe';
@@ -132,6 +131,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   profile(e: any) {
   }
+  
   setting(){
     this.router.navigateByUrl('/master-page/settings');
   }

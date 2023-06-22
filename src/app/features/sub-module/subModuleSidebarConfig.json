@@ -25,39 +25,11 @@
                     "pattern": ""
                 }
             },
-            {
-                "isEditable": true,
-                "isVisible": false,
-                "label": "",
-                "type": "dependentdropdown",
-                "class": "col-md-12 ",
-                "lblclass": "custom-label",
-                "valueclass": "",
-                "placeholder": "Select option",
-                "formControlName": "selectInput",
-                "message": {
-                    "required": "State is required",
-                    "pattern": ""
-                },
-                "values": [
-                    {
-                        "label": "masterModule",
-                        "values": []
-                    },
-                    {
-                        "label": "groupModule",
-                        "values": []
-                    }
-                ],
-                "validations": {
-                    "required": true,
-                    "pattern": ""
-                }
-            },
+            
             {
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Label",
+                "label": "SubModule",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
@@ -94,6 +66,26 @@
                     "pattern": "^[a-z\\s-]+$"
                 }
             },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Router Link",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter router Link...",
+                "formControlName": "routerLinkInput",
+                "message": {
+                    "required": "router Link is required",
+                    "pattern": "Numbers and special characters are not allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-z\\s-/ _ 0-9]+$"
+                }
+            },
             
             {
                 "isEditable": true,
@@ -118,23 +110,33 @@
             {
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Router Link",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-12 my-1",
-                "lblclass":"",
-                "valueclass":"input-box",
-                "placeholder": "Enter router Link...",
-                "formControlName": "routerLinkInput",
+                "label": "",
+                "type": "dependentdropdown",
+                "class": "col-md-12 ",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectInput",
                 "message": {
-                    "required": "router Link is required",
-                    "pattern": "Numbers and special characters are not allowed."
+                    "required": "State is required",
+                    "pattern": ""
                 },
+                "values": [
+                    {
+                        "label": "masterModule",
+                        "values": []
+                    },
+                    {
+                        "label": "groupModule",
+                        "values": []
+                    }
+                ],
                 "validations": {
                     "required": true,
-                    "pattern": "^[a-z\\s-/ _ 0-9]+$"
+                    "pattern": ""
                 }
             },
+            
             
             {
                 "isEditable": true,
