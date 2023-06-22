@@ -1,5 +1,5 @@
 {
-    "listClass":"col-md-3 pe-0",
+    "listClass":"col-md-3 pe-0 card-scroll",
     "cardClass":"col-md-9 ps-0",
     "tabular": [
         {

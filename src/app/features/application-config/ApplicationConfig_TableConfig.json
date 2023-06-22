@@ -1,5 +1,5 @@
 {
-    "tableName": "Unit Table",
+    "tableName": "Application Config",
     "tableHeaders": [
         {
             "field": "applicationId",
@@ -70,3 +70,4 @@
     "buttonlbl": "Add Application Config",
     "textLength": 16
 }
+

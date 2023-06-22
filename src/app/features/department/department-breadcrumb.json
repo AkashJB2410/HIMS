@@ -16,9 +16,9 @@
             "routerLink": "/master-page/all-masters"
         },
         {
-            "label": "Sub Department",
+            "label": "Department",
             "icon": "",
-            "routerLink": "/master-page/all-masters/sub-department"
+            "routerLink": "/master-page/all-masters/department"
         }
     ]
 }

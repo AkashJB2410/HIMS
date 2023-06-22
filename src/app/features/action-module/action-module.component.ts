@@ -3,6 +3,7 @@ import table from './actionModuleTableConfig.json';
 import addnew from './actionModuleSidebarConfig.json';
 import { MessageService } from 'primeng/api';
 import { ActionModuleService } from './action-module.service';
+import ActionModule_breadcrumb from "./actionModule-breadcrumb.json";
 @Component({
   selector: 'app-action-module',
   templateUrl: './action-module.component.html',
@@ -30,6 +31,7 @@ export class ActionModuleComponent implements OnInit {
   configurations: any;
   data: any;
   isdataReady = false;
+  ActionModule_breadcrumb =ActionModule_breadcrumb;
   constructor(private messageService: MessageService,private http: ActionModuleService) { }
 
   ngOnInit(): void {

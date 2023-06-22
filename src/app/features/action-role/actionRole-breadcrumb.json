@@ -13,12 +13,12 @@
         {
             "label": "Unit Configuration",
             "icon": "",
-            "routerLink": "/master-page/all-masters"
+            "routerLink":  "/master-page/all-masters"
         },
         {
-            "label": "Sub Department",
+            "label": "Action Role",
             "icon": "",
-            "routerLink": "/master-page/all-masters/sub-department"
+            "routerLink": "/master-page/all-masters/action-role"
         }
     ]
 }
