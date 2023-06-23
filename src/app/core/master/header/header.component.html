@@ -3,7 +3,7 @@
     </div>
     <ul class="navbar-nav">
         <li>
-            <i class="bi bi-bell headerIcon"   pBadge style="font-size: 8px;" value="9" pTooltip="Notifications" tooltipPosition="bottom" (click)="op.toggle($event)"></i>
+            <i class="bi bi-bell headerIcon"   pBadge style="font-size: 8px;" value={{headerData.notification.count}} pTooltip="Notifications" tooltipPosition="bottom" (click)="op.toggle($event)"></i>
             <p-overlayPanel #op [showCloseIcon]="false" [style]="{width: '22rem'}">
                 <div class="flexNotification">
                     <!-- <h4 class="item1">Notifications</h4> -->

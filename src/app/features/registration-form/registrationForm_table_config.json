@@ -33,7 +33,7 @@
     "resizableColumns": true,
     "isActions": ["Edit", "Delete","isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
-    "isVisible":false,
+    "expand":false,
     "buttonlbl":"Registration",
     "textLength":16
 }

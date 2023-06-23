@@ -12,11 +12,10 @@
     (confirmAction)="confirmAction($event)"
     (changeEvents)="changeSelectItem($event)"
     (Bulkdelete)="BulkDeleteRows($event)" 
-    (onAdd)="events($event)" 
-    (onEdit)="events($event)"
     (onAdd)="onAddEdit($event)" 
     (onEdit)="onAddEdit($event)" 
-    (isActive)="isActive($event)">
+    (isActive)="isActive($event)"
+    (rowClickData)="rowClickData($event)">
 
 </app-super-grid>
 <p-toast></p-toast>

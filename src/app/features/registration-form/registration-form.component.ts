@@ -49,6 +49,7 @@ export class RegistrationFormComponent implements OnInit {
     this.getConfigForTable();
   }
 
+  rowClickData(e:any){}
   assignDropDownOptions() {
     this.formData = Object.assign({}, rgistrationData);
     this.formData.form.formControls.forEach((data: any) => {
@@ -497,8 +498,6 @@ export class RegistrationFormComponent implements OnInit {
           "durationType": e.mstDuration.durationType,
 
           "gender_Type": e.mstGender.gender_Type,
-
-
 
           "stateName": e.mstState.stateName,
 
