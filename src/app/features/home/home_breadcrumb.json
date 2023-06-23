@@ -1,0 +1,9 @@
+{
+    "itemsList": [
+        {
+            "label": "Home",
+            "icon": "pi pi-home",
+            "routerLink": "/master-page/home"
+        }
+    ]
+}
