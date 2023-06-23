@@ -52,5 +52,6 @@ export enum FormControlTypes {
     IMAGEUPLOAD = "imageUpload",
     FILESUPLOAD = "filesUpload",
     ICON = "icon",
-    DEPENDENTDROPDOWN = "dependentdropdown"
+    DEPENDENTDROPDOWN = "dependentdropdown",
+    DIVIDER = "divider"
 }
