@@ -1,7 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formTitle": "Add Action Sub Module",
         "formName": "Form1",
         "sidebar": "p-sidebar-sm",
         "formControls": [

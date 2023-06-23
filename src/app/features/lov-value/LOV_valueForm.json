@@ -2,6 +2,8 @@
     "form": {
         "class": "row",
         "formTitle": "LOV Value",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
         "formType": "edit",
         "sidebar":"p-sidebar-sm",

@@ -1,7 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Unit",
+        "formTitle": "Add Unit",
+        "formTitleClass": "Sidebar-title-md",
+        "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
         "formType": "edit",
         "sidebar":"p-sidebar-lg",

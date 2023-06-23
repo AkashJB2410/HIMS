@@ -1,12 +1,8 @@
 {
     "tableName": "Unit Table",
     "tableHeaders": [
-        {
-            "field": "unitId",
-            "header": "Unit Id",
-            "iseditable": false,
-            "class": "text-center"
-        },
+        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":""},
+      
         {
             "field": "unitName",
             "header": "Name",
@@ -99,6 +95,8 @@
         }
     ],
     "PdfHeaders": [
+        {"field": "srNumber","header": "Sr. No"},
+
         {
             "field": "unitId",
             "header": "Unit Id"

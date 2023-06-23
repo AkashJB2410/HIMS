@@ -1,7 +1,7 @@
 {
     "tableName": "Action Role Table",
     "tableHeaders": [
-        {"field": "srNumber","header": "Sr Number","iseditable": false , "class":"text-center"},
+        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":"text-center"},
         {"field": "arRoleId_Name","header": "Role","iseditable": true,"class":""},
         {"field": "arActionModuleMst","header": "Action Module","iseditable": true,"class":""},
         {"field": "arActionSubModuleMst","header": "Action sub Module","iseditable": true,"class":""},
@@ -14,7 +14,7 @@
         {"field": "is_Active","header": "isActive","iseditable": false,"class":""}
     ],
     "PdfHeaders": [
-        {"field": "srNumber","header": "srNumber"},
+        {"field": "srNumber","header": "Sr. No"},
         {"field": "arId","header": "Id"} ,
         {"field": "arRoleId_Name","header": "Role"},
         {"field": "arActionModuleMst","header": "Action Module"},

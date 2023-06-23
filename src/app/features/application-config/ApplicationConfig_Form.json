@@ -1,7 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Unit",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formTitle": "Application configuration",
         "formName": "Form1",
         "formType": "edit",
         "sidebar":"p-sidebar-sm",
