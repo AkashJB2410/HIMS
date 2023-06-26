@@ -132,9 +132,9 @@ const routes: Routes = [
       { path: 'all-masters/application-config', loadChildren: () => import('./../application-config/application-config.module').then( m => m.ApplicationConfigModule)}, 
       { path: 'group-module', loadChildren: () => import('./../group-module/group-module.module').then( m => m.GroupModuleModule)},   
       {path: 'all-masters/lov-type', loadChildren:()=> import('./../lov-type/lov-type.module').then(m=>m.LovTypeModule)} ,
-
-      
       { path: 'all-masters/lov-value', loadChildren: () => import('./../lov-value/lov-value-routing.module').then( m => m.LovValueRoutingModule)},
+      { path: 'configurations', loadChildren: () => import('./../configurations/configurations.module').then(m => m.ConfigurationsModule) },
+      { path: 'settings', loadChildren: () => import('./../settings/settings.module').then(m => m.SettingsModule) },
     ],
     // canActivate: [AuthGuardGuard]
   }];

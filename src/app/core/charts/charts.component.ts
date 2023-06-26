@@ -7,6 +7,7 @@ import { Component, OnInit ,Input} from '@angular/core';
 })
 export class ChartsComponent implements OnInit {
   @Input() chartData: any;
+  toasterData:any
   // chartData:any=chart
   ngOnInit() {
       const documentStyle = getComputedStyle(document.documentElement);
