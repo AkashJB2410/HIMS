@@ -1,6 +1,6 @@
 {
     "loginForm": {
-        "backgroundImg": "assets/medimazefull-light-Theme.png",
+        "backgroundImg": "../../../../assets/Techjivaa-Light-Logo.png",
         "backgroundImgCSS": "img img-responsive  img-fluid logo-img",
         "backgroundColour": "#b6c1c8",
         "classContainer": "container center-card",
@@ -9,7 +9,7 @@
         "logoCSS": "logo text-center",
         "form": {
             "class": "row ",
-            "formTitle": "Log In",
+            "formTitle": "LOGIN SCREEN",
             "titlelblclass": "lbl-center-login",
             "formName": "Form1",
             "isEditabke": "edit",
@@ -55,7 +55,7 @@
                     },
                     "validations": {
                         "required": true,
-                        "pattern": ""
+                        "pattern": "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,6}$"
                     }
                 },
                 {
@@ -116,33 +116,6 @@
                         "required": "Invalid captcha ...!",
                         "pattern": ""
                     },
-                    "validations": {
-                        "required": false,
-                        "pattern": ""
-                    }
-                },
-                {
-                    "isEditable": true,
-                    "isVisible": true,
-                    "transient": false,
-                    "label": "",
-                    "type": "checkbox",
-                    "class": "col-md-12",
-                    "lblclass": "custom-label",
-                    "valueclass": "checkbox-btn-inline ",
-                    "placeholder": "",
-                    "value": "",
-                    "formControlName": "checkbox",
-                    "message": {
-                        "required": "Category is required",
-                        "pattern": ""
-                    },
-                    "values": [
-                        {
-                            "name": "Remember me",
-                            "code": "lsRememberMe"
-                        }
-                    ],
                     "validations": {
                         "required": false,
                         "pattern": ""

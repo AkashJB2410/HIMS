@@ -1,7 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Unit",
+        "formTitle": "Add Unit",
+        "formTitleClass": "Sidebar-title-md",
+        "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
         "formType": "edit",
         "sidebar":"p-sidebar-lg",
@@ -143,11 +145,11 @@
                 "formControlName": "unitPhone",
                 "message": {
                     "required": "phone is required",
-                    "pattern": "^((\\+91-?)|0)?[0-9]{10}$"
+                    "pattern": "hello"
                 },
                 "validations": {
                     "required": true,
-                    "pattern": ""
+                    "pattern": "^((\\+91-?)|0)?[0-9]{10}$"
                 }
             },
             { 
@@ -184,11 +186,11 @@
                 "formControlName": "address",
                 "message": {
                     "required": "Id is required",
-                    "pattern": ""
+                    "pattern": "hello"
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\\D*\\d)[A-Za-z\\d!$%@#£€*?&]{8,}$"
+                    "pattern": ""
                 }
             },
             { 
@@ -205,11 +207,11 @@
                 "mandatoryMessage": "Name is required",
                 "message": {
                     "required": "Name is required",
-                    "pattern": "Numbers are not allowed."
+                    "pattern": "hello"
                 },                
                 "validations": {
-                    "required": true,
-                    "pattern": "^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\\D*\\d)[A-Za-z\\d!$%@#£€*?&]{8,}$"
+                    "required": false,
+                    "pattern": ""
                 }
             }, 
             {
@@ -226,7 +228,7 @@
                 "mandatoryMessage": "Country is required",
                 "message": {
                     "required": "Country is required",
-                    "pattern": ""
+                    "pattern": "hello"
                 }, 
                 "values": [
                     {
@@ -236,7 +238,7 @@
                 ],               
                 "validations": {
                     "required": true,
-                    "pattern": "^[a-zA-Z ]*$"
+                    "pattern": ""
                 }
             },
             { 
@@ -253,7 +255,7 @@
                 "mandatoryMessage": "State is required",
                 "message": {
                     "required": "State is required",
-                    "pattern": "Numbers are not allowed."
+                    "pattern": ""
                 }, 
                 "values": [
                     {
@@ -263,7 +265,7 @@
                 ],               
                 "validations": {
                     "required": true,
-                    "pattern": "^[a-zA-Z ]*$"
+                    "pattern": ""
                 }
             },  
             {
@@ -280,7 +282,7 @@
                 "mandatoryMessage": "City is required",
                 "message": {
                     "required": "City is required",
-                    "pattern": "Numbers are not allowed."
+                    "pattern": ""
                 },  
                 "values": [
                     {
@@ -290,7 +292,7 @@
                 ],              
                 "validations": {
                     "required": true,
-                    "pattern": "^[a-zA-Z ]*$"
+                    "pattern": ""
                 }
             },
             { 
@@ -353,11 +355,11 @@
                 "formControlName": "unitCode",
                 "message": {
                     "required": "Id is required",
-                    "pattern": ""
+                    "pattern": "hello"
                 },
                 "validations": {
                     "required": true,
-                    "pattern": " [A-Za-z0-9_]"
+                    "pattern": ""
                 }
             },
             { 
@@ -374,11 +376,11 @@
                 "mandatoryMessage": "Name is required",
                 "message": {
                     "required": "Name is required",
-                    "pattern": "Numbers are not allowed."
+                    "pattern": "Alphabets are not allowed."
                 },                
                 "validations": {
-                    "required": true,
-                    "pattern": "^((\\+91-?)|0)?[0-9]{10}$"
+                    "required": false,
+                    "pattern": ""
                 }
             },    
             { 

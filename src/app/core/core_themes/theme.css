@@ -452,7 +452,7 @@ body {
   font-size: 0.8rem;
   color: rgba(0, 0, 0, 0.87);
   background: #ffffff;
-  height: 30px !important;
+  height: 35px !important;
   width: 100%;
   /* line-height: 1.8; */
   border: 1px solid rgba(0, 0, 0, 0.38);
@@ -483,7 +483,7 @@ body {
   justify-content: end !important;
   flex-wrap: wrap;
   font-size: 12px !important;
-  padding: 0px -1px !important;
+  padding: 0rem 1rem !important;
 }
 
 .p-paginator .p-paginator-pages .p-paginator-page {
@@ -503,7 +503,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.38);
   transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
   border-radius: 5px !important;
-  height: 30px !important;
+  height: 35px !important;
 }
 
 .p-inputtext {
@@ -1452,11 +1452,8 @@ body {
 
 .lbl-center-login {
   text-align: center;
-  /* color: red; */
-  font-size: 24px;
-  line-height: 30px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  color: red !important;
+  font-size: 14px;
 }
 
 .lbl-center-text {
@@ -1550,7 +1547,7 @@ body {
 
 .input-box {
   display: block;
-  height: 30px;
+  height: 35px;
   cursor: pointer;
   border: 0px solid #EEEEEE;
   border-radius: 5px;
@@ -2015,9 +2012,10 @@ body {
 
 .p-checkbox .p-checkbox-box {
   border: 1px solid #757575 !important;
-  width: 13px !important;
-  height: 13px !important;
+  width: 12px !important;
+  height: 12px !important;
   margin-top: 1px;
+  border-radius: 4px !important;
 }
 
 /* -----------------header CSS start ----------*/
@@ -2220,8 +2218,7 @@ body {
 }
 
 .filterBG {
-  padding-bottom: 0.7rem;
-  ;
+  padding: 0.7rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -2416,15 +2413,13 @@ body {
 }
 
 .scroll {
-  height: 85vh;
+  height: 80vh;
   overflow-y: scroll;
   overflow-x: hidden;
 }
-
 .cardDesign {
   height: 20px !important;
 }
-
 .verticalCardImage {
   margin-right: 15px;
 }
@@ -2440,17 +2435,16 @@ body {
 .cardHeight {
   height: 400px;
 }
-
 .Activebutton {
   height: 18px;
   width: 18px;
   margin-left: 5px;
 }
 
-.p-sidebar .p-sidebar-header {
+.p-sidebar .p-sidebar-header
+{
   padding: 0rem !important;
 }
-
 .spacer {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -2465,29 +2459,6 @@ body {
 
 .contextMenus:hover {
   background-color: #C7E3FF;
-}
-
-.card-scroll::-webkit-scrollbar-thumb:hover {
-  background: #e7af21;
-  border-radius: 5px;
-}
-
-.design:hover {
-  transform: scale(1.1);
-  width: 90%;
-  margin: auto;
-  background-color: #374476 !important;
-  color: white;
-}
-
-.cardsizes {
-  margin: auto;
-}
-
-.verticalCards {
-  margin-left: 10px !important;
-  margin-right: 10px !important;
-  border: 2px solid #374476 !important;
 
 }
 
@@ -2506,6 +2477,44 @@ body {
   min-width: 1rem !important;
   height: 1rem !important;
   border-radius: 20px;
-  line-height: 1rem !important;
-  font-size: 8px !important
+  line-height:1rem !important;
+  font-size:8px !important
+
 }
+.p-toast {
+  opacity: 1.9 !important;
+}
+
+.wrap-img{
+  text-align: center;
+}
+.cursor{
+  cursor: pointer;
+}
+.card-scroll{
+  overflow-y: scroll;
+    height: 100vh;
+  }
+   
+  
+  .card-scroll::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .card-scroll::-webkit-scrollbar-thumb {
+    background: #CD9C1D;
+    border-radius: 5px;
+    height: 40px;
+  }
+  .p-card{
+      border:1px solid #374476;
+    }
+    
+    .notification{
+      border-left: 5px solid red;
+      border-radius: 5px;
+    }
+ .notification-blu{
+  border-left: 5px solid  #00A1DF;
+  border-radius: 5px;
+ }

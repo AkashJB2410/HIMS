@@ -1,12 +1,8 @@
 {
     "tableName": "Unit Table",
     "tableHeaders": [
-        {
-            "field": "lovListId",
-            "header": "ID",
-            "iseditable": false,
-            "class": "text-center"
-        },
+        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":""},
+    
         {
             "field": "lovTypeName",
             "header": "LOV Type Name",
@@ -39,6 +35,8 @@
         }
     ],
     "PdfHeaders": [
+        {"field": "srNumber","header": "Sr Number"},
+
         {
             "field": "lovlistId",
             "header": "ID"
