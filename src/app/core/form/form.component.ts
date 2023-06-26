@@ -60,42 +60,44 @@ export class FormComponent implements OnInit {
   }
 
   onImageUpload(event: any, id: any) {
-     id.fieldValue = event.target.files[0];
+    //  id.fieldValue = event.target.files[0];
 
-          // covert base 64 image code
-  //   const file = (event.target as HTMLInputElement).files[0];
-  //   this.covertToBase64(file, id);
-  // }
+    // covert base 64 image code
+    const file = (event.target as HTMLInputElement).files[0];
+    this.covertToBase64(file, id);
+  }
 
-  // covertToBase64(file: File, cntrl: any) {
-  //   const observable = new Observable((subscriber: Subscriber<any>) => {
-  //     this.readFile(file, subscriber);
-  //    });
-  //   observable.subscribe((d) => {
-  //     cntrl.fieldValue = d;
-  //     console.log(d);
-  //   })
-  // }
-  // readFile(file: File, subscriber: Subscriber<any>) {
-  //   const filereader = new FileReader();
-  //   filereader.readAsDataURL(file);
-  //   filereader.onload = () => {
-  //     subscriber.next(filereader.result);
-  //     subscriber.complete()
-  //   };
-  //   filereader.onerror = (error) => {
-  //     subscriber.error(error);
-  //     subscriber.complete();
-  //   }
+  covertToBase64(file: File, control: any) {
+    const observable = new Observable((subscriber: Subscriber<any>) => {
+      this.readFile(file, subscriber);
+    });
+    observable.subscribe((d) => {
+      this.form.get(control.fieldName).setValue(d);
+    })
+  }
+  readFile(file: File, subscriber: Subscriber<any>) {
+    const filereader = new FileReader();
+    filereader.readAsDataURL(file);
+    filereader.onload = () => {
+      subscriber.next(filereader.result);
+      subscriber.complete()
+    };
+    filereader.onerror = (error) => {
+      subscriber.error(error);
+      subscriber.complete();
+    }
 
   }
 
   onFilesUpload(event: any, id: any) {
     id.fieldValue = event.target.files;
-
   }
+
   changeEvent(event: any, data: any) {
     this.events = [];
+    if (data.fieldType == 'date') {
+      event = this.datepipe.transform(event, "yyyy-MM-dd");
+    }
     this.events.push(event);
     this.events.push(data);
     this.changeEvents.emit(this.events);
@@ -220,7 +222,7 @@ export class FormComponent implements OnInit {
         icon: control.icon || '',
         isDisabled: control.isDisabled || '',
         btnLabel: control.btnLabel || '',
-        fieldValue:control.defaultValue ?  control.defaultValue  : this.data[i] ,
+        fieldValue: control.defaultValue ? control.defaultValue : this.data[i],
         row: control.row || '',
         icons: control.icons || '',
         transient: control.transient || false,
@@ -251,11 +253,7 @@ export class FormComponent implements OnInit {
           delete this.form.value[element.fieldName];
         }
         if (element.fieldType == 'date') {
-          var format = JSON.parse(localStorage.getItem('personalization'));
-          this.form.value[element.fieldName] = this.datepipe.transform(
-            element.fieldValue,
-            format.dateFormat
-          );
+          this.form.get(element.fieldName).setValue(this.datepipe.transform(element.fieldValue, "yyyy-Mm-dd"));
         }
       });
       this.formData.emit(this.form.getRawValue());

@@ -23,18 +23,18 @@
       <div class="scroll">
         <ul id="sidebar_menu" class="nav flex-column">
           <li class="nav-item" *ngFor="let item of list.sidenavItems" (click)="setStateAsActive(item)">
-            <ng-container *ngIf="item.group == null ; else list">
+            <ng-container *ngIf="item.group.length == 0 ; else list">
               <div *ngIf="item.routerLink != undefined">
                 <a [class.parentMenu]="item === activeState" [href]="'#'+item.label" data-bs-toggle="collapse"
                   class="sidenav-menu" routerLink="{{item.routerLink}}" pTooltip="{{item.label}}">
-                  <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
+                  <i class="{{item.icon}} iconCss"></i> <span class="d-sm-inline ms-2"
                     [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{item.label}}</span>
                 </a>
               </div>
               <div *ngIf="item.url != undefined">
                 <a [class.parentMenu]="item === activeState" class="sidenav-menu" href="{{item.url}}" target="_blank"
                   pTooltip="{{item.label}}">
-                  <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
+                  <i class="{{item.icon}} iconCss"></i> <span class="d-sm-inline ms-2"
                     [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{item.label}}</span>
                 </a>
               </div>
@@ -42,7 +42,7 @@
             <ng-template #list>
               <a [class.parentMenu]="item === activeState" [href]="'#'+item.label" data-bs-toggle="collapse"
                 class="sidenav-menu " pTooltip="{{item.label}}">
-                <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
+                <i class="{{item.icon}} iconCss"></i> <span class="d-sm-inline ms-2"
                   [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
                   style="margin-right: auto;">{{item.label}}</span> <i id="{{item.label}}" childItemsub-module
                   [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
@@ -51,7 +51,7 @@
               <ul class="collapse nav flex-column" id="{{item.label}}" data-bs-parent="#menu">
                 <li class="w-100" *ngFor="let childItem of item.group" (click)="setStateAsActiveChild(childItem)"
                   style="cursor: pointer;">
-                  <ng-container *ngIf="childItem.subModule == null; else list1">
+                  <ng-container *ngIf="childItem.submodules.length == 0; else list1">
                     <div *ngIf="childItem.routerLink != undefined">
                       <a [class.childMenu]="childItem === activeStatechild" [href]="'#'+childItem.label"
                         data-bs-toggle="collapse" class="sidenav-menu vsm-dropdown"
@@ -78,7 +78,7 @@
                     </a>
                     <ul class="collapse nav flex-column " id="{{childItem.label}}" data-bs-parent="#menu">
                       <div class="subchildMargin">
-                        <li class="w-100" *ngFor="let child of childItem.subModule"
+                        <li class="w-100" *ngFor="let child of childItem.submodules"
                           (click)="setStateAsActiveSubchild(child)" style="cursor: pointer;">
                           <div *ngIf="child.routerLink != undefined">
                             <a [class.subchildMenu]="child === activeStateSubchild" class="sidenav-menu vsm-dropdown">

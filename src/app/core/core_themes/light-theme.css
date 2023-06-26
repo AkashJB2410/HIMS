@@ -369,9 +369,8 @@
   font-size: 12px;
 }
 
-.captcha-btn-refresh
-{
-  color:black !important;
+.captcha-btn-refresh {
+  color: black !important;
 }
 
 /*------------In Login card Input password Start-------------*/
@@ -683,7 +682,7 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-text-fill-color: black !important;
-  -webkit-box-shadow: 0 0 0px 1000px #BDBDBD inset;
+  -webkit-box-shadow: 0 0 0px 1000px #EDF9FF inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -823,7 +822,7 @@ option:hover {
 }
 
 .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
-  background-color: gray !important;
+  background-color: #374476 !important;
   color: white !important;
 }
 
@@ -1150,17 +1149,46 @@ ul p.verticaltab {
   background-color: #E1E1E1; 
    color: black;
 } */
-.formclass {
+
+/* ----------------------Form Title Css Start------------------------------- */
+
+/* ---------------------form Title for sideBar SM Css Start-------------------------- */
+.Sidebar-title-sm {
   color: white !important;
   height: 27px;
-  width: 400px;
+  width: 246px;
+  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
+  font-size: 15px !important;
+  padding-top: 4px;
+  padding-bottom: 23px;
+}
+
+.Sidebar-title-sm::before,
+.divider::after {
+  flex: 1;
+  height: 29px;
+  width: 5px;
+  content: '';
+  padding: 1.2px;
+  background-color: rgb(252, 252, 252);
+  margin: 3px;
+}
+
+/* ---------------------form Title for sideBar SM Css End-------------------------- */
+
+/* ---------------------form Title for sideBar LG Css Start-------------------------- */
+.Sidebar-title-lg {
+  color: white !important;
+  height: 27px;
+  width: 465px;
   background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
   font-size: 17px !important;
   padding-top: 4px;
-  padding-bottom:23px;
+  padding-bottom: 23px;
 }
 
-.formclass::before, .divider::after {
+.Sidebar-title-lg::before,
+.divider::after {
   flex: 1;
   height: 29px;
   width: 5px;
@@ -1169,6 +1197,56 @@ ul p.verticaltab {
   background-color: rgb(252, 252, 252);
   margin: 6px;
 }
+
+/* ---------------------form Title for sideBar LG Css End-------------------------- */
+
+/* ---------------------form Title for sideBar MD Css Start-------------------------- */
+.Sidebar-title-md {
+  color: white !important;
+  height: 27px;
+  width: 421px;
+  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
+  font-size: 17px !important;
+  padding-top: 4px;
+  padding-bottom: 23px;
+}
+
+.Sidebar-title-md::before,
+.divider::after {
+  flex: 1;
+  height: 29px;
+  width: 5px;
+  content: '';
+  padding: 2px;
+  background-color: rgb(252, 252, 252);
+  margin: 6px;
+}
+
+/* ---------------------form Title for sideBar MD Css End-------------------------- */
+
+.formclass {
+  color: white !important;
+  height: 27px;
+  width: 400px;
+  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
+  font-size: 17px !important;
+  padding-top: 4px;
+  padding-bottom: 23px;
+}
+
+.formclass::before,
+.divider::after {
+  flex: 1;
+  height: 29px;
+  width: 5px;
+  content: '';
+  padding: 2px;
+  background-color: rgb(252, 252, 252);
+  margin: 6px;
+}
+
+/* ----------------------Form Title Css End------------------------------- */
+
 .bi-file-earmark-medical::before {
   content: "\f373";
   padding-right: 10px !important;
@@ -1176,51 +1254,47 @@ ul p.verticaltab {
 }
 
 .p-breadcrumb .p-menuitem-link {
-   padding: 0rem !important
+  padding: 0rem !important
 }
 
+/* ---------------All Taost Css Start-------------------------- */
 
-
-.p-toast .p-toast-message.p-toast-message-warn
-{
-  background-color: white !important;
+.p-toast .p-toast-message.p-toast-message-warn {
+  background-color: #ffffff !important;
   color: #000000 !important;
 }
 
-.p-toast .p-toast-message.p-toast-message-error
-{
-  background-color: white !important;
+.p-toast .p-toast-message.p-toast-message-error {
+  background-color: #ffffff !important;
   color: #000000 !important;
 }
-.p-toast .p-toast-message.p-toast-message-success
-{
-  background-color: white !important;
+
+.p-toast .p-toast-message.p-toast-message-success {
+  background-color: #ffffff !important;
   color: #000000 !important;
 }
-.p-toast .p-toast-message.p-toast-message-info
-{
-  background-color: white !important;
+
+.p-toast .p-toast-message.p-toast-message-info {
+  background-color: #ffffff !important;
   color: #000000 !important;
 }
-.p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon
-{
+
+.p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon {
   color: #01648E !important;
   font-size: 20px !important;
 }
 
-.p-toast .p-toast-message.p-toast-message-warn .p-toast-message-icon
-{
+.p-toast .p-toast-message.p-toast-message-warn .p-toast-message-icon {
   color: #C27605 !important;
-  font-size:20px !important;
+  font-size: 20px !important;
 }
-.p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon
-{
+
+.p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon {
   color: #F30C0C !important;
   font-size: 20px !important;
 }
 
-.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon
-{
+.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon {
   color: white !important;
   height: 20px !important;
   width: 20px;
@@ -1228,6 +1302,16 @@ ul p.verticaltab {
   border-radius: 9px !important;
   padding-top: 4px !important;
   padding-left: 4px;
+  -webkit-box-shadow: -2px 0px 23px 7px rgba(80, 227, 34, 0.53);
+  -moz-box-shadow: -2px 0px 23px 7px rgba(80, 227, 34, 0.53);
+  box-shadow: -2px 0px 23px 7px rgba(80, 227, 34, 0.53);
+}
+
+.p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon {
+  -webkit-box-shadow: -2px 0px 20px 5px rgba(217, 15, 15, 0.53);
+  -moz-box-shadow: -2px 0px 20px 5px rgba(217, 15, 15, 0.53);
+  box-shadow: -2px 0px 20px 5px rgba(217, 15, 15, 0.53);
+  border-radius: 9px !important;
 }
 
 .p-toast .p-toast-message .p-toast-icon-close {
@@ -1237,4 +1321,29 @@ ul p.verticaltab {
   border-radius: 50%;
   background: transparent;
   transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+/* ---------------All Taost Css End-------------------------- */
+
+
+
+.Sidebar-title-sm {
+  color: white !important;
+  height: 27px;
+  width: 260px;
+  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
+  font-size: 17px !important;
+  padding-top: 4px;
+  padding-bottom: 23px;
+}
+
+.Sidebar-title-sm::before,
+.divider::after {
+  flex: 1;
+  height: 29px;
+  width: 5px;
+  content: '';
+  padding: 2px;
+  background-color: rgb(252, 252, 252);
+  margin: 6px;
 }

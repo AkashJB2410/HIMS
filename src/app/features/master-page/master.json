@@ -27,12 +27,14 @@
       {
         "label": "Home",
         "icon": "bi bi-house",
-        "routerLink": "/master-page/home"
+        "routerLink": "/master-page/home",
+        "group": []
       },
       {
         "label": "Registration",
         "icon": "bi bi-person-add",
-        "routerLink": "/master-page/registration-form"
+        "routerLink": "/master-page/registration-form",
+        "group": []
       },
       {
         "label": "Emergency",
@@ -41,22 +43,26 @@
           {
             "label": "Emergency Quick Registration",
             "icon": "",
-            "routerLink": "/master-page/emergency-quick-registration"
+            "routerLink": "/master-page/emergency-quick-registration",
+            "submodules": []
           },
           {
             "label": "ER Patient List",
             "icon": "",
-            "routerLink": "/master-page/er-patient-list"
+            "routerLink": "/master-page/er-patient-list",
+            "submodules": []
           },
           {
             "label": "ER Discharge Patient List",
             "icon": "",
-            "routerLink": "/master-page/er-discharge-patient-list"
+            "routerLink": "/master-page/er-discharge-patient-list",
+            "submodules": []
           },
           {
             "label": "ER Cancel Patient List",
             "icon": "",
-            "routerLink": "/master-page/cancel-patient-list"
+            "routerLink": "/master-page/cancel-patient-list",
+            "submodules": []
           }
         ]
       },
@@ -67,52 +73,62 @@
           {
             "label": "Results Update",
             "icon": "",
-            "routerLink": "/master-page/results-update"
+            "routerLink": "/master-page/results-update",
+            "submodules": []
           },
           {
             "label": "Dispatch - Govt.",
             "icon": "",
-            "routerLink": "/master-page/dispatch-govt"
+            "routerLink": "/master-page/dispatch-govt",
+            "submodules": []
           },
           {
             "label": "COVID Billing Summary",
             "icon": "",
-            "routerLink": "/master-page/covid-billing-summary"
+            "routerLink": "/master-page/covid-billing-summary",
+            "submodules": []
           },
           {
             "label": "Cash Flow",
             "icon": "",
-            "routerLink": "/master-page/cash-flow"
+            "routerLink": "/master-page/cash-flow",
+            "submodules": []
           },
           {
             "label": "Batch List",
             "icon": "",
-            "routerLink": "/master-page/batch-list"
+            "routerLink": "/master-page/batch-list",
+            "submodules": []
           },
           {
             "label": "Batch Results Entry",
             "icon": "",
-            "routerLink": "/master-page/batch-results-entry"
+            "routerLink": "/master-page/batch-results-entry",
+            "submodules": []
           },
           {
             "label": "QA Approval",
             "icon": "",
-            "routerLink": "/master-page/qa-approval"
+            "routerLink": "/master-page/qa-approval",
+            "submodules": []
           },
           {
             "label": "Bulk Report Download",
             "icon": "",
-            "routerLink": "/master-page/bulk-report-download"
+            "routerLink": "/master-page/bulk-report-download",
+            "submodules": []
           },
           {
             "label": "COVID Walk-In Registrations",
             "icon": "",
-            "routerLink": "/master-page/covid-walk-in-registrations"
+            "routerLink": "/master-page/covid-walk-in-registrations",
+            "submodules": []
           },
           {
             "label": "COVID Walk-In Search",
             "icon": "",
-            "routerLink": "/master-page/covid-walk-in-search"
+            "routerLink": "/master-page/covid-walk-in-search",
+            "submodules": []
           }
         ]
       },
@@ -123,12 +139,14 @@
           {
             "label": "Create ABHA ID",
             "icon": "",
-            "routerLink": "/master-page/create-abha-id"
+            "routerLink": "/master-page/create-abha-id",
+            "submodules": []
           },
           {
             "label": "Patient List",
             "icon": "",
-            "routerLink": "/master-page/patient-list"
+            "routerLink": "/master-page/patient-list",
+            "submodules": []
           }
         ]
       },
@@ -139,12 +157,14 @@
           {
             "label": "Patients Waiting",
             "icon": "",
-            "routerLink": "/master-page/patients-waiting"
+            "routerLink": "/master-page/patients-waiting",
+            "submodules": []
           },
           {
             "label": "Token Display",
             "icon": "",
-            "routerLink": "/master-page/token-display"
+            "routerLink": "/master-page/token-display",
+            "submodules": []
           }
         ]
       },
@@ -155,47 +175,55 @@
           {
             "label": "Quick Patient Reg + Visit",
             "icon": "",
-            "routerLink": "/master-page/quick-patient-reg-visit"
+            "routerLink": "/master-page/quick-patient-reg-visit",
+            "submodules": []
           },
           {
             "label": "queue",
             "icon": "",
-            "routerLink": "/master-page/queue"
+            "routerLink": "/master-page/queue",
+            "submodules": []
           },
           {
             "label": "Appointment",
             "icon": "",
-            "routerLink": "/master-page/appointment"
+            "routerLink": "/master-page/appointment",
+            "submodules": []
           },
           {
             "label": "Appointment List",
             "icon": "",
-            "routerLink": "/master-page/appointment-list"
+            "routerLink": "/master-page/appointment-list",
+            "submodules": []
           },
           {
             "label": "Registration",
             "icon": "",
-            "routerLink": "/master-page/registration"
+            "routerLink": "/master-page/registration",
+            "submodules": []
           },
           {
             "label": "Registration List",
             "icon": "",
-            "routerLink": "/master-page/registration-list"
+            "routerLink": "/master-page/registration-list",
+            "submodules": []
           },
           {
             "label": "OPD Visit List",
             "icon": "",
-            "routerLink": "/master-page/opd-visit-list"
+            "routerLink": "/master-page/opd-visit-list",
+            "submodules": []
           },
           {
             "label": "Feedback Visit List",
             "icon": "",
-            "routerLink": "/master-page/feedback-visit-list"
+            "routerLink": "/master-page/feedback-visit-list",
+            "submodules": []
           },
           {
             "label": "Reports",
             "icon": "",
-            "subModule": [
+            "submodules": [
               {
                 "label": "List of Registration Report",
                 "icon": "",
@@ -222,12 +250,13 @@
           {
             "label": "IPD Quick Registration",
             "icon": "",
-            "routerLink": "/master-page/ipd-quick-registration"
+            "routerLink": "/master-page/ipd-quick-registration",
+            "submodules": []
           },
           {
             "label": "AdmissionRequest",
             "icon": "",
-            "subModule": [
+            "submodules": [
               {
                 "label": "New Admission Request",
                 "icon": "",
@@ -243,7 +272,7 @@
           {
             "label": "AdmissionList",
             "icon": "",
-            "subModule": [
+            "submodules": [
               {
                 "label": "Admission List",
                 "icon": "",
@@ -264,7 +293,7 @@
           {
             "label": "BedManagement",
             "icon": "",
-            "subModule": [
+            "submodules": [
               {
                 "label": "Bed Transfer",
                 "icon": "",
@@ -285,17 +314,19 @@
           {
             "label": "Discharge",
             "icon": "",
-            "routerLink": "/master-page/discharge"
+            "routerLink": "/master-page/discharge",
+            "submodules": []
           },
           {
             "label": "Discharge Summary",
             "icon": "",
-            "routerLink": "/master-page/discharge-summary"
+            "routerLink": "/master-page/discharge-summary",
+            "submodules": []
           },
           {
             "label": "Reports",
             "icon": "",
-            "subModule": [
+            "submodules": [
               {
                 "label": "IPD Addmission Report",
                 "icon": "",
@@ -312,17 +343,20 @@
           {
             "label": "OT Schedule",
             "icon": "",
-            "routerLink": "/master-page/ot-schedule"
+            "routerLink": "/master-page/ot-schedule",
+            "submodules": []
           },
           {
             "label": "OT Request",
             "icon": "",
-            "routerLink": "/master-page/ot-request"
+            "routerLink": "/master-page/ot-request",
+            "submodules": []
           },
           {
             "label": "OT Schedule List",
             "icon": "",
-            "routerLink": "/master-page/ot-schedule-list"
+            "routerLink": "/master-page/ot-schedule-list",
+            "submodules": []
           }
         ]
       },
@@ -333,27 +367,32 @@
           {
             "label": "Labour Room Schedule",
             "icon": "",
-            "routerLink": "/master-page/labour-room-schedule"
+            "routerLink": "/master-page/labour-room-schedule",
+            "submodules": []
           },
           {
             "label": "Labour Room Request",
             "icon": "",
-            "routerLink": "/master-page/labour-room-request"
+            "routerLink": "/master-page/labour-room-request",
+            "submodules": []
           },
           {
             "label": "Labour Room Details",
             "icon": "",
-            "routerLink": "/master-page/labour-room-details"
+            "routerLink": "/master-page/labour-room-details",
+            "submodules": []
           },
           {
             "label": "Schedule List",
             "icon": "",
-            "routerLink": "/master-page/schedule-list"
+            "routerLink": "/master-page/schedule-list",
+            "submodules": []
           },
           {
             "label": "Labour Room Finalized List",
             "icon": "",
-            "routerLink": "/master-page/labour-room-finalized-list"
+            "routerLink": "/master-page/labour-room-finalized-list",
+            "submodules": []
           }
         ]
       },
@@ -364,7 +403,7 @@
           {
             "label": "Documents",
             "icon": "",
-            "subModule": [
+            "submodules": [
               {
                 "label": "Birth Certificate",
                 "icon": "",
@@ -390,17 +429,20 @@
           {
             "label": "Nursing Console",
             "icon": "",
-            "routerLink": "/master-page/nursing-console"
+            "routerLink": "/master-page/nursing-console",
+            "submodules": []
           },
           {
             "label": "Add Charges for Nurse / Doctor",
             "icon": "",
-            "routerLink": "/master-page/add-charges-for-nurse-doctor"
+            "routerLink": "/master-page/add-charges-for-nurse-doctor",
+            "submodules": []
           },
           {
             "label": "Inpatient Issue",
             "icon": "",
-            "routerLink": "/master-page/inpatient-issue"
+            "routerLink": "/master-page/inpatient-issue",
+            "submodules": []
           }
         ]
       },
@@ -411,32 +453,37 @@
           {
             "label": "Bill List",
             "icon": "",
-            "routerLink": "/master-page/bill-list"
+            "routerLink": "/master-page/bill-list",
+            "submodules": []
           },
           {
             "label": "Cancelled Bill List",
             "icon": "",
-            "routerLink": "/master-page/cancelled-bill-list"
+            "routerLink": "/master-page/cancelled-bill-list",
+            "submodules": []
           },
           {
             "label": "Bill Refund",
             "icon": "",
-            "routerLink": "/master-page/bill-refund"
+            "routerLink": "/master-page/bill-refund",
+            "submodules": []
           },
           {
             "label": "Advance",
             "icon": "",
-            "routerLink": "/master-page/advance"
+            "routerLink": "/master-page/advance",
+            "submodules": []
           },
           {
             "label": "Company Bill Settlement",
             "icon": "",
-            "routerLink": "/master-page/company-bill-settlement"
+            "routerLink": "/master-page/company-bill-settlement",
+            "submodules": []
           },
           {
             "label": "Bill",
             "icon": "",
-            "subModule": [
+            "submodules": [
               {
                 "label": "EMG Bill",
                 "icon": "",
@@ -468,7 +515,7 @@
           {
             "label": "Laboratory",
             "icon": "",
-            "subModule": [
+            "submodules": [
               {
                 "label": "Lab Order List",
                 "icon": "",
@@ -489,7 +536,7 @@
           {
             "label": "Radiology",
             "icon": "",
-            "subModule": [
+            "submodules": [
               {
                 "label": "Lab Order",
                 "icon": "",
@@ -531,7 +578,7 @@
           {
             "label": "Transfer",
             "icon": "",
-            "subModule": [
+            "submodules": [
               {
                 "label": "Requisition",
                 "icon": "",
@@ -552,57 +599,67 @@
           {
             "label": "Opening Balance",
             "icon": "",
-            "routerLink": "/master-page/opening-balance"
+            "routerLink": "/master-page/opening-balance",
+            "submodules": []
           },
           {
             "label": "Item Enquiry",
             "icon": "",
-            "routerLink": "/master-page/item-enquiry"
+            "routerLink": "/master-page/item-enquiry",
+            "submodules": []
           },
           {
             "label": "Quotation",
             "icon": "",
-            "routerLink": "/master-page/quotation"
+            "routerLink": "/master-page/quotation",
+            "submodules": []
           },
           {
             "label": "Generate PO",
             "icon": "",
-            "routerLink": "/master-page/generate-po"
+            "routerLink": "/master-page/generate-po",
+            "submodules": []
           },
           {
             "label": "Good Receive Note",
             "icon": "",
-            "routerLink": "/master-page/good-receive-note"
+            "routerLink": "/master-page/good-receive-note",
+            "submodules": []
           },
           {
             "label": "Return Items",
             "icon": "",
-            "routerLink": "/master-page/return-items"
+            "routerLink": "/master-page/return-items",
+            "submodules": []
           },
           {
             "label": "Current Stock",
             "icon": "",
-            "routerLink": "/master-page/current-stock"
+            "routerLink": "/master-page/current-stock",
+            "submodules": []
           },
           {
             "label": "Stock Consumption",
             "icon": "",
-            "routerLink": "/master-page/stock-consumption"
+            "routerLink": "/master-page/stock-consumption",
+            "submodules": []
           },
           {
             "label": "Adjust Stock",
             "icon": "",
-            "routerLink": "/master-page/adjust-stock"
+            "routerLink": "/master-page/adjust-stock",
+            "submodules": []
           },
           {
             "label": "Scrap Sale",
             "icon": "",
-            "routerLink": "/master-page/scrap-sale"
+            "routerLink": "/master-page/scrap-sale",
+            "submodules": []
           },
           {
             "label": "Reports",
             "icon": "",
-            "subModule": [
+            "submodules": [
               {
                 "label": "Current Stock Report",
                 "icon": "",
@@ -619,47 +676,55 @@
           {
             "label": "Pharmacy Pending List",
             "icon": "",
-            "routerLink": "/master-page/pharmacy-pending-list"
+            "routerLink": "/master-page/pharmacy-pending-list",
+            "submodules": []
           },
           {
             "label": "Pharmacy Sale",
             "icon": "",
-            "routerLink": "/master-page/pharmacy-sale"
+            "routerLink": "/master-page/pharmacy-sale",
+            "submodules": []
           },
           {
             "label": "Pharmacy Bill List",
             "icon": "",
-            "routerLink": "/master-page/pharmacy-bill-list"
+            "routerLink": "/master-page/pharmacy-bill-list",
+            "submodules": []
           },
           {
             "label": "Pharmacy Queue",
             "icon": "",
-            "routerLink": "/master-page/pharmacy-queue"
+            "routerLink": "/master-page/pharmacy-queue",
+            "submodules": []
           },
           {
             "label": "Pharmacy Sale Return",
             "icon": "",
-            "routerLink": "/master-page/pharmacy-sale-return"
+            "routerLink": "/master-page/pharmacy-sale-return",
+            "submodules": []
           },
           {
             "label": "Pharmacy Bill Settlement",
             "icon": "",
-            "routerLink": "/master-page/pharmacy-bill-settlement"
+            "routerLink": "/master-page/pharmacy-bill-settlement",
+            "submodules": []
           },
           {
             "label": "Pharmacy Bill Edit",
             "icon": "",
-            "routerLink": "/master-page/pharmacy-bill-edit"
+            "routerLink": "/master-page/pharmacy-bill-edit",
+            "submodules": []
           },
           {
             "label": "Nursing Indent",
             "icon": "",
-            "routerLink": "/master-page/nursing-indent"
+            "routerLink": "/master-page/nursing-indent",
+            "submodules": []
           },
           {
             "label": "Reports",
             "icon": "",
-            "subModule": [
+            "submodules": [
               {
                 "label": "Pharmacy Sales Report",
                 "icon": "",
@@ -672,7 +737,8 @@
       {
         "label": "Ambulance Requisition",
         "icon": "bi bi-bus-front",
-        "routerLink": "/master-page/ambulance-requisition"
+        "routerLink": "/master-page/ambulance-requisition",
+        "group": []
       },
       {
         "label": "Form",
@@ -681,24 +747,28 @@
           {
             "label": "OPD Application Form",
             "icon": "",
-            "routerLink": "/master-page/opd-application-form"
+            "routerLink": "/master-page/opd-application-form",
+            "submodules": []
           },
           {
             "label": "IPD Application Form",
             "icon": "",
-            "routerLink": "/master-page/ipd-application-form"
+            "routerLink": "/master-page/ipd-application-form",
+            "submodules": []
           },
           {
             "label": "EMG Application Form",
             "icon": "",
-            "routerLink": "/master-page/emg-application-form"
+            "routerLink": "/master-page/emg-application-form",
+            "submodules": []
           }
         ]
       },
       {
         "label": "FAQ",
         "icon": "bi bi-question-octagon",
-        "routerLink": ""
+        "routerLink": "",
+         "group": []
       },
       {
         "label": "Configuration",
@@ -707,7 +777,8 @@
           {
             "label": "All Masters",
             "icon": "",
-            "routerLink": "/master-page/all-masters"
+            "routerLink": "/master-page/all-masters",
+            "submodules": []
           }
         ]
       },
@@ -718,17 +789,20 @@
           {
             "label": "Master Module",
             "icon": "",
-            "routerLink": "/master-page/master-module"
+            "routerLink": "/master-page/master-module",
+            "submodules": []
           },
           {
             "label": "Group Module",
             "icon": "",
-            "routerLink": "/master-page/group-module"
+            "routerLink": "/master-page/group-module",
+            "submodules": []
           },
           {
             "label": "Sub Module",
             "icon": "",
-            "routerLink": "/master-page/sub-module"
+            "routerLink": "/master-page/sub-module",
+            "submodules": []
           }
           
         ]
