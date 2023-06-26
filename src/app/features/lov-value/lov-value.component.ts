@@ -125,9 +125,9 @@ export class LovValueComponent implements OnInit {
     this.data = undefined;
     this.LOVData = [];
     this.http.GetAllLovValueData().subscribe((res) => {
-      // for (let i = 0; i < this.data.length; i++) {
-      //   this.data[i].srNumber = i + 1;
-      // }
+      for (let i = 0; i < this.data.length; i++) {
+        this.data[i].srNumber = i + 1;
+      }
       res.forEach((e: any) => {
         let obj = {
           "lovListId": e.lovListId,
