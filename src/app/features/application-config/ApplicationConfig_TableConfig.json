@@ -2,10 +2,8 @@
     "tableName": "Application Config",
     "tableHeaders": [
         {
-            "field": "applicationId",
-            "header": "Application ID",
-            "iseditable": false,
-            "class": "text-center"
+            "field":"srNo",
+            "header":"Sr. No.","iseditable": false , "class":"text-center"
         },
         {
             "field": "keyname",
@@ -27,6 +25,10 @@
         }
     ],
     "PdfHeaders": [
+        {
+            "field":"srNo",
+            "header":"Sr. No."
+        },
         {
             "field": "applicationId",
             "header": "Application ID"

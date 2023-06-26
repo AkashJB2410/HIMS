@@ -2,6 +2,8 @@
     "form": {
         "class": "row",
         "formTitle": "Sub Module Form",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
         "formType": "edit",
         "sidebar":"p-sidebar-sm",
@@ -136,8 +138,6 @@
                     "pattern": ""
                 }
             },
-            
-            
             {
                 "isEditable": true,
                 "isVisible": true,

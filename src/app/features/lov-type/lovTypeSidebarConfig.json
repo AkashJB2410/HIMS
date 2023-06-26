@@ -1,7 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "LOV type Module",
+        "formTitle": " Add LOV type Module",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
         "formType": "edit",
         "sidebar":"p-sidebar-sm",

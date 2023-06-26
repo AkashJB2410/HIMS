@@ -9,18 +9,10 @@ import { takeUntil } from 'rxjs';
 
 })
 export class ToastComponent implements OnInit {
-  toasterData: any;
 
-  @Input() message: any;
-  confirmationService: any;
-  constructor(private messageService: MessageService, private primengConfig: PrimeNGConfig) { }
+  constructor(private primengConfig: PrimeNGConfig) { }
 
   ngOnInit() {
-    this.toasterData = toaster;
     this.primengConfig.ripple = true;
   }
-  showMessage() {
-    this.messageService.add({severity:this.toasterData.severity, summary: this.toasterData.title, detail:this.toasterData.description,life:this.toasterData.life,sticky:true});
-}
-
 }

@@ -70,12 +70,28 @@ export class MasterPageComponent implements OnInit {
     this.http.countNotification().subscribe((res) => {
       this.count = res.Count;
       console.log(this.count);
+      this.masterJSON.masterData.header.notification.count=this.count;
     });
   }
 
-  notification(e: any) {
-    this.http.readMsg(e.id).subscribe((res)=>{
-      this.clickedData=res;
-    })
+  notificationRead(e: any) {
+    console.log(e);
+    if(e=="readAll"){
+      for(let i=0;i<this.data.length;i++){
+        if(this.data[i]._Read==false){
+          this.http.readMsg(this.data[i].notificationId).subscribe((res)=>{
+            this.clickedData=res;
+            this.getCount();            
+          })
+        }
+      }
+    }else{
+      this.http.readMsg(e.id).subscribe((res)=>{
+        this.clickedData=res;
+        this.getCount();        
+      })
+    }
+    
+    
   }
 }

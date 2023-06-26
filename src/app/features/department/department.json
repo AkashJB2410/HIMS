@@ -1,7 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "",
+        "formTitle": "Add Department",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
         "sidebar": "p-sidebar-sm",
         "formControls": [

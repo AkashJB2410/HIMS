@@ -18,8 +18,9 @@ export class UnitComponent implements OnInit {
   data: any;
   formdata: any;
   isdataReady = false;
-  unit_breadcrumb =unit_breadcrumb;
-  constructor(private messageService: MessageService ,private http: UnitService) { }
+  unit_breadcrumb = unit_breadcrumb;
+  flag: any;
+  constructor(private messageService: MessageService, private http: UnitService) { }
 
   ngOnInit(): void {
     this.configurations = {
@@ -35,43 +36,39 @@ export class UnitComponent implements OnInit {
   isActive(event: string) {
     console.log(event);
     this.http.isActiveData(event).subscribe((data) => {
-      this.data = undefined;      
+      this.data = undefined;
       this.getAllUnit();
     });
   }
-  
   getConfigForTable() {
     this.tableConfig = unitTable;
   }
-
   editRow(e: any) {
     this.visibleSidebar = true;
   }
-
-  addRow(e:any){
+  addRow(e: any) {
     this.visibleSidebar = true;
   }
-
+  onAdd(e: any) {
+    this.flag = e;
+  }
   sidebarData(e: any) {
-    console.log('From User Management ==> ', e);
-    if (e == 'reset') {
-      console.log(e);
-    } else if (e.unitId == true) {
-      console.log(e);
-      this.submitUnit(e);
-      this.messageService.add({
-        severity: 'success',
-        summary: 'success',
-        detail: 'Data save successfull.',
-      });
-    } else {
-      console.log(e);
-      this.updateUnit(e);
-      this.messageService.add({
-        severity: 'success',
-        summary: 'success',
-        detail: 'Data updated successfull.',
-      });
+    if (e != 'reset') {
+      if (this.flag == "edit") {
+        this.updateUnit(e);
+        this.messageService.add({
+          severity: 'success',
+          summary: 'success',
+          detail: 'Data updated successfull.',
+        });
+      } else {
+        this.submitUnit(e);
+        this.messageService.add({
+          severity: 'success',
+          summary: 'success',
+          detail: 'Data save successfull.',
+        });
+      }
     }
   }
 
@@ -88,7 +85,7 @@ export class UnitComponent implements OnInit {
   getAllUnit() {
     this.http.GetAllUnitData().subscribe((res) => {
       this.data = res;
-      console.log(this.data);      
+      console.log(this.data);
       this.isdataReady = true;
       for (let i = 0; i < this.data.length; i++) {
         this.data[i].srNumber = i + 1;
@@ -108,7 +105,7 @@ export class UnitComponent implements OnInit {
     this.http.deleteUnitData(unitId).subscribe((data) => {
       this.data = undefined;
       this.getAllUnit();
-      console.log('data' + data);  
+      console.log('data' + data);
     });
   }
 
@@ -123,7 +120,7 @@ export class UnitComponent implements OnInit {
   assignOptions() {
     this.formdata = Object.assign({}, unitForm);
     this.formdata.form.formControls.forEach((data: any) => {
-      data.values=[];
+      data.values = [];
       if (data.formControlName === "selectCountry") {
         let defaultObj = {
           "name": "Select country",
@@ -146,7 +143,7 @@ export class UnitComponent implements OnInit {
           "code": "0"
         }
         data.values.push(defaultObj);
-        this.http.GetAllCountryData().subscribe(item => {
+        this.http.GetAllStateData().subscribe(item => {
           item.forEach((e: any) => {
             let obj = {
               "name": e.stateName,
@@ -162,7 +159,7 @@ export class UnitComponent implements OnInit {
           "code": "0"
         }
         data.values.push(defaultObj);
-        this.http.GetAllCountryData().subscribe(item => {
+        this.http.GetAllCityData().subscribe(item => {
           item.forEach((e: any) => {
             let obj = {
               "name": e.cityName,
@@ -188,7 +185,7 @@ export class UnitComponent implements OnInit {
           })
         })
       }
-      if (data.formControlName === "unitOrganization") {
+      if (data.formControlName === "unitOrg") {
         let defaultObj = {
           "name": "Select Organization",
           "code": "0"

@@ -1,6 +1,8 @@
 {
     "form": {
         "class": "row",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
         "formTitle": "Add Bank Branch",
         "formName": "Form1",
         "formType": "edit",

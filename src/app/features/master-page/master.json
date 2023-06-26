@@ -11,6 +11,7 @@
       "usericon": "../../assets/Icon.png",
       "setting": "../../assets/setting.png",
       "notification": {
+        "count":"",
         "data": [
           {
             "title": "Final Presentation",
@@ -22,9 +23,7 @@
       "sidenavLogo":"/assets/medimazefull.png",
       "onlyLogo":"/assets/medimazesmall.png"
     },
-    "sidenavItems": [
-     
-    ],
+    "sidenavItems": [],
     "footer": {
       "logo": "../../assets/Techjivaa-svg-removebg.png",
       "dp": "../../assets/userlogo.png",
