@@ -2,6 +2,7 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import tabularData from './all-masters.json';
 import allUnitList from './allUnitList.json';
 import Breadcrumbs from './breadcrumb.json';
+import { AllMastersService } from './all-masters.service';
 
 
 @Component({
@@ -9,7 +10,7 @@ import Breadcrumbs from './breadcrumb.json';
   templateUrl: './all-masters.component.html',
   styleUrls: ['./all-masters.component.css']
 })
-export class AllMastersComponent implements OnInit, DoCheck {
+export class AllMastersComponent implements OnInit {
   title:any="title"
   items:any= Breadcrumbs
   tabularSideData=tabularData;
@@ -28,21 +29,14 @@ export class AllMastersComponent implements OnInit, DoCheck {
   unitFlag:false,
   nurFlag:false
   }
-  constructor() { }
+  constructor(private allMastersService:AllMastersService) { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
+    console.log(this.allMastersService.getMasterSelector());
+    if(this.allMastersService.getMasterSelector()!=null){
+      this.renderComponents(this.allMastersService.getMasterSelector());
+    }
   }
-
-  ngDoCheck(){
-  }
-
-defaultSelecter(e:Object){
-  let count:number;
-  count++;
-  if(count>1){
-    this.renderComponents(e);
-  }
-}
 
   restFlag(){
     this.allFlag = {
@@ -62,7 +56,7 @@ defaultSelecter(e:Object){
   }
 
   renderComponents(e: any) { 
-    this.defaultSelecter(e);
+  this.allMastersService.addMasterSelector(e);
     switch (e.label) {
       case "Admission Configuration": this.restFlag(); this.allFlag.admiFlag=true; break
       case "Discharge Configuration": this.restFlag(); this.allFlag.disFlag=true; break
