@@ -15,7 +15,8 @@
         "data": [
           {
             "title": "Final Presentation",
-            "msg": "Classify notifications by three levels: high, medium, and low."
+            "msg": "Classify notifications by three levels: high, medium, and low.",
+            "readFlag": false
           }
         ]
       },

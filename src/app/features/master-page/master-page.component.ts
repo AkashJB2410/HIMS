@@ -55,7 +55,8 @@ export class MasterPageComponent implements OnInit {
         let obj={
           "id":a.notificationId,
           "title": a.title,
-          "msg":a.message
+          "msg":a.message,
+          "readFlag":a._Read
         };
         this.masterJSON.masterData.header.notification.data[i]=obj;
         
@@ -81,14 +82,16 @@ export class MasterPageComponent implements OnInit {
         if(this.data[i]._Read==false){
           this.http.readMsg(this.data[i].notificationId).subscribe((res)=>{
             this.clickedData=res;
-            this.getCount();            
+            this.getCount(); 
+            this.GetAllNotifications()           
           })
         }
       }
     }else{
       this.http.readMsg(e.id).subscribe((res)=>{
         this.clickedData=res;
-        this.getCount();        
+        this.getCount();  
+        this.GetAllNotifications()       
       })
     }
     
