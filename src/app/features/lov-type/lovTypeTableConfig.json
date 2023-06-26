@@ -1,12 +1,8 @@
 {
     "tableName": "Lovtype Table",
     "tableHeaders": [
-        {
-            "field": "lovTypeId",
-            "header": "LOV type ID",
-            "iseditable": false,
-            "class": ""
-        },
+        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":""},
+
         {
             "field": "code",
             "header": "Code",
@@ -33,6 +29,8 @@
         }
     ],
     "PdfHeaders": [
+        {"field": "srNumber","header": "Sr. No"},
+
         {
             "field": "lovTypeId",
             "header": "lovTypeId"

@@ -1,7 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Master Module",
+        "formTitle": "Add Master Module",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
         "formType": "edit",
         "sidebar":"p-sidebar-sm",
@@ -114,7 +116,7 @@
                 "isVisible": true,
                 "type": "button",
                 "subtype": "save",
-                "class": "col-md-4  ",
+                "class": "col-md-4",
                 "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",
