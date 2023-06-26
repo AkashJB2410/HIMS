@@ -64,7 +64,7 @@ export class GroupModuleService {
     const param = {
       "groupId": data.groupId
     }
-    const url = "http://localhost:8080/api/v1/reActive/" + data.groupId;
+    const url = "http://localhost:8080/api/v1/reActiveMstGroup/" + data.groupId;
     console.log(data.groupId);
     return this.PostCall(url, param);
   }

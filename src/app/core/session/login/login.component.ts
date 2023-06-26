@@ -96,7 +96,7 @@ export class LoginComponent implements OnInit {
           this.messageService.add({ severity: 'success', summary: 'Login', detail: 'Logged in successful.' });
           sessionStorage.setItem('loggedUser',this.encrypt.transform(JSON.stringify(data)));
           sessionStorage.setItem('loggedIn', 'true');
-          this.router.navigateByUrl('/master-page/user-management');
+          this.router.navigateByUrl('/master-page/home');
         } else if (data.password != this.loginForm.value.password) {
           this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
         }

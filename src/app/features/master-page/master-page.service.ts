@@ -14,6 +14,11 @@ export class MasterPageService {
     return this.http.post<any>(url, param, { headers })
   }
 
+  GetAllSideNavData(){
+    const url = "http://localhost:8080/api/v1/allSideNavFormData";
+    return this.http.get<any>(url);
+  }
+  
   GetAllNotifications(){
     const url = "http://localhost:8080/api/v1/allNotificationData";
     return this.http.get<any>(url);
