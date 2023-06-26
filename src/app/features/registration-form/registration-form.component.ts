@@ -33,7 +33,10 @@ export class RegistrationFormComponent implements OnInit {
   isAddEditFlag: any;
   items: any = Breadcrumbs;
   imgName: any
-  dateOfBirth: any
+  dateOfBirth: any;
+  getage: any;
+  agemon: any;
+  agedday: any;
 
   constructor(private messageService: MessageService, public datepipe: DatePipe, private http: RegistrationFormService, private form$: FormService) { }
 
@@ -429,9 +432,11 @@ export class RegistrationFormComponent implements OnInit {
         this.imgName = res.ImageName;
       })
     }
-    // if (e[1].fieldName == "userBirthdate") {
-    //   console.log("date of birth => ", e)
-    // }
+    if (e[1].fieldName == "userBirthdate") {
+      console.log("date of birth => ", e[0])
+      this.calculateAge(e[0]);
+      this.form$.reRenderForm(this.formData.form.formControls[13], this.getage, 'autofill');
+    }
 
   }
   getAllUserData() {
@@ -620,44 +625,62 @@ export class RegistrationFormComponent implements OnInit {
     //   })
   }
 
-  // getAge(dateString) {
-  //   let now, today, yearNow, monthNow, dateNow, dob, yearDob, monthDob, dateDob, monthAge, dateAge, yearAge;
-  //   now = new Date();
-  //   today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  //   yearNow = now.getFullYear();
-  //   monthNow = now.getMonth();
-  //   dateNow = now.getDate();
-  //   dob = new Date(dateString.substring(6, 10),
-  //     dateString.substring(0, 2) - 1,
-  //     dateString.substring(3, 5)
-  //   );
-  //   yearDob = dob.getFullYear();
-  //   monthDob = dob.getMonth();
-  //   dateDob = dob.getDate();
-  //   monthAge = 0;
-  //   dateAge = 0;
-  //   yearAge = yearNow - yearDob;
-  //   if (monthNow >= monthDob) {
-  //     monthAge = monthNow - monthDob;
-  //   } else {
-  //     yearAge--;
-  //     monthAge = 12 + monthNow - monthDob;
-  //   }
-  //   if (dateNow >= dateDob) {
-  //     dateAge = dateNow - dateDob;
-  //   } else {
-  //     monthAge--;
-  //     dateAge = 31 + dateNow - dateDob;
-  //     if (monthAge < 0) {
-  //       monthAge = 11;
-  //       yearAge--;
-  //     }
-  //   }
-  //   this.getage = yearAge;
-  //   this.agemon = monthAge;
-  //   this.agedday = dateAge;
+  calculateAge(dateString: any) {
+    let now, today, yearNow, monthNow, dateNow, dob, yearDob, monthDob, dateDob, monthAge, dateAge, yearAge;
+    now = new Date();
+    today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    yearNow = now.getFullYear();
+    monthNow = now.getMonth();
+    dateNow = now.getDate();
 
-  // }
+    console.log("yearNow =======> ",yearNow)
+    console.log("monthNow =======> ",monthNow)
+    console.log("dateNow =======> ",dateNow);
+    console.log("dateString ===> ", dateString);
+    dob = new Date(dateString.substring(6, 10),
+      dateString.substring(0, 2) - 1,
+      dateString.substring(3, 5)
+    );
+    yearDob = dob.getFullYear();
+    monthDob = dob.getMonth();
+    dateDob = dob.getDate();
+
+
+    console.log("yearDob =======> ",yearDob)
+    console.log("monthDob =======> ",monthDob)
+    console.log("dateDob =======> ",dateDob);
+    monthAge = 0;
+    dateAge = 0;
+    yearAge = yearNow - yearDob;
+    if (monthNow >= monthDob) {
+      monthAge = monthNow - monthDob;
+    } else {
+      yearAge--;
+      monthAge = 12 + monthNow - monthDob;
+    }
+    if (dateNow >= dateDob) {
+      dateAge = dateNow - dateDob;
+    } else {
+      monthAge--;
+      dateAge = 31 + dateNow - dateDob;
+      if (monthAge < 0) {
+        monthAge = 11;
+        yearAge--;
+      }
+    }
+
+    console.log("monthAge =======> ",monthAge)
+    console.log("dateAge =======> ",dateAge)
+    console.log("yearAge =======> ",yearAge)
+    this.getage = yearAge;
+    this.agemon = monthAge;
+    this.agedday = dateAge;
+
+    console.log("age =======> ",this.getage)
+    console.log("agemon =======> ",this.agemon)
+    console.log("agedat =======> ",this.agedday)
+
+  }
 }
 
 function moment(dob: any) {

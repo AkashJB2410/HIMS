@@ -96,6 +96,9 @@ export class FormComponent implements OnInit {
   }
   changeEvent(event: any, data: any) {
     this.events = [];
+    if (data.fieldType == 'date') {
+      event = this.datepipe.transform(event, "MM/dd/yyyy");
+    }
     this.events.push(event);
     this.events.push(data);
     this.changeEvents.emit(this.events);
