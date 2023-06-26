@@ -29,8 +29,21 @@ export class MasterPageComponent implements OnInit {
       isSideBar: true,
       isConfirmation: true,
     };
+    this.getALLSideNavData()
     this.GetAllNotifications();
     this.getCount();
+  }
+
+  getALLSideNavData(){
+    this.http.GetAllSideNavData().subscribe((res) => {
+      console.log("sidenavdata => ",res.sidenavItems)
+      console.log("sidenavdata => ",this.masterJSON.masterData.sidenavItems)
+      res.sidenavItems.forEach((e: any) => {
+        this.masterJSON.masterData.sidenavItems.push(e);
+      });
+      console.log("sidenavdata => ",this.masterJSON.masterData.sidenavItems)
+
+    });
   }
 
   GetAllNotifications() {
