@@ -10,6 +10,7 @@ import { AllMastersService } from './all-masters.service';
   templateUrl: './all-masters.component.html',
   styleUrls: ['./all-masters.component.css']
 })
+
 export class AllMastersComponent implements OnInit {
   title:any="title"
   items:any= Breadcrumbs
