@@ -2467,10 +2467,27 @@ body {
   background-color: #C7E3FF;
 }
 
-.card-scroll::-webkit-scrollbar-thumb:hover {
-  background: #e7af21;
-  border-radius: 5px;
-}
+/*--------------------------*/
+ .card-scroll{
+  overflow-y: scroll;
+    height: 100vh;
+  }
+   
+  
+  .card-scroll::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .card-scroll::-webkit-scrollbar-thumb {
+    background: #CD9C1D;
+    border-radius: 5px;
+    height: 40px;
+  }
+  
+  .card-scroll::-webkit-scrollbar-thumb:hover {
+    background: #e7af21;
+    border-radius: 5px;
+  }
 
 .design:hover {
   transform: scale(1.1);
@@ -2485,12 +2502,13 @@ body {
 }
 
 .verticalCards {
-  margin-left: 10px !important;
+  /* margin-left: 10px !important;
   margin-right: 10px !important;
-  border: 2px solid #374476 !important;
-
+  border: 2px solid #374476 !important; */
 }
-
+.p-card{
+  border:1px solid #374476;
+}
 .contextMenusImgs {
   margin-right: 10px;
 }

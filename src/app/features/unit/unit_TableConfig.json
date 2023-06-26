@@ -92,6 +92,12 @@
             "header": "Fax No",
             "iseditable": false,
             "class": "text-center"
+        },
+        {
+            "field": "is_Active",
+            "header": "IsActive",
+            "iseditable": false,
+            "class": ""
         }
     ],
     "PdfHeaders": [

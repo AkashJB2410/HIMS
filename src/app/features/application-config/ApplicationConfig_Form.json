@@ -3,7 +3,7 @@
         "class": "row",
         "formTitleClass": "Sidebar-title-sm",
         "formTitleLogo":"bi bi-file-earmark-medical",
-        "formTitle": "Application configuration",
+        "formTitle": "Application Configuration",
         "formName": "Form1",
         "formType": "edit",
         "sidebar":"p-sidebar-sm",
@@ -19,7 +19,7 @@
                 "class": "col-md-12 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Enter groupId",
+                "placeholder": "Enter Application",
                 "formControlName": "applicationId",
                 "message": {
                     "required": "groupId is required",
@@ -39,7 +39,7 @@
                 "class": "col-md-12 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Enter unit cluster",
+                "placeholder": "Enter key name",
                 "formControlName": "keyname",
                 "message": {
                     "required": "keyname is required",
@@ -59,7 +59,7 @@
                 "class": "col-md-12 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Enter icon name",
+                "placeholder": "Enter key value",
                 "formControlName": "keyvalue",
                 "message": {
                     "required": "keyvalue is required",

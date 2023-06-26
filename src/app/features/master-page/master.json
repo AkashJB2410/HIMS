@@ -11,6 +11,7 @@
       "usericon": "../../assets/Icon.png",
       "setting": "../../assets/setting.png",
       "notification": {
+        "count":"",
         "data": [
           {
             "title": "Final Presentation",
@@ -720,15 +721,16 @@
             "routerLink": "/master-page/master-module"
           },
           {
-            "label": "Sub Module",
-            "icon": "",
-            "routerLink": "/master-page/sub-module"
-          },
-          {
             "label": "Group Module",
             "icon": "",
             "routerLink": "/master-page/group-module"
+          },
+          {
+            "label": "Sub Module",
+            "icon": "",
+            "routerLink": "/master-page/sub-module"
           }
+          
         ]
       }
     ],
