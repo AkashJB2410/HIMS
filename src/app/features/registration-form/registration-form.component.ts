@@ -434,7 +434,8 @@ export class RegistrationFormComponent implements OnInit {
     }
     if (e[1].fieldName == "userBirthdate") {
       console.log("date of birth => ", e[0])
-      this.calculateAge(e[0]);
+      let age =this.datepipe.transform(e[0], "MM/dd/yyyy")
+      this.calculateAge(age);
       this.form$.reRenderForm(this.formData.form.formControls[13], this.getage, 'autofill');
     }
 

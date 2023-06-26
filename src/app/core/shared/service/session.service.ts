@@ -7,21 +7,19 @@ import * as myConstants from "../objects/constants";
   providedIn: 'root'
 })
 export class SessionService {
-  email = "raghvendrapala839@gmail.com";
+
   constructor(private http: HttpClient) { }
-
-  orgData() {
-    this.email
-    const url = myConstants.LOCALHOSTURL + "api/v1/organizationData?emailId=" + this.email;
-    return this.http.get<any>(url);
-  }
-
   headers = new HttpHeaders().set('Content-type', 'application/json');
 
   Logincheck(obj: any): Observable<any> {
+    const params = {
+      "emailId": obj.emailId,
+      "password": obj.password
+    }
     const url = myConstants.LOCALHOSTURL + "api/v1/login";
     const headers = new HttpHeaders().set('Content-type', 'application/json');
-    return this.http.post<any>(url, obj, { headers })
+
+    return this.http.post<any>(url, params, { headers })
   }
 
   GetAllCollectionData() {
@@ -97,11 +95,11 @@ export class SessionService {
     return this.http.put<any>(url, param);
   }
 
-  // orgData(email: any) {
-  //   const url = myConstants.LOCALHOSTURL + "api/v1/organizationData?emailId=" + email;
-  //   return this.http.get<any>(url);
-  // }
-  
+  orgData(email: any) {
+    const url = myConstants.LOCALHOSTURL + "api/v1/organizationData?emailId=" + email;
+    return this.http.get<any>(url);
+  }
+
   addPersonalization(dateFormat: any, currency: any, theme: any): Observable<any> {
     const param = {
       "dateFormat": dateFormat,

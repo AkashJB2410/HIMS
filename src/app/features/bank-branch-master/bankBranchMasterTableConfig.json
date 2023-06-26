@@ -1,7 +1,7 @@
 {
     "tableName": "Bank Brach Table",
     "tableHeaders": [
-        {"field": "srNumber","header": "Sr Number","iseditable": false , "class":"text-center"},
+        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":"text-center"},
 
         {
             "field": "bbBankId_name",

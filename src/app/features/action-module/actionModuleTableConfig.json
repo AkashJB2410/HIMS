@@ -3,7 +3,7 @@
     "tableHeaders": [
         {
             "field": "srNumber",
-            "header": "Sr.Number",
+            "header": "Sr.No",
             "iseditable": false,
             "class": "text-center"
         },

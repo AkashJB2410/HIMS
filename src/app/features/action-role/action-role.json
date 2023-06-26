@@ -1,6 +1,8 @@
 {
     "form": {
         "class": "row",
+        "formTitleClass": "Sidebar-title-md",
+        "formTitleLogo":"bi bi-file-earmark-medical",
         "formTitle": "Action Role",
         "formName": "Form1",
         "formType": "edit",

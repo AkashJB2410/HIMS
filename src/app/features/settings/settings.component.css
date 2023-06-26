@@ -1,0 +1,81 @@
+ul p.verticaltab {
+  background-color: #374476;;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  background-image: url("/assets/verticaltabyellow.png") !important;
+  background-repeat: no-repeat;
+  background-position: left 0.75rem center;
+
+}
+
+.active{
+  background-color:  #374476 !important;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  background-image: url("/assets/verticaltabyellow.png") !important;
+  background-repeat: no-repeat;
+  background-position: left 0.75rem center;
+}
+
+.design {
+  border: red;
+  background-color: #DEDEDE;
+  padding: 9px;
+  border-radius: 1px;
+  height: 40px;
+  list-style-type: none;
+}
+
+::ng-deep.card{
+    margin: 25px;
+    padding: 0px !important;
+    width: 800px;
+
+  }
+  ::ng-deep.ulDesign{
+    padding: 0px;
+  }
+  ::ng-deep.p-card .p-card-body{
+  height: 80vh !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+::ng-deep.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
+  margin-left: 80px;
+  margin-right: 80px;
+  font-weight: 600;
+
+}
+::ng-deep.p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+  background-color: #DEDEDE;
+  margin-left: 10px;
+}
+.themeImage{
+  height:115px;
+  margin-left: 11px;
+  margin-bottom: 8px;
+}
+.headerTheme{
+  font-size: 14px !important;
+  color:#1769aa;
+  font-weight:600
+}
+.optionActive .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link{
+  background-color: red;
+}
+.buttonCss{
+margin-top: 40px;
+float: right;
+background-color: #374476;
+border: none;
+color: white;
+padding: 7px 20px;
+text-align: center;
+text-decoration: none;
+border-radius: 5px;
+display: inline-block;
+font-size: 16px;
+cursor: pointer;
+}
