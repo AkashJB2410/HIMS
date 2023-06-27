@@ -6,8 +6,7 @@
                     <!-- <div class="image">
                     </div> -->
                     <div class="login-card-header">
-                        <!-- <h3 class="text-center">{{loginFormData.loginForm.form.formTitle}}</h3> -->
-                        <h3 class="text-center">Login</h3>
+                        <h3 class="text-center">{{loginFormData.loginForm.form.formTitle}}</h3>
                     </div>
                     <div class="lbl-center-login" *ngIf="timerFlag">
                         Try logging in after {{display}} mins.
@@ -43,9 +42,7 @@
                             <div class="form-group mt-6 login-input" style="margin-top: 10px;">
                                 <app-captcha (captchaEmitData)="getCaptcha($event)"></app-captcha>
                             </div>
-                            <div class="form-group mb-6 login-input">
-                               <span class="forgotPass" routerLink="/forgot-password">Forgot Password ?</span>
-                            </div>
+                            <span class="forgotPass" routerLink="/forgot-password">Forgot Password ?</span>
                             <button class="btn btn-primary btn-block btn-lg btn-fnt" [disabled]="!loginForm.valid">Login</button>
                         </div>
                     </form>

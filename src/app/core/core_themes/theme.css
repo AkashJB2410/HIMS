@@ -15,9 +15,9 @@ body {
   background: #F0F0F0 !important;
 } */
 
-.col-md-1 {
+/* .col-md-1 {
   padding: 2px 2px;
-}
+} */
 
 .p-datatable .p-datatable-tbody>tr {
   background: #ffffff;
@@ -1452,8 +1452,11 @@ body {
 
 .lbl-center-login {
   text-align: center;
-  color: red !important;
-  font-size: 14px;
+  /* color: red; */
+  font-size: 24px;
+  line-height: 30px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .lbl-center-text {
@@ -2012,10 +2015,9 @@ body {
 
 .p-checkbox .p-checkbox-box {
   border: 1px solid #757575 !important;
-  width: 12px !important;
-  height: 12px !important;
+  width: 13px !important;
+  height: 13px !important;
   margin-top: 1px;
-  border-radius: 4px !important;
 }
 
 /* -----------------header CSS start ----------*/
@@ -2218,7 +2220,8 @@ body {
 }
 
 .filterBG {
-  padding: 0.7rem;
+  padding-bottom: 0.7rem;
+  padding-left: 1rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -2228,7 +2231,7 @@ body {
 }
 
 /* --------------wapper classes---------- */
-.wrapper-login {
+/* .wrapper-login {
   padding: 0 0 100px;
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -2238,7 +2241,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .p-overlaypanel .p-overlaypanel-content {
   padding: 0.5rem !important;
@@ -2417,9 +2420,11 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
 .cardDesign {
   height: 20px !important;
 }
+
 .verticalCardImage {
   margin-right: 15px;
 }
@@ -2435,21 +2440,22 @@ body {
 .cardHeight {
   height: 400px;
 }
+
 .Activebutton {
   height: 18px;
   width: 18px;
   margin-left: 5px;
 }
 
-.p-sidebar .p-sidebar-header
-{
+.p-sidebar .p-sidebar-header {
   padding: 0rem !important;
 }
+
 .spacer {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .contextMenus {
@@ -2459,7 +2465,6 @@ body {
 
 .contextMenus:hover {
   background-color: #C7E3FF;
-
 }
 
 .contextMenusImgs {
@@ -2477,44 +2482,54 @@ body {
   min-width: 1rem !important;
   height: 1rem !important;
   border-radius: 20px;
-  line-height:1rem !important;
-  font-size:8px !important
-
+  line-height: 1rem !important;
+  font-size: 8px !important
 }
+
 .p-toast {
   opacity: 1.9 !important;
 }
 
-.wrap-img{
+.wrap-img {
   text-align: center;
 }
-.cursor{
+
+.cursor {
   cursor: pointer;
 }
-.card-scroll{
+
+.card-scroll {
   overflow-y: scroll;
-    height: 100vh;
-  }
-   
-  
-  .card-scroll::-webkit-scrollbar {
-    width: 5px;
-  }
-  
-  .card-scroll::-webkit-scrollbar-thumb {
-    background: #CD9C1D;
-    border-radius: 5px;
-    height: 40px;
-  }
-  .p-card{
-      border:1px solid #374476;
-    }
-    
-    .notification{
-      border-left: 5px solid red;
-      border-radius: 5px;
-    }
- .notification-blu{
-  border-left: 5px solid  #00A1DF;
+  height: 100vh;
+}
+
+.card-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.card-scroll::-webkit-scrollbar-thumb {
+  background: #CD9C1D;
   border-radius: 5px;
- }
+  height: 40px;
+}
+
+.p-card {
+  border: 1px solid #374476;
+}
+
+.notification {
+  border-left: 5px solid red;
+  border-radius: 5px;
+}
+
+.notification-blu {
+  border-left: 5px solid #00A1DF;
+  border-radius: 5px;
+}
+
+.p-radiobutton .p-radiobutton-box .p-radiobutton-icon {
+  width: 9px !important;
+  height: 9px !important;
+  transition-duration: 0.2s;
+  background-color: #673AB7;
+}

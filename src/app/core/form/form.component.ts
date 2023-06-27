@@ -60,11 +60,7 @@ export class FormComponent implements OnInit {
   }
 
   onImageUpload(event: any, id: any) {
-    //  id.fieldValue = event.target.files[0];
-
-    // covert base 64 image code
-    const file = (event.target as HTMLInputElement).files[0];
-    this.covertToBase64(file, id);
+    id.fieldValue = event.target.files[0];
   }
 
   covertToBase64(file: File, control: any) {
@@ -75,6 +71,7 @@ export class FormComponent implements OnInit {
       this.form.get(control.fieldName).setValue(d);
     })
   }
+
   readFile(file: File, subscriber: Subscriber<any>) {
     const filereader = new FileReader();
     filereader.readAsDataURL(file);
@@ -86,18 +83,14 @@ export class FormComponent implements OnInit {
       subscriber.error(error);
       subscriber.complete();
     }
-
   }
 
   onFilesUpload(event: any, id: any) {
     id.fieldValue = event.target.files;
-  }
 
+  }
   changeEvent(event: any, data: any) {
     this.events = [];
-    if (data.fieldType == 'date') {
-      event = this.datepipe.transform(event, "yyyy-MM-dd");
-    }
     this.events.push(event);
     this.events.push(data);
     this.changeEvents.emit(this.events);
@@ -253,7 +246,11 @@ export class FormComponent implements OnInit {
           delete this.form.value[element.fieldName];
         }
         if (element.fieldType == 'date') {
-          this.form.get(element.fieldName).setValue(this.datepipe.transform(element.fieldValue, "yyyy-Mm-dd"));
+          var format = JSON.parse(localStorage.getItem('personalization'));
+          this.form.value[element.fieldName] = this.datepipe.transform(
+            element.fieldValue,
+            format.dateFormat
+          );
         }
       });
       this.formData.emit(this.form.getRawValue());

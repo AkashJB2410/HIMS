@@ -15,10 +15,13 @@ export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
     emailId: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
-    organisation: new FormControl('', [Validators.required]),
+    organisation: new FormControl({
+      "organization_Id": "",
+      "organization_Type": "Select an option"
+    }, [Validators.required]),
     captcha: new FormControl('', [Validators.required])
   });
-  loginFormData =login;
+  loginFormData = login;
   orgList: any = [];
   tabularData: any;
   display: any;
@@ -32,7 +35,7 @@ export class LoginComponent implements OnInit {
     localStorage.clear();
     sessionStorage.clear();
   }
-  
+
   getEmail(e: any) {
     this.http.orgData(e.value)
       .subscribe(res => {
@@ -51,8 +54,8 @@ export class LoginComponent implements OnInit {
         })
       })
   }
-  
-  getCaptcha(e: any){
+
+  getCaptcha(e: any) {
     this.loginForm.get('captcha').setValue(e);
   }
 
@@ -79,32 +82,35 @@ export class LoginComponent implements OnInit {
     }, 1000);
   }
 
-
-
   onSubmit() {
-    if(this.loginForm.value.captcha){
+    if (this.loginForm.value.captcha && this.loginForm.value.organisation.organization_Id != "") {
       this.http.Logincheck(this.loginForm.value)
-      .subscribe(data => {
-        let a = + data.loginFailed
-        if (a <= 2) {
-          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Your entered password is wrong.Your account will be locked due to 3 failed attempts.. Attempt  : ' + a });
-        } else if (a == 3) {
-          this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
-          this.timer(1);
-        } else if (data.password == this.loginForm.value.password) {
-          this.timerFlag2 = false;
-          this.messageService.add({ severity: 'success', summary: 'Login', detail: 'Logged in successful.' });
-          sessionStorage.setItem('loggedUser',this.encrypt.transform(JSON.stringify(data)));
-          sessionStorage.setItem('loggedIn', 'true');
-          this.router.navigateByUrl('/master-page/home');
-        } else if (data.password != this.loginForm.value.password) {
-          this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
-        }
-      });
+        .subscribe(data => {
+          let a = + data.loginFailed
+          if (a <= 2) {
+            this.messageService.add({ severity: 'error', summary: 'Your entered password is wrong', detail: 'Your account will be locked due to 3 failed attempts.. No of attempts left  : ' + a });
+          } else if (a == 3) {
+            this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
+            this.timer(1);
+          } else if (data.password == this.loginForm.value.password) {
+            this.timerFlag2 = false;
+            this.messageService.add({ severity: 'success', summary: 'Login', detail: 'Logged in successfully.' });
+            sessionStorage.setItem('loggedUser', this.encrypt.transform(JSON.stringify(data)));
+            sessionStorage.setItem('loggedIn', 'true');
+            this.router.navigateByUrl('/master-page/home');
+          } else if (data.password != this.loginForm.value.password) {
+            this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
+          }
+        });
     } else {
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid captcha'});
+      if (!this.loginForm.value.captcha) {
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid captcha' });
+      } else {
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please select organization' });
+      }
     }
   }
+
 }
 
 
