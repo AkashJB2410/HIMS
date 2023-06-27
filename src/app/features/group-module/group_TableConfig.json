@@ -11,7 +11,7 @@
             "field": "mstModule_name",
             "header": "Mst Module",
             "iseditable": false,
-            "class": "text-center"
+            "class": ""
         },
         {
             "field": "lable",
@@ -103,5 +103,5 @@
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
     "buttonlbl": "Add group",
-    "textLength": 16
+    "textLength": 40
 }

@@ -17,13 +17,14 @@
                     </span>
                 </div>
                 <div class="col-md-1 mx-1">
-                    <p-multiSelect [options]="colNames" pTooltip="Selected Columns" tooltipPosition="top" [(ngModel)]="selectedColumns" optionLabel="header"
-                        selectedItemsLabel="{0} columns selected" [style]="{ minWidth: '50px' }"
-                        placeholder="Choose Columns"></p-multiSelect>
+                    <p-multiSelect [options]="colNames" pTooltip="Selected Columns" tooltipPosition="top"
+                        [(ngModel)]="selectedColumns" optionLabel="header" selectedItemsLabel="{0} columns selected"
+                        [style]="{ minWidth: '50px' }" placeholder="Choose Columns"></p-multiSelect>
                 </div>
                 <div class="item5 mx-1">
                     <button class="btn butn-sucss me-1 wordwrap" pRipple (click)="AddNewProduct($event)">
-                        <i class="pi pi-plus" style="padding-right: 8px;" pTooltip="{{config.buttonlbl}}"></i>{{config.buttonlbl}}</button>
+                        <i class="pi pi-plus" style="padding-right: 8px;"
+                            pTooltip="{{config.buttonlbl}}"></i>{{config.buttonlbl}}</button>
                     <button class="btn butn-wrng me-1" pTooltip="Export To PDF" tooltipPosition="top" pRipple
                         (click)="exportPdf()"><i class="pi pi-file-pdf"></i></button>
                     <button class="btn butn-sucss me-1" pTooltip="Export To Excel" tooltipPosition="top" pRipple
@@ -82,7 +83,6 @@
                         {{rowData[col.field]}}
                     </ng-template>
                 </td> -->
-    
                 <td *ngIf="config.isActions" style="padding: 0.25rem 0.25rem; width: 4rem ; text-align: center;">
                     <ng-container>
                         <button *ngIf="config.isActions.includes('Edit')" pTooltip="Edit" tooltipPosition="left" pButton
@@ -94,9 +94,10 @@
                         <button *ngIf="config.isActions.includes('Viewer')" pTooltip="Viewer" tooltipPosition="left"
                             pButton pRipple icon="pi pi-window-maximize" style="background-color: black;"
                             routerLink="/dicom-viewer" class="p-button-rounded "></button>
-                        <a *ngIf="config.isActions.includes('isActive')"><i><img
-                                    src="../../../assets/core_assets/on-button.png" class="Activebutton"
-                                    (click)="active(rowData)" pTooltip="Active" tooltipPosition="left"></i></a>
+                        <a *ngIf="config.isActions.includes('isActive')"><i>
+                            <img src="../../../assets/core_assets/on-button.png" class="Activebutton"
+                                    (click)="active(rowData)" pTooltip="Active" tooltipPosition="left" ></i>
+                        </a>
                     </ng-container>
                 </td>
                 <td *ngIf="config.expand" style="text-align: center;">
@@ -125,12 +126,13 @@
         </ng-template>
     </p-table>
 </div>
+
 <div *ngIf="contextmenu" style="position: absolute;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);"
     [ngStyle]="{'left.px': contextmenuX, 'top.px': contextmenuY}">
     <ul class="nav flex-column" style="background-color: white;
     width: 250px;
     padding: 7px;">
-        <li class="contextMenus" *ngFor="let list of contextMenus" (click)="rightClick(list)"><img class="contextMenusImgs" [src]="list.img"
-                alt="">{{list.menu}}</li>
+        <li class="contextMenus" *ngFor="let list of contextMenus" (click)="rightClick(list)"><img
+                class="contextMenusImgs" [src]="list.img" alt="">{{list.menu}}</li>
     </ul>
 </div>

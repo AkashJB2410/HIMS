@@ -26,6 +26,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     private elementRef: ElementRef) { }
 
   ngOnInit(): void {
+
     this.list = this.headerInput;
     this.userDetails = JSON.parse(this.decrypt.transform(sessionStorage.getItem('loggedUser')));
     this.headerData = this.list.header
@@ -95,7 +96,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
           }
         ]
       }]
-
+    
     setTimeout(() => {
       let a = document.getElementsByClassName('goog-te-combo')[0] as HTMLSelectElement;
       a.options[0].value = "hi";
@@ -130,8 +131,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   profile(e: any) {
   }
-
-  setting() {
+  
+  setting(){
     this.router.navigateByUrl('/master-page/settings');
   }
 }

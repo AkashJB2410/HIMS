@@ -1,5 +1,4 @@
 <div class="">
-    <img src="">
     <h6 class="{{formJson.formTitleClass}}"><i class="{{formJson.formTitleLogo}}"></i>{{formJson.formTitle}}</h6>
     <form [formGroup]="form">
         <div class="{{formJson.class}}">
@@ -98,7 +97,8 @@
                     <div *ngIf="formData.fieldType == formStaticText.IMAGEUPLOAD">
                         <input id="{{formData.fieldName}}" type="file" name="{{formData.fieldName}}"
                             [ngClass]="formData.editable ? formData.valueclass : 'imgUpload1'"
-                            class="{{formData.valueclass}}" accept="image/*"
+                            class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
+                            [(ngModel)]="formData.fieldValue" accept="image/*"
                             (change)="onImageUpload($event, formData); changeEvent($event, formData)" />
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.FILESUPLOAD">
@@ -124,7 +124,7 @@
                     </div>
                     <div class="{{formData.valueclass}}"
                         *ngIf="formData.fieldType === formStaticText.DEPENDENTDROPDOWN">
-                        <app-dependent-dropdown [data]="formData.values"
+                        <app-dependent-dropdown [data]="formData.values" [defaultData]="formData.fieldValue"
                             (dependentDrop)="dependentDrop($event, formData)"></app-dependent-dropdown>
                     </div>
 

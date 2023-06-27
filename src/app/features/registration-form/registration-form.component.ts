@@ -519,6 +519,10 @@ export class RegistrationFormComponent implements OnInit {
         this.gridData.push(obj);
       })
       this.data = [...this.gridData];
+      for (let i = 0; i < this.data.length; i++) {
+        this.data[i].srNumber = i + 1;
+      }
+      this.data;
       this.isdataReady = true;
     })
   }

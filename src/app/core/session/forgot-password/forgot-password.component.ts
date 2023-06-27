@@ -25,38 +25,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 
 export class ForgotPasswordComponent implements OnInit {
-  list: any;
-  findEmailList: any;
-  getVerificationCodeList: any;
-  verificationformData: any[] = [];
-  accountRecoveryList: any;
-  accountformData: any[] = [];
-  changePasswordFormData: any[] = [];
-  welcomeBackList: any;
-  btnContentList: any;
-  changePasswordList: any;
-  varFindEmail = false;
-  varGetVerificationCode = false;
-  varAccountRecovery = false;
-  varWelcomeBack = false;
-  varChangePassword = false;
-  public obj: any = {};
-  submitted = false;
-  submittedEmail = false;
-  submittedCode = false;
-  submittedPass = false;
-  controlsEmail = {};
-  controlsCode = {};
-  controlsPassword = {};
-  varEmailId = '';
-  varOTP = '';
-  varPassword = '';
-  goubleEmailVar: any;
-  spinnerFlag = false;
-  confirmedPass: any;
-  mobileOrEmail: any;
-  forgotpassword: any;
-  mobileIsPresent = false;
+
 
   inputForm = new FormGroup({
     emailId: new FormControl(''),
@@ -73,13 +42,7 @@ export class ForgotPasswordComponent implements OnInit {
   confirmPassword: FormGroup = new FormGroup({});
   password: any = '';
   repassword: any = '';
-  constructor(private router: Router, private http: SessionService, private messageService: MessageService) {
-    this.findEmailList = findEmailData;
-    this.getVerificationCodeList = getVerificationCodeData;
-    this.accountRecoveryList = accountRecoveryData;
-    this.welcomeBackList = welcomeBackData;
-    this.changePasswordList = changePasswordData;
-  }
+  constructor(private router: Router, private http: SessionService, private messageService: MessageService) {}
 
   ngOnInit(): void {
   }
@@ -98,14 +61,12 @@ export class ForgotPasswordComponent implements OnInit {
       this.http.verifyEmailId(this.inputForm.value)
         .subscribe(data => {
           if (data.status == "Valid") {
-            this.messageService.add({ severity: 'success', summary: 'success', detail: 'Valid email id' });
             this.chooseMethod = false;
             this.emailOrMobileCard = false;
             this.otpScreen = true;
             this.onGetVerificationCode();
           } else if (data.status == "Invalid") {
-            this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid email id ...!' });
-            this.mobileIsPresent = false;
+            this.messageService.add({ severity: 'error', summary: 'Invalid email id ...!', detail: 'Please enter valid credentials.' });
           }
         })
     }
@@ -116,12 +77,12 @@ export class ForgotPasswordComponent implements OnInit {
     this.http.sendOTP(this.inputForm.value)
       .subscribe(data => {
         if (data.status == "sent") {
-          this.messageService.add({ severity: 'success', summary: 'success', detail: 'OTP sent Successfully.' });
+          this.messageService.add({ severity: 'success', summary: 'OTP sent Successfully.', detail: '' });
           this.chooseMethod = false;
           this.emailOrMobileCard = false;
           this.startTimer();
         } else if (data.status == "fail") {
-          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'OTP Not Sent Something Went Wrong!!' });
+          this.messageService.add({ severity: 'error', summary: 'Something went wrong', detail: 'OTP not sent...!' });
         }
       })
   }
@@ -138,12 +99,10 @@ export class ForgotPasswordComponent implements OnInit {
     this.http.verifyOTP(e, this.inputForm.value)
       .subscribe(data => {
         if (data.otp == "Valid") {
-          this.messageService.add({ severity: 'success', summary: 'success', detail: 'Valid OTP.' });
           this.otpScreen = false;
           this.resetPassword = true;
         } else if (data.otp == "Invalid") {
-          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid OTP !!' });
-          this.mobileIsPresent = false;
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid OTP...!' });
         }
       })
   }
@@ -170,14 +129,50 @@ export class ForgotPasswordComponent implements OnInit {
       this.http.updatePassword(this.inputForm.value, this.repassword)
         .subscribe(data => {
           if (data.update == "success") {
-            this.messageService.add({ severity: 'success', summary: 'success', detail: 'Update the password successfully.' });
+            this.messageService.add({ severity: 'success', summary: 'Password updated successfully.', detail: '' });
             this.resetPassword = false;
             this.successScreen = true;
           } else {
-            this.messageService.add({ severity: 'error', summary: 'Error', detail: 'unable to update the password. !!' });
+            this.messageService.add({ severity: 'error', summary: 'Something went wrong...!', detail: 'Unable to update the password.' });
           }
         })
     }
+  }
+
+  backtoSelection() {
+    this.chooseMethod = true;
+    this.emailOrMobileCard = false;
+    this.otpScreen = false;
+    this.resetPassword = false;
+    this.successScreen = false;
+    this.btnDissabled = false;
+  }
+
+  backtoSendOTP() {
+    this.chooseMethod = false;
+    this.emailOrMobileCard = true;
+    this.otpScreen = false;
+    this.resetPassword = false;
+    this.successScreen = false;
+    this.btnDissabled = false;
+  }
+
+  backtoVerifyOTP() {
+    this.chooseMethod = false;
+    this.emailOrMobileCard = false;
+    this.otpScreen = true;
+    this.resetPassword = false;
+    this.successScreen = false;
+    this.btnDissabled = false;
+  }
+  backtoLogin(){
+    this.chooseMethod = false;
+    this.emailOrMobileCard = false;
+    this.otpScreen = false;
+    this.resetPassword = false;
+    this.successScreen = false;
+    this.btnDissabled = false;
+    this.router.navigateByUrl('login')
   }
 }
 
