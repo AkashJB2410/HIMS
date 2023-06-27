@@ -142,6 +142,11 @@ export class LovValueComponent implements OnInit {
       })
       this.data = [...this.LOVData];
       this.isdataReady = true;
+      for (let i = 0; i < this.data.length; i++) {
+        this.data[i].srNumber = i + 1;
+      }
+      this.data;
+
     })
   }
 

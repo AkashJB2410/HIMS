@@ -27,14 +27,14 @@
               <div *ngIf="item.routerLink != undefined">
                 <a [class.parentMenu]="item === activeState" [href]="'#'+item.label" data-bs-toggle="collapse"
                   class="sidenav-menu" routerLink="{{item.routerLink}}" pTooltip="{{item.label}}">
-                  <i class="{{item.icon}} iconCss"></i> <span class="d-sm-inline ms-2"
+                  <i class="{{item.icon}} "></i> <span class="d-sm-inline ms-2"
                     [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{item.label}}</span>
                 </a>
               </div>
               <div *ngIf="item.url != undefined">
                 <a [class.parentMenu]="item === activeState" class="sidenav-menu" href="{{item.url}}" target="_blank"
                   pTooltip="{{item.label}}">
-                  <i class="{{item.icon}} iconCss"></i> <span class="d-sm-inline ms-2"
+                  <i class="{{item.icon}} "></i> <span class="d-sm-inline ms-2"
                     [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{item.label}}</span>
                 </a>
               </div>
@@ -42,7 +42,7 @@
             <ng-template #list>
               <a [class.parentMenu]="item === activeState" [href]="'#'+item.label" data-bs-toggle="collapse"
                 class="sidenav-menu " pTooltip="{{item.label}}">
-                <i class="{{item.icon}} iconCss"></i> <span class="d-sm-inline ms-2"
+                <i class="{{item.icon}} "></i> <span class="d-sm-inline ms-2"
                   [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
                   style="margin-right: auto;">{{item.label}}</span> <i id="{{item.label}}" childItemsub-module
                   [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"

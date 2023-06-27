@@ -2316,7 +2316,7 @@ body {
 }
 
 .p-breadcrumb {
-  background: #ffffff;
+  background: none!important;
   border-radius: 4px;
   border: none !important;
   padding: 0rem !important;
@@ -2532,4 +2532,7 @@ body {
   height: 9px !important;
   transition-duration: 0.2s;
   background-color: #673AB7;
+}
+.cardsizes{
+  margin: auto;
 }

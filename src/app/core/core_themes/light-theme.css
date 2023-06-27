@@ -1335,3 +1335,23 @@ ul p.verticaltab {
   background-color: rgb(252, 252, 252);
   margin: 6px;
 }
+.Sidebar-title-sm {
+  color: white !important;
+  height: 27px;
+  width: 246px;
+  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
+  font-size: 15px !important;
+  padding-top: 4px;
+  padding-bottom: 23px;
+}
+
+.Sidebar-title-sm::before,
+.divider::after {
+  flex: 1;
+  height: 29px;
+  width: 5px;
+  content: '';
+  padding: 1.2px;
+  background-color: rgb(252, 252, 252);
+  margin: 3px;
+}

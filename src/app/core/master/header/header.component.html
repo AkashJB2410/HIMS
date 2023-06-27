@@ -10,7 +10,9 @@
                     <h6 class="item2" (click)="notificationEvent('readAll')">Mark all as read</h6>
                 </div>
                 <ul class="cssUl container" [class.show]="show">
-                    <li class="notiList profileItems notification-blu" *ngFor="let notifiaction of headerData.notification.data"
+                    <li class="notiList profileItems"
+                        [ngClass]="(notifiaction.readFlag == true) ? 'notification-blu' : 'notification'"
+                        *ngFor="let notifiaction of headerData.notification.data"
                         (click)="notificationEvent(notifiaction)">
                         <b>{{notifiaction.title}}</b>
                         <div class="notiMsg">{{notifiaction.msg}}</div>

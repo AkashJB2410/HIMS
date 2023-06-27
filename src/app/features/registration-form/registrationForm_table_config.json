@@ -1,6 +1,7 @@
 {
     "tableName": "Registration Table",
     "tableHeaders": [
+        {"field": "srNumber", "header": "Sr. No","iseditable": false,"class": "text-center"},
         {"field": "firstName","header": "FirstName","iseditable": false , "class":""},
         {"field": "middleName","header": "MiddleName","iseditable": false , "class":""},
         {"field": "lastName","header": "LastName","iseditable": false , "class":""},

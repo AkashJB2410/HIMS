@@ -1,13 +1,13 @@
 {
     "tableName": "Unit Table",
     "tableHeaders": [
-        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":""},
+        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":"text-center"},
     
         {
             "field": "lovTypeName",
             "header": "LOV Type Name",
             "iseditable": false,
-            "class": "text-center"
+            "class": ""
         },
         {
             "field": "value",
