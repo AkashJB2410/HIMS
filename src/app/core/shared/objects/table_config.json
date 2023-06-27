@@ -26,7 +26,7 @@
     "resizableColumns": true,
     "isActions": ["Edit", "Delete" ,"Viewer" ,"isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
-    "expand":false,
+    "expand": true,
     "buttonlbl":"New Product",
     "textLength":16
 }

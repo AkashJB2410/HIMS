@@ -46,6 +46,9 @@ export class LovTypeComponent implements OnInit {
       this.data = res;
       console.log("get all data",res)
       this.isdataReady = true;
+      for (let i = 0; i < this.data.length; i++) {
+        this.data[i].srNumber = i + 1;
+      }
     });
   }
 

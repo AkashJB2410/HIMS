@@ -1,37 +1,62 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { EncryptPipe } from '../../shared/pipes/encrypt-decrypt.pipe';
-import data from './login.json';
-import { FormService } from '../../shared/service/form.service';
 import { SessionService } from '../../shared/service/session.service';
-
+import { EncryptPipe } from '../../shared/pipes/encrypt-decrypt.pipe';
+import { FormService } from '../../shared/service/form.service';
+import { FormGroup, FormControl, Validators } from "@angular/forms";
+import login from './login.json';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  loginForm: any;
+  loginForm = new FormGroup({
+    emailId: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+    organisation: new FormControl('', [Validators.required]),
+    captcha: new FormControl('', [Validators.required])
+  });
+  loginFormData =login;
+  orgList: any = [];
   tabularData: any;
   display: any;
   public timerInterval: any;
   timerFlag = false;
   timerFlag2 = false;
-  rmCheck=false;
-  formdata: any;
-  jaadu=false;
+  attempts: any = 1;
   constructor(private router: Router, private messageService: MessageService, private http: SessionService, private encrypt: EncryptPipe, private form$: FormService) { }
 
   ngOnInit() {
-    this.jaadu=true;
-    this.loginForm = data.loginForm;
     localStorage.clear();
     sessionStorage.clear();
-    this.form$.reRenderForm(this.loginForm.form.formControls[4], false, 'isVisible');
+  }
+  
+  getEmail(e: any) {
+    this.http.orgData(e.value)
+      .subscribe(res => {
+        this.orgList = [];
+        let org = {
+          "organization_Id": "",
+          "organization_Type": "Select an option"
+        }
+        this.orgList.push(org);
+        res.forEach((element: any) => {
+          let org = {
+            "organization_Id": element.organization_Id,
+            "organization_Type": element.organization_Type
+          }
+          this.orgList.push(org);
+        })
+      })
+  }
+  
+  getCaptcha(e: any){
+    this.loginForm.get('captcha').setValue(e);
   }
 
-  timer(minute: number, e: any) {
+  timer(minute: number) {
     let seconds: number = minute * 60;
     let textSec: any = '0';
     let statSec: number = 60;
@@ -50,102 +75,36 @@ export class LoginComponent implements OnInit {
         clearInterval(this.timerInterval);
         this.timerFlag = false;
         this.timerFlag2 = true;
-        this.loginForm.form.formControls[5].isDisabled = false;
       }
     }, 1000);
   }
 
-  btn(a: any) {
-    if (a == 3) {
-      this.loginForm.form.formControls[6].isDisabled = true;
+
+
+  onSubmit() {
+    if(this.loginForm.value.captcha){
+      this.http.Logincheck(this.loginForm.value)
+      .subscribe(data => {
+        let a = + data.loginFailed
+        if (a <= 2) {
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Your entered password is wrong.Your account will be locked due to 3 failed attempts.. Attempt  : ' + a });
+        } else if (a == 3) {
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
+          this.timer(1);
+        } else if (data.password == this.loginForm.value.password) {
+          this.timerFlag2 = false;
+          this.messageService.add({ severity: 'success', summary: 'Login', detail: 'Logged in successful.' });
+          sessionStorage.setItem('loggedUser',this.encrypt.transform(JSON.stringify(data)));
+          sessionStorage.setItem('loggedIn', 'true');
+          this.router.navigateByUrl('/master-page/home');
+        } else if (data.password != this.loginForm.value.password) {
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
+        }
+      });
     } else {
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: " btn msg" });
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid captcha'});
     }
   }
-  oncheck(e: any) {
-    console.log("check Box =>", e)
-    e.forEach((chk: any) => {
-      if (chk.checked == "lsRememberMe") {
-        this.rmCheck = true;
-      }
-    })
-    this.formdata = Object.assign({}, data);
-    this.formdata.loginForm.form.formControls.forEach((data:any) => {
-      if(data.formControlName == 'organization'){
-        data.values =[
-          {
-            "name" : "Select",
-            "code" : ""
-          }
-        ];
-        this.http.orgData().subscribe(item => {
-          item.forEach((e:any) => {
-            let obj ={
-              "name":e.organization_Type,
-              "code":e.organization_Id
-            }
-            data.values.push(obj);
-            
-          })
-        })
-      }
-    })
-    this.refersh()
-  }
-
-  refersh(){
-    this.jaadu=false;
-    this.m()
-  }
-
-  m(){
-    this.jaadu=true;
-  }
-
-  onSubmit(e: any) {
-    this.timerFlag2 = false;
-    if (this.rmCheck == true) {
-      localStorage.setItem('emailId', e.emailId);
-      localStorage.setItem('checkbox',e.checkbox[0]);
-    } else {
-      localStorage['emailId']="";
-      localStorage['checkbox']="";
-    }
-    if (e.captcha) {
-      this.http.Logincheck(e)
-        .subscribe(data => {
-          let a = +data.loginFailed
-          if(a==1){
-            this.form$.reRenderForm(this.loginForm.form.formControls[4], true, 'isVisible');
-          }
-          if (a <= 2) {
-            this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Your entered password is wrong.Your account will be locked due to 3 failed attempts.. Attempt  : ' + a });
-          } else if (a == 3) {
-            this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
-            this.form$.reRenderForm(this.loginForm.form.formControls[5], false,"isEditable");
-            this.timer(1, e);
-          }
-          else if (data.password == e.password) {
-            this.timerFlag2 = false;
-            this.messageService.add({ severity: 'success', summary: 'success', detail: 'Login is successful.' });
-            sessionStorage.setItem(
-              'loggedUser',
-              this.encrypt.transform(JSON.stringify(data))
-            );
-            sessionStorage.setItem('loggedUser', this.encrypt.transform(JSON.stringify(data)));
-            sessionStorage.setItem('loggedIn', 'true');
-            // this.router.navigateByUrl('/master-page/user-management');
-            this.router.navigateByUrl('/master-page/home');
-            }
-          else if (data.password != e.password) {
-            this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
-          }
-        },
-          (error): void => {
-            this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
-          }
-        );
-    }
-  }
-
 }
+
+

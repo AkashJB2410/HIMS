@@ -4,6 +4,6 @@
             "label": "Registration",
             "icon": "bi bi-person-add",
             "routerLink": "/master-page/registration-form"
-          }
+        }
     ]
 }

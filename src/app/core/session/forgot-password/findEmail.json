@@ -1,50 +1,81 @@
 {
-    "form": {
-        "class": "row",
-        "formTitle": "Password Rest",
-        "formtitletext":"h3-text-centre",
-        "formName": "Form1",
-        "formType": "edit",
-        "formControls": [
-            {
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Email ID / Mobile No.",
-                "type": "text",
-                "inputType": "text",
-                "maxLength": 5,
-                "class": "col-md-12 my-1",
-                "lblclass":"",
-                "valueclass":"input-box",
-                "id": "mobileinput",
-                "placeholder": "Email ID OR Mobile No.",
-                "formControlName": "emailMobileNo",
-                "mandatoryMessage": "Email ID OR Mobile No. is required",
-                "message": {
-                    "required": "Email ID OR Mobile No. is required",
-                    "pattern": "Please enter correct format"
+    "forgotpassword": {
+        "backgroundImg": "",
+        "backgroundImgCSS": "img img-responsive  img-fluid logo-img",
+        "backgroundColour": "#b6c1c8",
+        "classContainer": "container center-card",
+        "cardClass": "col-lg-6 col-sm-8 col-xl-3 offset-lg-3 offset-sm-2 offset-xl-4",
+        "cardColorCSS": "custom-card-login",
+        "logoCSS": "logo text-center",
+        "form": {
+            "class": "row",
+            "formTitle": "Password Reset",
+            "titlelblclass": "lbl-center-forgot-password",
+            "formtitletext": "h3-text-centre",
+            "formName": "Form1",
+            "formType": "edit",
+            "formControls": [
+                {
+                    "isEditable": true,
+                    "isVisible": true,
+                    "transient": true,
+                    "label": "",
+                    "type": "staticText",
+                    "data": "Don’t worry, it happens to the best of us.",
+                    "class": "col-md-12",
+                    "lblclass": "",
+                    "valueclass": "lgn-txt",
+                    "placeholder": "",
+                    "formControlName": "anchor",
+                    "message": {
+                        "required": "",
+                        "pattern": ""
+                    },
+                    "validations": {
+                        "required": true,
+                        "pattern": ""
+                    }
                 },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
+                {
+                    "isEditable": true,
+                    "isVisible": true,
+                    "label": "Email ID / Mobile No.",
+                    "type": "text",
+                    "inputType": "text",
+                    "maxLength": 5,
+                    "class": "col-md-12 my-1",
+                    "lblclass":"",
+                    "valueclass":"input-box",
+                    "id": "mobileinput",
+                    "placeholder": "Email ID OR Mobile No.",
+                    "formControlName": "emailMobileNo",
+                    "mandatoryMessage": "Email ID OR Mobile No. is required",
+                    "message": {
+                        "required": "Email ID OR Mobile No. is required",
+                        "pattern": "Please enter correct format"
+                    },
+                    "validations": {
+                        "required": false,
+                        "pattern": ""
+                    }
+                },
+    
+                {
+                    "isEditable": true,
+                    "isVisible": true,
+                    "type": "button",
+                    "subtype": "next",
+                    "valueclass": "butn-custom-dark-blue",
+                    "btnLabel": "Next",
+                    "icon": "",
+                    "isDisabled": false,
+                    "formControlName": "",
+                    "validations": {
+                        "required": false,
+                        "pattern": ""
+                    }
                 }
-            },
-            {
-                "isEditable": true,
-                "isVisible": true,
-                "type": "button",
-                "subtype": "next",
-                "class": "col-md-4",
-                "valueclass": "butn-custom-dark-blue",
-                "btnLabel": "Next",
-                "icon": "",
-                "isDisabled": false,
-                "formControlName": "",
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            }
-        ]
+            ]
+        }
     }
 }

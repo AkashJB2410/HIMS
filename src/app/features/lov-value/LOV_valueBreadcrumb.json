@@ -13,7 +13,7 @@
         {
             "label": "Unit Configuration",
             "icon": "",
-            "routerLink": ""
+            "routerLink": "/master-page/all-masters"
         },
         {
             "label": "LOV Value",

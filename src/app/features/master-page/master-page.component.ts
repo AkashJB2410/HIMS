@@ -29,8 +29,21 @@ export class MasterPageComponent implements OnInit {
       isSideBar: true,
       isConfirmation: true,
     };
+    this.getALLSideNavData()
     this.GetAllNotifications();
     this.getCount();
+  }
+
+  getALLSideNavData(){
+    this.http.GetAllSideNavData().subscribe((res) => {
+      console.log("sidenavdata => ",res.sidenavItems)
+      console.log("sidenavdata => ",this.masterJSON.masterData.sidenavItems)
+      res.sidenavItems.forEach((e: any) => {
+        this.masterJSON.masterData.sidenavItems.push(e);
+      });
+      console.log("sidenavdata => ",this.masterJSON.masterData.sidenavItems)
+
+    });
   }
 
   GetAllNotifications() {
@@ -42,7 +55,8 @@ export class MasterPageComponent implements OnInit {
         let obj={
           "id":a.notificationId,
           "title": a.title,
-          "msg":a.message
+          "msg":a.message,
+          "readFlag":a._Read
         };
         this.masterJSON.masterData.header.notification.data[i]=obj;
         
@@ -57,12 +71,30 @@ export class MasterPageComponent implements OnInit {
     this.http.countNotification().subscribe((res) => {
       this.count = res.Count;
       console.log(this.count);
+      this.masterJSON.masterData.header.notification.count=this.count;
     });
   }
 
-  notification(e: any) {
-    this.http.readMsg(e.id).subscribe((res)=>{
-      this.clickedData=res;
-    })
+  notificationRead(e: any) {
+    console.log(e);
+    if(e=="readAll"){
+      for(let i=0;i<this.data.length;i++){
+        if(this.data[i]._Read==false){
+          this.http.readMsg(this.data[i].notificationId).subscribe((res)=>{
+            this.clickedData=res;
+            this.getCount(); 
+            this.GetAllNotifications()           
+          })
+        }
+      }
+    }else{
+      this.http.readMsg(e.id).subscribe((res)=>{
+        this.clickedData=res;
+        this.getCount();  
+        this.GetAllNotifications()       
+      })
+    }
+    
+    
   }
 }
