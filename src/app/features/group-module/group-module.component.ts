@@ -123,9 +123,6 @@ export class GroupModuleComponent implements OnInit {
     this.data = undefined;
     this.groupData = [];
     this.http.GetAllGroupData().subscribe((res) => {
-      // for (let i = 0; i < this.data.length; i++) {
-      //   this.data[i].srNumber = i + 1;
-      // }
       res.forEach((e: any) => {
         let obj = {
           "groupId": e.groupId,
@@ -141,6 +138,10 @@ export class GroupModuleComponent implements OnInit {
       })
       this.data = [...this.groupData];
       this.isdataReady = true;
+      for (let i = 0; i < this.data.length; i++) {
+        this.data[i].srNumber = i + 1;
+      }
+      this.data;
     })
   }
 
