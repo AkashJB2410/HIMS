@@ -4,6 +4,7 @@ import unitTable from './unit_TableConfig.json';
 import unitForm from './unit_form.json';
 import { UnitService } from './unit.service';
 import unit_breadcrumb from './unit-breadcrumb.json'
+
 @Component({
   selector: 'app-unit',
   templateUrl: './unit.component.html',
@@ -14,11 +15,12 @@ export class UnitComponent implements OnInit {
   tableConfig: any;
   visibleSidebar: boolean = true;
   unitFormData: any = unitForm;
+  unit_breadcrumb = unit_breadcrumb;
   configurations: any;
   data: any;
   formdata: any;
   isdataReady = false;
-  unit_breadcrumb = unit_breadcrumb;
+  unitdata: any = []
   flag: any;
   constructor(private messageService: MessageService, private http: UnitService) { }
 
@@ -33,15 +35,12 @@ export class UnitComponent implements OnInit {
     this.getAllUnit();
     this.assignOptions();
   }
-  isActive(event: string) {
-    console.log(event);
-    this.http.isActiveData(event).subscribe((data) => {
-      this.data = undefined;
-      this.getAllUnit();
-    });
-  }
+
   getConfigForTable() {
     this.tableConfig = unitTable;
+  }
+  onAdd(e: any) {
+    this.flag = e;
   }
   editRow(e: any) {
     this.visibleSidebar = true;
@@ -49,8 +48,54 @@ export class UnitComponent implements OnInit {
   addRow(e: any) {
     this.visibleSidebar = true;
   }
-  onAdd(e: any) {
-    this.flag = e;
+  // sidebarData(e: any) {
+  //   if (e != 'reset') {
+  //     if (this.flag == "edit") {
+  //       this.updateUnit(e);
+  //       this.messageService.add({
+  //         severity: 'success',
+  //         summary: 'success',
+  //         detail: 'Data updated successfull.',
+  //       });
+  //     } else {
+  //       this.submitUnit(e);
+  //       this.messageService.add({
+  //         severity: 'success',
+  //         summary: 'success',
+  //         detail: 'Data save successfull.',
+  //       });
+  //     }
+  //   }
+  // }
+  BulkDeleteRows(e: any) {
+    this.unitdata = [];
+    if (e != '') {
+      e.forEach((data: any) => {
+        if (data.is_Active != false) {
+          let obj = {
+            "unitId": data.unitId,
+          }
+          this.deleteUnit(obj.unitId);
+        } else {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'selected Rows',
+            detail: ' Deleted.',
+          });
+        }
+      });
+      this.messageService.add({
+        severity: 'success',
+        summary: 'success',
+        detail: 'Delete All Data successfull.',
+      });
+    } else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'select Rows',
+        detail: 'Rows are not selected.',
+      });
+    }
   }
   sidebarData(e: any) {
     if (e != 'reset') {
@@ -71,25 +116,64 @@ export class UnitComponent implements OnInit {
       }
     }
   }
-
   confirmAction(e: any) {
-    this.deleteUnit(e.unitId);
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Message form User component',
-      detail: 'Deleted Sucessfully',
-    });
-    console.log('Deleted' + JSON.stringify(e));
+    if (e != false) {
+      this.deleteUnit(e.unitId);
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Message form User component',
+        detail: 'Deleted Sucessfully',
+      });
+    }
   }
 
   getAllUnit() {
+    this.data=undefined;
+    this.unitdata=[];
     this.http.GetAllUnitData().subscribe((res) => {
+      // for (let i = 0; i < this.data.length; i++) {
+      //   this.data[i].srNumber = i + 1;
+      // }
+      // res.forEach((data: any) => {
+      //   let obj = {
+      //     "unitId": data.unitId,
+      //     "unitName": data.unitName,
+      //     "unitpostfix": data.unitpostfix,
+      //     "unitcenter": data.unitcenter,
+      //     "unitAddress": data.unitAddress,
+      //     "unitEmail": data.unitEmail,
+      //     "unitMobile": data.unitMobile,
+      //     "unitPhone": data.unitPhone,
+      //     "unitContactPerson": data.unitContactPerson,
+      //     "mstOrg": data.mstOrg,
+      //     "unitCode": data.unitCode,
+      //     "unitClinicContactNo": data.unitClinicContactNo,
+      //     "unitPharmacyLicenseNo": data.unitPharmacyLicenseNo,
+      //     "unitPharmacyStoreName": data.unitPharmacyStoreName,
+      //     "unitPharmacyGstNo": data.unitPharmacyGstNo,
+      //     "unitClinicRegistrationNo": data.unitClinicRegistrationNo,
+      //     "unitShopAndEstablishmentNo": data.unitShopAndEstablishmentNo,
+      //     "unitTradeNo": data.unitTradeNo,
+      //     "unitServer": data.unitServer,
+      //     "unitDatabase": data.unitDatabase,
+      //     "unitFaxNo": data.unitFaxNo,
+      //     "unitWebSite": data.unitWebSite,
+      //     "countryId": data.countryId,
+      //     "countryName": data.countryName,
+      //     "cityId": data.cityId,
+      //     "cityName": data.cityName,
+      //     "stateId": data.stateId,
+      //     "stateName": data.stateName,
+      //     "unitClusterId": data.unitClusterId,
+      //     "unitAddressZip": data.unitAddressZip,
+      //     "unitAddressArea": data.unitAddressArea,
+      //     "unitXHipId": data.unitXHipId,
+      //   }
+      //   this.unitdata.push(obj);
+      // })
+      // this.data = [...this.unitdata];
       this.data = res;
-      console.log(this.data);
       this.isdataReady = true;
-      for (let i = 0; i < this.data.length; i++) {
-        this.data[i].srNumber = i + 1;
-      }
     });
   }
 
@@ -97,7 +181,6 @@ export class UnitComponent implements OnInit {
     this.http.updateUnitData(unitId).subscribe((data) => {
       this.data = undefined;
       this.getAllUnit();
-      console.log('data' + data);
     });
   }
 
@@ -105,7 +188,6 @@ export class UnitComponent implements OnInit {
     this.http.deleteUnitData(unitId).subscribe((data) => {
       this.data = undefined;
       this.getAllUnit();
-      console.log('data' + data);
     });
   }
 
@@ -113,10 +195,15 @@ export class UnitComponent implements OnInit {
     this.http.saveUnitData(unitId).subscribe((data) => {
       this.data = undefined;
       this.getAllUnit();
-      console.log('data' + data);
     });
   }
-
+  isActive(event: string) {
+    console.log(event);
+    this.http.isActiveData(event).subscribe((data) => {
+      this.data = undefined;
+      this.getAllUnit();
+    });
+  }
   assignOptions() {
     this.formdata = Object.assign({}, unitForm);
     this.formdata.form.formControls.forEach((data: any) => {

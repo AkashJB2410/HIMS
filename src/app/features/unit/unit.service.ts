@@ -42,7 +42,7 @@ export class UnitService {
   }
 
   updateUnitData(data: any) {
-    const param = {      
+    const param =  {      
       "unitId": data.unitId,
       "unitName": data.unitName,
       "unitpostfix": data.unitpostfix,
@@ -52,7 +52,9 @@ export class UnitService {
       "unitMobile": data.unitMobile,
       "unitPhone": data.unitPhone,
       "unitContactPerson": data.unitContactPerson,
-      "mstOrg": data.mstOrg,
+      "mstOrg": {
+          "orgId":data.unitOrg
+      },
       "unitCode": data.unitCode,
       "unitClinicContactNo": data.unitClinicContactNo,
       "unitPharmacyLicenseNo": data.unitPharmacyLicenseNo,
@@ -64,24 +66,27 @@ export class UnitService {
       "unitServer": data.unitServer,
       "unitDatabase": data.unitDatabase,
       "unitFaxNo": data.unitFaxNo,
-      "unitWebSite": data.unitWebSite,
-      "countryId": data.countryId,
-      "countryName": data.countryName,
-      "cityId": data.cityId,
-      "cityName": data.cityName,
-      "stateId": data.stateId,
-      "stateName": data.stateName,
-      "unitClusterId": data.unitClusterId,
+      "countryId": {
+        "countryId":data.selectCountry
+      },
+      "cityId": {
+        "cityId":data.selectcity
+      },
+      "stateId": {
+        "stateId":data.selectstate
+      },
+      "unitClusterId":{
+        "clusterId":data.selectCountry
+      },
       "unitAddressZip": data.unitAddressZip,
       "unitAddressArea": data.unitAddressArea,
-      "unitXHipId": data.unitXHipId,
     };
     const url = "http://localhost:8081/api/v1/updateMstUnit/"+data.unitId;
     return this.http.put<any>(url, param);
   }
 
   saveUnitData(data: any): Observable<any> {
-    const param = {
+    const param =  {      
       "unitId": data.unitId,
       "unitName": data.unitName,
       "unitpostfix": data.unitpostfix,
@@ -91,7 +96,9 @@ export class UnitService {
       "unitMobile": data.unitMobile,
       "unitPhone": data.unitPhone,
       "unitContactPerson": data.unitContactPerson,
-      "mstOrg": data.mstOrg,
+      "mstOrg": {
+          "orgId":data.unitOrg
+      },
       "unitCode": data.unitCode,
       "unitClinicContactNo": data.unitClinicContactNo,
       "unitPharmacyLicenseNo": data.unitPharmacyLicenseNo,
@@ -103,17 +110,20 @@ export class UnitService {
       "unitServer": data.unitServer,
       "unitDatabase": data.unitDatabase,
       "unitFaxNo": data.unitFaxNo,
-      "unitWebSite": data.unitWebSite,
-      "countryId": data.countryId,
-      "countryName": data.countryName,
-      "cityId": data.cityId,
-      "cityName": data.cityName,
-      "stateId": data.stateId,
-      "stateName": data.stateName,
-      "unitClusterId": data.unitClusterId,
+      "countryId": {
+        "countryId":data.selectCountry
+      },
+      "cityId": {
+        "cityId":data.selectcity
+      },
+      "stateId": {
+        "stateId":data.selectstate
+      },
+      "unitClusterId":{
+        "clusterId":data.selectCountry
+      },
       "unitAddressZip": data.unitAddressZip,
       "unitAddressArea": data.unitAddressArea,
-      "unitXHipId": data.unitXHipId,
     };
     const url = "http://localhost:8081/api/v1/addMstUnit";
     return this.PostCall(url, param);

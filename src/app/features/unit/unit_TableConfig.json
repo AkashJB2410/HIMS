@@ -38,13 +38,13 @@
             "class": ""
         },
         {
-            "field": "unitOrg",
+            "field": "orgId",
             "header": "Org Unit",
             "iseditable": false,
             "class": ""
         },
         {
-            "field": "unitcode",
+            "field": "unitCode",
             "header": "Unit Code",
             "iseditable": false,
             "class": ""
@@ -143,5 +143,5 @@
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
     "buttonlbl": "Add Unit",
-    "textLength": 16
+    "textLength": 30
 }

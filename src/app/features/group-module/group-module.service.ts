@@ -15,11 +15,11 @@ export class GroupModuleService {
   }
 
   GetAllGroupData() {
-    const url = "http://localhost:8081/api/v1/allMstGroupData";
+    const url = "http://localhost:8080/api/v1/allMstGroupData";
     return this.http.get<any>(url);
   }
   GetAllMasterModuleData() {
-    const url = "http://localhost:8081/api/v1/allModuleData";
+    const url = "http://localhost:8080/api/v1/allModuleData";
     return this.http.get<any>(url);
   }
   updateGroupData(data: any) {
@@ -35,7 +35,7 @@ export class GroupModuleService {
     };
     console.log(param);
 
-    const url = "http://localhost:8081/api/v1/updatedMstGroup/" + data.groupId;
+    const url = "http://localhost:8080/api/v1/updatedMstGroup/" + data.groupId;
     return this.http.put<any>(url, param);
   }
 
@@ -50,12 +50,12 @@ export class GroupModuleService {
       "routerLink": data.routerLink,
       "sequence": data.sequence
     };
-    const url = "http://localhost:8081/api/v1/addMstGroup";
+    const url = "http://localhost:8080/api/v1/addMstGroup";
     return this.PostCall(url, param);
   }
 
   deleteGroupData(groupId: any) {
-    const url = "http://localhost:8081/api/v1/deletedMstGroup/" + groupId;
+    const url = "http://localhost:8080/api/v1/deletedMstGroup/" + groupId;
     console.log(groupId);
     return this.http.delete<any>(url);
   }
@@ -64,7 +64,7 @@ export class GroupModuleService {
     const param = {
       "groupId": data.groupId
     }
-    const url = "http://localhost:8081/api/v1/reActive/" + data.groupId;
+    const url = "http://localhost:8080/api/v1/reActive/" + data.groupId;
     console.log(data.groupId);
     return this.PostCall(url, param);
   }
