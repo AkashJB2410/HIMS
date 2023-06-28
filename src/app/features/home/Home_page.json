@@ -2,7 +2,17 @@
     "Row": "row",
     "HomeList": [
     {
-      "label": "IPD",
+      "label": "OPD Dashboard",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"../../../assets/Action.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "IPD Dashboard",
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
@@ -12,7 +22,7 @@
       "imgcss":"imgcenter"
     },
     {
-      "label": "OPD",
+      "label": "Emergency Dashboard",
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
@@ -22,7 +32,7 @@
       "imgcss":"imgcenter"
     },
     {
-      "label": "Sub child",
+      "label": "FeedBack Dashboard",
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
@@ -32,7 +42,7 @@
       "imgcss":"imgcenter"
     },
     {
-      "label": "OPD",
+      "label": "Fature Dashboard",
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
@@ -42,7 +52,7 @@
       "imgcss":"imgcenter"
     },
     {
-      "label": "Sub child",
+      "label": "Quick Patient Registration",
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
@@ -52,7 +62,7 @@
       "imgcss":"imgcenter"
     },
     {
-      "label": "Sub child",
+      "label": "Registration",
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
@@ -62,7 +72,7 @@
       "imgcss":"imgcenter"
     },
     {
-      "label": "IPD",
+      "label": "IPD Quick Registration",
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
@@ -72,7 +82,7 @@
       "imgcss":"imgcenter"
     },
     {
-      "label": "OPD",
+      "label": "Emergency Quick Registration",
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
@@ -82,37 +92,7 @@
       "imgcss":"imgcenter"
     },
     {
-      "label": "Sub child",
-      "icon": "bi bi-person-up",
-      "routerLink": "/master-page/user-management",
-      "listClass": "col-md-2",
-      "image":"../../assets/core_assets/medical.png",
-      "Css":"homepageCss",
-      "LabelCss":"labelcss",
-      "imgcss":"imgcenter"
-    },
-    {
-      "label": "OPD",
-      "icon": "bi bi-person-up",
-      "routerLink": "/master-page/user-management",
-      "listClass": "col-md-2",
-      "image":"../../assets/core_assets/medical.png",
-      "Css":"homepageCss",
-      "LabelCss":"labelcss",
-      "imgcss":"imgcenter"
-    },
-    {
-      "label": "Sub child",
-      "icon": "bi bi-person-up",
-      "routerLink": "/master-page/user-management",
-      "listClass": "col-md-2",
-      "image":"../../assets/core_assets/medical.png",
-      "Css":"homepageCss",
-      "LabelCss":"labelcss",
-      "imgcss":"imgcenter"
-    },
-    {
-      "label": "Sub child",
+      "label": "Queue",
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
@@ -132,7 +112,7 @@
       "imgcss":"imgcenter"
     },
     {
-      "label": "OPD",
+      "label": "Nursing Station",
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
@@ -142,7 +122,7 @@
       "imgcss":"imgcenter"
     },
     {
-      "label": "Sub child",
+      "label": "Lab",
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
@@ -152,7 +132,7 @@
       "imgcss":"imgcenter"
     },
     {
-      "label": "OPD",
+      "label": "Rediology",
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
@@ -162,7 +142,7 @@
       "imgcss":"imgcenter"
     },
     {
-      "label": "Sub child",
+      "label": "Billing",
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
@@ -170,10 +150,9 @@
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
-
     },
     {
-      "label": "Sub child",
+      "label": "Pharmacy",
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
