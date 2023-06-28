@@ -13,6 +13,7 @@ export class DependentDropdownComponent implements OnInit {
   constructor() { }
 
   @Input() data: any;
+  @Input() defaultData: any;
   @Output() dependentDrop = new EventEmitter<any>();
 
   ngOnInit(): void {

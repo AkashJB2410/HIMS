@@ -46,54 +46,6 @@
             "class": ""
         },
         {
-            "field": "unitClinicContactNo",
-            "header": "Unit Clinic Contact No",
-            "iseditable": false,
-            "class": ""
-        },
-        {
-            "field": "unitPharmacyLicenseNo",
-            "header": "Pharmacy License No",
-            "iseditable": false,
-            "class": "text-center"
-        },
-        {
-            "field": "unitClinicRegistrationNo",
-            "header": "Clinic Registration No",
-            "iseditable": false,
-            "class": ""
-        },
-        {
-            "field": "unitShopAndEstablishmentNo",
-            "header": "Shop And Establishment No",
-            "iseditable": false,
-            "class": ""
-        },
-        {
-            "field": "unitTradeNo",
-            "header": "Trade No",
-            "iseditable": false,
-            "class": "text-center"
-        },
-        {
-            "field": "unitServer",
-            "header": "Server",
-            "iseditable": false,
-            "class": ""
-        },
-        {
-            "field": "unitDatabase",
-            "header": "Database",
-            "iseditable": false,
-            "class": ""
-        },
-        {
-            "field": "unitFaxNo",
-            "header": "Fax No",
-            "iseditable": false,
-            "class": "text-center"
-        },
-        {
             "field": "is_Active",
             "header": "IsActive",
             "iseditable": false,

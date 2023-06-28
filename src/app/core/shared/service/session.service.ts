@@ -12,14 +12,10 @@ export class SessionService {
   headers = new HttpHeaders().set('Content-type', 'application/json');
 
   Logincheck(obj: any): Observable<any> {
-    const params = {
-      "emailId": obj.emailId,
-      "password": obj.password
-    }
     const url = myConstants.LOCALHOSTURL + "api/v1/login";
     const headers = new HttpHeaders().set('Content-type', 'application/json');
 
-    return this.http.post<any>(url, params, { headers })
+    return this.http.post<any>(url, obj, { headers })
   }
 
   GetAllCollectionData() {
@@ -99,7 +95,7 @@ export class SessionService {
     const url = myConstants.LOCALHOSTURL + "api/v1/organizationData?emailId=" + email;
     return this.http.get<any>(url);
   }
-
+  
   addPersonalization(dateFormat: any, currency: any, theme: any): Observable<any> {
     const param = {
       "dateFormat": dateFormat,

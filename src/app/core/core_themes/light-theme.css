@@ -369,8 +369,9 @@
   font-size: 12px;
 }
 
-.captcha-btn-refresh {
-  color: black !important;
+.captcha-btn-refresh
+{
+  color:black !important;
 }
 
 /*------------In Login card Input password Start-------------*/
@@ -1149,48 +1150,43 @@ ul p.verticaltab {
   background-color: #E1E1E1; 
    color: black;
 } */
-
-/* ----------------------Form Title Css Start------------------------------- */
-
-/* ---------------------form Title for sideBar SM Css Start-------------------------- */
-.Sidebar-title-sm {
+.formclass {
   color: white !important;
-  height: 27px;
+  height: 11px;
   width: 246px;
   background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 15px !important;
+  font-size: 14px !important;
   padding-top: 4px;
-  padding-bottom: 23px;
+  padding-bottom: 19px;
 }
 
-.Sidebar-title-sm::before,
-.divider::after {
+.formclass::before, .divider::after {
   flex: 1;
-  height: 29px;
+  height: 20px;
   width: 5px;
   content: '';
-  padding: 1.2px;
+  padding: 2px;
   background-color: rgb(252, 252, 252);
-  margin: 3px;
+  margin: 6px;
 }
 
 /* ---------------------form Title for sideBar SM Css End-------------------------- */
 
 /* ---------------------form Title for sideBar LG Css Start-------------------------- */
 .Sidebar-title-lg {
-  color: white !important;
-  height: 27px;
   width: 465px;
+  color: white !important;
+  height: 11px;
   background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 17px !important;
+  font-size: 14px !important;
   padding-top: 4px;
-  padding-bottom: 23px;
+  padding-bottom: 19px;
 }
 
 .Sidebar-title-lg::before,
 .divider::after {
   flex: 1;
-  height: 29px;
+  height: 20px;
   width: 5px;
   content: '';
   padding: 2px;
@@ -1203,18 +1199,18 @@ ul p.verticaltab {
 /* ---------------------form Title for sideBar MD Css Start-------------------------- */
 .Sidebar-title-md {
   color: white !important;
-  height: 27px;
+  height: 11px;
   width: 421px;
   background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 17px !important;
+  font-size: 14px !important;
   padding-top: 4px;
-  padding-bottom: 23px;
+  padding-bottom: 19px;
 }
 
 .Sidebar-title-md::before,
 .divider::after {
   flex: 1;
-  height: 29px;
+  height: 20px;
   width: 5px;
   content: '';
   padding: 2px;
@@ -1254,47 +1250,51 @@ ul p.verticaltab {
 }
 
 .p-breadcrumb .p-menuitem-link {
-  padding: 0rem !important
+   padding: 0rem !important
 }
 
-/* ---------------All Taost Css Start-------------------------- */
 
-.p-toast .p-toast-message.p-toast-message-warn {
-  background-color: #ffffff !important;
+
+.p-toast .p-toast-message.p-toast-message-warn
+{
+  background-color: white !important;
   color: #000000 !important;
 }
 
-.p-toast .p-toast-message.p-toast-message-error {
-  background-color: #ffffff !important;
+.p-toast .p-toast-message.p-toast-message-error
+{
+  background-color: white !important;
   color: #000000 !important;
 }
-
-.p-toast .p-toast-message.p-toast-message-success {
-  background-color: #ffffff !important;
+.p-toast .p-toast-message.p-toast-message-success
+{
+  background-color: white !important;
   color: #000000 !important;
 }
-
-.p-toast .p-toast-message.p-toast-message-info {
-  background-color: #ffffff !important;
+.p-toast .p-toast-message.p-toast-message-info
+{
+  background-color: white !important;
   color: #000000 !important;
 }
-
-.p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon {
+.p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon
+{
   color: #01648E !important;
   font-size: 20px !important;
 }
 
-.p-toast .p-toast-message.p-toast-message-warn .p-toast-message-icon {
+.p-toast .p-toast-message.p-toast-message-warn .p-toast-message-icon
+{
   color: #C27605 !important;
-  font-size: 20px !important;
+  font-size:20px !important;
 }
-
-.p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon {
+.p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon
+{
   color: #F30C0C !important;
   font-size: 20px !important;
 }
 
-.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon {
+.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon
+{
   color: white !important;
   height: 20px !important;
   width: 20px;
@@ -1302,16 +1302,6 @@ ul p.verticaltab {
   border-radius: 9px !important;
   padding-top: 4px !important;
   padding-left: 4px;
-  -webkit-box-shadow: -2px 0px 23px 7px rgba(80, 227, 34, 0.53);
-  -moz-box-shadow: -2px 0px 23px 7px rgba(80, 227, 34, 0.53);
-  box-shadow: -2px 0px 23px 7px rgba(80, 227, 34, 0.53);
-}
-
-.p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon {
-  -webkit-box-shadow: -2px 0px 20px 5px rgba(217, 15, 15, 0.53);
-  -moz-box-shadow: -2px 0px 20px 5px rgba(217, 15, 15, 0.53);
-  box-shadow: -2px 0px 20px 5px rgba(217, 15, 15, 0.53);
-  border-radius: 9px !important;
 }
 
 .p-toast .p-toast-message .p-toast-icon-close {
@@ -1325,14 +1315,32 @@ ul p.verticaltab {
 
 /* ---------------All Taost Css End-------------------------- */
 
+.formclass {
+  color: white !important;
+  height: 11px;
+  width: 400px;
+  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
+  font-size: 14px !important;
+  padding-top: 4px;
+  padding-bottom: 19px;
+}
 
-
+.formclass::before,
+.divider::after {
+  flex: 1;
+  height: 20px;
+  width: 5px;
+  content: '';
+  padding: 2px;
+  background-color: rgb(252, 252, 252);
+  margin: 6px;
+}
 .Sidebar-title-sm {
   color: white !important;
   height: 27px;
-  width: 260px;
+  width: 246px;
   background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 17px !important;
+  font-size: 15px !important;
   padding-top: 4px;
   padding-bottom: 23px;
 }
@@ -1343,7 +1351,7 @@ ul p.verticaltab {
   height: 29px;
   width: 5px;
   content: '';
-  padding: 2px;
+  padding: 1.2px;
   background-color: rgb(252, 252, 252);
-  margin: 6px;
+  margin: 3px;
 }

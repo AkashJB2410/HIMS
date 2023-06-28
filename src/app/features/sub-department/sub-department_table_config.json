@@ -2,7 +2,7 @@
 {
     "tableName": "Department Table",
     "tableHeaders":[
-        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":""},
+        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":"text-center"},
         {"field":"departmentName", "header":"Depatment Name","iseditable": false , "class":""},
         {"field":"subDepartment", "header":"Sub Depatment Name","iseditable": false , "class":""},
         {"field": "is_Active","header": "isActive","iseditable": false,"class":""}

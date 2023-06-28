@@ -7,7 +7,7 @@
         <div class="cardDesign">
             <ul style="cursor: pointer; padding: 0px;">
                 <li *ngFor="let list of verticalTabs.tabular" (click)="render(list)" id="{{list.label}}"
-                    class="design my-1"> <img src="{{list.image}}" class="{{list.imgCss}}">
+                    class="design my-1"> <img src="../../../assets/core_assets/verticalCard.png" class="{{list.imgCss}}">
                     {{list.label}}
                 </li>
                 <!-- <p [class.verticaltab]="list === activeState" class="design"> <img src="{{list.image}}"

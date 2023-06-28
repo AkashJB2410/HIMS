@@ -46,6 +46,11 @@
     "imgSrc": "assets/core_assets/card-icon.png"
   },
   {
+    "label": "LOV type",
+    "routerLink": "/master-page/all-masters/lov-type",
+    "imgSrc": "assets/core_assets/card-icon.png"
+  },
+  {
     "label": "LOV Value",
     "routerLink": "/master-page/all-masters/lov-value",
     "imgSrc": "assets/core_assets/card-icon.png"
@@ -68,11 +73,6 @@
    {
     "label": "Unit",
     "routerLink": "/master-page/all-masters/unit",
-    "imgSrc": "assets/core_assets/card-icon.png"
-  },
-  {
-    "label": "LOV type",
-    "routerLink": "/master-page/all-masters/lov-type",
     "imgSrc": "assets/core_assets/card-icon.png"
   }
 ]

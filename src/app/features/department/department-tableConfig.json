@@ -3,7 +3,7 @@
     "tableName": "Department Table",
     "tableHeaders":[
         {
-            "field": "srNumber","header": "Sr. No","iseditable": false,"class":""
+            "field": "srNumber","header": "Sr. No","iseditable": false,"class":"text-center"
         },
         {
             "field":"departmentName", "header":"Department Name","iseditable": false , "class":""
