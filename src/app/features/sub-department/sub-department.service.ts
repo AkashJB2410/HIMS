@@ -40,7 +40,7 @@ export class SubDepartmentService {
       },
       "subDepartment": department.subDepartment
     };
-    const url = "http://localhost:8081/api/v1/addsubDepartment/";
+    const url = "http://localhost:8081/api/v1/addsubDepartment";
     return this.PostCall(url, param)
   }
 

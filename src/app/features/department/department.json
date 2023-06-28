@@ -44,7 +44,7 @@
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[A-Za-z ]+$"
+                    "pattern": "^[a-zA-Z ]*$"
                 }
             },
             {
