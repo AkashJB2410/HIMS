@@ -15,7 +15,7 @@ export class LovValueComponent implements OnInit {
   tableConfig: any;
   visibleSidebar: boolean = true;
   LOVFormData: any = LOVForm;
-  LOV_breadcrumb=LOV_breadcrumb
+  LOV_breadcrumb = LOV_breadcrumb
   configurations: any;
   data: any;
   formdata: any;
@@ -37,59 +37,49 @@ export class LovValueComponent implements OnInit {
     this.assignOptions();
   }
 
+  getConfigForTable() {
+    this.tableConfig = LOVTable;
+  }
   onAdd(e: any) {
     this.flag = e;
   }
-
-  isActive(event: string) {
-    this.http.isActiveData(event).subscribe((data) => {
-      this.data = undefined;
-      this.getAllLovValue();
-    });
-  }
-
   editRow(e: any) {
     this.visibleSidebar = true;
-  }
-
-  getConfigForTable() {
-    this.tableConfig = LOVTable;
   }
   addRow(e: any) {
     this.visibleSidebar = true;
   }
   BulkDeleteRows(e: any) {
     this.LOVData = [];
- 
     if (e != '') {
-      e.forEach((data:any) => {
-        if(data.is_Active!=false){
-        let obj ={
-          "lovListId": data.lovListId,
+      e.forEach((data: any) => {
+        if (data.is_Active != false) {
+          let obj = {
+            "lovListId": data.lovListId,
+          }
+          this.deleteLovValue(obj.lovListId);
+        } else {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'selected Rows',
+            detail: ' Deleted.',
+          });
         }
-        this.deleteLovValue(obj.lovListId);
-      } else{
-        this.messageService.add({
-          severity: 'error',
-          summary: 'selected Rows',
-          detail: ' Deleted.',
-        });
-      }
       });
       this.messageService.add({
         severity: 'success',
         summary: 'success',
         detail: 'Delete All Data successfull.',
       });
-    }else{
+    } else {
       this.messageService.add({
         severity: 'error',
         summary: 'select Rows',
         detail: 'Rows are not selected.',
       });
     }
- 
   }
+
   sidebarData(e: any) {
     if (e != 'reset') {
       if (this.flag == "edit") {
@@ -111,14 +101,14 @@ export class LovValueComponent implements OnInit {
   }
 
   confirmAction(e: any) {
-    if(e != false){
-    this.deleteLovValue(e.lovListId);
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Message form User component',
-      detail: 'Deleted Sucessfully',
-    });
-  }
+    if (e != false) {
+      this.deleteLovValue(e.lovListId);
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Message form User component',
+        detail: 'Deleted Sucessfully',
+      });
+    }
   }
 
   getAllLovValue() {
@@ -146,7 +136,6 @@ export class LovValueComponent implements OnInit {
         this.data[i].srNumber = i + 1;
       }
       this.data;
-
     })
   }
 
@@ -170,7 +159,12 @@ export class LovValueComponent implements OnInit {
       this.getAllLovValue();
     });
   }
-
+  isActive(event: string) {
+    this.http.isActiveData(event).subscribe((data) => {
+      this.data = undefined;
+      this.getAllLovValue();
+    });
+  }
   assignOptions() {
     this.formdata = Object.assign({}, LOVForm);
     this.formdata.form.formControls.forEach((data: any) => {

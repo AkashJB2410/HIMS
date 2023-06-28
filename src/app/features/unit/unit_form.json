@@ -60,7 +60,7 @@
                 "lblclass":"custom-label",
                 "valueclass":"input-box",
                 "placeholder": "Unit postfix",
-                "formControlName": "unitPostfix",
+                "formControlName": "unitpostfix",
                 "message": {
                     "required": "Unit is required",
                     "pattern": ""
@@ -80,7 +80,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": " Enter center name",
-                "formControlName": "centerName",
+                "formControlName": "unitcenter",
                 "mandatoryMessage": " CenterName is required",
                 "message": {
                     "required": " Center Name is required",
@@ -183,7 +183,7 @@
                 "lblclass":"custom-label",
                 "valueclass":"input-box",
                 "placeholder": "Enter address",
-                "formControlName": "address",
+                "formControlName": "unitAddress",
                 "message": {
                     "required": "Id is required",
                     "pattern": "hello"
@@ -203,7 +203,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": " Enter address area",
-                "formControlName": "addressArea",
+                "formControlName": "unitAddressArea",
                 "mandatoryMessage": "Name is required",
                 "message": {
                     "required": "Name is required",
@@ -305,7 +305,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": " Enter address zip",
-                "formControlName": "addressZip",
+                "formControlName": "unitAddressZip",
                 "mandatoryMessage": "Name is required",
                 "message": {
                     "required": "Name is required",
@@ -414,7 +414,7 @@
                 "lblclass":"custom-label",
                 "valueclass":"input-box",
                 "placeholder": "Enter pharmacy name",
-                "formControlName": "pharmacyName",
+                "formControlName": "unitPharmacyStoreName",
                 "message": {
                     "required": "",
                     "pattern": ""
@@ -579,7 +579,7 @@
                 "lblclass":"custom-label",
                 "valueclass":"",
                 "placeholder": "Enter unit cluster",
-                "formControlName": "unitCluster",
+                "formControlName": "unitClusterId",
                 "message": {
                     "required": "",
                     "pattern": ""
@@ -625,7 +625,7 @@
                 "lblclass":"custom-label",
                 "valueclass":"input-box",
                 "placeholder": "Enter ID",
-                "formControlName": "staic",
+                "formControlName": "static",
                 "message": {
                     "required": "",
                     "pattern": ""
@@ -641,7 +641,7 @@
                 "isVisible": true,
                 "transient": true,
                 "type": "button",
-                "subtype": "Submit",
+                "subtype": "save",
                 "class": "col-md-2",
                 "valueclass": "butn-custom-dark-blue ",
                 "btnLabel": "Save",

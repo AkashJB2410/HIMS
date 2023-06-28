@@ -21,9 +21,26 @@
             "iseditable": false,
             "class": "text-center"
         },
-        
         {
-            "field": "unitcode",
+            "field": "unitPhone",
+            "header": "Phone",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "unitContactPerson",
+            "header": "Contact Person",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "orgId",
+            "header": "Org Unit",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "unitCode",
             "header": "Unit Code",
             "iseditable": false,
             "class": ""
@@ -76,5 +93,5 @@
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
     "buttonlbl": "Add Unit",
-    "textLength": 16
+    "textLength": 30
 }
