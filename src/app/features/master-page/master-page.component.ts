@@ -35,6 +35,7 @@ export class MasterPageComponent implements OnInit {
   }
 
   getALLSideNavData(){
+    this.masterJSON.masterData.sidenavItems=[];
     this.http.GetAllSideNavData().subscribe((res) => {
       console.log("sidenavdata => ",res.sidenavItems)
       console.log("sidenavdata => ",this.masterJSON.masterData.sidenavItems)
