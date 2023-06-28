@@ -8,32 +8,32 @@
         },
         {
             "field": "orgName",
-            "header": "Organization Name",
+            "header": "Name",
             "iseditable": false , "class":""
         },
         {
             "field": "orgEmail",
-            "header": "Organization Email ID",
+            "header": "Email ID",
             "iseditable": false , "class":""
         },
         {
             "field": "orgMobile",
-            "header": "Organization Mobile No.",
+            "header": "Mobile No.",
             "iseditable": false , "class":""
         },
         {
             "field": "orgAddress",
-            "header": "Organization Address",
+            "header": "Address",
             "iseditable": false , "class":""
         },
         {
             "field": "orgContactPerson",
-            "header": "Organization Contact Person",
+            "header": "Contact Person",
             "iseditable": false , "class":""
         },
         {
             "field": "orgPhone",
-            "header": "Organization Phone No.",
+            "header": "Phone No.",
             "iseditable": false , "class":""
         },
         {

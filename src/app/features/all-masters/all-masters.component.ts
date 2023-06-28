@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import tabularData from './all-masters.json';
 import allUnitList from './allUnitList.json';
 import Breadcrumbs from './breadcrumb.json';
@@ -58,19 +58,20 @@ export class AllMastersComponent implements OnInit {
 
   renderComponents(e: any) { 
   this.allMastersService.addMasterSelector(e);
+  this.restFlag();
     switch (e.label) {
-      case "Admission Configuration": this.restFlag(); this.allFlag.admiFlag=true; break
-      case "Discharge Configuration": this.restFlag(); this.allFlag.disFlag=true; break
-      case "Billing Configuration": this.restFlag(); this.allFlag.billFlag=true; break
-      case "Doctor Schedule": this.restFlag(); this.allFlag.docFlag=true; break
-      case "EMR Configuration": this.restFlag(); this.allFlag.emrFlag=true; break
-      case "Inventory Configuration":this.restFlag(); this.allFlag.invFlag=true; break
-      case "OT Configuration":this.restFlag(); this.allFlag.otFlag=true; break
-      case "Pathology Configuration":this.restFlag(); this.allFlag.pathFlag=true; break
-      case "Radiology Configuration":this.restFlag(); this.allFlag.radFlag=true; break
-      case "Patient Configuration":this.restFlag(); this.allFlag.patFlag=true; break
-      case "Unit Configuration":this.restFlag(); this.allFlag.unitFlag=true; break
-      case "Nursing Station Configutation":this.restFlag(); this.allFlag.nurFlag=true; break
+      case "Admission Configuration": this.allFlag.admiFlag=true; break
+      case "Discharge Configuration":  this.allFlag.disFlag=true; break
+      case "Billing Configuration":  this.allFlag.billFlag=true; break
+      case "Doctor Schedule":  this.allFlag.docFlag=true; break
+      case "EMR Configuration":  this.allFlag.emrFlag=true; break
+      case "Inventory Configuration": this.allFlag.invFlag=true; break
+      case "OT Configuration": this.allFlag.otFlag=true; break
+      case "Pathology Configuration": this.allFlag.pathFlag=true; break
+      case "Radiology Configuration": this.allFlag.radFlag=true; break
+      case "Patient Configuration": this.allFlag.patFlag=true; break
+      case "Unit Configuration": this.allFlag.unitFlag=true; break
+      case "Nursing Station Configuration": this.allFlag.nurFlag=true; break
       default:
         break;
     }

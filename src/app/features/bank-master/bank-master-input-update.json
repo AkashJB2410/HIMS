@@ -9,7 +9,7 @@
         "formControls": [
             {
                 "id": 0,
-                "isEditable": true,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Id",
                 "type": "text",
@@ -43,7 +43,7 @@
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[A-Za-z]+$"
+                    "pattern": "^[A-Za-z ]+$"
                 }
             },
             {
@@ -58,7 +58,7 @@
                 "btnLabel": "Save",
                 "icon": "",
                 "isDisabled": false,
-                "formControlName": "",
+                "formControlName": "SAVE",
                 "validations": {
                     "required": false,
                     "pattern": ""
@@ -76,7 +76,7 @@
                 "valueclass": "button-login-yellow",
                 "icon": "",
                 "isDisabled": false,
-                "formControlName": "",
+                "formControlName": "BACK",
                 "validations": {
                     "required": false,
                     "pattern": ""

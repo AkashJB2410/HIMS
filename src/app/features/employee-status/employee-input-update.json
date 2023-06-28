@@ -9,7 +9,7 @@
         "formControls": [
             {
                 "id": 0,
-                "isEditable": true,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Employee ID",
                 "type": "text",
@@ -43,7 +43,7 @@
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[A-Za-z]+$"
+                    "pattern": "^[A-Za-z ]+$"
                 }
             },
             {
