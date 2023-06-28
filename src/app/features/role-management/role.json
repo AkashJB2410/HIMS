@@ -9,7 +9,7 @@
         "formControls": [
             {
                 "id": 0,
-                "isEditable": true,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Role ID",
                 "type": "text",
@@ -39,7 +39,7 @@
                 "formControlName": "roleName",
                 "validations": {
                     "required": false,
-                    "pattern": ""
+                    "pattern": "^[a-zA-Z ]+$"
                 }
             },
             {
@@ -60,7 +60,7 @@
                 },             
                 "validations": {
                     "required": false,
-                    "pattern": "^[a-zA-Z0-9]+$"
+                    "pattern": "^[a-zA-Z0-9 ]+$"
                 }
             },
             {

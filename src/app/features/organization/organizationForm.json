@@ -8,9 +8,9 @@
         "sidebar": "p-sidebar-md",
         "formControls": [
             {
-                "isEditable": true,
+                "isEditable": false,
                 "isVisible": true,
-                "label": "Organization ID",
+                "label": "ID",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-6 my-1",
@@ -31,7 +31,7 @@
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Enter Organization Name",
+                "label": "Enter Name",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-6 my-1",
@@ -45,14 +45,14 @@
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[A-Za-z]+$"
+                    "pattern": "^[A-Za-z ]+$"
                 }
             },
             {
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Enter Organization Email",
+                "label": "Enter Email",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-6 my-1",
@@ -73,7 +73,7 @@
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Enter Organization Mobile No.",
+                "label": "Enter Mobile No.",
                 "type": "text",
                 "inputType": "number",
                 "class": "col-md-6 my-1",
@@ -94,7 +94,7 @@
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Enter Organization Address",
+                "label": "Enter Address",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-6 my-1",
@@ -115,7 +115,7 @@
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Enter Organization Contact Person",
+                "label": "Enter Contact Person Name",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-6 my-1",
@@ -129,14 +129,14 @@
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[A-Z]+$"
+                    "pattern": "^[A-Z ]+$"
                 }
             },
             {
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Enter Organization Phone No.",
+                "label": "Enter Phone No.",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-6 my-1",
