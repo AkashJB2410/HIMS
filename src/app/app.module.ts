@@ -258,7 +258,6 @@ import { ConfigurationsComponent } from './features/configurations/configuration
     ActionButtonComponent,
     ActionModuleComponent,
     BankBranchMasterComponent,
-    ActionRoleComponent,
     ActionSubModuleComponent,
     BedTransferComponent,
     SubDepartmentComponent,

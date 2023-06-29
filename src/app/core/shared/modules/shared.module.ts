@@ -78,6 +78,8 @@ import {CascadeSelectModule} from 'primeng/cascadeselect';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import { HomePageComponent } from 'src/app/core/home-page/home-page.component';
 import {BadgeModule} from 'primeng/badge';
+import {AvatarModule} from 'primeng/avatar';
+import {AvatarGroupModule} from 'primeng/avatargroup';
 
 @NgModule({
     declarations: [
@@ -162,7 +164,9 @@ import {BadgeModule} from 'primeng/badge';
         BreadcrumbModule,
         CascadeSelectModule,
         InputSwitchModule,
-        BadgeModule
+        BadgeModule,
+        AvatarModule,
+        AvatarGroupModule
     ],
     exports: [
         //============= Core Components =============
@@ -242,7 +246,9 @@ import {BadgeModule} from 'primeng/badge';
         PickListModule,
         BreadcrumbModule,
         CascadeSelectModule,
-        BadgeModule
+        BadgeModule,
+        AvatarModule,
+        AvatarGroupModule
     ],
     providers: [
         MessageService,
