@@ -2533,6 +2533,14 @@ body {
   transition-duration: 0.2s;
   background-color: #673AB7;
 }
-.cardsizes{
+/* .cardsizes{
   margin: auto;
+} */
+
+.dummy{
+  text-align: center
+}
+.p-avatar.p-avatar-xl {
+  width: 6rem !important;
+  height: 6rem !important;
 }

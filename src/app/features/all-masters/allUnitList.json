@@ -3,77 +3,77 @@
     {
     "label": "Action Button",
     "routerLink": "/master-page/all-masters/action-button",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/Rediology.png"
   },
   {
     "label": "Action Module",
     "routerLink": "/master-page/all-masters/action-module",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/OPD Dashboard.png"
   },
    {
     "label": "Action Role",
     "routerLink": "/master-page/all-masters/action-role",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/OPD Dashboard.png"
   }, 
   {
     "label": "Action SubModule",
     "routerLink": "/master-page/all-masters/action-sub-module",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/action-Submodule.png"
   },
    {
     "label": "Application Configuration",
     "routerLink": "/master-page/all-masters/application-config",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/application-Configuration.png"
   },
    {
     "label": "Bank Branch Master",
     "routerLink": "/master-page/all-masters/bank-branch-master",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/IPD-Quick-Reg.png"
   },
   {
     "label": "Bank Master",
     "routerLink": "/master-page/all-masters/bank-master",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/Quick-Patient.png"
   },
   {
     "label": "Department",
     "routerLink": "/master-page/all-masters/department",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/IPD.png"
   },
    {
     "label": "Employment Status",
     "routerLink": "/master-page/all-masters/employee-status",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/IPD Dashboard.png"
   },
   {
     "label": "LOV type",
     "routerLink": "/master-page/all-masters/lov-type",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/IPD Dashboard.png"
   },
   {
     "label": "LOV Value",
     "routerLink": "/master-page/all-masters/lov-value",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/IPD Dashboard.png"
   },
    {
     "label": "Organization",
     "routerLink": "/master-page/all-masters/organization",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/Patient-Reg.png"
   },
    {
     "label": "Role",
     "routerLink": "/master-page/all-masters/role-management",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/IPD Dashboard.png"
   }, 
   {
     "label": "Sub Department",
     "routerLink": "/master-page/all-masters/sub-department",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/Queue.png"
   },
    {
     "label": "Unit",
     "routerLink": "/master-page/all-masters/unit",
-    "imgSrc": "assets/core_assets/card-icon.png"
+    "imgSrc": "assets/IPD Dashboard.png"
   }
 ]
 }
