@@ -134,45 +134,46 @@ export class UnitComponent implements OnInit {
       // for (let i = 0; i < this.data.length; i++) {
       //   this.data[i].srNumber = i + 1;
       // }
-      // res.forEach((data: any) => {
-      //   let obj = {
-      //     "unitId": data.unitId,
-      //     "unitName": data.unitName,
-      //     "unitpostfix": data.unitpostfix,
-      //     "unitcenter": data.unitcenter,
-      //     "unitAddress": data.unitAddress,
-      //     "unitEmail": data.unitEmail,
-      //     "unitMobile": data.unitMobile,
-      //     "unitPhone": data.unitPhone,
-      //     "unitContactPerson": data.unitContactPerson,
-      //     "mstOrg": data.mstOrg,
-      //     "unitCode": data.unitCode,
-      //     "unitClinicContactNo": data.unitClinicContactNo,
-      //     "unitPharmacyLicenseNo": data.unitPharmacyLicenseNo,
-      //     "unitPharmacyStoreName": data.unitPharmacyStoreName,
-      //     "unitPharmacyGstNo": data.unitPharmacyGstNo,
-      //     "unitClinicRegistrationNo": data.unitClinicRegistrationNo,
-      //     "unitShopAndEstablishmentNo": data.unitShopAndEstablishmentNo,
-      //     "unitTradeNo": data.unitTradeNo,
-      //     "unitServer": data.unitServer,
-      //     "unitDatabase": data.unitDatabase,
-      //     "unitFaxNo": data.unitFaxNo,
-      //     "unitWebSite": data.unitWebSite,
-      //     "countryId": data.countryId,
-      //     "countryName": data.countryName,
-      //     "cityId": data.cityId,
-      //     "cityName": data.cityName,
-      //     "stateId": data.stateId,
-      //     "stateName": data.stateName,
-      //     "unitClusterId": data.unitClusterId,
-      //     "unitAddressZip": data.unitAddressZip,
-      //     "unitAddressArea": data.unitAddressArea,
-      //     "unitXHipId": data.unitXHipId,
-      //   }
-      //   this.unitdata.push(obj);
-      // })
-      // this.data = [...this.unitdata];
-      this.data = res;
+      res.forEach((data: any, index:any) => {
+        let obj = {
+          "id":index,
+          "unitId": data.unitId,
+          "unitName": data.unitName,
+          "unitpostfix": data.unitpostfix,
+          "unitcenter": data.unitcenter,
+          "unitAddress": data.unitAddress,
+          "unitEmail": data.unitEmail,
+          "unitMobile": data.unitMobile,
+          "unitPhone": data.unitPhone,
+          "unitContactPerson": data.unitContactPerson,
+          "mstOrg": data.mstOrg,
+          "unitCode": data.unitCode,
+          "unitClinicContactNo": data.unitClinicContactNo,
+          "unitPharmacyLicenseNo": data.unitPharmacyLicenseNo,
+          "unitPharmacyStoreName": data.unitPharmacyStoreName,
+          "unitPharmacyGstNo": data.unitPharmacyGstNo,
+          "unitClinicRegistrationNo": data.unitClinicRegistrationNo,
+          "unitShopAndEstablishmentNo": data.unitShopAndEstablishmentNo,
+          "unitTradeNo": data.unitTradeNo,
+          "unitServer": data.unitServer,
+          "unitDatabase": data.unitDatabase,
+          "unitFaxNo": data.unitFaxNo,
+          "unitWebSite": data.unitWebSite,
+          "countryId": data.countryId,
+          "countryName": data.countryName,
+          "cityId": data.cityId,
+          "cityName": data.cityName,
+          "stateId": data.stateId,
+          "stateName": data.stateName,
+          "unitClusterId": data.unitClusterId,
+          "unitAddressZip": data.unitAddressZip,
+          "unitAddressArea": data.unitAddressArea,
+          "unitXHipId": data.unitXHipId,
+        }
+        this.unitdata.push(obj);
+      })
+      this.data = [...this.unitdata];
+      
       this.isdataReady = true;
       for (let i = 0; i < this.data.length; i++) {
         this.data[i].srNumber = i + 1;

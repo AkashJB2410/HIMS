@@ -109,8 +109,9 @@ export class ApplicationConfigComponent implements OnInit {
     this.data = undefined;
     this.applicationData = [];
     this.http.GetAllApplicationData().subscribe((res) => {
-      res.forEach((e: any) => {
+      res.forEach((e: any, index:any) => {
         let obj = {
+          "id":index,
           "applicationId": e.id,
           "keyname": e.keyname,
           "keyvalue": e.keyvalue,
