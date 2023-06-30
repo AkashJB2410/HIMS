@@ -118,8 +118,9 @@ export class LovValueComponent implements OnInit {
       // for (let i = 0; i < this.data.length; i++) {
       //   this.data[i].srNumber = i + 1;
       // }
-      res.forEach((e: any) => {
+      res.forEach((e: any, index:any) => {
         let obj = {
+          "id":index,
           "lovListId": e.lovListId,
           "lovTypeId": e.mstLovType.lovTypeId,
           "value": e.value,
