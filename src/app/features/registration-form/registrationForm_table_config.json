@@ -36,5 +36,6 @@
     "editicon":"../../../assets/icons/Group 1823.png",
     "expand":false,
     "buttonlbl":"Registration",
-    "textLength":16
+    "textLength":16,
+    "sidebar":"p-sidebar-lg"
 }

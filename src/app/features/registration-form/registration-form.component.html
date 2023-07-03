@@ -6,8 +6,7 @@
 <app-super-grid *ngIf="data" 
     [configurations]="configurations" 
     [tableData]="data" 
-    [tableConfig]="config"
-    [sidebarJSON]="formData" 
+    [tableConfig]="config" 
     (sideBarEvent)="sidebarData($event)" 
     (confirmAction)="confirmAction($event)"
     (changeEvents)="changeSelectItem($event)"
@@ -16,6 +15,9 @@
     (onEdit)="onAddEdit($event)" 
     (isActive)="isActive($event)"
     (rowClickData)="rowClickData($event)">
+
+    <app-form projectTowards="sidebar" [formJSON]="formData" [editData]="editData"
+       (btnEvent)="buttonEvent($event)" (formData)="dataForm($event)"></app-form>
 
 </app-super-grid>
 <p-toast></p-toast>

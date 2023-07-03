@@ -8,6 +8,7 @@ import rgistrationData from './registrationForm.json';
 import { FormService } from 'src/app/core/shared/service/form.service';
 import Breadcrumbs from './breadcrumb.json';
 import { DatePipe } from '@angular/common';
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-registration-form',
@@ -37,8 +38,9 @@ export class RegistrationFormComponent implements OnInit {
   getage: any;
   agemon: any;
   agedday: any;
+  editData: any;
 
-  constructor(private messageService: MessageService, public datepipe: DatePipe, private http: RegistrationFormService, private form$: FormService) { }
+  constructor(private messageService: MessageService, private common: CommonService, public datepipe: DatePipe, private http: RegistrationFormService, private form$: FormService) { }
 
   ngOnInit(): void {
     this.assignDropDownOptions();
@@ -590,9 +592,9 @@ export class RegistrationFormComponent implements OnInit {
 
   }
 
-  onAddEdit(e: any) {
-    this.isAddEditFlag = e;
-  }
+  // onAddEdit(e: any) {
+  //   this.isAddEditFlag = e;
+  // }
   sidebarData(e: any) {
     console.log("sidebar data => ",e)
     if (this.isAddEditFlag == "add") {
@@ -629,6 +631,90 @@ export class RegistrationFormComponent implements OnInit {
     //     this.data = data;
     //   })
   }
+
+  buttonEvent(e: any) {
+    this.editData = undefined;
+    this.common.sendEditData(false);
+  }
+
+  dataForm(e: any){
+    this.data=e;
+  }
+
+  onAddEdit(e: any) {
+    this.isAddEditFlag = e;
+    let edit = {
+
+      "staticText": "1",
+      "userId": e.editRow.userId,
+      "titleId": e.editRow.titleId,
+      
+      "firstName": e.editRow.firstName,
+      "middleName": e.editRow.middleName,
+      "lastName": e.editRow.lastName,
+      "mobileNo": e.editRow.mobileNo,
+      "emailId": e.editRow.emailId,
+      "identificationType_Id": e.editRow.identificationType_Id,
+      "identificationNo": e.editRow.identificationNo,
+
+      "RDODOB": e.editRow.RDODOB,
+      "dob": e.editRow.dob,
+      "RDOage": e.editRow.RDOage,
+      "age": e.editRow.age,
+      "durationId":e.editRow.durationId,
+
+      "bloodgroupId": e.editRow.bloodgroupId,
+      "mstGenderId":e.editRow.mstGenderId,
+      "staticText2": "1",
+      "address": e.editRow.address,
+      "stateId":[e.editRow.stateId[0],e.editRow.stateId[1]],
+      "taluka": e.editRow.taluka,
+      "village": e.editRow.village,
+      "pincode": e.editRow.pincode,
+      "staticText3": "1",
+      "IPDRad": e.editRow.IPDRad,
+      "departmentId": e.editRow.departmentId,
+      "subDepartmentId": e.editRow.subDepartmentId,
+      "doctorId": e.editRow.doctorId,
+      "userImage": e.editRow.userImage,
+      "relationId": e.editRow.relationId,
+      "relationName": e.editRow.relationName,
+      "relationLastName": e.editRow.relationLastName,
+      "mstWardDetailsid": e.editRow.mstWardDetailsid,
+      "identificationType": e.editRow.identificationType,
+      "departmentName": e.editRow.departmentName,
+
+      "subDepartment": e.editRow.subDepartment,
+      "bloodgroupName": e.editRow.bloodgroupName,
+
+
+      "districtName":e.editRow.districtName,
+
+
+      "doctorName": e.editRow.doctorName,
+
+
+
+      "durationType": e.editRow.durationType,
+
+      "gender_Type": e.editRow.gender_Type,
+
+      "stateName": e.editRow.stateName,
+
+
+      "title_Type": e.editRow.title_Type,
+
+
+      "wardDetails": e.editRow.wardDetails,
+
+      "is_Active": e.editRow.is_Active
+    }
+    this.editData = edit;
+    // this.common.sendEditData(e.editRow);
+    // this.form$.reRenderForm(this.sidebarJSON.form.formControls[1], false, 'isVisible');
+  }
+
+ 
 
   calculateAge(dateString: any) {
     let now, today, yearNow, monthNow, dateNow, dob, yearDob, monthDob, dateDob, monthAge, dateAge, yearAge;
