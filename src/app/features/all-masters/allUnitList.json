@@ -74,6 +74,11 @@
     "label": "Unit",
     "routerLink": "/master-page/all-masters/unit",
     "imgSrc": "assets/IPD Dashboard.png"
+  },
+  {
+    "label": "Cluster",
+    "routerLink": "/master-page/all-masters/cluster",
+    "imgSrc": "assets/IPD Dashboard.png"
   }
 ]
 }
