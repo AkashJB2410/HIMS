@@ -1,8 +1,8 @@
 {
-    "tableName": "Regex Configuration Table",
+    "tableName": "BANK MASTER TABLE",
     "tableHeaders":[
         {
-            "field":"srNo",
+            "field":"id",
             "header":"Sr. No.","iseditable": false , "class":"text-center"
         },
         {
@@ -17,7 +17,7 @@
     ],
     "PdfHeaders":[
         {
-            "field":"srNo",
+            "field":"id",
             "header":"Sr. No."
         },
         {
@@ -29,7 +29,7 @@
             "header":"Active Status"
         }
     ],
-    "globalFilter":["bankId","bankName","is_Active","bankId"],
+    "globalFilter":["id","bankName","is_Active"],
     "rows" : 10,
     "showCurrentPageReport" : true,
     "rowsPerPageOptions" : [10,25,50],

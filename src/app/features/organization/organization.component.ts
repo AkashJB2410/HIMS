@@ -113,7 +113,7 @@ export class OrganizationComponent implements OnInit {
       this.data = res;
       this.isdataReady = true;
       for(let i=0; i<this.data.length;i++){
-        this.data[i].srNo=i+1;
+        this.data[i].id=i+1;
       }
       this.data;
     })
@@ -150,5 +150,39 @@ export class OrganizationComponent implements OnInit {
     else{}
   }
 
+  bulkDeleteRows(bulk_Data: any) {
+    let count = 0;
+    if (bulk_Data != '') {
+      bulk_Data.forEach((orgData: any) => {
+        if (orgData.is_Active == true) {
+          this.deleteOrgData(orgData);
+          count++;
+        }
+      });
+      if (count == 0) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'The Selected Rows are Already Disabled',
+        });
+        this.data = undefined;
+        this.getAllOrgData();
+      }
+      else if (count != 0) {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Bulk Deleted',
+          detail: 'Successful Disabled',
+        });
+      }
+    }
+    else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'No Row Selected',
+      });
+    }
+  }
   
 }

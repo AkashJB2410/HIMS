@@ -50,7 +50,7 @@ export class RoleManagementComponent implements OnInit {
       this.data = res;
       this.isdataReady = true;
       for(let i=0; i<this.data.length;i++){
-        this.data[i].srNo=i+1;
+        this.data[i].id=i+1;
       }
       this.data;
     })
@@ -100,6 +100,7 @@ export class RoleManagementComponent implements OnInit {
   deleteRoleData(roleId: any) {
     this.http.deleteRoleData(roleId)
       .subscribe(data => {
+        this.data=undefined;
         this.getAllRoleData();
         console.log("data" + data)
       })
@@ -149,5 +150,41 @@ export class RoleManagementComponent implements OnInit {
     //     this.data = data;
     //   })
   }
+
+  bulkDeleteRows(role_Bulk_Data: any) {
+    let count = 0;
+    if (role_Bulk_Data != '') {
+      role_Bulk_Data.forEach((role_Data: any) => {
+        if (role_Data.is_Active == true) {
+          this.deleteRoleData(role_Data);
+          count++;
+        }
+      });
+      if (count == 0) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'The Selected Rows are Already Disabled',
+        });
+        this.data=undefined;
+        this.getAllRoleData();
+      }
+      else if (count != 0) {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Bulk Deleted',
+          detail: 'Successful Disabled',
+        });
+      }
+    }
+    else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'No Row Selected',
+      });
+    }
+  }
+
 }
 

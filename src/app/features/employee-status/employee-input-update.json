@@ -38,7 +38,7 @@
                 "placeholder": "Employee Name",
                 "formControlName": "esName",
                 "message": {
-                    "required": "Plase Enter Bank Name",
+                    "required": "Plase Enter Employee Name",
                     "pattern": "Only Alphabete are Allowed"
                 },
                 "validations": {
