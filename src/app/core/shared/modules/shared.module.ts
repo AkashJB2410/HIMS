@@ -168,7 +168,10 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
         BreadcrumbModule,
         CascadeSelectModule,
         InputSwitchModule,
-        BadgeModule
+        BadgeModule,
+        MultiSelectModule,
+        AvatarModule,
+        AvatarGroupModule
     ],
     exports: [
         //============= Core Components =============
@@ -248,7 +251,10 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
         PickListModule,
         BreadcrumbModule,
         CascadeSelectModule,
-        BadgeModule
+        BadgeModule,
+        MultiSelectModule,
+        AvatarModule,
+        AvatarGroupModule
     ],
     providers: [
         MessageService,

@@ -224,6 +224,57 @@ a.article :hover {
     text-align: center;
 }
 
+.darSideBar .footer {
+    margin-left: 60px !important;
+}
+
+.footer {
+    background: linear-gradient(0deg, #D6D6D6 0%, #FAFAFA 67.26%);
+    color: #424242;
+    padding: 0.8rem;
+    transition: 0.4s
+}
+
+.genisSideBar .footer {
+    margin-left: 260px !important;
+}
+
+.fixed-bottom {
+    bottom: 0;
+}
+
+.fixed-bottom,
+.fixed-top {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+
+@media (min-width: 768px) {
+    .float-md-left {
+        float: right !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .d-md-inline-block {
+        display: inline-block !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .float-md-right {
+        float: left !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .d-lg-block {
+        display: block !important;
+    }
+}
+
 /* .darSideBar:hover{
     width:270px;
     overflow: visible;
@@ -475,6 +526,7 @@ li a.subchildMenu {
     margin-bottom: 5px;
 
 }
+
 /* 
 .inboxContainer {
     position: sticky;

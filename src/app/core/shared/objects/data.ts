@@ -3,14 +3,16 @@ export const data =
         {
             "id": "1000",
             "code": "f230fkgjktjkjktjksfkv;fjbkltjligjlktjl gjhthgjtlijgtkjljluliueivujkh0g3 f230fkgjktjkjktjksfkv;fjbkltjligjlktjl gjhthgjtlijgtkjljluliueivujkh0g3f230fkgjktjkjktjksfkv;fjbkltjligjlktjl gjhthgjtlijgtkjljluliueivujkh0g3f230fkgjktjkjktjksfkv;fjbkltjligjlktjl gjhthgjtlijgtkjljluliueivujkh0g3f230fkgjktjkjktjksfkv;fjbkltjligjlktjl gjhthgjtlijgtkjljluliueivujkh0g3",
-            "name":null,
+            "name":"Satyam",
             "description": "Product",
             "image": "bamboo-watch.jpg",
             "price": 1414,
             "category": "Accessories",
             "quantity": 24,
             "inventoryStatus": "INSTOCK",
-            "date":"2023-05-02"
+            "rating": 5,
+            "date":"2023-05-02",
+
         },
         {
             "id": "1001",
