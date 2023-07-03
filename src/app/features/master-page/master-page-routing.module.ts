@@ -135,6 +135,7 @@ const routes: Routes = [
       { path: 'all-masters/lov-value', loadChildren: () => import('./../lov-value/lov-value-routing.module').then( m => m.LovValueRoutingModule)},
       { path: 'configurations', loadChildren: () => import('./../configurations/configurations.module').then(m => m.ConfigurationsModule) },
       { path: 'settings', loadChildren: () => import('./../settings/settings.module').then(m => m.SettingsModule) },
+      { path: 'all-masters/spetiality', loadChildren: () => import('./../spetiality/spetiality.module').then( m => m.SpetialityModule)},
     ],
     // canActivate: [AuthGuardGuard]
   }];
