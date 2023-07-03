@@ -165,6 +165,7 @@ export class ForgotPasswordComponent implements OnInit {
     this.successScreen = false;
     this.btnDissabled = false;
   }
+  
   backtoLogin(){
     this.chooseMethod = false;
     this.emailOrMobileCard = false;

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CommonService } from '../shared/service/common.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -19,40 +20,40 @@ export class SidebarComponent implements OnInit {
 
   @Input() editRowData: any;
   @Input() visibleSidebar: any;
-  @Input() sidebarJSON: any;
+  @Input() sidebarConfig: any;
 
   @Output() sidebarData = new EventEmitter<boolean>;
   @Output() changeEvents = new EventEmitter<boolean>;
 
-  constructor() { }
+  constructor(private common: CommonService) { }
 
   ngOnInit(): void {
-    if (this.sidebarJSON.form.sidebar == "p-sidebar-sm") {
+    this.handelBackdrop();
+    this.common.getEditData().subscribe(data => {
+      if (!data) {
+        this.visibleSidebar = data;
+      }
+    })
+  }
+
+  handelBackdrop() {
+    if (this.sidebarConfig.sidebar == "p-sidebar-sm") {
       document.documentElement.style.setProperty('--width', '20rem');
-    } else if (this.sidebarJSON.form.sidebar == "p-sidebar-md") {
+    } else if (this.sidebarConfig.sidebar == "p-sidebar-md") {
       document.documentElement.style.setProperty('--width', '40rem');
-    } else {
+    } else if (this.sidebarConfig.sidebar == "p-sidebar-lg") {
       document.documentElement.style.setProperty('--width', '60rem');
+    } else {
+      document.documentElement.style.setProperty('--width', '80rem');
     }
   }
 
   formData(e: any) {
     this.data = e;
   }
-  
+
   onHide(e: any) {
-    this.sidebarData.emit(e);
+    this.sidebarData.emit(false);
   }
-
-  buttonEvent(e: any) {
-    if (e == 'save') {
-      this.sidebarData.emit(this.data);
-    } else {
-      this.sidebarData.emit(e);
-    }
-  }
-
-  changeEvent(event: any){
-    this.changeEvents.emit(event);
-  }
+   
 }

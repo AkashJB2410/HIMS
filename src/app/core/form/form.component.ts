@@ -4,7 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { FormControlTypes, IFormField } from './form.interface';
 import { CustomDatePipe } from '../shared/pipes/custom-date.pipe';
 import { FormService } from '../shared/service/form.service';
-import { Observable, Subscriber, observable } from 'rxjs';
+import { Observable, Subscriber, elementAt, observable } from 'rxjs';
 import { file } from '@rxweb/reactive-form-validators';
 
 @Component({
@@ -141,7 +141,8 @@ export class FormComponent implements OnInit {
     if (data.formData.type != 'button') {
       if (data.value) {
         ctrl.enable();
-        document.getElementById(data.formData.formControlName)
+        let element = document.getElementById(data.formData.formControlName)
+        element.className = "input-box"
       } else {
         ctrl.disable();
       }

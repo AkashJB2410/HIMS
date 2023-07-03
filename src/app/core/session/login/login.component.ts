@@ -3,18 +3,19 @@ import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { SessionService } from '../../shared/service/session.service';
 import { EncryptPipe } from '../../shared/pipes/encrypt-decrypt.pipe';
-import { FormService } from '../../shared/service/form.service';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import login from './login.json';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
+
 export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
     emailId: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$")]),
     organisation: new FormControl({
       "organization_Id": "",
       "organization_Type": "Select an option"
@@ -29,14 +30,17 @@ export class LoginComponent implements OnInit {
   timerFlag = false;
   timerFlag2 = false;
   attempts: any = 1;
-  constructor(private router: Router, private messageService: MessageService, private http: SessionService, private encrypt: EncryptPipe, private form$: FormService) { }
+  constructor(private router: Router,
+    private messageService: MessageService,
+    private http: SessionService,
+    private encrypt: EncryptPipe) { }
 
   ngOnInit() {
     localStorage.clear();
     sessionStorage.clear();
   }
 
-  getEmail(e: any) {
+  getOrganiszation(e: any) {
     this.http.orgData(e.value)
       .subscribe(res => {
         this.orgList = [];
@@ -97,7 +101,7 @@ export class LoginComponent implements OnInit {
             this.messageService.add({ severity: 'success', summary: 'Login', detail: 'Logged in successfully.' });
             sessionStorage.setItem('loggedUser', this.encrypt.transform(JSON.stringify(data)));
             sessionStorage.setItem('loggedIn', 'true');
-            this.router.navigateByUrl('/master-page/home');
+            this.router.navigateByUrl('/master-page/user-management');
           } else if (data.password != this.loginForm.value.password) {
             this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
           }

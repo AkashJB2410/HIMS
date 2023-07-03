@@ -1,8 +1,11 @@
-import { EncryptDecryptPipe } from './encrypt-decrypt.pipe';
+import { DecryptPipe, EncryptPipe } from './encrypt-decrypt.pipe';
 
 describe('EncryptDecryptPipe', () => {
   it('create an instance', () => {
-    const pipe = new EncryptDecryptPipe();
-    expect(pipe).toBeTruthy();
+    const epipe = new EncryptPipe();
+    expect(epipe).toBeTruthy();
+
+    const Dpipe = new DecryptPipe();
+    expect(Dpipe).toBeTruthy();
   });
 });

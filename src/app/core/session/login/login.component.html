@@ -21,7 +21,7 @@
                                 <label for="email" class="label-txt">Email</label>
                                 <!-- <input type="email" formControlName="emailId" class="login-control form-control-sm" name=""
                                     id="email" aria-describedby="helpId" placeholder="Enter Registered Email ID" > -->
-                                    <input type="text"  formControlName="emailId"  class="input-box login-input" placeholder="Enter Registered Email ID"  (blur)="getEmail($event.target)" >
+                                    <input type="text"  formControlName="emailId"  class="input-box login-input" placeholder="Enter Registered Email ID"  (blur)="getOrganiszation($event.target)" >
                             </div>
                             <div class="form-group mb-6 login-input" >
                                 <label for="email" class="label-txt">Password</label>
@@ -29,7 +29,7 @@
                                     id="email" aria-describedby="helpId" placeholder="Enter password..."> -->
                                     <!-- <input type="password" placeholder="Enter password..."   
                                     pPassword > -->
-                                    <p-password formControlName="password"  placeholder="Enter password " [toggleMask]="true" [feedback]="false" (blur)="getEmail($event.target)"></p-password>
+                                    <p-password formControlName="password"  placeholder="Enter password " [toggleMask]="true" [feedback]="false"></p-password>
                             </div>
                             <div class="form-group mb-6 login-input">
                                 <label _ngcontent-spn-c57="" for="email"  class="label-txt mb-1">Organisation</label>

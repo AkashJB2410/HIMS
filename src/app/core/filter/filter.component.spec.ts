@@ -1,11 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FilterComponent } from './filter.component';
-import { FilterserviceService } from './filterservice.service';
 
 describe('FilterComponent', () => {
-  let service= new FilterserviceService();
-  let filter = new FilterComponent(service);
+  let filter = new FilterComponent();
   let fixture: ComponentFixture<FilterComponent>;
 
   beforeEach(async () => {

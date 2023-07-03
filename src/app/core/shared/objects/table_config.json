@@ -6,8 +6,6 @@
         {"field": "inventoryStatus","header": "Inventory Status","iseditable": false, "class":""},
         {"field": "category","header": "Category","iseditable": false, "class":""},
         {"field": "quantity","header": "Quantity","iseditable": false, "class":"text-center"}
-
-
     ],
     "getColors":[
         { "status":"INSTOCK", "color": "#119C2B"},
@@ -26,7 +24,8 @@
     "resizableColumns": true,
     "isActions": ["Edit", "Delete" ,"Viewer" ,"isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
-    "expand":false,
+    "expand":true,
     "buttonlbl":"New Product",
-    "textLength":16
+    "textLength":16,
+    "sidebar": "p-sidebar-lg"
 }

@@ -23,15 +23,9 @@ export class FilterComponent implements OnInit {
   FData: any;
   filterName: any;
   filtersArray: any = [];
-  constructor(
-    private primengConfig: PrimeNGConfig,
-    private mess: MessageService
-  ) {
-    this.primengConfig.ripple = true;
-  }
+  constructor() {}
 
   ngOnInit(): void {
-    this.primengConfig.ripple = true;
     this.setupPopup();
   }
 

@@ -97,12 +97,11 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         ]
       }]
     
-    setTimeout(() => {
-      let a = document.getElementsByClassName('goog-te-combo')[0] as HTMLSelectElement;
-      a.options[0].value = "hi";
-    }, 3000);
+    // setTimeout(() => {
+    //   let a = document.getElementsByClassName('goog-te-combo')[0] as HTMLSelectElement;
+    //   a.options[0].value = "hi";
+    // }, 3000);
   }
-
 
   ngAfterViewInit() {
     let s = document.createElement('script');

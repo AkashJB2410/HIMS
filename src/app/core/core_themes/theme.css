@@ -2316,7 +2316,7 @@ body {
 }
 
 .p-breadcrumb {
-  background: none!important;
+  background: #ffffff;
   border-radius: 4px;
   border: none !important;
   padding: 0rem !important;
@@ -2397,8 +2397,16 @@ body {
 }
 
 .homepageCss {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.homepagelabel {
+  text-align: center;
+  max-width: 150px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .labelcss {
@@ -2449,6 +2457,10 @@ body {
 
 .p-sidebar .p-sidebar-header {
   padding: 0rem !important;
+}
+
+.p-sidebar-right.p-sidebar-xl {
+  width: 80rem;
 }
 
 .spacer {
@@ -2533,14 +2545,16 @@ body {
   transition-duration: 0.2s;
   background-color: #673AB7;
 }
-/* .cardsizes{
-  margin: auto;
-} */
 
-.dummy{
+.avatar-section {
   text-align: center
 }
+
 .p-avatar.p-avatar-xl {
-  width: 6rem !important;
-  height: 6rem !important;
+  width: 8rem !important;
+  height: 8rem !important;
+}
+.col-xs-6 {
+  float: left;
+  width: 50%;
 }
