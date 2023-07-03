@@ -4,6 +4,7 @@ import ApplictionForm from './ApplicationConfig_Form.json';
 import ApplictionTable from './ApplicationConfig_TableConfig.json';
 import { ApplicationConfigService } from './application-config.service';
 import Application_breadcrumb from './Application_breadcrumb.json'
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-application-config',
@@ -21,7 +22,8 @@ export class ApplicationConfigComponent implements OnInit {
   applicationData: any = [];
   flag: any;
   errorFlag: boolean = false;
-  constructor(private messageService: MessageService, private http: ApplicationConfigService) { }
+  editData:any
+  constructor(private messageService: MessageService, private http: ApplicationConfigService,private common:CommonService) { }
 
   ngOnInit(): void {
     this.configurations = {
@@ -40,6 +42,23 @@ export class ApplicationConfigComponent implements OnInit {
     this.flag = e;
   }
 
+  onEdit(e:any){
+    this.flag=e.edit
+    let obj = {
+      "lovListId": e.editRow.lovListId,
+      "lovTypeId": e.editRow.lovTypeId,
+      "value": e.editRow.value,
+      "typeOfField": e.editRow.typeOfField,
+      "description": e.editRow.description,
+      "lovTypeName": e.editRow.lovTypeName,
+      "is_Active": e.editRow.is_Active,
+    }
+    this.editData=obj;
+  }
+  buttonEvent(e:any){
+    this.editData=undefined;
+this.common.sendEditData(false);
+  }
   editRow(e: any) {
     this.visibleSidebar = true;
   }

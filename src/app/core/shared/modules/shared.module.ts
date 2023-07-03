@@ -206,7 +206,7 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
         VerticalTabularComponent,
         HomePageComponent,
         //============= Core Imports =============
-
+        AvatarModule,
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,

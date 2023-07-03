@@ -87,6 +87,7 @@
         "Delete",
         "isActive"
     ],
+    "sidebar":"p-sidebar-sm",
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
     "buttonlbl": "Add LOV Value",
