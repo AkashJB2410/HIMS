@@ -1,9 +1,15 @@
-<p-sidebar [(visible)]="visibleSidebar" position="right" styleClass="{{sidebarJSON.form.sidebar}}" [dismissible]="false"
-    (onHide)="onHide($event)" >
+<!-- <p-sidebar [(visible)]="visibleSidebar" position="right" styleClass="p-sidebar-xl" [dismissible]="false"
+    (onHide)="onHide($event)">
     <div class="spacer">
-        <app-form *ngIf="sidebarJSON.form != undefined" [formJSON]="sidebarJSON" [editData]="editRowData"
-        (formData)="formData($event)" (btnEvent)="buttonEvent($event)" (changeEvents)="changeEvent($event)"></app-form>
-    <app-form *ngIf="sidebarJSON.Forms != undefined" [formJSON]="sidebarJSON" [editData]="editRowData"
-        (formData)="formData($event)" (btnEvent)="buttonEvent($event)"></app-form>
+        <app-form *ngIf="sidebarJSON.form != undefined && editRowData" [formJSON]="sidebarJSON" [editData]="editRowData"
+            (formData)="formData($event)" (btnEvent)="buttonEvent($event)"
+            (changeEvents)="changeEvent($event)"></app-form>
+        <app-form *ngIf="sidebarJSON.Forms != undefined" [formJSON]="sidebarJSON" [editData]="editRowData"
+            (formData)="formData($event)" (btnEvent)="buttonEvent($event)"></app-form>
     </div>
+</p-sidebar> -->
+
+<p-sidebar [(visible)]="visibleSidebar" position="right" styleClass="{{sidebarConfig.sidebar}}" [dismissible]="false"
+    (onHide)="onHide($event)" >
+    <ng-content></ng-content>
 </p-sidebar>

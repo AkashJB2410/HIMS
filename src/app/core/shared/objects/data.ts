@@ -7,10 +7,9 @@ export const data =
             "description": "Product",
             "image": "bamboo-watch.jpg",
             "price": 1414,
-            "category": "Saman",
+            "category": "Accessories",
             "quantity": 24,
             "inventoryStatus": "INSTOCK",
-            "rating": 5,
             "date":"2023-05-02"
         },
         {
@@ -23,7 +22,6 @@ export const data =
             "category": "Accessories",
             "quantity": 61,
             "inventoryStatus": "INSTOCK",
-            "rating": 4,
             "date":"2023-05-02"
         },
         {
@@ -36,7 +34,7 @@ export const data =
             "category": "Fitness",
             "quantity": 2,
             "inventoryStatus": "LOWSTOCK",
-            "rating": 3,
+            "ratig": 3,
             "date":"2023-05-02"
         },
         {
@@ -49,7 +47,6 @@ export const data =
             "category": "Clothing",
             "quantity": 25,
             "inventoryStatus": "INSTOCK",
-            "rating": 5,
             "date":"2023-05-02"
         },
         {
@@ -62,7 +59,6 @@ export const data =
             "category": "Accessories",
             "quantity": 73,
             "inventoryStatus": "INSTOCK",
-            "rating": 4,
             "date":"2023-05-02"
         },
         {
@@ -75,7 +71,7 @@ export const data =
             "category": "Accessories",
             "quantity": 0,
             "inventoryStatus": "OUTOFSTOCK",
-            "rating": 4,
+
             "date":"2023-05-02"
             
         },
@@ -89,7 +85,7 @@ export const data =
             "category": "Accessories",
             "quantity": 5,
             "inventoryStatus": "LOWSTOCK",
-            "rating": 3,
+
             "date":"2023-05-02"
         },
         {
@@ -102,7 +98,7 @@ export const data =
             "category": "Accessories",
             "quantity": 23,
             "inventoryStatus": "INSTOCK",
-            "rating": 5,
+
             "date":"2023-05-02"
         },
         {
@@ -115,7 +111,7 @@ export const data =
             "category": "Electronics",
             "quantity": 2,
             "inventoryStatus": "LOWSTOCK",
-            "rating": 4,
+
             "date":"2023-05-02"
         },
         {
@@ -128,7 +124,7 @@ export const data =
             "category": "Electronics",
             "quantity": 63,
             "inventoryStatus": "INSTOCK",
-            "rating": 3,
+
             "date":"2023-05-02"
         },
         {
@@ -141,7 +137,7 @@ export const data =
             "category": "Accessories",
             "quantity": 0,
             "inventoryStatus": "OUTOFSTOCK",
-            "rating": 4,
+
             "date":"2023-05-02"
         },
         {
@@ -154,7 +150,7 @@ export const data =
             "category": "Electronics",
             "quantity": 23,
             "inventoryStatus": "INSTOCK",
-            "rating": 4,
+
             "date":"2023-05-02"
         },
         {
@@ -167,7 +163,7 @@ export const data =
             "category": "Clothing",
             "quantity": 74,
             "inventoryStatus": "INSTOCK",
-            "rating": 5,
+
             "date":"2023-05-02"
         },
         {
@@ -180,7 +176,7 @@ export const data =
             "category": "Clothing",
             "quantity": 0,
             "inventoryStatus": "OUTOFSTOCK",
-            "rating": 3,
+
             "date":"2023-05-02"
         },
         {
@@ -193,7 +189,7 @@ export const data =
             "category": "Electronics",
             "quantity": 8,
             "inventoryStatus": "LOWSTOCK",
-            "rating": 5,
+
             "date":"2023-05-02"
         },
         {
@@ -206,7 +202,7 @@ export const data =
             "category": "Clothing",
             "quantity": 34,
             "inventoryStatus": "INSTOCK",
-            "rating": 4,
+
             "date":"2023-05-02"
         },
         {
@@ -219,7 +215,7 @@ export const data =
             "category": "Fitness",
             "quantity": 12,
             "inventoryStatus": "INSTOCK",
-            "rating": 3,
+
             "date":"2023-05-02"
         },
         {
@@ -232,7 +228,7 @@ export const data =
             "category": "Clothing",
             "quantity": 42,
             "inventoryStatus": "INSTOCK",
-            "rating": 4,
+
             "date":"2023-05-02"
         },
         {
@@ -245,7 +241,7 @@ export const data =
             "category": "Accessories",
             "quantity": 41,
             "inventoryStatus": "INSTOCK",
-            "rating": 5,
+
             "date":"2023-05-02"
         },
         {
@@ -258,7 +254,7 @@ export const data =
             "category": "Fitness",
             "quantity": 63,
             "inventoryStatus": "INSTOCK",
-            "rating": 4,
+
             "date":"2023-05-02"
         },
         {
@@ -271,7 +267,7 @@ export const data =
             "category": "Accessories",
             "quantity": 0,
             "inventoryStatus": "OUTOFSTOCK",
-            "rating": 4,
+
             "date":"2023-05-02"
         },
         {
@@ -284,7 +280,7 @@ export const data =
             "category": "Fitness",
             "quantity": 6,
             "inventoryStatus": "LOWSTOCK",
-            "rating": 3,
+
             "date":"2023-05-02"
         },
         {
@@ -297,7 +293,7 @@ export const data =
             "category": "Accessories",
             "quantity": 62,
             "inventoryStatus": "INSTOCK",
-            "rating": 4,
+
             "date":"2023-05-02"
         },
         {
@@ -310,207 +306,7 @@ export const data =
             "category": "Clothing",
             "quantity": 2,
             "inventoryStatus": "LOWSTOCK",
-            "rating": 5,
-            "date":"2023-05-02"
-        },
-        {
-            "id": "1024",
-            "code": "lm2tny2k4",
-            "name": "Shoes",
-            "description": "Product Description",
-            "image": "shoes.jpg",
-            "price": 64,
-            "category": "Clothing",
-            "quantity": 0,
-            "inventoryStatus": "INSTOCK",
-            "rating": 4,
-            "date":"2023-05-02"
-        },
-        {
-            "id": "1025",
-            "code": "nbm5mv45n",
-            "name": "Sneakers",
-            "description": "Product Description",
-            "image": "sneakers.jpg",
-            "price": 78,
-            "category": "Clothing",
-            "quantity": 52,
-            "inventoryStatus": "INSTOCK",
-            "rating": 4,
-            "date":"2023-05-02"
-        },
-        {
-            "id": "1026",
-            "code": "zx23zc42c",
-            "name": "Teal T-Shirt",
-            "description": "Product Description",
-            "image": "teal-t-shirt.jpg",
-            "price": 49,
-            "category": "Clothing",
-            "quantity": 3,
-            "inventoryStatus": "LOWSTOCK",
-            "rating": 3,
-            "date":"2023-05-02"
-        },
-        {
-            "id": "1027",
-            "code": "acvx872gc",
-            "name": "Yellow Earbuds",
-            "description": "Product Description",
-            "image": "yellow-earbuds.jpg",
-            "price": 89,
-            "category": "Electronics",
-            "quantity": 35,
-            "inventoryStatus": "INSTOCK",
-            "rating": 3,
-            "date":"2023-05-02"
-        },
-        {
-            "id": "1028",
-            "code": "tx125ck42",
-            "name": "Yoga Mat",
-            "description": "Product Description",
-            "image": "yoga-mat.jpg",
-            "price": 20,
-            "category": "Fitness",
-            "quantity": 15,
-            "inventoryStatus": "INSTOCK",
-            "rating": 5,
-            "date":"2023-05-02"
-        },
-        {
-            "id": "1029",
-            "code": "gwuby345v",
-            "name": "Yoga Set",
-            "description": "Product Description",
-            "image": "yoga-set.jpg",
-            "price": 20,
-            "category": "Fitness",
-            "quantity": 25,
-            "inventoryStatus": "INSTOCK",
-            "rating": 8,
-            "date":"2023-05-02"
-        },
-        {
-            "id": "1030",
-            "code": "f230fh0g3",
-            "name": "Zayan",
-            "description": "Product Description",
-            "image": "bamboo-watch.jpg",
-            "price": 65,
-            "category": "Accessories",
-            "quantity": 24,
-            "inventoryStatus": "INSTOCK",
-            "rating": 5,
-            "date":"2023-05-02"
-        },
-        {
-            "id": "1031",
-            "code": "f230fh0g3",
-            "name": "Zbyan",
-            "description": "Product Description",
-            "image": "bamboo-watch.jpg",
-            "price": 65,
-            "category": "Accessories",
-            "quantity": 24,
-            "inventoryStatus": "INSTOCK",
-            "rating": 5,
-            "date":"2023-05-02"
-        },    {
-            "id": "1031",
-            "code": "f230fh0g3",
-            "name": "Zbyan",
-            "description": "Product Description",
-            "image": "bamboo-watch.jpg",
-            "price": 65,
-            "category": "Accessories",
-            "quantity": 24,
-            "inventoryStatus": "INSTOCK",
-            "rating": 5,
-            "date":"2023-05-02"
-        },    {
-            "id": "1031",
-            "code": "f230fh0g3",
-            "name": "Zbyan",
-            "description": "Product Description",
-            "image": "bamboo-watch.jpg",
-            "price": 65,
-            "category": "Accessories",
-            "quantity": 24,
-            "inventoryStatus": "INSTOCK",
-            "rating": 5,
-            "date":"2023-05-02"
-        },    {
-            "id": "1031",
-            "code": "f230fh0g3",
-            "name": "Zbyan",
-            "description": "Product Description",
-            "image": "bamboo-watch.jpg",
-            "price": 65,
-            "category": "Accessories",
-            "quantity": 24,
-            "inventoryStatus": "INSTOCK",
-            "rating": 5,
-            "date":"2023-05-02"
-        },    {
-            "id": "1031",
-            "code": "f230fh0g3",
-            "name": "Zbyan",
-            "description": "Product Description",
-            "image": "bamboo-watch.jpg",
-            "price": 65,
-            "category": "Accessories",
-            "quantity": 24,
-            "inventoryStatus": "INSTOCK",
-            "rating": 5,
-            "date":"2023-05-02"
-        },    {
-            "id": "1031",
-            "code": "f230fh0g3",
-            "name": "Zbyan",
-            "description": "Product Description",
-            "image": "bamboo-watch.jpg",
-            "price": 65,
-            "category": "Accessories",
-            "quantity": 24,
-            "inventoryStatus": "INSTOCK",
-            "rating": 5,
-            "date":"2023-05-02"
-        }, {
-            "id": "1031",
-            "code": "f230fh0g3",
-            "name": "Zbyan",
-            "description": "Product Description",
-            "image": "bamboo-watch.jpg",
-            "price": 65,
-            "category": "Accessories",
-            "quantity": 24,
-            "inventoryStatus": "INSTOCK",
-            "rating": 5,
-            "date":"2023-05-02"
-        }, {
-            "id": "1031",
-            "code": "f230fh0g3",
-            "name": "Zbyan",
-            "description": "Product Description",
-            "image": "bamboo-watch.jpg",
-            "price": 65,
-            "category": "Accessories",
-            "quantity": 24,
-            "inventoryStatus": "INSTOCK",
-            "rating": 5,
-            "date":"2023-05-02"
-        }, {
-            "id": "1031",
-            "code": "f230fh0g3",
-            "name": "Zbyan",
-            "description": "Product Description",
-            "image": "bamboo-watch.jpg",
-            "price": 65,
-            "category": "Accessories",
-            "quantity": 24,
-            "inventoryStatus": "INSTOCK",
-            "rating": 5,
+
             "date":"2023-05-02"
         }
     ]

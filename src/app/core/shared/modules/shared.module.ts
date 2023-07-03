@@ -7,7 +7,7 @@ import { SliderModule } from 'primeng/slider';
 import { DropdownModule } from 'primeng/dropdown';
 import { ToastModule } from 'primeng/toast';
 import { InputTextModule } from 'primeng/inputtext';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputTextareaModule } from 'primeng/inputtextarea';
@@ -67,19 +67,21 @@ import { UserService } from '../service/user.service';
 import { SuperFormComponent } from '../../super-form/super-form.component';
 import { FileUploadModule } from 'primeng/fileupload';
 import { CardsComponent } from '../../cards/cards.component';
-import {MenubarModule} from 'primeng/menubar';
-import {TabMenuModule} from 'primeng/tabmenu';
-import {PickListModule} from 'primeng/picklist';
-import {BreadcrumbModule} from 'primeng/breadcrumb';
+import { MenubarModule } from 'primeng/menubar';
+import { TabMenuModule } from 'primeng/tabmenu';
+import { PickListModule } from 'primeng/picklist';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { EmailConfigurationComponent } from '../../email-configuration/email-configuration.component';
 import { SmsConfigurationComponent } from '../../sms-configuration/sms-configuration.component';
 import { VerticalTabularComponent } from '../../vertical-tabular/vertical-tabular.component';
-import {CascadeSelectModule} from 'primeng/cascadeselect';
-import {InputSwitchModule} from 'primeng/inputswitch';
+import { CascadeSelectModule } from 'primeng/cascadeselect';
+import { InputSwitchModule } from 'primeng/inputswitch';
 import { HomePageComponent } from 'src/app/core/home-page/home-page.component';
-import {BadgeModule} from 'primeng/badge';
-import {AvatarModule} from 'primeng/avatar';
-import {AvatarGroupModule} from 'primeng/avatargroup';
+import { BadgeModule } from 'primeng/badge';
+import { Interceptor } from '../service/interceptor';
+import { CommonService } from '../service/common.service';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
 
 @NgModule({
     declarations: [
@@ -120,6 +122,8 @@ import {AvatarGroupModule} from 'primeng/avatargroup';
     ],
     imports: [
         CommonModule,
+        AvatarModule,
+        AvatarGroupModule,
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
@@ -164,9 +168,7 @@ import {AvatarGroupModule} from 'primeng/avatargroup';
         BreadcrumbModule,
         CascadeSelectModule,
         InputSwitchModule,
-        BadgeModule,
-        AvatarModule,
-        AvatarGroupModule
+        BadgeModule
     ],
     exports: [
         //============= Core Components =============
@@ -246,9 +248,7 @@ import {AvatarGroupModule} from 'primeng/avatargroup';
         PickListModule,
         BreadcrumbModule,
         CascadeSelectModule,
-        BadgeModule,
-        AvatarModule,
-        AvatarGroupModule
+        BadgeModule
     ],
     providers: [
         MessageService,
@@ -261,6 +261,12 @@ import {AvatarGroupModule} from 'primeng/avatargroup';
         DecodePipe,
         CustomDatePipe,
         FormService,
+        CommonService,
+        {
+            "provide": HTTP_INTERCEPTORS,
+            multi: true,
+            useClass: Interceptor
+        }
     ]
 })
 export class SharedModule { }

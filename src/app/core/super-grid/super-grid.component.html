@@ -1,10 +1,17 @@
+<!----------- Generic Filter ----------->
 <app-filter *ngIf="configurations.isFilter" [filterData]="filterData" (selectedData)="fitereddata($event)"></app-filter>
 
-<app-generictable *ngIf="configurations.isTable && data" [config]="config" [tableData]="data" (onEdit)="editRow($event)" (isActive)="isactive($event)"
-    (onDelete)="deleteRow($event)" (onDeletechecked)="BulkdeleteRow($event)" (inlineEdit)="inlineedit($event)"
-    (onAdd)="addRow($event)" (onRowClickData)="onRowClick($event)"><ng-content></ng-content></app-generictable>
+<!----------- Generic Table ----------->
+<app-generictable *ngIf="configurations.isTable && data" [config]="config" [tableData]="data" (onEdit)="editRow($event)"
+    (isActive)="isactive($event)" (onDelete)="deleteRow($event)" (onDeletechecked)="BulkdeleteRow($event)"
+    (inlineEdit)="inlineedit($event)" (onAdd)="addRow($event)" (onRowClickData)="onRowClick($event)">
+    <ng-content select="[projectTowards=table]"></ng-content>
+</app-generictable>
 
+<!----------- Delete modal ----------->
 <p-confirmDialog [position]="'top'" [style]="{width: '30vw'}"></p-confirmDialog>
 
-<app-sidebar *ngIf="visibleSidebar && configurations.isSideBar" [editRowData]="editRowData"
-    [visibleSidebar]="visibleSidebar" [sidebarJSON]="sidebarJSON" (sidebarData)="sidebarData($event)" (changeEvents)="changeEvent($event)"></app-sidebar>
+<!----------- SideBar ----------->
+<app-sidebar *ngIf="configurations.isSideBar" [visibleSidebar]="visibleSidebar" [sidebarConfig]="config" (sidebarData)="sidebarData($event)" >
+    <ng-content select="[projectTowards=sidebar]"></ng-content>
+</app-sidebar>

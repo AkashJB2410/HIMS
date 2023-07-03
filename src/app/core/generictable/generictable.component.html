@@ -57,7 +57,7 @@
         </ng-template>
 
         <ng-template pTemplate="body" let-rowData let-columns="columns" let-expanded="expanded">
-            <tr (click)="onRowClick(rowData)" id="chekboxes" (contextmenu)="onrightClick($event, rowData)">
+            <tr (click)="onRowClick(rowData)" (contextmenu)="onrightClick($event, rowData)">
                 <td *ngIf="config.isCheckbox" style="padding: 0.25rem 0.25rem;width: 1rem; text-align: center;">
                     <p-tableCheckbox [value]="rowData" name="abc" ngDefaultControl
                         [(ngModel)]="chekboxes"></p-tableCheckbox>

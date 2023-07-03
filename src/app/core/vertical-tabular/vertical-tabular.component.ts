@@ -14,8 +14,10 @@ export class VerticalTabularComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     let item  = localStorage.getItem('activeState');
-    let defaultLi = document.getElementById(item);
-    defaultLi.className = 'design my-1 active';
+    if(item){
+      let defaultLi = document.getElementById(item);
+      defaultLi.className = 'design my-1 active';
+    }
   }
   
   ngOnInit(): void {}
