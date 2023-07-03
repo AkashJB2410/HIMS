@@ -39,18 +39,16 @@ export class ApplicationConfigComponent implements OnInit {
   }
 
   onAdd(e: any) {
+    this.editData=[]
     this.flag = e;
   }
 
   onEdit(e:any){
     this.flag=e.edit
     let obj = {
-      "lovListId": e.editRow.lovListId,
-      "lovTypeId": e.editRow.lovTypeId,
-      "value": e.editRow.value,
-      "typeOfField": e.editRow.typeOfField,
-      "description": e.editRow.description,
-      "lovTypeName": e.editRow.lovTypeName,
+      "applicationId": e.editRow.id,
+      "keyname": e.editRow.keyname,
+      "keyvalue": e.editRow.keyvalue,
       "is_Active": e.editRow.is_Active,
     }
     this.editData=obj;

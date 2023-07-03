@@ -44,6 +44,7 @@ editData:any
     this.tableConfig = LOVTable;
   }
   onAdd(e: any) {
+    this.editData=[]
     this.flag = e.add;
   }
   onEdit(e:any){
