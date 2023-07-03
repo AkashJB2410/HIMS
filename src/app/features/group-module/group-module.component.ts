@@ -4,6 +4,7 @@ import groupTable from './group_TableConfig.json';
 import Group_breadcrumb from './Group_breadcrumb.json';
 import { GroupModuleService } from './group-module.service';
 import { MessageService } from 'primeng/api';
+import { CommonService } from 'src/app/core/shared/service/common.service';
 @Component({
   selector: 'app-group-module',
   templateUrl: './group-module.component.html',
@@ -20,7 +21,8 @@ export class GroupModuleComponent implements OnInit {
   isdataReady = false;
   groupData: any = [];
   flag: any;
-  constructor(private messageService: MessageService, private http: GroupModuleService) { }
+  editData:any;
+  constructor(private messageService: MessageService, private http: GroupModuleService,private common:CommonService) { }
 
   ngOnInit(): void {
     this.configurations = {
@@ -36,7 +38,27 @@ export class GroupModuleComponent implements OnInit {
   }
 
   onAdd(e: any) {
+    this.editData=[]
     this.flag = e;
+  }
+
+  onEdit(e:any){
+    this.flag=e.edit
+    let obj = {
+      "groupId": e.editRow.groupId,
+          "mstModule": e.editRow.mstModule,
+          "lable": e.editRow.lable,
+          "icon": e.editRow.icon,
+          "routerLink": e.editRow.routerLink,
+          "sequence": e.editRow.sequence,
+          "is_Active": e.editRow.is_Active,
+          "mstModule_name": e.editRow.mstModule,
+    }
+    this.editData=obj;
+  }
+  buttonEvent(e:any){
+    this.editData=undefined;
+this.common.sendEditData(false);
   }
 
   isActive(event: string) {
