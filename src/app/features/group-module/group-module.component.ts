@@ -123,8 +123,9 @@ export class GroupModuleComponent implements OnInit {
     this.data = undefined;
     this.groupData = [];
     this.http.GetAllGroupData().subscribe((res) => {
-      res.forEach((e: any) => {
+      res.forEach((e: any, index:any) => {
         let obj = {
+          "id":index,
           "groupId": e.groupId,
           "mstModule": e.mstModule.moduleId,
           "lable": e.lable,

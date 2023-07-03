@@ -369,9 +369,8 @@
   font-size: 12px;
 }
 
-.captcha-btn-refresh
-{
-  color:black !important;
+.captcha-btn-refresh {
+  color: black !important;
 }
 
 /*------------In Login card Input password Start-------------*/
@@ -996,6 +995,8 @@ for custom input box size use w-25 , w-50, w-75 on column of it
 }
 
 /* --------------All realted to disable field css End------------------------------ */
+
+/* -------------icons classes start------------- */
 .headerIcon {
   font-size: 20px !important;
   color: #415988;
@@ -1020,9 +1021,6 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   font-weight: bold;
 
 }
-
-
-/* -------------icons classes start------------- */
 
 /* -------------icons classes End------------- */
 
@@ -1060,6 +1058,104 @@ for custom input box size use w-25 , w-50, w-75 on column of it
 
 /* -------------icons button classes with Hover End------------- */
 
+/* ----------------------Form Title Css Start------------------------------- */
+.formclass {
+  color: white !important;
+  height: 11px;
+  width: 400px;
+  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
+  font-size: 14px !important;
+  padding-top: 3px;
+  padding-bottom: 19px;
+}
+
+.formclass::before,
+.divider::after {
+  flex: 1;
+  height: 20px;
+  width: 5px;
+  content: '';
+  padding: 2px;
+  background-color: rgb(252, 252, 252);
+  margin: 5px;
+}
+.bi-file-earmark-medical::before {
+  content: "\f373";
+  padding-right: 10px !important;
+  vertical-align: 0px;
+}
+/* ----------------------Form Title Css End------------------------------- */
+
+/* ---------------------form Title for sideBar SM Css Start-------------------------- */
+.Sidebar-title-sm {
+  color: white !important;
+  height: 11px;
+  width: 263px;
+  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
+  font-size: 14px !important;
+  padding-top: 3px;
+  padding-bottom: 19px;
+}
+
+.Sidebar-title-sm::before,
+.divider::after {
+  flex: 1;
+  height: 20px;
+  width: 5px;
+  content: '';
+  padding: 2px;
+  background-color: rgb(252, 252, 252);
+  margin: 5px;
+}
+/* ---------------------form Title for sideBar SM Css End-------------------------- */
+
+/* ---------------------form Title for sideBar LG Css Start-------------------------- */
+.Sidebar-title-lg {
+  color: white !important;
+  height: 11px;
+  width: 448px;
+  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
+  font-size: 14px !important;
+  padding-top: 3px;
+  padding-bottom: 19px;
+}
+
+.Sidebar-title-lg::before,
+.divider::after {
+  flex: 1;
+  height: 20px;
+  width: 5px;
+  content: '';
+  padding: 2px;
+  background-color: rgb(252, 252, 252);
+  margin: 5px;
+}
+
+/* ---------------------form Title for sideBar LG Css End-------------------------- */
+
+/* ---------------------form Title for sideBar MD Css Start-------------------------- */
+.Sidebar-title-md {
+  color: white !important;
+  height: 11px;
+  width: 340px;
+  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
+  font-size: 14px !important;
+  padding-top: 3px;
+  padding-bottom: 19px;
+}
+
+.Sidebar-title-md::before,
+.divider::after {
+  flex: 1;
+  height: 20px;
+  width: 5px;
+  content: '';
+  padding: 2px;
+  background-color: rgb(252, 252, 252);
+  margin: 5px;
+}
+
+/* ---------------------form Title for sideBar MD Css End-------------------------- */
 .imgUpload {
   display: block;
   cursor: pointer;
@@ -1077,7 +1173,7 @@ for custom input box size use w-25 , w-50, w-75 on column of it
 input[type="file"]::file-selector-button {
   border: 2px solid #4CA5FF;
   padding: 0.2em 0.4em;
-  height: 40px;
+  height: 35px;
   width: 100%;
   color: white !important;
   border-radius: 8px !important;
@@ -1085,16 +1181,20 @@ input[type="file"]::file-selector-button {
 
 }
 
-input[type='file'] {
-  color: rgba(0, 0, 0, 0)
-}
-
 input[type="file"]::file-selector-button:hover {
   background-color: #0445a7;
   border: 2px solid #0445a7;
+  padding: 0.2em 0.4em;
+  height: 35px;
+  width: 100%;
+  color: white !important;
+  border-radius: 8px !important;
 
 }
 
+/* input[type='file'] {
+  color: rgba(204, 255, 38, 0.619)
+} */
 /* ----------------- */
 
 .imgUpload1 {
@@ -1111,7 +1211,7 @@ input[type="file"]::file-selector-button:hover {
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-ul p.verticaltab {
+*/ ul p.verticaltab {
   background-color: #CD9C1D;
   color: white;
   padding: 3px;
@@ -1150,6 +1250,8 @@ ul p.verticaltab {
   background-color: #E1E1E1; 
    color: black;
 } */
+
+
 .formclass {
   color: white !important;
   height: 11px;
@@ -1160,7 +1262,8 @@ ul p.verticaltab {
   padding-bottom: 19px;
 }
 
-.formclass::before, .divider::after {
+.formclass::before,
+.divider::after {
   flex: 1;
   height: 20px;
   width: 5px;
@@ -1250,51 +1353,47 @@ ul p.verticaltab {
 }
 
 .p-breadcrumb .p-menuitem-link {
-   padding: 0rem !important
+  padding: 0rem !important
 }
 
-
-
-.p-toast .p-toast-message.p-toast-message-warn
-{
+.p-toast .p-toast-message.p-toast-message-warn {
   background-color: white !important;
   color: #000000 !important;
 }
 
-.p-toast .p-toast-message.p-toast-message-error
-{
+.p-toast .p-toast-message.p-toast-message-error {
   background-color: white !important;
   color: #000000 !important;
 }
-.p-toast .p-toast-message.p-toast-message-success
-{
+
+.p-toast .p-toast-message.p-toast-message-success {
   background-color: white !important;
   color: #000000 !important;
 }
-.p-toast .p-toast-message.p-toast-message-info
-{
+
+.p-toast .p-toast-message.p-toast-message-info {
   background-color: white !important;
   color: #000000 !important;
 }
-.p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon
-{
+
+.p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon {
   color: #01648E !important;
   font-size: 20px !important;
 }
 
-.p-toast .p-toast-message.p-toast-message-warn .p-toast-message-icon
-{
+.p-toast .p-toast-message.p-toast-message-warn .p-toast-message-icon {
   color: #C27605 !important;
-  font-size:20px !important;
-}
-.p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon
-{
-  color: #F30C0C !important;
   font-size: 20px !important;
 }
 
-.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon
-{
+.p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon {
+  -webkit-box-shadow: 0px 0px 0px 8px #FDCECE;
+  -moz-box-shadow: 0px 0px 0px 8px #FDCECE;
+  box-shadow: 0px 0px 0px 8px #FDCECE;
+  border-radius: 9px !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon {
   color: white !important;
   height: 20px !important;
   width: 20px;
@@ -1302,6 +1401,30 @@ ul p.verticaltab {
   border-radius: 9px !important;
   padding-top: 4px !important;
   padding-left: 4px;
+  -webkit-box-shadow: 0px 0px 0px 8px #D9FFCC;
+  -moz-box-shadow: 0px 0px 0px 8px #D9FFCC;
+  box-shadow: 0px 0px 0px 8px #D9FFCC;
+}
+
+.p-toast .p-toast-message.p-toast-message-error .p-toast-message-icon {
+  -webkit-box-shadow: 0px 0px 0px 8px #FDCECE;
+  -moz-box-shadow: 0px 0px 0px 8px #FDCECE;
+  box-shadow: 0px 0px 0px 8px #FDCECE;
+  border-radius: 9px !important;
+}
+
+.p-toast .p-toast-message.p-toast-message-warn .p-toast-message-icon {
+  -webkit-box-shadow: 0px 0px 0px 8px #FEEED7;
+  -moz-box-shadow: 0px 0px 0px 8px #FEEED7;
+  box-shadow: 0px 0px 0px 8px #FEEED7;
+  border-radius: 9px !important;
+}
+.p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon {
+  -webkit-box-shadow: 0px 0px 0px 8px #CCF0FF;
+  -moz-box-shadow: 0px 0px 0px 8px #CCF0FF;
+  box-shadow: 0px 0px 0px 8px #CCF0FF;
+  border-radius: 9px !important;
+
 }
 
 .p-toast .p-toast-message .p-toast-icon-close {
@@ -1311,47 +1434,7 @@ ul p.verticaltab {
   border-radius: 50%;
   background: transparent;
   transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  color: #000000 !important;
 }
-
 /* ---------------All Taost Css End-------------------------- */
 
-.formclass {
-  color: white !important;
-  height: 11px;
-  width: 400px;
-  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 14px !important;
-  padding-top: 4px;
-  padding-bottom: 19px;
-}
-
-.formclass::before,
-.divider::after {
-  flex: 1;
-  height: 20px;
-  width: 5px;
-  content: '';
-  padding: 2px;
-  background-color: rgb(252, 252, 252);
-  margin: 6px;
-}
-.Sidebar-title-sm {
-  color: white !important;
-  height: 27px;
-  width: 246px;
-  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 15px !important;
-  padding-top: 4px;
-  padding-bottom: 23px;
-}
-
-.Sidebar-title-sm::before,
-.divider::after {
-  flex: 1;
-  height: 29px;
-  width: 5px;
-  content: '';
-  padding: 1.2px;
-  background-color: rgb(252, 252, 252);
-  margin: 3px;
-}

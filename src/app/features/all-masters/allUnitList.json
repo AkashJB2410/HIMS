@@ -1,79 +1,139 @@
 {
-  "card": [
+  "card":[
     {
-    "label": "Action Button",
-    "routerLink": "/master-page/all-masters/action-button",
-    "imgSrc": "assets/Rediology.png"
-  },
-  {
-    "label": "Action Module",
-    "routerLink": "/master-page/all-masters/action-module",
-    "imgSrc": "assets/OPD Dashboard.png"
-  },
-   {
-    "label": "Action Role",
-    "routerLink": "/master-page/all-masters/action-role",
-    "imgSrc": "assets/OPD Dashboard.png"
-  }, 
-  {
-    "label": "Action SubModule",
-    "routerLink": "/master-page/all-masters/action-sub-module",
-    "imgSrc": "assets/action-Submodule.png"
-  },
-   {
-    "label": "Application Configuration",
-    "routerLink": "/master-page/all-masters/application-config",
-    "imgSrc": "assets/application-Configuration.png"
-  },
-   {
-    "label": "Bank Branch Master",
-    "routerLink": "/master-page/all-masters/bank-branch-master",
-    "imgSrc": "assets/IPD-Quick-Reg.png"
-  },
-  {
-    "label": "Bank Master",
-    "routerLink": "/master-page/all-masters/bank-master",
-    "imgSrc": "assets/Quick-Patient.png"
-  },
-  {
-    "label": "Department",
-    "routerLink": "/master-page/all-masters/department",
-    "imgSrc": "assets/IPD.png"
-  },
-   {
-    "label": "Employment Status",
-    "routerLink": "/master-page/all-masters/employee-status",
-    "imgSrc": "assets/IPD Dashboard.png"
-  },
-  {
-    "label": "LOV type",
-    "routerLink": "/master-page/all-masters/lov-type",
-    "imgSrc": "assets/IPD Dashboard.png"
-  },
-  {
-    "label": "LOV Value",
-    "routerLink": "/master-page/all-masters/lov-value",
-    "imgSrc": "assets/IPD Dashboard.png"
-  },
-   {
-    "label": "Organization",
-    "routerLink": "/master-page/all-masters/organization",
-    "imgSrc": "assets/Patient-Reg.png"
-  },
-   {
-    "label": "Role",
-    "routerLink": "/master-page/all-masters/role-management",
-    "imgSrc": "assets/IPD Dashboard.png"
-  }, 
-  {
-    "label": "Sub Department",
-    "routerLink": "/master-page/all-masters/sub-department",
-    "imgSrc": "assets/Queue.png"
-  },
-   {
-    "label": "Unit",
-    "routerLink": "/master-page/all-masters/unit",
-    "imgSrc": "assets/IPD Dashboard.png"
-  }
-]
+      "label": "Organization",
+      "routerLink": "/master-page/all-masters/organization",
+      "imgSrc": "assets/Patient-Reg.png"
+    },
+    {
+      "label": "Unit",
+      "routerLink": "/master-page/all-masters/unit",
+      "imgSrc": "assets/IPD Dashboard.png"
+    },
+    {
+      "label": "Department",
+      "routerLink": "/master-page/all-masters/department",
+      "imgSrc": "assets/IPD.png"
+    },
+    {
+      "label": "Sub Department",
+      "routerLink": "/master-page/all-masters/sub-department",
+      "imgSrc": "assets/Queue.png"
+    },
+    {
+      "label": "Desiganation",
+      "routerLink": "/master-page/all-masters/desiganation",
+      "imgSrc": "assets/Queue.png"
+    },
+    {
+      "label": "Speciality",
+      "routerLink": "/master-page/all-masters/speciality",
+      "imgSrc": "assets/Queue.png"
+    },
+    {
+      "label": "Super Speciality",
+      "routerLink": "/master-page/all-masters/super-speciality",
+      "imgSrc": "assets/Queue.png"
+    },
+    {
+      "label": "Staff",
+      "routerLink": "/master-page/all-masters/staff",
+      "imgSrc": "assets/Queue.png"
+    },
+    {
+      "label": "Manage Staff",
+      "routerLink": "/master-page/all-masters/manage-staff",
+      "imgSrc": "assets/Queue.png"
+    },
+    {
+      "label": "Employment Status",
+      "routerLink": "/master-page/all-masters/employee-status",
+      "imgSrc": "assets/IPD Dashboard.png"
+    },
+    {
+      "label": "Bank Master",
+      "routerLink": "/master-page/all-masters/bank-master",
+      "imgSrc": "assets/Quick-Patient.png"
+    },
+    {
+      "label": "Bank Branch Master",
+      "routerLink": "/master-page/all-masters/bank-branch-master",
+      "imgSrc": "assets/IPD-Quick-Reg.png"
+    },
+    {
+      "label": "Application Configuration",
+      "routerLink": "/master-page/all-masters/application-config",
+      "imgSrc": "assets/application-Configuration.png"
+    },
+    {
+      "label": "Social Status",
+      "routerLink": "/master-page/all-masters/social-status",
+      "imgSrc": "assets/application-Configuration.png"
+    },
+    {
+      "label": "Police Station",
+      "routerLink": "/master-page/all-masters/police-station",
+      "imgSrc": "assets/application-Configuration.png"
+    },
+    {
+      "label": "Role",
+      "routerLink": "/master-page/all-masters/role-management",
+      "imgSrc": "assets/IPD Dashboard.png"
+    },
+    {
+      "label": "Action Module",
+      "routerLink": "/master-page/all-masters/action-module",
+      "imgSrc": "assets/OPD Dashboard.png"
+    },
+    {
+      "label": "Action SubModule",
+      "routerLink": "/master-page/all-masters/action-sub-module",
+      "imgSrc": "assets/action-Submodule.png"
+    },
+    {
+      "label": "Action Button",
+      "routerLink": "/master-page/all-masters/action-button",
+      "imgSrc": "assets/Rediology.png"
+    },
+    {
+      "label": "Action Role",
+      "routerLink": "/master-page/all-masters/action-role",
+      "imgSrc": "assets/OPD Dashboard.png"
+    },
+    {
+      "label": "Action User Role",
+      "routerLink": "/master-page/all-masters/action-user-role",
+      "imgSrc": "assets/OPD Dashboard.png"
+    },
+    {
+      "label": "Import Data",
+      "routerLink": "/master-page/all-masters/import-data",
+      "imgSrc": "assets/OPD Dashboard.png"
+    },
+    {
+      "label": "Cluster",
+      "routerLink": "/master-page/all-masters/import-data",
+      "imgSrc": "assets/OPD Dashboard.png"
+    },
+    {
+      "label": "User Info",
+      "routerLink": "/master-page/all-masters/user-info",
+      "imgSrc": "assets/OPD Dashboard.png"
+    },
+    {
+      "label": "Trimster",
+      "routerLink": "/master-page/all-masters/trimster",
+      "imgSrc": "assets/OPD Dashboard.png"
+    },
+    {
+      "label": "LOV type",
+      "routerLink": "/master-page/all-masters/lov-type",
+      "imgSrc": "assets/IPD Dashboard.png"
+    },
+    {
+      "label": "LOV Value",
+      "routerLink": "/master-page/all-masters/lov-value",
+      "imgSrc": "assets/IPD Dashboard.png"
+    }
+  ]
 }

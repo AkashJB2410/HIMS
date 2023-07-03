@@ -19,10 +19,10 @@ export interface IFormField {
     icon: any
     isDisabled: boolean
     btnLabel: any;
-    row:number;
-    icons:any;
+    row: number;
+    icons: any;
     transient: any;
-    limit:number;
+    limit: number;
 }
 
 export interface IDropdown {
@@ -53,5 +53,6 @@ export enum FormControlTypes {
     FILESUPLOAD = "filesUpload",
     ICON = "icon",
     DEPENDENTDROPDOWN = "dependentdropdown",
-    DIVIDER = "divider"
+    DIVIDER = "divider",
+    MULTISELECT = "multiselect"
 }

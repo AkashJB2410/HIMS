@@ -7,19 +7,14 @@ import { ConfirmationService } from 'primeng/api';
   styleUrls: ['./super-grid.component.css']
 })
 export class SuperGridComponent implements OnInit {
-
-  toast: any = {};
-  showToast: any;
   show: any = false;
-  Message: any;
   data: any[];
   config: any;
-  visibleSidebar: boolean = false;
   filterData: any;
-  editRowData: any;
   deleteRowData: any;
   bulkdelete: any;
   isActiveData: any;
+  visibleSidebar: boolean = false;
   @Input() configurations: any;
   @Input() tableConfig: any;
   @Input() tableData: any;
@@ -55,10 +50,10 @@ export class SuperGridComponent implements OnInit {
     this.GetConfirm()
   }
 
-  editRow(e: any) {
-    this.editRowData = e;
-    this.onEdit.emit("edit");
-    this.visibleSidebar = true
+  editRow(editRow: any) {
+    this.visibleSidebar = true;
+    let edit = "edit";
+    this.onEdit.emit({editRow, edit});
   }
   
   isactive(e: any) {
@@ -66,10 +61,10 @@ export class SuperGridComponent implements OnInit {
     this.isActive.emit(e);
   }
   
-  addRow(e: any) {
-    this.editRowData = e;
-    this.onAdd.emit("add");
-    this.visibleSidebar = true
+  addRow(addRow: any) {
+    this.visibleSidebar = true;
+    let add = "add";
+    this.onAdd.emit({addRow, add});
   }
 
   confirm(e: any) {
@@ -80,13 +75,7 @@ export class SuperGridComponent implements OnInit {
   }
 
   sidebarData(e: any) {
-    document.documentElement.style.setProperty('--width', '0rem');
-    if (Object.keys(e).length != 0) {
-      this.visibleSidebar = false;
-      this.sideBarEvent.emit(e);
-    } else {
-      this.visibleSidebar = false;
-    }
+    this.visibleSidebar = e;
   }
 
   changeEvent(event: any){

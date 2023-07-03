@@ -1,8 +1,12 @@
 {
     "tableName": "Unit Table",
     "tableHeaders": [
-        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":""},
-      
+        {
+            "field": "srNumber",
+            "header": "Sr. No",
+            "iseditable": false,
+            "class": ""
+        },
         {
             "field": "unitName",
             "header": "Name",
@@ -53,8 +57,10 @@
         }
     ],
     "PdfHeaders": [
-        {"field": "srNumber","header": "Sr. No"},
-
+        {
+            "field": "srNumber",
+            "header": "Sr. No"
+        },
         {
             "field": "unitId",
             "header": "Unit Id"
@@ -69,8 +75,24 @@
         }
     ],
     "globalFilter": [
-        "unitId", "unitName","unitEmail","unitMobile","unitPhone","unitContactPerson","unitOrg","unitcode","unitClinicContactNo","unitPharmacyLicenseNo","unitClinicRegistrationNo",
-        "unitShopAndEstablishmentNo","unitTradeNo","unitServer","unitDatabase","unitFaxNo","actionModuleName","is_Active"
+        "unitId",
+        "unitName",
+        "unitEmail",
+        "unitMobile",
+        "unitPhone",
+        "unitContactPerson",
+        "unitOrg",
+        "unitcode",
+        "unitClinicContactNo",
+        "unitPharmacyLicenseNo",
+        "unitClinicRegistrationNo",
+        "unitShopAndEstablishmentNo",
+        "unitTradeNo",
+        "unitServer",
+        "unitDatabase",
+        "unitFaxNo",
+        "actionModuleName",
+        "is_Active"
     ],
     "rows": 10,
     "showCurrentPageReport": true,
