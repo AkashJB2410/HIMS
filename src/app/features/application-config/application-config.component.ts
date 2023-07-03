@@ -4,6 +4,7 @@ import ApplictionForm from './ApplicationConfig_Form.json';
 import ApplictionTable from './ApplicationConfig_TableConfig.json';
 import { ApplicationConfigService } from './application-config.service';
 import Application_breadcrumb from './Application_breadcrumb.json'
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-application-config',
@@ -21,7 +22,8 @@ export class ApplicationConfigComponent implements OnInit {
   applicationData: any = [];
   flag: any;
   errorFlag: boolean = false;
-  constructor(private messageService: MessageService, private http: ApplicationConfigService) { }
+  editData:any
+  constructor(private messageService: MessageService, private http: ApplicationConfigService,private common:CommonService) { }
 
   ngOnInit(): void {
     this.configurations = {
@@ -37,9 +39,24 @@ export class ApplicationConfigComponent implements OnInit {
   }
 
   onAdd(e: any) {
+    this.editData=[]
     this.flag = e;
   }
 
+  onEdit(e:any){
+    this.flag=e.edit
+    let obj = {
+      "applicationId": e.editRow.id,
+      "keyname": e.editRow.keyname,
+      "keyvalue": e.editRow.keyvalue,
+      "is_Active": e.editRow.is_Active,
+    }
+    this.editData=obj;
+  }
+  buttonEvent(e:any){
+    this.editData=undefined;
+this.common.sendEditData(false);
+  }
   editRow(e: any) {
     this.visibleSidebar = true;
   }
@@ -109,8 +126,9 @@ export class ApplicationConfigComponent implements OnInit {
     this.data = undefined;
     this.applicationData = [];
     this.http.GetAllApplicationData().subscribe((res) => {
-      res.forEach((e: any) => {
+      res.forEach((e: any, index:any) => {
         let obj = {
+          "id":index,
           "applicationId": e.id,
           "keyname": e.keyname,
           "keyvalue": e.keyvalue,

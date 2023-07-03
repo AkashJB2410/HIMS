@@ -4,6 +4,7 @@ import unitTable from './unit_TableConfig.json';
 import unitForm from './unit_form.json';
 import { UnitService } from './unit.service';
 import unit_breadcrumb from './unit-breadcrumb.json'
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-unit',
@@ -22,7 +23,8 @@ export class UnitComponent implements OnInit {
   isdataReady = false;
   unitdata: any = []
   flag: any;
-  constructor(private messageService: MessageService, private http: UnitService) { }
+  editData:any
+  constructor(private messageService: MessageService, private http: UnitService,private common:CommonService) { }
 
   ngOnInit(): void {
     this.configurations = {
@@ -36,11 +38,55 @@ export class UnitComponent implements OnInit {
     this.assignOptions();
   }
 
+  onAdd(e: any) {
+    this.editData=[]
+    this.flag = e;
+  }
+
+  onEdit(e:any){
+    this.flag=e.edit
+    let obj = {
+      "unitId": e.editRow.unitId,
+      "unitName": e.editRow.unitName,
+      "unitpostfix": e.editRow.unitpostfix,
+      "unitcenter": e.editRow.unitcenter,
+      "unitAddress": e.editRow.unitAddress,
+      "unitEmail": e.editRow.unitEmail,
+      "unitMobile": e.editRow.unitMobile,
+      "unitPhone": e.editRow.unitPhone,
+      "unitContactPerson": e.editRow.unitContactPerson,
+      "mstOrg": e.editRow.mstOrg,
+      "unitCode": e.editRow.unitCode,
+      "unitClinicContactNo": e.editRow.unitClinicContactNo,
+      "unitPharmacyLicenseNo": e.editRow.unitPharmacyLicenseNo,
+      "unitPharmacyStoreName": e.editRow.unitPharmacyStoreName,
+      "unitPharmacyGstNo": e.editRow.unitPharmacyGstNo,
+      "unitClinicRegistrationNo": e.editRow.unitClinicRegistrationNo,
+      "unitShopAndEstablishmentNo": e.editRow.unitShopAndEstablishmentNo,
+      "unitTradeNo": e.editRow.unitTradeNo,
+      "unitServer": e.editRow.unitServer,
+      "unite.editRowbase": e.editRow.unite.editRowbase,
+      "unitFaxNo": e.editRow.unitFaxNo,
+      "unitWebSite": e.editRow.unitWebSite,
+      "countryId": e.editRow.countryId,
+      "countryName": e.editRow.countryName,
+      "cityId": e.editRow.cityId,
+      "cityName": e.editRow.cityName,
+      "stateId": e.editRow.stateId,
+      "stateName": e.editRow.stateName,
+      "unitClusterId": e.editRow.unitClusterId,
+      "unitAddressZip": e.editRow.unitAddressZip,
+      "unitAddressArea": e.editRow.unitAddressArea,
+      "unitXHipId": e.editRow.unitXHipId,
+    }
+    this.editData=obj;
+  }
+  buttonEvent(e:any){
+    this.editData=undefined;
+this.common.sendEditData(false);
+  }
   getConfigForTable() {
     this.tableConfig = unitTable;
-  }
-  onAdd(e: any) {
-    this.flag = e;
   }
   editRow(e: any) {
     this.visibleSidebar = true;
@@ -134,45 +180,46 @@ export class UnitComponent implements OnInit {
       // for (let i = 0; i < this.data.length; i++) {
       //   this.data[i].srNumber = i + 1;
       // }
-      // res.forEach((data: any) => {
-      //   let obj = {
-      //     "unitId": data.unitId,
-      //     "unitName": data.unitName,
-      //     "unitpostfix": data.unitpostfix,
-      //     "unitcenter": data.unitcenter,
-      //     "unitAddress": data.unitAddress,
-      //     "unitEmail": data.unitEmail,
-      //     "unitMobile": data.unitMobile,
-      //     "unitPhone": data.unitPhone,
-      //     "unitContactPerson": data.unitContactPerson,
-      //     "mstOrg": data.mstOrg,
-      //     "unitCode": data.unitCode,
-      //     "unitClinicContactNo": data.unitClinicContactNo,
-      //     "unitPharmacyLicenseNo": data.unitPharmacyLicenseNo,
-      //     "unitPharmacyStoreName": data.unitPharmacyStoreName,
-      //     "unitPharmacyGstNo": data.unitPharmacyGstNo,
-      //     "unitClinicRegistrationNo": data.unitClinicRegistrationNo,
-      //     "unitShopAndEstablishmentNo": data.unitShopAndEstablishmentNo,
-      //     "unitTradeNo": data.unitTradeNo,
-      //     "unitServer": data.unitServer,
-      //     "unitDatabase": data.unitDatabase,
-      //     "unitFaxNo": data.unitFaxNo,
-      //     "unitWebSite": data.unitWebSite,
-      //     "countryId": data.countryId,
-      //     "countryName": data.countryName,
-      //     "cityId": data.cityId,
-      //     "cityName": data.cityName,
-      //     "stateId": data.stateId,
-      //     "stateName": data.stateName,
-      //     "unitClusterId": data.unitClusterId,
-      //     "unitAddressZip": data.unitAddressZip,
-      //     "unitAddressArea": data.unitAddressArea,
-      //     "unitXHipId": data.unitXHipId,
-      //   }
-      //   this.unitdata.push(obj);
-      // })
-      // this.data = [...this.unitdata];
-      this.data = res;
+      res.forEach((data: any, index:any) => {
+        let obj = {
+          "id":index,
+          "unitId": data.unitId,
+          "unitName": data.unitName,
+          "unitpostfix": data.unitpostfix,
+          "unitcenter": data.unitcenter,
+          "unitAddress": data.unitAddress,
+          "unitEmail": data.unitEmail,
+          "unitMobile": data.unitMobile,
+          "unitPhone": data.unitPhone,
+          "unitContactPerson": data.unitContactPerson,
+          "mstOrg": data.mstOrg,
+          "unitCode": data.unitCode,
+          "unitClinicContactNo": data.unitClinicContactNo,
+          "unitPharmacyLicenseNo": data.unitPharmacyLicenseNo,
+          "unitPharmacyStoreName": data.unitPharmacyStoreName,
+          "unitPharmacyGstNo": data.unitPharmacyGstNo,
+          "unitClinicRegistrationNo": data.unitClinicRegistrationNo,
+          "unitShopAndEstablishmentNo": data.unitShopAndEstablishmentNo,
+          "unitTradeNo": data.unitTradeNo,
+          "unitServer": data.unitServer,
+          "unitDatabase": data.unitDatabase,
+          "unitFaxNo": data.unitFaxNo,
+          "unitWebSite": data.unitWebSite,
+          "countryId": data.countryId,
+          "countryName": data.countryName,
+          "cityId": data.cityId,
+          "cityName": data.cityName,
+          "stateId": data.stateId,
+          "stateName": data.stateName,
+          "unitClusterId": data.unitClusterId,
+          "unitAddressZip": data.unitAddressZip,
+          "unitAddressArea": data.unitAddressArea,
+          "unitXHipId": data.unitXHipId,
+        }
+        this.unitdata.push(obj);
+      })
+      this.data = [...this.unitdata];
+      
       this.isdataReady = true;
       for (let i = 0; i < this.data.length; i++) {
         this.data[i].srNumber = i + 1;

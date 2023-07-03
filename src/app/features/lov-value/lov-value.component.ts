@@ -4,6 +4,7 @@ import LOVForm from './LOV_valueForm.json';
 import LOVTable from './LOV_valueTableConfig.json';
 import { LovValueService } from './lov-value.service';
 import LOV_breadcrumb from './LOV_valueBreadcrumb.json'
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-lov-value',
@@ -22,7 +23,9 @@ export class LovValueComponent implements OnInit {
   isdataReady = false;
   LOVData: any = [];
   flag: any;
-  constructor(private messageService: MessageService, private http: LovValueService) { }
+editData:any
+ 
+  constructor(private messageService: MessageService, private http: LovValueService, private common:CommonService) { }
 
   ngOnInit(): void {
     this.configurations = {
@@ -41,7 +44,25 @@ export class LovValueComponent implements OnInit {
     this.tableConfig = LOVTable;
   }
   onAdd(e: any) {
-    this.flag = e;
+    this.editData=[]
+    this.flag = e.add;
+  }
+  onEdit(e:any){
+    this.flag=e.edit
+    let obj = {
+      "lovListId": e.editRow.lovListId,
+      "lovTypeId": e.editRow.lovTypeId,
+      "value": e.editRow.value,
+      "typeOfField": e.editRow.typeOfField,
+      "description": e.editRow.description,
+      "lovTypeName": e.editRow.lovTypeName,
+      "is_Active": e.editRow.is_Active,
+    }
+    this.editData=obj;
+  }
+  buttonEvent(e:any){
+    this.editData=undefined;
+this.common.sendEditData(false);
   }
   editRow(e: any) {
     this.visibleSidebar = true;
@@ -118,8 +139,9 @@ export class LovValueComponent implements OnInit {
       // for (let i = 0; i < this.data.length; i++) {
       //   this.data[i].srNumber = i + 1;
       // }
-      res.forEach((e: any) => {
+      res.forEach((e: any, index:any) => {
         let obj = {
+          "id":index,
           "lovListId": e.lovListId,
           "lovTypeId": e.mstLovType.lovTypeId,
           "value": e.value,

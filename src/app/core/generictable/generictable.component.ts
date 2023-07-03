@@ -31,6 +31,7 @@ export class GenerictableComponent implements OnInit {
   contextmenu = false;
   contextmenuX = 0;
   contextmenuY = 0;
+  Is_active=true
   contextMenus: any = [
     { "menu": "Edit", "img": "../../../assets/core_assets/edit.png" },
     { "menu": "Duplicate", "img": "../../../assets/core_assets/duplicate.png" },
@@ -197,6 +198,8 @@ export class GenerictableComponent implements OnInit {
   active(e: any) {
     this.isActive.emit(e);
   }
+
+
 
 }
 

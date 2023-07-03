@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="sidebarMenu-custom" [ngClass]="status ? 'darSideBar' : 'genisSideBar'"
+  <div class="sidebarMenu-custom " [ngClass]="status ? 'darSideBar' : 'genisSideBar'"
     [style.backgroundColor]="list.theme.sidenavBG">
     <div class="sideBarOrta ">
       <ul id="sidebar_menu" class="nav flex-column">
@@ -17,7 +17,7 @@
                 pTooltip="Collapse" tooltipPosition="top" class="togglefix"></i></a>
           <a *ngIf="status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/Toggle.png"
                 pTooltip="Expand Sidenav" tooltipPosition="top" style=" -webkit-transform: scaleX(-1);
-                transform: scaleX(-1);"></i></a> 
+                transform: scaleX(-1);"></i></a>
         </div>
       </ul>
       <div class="scroll">
@@ -27,14 +27,14 @@
               <div *ngIf="item.routerLink != undefined">
                 <a [class.parentMenu]="item === activeState" [href]="'#'+item.label" data-bs-toggle="collapse"
                   class="sidenav-menu" routerLink="{{item.routerLink}}" pTooltip="{{item.label}}">
-                  <i class="{{item.icon}} "></i> <span class="d-sm-inline ms-2"
+                  <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
                     [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{item.label}}</span>
                 </a>
               </div>
               <div *ngIf="item.url != undefined">
                 <a [class.parentMenu]="item === activeState" class="sidenav-menu" href="{{item.url}}" target="_blank"
                   pTooltip="{{item.label}}">
-                  <i class="{{item.icon}} "></i> <span class="d-sm-inline ms-2"
+                  <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
                     [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{item.label}}</span>
                 </a>
               </div>
@@ -42,7 +42,7 @@
             <ng-template #list>
               <a [class.parentMenu]="item === activeState" [href]="'#'+item.label" data-bs-toggle="collapse"
                 class="sidenav-menu " pTooltip="{{item.label}}">
-                <i class="{{item.icon}} "></i> <span class="d-sm-inline ms-2"
+                <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
                   [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
                   style="margin-right: auto;">{{item.label}}</span> <i id="{{item.label}}" childItemsub-module
                   [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
@@ -61,7 +61,8 @@
                       </a>
                     </div>
                     <div *ngIf="childItem.url != undefined">
-                      <a [class.childMenu]="childItem === activeStatechild" class="sidenav-menu vsm-dropdown" href="{{childItem.url}}" target="_blank" pTooltip="{{childItem.label}}">
+                      <a [class.childMenu]="childItem === activeStatechild" class="sidenav-menu vsm-dropdown"
+                        href="{{childItem.url}}" target="_blank" pTooltip="{{childItem.label}}">
                         <i class="{{childItem.icon}}"></i> <span class="d-sm-inline ms-2"
                           [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{childItem.label}}</span>
                       </a>
@@ -82,14 +83,18 @@
                           (click)="setStateAsActiveSubchild(child)" style="cursor: pointer;">
                           <div *ngIf="child.routerLink != undefined">
                             <a [class.subchildMenu]="child === activeStateSubchild" class="sidenav-menu vsm-dropdown">
-                              <i class="{{child.icon}} " pTooltip="{{child.label}}" routerLink="{{child.routerLink}}"></i>
-                              <span [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight ms-1'">{{child.label}}</span>
+                              <i class="{{child.icon}} " pTooltip="{{child.label}}"
+                                routerLink="{{child.routerLink}}"></i>
+                              <span
+                                [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight ms-1'">{{child.label}}</span>
                             </a>
                           </div>
                           <div *ngIf="child.url != undefined">
-                            <a [class.subchildMenu]="child === activeStateSubchild" class="sidenav-menu vsm-dropdown" href="{{child.url}}" target="_blank">
+                            <a [class.subchildMenu]="child === activeStateSubchild" class="sidenav-menu vsm-dropdown"
+                              href="{{child.url}}" target="_blank">
                               <i class="{{child.icon}} " pTooltip="{{child.label}}"></i>
-                              <span [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight ms-1'">{{child.label}}</span>
+                              <span
+                                [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight ms-1'">{{child.label}}</span>
                             </a>
                           </div>
                         </li>
@@ -109,7 +114,14 @@
           <a *ngIf="status" class="sidenav-menu"><i class="pi pi-angle-double-right"></i></a>
         </li>
       </ul> -->
+      <footer class="footer fixed-bottom">
+        <!-- <h6 class="footer">Design & Developed by Techjivaa Software Pvt Ltd</h6> -->
+        <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span
+          class="float-md-left d-block d-md-inline-block">Generic Components Ver 1.2   |   2023 © Powered by Techjivaa Software Pvt Ltd.
+        </span><span class="float-md-right d-block d-md-inline-blockd-none d-lg-block">Last Login : 10 June 2023, 09:30 PM</span></p>
+      </footer>
     </div>
+
   </div>
 
   <div id="content">
@@ -120,8 +132,10 @@
         <router-outlet></router-outlet>
       </div>
     </div>
-    <!-- <footer>
-      <h6 class="footer">Design & Developed by Techjivaa Software Pvt Ltd</h6>
-    </footer> -->
+  
   </div>
 </div>
+
+
+
+
