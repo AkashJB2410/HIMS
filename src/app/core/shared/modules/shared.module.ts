@@ -248,7 +248,9 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
         PickListModule,
         BreadcrumbModule,
         CascadeSelectModule,
-        BadgeModule
+        BadgeModule,
+        AvatarModule,
+        AvatarGroupModule
     ],
     providers: [
         MessageService,
