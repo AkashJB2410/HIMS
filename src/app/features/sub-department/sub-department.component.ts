@@ -77,9 +77,10 @@ export class SubDepartmentComponent implements OnInit {
     this.subDepartment=[];
     
     this.http.getAllSubDepartment().subscribe(res => {
-      res.forEach((e: any) => {
+      res.forEach((e: any ,index:any) => {
         console.log("res => ",e)
         let obj = {
+          "id": index,
           "subDepartmentId": e.subDepartmentId,
           "mstDepartment": e.mstDepartment.departmentId,
           "subDepartment" : e.subDepartment,
@@ -138,13 +139,13 @@ export class SubDepartmentComponent implements OnInit {
       this.messageService.add({
         severity: 'success',
         summary: 'Disabled',
-        detail: 'Department Disabled Successfully'
+        detail: 'Sub Department Disabled Successfully'
       });
     } else if (e.is_Active == false) {
       this.messageService.add({
         severity: 'error',
         summary: 'Error',
-        detail: 'Department is already Disabled'
+        detail: 'Sub Department is already Disabled'
       });
     } else {}
   }
@@ -157,7 +158,7 @@ export class SubDepartmentComponent implements OnInit {
         this.messageService.add({
           severity: 'success',
           summary: 'Added',
-          detail: 'Department Added Successfully'
+          detail: 'Sub Department Added Successfully'
         });
         this.saveMethod = false;
       } else {
@@ -165,7 +166,7 @@ export class SubDepartmentComponent implements OnInit {
         this.messageService.add({
           severity: 'success',
           summary: 'Updated',
-          detail: 'Department Updated Successfully.'
+          detail: 'Sub Department Updated Successfully.'
         });
       }
     }
@@ -231,28 +232,4 @@ export class SubDepartmentComponent implements OnInit {
     }
 
   }
-  // BulkDeleteRow(e: any) {
-  //   this.data = [];
-  //   if (e != '') {
-  //     e.forEach((data: any) => {
-  //       let obj = {
-  //         "subDepartmentId": data.subDepartmentId,
-  //       }
-  //       this.deleteSubDepartment(obj.subDepartmentId);
-  //       this.messageService.add({
-  //         severity: 'success',
-  //         summary: 'success',
-  //         detail: 'Delete All Data successfull.',
-  //       });
-  //     });
-
-  //   } else {
-  //     this.messageService.add({
-  //       severity: 'error',
-  //       summary: 'select Rows',
-  //       detail: 'Rows are not selected.',
-  //     });
-  //   }
-  // }
-
 }
