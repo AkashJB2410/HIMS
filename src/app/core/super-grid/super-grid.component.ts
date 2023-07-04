@@ -62,6 +62,7 @@ export class SuperGridComponent implements OnInit {
   }
   
   addRow(addRow: any) {
+    this.visibleSidebar = true;
     let add = "add";
     this.onAdd.emit({addRow, add});
   }

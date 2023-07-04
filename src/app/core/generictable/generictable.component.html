@@ -19,7 +19,7 @@
                 <div class="col-md-1 mx-1">
                     <p-multiSelect [options]="colNames" pTooltip="Selected Columns" tooltipPosition="top"
                         [(ngModel)]="selectedColumns" optionLabel="header" selectedItemsLabel="{0} columns selected"
-                        [style]="{ minWidth: '50px' }" placeholder="Choose Columns"></p-multiSelect>
+                        [style]="{minWidth: '50px'}" placeholder="Choose Columns"></p-multiSelect>
                 </div>
                 <div class="item5 mx-1">
                     <button class="btn butn-sucss me-1 wordwrap" pRipple (click)="AddNewProduct($event)">
@@ -88,16 +88,17 @@
                         <button *ngIf="config.isActions.includes('Edit')" pTooltip="Edit" tooltipPosition="left" pButton
                             pRipple icon="pi pi-file-edit " class="p-button-rounded icon-pencil edit-btn "
                             (click)="editProduct(rowData)"></button>
-                        <button *ngIf="config.isActions.includes('Delete')" pTooltip="Delete" tooltipPosition="left"
-                            pButton pRipple icon="pi pi-trash" class="p-button-rounded icon-delete icon-delete "
+                        <button *ngIf="config.isActions.includes('Delete')"  pTooltip="Delete" tooltipPosition="left"
+                            pButton pRipple icon="pi pi-trash"  class="p-button-rounded icon-delete icon-delete "
                             (click)="ondelete(rowData)"></button>
                         <button *ngIf="config.isActions.includes('Viewer')" pTooltip="Viewer" tooltipPosition="left"
                             pButton pRipple icon="pi pi-window-maximize" style="background-color: black;"
                             routerLink="/dicom-viewer" class="p-button-rounded "></button>
-                        <a *ngIf="config.isActions.includes('isActive')"><i>
-                            <img src="../../../assets/core_assets/on-button.png" class="Activebutton"
-                                    (click)="active(rowData)" pTooltip="Active" tooltipPosition="left" ></i>
-                        </a>
+                            <a *ngIf="config.isActions.includes('isActive')"><i>
+                                <img src="../../../assets/core_assets/on-button.png" class="Activebutton"
+                                        (click)="active(rowData)" pTooltip="Active" tooltipPosition="left" ></i>
+                            </a>
+
                     </ng-container>
                 </td>
                 <td *ngIf="config.expand" style="text-align: center;">

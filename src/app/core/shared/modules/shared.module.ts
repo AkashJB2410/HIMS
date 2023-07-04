@@ -168,7 +168,10 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
         BreadcrumbModule,
         CascadeSelectModule,
         InputSwitchModule,
-        BadgeModule
+        BadgeModule,
+        MultiSelectModule,
+        AvatarModule,
+        AvatarGroupModule
     ],
     exports: [
         //============= Core Components =============
@@ -206,7 +209,7 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
         VerticalTabularComponent,
         HomePageComponent,
         //============= Core Imports =============
-
+        AvatarModule,
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
@@ -249,6 +252,7 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
         BreadcrumbModule,
         CascadeSelectModule,
         BadgeModule,
+        MultiSelectModule,
         AvatarModule,
         AvatarGroupModule
     ],
