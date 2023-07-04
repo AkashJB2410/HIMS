@@ -19,6 +19,7 @@ import breadcrumb from './department-breadcrumb.json'
 })
 export class DepartmentComponent implements OnInit {
   data: any = [];
+  department: any = [] = [];
   config: any;
   configurations: any;
   table_Config: any;
@@ -28,7 +29,7 @@ export class DepartmentComponent implements OnInit {
   editMethod: boolean = false;
   sidebar_Update_Input: any = department_Form;
   saveMethod: any;
-  breadcrumb=breadcrumb;
+  breadcrumb = breadcrumb;
   constructor(private http: DepartmentService, private messageService: MessageService) {}
 
   ngOnInit(): void {
@@ -38,7 +39,6 @@ export class DepartmentComponent implements OnInit {
       "isSideBar": true,
       "isConfirmation": true
     };
-    // this.table_Config = const department_Config: any
     this.getConfigForTable();
     this.getAllDepartment();
   }
@@ -48,33 +48,41 @@ export class DepartmentComponent implements OnInit {
   }
 
   getAllDepartment() {
+    this.data = undefined;
+    this.department = [];
     this.http.getAllDepartment().subscribe(res => {
-      this.table_Data = res;
       console.log('All data=>', res)
+      res.forEach((e: any, index: any) => {
+        let obj = {
+          "id": index,
+          "departmentId":e.departmentId,
+          "departmentName":e.departmentName,
+          "is_Active":e.is_Active
+        }
+        this.department.push(obj)
+      })
+      this.data = [...this.department];
       this.isDataReady = true;
-      for (let i = 0; i < this.table_Data.length; i++) {
-        this.table_Data[i].srNumber = i + 1;
+      console.log('All data=>', this.data)
+      for (let i = 0; i < this.data.length; i++) {
+        this.data[i].srNumber = i + 1;
       }
     })
+   
+    this.isDataReady = true;
   }
-  
+
   editRow(e: any) {
     this.visibleSiderbar = true;
     console.log(e);
   }
 
-  eventMethod(data: any) {
+  saveDepartment(data: any){
     this.saveMethod = data;
   }
 
-
-  submitDepartmentData(e: any) {
-    this.http.addDepartment(e)
-      .subscribe(res => {
-        this.data = undefined;
-        this.getAllDepartment();
-        console.log("data" + res)
-      })
+  editDepartment(data: any) {
+    this.visibleSiderbar = true;
   }
 
   isActive(data: any) {
@@ -148,39 +156,36 @@ export class DepartmentComponent implements OnInit {
       })
   }
 
-  updateDepartment(e: any) {
+  updateDepartment(e: any){
     this.http.updateDepartment(e)
       .subscribe(d_Data => {
         console.log('update fill=>', e)
         this.table_Data = undefined;
         this.getAllDepartment();
         console.log("data" + d_Data)
-
       })
   }
 
   deleteDepartment(e: any) {
     this.http.deleteDepartment(e)
       .subscribe(d_Data => {
-        this.table_Data = undefined;
+        this.data = undefined;
         this.getAllDepartment();
         console.log("data" + d_Data)
       })
   }
 
-
-
   BulkDeleteRow(e: any) {
     this.data = [];
     if (e != '') {
-      e.forEach((data:any) => {
-        let obj ={
+      e.forEach((data: any) => {
+        let obj = {
           "departmentId": data.departmentId,
         }
         this.deleteDepartment(obj.departmentId);
       });
-     
-    }else{
+
+    } else {
       this.messageService.add({
         severity: 'error',
         summary: 'select Rows',

@@ -37,8 +37,12 @@
                 "valueclass": "input-box",
                 "placeholder": "",
                 "formControlName": "roleName",
+                "message": {
+                    "required": "Plase Enter Role Name",
+                    "pattern": "Only Alphabete are Allowed"
+                },
                 "validations": {
-                    "required": false,
+                    "required": true,
                     "pattern": "^[a-zA-Z ]+$"
                 }
             },

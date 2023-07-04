@@ -37,7 +37,7 @@ export class EmployeeStatusComponent implements OnInit {
       this.table_Data = item;
       this.isDataReady=true;
       for(let i=0; i<this.table_Data.length;i++){
-        this.table_Data[i].srNo=i+1;
+        this.table_Data[i].id=i+1;
       }
       this.table_Data;
     })
@@ -111,8 +111,44 @@ export class EmployeeStatusComponent implements OnInit {
   deleteEmp(emp:any){
     this.http.deleteEmp(emp.esId)
       .subscribe(b_Data => {
+        this.table_Data=undefined;
         this.getAllEmp();
       })
+  }
+
+  bulkDeleteRows(emp_Data:any){
+    let count = 0;
+    if (emp_Data != '') {
+      emp_Data.forEach((emp: any) => {
+        if (emp.is_Active == true) {
+          this.deleteEmp(emp);
+          count++;
+        }
+      });
+      if (count == 0) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'The Selected Rows are Already Disabled',
+        });
+        this.table_Data=undefined;
+        this.getAllEmp();
+      }
+      else if (count != 0) {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Bulk Deleted',
+          detail: 'Successful Disabled',
+        });
+      }
+    }
+    else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'No Row Selected',
+      });
+    }
   }
 
 }
