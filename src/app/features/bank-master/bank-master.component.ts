@@ -5,6 +5,7 @@ import bank_Master_Table_Config from './bank-master-table-config.json';
 import bank_Master_Form from './bank-master-input-update.json'
 import BankMaster_breadcrumb from './bank-master-breadcrumb.json'
 import { FormService } from 'src/app/core/shared/service/form.service';
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-bank-master',
@@ -21,8 +22,9 @@ export class BankMasterComponent implements OnInit {
   sidebar_Update_Input: any = bank_Master_Form;
   saveMethod: boolean = false;
   BankMaster_breadcrumb = BankMaster_breadcrumb;
+  editData:any;
 
-  constructor(private messageService: MessageService, private http: BankMasterService, private form$: FormService) { }
+  constructor(private messageService: MessageService, private http: BankMasterService, private form$: FormService, private common:CommonService) { }
 
   ngOnInit(): void {
     this.configurations = {
@@ -33,6 +35,11 @@ export class BankMasterComponent implements OnInit {
     };
     this.table_Config = bank_Master_Table_Config
     this.getAllBankMaster();
+  }
+
+  buttonEvent(e:any){
+    this.editData=undefined;
+    this.common.sendEditData(false);
   }
 
   getAllBankMaster() {
@@ -52,12 +59,15 @@ export class BankMasterComponent implements OnInit {
   }
 
   saveBankMaster(data: any) {
+    this.sidebar_Update_Input.form.formControls[0].isVisible=false;
     this.saveMethod = true;
-    // this.form$.reRenderForm(this.sidebar_Update_Input.form.formControls[0], false, 'isVisible');
-    console.log(this.sidebar_Update_Input);
+    this.editData=[];
+    this.common.sendEditData(false);
   }
 
   editBankMaster(data: any) {
+    this.sidebar_Update_Input.form.formControls[0].isVisible=true;
+    this.editData=data.editRow;
   }
 
   isActive(data: any) {

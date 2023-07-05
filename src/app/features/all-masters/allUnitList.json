@@ -112,7 +112,7 @@
     },
     {
       "label": "Cluster",
-      "routerLink": "/master-page/all-masters/import-data",
+      "routerLink": "/master-page/all-master/cluster",
       "imgSrc": "assets/OPD Dashboard.png"
     },
     {
