@@ -1,0 +1,38 @@
+{
+    "tableName": "Registration Table",
+    "tableHeaders": [
+        {"field": "srNumber", "header": "Sr. No","iseditable": false,"class": "text-center"},
+        {"field": "firstName","header": "FirstName","iseditable": false , "class":""},
+        {"field": "middleName","header": "MiddleName","iseditable": false , "class":""},
+        {"field": "lastName","header": "LastName","iseditable": false , "class":""},
+        {"field": "gender_Type","header": "Gender","iseditable": false , "class":""},
+        {"field": "age","header": "Age","iseditable": false , "class":"text-center"},
+        {"field": "mobileNo","header": "MobileNo","iseditable": false , "class":""},
+        {"field": "is_Active","header": "Is_Active","iseditable": false , "class":""}
+    ],
+    "PdfHeaders": [
+        {"field": "userId","header": "userId"},
+        {"field": "firstName","header": "FirstName"},
+        {"field": "middleName","header": "MiddleName"},
+        {"field": "lastName","header": "LastName"},
+        {"field": "gender_Type","header": "Gender"},
+        {"field": "age","header": "Age"},
+        {"field": "mobileNo","header": "MobileNo"},
+        {"field": "is_Active","header": "is_Active"} 
+    ],
+    "globalFilter": ["userId","firstName","middleName","lastName","gender_Type","age","mobileNo","is_Active"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [10,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "resizableColumns": true,
+    "isActions": ["Edit", "Delete","isActive"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "expand":false,
+    "buttonlbl":"Registration",
+    "textLength":16
+}

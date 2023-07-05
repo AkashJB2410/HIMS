@@ -89,6 +89,7 @@
         25,
         50
     ],
+    "sidebar":"p-sidebar-sm",
     "paginator": true,
     "rowHover": true,
     "loading": false,

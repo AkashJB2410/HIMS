@@ -19,7 +19,6 @@ import { OrganizationModule } from './features/organization/organizationModule';
 import { RegistrationFormComponent } from './features/registration-form/registration-form.component';
 import { RegistrationFormModule } from './features/registration-form/registration-form.module';
 import { SharedModule } from './core/shared/modules/shared.module';
-
 import { HomeComponent } from './features/home/home.component';
 import { EmergencyQuickRegistrationComponent } from './features/emergency-quick-registration/emergency-quick-registration.component';
 import { ErPatientListComponent } from './features/er-patient-list/er-patient-list.component';
@@ -103,7 +102,6 @@ import { LabReportsComponent } from './features/lab-reports/lab-reports.componen
 import { LabConsumptionReportComponent } from './features/lab-consumption-report/lab-consumption-report.component';
 import { LabOrderComponent } from './features/lab-order/lab-order.component';
 import { PacsComponent } from './features/pacs/pacs.component';
-import { RequisitionComponent } from './features/requisition/requisition.component';
 import { TransferComponent } from './features/transfer/transfer.component';
 import { ReceiveComponent } from './features/receive/receive.component';
 import { CurrentStockReportComponent } from './features/current-stock-report/current-stock-report.component';
@@ -140,6 +138,7 @@ import { LovTypeComponent } from './features/lov-type/lov-type.component';
 import { LovValueComponent } from './features/lov-value/lov-value.component';
 import { SettingsComponent } from './features/settings/settings.component';
 import { ConfigurationsComponent } from './features/configurations/configurations.component';
+import { SelfRegistrationComponent } from './features/self-registration/self-registration.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -232,7 +231,6 @@ import { ConfigurationsComponent } from './features/configurations/configuration
     LabConsumptionReportComponent,
     LabOrderComponent,
     PacsComponent,
-    RequisitionComponent,
     TransferComponent,
     ReceiveComponent,
     CurrentStockReportComponent,
@@ -267,7 +265,8 @@ import { ConfigurationsComponent } from './features/configurations/configuration
     LovTypeComponent,
     LovValueComponent,
     SettingsComponent,
-    ConfigurationsComponent
+    ConfigurationsComponent,
+    SelfRegistrationComponent
   ],
   imports: [
     CommonModule,

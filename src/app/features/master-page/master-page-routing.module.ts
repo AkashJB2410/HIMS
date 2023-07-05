@@ -98,7 +98,7 @@ const routes: Routes = [
       { path: 'lab-consumption-report', loadChildren: () => import('./../lab-consumption-report/lab-consumption-report.module').then( m => m.LabConsumptionReportModule)},
       { path: 'lab-order', loadChildren: () => import('./../lab-order/lab-order.module').then( m => m.LabOrderModule)},
       { path: 'pacs', loadChildren: () => import('./../pacs/pacs.module').then( m => m.PacsModule)},
-      { path: 'requisition', loadChildren: () => import('./../requisition/requisition.module').then( m => m.RequisitionModule)},
+      { path: 'requisition', loadChildren: () => import('../requisition/requisition.module').then( m => m.RequisitionModule)},
       { path: 'transfer', loadChildren: () => import('./../transfer/transfer.module').then( m => m.TransferModule)},
       { path: 'receive', loadChildren: () => import('./../receive/receive.module').then( m => m.ReceiveModule)},
       { path: 'current-stock-report', loadChildren: () => import('./../current-stock-report/current-stock-report.module').then( m => m.CurrentStockReportModule)},
@@ -128,15 +128,12 @@ const routes: Routes = [
       { path: 'all-masters/action-sub-module', loadChildren: () => import('./../action-sub-module/action-sub-module.module').then( m => m.ActionSubModuleModule)},     
       { path: 'all-masters/sub-department', loadChildren: () => import('./../sub-department/sub-department.module').then( m => m.SubDepartmentModule)},     
       { path: 'all-masters/unit', loadChildren: () => import('./../unit/unit.module').then( m => m.UnitModule)}, 
-
-      { path: 'all-masters/application-config', loadChildren: () => import('./../application-config/application-config.module').then( m => m.ApplicationConfigModule)}, 
+      { path: 'application-config', loadChildren: () => import('./../application-config/application-config.module').then( m => m.ApplicationConfigModule)}, 
       { path: 'group-module', loadChildren: () => import('./../group-module/group-module.module').then( m => m.GroupModuleModule)},   
       {path: 'all-masters/lov-type', loadChildren:()=> import('./../lov-type/lov-type.module').then(m=>m.LovTypeModule)} ,
       { path: 'all-masters/lov-value', loadChildren: () => import('./../lov-value/lov-value-routing.module').then( m => m.LovValueRoutingModule)},
       { path: 'configurations', loadChildren: () => import('./../configurations/configurations.module').then(m => m.ConfigurationsModule) },
       { path: 'settings', loadChildren: () => import('./../settings/settings.module').then(m => m.SettingsModule) },
-      { path: 'all-masters/cluster', loadChildren: () => import('./../cluster/cluster-routing.module').then( m => m.ClusterRoutingModule)},
-      { path: 'all-masters/payment-mode', loadChildren: () => import('./../payment-mode/payment-mode-routing.module').then( m => m.PaymentModeRoutingModule)},
 
     ],
     // canActivate: [AuthGuardGuard]
