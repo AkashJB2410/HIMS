@@ -4,6 +4,7 @@ import { EmployeeStatusService } from './employee-status.service';
 import  emp_Table_Config  from './employee-table-config.json'
 import emp_Data from './employee-input-update.json'
 import Employee_status_breadcrumb from './employee-status-breadcrumb.json'
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-employee-status',
@@ -20,7 +21,9 @@ export class EmployeeStatusComponent implements OnInit {
   sidebar_Update_Input: any = emp_Data;
   saveMethod: boolean = false;
   Employee_status_breadcrumb =Employee_status_breadcrumb;
-  constructor(private messageService:MessageService, private http:EmployeeStatusService) { }
+  editData:any;
+
+  constructor(private messageService:MessageService, private http:EmployeeStatusService, private common:CommonService) { }
   ngOnInit(): void {
     this.configurations={
       "isFilter": false,
@@ -30,6 +33,11 @@ export class EmployeeStatusComponent implements OnInit {
     };
     this.table_Config = emp_Table_Config
     this.getAllEmp();
+  }
+
+  buttonEvent(e:any){
+    this.editData=undefined;
+    this.common.sendEditData(false);
   }
 
   getAllEmp(){
@@ -48,10 +56,15 @@ export class EmployeeStatusComponent implements OnInit {
   }
 
   saveEmp(data:any){
+    this.sidebar_Update_Input.form.formControls[0].isVisible=false;
     this.saveMethod = true;
+    this.editData=[];
+    this.common.sendEditData(false);
   }
 
   editEmp(data:any){
+    this.sidebar_Update_Input.form.formControls[0].isVisible=true;
+    this.editData = data.editRow;
   }
 
   isActive(data:any){

@@ -139,6 +139,8 @@ import { LovValueComponent } from './features/lov-value/lov-value.component';
 import { SettingsComponent } from './features/settings/settings.component';
 import { ConfigurationsComponent } from './features/configurations/configurations.component';
 import { SelfRegistrationComponent } from './features/self-registration/self-registration.component';
+import { ClusterComponent } from './features/cluster/cluster.component';
+import { SpetialityComponent } from './features/spetiality/spetiality.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -266,7 +268,9 @@ import { SelfRegistrationComponent } from './features/self-registration/self-reg
     LovValueComponent,
     SettingsComponent,
     ConfigurationsComponent,
-    SelfRegistrationComponent
+    SelfRegistrationComponent,
+    ClusterComponent,
+    SpetialityComponent
   ],
   imports: [
     CommonModule,

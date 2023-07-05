@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MasterPageComponent } from './master-page.component';
-import { ApplicationConfigComponent } from '../application-config/application-config.component';
 
 const routes: Routes = [
   {
@@ -12,7 +11,6 @@ const routes: Routes = [
       { path: 'sub-module', loadChildren: () => import('./../sub-module/sub-module.module').then(m => m.SubModuleModule) },
       { path: 'all-masters/organization', loadChildren:()=> import('./../organization/organizationModule').then(m=>m.OrganizationModule)},
       { path: 'registration-form', loadChildren:()=> import('./../registration-form/registration-form.module').then(m=>m.RegistrationFormModule)},
-
       { path: 'home', loadChildren: () => import('./../home/home.module').then(m => m.HomeModule)},
       { path: 'emergency-quick-registration', loadChildren: () => import('./../emergency-quick-registration/emergency-quick-registration.module').then(m => m.EmergencyQuickRegistrationModule)},
       { path: 'er-patient-list', loadChildren: () => import('./../er-patient-list/er-patient-list.module').then(m => m.ErPatientListModule)},
@@ -75,7 +73,6 @@ const routes: Routes = [
       { path: 'opd-application-form', loadChildren: () => import('./../opd-application-form/opd-application-form.module').then( m => m.OpdApplicationFormModule)},
       { path: 'ipd-application-form', loadChildren: () => import('./../ipd-application-form/ipd-application-form.module').then( m => m.IpdApplicationFormModule)},
       { path: 'emg-application-form', loadChildren: () => import('./../emg-application-form/emg-application-form.module').then( m => m.EmgApplicationFormModule)},
-
       { path: 'new-admission-request', loadChildren: () => import('./../new-admission-request/new-admission-request.module').then( m => m.NewAdmissionRequestModule)},
       { path: 'list-of-admission-request', loadChildren: () => import('./../list-of-admission-request/list-of-admission-request.module').then( m => m.ListOfAdmissionRequestModule)},
       { path: 'admission-list', loadChildren: () => import('./../admission-list/admission-list.module').then( m => m.AdmissionListModule)},
@@ -134,7 +131,6 @@ const routes: Routes = [
       { path: 'all-masters/lov-value', loadChildren: () => import('./../lov-value/lov-value-routing.module').then( m => m.LovValueRoutingModule)},
       { path: 'configurations', loadChildren: () => import('./../configurations/configurations.module').then(m => m.ConfigurationsModule) },
       { path: 'settings', loadChildren: () => import('./../settings/settings.module').then(m => m.SettingsModule) },
-
     ],
     // canActivate: [AuthGuardGuard]
   }];

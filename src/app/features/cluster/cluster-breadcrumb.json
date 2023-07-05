@@ -1,7 +1,7 @@
 {
     "itemsList": [
         {
-            "label": "Configurations",
+            "label": "Configuration",
             "icon": "",
             "routerLink": ""
         },
@@ -11,14 +11,14 @@
             "routerLink": "/master-page/all-masters"
         },
         {
-            "label": "Unit Configurations",
+            "label": "Unit Configuration",
             "icon": "",
             "routerLink": "/master-page/all-masters"
         },
         {
-            "label": "LOV Type",
+            "label": "Cluster",
             "icon": "",
-            "routerLink":"all-masters/lov-type"
+            "routerLink": "/master-page/all-masters/cluster"
         }
     ]
 }

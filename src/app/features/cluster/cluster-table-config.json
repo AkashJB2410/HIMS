@@ -1,13 +1,13 @@
 {
-    "tableName": "Employee Table",
+    "tableName": "CLUSTER TABLE",
     "tableHeaders":[
         {
             "field":"id",
             "header":"Sr. No.","iseditable": false , "class":"text-center"
         },
         {
-            "field":"esName",
-            "header":"Employee Name","iseditable": false , "class":""
+            "field":"clusterName",
+            "header":"Cluster Name","iseditable": false , "class":""
         },
         {
             "field":"is_Active",
@@ -21,15 +21,15 @@
             "header":"Sr. No."
         },
         {
-            "field":"esName",
-            "header":"Employee Name"
+            "field":"clusterName",
+            "header":"Cluster Name"
         },
         {
             "field":"is_Active",
             "header":"Active Status"
         }
     ],
-    "globalFilter":["id","esName","is_Active"],
+    "globalFilter":["id","clusterName","is_Active"],
     "rows" : 10,
     "showCurrentPageReport" : true,
     "rowsPerPageOptions" : [10,25,50],
@@ -42,7 +42,7 @@
     "isActions": ["Edit", "Delete", "isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
-    "buttonlbl":"Add Employee",
+    "buttonlbl":"Add Brank Master",
     "textLength":16,
-    "sidebar": "p-sidebar-sm"
+    "sidebar":  "p-sidebar-sm"
 }

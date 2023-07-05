@@ -56,7 +56,7 @@ export class SubModuleService {
       "routerLink": data.routerLinkInput,
       "sequence": data.sequenceInput,
       "mstGroup": {
-        "moduleId": data.selectInput[1],
+        "groupId": data.selectInput[1],
       },
     };
     const url = "http://localhost:8080/api/v1/submodule"+data.idInput;

@@ -16,9 +16,9 @@
             "routerLink": "/master-page/all-masters"
         },
         {
-            "label": "LOV Type",
+            "label": "Spatiality",
             "icon": "",
-            "routerLink":"all-masters/lov-type"
+            "routerLink":"all-masters/spetiality"
         }
     ]
 }
