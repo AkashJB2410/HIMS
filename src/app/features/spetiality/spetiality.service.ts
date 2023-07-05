@@ -21,10 +21,10 @@ export class SpetialityService {
 
   addSpetiality(data: any): Observable<any> {
     const param = {
-      lovTypeId: data.idInput,
-      code: data.codeInput,
-      name: data.nameInput,
-      description: data.descriptionInput,
+      "lovTypeId": data.idInput,
+      "code": data.codeInput,
+      "name": data.nameInput,
+      "description": data.descriptionInput,
     };
     const url = 'http://localhost:8081/api/v1/addMstSpeciality';
     return this.PostCall(url, param);

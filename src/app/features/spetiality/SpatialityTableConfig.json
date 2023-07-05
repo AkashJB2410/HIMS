@@ -1,35 +1,45 @@
 {
-    "tableName": "Action Buttons Table",
+    "tableName": "Spatiality Table",
     "tableHeaders": [
         {
             "field": "id",
-            "header": "Sr. No",
+            "header": "index",
             "iseditable": false,
             "class": "text-center"
         },
         {
-            "field": "abName",
-            "header": "Action Button Name",
+            "field": "specialityName",
+            "header": "Name",
             "iseditable": false,
             "class": ""
         },
         {
             "field": "is_Active",
-            "header": "IsActive",
+            "header": "isActive",
             "iseditable": false,
             "class": ""
-        }        
+        }
     ],
     "PdfHeaders": [
         {
-            "field": "abName",
-            "header": "Action Button Name"
+            "field": "id",
+            "header": "Sr.No"
+        },
+        {
+            "field": "specialityName",
+            "header": "lovTypeId"
+        },
+        {
+            "field": "is_Active",
+            "header": "code"
         }
     ],
     "globalFilter": [
-        "abName"
+        "id",
+        "specialityName",
+        "is_Active"
     ],
-    "rows": 10,
+    "rows": 15,
     "showCurrentPageReport": true,
     "rowsPerPageOptions": [
         10,
@@ -49,7 +59,7 @@
     ],
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
-    "buttonlbl": "Add Action Buttons",
+    "buttonlbl": "Add Spatiality",
     "textLength": 16,
     "sidebar": "p-sidebar-sm"
 }
