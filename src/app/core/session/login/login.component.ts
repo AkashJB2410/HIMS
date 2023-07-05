@@ -3,24 +3,17 @@ import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { SessionService } from '../../shared/service/session.service';
 import { EncryptPipe } from '../../shared/pipes/encrypt-decrypt.pipe';
-import { FormService } from '../../shared/service/form.service';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import login from './login.json';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
+
 export class LoginComponent implements OnInit {
-  loginForm = new FormGroup({
-    emailId: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
-    organisation: new FormControl({
-      "organization_Id": "",
-      "organization_Type": "Select an option"
-    }, [Validators.required]),
-    captcha: new FormControl('', [Validators.required])
-  });
+  loginForm: any;
   loginFormData = login;
   orgList: any = [];
   tabularData: any;
@@ -29,14 +22,31 @@ export class LoginComponent implements OnInit {
   timerFlag = false;
   timerFlag2 = false;
   attempts: any = 1;
-  constructor(private router: Router, private messageService: MessageService, private http: SessionService, private encrypt: EncryptPipe, private form$: FormService) { }
+  constructor(private router: Router,
+    private messageService: MessageService,
+    private http: SessionService,
+    private encrypt: EncryptPipe) { }
 
   ngOnInit() {
-    localStorage.clear();
+    // localStorage.clear();
     sessionStorage.clear();
+    let email = (localStorage.getItem("email") != "") ? localStorage.getItem("email") : "";
+    let password = (localStorage.getItem("password") != "") ? localStorage.getItem("password") : "";
+    let organization = (localStorage.getItem("organization") != "") ? localStorage.getItem("organization") : "";
+    this.loginForm = new FormGroup({
+      emailId: new FormControl(email, [Validators.required]),
+      password: new FormControl(password, [Validators.required]),
+      organisation: new FormControl({
+        "organization_Id": "",
+        "organization_Type": "Select an option"
+      }, [Validators.required]),
+      captcha: new FormControl('', [Validators.required])
+    });
   }
-
   getEmail(e: any) {
+    const email = e.value
+  }
+  getOrganiszation(e: any) {
     this.http.orgData(e.value)
       .subscribe(res => {
         this.orgList = [];
@@ -97,7 +107,7 @@ export class LoginComponent implements OnInit {
             this.messageService.add({ severity: 'success', summary: 'Login', detail: 'Logged in successfully.' });
             sessionStorage.setItem('loggedUser', this.encrypt.transform(JSON.stringify(data)));
             sessionStorage.setItem('loggedIn', 'true');
-            this.router.navigateByUrl('/master-page/home');
+            this.router.navigateByUrl('/master-page/user-management');
           } else if (data.password != this.loginForm.value.password) {
             this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
           }
@@ -110,7 +120,16 @@ export class LoginComponent implements OnInit {
       }
     }
   }
-
+  lsRememberMe(e: any) {
+    // if (e.checked && this.loginForm.value.emailId != "" && this.loginForm.value.password != "" && this.loginForm.value.organisation.organization_Id != "") {
+    if (e.checked && this.loginForm.value.emailId != "" && this.loginForm.value.password != "") {
+      localStorage.setItem("email", this.loginForm.value.emailId);
+      localStorage.setItem("password", this.loginForm.value.password);
+      localStorage.setItem("organization", this.loginForm.value.organisation.organization_Id);
+    } else {
+      localStorage.clear();
+    }
+  }
 }
 
 

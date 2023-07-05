@@ -1,14 +1,11 @@
-<p-breadcrumb [model]="Action_breadcrumb.itemsList" ></p-breadcrumb>
+<p-breadcrumb [model]="Action_breadcrumb.itemsList"></p-breadcrumb>
 <h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Action Button</h3>
-<app-super-grid  
-*ngIf="data"
-[configurations] ="configurations" 
-[tableConfig] = "table"
-[sidebarJSON] = "addNew"
-[tableData]= "data"
-(sideBarEvent)="sidebarData($event)"
-(confirmAction)="confirmAction($event)"
-(onAdd)="onAdd($event)"
-(onEdit)="onAdd($event)"
-(isActive)="isActive($event)">
+<app-super-grid *ngIf="data" [configurations]="configurations" [tableConfig]="table" [sidebarJSON]="addNew"
+    [tableData]="data" (sideBarEvent)="sidebarData($event)" (confirmAction)="confirmAction($event)"
+    (isActive)="isActive($event)" (Bulkdelete)="Bulkdelete($event)" (onAdd)="onAdd($event)" (onEdit)="onEdit($event)">
+
+    <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="addNew" [editData]="editData"
+        (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)">
+    </app-form>
+
 </app-super-grid>

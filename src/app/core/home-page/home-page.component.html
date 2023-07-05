@@ -1,19 +1,19 @@
+<h6 class="{{homelist.formTitleClass}}"><i class="{{homelist.formTitleLogo}}"></i>{{homelist.formTitle}}</h6>
 <div class="{{homelist.Row}}">
     <div class="{{HomeList.listClass}} {{HomeList.Css}}" *ngFor="let HomeList of homelist.HomeList">
-        <div >
+        <div class="avatar-section">
             <!-- <p-card  routerLink="{{HomeList.routerLink}}">
                 <img src="{{HomeList.image}}">
             </p-card> -->
 
-            <div class="card card-home card-inverse">
-                <div class="card-body text-center">
-                    <img src="{{HomeList.image}}" class="img-fluid">
-                  <!-- <h4 class="card-title">Creative</h4> -->
-                   
-                </div>
-              </div>
-              <div class="card-footer custom-card-footer"><h6 class="card-title">{{HomeList.label}}</h6></div>
+            <p-avatar [title]="" styleClass="ml-5" routerLink="" image="{{HomeList.image}}" size="xlarge"
+                shape="circle"></p-avatar>
+            <h5 class="{{HomeList.Css}}"  style="text-align: center;">{{HomeList.label}}</h5>
         </div>
-     <!-- <h6 class="card-title{{HomeList.LabelCss}}">{{HomeList.label}}</h6>  -->
+        <!-- <h6 class="card-title{{HomeList.LabelCss}}">{{HomeList.label}}</h6>  -->
     </div>
 </div>
+
+<!-- <div class="card-icon">
+    <img src="images/users/user5.jpg" alt="">
+</div> -->

@@ -4,6 +4,7 @@ import addneworg from './organizationForm.json'
 import { MessageService } from 'primeng/api';
 import { OrganizationServiceService } from './organization.service';
 import organization_breadcrumb from './organization-breadcrumb.json'
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-organization',
@@ -27,7 +28,9 @@ export class OrganizationComponent implements OnInit {
   isdataReady = false;
   saveMethod: boolean=false;
   organization_breadcrumb =organization_breadcrumb;
-  constructor(private messageService: MessageService,private http: OrganizationServiceService) { }
+  editData:any;
+
+  constructor(private messageService: MessageService,private http: OrganizationServiceService, private common:CommonService) { }
   
   ngOnInit(): void {
     
@@ -57,12 +60,21 @@ export class OrganizationComponent implements OnInit {
     this.visibleSidebar = true;
   }
 
+  buttonEvent(e:any){
+    this.editData=undefined;
+    this.common.sendEditData(false);
+  }
+
   saveOrg(e:any){
+    this.addneworganization.form.formControls[0].isVisible=false;
     this.saveMethod = true;
+    this.editData=[];
+    this.common.sendEditData(false);
   }
 
   editOrg(e:any){
-
+    this.addneworganization.form.formControls[0].isVisible=true;
+    this.editData=e.editRow;
   }
 
   isActive(data:any){
@@ -113,7 +125,7 @@ export class OrganizationComponent implements OnInit {
       this.data = res;
       this.isdataReady = true;
       for(let i=0; i<this.data.length;i++){
-        this.data[i].srNo=i+1;
+        this.data[i].id=i+1;
       }
       this.data;
     })
@@ -150,5 +162,39 @@ export class OrganizationComponent implements OnInit {
     else{}
   }
 
+  bulkDeleteRows(bulk_Data: any) {
+    let count = 0;
+    if (bulk_Data != '') {
+      bulk_Data.forEach((orgData: any) => {
+        if (orgData.is_Active == true) {
+          this.deleteOrgData(orgData);
+          count++;
+        }
+      });
+      if (count == 0) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'The Selected Rows are Already Disabled',
+        });
+        this.data = undefined;
+        this.getAllOrgData();
+      }
+      else if (count != 0) {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Bulk Deleted',
+          detail: 'Successful Disabled',
+        });
+      }
+    }
+    else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'No Row Selected',
+      });
+    }
+  }
   
 }

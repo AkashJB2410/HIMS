@@ -76,5 +76,6 @@
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
     "buttonlbl": "Add MasterModule",
-    "textLength": 16
+    "textLength": 16,
+    "sidebar":"p-sidebar-sm"
 }

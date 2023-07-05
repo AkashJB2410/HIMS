@@ -1,4 +1,5 @@
 <div class="">
+    <!-- <img src="{{base1}}"> -->
     <h6 class="{{formJson.formTitleClass}}"><i class="{{formJson.formTitleLogo}}"></i>{{formJson.formTitle}}</h6>
     <form [formGroup]="form">
         <div class="{{formJson.class}}">
@@ -10,7 +11,7 @@
                     <div *ngIf="formData.fieldType == formStaticText.TEXT">
                         <input type="{{formData.inputType}}" id="{{formData.fieldName}}" name="{{formData.fieldName}}"
                             class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
-                            [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
+                            [ngClass]="formData.editable ? formData.valueclass : 'input-box1'" minlength="{{formData.minlength}}" maxlength="{{formData.maxlength}}"
                             [(ngModel)]="formData.fieldValue" placeholder="{{formData.placeholder}}"
                             (blur)="blurValue($event.target, formData)">
                     </div>
@@ -38,6 +39,12 @@
                         [(ngModel)]="formData.fieldValue" optionLabel="name" optionValue="code" [showClear]="true"
                         class="{{formData.valueclass}}" [showClear]="false" (onChange)="changeEvent($event, formData)">
                     </p-dropdown>
+                    <p-multiSelect *ngIf="formData.fieldType == formStaticText.MULTISELECT" [options]="formData.values"
+                        [inputId]="formData.fieldName" [formControlName]="formData.fieldName"
+                        [ngClass]="formData.editable ? formData.valueclass : 'input-box1 '"
+                        [(ngModel)]="formData.fieldValue" optionLabel="name" optionValue="code" [showClear]="true"
+                        class="{{formData.valueclass}}" [showClear]="false" (onChange)="changeEvent($event, formData)">
+                    </p-multiSelect>
                     <div class="{{formData.valueclass}}" *ngIf="formData.fieldType === formStaticText.RADIO">
                         <div *ngFor="let opt of formData.values">
                             <p-radioButton name="{{formData.fieldName}}" value="{{opt.code}}"
@@ -110,7 +117,8 @@
                         <button *ngFor="let icon of formData.icons" (click)="btnClick(icon.subtype)"
                             [ngClass]="formData. isDisabled ? formData.valueclass : 'butn-custom-dark-blue1 '"
                             class="{{icon.valueclass}}" pTooltip="{{icon.tooltip}}"
-                            tooltipPosition="{{icon.toolPosition}}" ><i class="{{icon.class}}" (window:keydown.enter)="btnClick(icon.subtype)"
+                            tooltipPosition="{{icon.toolPosition}}"><i class="{{icon.class}}"
+                                (window:keydown.enter)="btnClick(icon.subtype)"
                                 (window:keydown.esc)="btnClick(icon.subtype)"></i>
                         </button>
                     </div>
@@ -126,13 +134,12 @@
                         *ngIf="formData.fieldType === formStaticText.DEPENDENTDROPDOWN">
                         <app-dependent-dropdown [data]="formData.values" [defaultData]="formData.fieldValue"
                             (dependentDrop)="dependentDrop($event, formData)"></app-dependent-dropdown>
-                    </div>
-
+                </div>
                     <!-- Error Messages Here -->
 
                     <div class="error-txt-msg"
                         *ngIf="form.controls[formData.fieldName].value == '0' && form.controls[formData.fieldName].touched"
-                        style="color: red;">
+                        style="color: red; " >
                         {{formData.message.required}}
                     </div>
                     <div class="error-txt-msg"

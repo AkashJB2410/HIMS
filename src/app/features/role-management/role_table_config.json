@@ -1,18 +1,18 @@
 {
     "tableName": "Role Table",
     "tableHeaders": [
-        {"field": "srNo","header": "Sr. No.","iseditable": false , "class":"text-center"},
+        {"field": "id","header": "Sr. No.","iseditable": false , "class":"text-center"},
         {"field": "roleName","header": "Role Name","iseditable": false , "class":""},
         {"field": "roleDescription","header": "Role Description","iseditable": false , "class":""},
         {"field": "is_Active","header": "Active Status","iseditable": false , "class":""}
     ],
     "PdfHeaders": [
-        {"field": "srNo","header": "Sr. No."},
+        {"field": "id","header": "Sr. No."},
         {"field": "roleName","header": "Role Name"},
         {"field": "roleDescription","header": "Role Description"},
         {"field": "is_Active","header": "Active Status"}
     ],
-    "globalFilter": ["srNo","roleName","roleDescription","is_Active" ],
+    "globalFilter": ["id","roleName","roleDescription","is_Active" ],
     "rows" : 10,
     "showCurrentPageReport" : true,
     "rowsPerPageOptions" : [10,25,50],
@@ -26,5 +26,6 @@
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
     "buttonlbl":"Add Role",
-    "textLength":16
+    "textLength":16,
+    "sidebar": "p-sidebar-sm"
 }

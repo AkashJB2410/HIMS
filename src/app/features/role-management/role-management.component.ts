@@ -4,6 +4,7 @@ import { RoleManagementService } from './role-management.service';
 import * as role_table_config from './role_table_config.json';
 import roleData from './role.json';
 import role_breadcrumb from './role-breadcrumb.json'
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-role-management',
@@ -25,7 +26,8 @@ export class RoleManagementComponent implements OnInit {
   sidebarJSON: any = roleData;
   saveMethod: boolean = false;
   role_breadcrumb =role_breadcrumb;
-  constructor(private messageService: MessageService, private http: RoleManagementService) { }
+  editData:any;
+  constructor(private messageService: MessageService, private http: RoleManagementService, private common:CommonService) { }
 
   ngOnInit(): void {
     this.configurations = {
@@ -45,12 +47,18 @@ export class RoleManagementComponent implements OnInit {
       console.log(e)
     }
   }
+
+  buttonEvent(e:any){
+    this.editData=undefined;
+    this.common.sendEditData(false);
+  }
+
   getAllRoleData() {
     this.http.GetAllRoleData().subscribe(res => {
       this.data = res;
       this.isdataReady = true;
       for(let i=0; i<this.data.length;i++){
-        this.data[i].srNo=i+1;
+        this.data[i].id=i+1;
       }
       this.data;
     })
@@ -65,11 +73,15 @@ export class RoleManagementComponent implements OnInit {
     this.visibleSidebar = true;
   }
   saveRole(data:any){
+    this.sidebarJSON.form.formControls[0].isVisible=false;
     this.saveMethod = true;
+    this.editData=[];
+    this.common.sendEditData(false);
   }
 
   editRole(data:any){
-
+    this.sidebarJSON.form.formControls[0].isVisible=true;
+    this.editData=data.editRow;
   }
 
   isActive(data:any){
@@ -100,6 +112,7 @@ export class RoleManagementComponent implements OnInit {
   deleteRoleData(roleId: any) {
     this.http.deleteRoleData(roleId)
       .subscribe(data => {
+        this.data=undefined;
         this.getAllRoleData();
         console.log("data" + data)
       })
@@ -149,5 +162,41 @@ export class RoleManagementComponent implements OnInit {
     //     this.data = data;
     //   })
   }
+
+  bulkDeleteRows(role_Bulk_Data: any) {
+    let count = 0;
+    if (role_Bulk_Data != '') {
+      role_Bulk_Data.forEach((role_Data: any) => {
+        if (role_Data.is_Active == true) {
+          this.deleteRoleData(role_Data);
+          count++;
+        }
+      });
+      if (count == 0) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'The Selected Rows are Already Disabled',
+        });
+        this.data=undefined;
+        this.getAllRoleData();
+      }
+      else if (count != 0) {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Bulk Deleted',
+          detail: 'Successful Disabled',
+        });
+      }
+    }
+    else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'No Row Selected',
+      });
+    }
+  }
+
 }
 

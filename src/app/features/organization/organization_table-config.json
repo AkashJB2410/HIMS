@@ -2,7 +2,7 @@
     "tableName": "Organization Table",
     "tableHeaders": [
         {
-            "field":"srNo",
+            "field":"id",
             "header":"Sr. No.",
             "iseditable": false , "class":"text-center"
         },
@@ -45,7 +45,7 @@
     "PdfHeaders": [
         {
            
-            "field":"srNo",
+            "field":"id",
             "header":"Sr. No."
         },
         {
@@ -77,7 +77,7 @@
             "header": "Active Status"
         }
     ],
-    "globalFilter": ["srNo","orgName","orgEmail","orgMobile","orgAddress","orgContactPerson","orgPhone","is_Active"],
+    "globalFilter": ["id","orgName","orgEmail","orgMobile","orgAddress","orgContactPerson","orgPhone","is_Active"],
     "rows" : 10,
     "showCurrentPageReport" : true,
     "rowsPerPageOptions" : [10,25,50],
@@ -91,5 +91,6 @@
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
     "buttonlbl":"Add Organization",
-    "textLength":16
+    "textLength":16,
+    "sidebar": "p-sidebar-md"
 }

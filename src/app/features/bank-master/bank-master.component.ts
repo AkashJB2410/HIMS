@@ -4,6 +4,8 @@ import { BankMasterService } from './bank-master.service';
 import bank_Master_Table_Config from './bank-master-table-config.json';
 import bank_Master_Form from './bank-master-input-update.json'
 import BankMaster_breadcrumb from './bank-master-breadcrumb.json'
+import { FormService } from 'src/app/core/shared/service/form.service';
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-bank-master',
@@ -20,11 +22,12 @@ export class BankMasterComponent implements OnInit {
   sidebar_Update_Input: any = bank_Master_Form;
   saveMethod: boolean = false;
   BankMaster_breadcrumb = BankMaster_breadcrumb;
+  editData:any;
 
-  constructor(private messageService:MessageService, private http:BankMasterService) { }
+  constructor(private messageService: MessageService, private http: BankMasterService, private form$: FormService, private common:CommonService) { }
 
   ngOnInit(): void {
-    this.configurations={
+    this.configurations = {
       "isFilter": false,
       "isTable": true,
       "isSideBar": true,
@@ -34,67 +37,78 @@ export class BankMasterComponent implements OnInit {
     this.getAllBankMaster();
   }
 
-  getAllBankMaster(){
+  buttonEvent(e:any){
+    this.editData=undefined;
+    this.common.sendEditData(false);
+  }
+
+  getAllBankMaster() {
     this.http.getAllBankMaster().subscribe(item => {
       this.table_Data = item;
-      this.isDataReady=true;
-      for(let i=0; i<this.table_Data.length;i++){
-        this.table_Data[i].srNo=i+1;
+      this.isDataReady = true;
+      for (let i = 0; i < this.table_Data.length; i++) {
+        this.table_Data[i].id = i + 1;
       }
       this.table_Data;
+      
     })
   }
 
-  editRow(e:any){
-    this.visibleSiderbar=true;
+  editRow(e: any) {
+    this.visibleSiderbar = true;
   }
 
-  saveBankMaster(data:any){
+  saveBankMaster(data: any) {
+    this.sidebar_Update_Input.form.formControls[0].isVisible=false;
     this.saveMethod = true;
+    this.editData=[];
+    this.common.sendEditData(false);
   }
 
-  editBankMaster(data:any){
+  editBankMaster(data: any) {
+    this.sidebar_Update_Input.form.formControls[0].isVisible=true;
+    this.editData=data.editRow;
   }
 
-  isActive(data:any){
-    if(data.is_Deleted){
+  isActive(data: any) {
+    if (data.is_Deleted) {
       this.http.reactiveBankMaster(data)
         .subscribe(b_Data => {
           this.table_Data = undefined;
           this.getAllBankMaster();
         })
-        this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Bank Master Enable Successfully' });  
+      this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Bank Master Enable Successfully' });
     }
-    else if(!data.is_Deleted){
+    else if (!data.is_Deleted) {
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Bank Master is already Active' });
     }
   }
 
-  confirmAction(e:any){
-    if(e.is_Active==true){
-      this.table_Data=undefined;
+  confirmAction(e: any) {
+    if (e.is_Active == true) {
+      this.table_Data = undefined;
       this.deleteBankMaster(e);
       this.messageService.add({ severity: 'success', summary: 'Disabled', detail: 'Bank Master Disabled Successfully' });
     }
-    else if (e.is_Active==false){
+    else if (e.is_Active == false) {
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Bank Master is already Disabled' });
     }
-    else{}
+    else { }
   }
 
-  sidebarData(e:any){
-    if(e=='reset'){}
+  sidebarData(e: any) {
+    if (e == 'reset') { }
     else if (this.saveMethod) {
       this.addBankMaster(e);
       this.messageService.add({ severity: 'success', summary: 'Added', detail: 'Bank Master Added Successfully' });
-      this.saveMethod=false;
+      this.saveMethod = false;
     } else {
-        this.updateBankMaster(e);
-        this.messageService.add({ severity: 'success', summary: 'Updated', detail: 'Bank Master Updated Successfully.' });
+      this.updateBankMaster(e);
+      this.messageService.add({ severity: 'success', summary: 'Updated', detail: 'Bank Master Updated Successfully.' });
     }
   }
 
-  addBankMaster(bank_Master:any){
+  addBankMaster(bank_Master: any) {
     this.http.addBankMaster(bank_Master)
       .subscribe(b_Data => {
         this.table_Data = undefined;
@@ -102,7 +116,7 @@ export class BankMasterComponent implements OnInit {
       })
   }
 
-  updateBankMaster(bank_Master:any){
+  updateBankMaster(bank_Master: any) {
     this.http.updateBankMaster(bank_Master)
       .subscribe(b_Data => {
         this.table_Data = undefined;
@@ -110,11 +124,47 @@ export class BankMasterComponent implements OnInit {
       })
   }
 
-  deleteBankMaster(bank_Master:any){
+  deleteBankMaster(bank_Master: any) {
     this.http.deleteBankMaster(bank_Master.bankId)
       .subscribe(b_Data => {
+        this.table_Data = undefined;
         this.getAllBankMaster();
       })
   }
-  
+
+  bulkDeleteRows(bank_Bulk_Data: any) {
+    let count = 0;
+    if (bank_Bulk_Data != '') {
+      bank_Bulk_Data.forEach((bank_Master: any) => {
+        if (bank_Master.is_Active == true) {
+          this.deleteBankMaster(bank_Master);
+          count++;
+        }
+      });
+      if (count == 0) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'The Selected Rows are Already Disabled',
+        });
+        this.table_Data=undefined;
+        this.getAllBankMaster();
+      }
+      else if (count != 0) {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Bulk Deleted',
+          detail: 'Successful Disabled',
+        });
+      }
+    }
+    else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'No Row Selected',
+      });
+    }
+  }
+
 }

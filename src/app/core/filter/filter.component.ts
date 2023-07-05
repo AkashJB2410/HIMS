@@ -23,15 +23,10 @@ export class FilterComponent implements OnInit {
   FData: any;
   filterName: any;
   filtersArray: any = [];
-  constructor(
-    private primengConfig: PrimeNGConfig,
-    private mess: MessageService
-  ) {
-    this.primengConfig.ripple = true;
-  }
+  editDataCheckbox: any;
+  constructor() { }
 
   ngOnInit(): void {
-    this.primengConfig.ripple = true;
     this.setupPopup();
   }
 
@@ -46,24 +41,16 @@ export class FilterComponent implements OnInit {
         let obj = {
           isEditable: true,
           isVisible: true,
-          label: '',
           type: 'checkbox',
           inputType: 'checkbox',
-          class: 'col-md-6 my-1',
-          placeholder: '',
-          value: '',
+          class: 'col-md-12 my-1',
           formControlName: element.formControlName,
-          message: {},
           values: [
             {
               name: element.label,
               code: element.label,
-            },
-          ],
-          validations: {
-            required: false,
-            pattern: '',
-          },
+            }
+          ]
         };
         a.push(obj);
       }
@@ -108,7 +95,7 @@ export class FilterComponent implements OnInit {
     this.FData.form.formControls = a;
     this.FData.form.formControls.push(btn1);
     this.FData.form.formControls.push(btn2);
-    this.editData = editdata;
+    this.editDataCheckbox = editdata;
     localStorage.setItem('editData', '');
     this.filterData = JSON.parse(localStorage.getItem('filterData'));
   }
@@ -152,9 +139,6 @@ export class FilterComponent implements OnInit {
   response(e: any) {
     let i = 0;
     let data = JSON.parse(localStorage.getItem('filterData'));
-    if (e.value === "") {
-      console.log('hello')
-    }
     for (const key in e) {
       if (e[key] == data.form.formControls[i].label) {
         data.form.formControls[i].isVisible = true;

@@ -3,12 +3,12 @@
     {
       "label": "Organization",
       "routerLink": "/master-page/all-masters/organization",
-      "imgSrc": "assets/Patient-Reg.png"
+      "imgSrc": "assets/unit-configuration/organization.png"
     },
     {
       "label": "Unit",
       "routerLink": "/master-page/all-masters/unit",
-      "imgSrc": "assets/IPD Dashboard.png"
+      "imgSrc": "assets/unit-configuration/unit.png"
     },
     {
       "label": "Department",
@@ -26,8 +26,8 @@
       "imgSrc": "assets/Queue.png"
     },
     {
-      "label": "Speciality",
-      "routerLink": "/master-page/all-masters/speciality",
+      "label": "Spetiality",
+      "routerLink": "/master-page/all-masters/spetiality",
       "imgSrc": "assets/Queue.png"
     },
     {
@@ -93,7 +93,7 @@
     {
       "label": "Action Button",
       "routerLink": "/master-page/all-masters/action-button",
-      "imgSrc": "assets/Rediology.png"
+      "imgSrc": "assets/unit-configuration/action-button.png"
     },
     {
       "label": "Action Role",
@@ -112,7 +112,7 @@
     },
     {
       "label": "Cluster",
-      "routerLink": "/master-page/all-masters/import-data",
+      "routerLink": "/master-page/all-master/cluster",
       "imgSrc": "assets/OPD Dashboard.png"
     },
     {
