@@ -8,6 +8,7 @@ import rgistrationData from './registrationForm.json';
 import { FormService } from 'src/app/core/shared/service/form.service';
 import Breadcrumbs from './breadcrumb.json';
 import { DatePipe } from '@angular/common';
+import filterdata from './filter.json';
 
 @Component({
   selector: 'app-registration-form',
@@ -37,17 +38,20 @@ export class RegistrationFormComponent implements OnInit {
   getage: any;
   agemon: any;
   agedday: any;
+  filterData :any;
+ 
 
   constructor(private messageService: MessageService, public datepipe: DatePipe, private http: RegistrationFormService, private form$: FormService) { }
 
   ngOnInit(): void {
     this.assignDropDownOptions();
     this.configurations = {
-      "isFilter": false,
+      "isFilter": true,
       "isTable": true,
       "isSideBar": true,
       "isConfirmation": true
     };
+    this.filterData = filterdata;
     this.getAllUserData();
     this.getConfigForTable();
   }
@@ -63,7 +67,7 @@ export class RegistrationFormComponent implements OnInit {
           "code": "0"
         }
         data.values.push(defaultObj);
-        this.http.GetAllIdentificationTypeData().subscribe(item => {
+        this.http.GetAllIdentificationTypeData().subscribe((item: any[]) => {
           item.forEach((e: any) => {
             let obj = {
               "name": e.identification_Type,
@@ -80,7 +84,7 @@ export class RegistrationFormComponent implements OnInit {
           "code": ""
         }
         data.values.push(defaultObj);
-        this.http.GetAllTitleData().subscribe(item => {
+        this.http.GetAllTitleData().subscribe((item: any[]) => {
           item.forEach((e: any) => {
             let obj = {
               "name": e.title_Type,
@@ -97,7 +101,7 @@ export class RegistrationFormComponent implements OnInit {
           "code": "0"
         }
         data.values.push(defaultObj);
-        this.http.GetAllMstDurationData().subscribe(item => {
+        this.http.GetAllMstDurationData().subscribe((item: any[]) => {
           item.forEach((e: any) => {
             let obj = {
               "name": e.durationType,
@@ -114,7 +118,7 @@ export class RegistrationFormComponent implements OnInit {
           "code": ""
         }
         data.values.push(defaultObj);
-        this.http.GetAllmstGenderData().subscribe(item => {
+        this.http.GetAllmstGenderData().subscribe((item: any[]) => {
           item.forEach((e: any) => {
             let obj = {
               "name": e.gender_Type,
@@ -131,7 +135,7 @@ export class RegistrationFormComponent implements OnInit {
           "code": "0"
         }
         data.values.push(defaultObj);
-        this.http.GetAllBloodGroupData().subscribe(item => {
+        this.http.GetAllBloodGroupData().subscribe((item: any[]) => {
           item.forEach((e: any) => {
             let obj = {
               "name": e.bloodgroupName,
@@ -151,7 +155,7 @@ export class RegistrationFormComponent implements OnInit {
               "code": ""
             }
             a.values.push(defaultObj);
-            this.http.GetAllMstStateData().subscribe(item => {
+            this.http.GetAllMstStateData().subscribe((item: any[]) => {
               item.forEach((e: any) => {
                 let obj = {
                   "name": e.stateName,
@@ -169,7 +173,7 @@ export class RegistrationFormComponent implements OnInit {
               "Mcode": ""
             }
             a.values.push(defaultObj);
-            this.http.GetAllMstDistrictData().subscribe(item => {
+            this.http.GetAllMstDistrictData().subscribe((item: any[]) => {
               item.forEach((e: any) => {
                 let obj = {
                   "name": e.districtName,
@@ -190,7 +194,7 @@ export class RegistrationFormComponent implements OnInit {
           "code": ""
         }
         data.values.push(defaultObj);
-        this.http.GetAllMstTalukaData().subscribe(item => {
+        this.http.GetAllMstTalukaData().subscribe((item: any[]) => {
           item.forEach((e: any) => {
             let obj = {
               "name": e.talukaName,
@@ -207,7 +211,7 @@ export class RegistrationFormComponent implements OnInit {
           "code": ""
         }
         data.values.push(defaultObj);
-        this.http.GetAllVillageData().subscribe(item => {
+        this.http.GetAllVillageData().subscribe((item: any[]) => {
           item.forEach((e: any) => {
             let obj = {
               "name": e.villageName,
@@ -224,7 +228,7 @@ export class RegistrationFormComponent implements OnInit {
           "code": ""
         }
         data.values.push(defaultObj);
-        this.http.GetAllMstDepartment().subscribe(item => {
+        this.http.GetAllMstDepartment().subscribe((item: any[]) => {
           console.log("department => ", item)
           item.forEach((e: any) => {
             let obj = {
@@ -242,7 +246,7 @@ export class RegistrationFormComponent implements OnInit {
           "code": ""
         }
         data.values.push(defaultObj);
-        this.http.GetAllSubDepartmentData().subscribe(item => {
+        this.http.GetAllSubDepartmentData().subscribe((item: any[]) => {
           console.log("Sub department => ", item)
           item.forEach((e: any) => {
             let obj = {
@@ -260,7 +264,7 @@ export class RegistrationFormComponent implements OnInit {
           "code": ""
         }
         data.values.push(defaultObj);
-        this.http.GetAllDoctorData().subscribe(item => {
+        this.http.GetAllDoctorData().subscribe((item: any[]) => {
           item.forEach((e: any) => {
             let obj = {
               "name": e.doctorName,
@@ -277,7 +281,7 @@ export class RegistrationFormComponent implements OnInit {
           "code": ""
         }
         data.values.push(defaultObj);
-        this.http.GetAllRelativeTitle().subscribe(item => {
+        this.http.GetAllRelativeTitle().subscribe((item: any[]) => {
           item.forEach((e: any) => {
             let obj = {
               "name": e.relativeTitleType,
@@ -294,7 +298,7 @@ export class RegistrationFormComponent implements OnInit {
           "code": ""
         }
         data.values.push(defaultObj);
-        this.http.GetAllWardData().subscribe(item => {
+        this.http.GetAllWardData().subscribe((item: any[]) => {
           item.forEach((e: any) => {
             let obj = {
               "name": e.wardDetails,
@@ -427,7 +431,7 @@ export class RegistrationFormComponent implements OnInit {
 
     if (e[1].fieldName == "imgUpl") {
       let fileDta = e[0].target.files[0];
-      this.http.uploadImg(fileDta).subscribe(res => {
+      this.http.uploadImg(fileDta).subscribe((res: { ImageName: any; }) => {
         console.log("upload img data =>", res)
         this.imgName = res.ImageName;
       })
@@ -443,7 +447,7 @@ export class RegistrationFormComponent implements OnInit {
   getAllUserData() {
     this.data = undefined;
     this.gridData = [];
-    this.http.GetAllUserData().subscribe(res => {
+    this.http.GetAllUserData().subscribe((res: any[]) => {
       res.forEach((e: any) => {
         console.log("user data => ", e)
         let date = this.datepipe.transform(
@@ -492,7 +496,6 @@ export class RegistrationFormComponent implements OnInit {
 
           "subDepartment": e.subDepartment,
           "bloodgroupName": e.mstBloodGroup.bloodgroupName,
-
 
           "districtName": e.mstDistrict.districtName,
 
@@ -547,12 +550,12 @@ export class RegistrationFormComponent implements OnInit {
   }
   deleteUserData(userId: any) {
     this.http.deleteUserData(userId)
-      .subscribe(data => {
+      .subscribe((data: any) => {
         this.getAllUserData();
       })
   }
   isActive(event: string) {
-    this.http.isActiveData(event).subscribe((data) => {
+    this.http.isActiveData(event).subscribe((data: any) => {
       this.data = undefined;
       this.getAllUserData();
     });
@@ -608,7 +611,7 @@ export class RegistrationFormComponent implements OnInit {
 
   submitUserData(userData: any, img: any) {
     this.http.saveUserData(userData, img)
-      .subscribe(data => {
+      .subscribe((data: any) => {
         this.data = undefined;
         this.getAllUserData();
       })
@@ -616,7 +619,7 @@ export class RegistrationFormComponent implements OnInit {
 
   updateUserData(userId: any) {
     this.http.updateUserData(userId)
-      .subscribe(data => {
+      .subscribe((data: any) => {
         this.data = undefined;
         this.getAllUserData();
       })
@@ -624,10 +627,11 @@ export class RegistrationFormComponent implements OnInit {
 
   fiteredData(e: any) {
     this.data = undefined;
-    // this.http.filter(e)
-    //   .subscribe(data => {
-    //     this.data = data;
-    //   })
+    this.http.getFilterData(e)
+      .subscribe((data: any[]) => {
+        this.data = undefined;
+        this.data = data;
+      })
   }
 
   calculateAge(dateString: any) {

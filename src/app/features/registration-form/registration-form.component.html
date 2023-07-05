@@ -6,6 +6,8 @@
 <app-super-grid *ngIf="data" 
     [configurations]="configurations" 
     [tableData]="data" 
+    [filterJSON]="filterData" 
+    (fiteredData)="fiteredData($event)"
     [tableConfig]="config"
     [sidebarJSON]="formData" 
     (sideBarEvent)="sidebarData($event)" 
