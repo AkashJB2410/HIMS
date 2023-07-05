@@ -215,7 +215,6 @@ export class MasterModuleComponent implements OnInit {
   }
 
   submitMstModuleData(roleData: any) {
-    roleData.routerLinkInput="";
     this.http.saveMstModuleData(roleData).subscribe((data) => {
       this.data = undefined;
       this.getAllMstModuleData();
