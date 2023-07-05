@@ -141,6 +141,7 @@ import { LovValueComponent } from './features/lov-value/lov-value.component';
 import { SettingsComponent } from './features/settings/settings.component';
 import { ConfigurationsComponent } from './features/configurations/configurations.component';
 import { ClusterComponent } from './features/cluster/cluster.component';
+import { SpetialityComponent } from './features/spetiality/spetiality.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -269,7 +270,8 @@ import { ClusterComponent } from './features/cluster/cluster.component';
     LovValueComponent,
     SettingsComponent,
     ConfigurationsComponent,
-    ClusterComponent
+    ClusterComponent,
+    SpetialityComponent
   ],
   imports: [
     CommonModule,

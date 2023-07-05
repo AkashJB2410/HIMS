@@ -1,8 +1,12 @@
 {
     "tableName": "Bank Brach Table",
     "tableHeaders": [
-        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":"text-center"},
-
+        {
+            "field": "id",
+            "header": "Sr. No",
+            "iseditable": false,
+            "class": "text-center"
+        },
         {
             "field": "bbBankId_name",
             "header": "Master Bank Name",
@@ -23,7 +27,10 @@
         }
     ],
     "PdfHeaders": [
-        {"field": "srNumber","header": "srNumber"},
+        {
+            "field": "srNumber",
+            "header": "srNumber"
+        },
         {
             "field": "bbId",
             "header": "Bank Branch Id"
@@ -68,5 +75,6 @@
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
     "buttonlbl": "Add Brank Branch Master",
-    "textLength": 16
+    "textLength": 16,
+    "sidebar":"p-sidebar-sm"
 }

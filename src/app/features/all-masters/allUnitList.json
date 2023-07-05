@@ -26,8 +26,8 @@
       "imgSrc": "assets/Queue.png"
     },
     {
-      "label": "Speciality",
-      "routerLink": "/master-page/all-masters/speciality",
+      "label": "Spetiality",
+      "routerLink": "/master-page/all-masters/spetiality",
       "imgSrc": "assets/Queue.png"
     },
     {
