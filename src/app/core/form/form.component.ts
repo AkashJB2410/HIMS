@@ -91,8 +91,11 @@ export class FormComponent implements OnInit {
     id.fieldValue = event.target.files;
 
   }
+
   changeEvent(event: any, data: any) {
     this.events = [];
+    if(event.checked[0] == '')
+      event.checked.shift();
     this.events.push(event);
     this.events.push(data);
     this.changeEvents.emit(this.events);
@@ -223,6 +226,8 @@ export class FormComponent implements OnInit {
         icons: control.icons || '',
         transient: control.transient || false,
         limit: control.limit || '',
+        maxlength: control.maxlength || '',
+        minlength: control.minlength || '',
       };
       this.formControls.push(ctrl);
     });
@@ -290,5 +295,4 @@ export class FormComponent implements OnInit {
       }
     }
   }
-
 }
