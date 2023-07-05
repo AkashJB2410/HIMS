@@ -11,7 +11,7 @@
                     <div *ngIf="formData.fieldType == formStaticText.TEXT">
                         <input type="{{formData.inputType}}" id="{{formData.fieldName}}" name="{{formData.fieldName}}"
                             class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
-                            [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
+                            [ngClass]="formData.editable ? formData.valueclass : 'input-box1'" minlength="{{formData.minlength}}" maxlength="{{formData.maxlength}}"
                             [(ngModel)]="formData.fieldValue" placeholder="{{formData.placeholder}}"
                             (blur)="blurValue($event.target, formData)">
                     </div>

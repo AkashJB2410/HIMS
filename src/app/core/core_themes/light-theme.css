@@ -1156,62 +1156,9 @@ for custom input box size use w-25 , w-50, w-75 on column of it
 }
 
 /* ---------------------form Title for sideBar MD Css End-------------------------- */
-.imgUpload {
-  display: block;
-  cursor: pointer;
-  border-radius: 8px;
-  width: 100%;
-  font-size: 0.8rem;
-  font-weight: 400;
-  line-height: 1.7;
-  background-clip: padding-box;
-  -webkit-appearance: none;
-  appearance: none;
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
 
-input[type="file"]::file-selector-button {
-  border: 2px solid #4CA5FF;
-  padding: 0.2em 0.4em;
-  height: 35px;
-  width: 100%;
-  color: white !important;
-  border-radius: 8px !important;
-  background-color: #4CA5FF;
 
-}
-
-input[type="file"]::file-selector-button:hover {
-  background-color: #0445a7;
-  border: 2px solid #0445a7;
-  padding: 0.2em 0.4em;
-  height: 35px;
-  width: 100%;
-  color: white !important;
-  border-radius: 8px !important;
-
-}
-
-/* input[type='file'] {
-  color: rgba(204, 255, 38, 0.619)
-} */
-/* ----------------- */
-
-.imgUpload1 {
-  display: block;
-  cursor: pointer;
-  border-radius: 8px;
-  width: 100%;
-  font-size: 0.8rem;
-  font-weight: 400;
-  line-height: 1.7;
-  background-clip: padding-box;
-  -webkit-appearance: none;
-  appearance: none;
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-
-*/ ul p.verticaltab {
+ul p.verticaltab {
   background-color: #CD9C1D;
   color: white;
   padding: 3px;
@@ -1438,3 +1385,29 @@ input[type="file"]::file-selector-button:hover {
 }
 /* ---------------All Taost Css End-------------------------- */
 
+/* ------------All reated to Images upload Css Start------------------------------ */
+input[type="file"] {
+  position: relative;
+}
+
+input[type="file"]::file-selector-button {
+  width: 150px;
+  color: transparent;
+  border: 2px solid #4CA5FF;
+  padding: 0.2em 0.4em;
+  height: 35px;
+  color: white !important;
+  border-radius: 8px !important;
+  background-color: #4CA5FF;
+}
+input[type="file"]::before {
+  position: absolute;
+  pointer-events: none;
+  height: 15px;
+  width: 15px;
+  margin-left: 18px;
+  margin-top: 6px;
+  content: "";
+  background-image: url("../../../assets/core_assets/share.png");
+}
+/* ------------All reated to Images upload Css End------------------------------ */

@@ -77,11 +77,15 @@ import { VerticalTabularComponent } from '../../vertical-tabular/vertical-tabula
 import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { HomePageComponent } from 'src/app/core/home-page/home-page.component';
-import { BadgeModule } from 'primeng/badge';
+import {BadgeModule} from 'primeng/badge';
+import {AvatarModule} from 'primeng/avatar';
+import {AvatarGroupModule} from 'primeng/avatargroup';
+import { SettingsComponent } from 'src/app/features/core-features/settings/settings.component';
+import { Settings } from '@cornerstonejs/core';
+import { PersonalizationComponent } from 'src/app/features/core-features/personalization/personalization.component';
+import { EditProfileComponent } from 'src/app/features/core-features/edit-profile/edit-profile.component';
 import { Interceptor } from '../service/interceptor';
 import { CommonService } from '../service/common.service';
-import { AvatarModule } from 'primeng/avatar';
-import { AvatarGroupModule } from 'primeng/avatargroup';
 
 @NgModule({
     declarations: [
@@ -118,7 +122,10 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
         EmailConfigurationComponent,
         SmsConfigurationComponent,
         VerticalTabularComponent,
-        HomePageComponent
+        HomePageComponent,
+        SettingsComponent,
+        PersonalizationComponent,
+        EditProfileComponent
     ],
     imports: [
         CommonModule,
@@ -208,8 +215,11 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
         SmsConfigurationComponent,
         VerticalTabularComponent,
         HomePageComponent,
+        SettingsComponent,
+        PersonalizationComponent,
+        EditProfileComponent,
         //============= Core Imports =============
-        AvatarModule,
+
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
