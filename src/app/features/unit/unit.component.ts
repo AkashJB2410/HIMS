@@ -4,6 +4,7 @@ import unitTable from './unit_TableConfig.json';
 import unitForm from './unit_form.json';
 import { UnitService } from './unit.service';
 import unit_breadcrumb from './unit-breadcrumb.json'
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-unit',
@@ -22,7 +23,8 @@ export class UnitComponent implements OnInit {
   isdataReady = false;
   unitdata: any = []
   flag: any;
-  constructor(private messageService: MessageService, private http: UnitService) { }
+  editData:any
+  constructor(private messageService: MessageService, private http: UnitService,private common:CommonService) { }
 
   ngOnInit(): void {
     this.configurations = {
@@ -36,11 +38,55 @@ export class UnitComponent implements OnInit {
     this.assignOptions();
   }
 
+  onAdd(e: any) {
+    this.editData=[]
+    this.flag = e;
+  }
+
+  onEdit(e:any){
+    this.flag=e.edit
+    let obj = {
+      "unitId": e.editRow.unitId,
+      "unitName": e.editRow.unitName,
+      "unitpostfix": e.editRow.unitpostfix,
+      "unitcenter": e.editRow.unitcenter,
+      "unitAddress": e.editRow.unitAddress,
+      "unitEmail": e.editRow.unitEmail,
+      "unitMobile": e.editRow.unitMobile,
+      "unitPhone": e.editRow.unitPhone,
+      "unitContactPerson": e.editRow.unitContactPerson,
+      "mstOrg": e.editRow.mstOrg,
+      "unitCode": e.editRow.unitCode,
+      "unitClinicContactNo": e.editRow.unitClinicContactNo,
+      "unitPharmacyLicenseNo": e.editRow.unitPharmacyLicenseNo,
+      "unitPharmacyStoreName": e.editRow.unitPharmacyStoreName,
+      "unitPharmacyGstNo": e.editRow.unitPharmacyGstNo,
+      "unitClinicRegistrationNo": e.editRow.unitClinicRegistrationNo,
+      "unitShopAndEstablishmentNo": e.editRow.unitShopAndEstablishmentNo,
+      "unitTradeNo": e.editRow.unitTradeNo,
+      "unitServer": e.editRow.unitServer,
+      "unite.editRowbase": e.editRow.unite.editRowbase,
+      "unitFaxNo": e.editRow.unitFaxNo,
+      "unitWebSite": e.editRow.unitWebSite,
+      "countryId": e.editRow.countryId,
+      "countryName": e.editRow.countryName,
+      "cityId": e.editRow.cityId,
+      "cityName": e.editRow.cityName,
+      "stateId": e.editRow.stateId,
+      "stateName": e.editRow.stateName,
+      "unitClusterId": e.editRow.unitClusterId,
+      "unitAddressZip": e.editRow.unitAddressZip,
+      "unitAddressArea": e.editRow.unitAddressArea,
+      "unitXHipId": e.editRow.unitXHipId,
+    }
+    this.editData=obj;
+  }
+  buttonEvent(e:any){
+    this.editData=undefined;
+this.common.sendEditData(false);
+  }
   getConfigForTable() {
     this.tableConfig = unitTable;
-  }
-  onAdd(e: any) {
-    this.flag = e;
   }
   editRow(e: any) {
     this.visibleSidebar = true;

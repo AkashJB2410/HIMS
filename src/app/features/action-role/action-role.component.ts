@@ -15,7 +15,7 @@ export class ActionRoleComponent implements OnInit {
   showToast: any;
   Message: any;
   data: any = [];
-  actionRole: any = ([] = []);
+  actionRole: any = [] = [];
   config: any;
   visibleSidebar: boolean = false;
   configurations: any;
@@ -51,6 +51,23 @@ export class ActionRoleComponent implements OnInit {
     this.getConfigForTable();
   }
 
+  getConfigForTable() {
+    this.config = actionroleTableConfig;
+  }
+
+  editRow(e: any) {
+    this.visibleSidebar = true;
+  }
+
+  saveActionRole(data: any) {
+    this.saveMethod = true;
+  }
+
+  editActionRole(e: any) {
+    this.editMethod = true;
+  }
+
+
   assignDropDownOptions() {
     this.formdata = Object.assign({}, actionroleFormData);
     this.formdata.form.formControls.forEach((data: any) => {
@@ -71,66 +88,40 @@ export class ActionRoleComponent implements OnInit {
           });
         });
       }
-      // if (data.formControlName === 'selectActionModule') {
-      //   data.values = [];
-      //   let defaultObj = {
-      //     name: 'Select Action Module',
-      //     code: '',
-      //   };
-      //   data.values.push(defaultObj);
-      //   this.http.GetAllActionModuleData().subscribe((item) => {
-      //     item.forEach((e: any) => {
-      //       let obj = {
-      //         name: e.actionModuleName,
-      //         code: e.actionModuleId,
-      //       };
-      //       data.values.push(obj);
-      //     });
-      //   });
-      // }
-      // if (data.formControlName === 'selectActionSubModule') {
-      //   data.values = [];
-      //   let defaultObj = {
-      //     name: 'Select Action Sub Module',
-      //     code: '',
-      //   };
-      //   data.values.push(defaultObj);
-      //   this.http.GetAllActionSubModuleData().subscribe((item) => {
-      //     item.forEach((e: any) => {
-      //       let obj = {
-      //         name: e.actionSubModuleName,
-      //         code: e.asmId,
-      //       };
-      //       data.values.push(obj);
-      //     });
-      //   });
-      // }
     });
   }
 
-  // isActive(data:any){
+  isActive(data: any) {
+    if (data.is_Deleted) {
+      this.http.reactiveActionRole(data)
+        .subscribe(b_Data => {
+          this.data = undefined;
+          this.getAllActionRoleData();
+        })
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Enable',
+        detail: 'Action Role Enable Successfully'
+      });
+    } else if (!data.is_Deleted) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Action Role is already Active'
+      });
+    }
+  }
 
-  //   if(data.is_Deleted){
-  //     this.http.reactiveOrgData(data)
-  //       .subscribe(b_Data => {
-  //         this.data = undefined;
-  //         this.getAllActionRoleData();
-  //       })
-  //       this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Organization Enable Successfully' });
-  //   }
-  //   else if(!data.is_Deleted){
-  //     this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Organization is already Active' });
-  //   }
-  // }
 
   getAllActionRoleData() {
     this.actionRole = [];
     this.data = undefined;
     this.http.GetAllActionRoleData().subscribe((res) => {
       console.log(res);
-      res.forEach((e: any) => {
+      res.forEach((e: any,index:any) => {
         console.log('res data =>', e);
         let obj = {
+          id:index,
           arId: e.arId,
           arRoleId: e.arRoleId.roleId,
           asmActionModuleId:
@@ -142,12 +133,6 @@ export class ActionRoleComponent implements OnInit {
           arEdit: e.arEdit,
           arSearch: e.arSearch,
           arView: e.arView,
-          // "arAdd": this.flagAdd,
-          // "arApprove": this.flagApprove,
-          // "arDelete": this.flagDelete,
-          // "arEdit": this.flagEdit,
-          // "arSearch": this.flagSearch,
-          // "arView": this.flagView,
           is_Active: e.is_Active,
           arRoleId_Name: e.arRoleId.roleName,
           arActionModuleMst:
@@ -166,24 +151,24 @@ export class ActionRoleComponent implements OnInit {
     });
   }
 
-  getConfigForTable() {
-    this.config = actionroleTableConfig;
-  }
-
-  editRow(e: any) {
-    this.visibleSidebar = true;
-  }
-
   confirmAction(e: any) {
-    this.deleteActionRoleData(e.arId);
-    // this.data = undefined;
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Message form User component',
-      detail: 'Deleted Sucessfully',
-    });
-    console.log('Deleted' + JSON.stringify(e));
+    if (e.is_Active == true) {
+      // this.table_Data = undefined;
+      this.deleteActionRoleData(e.arId);
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Disabled',
+        detail: 'Department Disabled Successfully'
+      });
+    } else if (e.is_Active == false) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Department is already Disabled'
+      });
+    } else {}
   }
+ 
 
   submitActionRoleData(roleData: any) {
     let obj = {
@@ -245,14 +230,6 @@ export class ActionRoleComponent implements OnInit {
     }
   }
 
-  saveActionRole(data: any) {
-    this.saveMethod = true;
-  }
-
-  editActionRole(e: any) {
-    this.editMethod = true;
-  }
-
   BulkDeleteRow(e: any) {
       e.forEach((ele: any) => {
         this.http.deleteActionRoleData(ele.roleId)
@@ -265,7 +242,6 @@ export class ActionRoleComponent implements OnInit {
       console.log("Deleted data =>", e);
     }
  
-
   changeCheckBox(e: any) {
     e.forEach((res: any) => {
       console.log('chnage event ', e);

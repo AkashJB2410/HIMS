@@ -5,8 +5,8 @@
 <app-vertical-tabular [tabularData]="tabularSideData" (renderComponents)="renderComponents($event)">
   <div *ngIf="allFlag.unitFlag">
     <div class="row ">
-      <div class="col-md-3 " *ngFor="let cards of allUnitList.card">
-        <div class="dummy mb-4">
+      <div class="col-md-2 " *ngFor="let cards of allUnitList.card">
+        <div class="avatar-section mb-4">
         <p-avatar [title]="title"  routerLink="{{cards.routerLink}}"
         image="{{cards.imgSrc}}"
         size="xlarge"

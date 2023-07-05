@@ -60,5 +60,10 @@ export class ActionRoleService {
     const url = "http://localhost:8081/api/v1/updateActionRole/";
     return this.http.put<any>(url, param);
   }
+
+  reactiveActionRole(data: any) {
+    const url = "http://localhost:8081/api/v1/reactiveActionRole/" + data.arId;
+    return this.http.post<any>(url, data);
+  }
 }
 
