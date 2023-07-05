@@ -4,6 +4,7 @@ import { MasterModuleService } from './master-module.service';
 import mstModuleData from './masterModuleSidebarConfig.json';
 import * as mstModule_table_config from './masterModuleTableConfig.json';
 import Application_breadcrumb from './breadcrum.json'
+import { CommonService } from 'src/app/core/shared/service/common.service';
 @Component({
   selector: 'app-master-module',
   templateUrl: './master-module.component.html',
@@ -11,17 +12,31 @@ import Application_breadcrumb from './breadcrum.json'
   
 })
 export class MasterModuleComponent implements OnInit {
-  checkBoxClick(event: any) {
-    console.log("event click ==>",event);
+  editData: any;
+  status: boolean;
+  
+
+
+
+  onEdit(st:any){
+    this.editData=st.editRow;
+    this.status=false;
+    this.st = st;
+    console.log(st);
   }
 
-  ondeletechecked(e:any){
-    console.log("event click ==>",e);
+  onAdd(e:any){
+    this.editData=[];
+    this.common.sendEditData(false)
+    this.status=true;
   }
 
-  onDelete(e:any){
-    console.log(e,"abdkansksaldx");
+  buttonEvent(e:any){
+    this.editData=undefined
+    this.common.sendEditData(false)
   }
+
+  
   Bulkdelete(e:any){
     if(e.length==1){
       if(e[0].is_Deleted==false){
@@ -83,7 +98,8 @@ export class MasterModuleComponent implements OnInit {
 
   constructor(
     private messageService: MessageService,
-    private http: MasterModuleService
+    private http: MasterModuleService,
+    private common:CommonService
   ) {}
 
   ngOnInit(): void {
@@ -109,15 +125,12 @@ export class MasterModuleComponent implements OnInit {
       this.data = res;
       console.log("get all data",res)
       this.isdataReady = true;
+      for (let i = 0; i < this.data.length; i++) {
+        this.data[i].id = i + 1;
+      }
+      this.data;
     });
 
-    // icon: 'tree';
-    // is_Active: true;
-    // is_Deleted: false;
-    // label: null;
-    // moduleId: 1;
-    // routerLink: 'asdsfe';
-    // sequence: '31';
   }
 
   getConfigForTable() {
@@ -127,10 +140,6 @@ export class MasterModuleComponent implements OnInit {
 
   editRow(e: any) {
     this.visibleSidebar = true;
-  }
-  onEdit(st: any) {
-    this.st = st;
-    console.log(st);
   }
 
   isActive(e: any) {
@@ -186,7 +195,7 @@ export class MasterModuleComponent implements OnInit {
     console.log('From User Management ==> ', e);
     if (e == 'reset') {
       console.log(e);
-    } else if (e.idInput == true) {
+    } else if (this.status == true) {
       console.log(e);
       this.submitMstModuleData(e);
       this.messageService.add({
@@ -224,9 +233,5 @@ export class MasterModuleComponent implements OnInit {
 
   fiteredData(e: any) {
     this.data = undefined;
-    // this.http.filter(e)
-    //   .subscribe(data => {
-    //     this.data = data;
-    //   })
   }
 }

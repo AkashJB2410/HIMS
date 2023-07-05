@@ -1342,7 +1342,7 @@
                         "transient": true,
                         "label": "",
                         "type": "staticText",
-                        "data": "Speciality",
+                        "data": "Spaciality",
                         "class": "col-md-8  custom-text",
                         "lblclass": "custom-label",
                         "valueclass": "custom-text",
@@ -1385,8 +1385,8 @@
                         "class": "col-md-12 ",
                         "lblclass": "lbl-end ",
                         "id": "anchor",
-                        "placeholder": "/master-page/all-masters/bank-master",
-                        "formControlName": "Speciality",
+                        "placeholder": "/master-page/all-masters/spetiality",
+                        "formControlName": "Spaciality",
                         "message": {
                             "required": "",
                             "pattern": ""

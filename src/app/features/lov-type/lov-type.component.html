@@ -10,5 +10,14 @@
     (sideBarEvent)="sidebarData($event)"
     (confirmAction)="confirmAction($event)"
     (isActive)="isActive($event)"
-    (Bulkdelete)="Bulkdelete($event)">
+    (Bulkdelete)="Bulkdelete($event)"
+    (onEdit)="onEdit($event)"
+    (onAdd)="onAdd($event)"
+    [editData]="editData">
+
+    <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="sidebarJSON" [editData]="editData"
+    (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
+>
 </app-super-grid>
+
+<iframe src="https://itsrohitsalunke09.grafana.net/dashboard-solo/new?orgId=1&from=1688513632458&to=1688535232458&theme=light&panelId=1" width="450" height="200" frameborder="0"></iframe>
