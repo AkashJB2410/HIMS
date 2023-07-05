@@ -138,9 +138,10 @@ import { GroupModuleComponent } from './features/group-module/group-module.compo
 import { ApplicationConfigComponent } from './features/application-config/application-config.component';
 import { LovTypeComponent } from './features/lov-type/lov-type.component';
 import { LovValueComponent } from './features/lov-value/lov-value.component';
-import { SettingsComponent } from './features/settings/settings.component';
 import { ConfigurationsComponent } from './features/configurations/configurations.component';
+import { ClusterComponent } from './features/cluster/cluster.component';
 import { SpetialityComponent } from './features/spetiality/spetiality.component';
+import { CoreFeaturesComponent } from './features/core-features/core-features.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -267,9 +268,10 @@ import { SpetialityComponent } from './features/spetiality/spetiality.component'
     ApplicationConfigComponent,
     LovTypeComponent,
     LovValueComponent,
-    SettingsComponent,
     ConfigurationsComponent,
-    SpetialityComponent
+    ClusterComponent,
+    SpetialityComponent,
+    CoreFeaturesComponent
   ],
   imports: [
     CommonModule,

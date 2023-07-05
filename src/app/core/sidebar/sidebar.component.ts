@@ -17,18 +17,16 @@ import { CommonService } from '../shared/service/common.service';
 export class SidebarComponent implements OnInit {
 
   data: any;
-
   @Input() editRowData: any;
   @Input() visibleSidebar: any;
   @Input() sidebarConfig: any;
-
   @Output() sidebarData = new EventEmitter<boolean>;
   @Output() changeEvents = new EventEmitter<boolean>;
 
   constructor(private common: CommonService) { }
 
   ngOnInit(): void {
-    this.handelBackdrop();
+    // this.handelBackdrop();
     this.common.getEditData().subscribe(data => {
       if (!data) {
         this.visibleSidebar = data;
@@ -36,17 +34,17 @@ export class SidebarComponent implements OnInit {
     })
   }
 
-  handelBackdrop() {
-    if (this.sidebarConfig.sidebar == "p-sidebar-sm") {
-      document.documentElement.style.setProperty('--width', '20rem');
-    } else if (this.sidebarConfig.sidebar == "p-sidebar-md") {
-      document.documentElement.style.setProperty('--width', '40rem');
-    } else if (this.sidebarConfig.sidebar == "p-sidebar-lg") {
-      document.documentElement.style.setProperty('--width', '60rem');
-    } else {
-      document.documentElement.style.setProperty('--width', '80rem');
-    }
-  }
+  // handelBackdrop() {
+  //   if (this.sidebarConfig.sidebar == "p-sidebar-sm") {
+  //     document.documentElement.style.setProperty('--width', '20rem');
+  //   } else if (this.sidebarConfig.sidebar == "p-sidebar-md") {
+  //     document.documentElement.style.setProperty('--width', '40rem');
+  //   } else if (this.sidebarConfig.sidebar == "p-sidebar-lg") {
+  //     document.documentElement.style.setProperty('--width', '60rem');
+  //   } else {
+  //     document.documentElement.style.setProperty('--width', '80rem');
+  //   }
+  // }
 
   formData(e: any) {
     this.data = e;

@@ -6,12 +6,13 @@
     [configurations]="configurations" 
     [tableData]="data" 
     [tableConfig] = "config"
-    [sidebarJSON] = "sidebarJSON"
-    (sideBarEvent)="sidebarData($event)"
     (confirmAction)="confirmAction($event)"
     (onAdd)="saveRole($event)"
     (onEdit)="editRole($event)"
     (isActive)="isActive($event)"
-    (Bulkdelete)="bulkDeleteRows($event)" 
-    >
+    (Bulkdelete)="bulkDeleteRows($event)" >
+     <app-form
+     projectTowards="sidebar" *ngIf="editData" [formJSON]="sidebarJSON" [editData]="editData"
+     (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"
+    ></app-form>
 </app-super-grid>
