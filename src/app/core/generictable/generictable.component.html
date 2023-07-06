@@ -88,24 +88,23 @@
                         <button *ngIf="config.isActions.includes('Edit')" pTooltip="Edit" tooltipPosition="left" pButton
                             pRipple icon="pi pi-file-edit " class="p-button-rounded icon-pencil edit-btn "
                             (click)="editProduct(rowData)"></button>
-                        <button *ngIf="config.isActions.includes('Delete')" id="deleteId" pTooltip="Delete" tooltipPosition="left"
-                            pButton pRipple icon="pi pi-trash"  class="p-button-rounded icon-delete icon-delete "
-                            (click)="ondelete(rowData);disable()"></button>
+
+
+                        <button *ngIf="config.isActions.includes('Delete')" id="abc{{rowData.id}}" pTooltip="Delete"
+                            tooltipPosition="left" pButton pRipple icon="pi pi-trash"
+                            class="p-button-rounded icon-delete icon-delete " [disabled]="!rowData.isActive"
+                            (click)="ondelete(rowData);disable(rowData)"></button>
+                            
                         <button *ngIf="config.isActions.includes('Viewer')" pTooltip="Viewer" tooltipPosition="left"
                             pButton pRipple icon="pi pi-window-maximize" style="background-color: black;"
                             routerLink="/dicom-viewer" class="p-button-rounded "></button>
-                            <!-- <a *ngIf="config.isActions.includes('isActive')"><i>
-                                <img src="../../../assets/core_assets/on-button.png" class="Activebutton"
-                                        (click)="active(rowData)" pTooltip="Active" tooltipPosition="left" ></i>
-                            </a> -->
-                        
-                            <div *ngIf="config.isActions.includes('isActive')"
+
+                        <div *ngIf="config.isActions.includes('isActive')"
                             class="form-check form-switch form-check-inline">
-                            <input class="form-check-input float-end" (click)="active(rowData)" pTooltip="Active" tooltipPosition="left" type="checkbox"
-                                role="switch" id="flexSwitchCheckDefault">
-                    </div>
-
-
+                            <input class="form-check-input float-end" id="abc{{rowData.id}}" (click)="active($event,rowData)"
+                            [checked]="rowData.isActive"  pTooltip="Active"
+                                tooltipPosition="left" type="checkbox" role="switch">
+                        </div>
                     </ng-container>
                 </td>
                 <td *ngIf="config.expand" style="text-align: center;">
