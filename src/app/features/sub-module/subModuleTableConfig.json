@@ -1,7 +1,12 @@
 {
     "tableName": "SubModule Table",
     "tableHeaders": [
-        
+        {
+            "field": "id",
+            "header": "Sr.No",
+            "iseditable": false,
+            "class": ""
+        },
         {
             "field": "mstLabel",
             "header": "MstrModule",
