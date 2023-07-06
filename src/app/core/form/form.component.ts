@@ -157,7 +157,6 @@ export class FormComponent implements OnInit {
       btn.disabled = !data.value;
     }
   }
-
   visibility(data: any) {
     if (data.value) {
       document.getElementById("id" + data.formData.formControlName).style.display = "block";
@@ -165,7 +164,6 @@ export class FormComponent implements OnInit {
       document.getElementById("id" + data.formData.formControlName).style.display = "none";
     }
   }
-
   addValidations(data: any) {
     let ctrl = this.form.get(data.formData.formControlName);
     if (data.value.required && data.value.pattern != "") {
@@ -250,9 +248,11 @@ export class FormComponent implements OnInit {
   checkValidations(event: any) {
     if (this.form.valid) {
       this.formValid = false;
+      let formValue = this.form.getRawValue();
       this.formControls.forEach((element) => {
         if (element.transient) {
-          delete this.form.value[element.fieldName];
+          // delete this.form.value[element.fieldName];
+          delete formValue[element.fieldName];
         }
         if (element.fieldType == 'date') {
           var format = JSON.parse(localStorage.getItem('personalization'));
@@ -262,7 +262,8 @@ export class FormComponent implements OnInit {
           );
         }
       });
-      this.formData.emit(this.form.getRawValue());
+      formValue.formId = this.formJson.formId ? this.formJson.formId : ""
+      this.formData.emit(formValue);
       this.btnEvent.emit(event);
     } else {
       this.formValid = true;

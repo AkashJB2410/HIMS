@@ -1399,7 +1399,9 @@ input[type="file"]::file-selector-button {
   color: white !important;
   border-radius: 8px !important;
   background-color: #4CA5FF;
+  cursor: pointer;
 }
+
 input[type="file"]::before {
   position: absolute;
   pointer-events: none;
@@ -1411,3 +1413,9 @@ input[type="file"]::before {
   background-image: url("../../../assets/core_assets/share.png");
 }
 /* ------------All reated to Images upload Css End------------------------------ */
+
+
+.form-check-input:checked {
+  background-color: #54B029 !important;
+  border-color: #54B029 !important;
+}

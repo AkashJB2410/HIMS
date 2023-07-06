@@ -5,11 +5,12 @@ import mstModuleData from './masterModuleSidebarConfig.json';
 import * as mstModule_table_config from './masterModuleTableConfig.json';
 import Application_breadcrumb from './breadcrum.json'
 import { CommonService } from 'src/app/core/shared/service/common.service';
+import { MasterPageComponent } from './../master-page/master-page.component'
 @Component({
   selector: 'app-master-module',
   templateUrl: './master-module.component.html',
   // styleUrls: ['./master-module.component.css']
-  
+
 })
 export class MasterModuleComponent implements OnInit {
   editData: any;
@@ -99,7 +100,8 @@ export class MasterModuleComponent implements OnInit {
   constructor(
     private messageService: MessageService,
     private http: MasterModuleService,
-    private common:CommonService
+    private common:CommonService,
+    private sidenav:MasterPageComponent
   ) {}
 
   ngOnInit(): void {
@@ -122,6 +124,7 @@ export class MasterModuleComponent implements OnInit {
   }
   getAllMstModuleData() {
     this.http.GetAllMstModuleData().subscribe((res) => {
+      this.data=[];
       this.data = res;
       console.log("get all data",res)
       this.isdataReady = true;
@@ -130,7 +133,8 @@ export class MasterModuleComponent implements OnInit {
       }
       this.data;
     });
-
+    if(this.isdataReady){
+    this.sidenav.getALLSideNavData();}
   }
 
   getConfigForTable() {
@@ -215,7 +219,6 @@ export class MasterModuleComponent implements OnInit {
   }
 
   submitMstModuleData(roleData: any) {
-    roleData.routerLinkInput="";
     this.http.saveMstModuleData(roleData).subscribe((data) => {
       this.data = undefined;
       this.getAllMstModuleData();

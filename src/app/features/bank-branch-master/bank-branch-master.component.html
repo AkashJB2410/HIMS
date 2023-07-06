@@ -6,7 +6,7 @@
     (isActive)="isActive($event)" (Bulkdelete)="Bulkdelete($event)" [editData]="editData">
 
     <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="formData" [editData]="editData"
-        (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
+        (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)" (changeEvents)="changeEvents($event)"></app-form>
     >
     >
 </app-super-grid>

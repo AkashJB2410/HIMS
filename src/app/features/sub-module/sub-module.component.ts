@@ -13,20 +13,21 @@ export class SubModuleComponent implements OnInit {
   editData: any;
   status: boolean;
   st: any;
+  temp: any;
 
   onEdit(st: any) {
+    let array = []
+    array.push(st.editRow.mstId);
+    array.push(st.editRow.groupId);
     let obj = {
       "submoduleId": st.editRow.submoduleId,
       "label": st.editRow.label,
       "icon": st.editRow.icon,
       "routerLink": st.editRow.routerLink,
       "SubModuleSequence": st.editRow.SubModuleSequence,
-      "mstId": st.editRow.mstId,
-      "mstLabel": st.editRow.mstLabel,
-      "groupId": st.editRow.groupId,
-      "groupLabel": st.editRow.groupLabel
+      "mstId": array,
     };
-    this.editData = st.editRow;
+    this.editData = obj;
     this.status = false;
     this.st = st;
     console.log(st);
@@ -218,6 +219,10 @@ export class SubModuleComponent implements OnInit {
         this.gridData.push(obj);
         console.log('objet ==>', obj);
       });
+      for (let i = 0; i < this.gridData.length; i++) {
+        this.gridData[i].id = i + 1;
+      }
+      this.gridData;
       this.dataGrid = [...this.gridData];
       this.isdataReady = true;
     });

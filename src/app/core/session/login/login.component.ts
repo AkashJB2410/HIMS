@@ -93,7 +93,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.loginForm.value.captcha && this.loginForm.value.organisation.organization_Id != "") {
+    // if (this.loginForm.value.captcha && this.loginForm.value.organisation.organization_Id != "") {
+
+    if (this.loginForm.value.captcha) {
       this.http.Logincheck(this.loginForm.value)
         .subscribe(data => {
           let a = + data.loginFailed
