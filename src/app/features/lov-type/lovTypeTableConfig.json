@@ -1,8 +1,12 @@
 {
     "tableName": "Lovtype Table",
     "tableHeaders": [
-        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":"text-center"},
-
+        {
+            "field": "id",
+            "header": "index",
+            "iseditable": false,
+            "class": "text-center"
+        },
         {
             "field": "code",
             "header": "Code",
@@ -29,8 +33,10 @@
         }
     ],
     "PdfHeaders": [
-        {"field": "srNumber","header": "Sr. No"},
-
+        {
+            "field": "id",
+            "header": "Sr. No"
+        },
         {
             "field": "lovTypeId",
             "header": "lovTypeId"
@@ -49,7 +55,8 @@
         }
     ],
     "globalFilter": [
-        "lovTypeId","code",
+        "lovTypeId",
+        "code",
         "name",
         "description"
     ],
@@ -74,5 +81,6 @@
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
     "buttonlbl": "Add LOV type",
-    "textLength": 16
+    "textLength": 16,
+    "sidebar": "p-sidebar-sm"
 }

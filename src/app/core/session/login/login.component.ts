@@ -13,15 +13,7 @@ import login from './login.json';
 })
 
 export class LoginComponent implements OnInit {
-  loginForm = new FormGroup({
-    emailId: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required, Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$")]),
-    organisation: new FormControl({
-      "organization_Id": "",
-      "organization_Type": "Select an option"
-    }, [Validators.required]),
-    captcha: new FormControl('', [Validators.required])
-  });
+  loginForm: any;
   loginFormData = login;
   orgList: any = [];
   tabularData: any;
@@ -36,10 +28,24 @@ export class LoginComponent implements OnInit {
     private encrypt: EncryptPipe) { }
 
   ngOnInit() {
-    localStorage.clear();
+    // localStorage.clear();
     sessionStorage.clear();
+    let email = (localStorage.getItem("email") != "") ? localStorage.getItem("email") : "";
+    let password = (localStorage.getItem("password") != "") ? localStorage.getItem("password") : "";
+    let organization = (localStorage.getItem("organization") != "") ? localStorage.getItem("organization") : "";
+    this.loginForm = new FormGroup({
+      emailId: new FormControl(email, [Validators.required]),
+      password: new FormControl(password, [Validators.required]),
+      organisation: new FormControl({
+        "organization_Id": "",
+        "organization_Type": "Select an option"
+      }, [Validators.required]),
+      captcha: new FormControl('', [Validators.required])
+    });
   }
-
+  getEmail(e: any) {
+    const email = e.value
+  }
   getOrganiszation(e: any) {
     this.http.orgData(e.value)
       .subscribe(res => {
@@ -87,7 +93,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.loginForm.value.captcha && this.loginForm.value.organisation.organization_Id != "") {
+    // if (this.loginForm.value.captcha && this.loginForm.value.organisation.organization_Id != "") {
+
+    if (this.loginForm.value.captcha) {
       this.http.Logincheck(this.loginForm.value)
         .subscribe(data => {
           let a = + data.loginFailed
@@ -114,7 +122,16 @@ export class LoginComponent implements OnInit {
       }
     }
   }
-
+  lsRememberMe(e: any) {
+    // if (e.checked && this.loginForm.value.emailId != "" && this.loginForm.value.password != "" && this.loginForm.value.organisation.organization_Id != "") {
+    if (e.checked && this.loginForm.value.emailId != "" && this.loginForm.value.password != "") {
+      localStorage.setItem("email", this.loginForm.value.emailId);
+      localStorage.setItem("password", this.loginForm.value.password);
+      localStorage.setItem("organization", this.loginForm.value.organisation.organization_Id);
+    } else {
+      localStorage.clear();
+    }
+  }
 }
 
 

@@ -22,7 +22,11 @@ export interface IFormField {
     row: number;
     icons: any;
     transient: any;
-    limit: number;
+    limit:number;
+    maxlength:any;
+    minlength:any;
+
+
 }
 
 export interface IDropdown {

@@ -1,7 +1,12 @@
 {
     "tableName": "SubModule Table",
     "tableHeaders": [
-        
+        {
+            "field": "id",
+            "header": "Sr.No",
+            "iseditable": false,
+            "class": ""
+        },
         {
             "field": "mstLabel",
             "header": "MstrModule",
@@ -100,5 +105,6 @@
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
     "buttonlbl": "Add SubModule",
-    "textLength": 16
+    "textLength": 16,
+    "sidebar":"p-sidebar-sm"
 }

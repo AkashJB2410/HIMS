@@ -36,6 +36,9 @@ export class SubModuleService {
       "sequence": data.sequenceInput,
       "mstGroup": {
         "groupId": data.selectInput[1],
+        "mstModule":{
+          "moduleId":data.selectInput[0]
+        }
       }      
     };
 
@@ -44,22 +47,25 @@ export class SubModuleService {
   }
 
   deleteSubModule(idInput: any) {
-    const url = "http://localhost:8080/api/v1/subModule/" + idInput;
+    const url = "http://localhost:8080/api/v1/deleteSubModule/" + idInput;
     return this.http.delete<any>(url);
   }
 
   updateSubModule(data: any) {
     const param = {
-      "submodule_Id": data.idInput,      
-      "icon": data.iconInput,
-      "label": data.labelInput,
+      "subModuleId": data.idInput,  
+      "label": data.labelInput,    
+      "icon": data.iconInput,      
       "routerLink": data.routerLinkInput,
       "sequence": data.sequenceInput,
       "mstGroup": {
-        "moduleId": data.selectInput[1],
-      },
+        "groupId": data.selectInput[1],
+        "mstModule":{
+          "moduleId":data.selectInput[0]
+        }
+      } 
     };
-    const url = "http://localhost:8080/api/v1/submodule"+data.idInput;
+    const url = "http://localhost:8080/api/v1/updateSubmodule"+data.idInput;
     return this.http.put<any>(url, param);
   }
 

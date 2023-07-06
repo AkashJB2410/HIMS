@@ -12,6 +12,7 @@ import breadcrumb from './breadcrumb.json'
 import {
   MessageService
 } from 'primeng/api';
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-sub-department',
@@ -21,18 +22,21 @@ import {
 export class SubDepartmentComponent implements OnInit {
 
   data: any = [];
-  subDepartment: any = [] = [];
+  subDepartment: any = [];
   config: any;
   configurations: any;
   isdataReady = false;
   table_Config: any;
   visibleSiderbar: boolean = false;
   table_Data: any;
-  editMethod: boolean = false;
+  status :boolean = false;
+  // editMethod: boolean = false;
   sidebar_Update_Input: any = sub_department_Form;
   saveMethod: any;
   breadcrumb=breadcrumb;
-  constructor(private http: SubDepartmentService, private messageService: MessageService) {}
+  editData:any;
+  flag: any;
+  constructor(private http: SubDepartmentService, private messageService: MessageService,private common:CommonService) {}
 
   ngOnInit(): void {
     this.assignDropDownOptions();
@@ -47,6 +51,11 @@ export class SubDepartmentComponent implements OnInit {
   }
   getConfigForTable() {
     this.config = sub_department_Table_Config;
+  }
+
+  buttonEvent(e:any){
+    this.editData=undefined;
+this.common.sendEditData(false);
   }
 
   assignDropDownOptions() {
@@ -77,13 +86,15 @@ export class SubDepartmentComponent implements OnInit {
     this.subDepartment=[];
     
     this.http.getAllSubDepartment().subscribe(res => {
-      res.forEach((e: any) => {
+      res.forEach((e: any ,index:any) => {
         console.log("res => ",e)
         let obj = {
+          "id": index,
           "subDepartmentId": e.subDepartmentId,
-          "mstDepartment": e.mstDepartment.departmentId,
           "subDepartment" : e.subDepartment,
           "is_Active":e.is_Active,
+          "mstDepartment": e.mstDepartment.departmentId,
+
           "departmentName":e.mstDepartment.departmentName,
         }
         this.subDepartment.push(obj);
@@ -103,13 +114,32 @@ export class SubDepartmentComponent implements OnInit {
     this.visibleSiderbar = true;
   }
 
-  saveDepartment(data: any) {
-    this.saveMethod = data;
-  }
-
-  editDepartment(data: any) {
+  addRow(e: any) {
     this.visibleSiderbar = true;
   }
+
+  onEdit(e: any) {
+    this.editData = e.editRow;
+    this.status = false;
+  }
+
+  onAdd(e: any) {
+    this.editData = [];
+    this.common.sendEditData(false);
+    this.status = true;
+  }
+  // onEdit(e: any) {
+  //   this.flag=e.edit
+  //   let obj = {
+  //     "subDepartmentId": e.subDepartmentId,
+  //     "mstDepartment": e.mstDepartment.departmentId,
+  //     "subDepartment" : e.subDepartment,
+  //     "is_Active":e.is_Active,
+  //     "departmentName":e.mstDepartment.departmentName,
+  //   }
+  //   this.editData = obj;
+  //   // this.visibleSiderbar = true;
+  // }
 
   isActive(data: any) {
     if (!data.is_Deleted) {
@@ -133,39 +163,39 @@ export class SubDepartmentComponent implements OnInit {
   }
 
   confirmAction(e: any) {
-    if (e.is_Active == true) {
+    if (e ! == true) {
       this.deleteSubDepartment(e.subDepartmentId);
       this.messageService.add({
         severity: 'success',
         summary: 'Disabled',
-        detail: 'Department Disabled Successfully'
+        detail: 'Sub Department Disabled Successfully'
       });
     } else if (e.is_Active == false) {
       this.messageService.add({
         severity: 'error',
         summary: 'Error',
-        detail: 'Department is already Disabled'
+        detail: 'Sub Department is already Disabled'
       });
     } else {}
   }
 
   sidebarData(e: any) {
     if (e != 'reset') {
-      if (this.saveMethod == "add") {
-        this.addSubDepartment(e);
+      if (this.flag == "add") {
+        this.updateSubDepartment(e);
         console.log("sidebardata =>", e)
         this.messageService.add({
           severity: 'success',
           summary: 'Added',
-          detail: 'Department Added Successfully'
+          detail: 'Sub Department Added Successfully'
         });
-        this.saveMethod = false;
+        this.flag = false;
       } else {
-        this.updateSubDepartment(e);
+        this.addSubDepartment(e);
         this.messageService.add({
           severity: 'success',
           summary: 'Updated',
-          detail: 'Department Updated Successfully.'
+          detail: 'Sub Department Updated Successfully.'
         });
       }
     }
@@ -231,28 +261,4 @@ export class SubDepartmentComponent implements OnInit {
     }
 
   }
-  // BulkDeleteRow(e: any) {
-  //   this.data = [];
-  //   if (e != '') {
-  //     e.forEach((data: any) => {
-  //       let obj = {
-  //         "subDepartmentId": data.subDepartmentId,
-  //       }
-  //       this.deleteSubDepartment(obj.subDepartmentId);
-  //       this.messageService.add({
-  //         severity: 'success',
-  //         summary: 'success',
-  //         detail: 'Delete All Data successfull.',
-  //       });
-  //     });
-
-  //   } else {
-  //     this.messageService.add({
-  //       severity: 'error',
-  //       summary: 'select Rows',
-  //       detail: 'Rows are not selected.',
-  //     });
-  //   }
-  // }
-
 }

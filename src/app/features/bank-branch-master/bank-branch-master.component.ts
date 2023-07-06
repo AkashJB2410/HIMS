@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import table from './bankBranchMasterTableConfig.json';
 import addnew from './bankBranchMasterSidebarConfig.json';
 import { MessageService } from 'primeng/api';
-import bank_branch_master_breadcrumb from './bank-branch-master-breadcrumb.json'
+import bank_branch_master_breadcrumb from './bank-branch-master-breadcrumb.json';
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-bank-branch-master',
@@ -12,51 +13,45 @@ import bank_branch_master_breadcrumb from './bank-branch-master-breadcrumb.json'
 })
 export class BankBranchMasterComponent implements OnInit {
   saveMethod: boolean;
-  status:boolean;
+  status: boolean;
   isDelete: boolean;
-  // isActive(event: string) {
-  //   console.log(event);
-  //   this.http.isActiveData(event).subscribe((data) => {
-  //     this.data = undefined;      
-  //     this.getAllBankBranch();
-  //     if(this.status==false){
-  //       this.messageService.add({
-  //         severity: 'error',
-  //         summary: 'error',
-  //         detail: ' Allready updated.',
-  //       });
-        
-  //     }
-  //     if(this.status==true){
-  //       this.messageService.add({
-  //         severity: 'success',
-  //         summary: 'success',
-  //         detail: 'updated successfuly',
-  //       });
-  //       this.status=false
-  //       // this.isDelete=true
-  //     }
-      
-  //   });
-  // }
+  editData: any;
 
 
-  isActive(data:any){
-    if(!data.is_Active){
-      this.http.isActiveData(data)
-        .subscribe(b_Data => {
-          this.data = undefined;
-          this.getAllBankBranch();
-        })
-        this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Bank Branch Enable Successfully' });  
-    }
-    else if(data.is_Active){
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Bank Branch is already Active' });
+  changeEvents(e:any){
+    // let defaultObj = {
+    //   name: e[0],
+    //   code: e[0]
+    // };
+    // console.log(e)
+    // addnew.form.formControls[1].values[0]=defaultObj;
+
+  }
+
+  isActive(data: any) {
+    if (!data.is_Active) {
+      this.http.isActiveData(data).subscribe((b_Data) => {
+        this.data = undefined;
+        this.getAllBankBranch();
+      });
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Enable',
+        detail: 'Bank Branch Enable Successfully',
+      });
+    } else if (data.is_Active) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Bank Branch is already Active',
+      });
     }
   }
   data1: any;
-  editBankMaster(data: any) {
-    addnew.form.formControls[1].isEditable=false;
+  onEdit(data: any) {
+    addnew.form.formControls[1].isEditable = false;
+    this.editData = data.editRow;
+    this.status = false;
   }
 
   table: any;
@@ -71,7 +66,8 @@ export class BankBranchMasterComponent implements OnInit {
 
   constructor(
     private messageService: MessageService,
-    private http: BankBranchMasterService
+    private http: BankBranchMasterService,
+    private common: CommonService
   ) {}
 
   ngOnInit(): void {
@@ -98,9 +94,16 @@ export class BankBranchMasterComponent implements OnInit {
   addRow(e: any) {
     this.visibleSidebar = true;
   }
+  buttonEvent(e: any) {
+    this.editData = undefined;
+    this.common.sendEditData(false);
+  }
 
-  saveBankMaster(data: any) {
+  onAdd(data: any) {
     this.saveMethod = true;
+    this.editData = [];
+    this.common.sendEditData(false);
+    this.status = true;
   }
 
   sidebarData(e: any) {
@@ -126,8 +129,6 @@ export class BankBranchMasterComponent implements OnInit {
     }
   }
 
-  
-
   assigneDropdown() {
     this.formData = Object.assign({}, addnew);
     this.formData.form.formControls.forEach((data: any) => {
@@ -149,42 +150,49 @@ export class BankBranchMasterComponent implements OnInit {
         });
       }
     });
-
-    // this.http.getAllBankMasterData().subscribe((res) => {
-    //   // console.log(this.data);
-    //   // console.log(res);
-    //   this.data.values = [];
-    //   let Obj = {
-    //     name: 'Select Role',
-    //     code: '0',
-    //   };
-    //   this.data.values.push(Obj);
-    //   // console.log(this.data);
-    //   this.addNew.form.formControls[2].values = this.data.values;
-    //   res.forEach((e: any) => {
-    //     let obj1 = {
-    //       name: e.bankName,
-    //       code: e.bankId,
-    //     };
-    //     this.data.values.push(obj1);
-    //   });
-    // });
   }
 
-  // getAllBankBranch() {
-  //   this.http.getAllBankBranchData().subscribe((res) => {
+  Bulkdelete(e: any) {
+    if (e.length == 1) {
+      if (e[0].is_Active == true) {
+        this.deleteBankBranch(e[0].bbId);
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Message form User component',
+          detail: 'Deleted Sucessfully',
+        });
+      } else {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Message form User component',
+          detail: 'Allready Deleted',
+        });
+      }
+    } else {
+      let a: boolean;
+      for (let i = 0; i < e.length; i++) {
+        if (e[i].is_Active == true) {
+          this.deleteBankBranch(e[i].bbId);
+          a = true;
+        }
+      }
 
-  //     this.data = res;
-  //     this.isdataReady = true;
-  //     for (let i = 0; i < this.data.length; i++) {
-  //       this.data[i].srNumber = i + 1;
-  //       this.data[i].smtId = this.data[i].bbBankId.bankName;
-  //       this.data[i].id=this.data[i].bbBankId.bankId;
-  //     }
-  //     console.log("back =>",this.data)
-
-  //   });
-  // }
+      if (a == true) {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Message form User component',
+          detail: 'Deleted Sucessfully',
+        });
+        a = false;
+      } else {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Message form User component',
+          detail: 'Allready Deleted',
+        });
+      }
+    }
+  }
 
   getAllBankBranch() {
     this.branch = [];
@@ -193,15 +201,15 @@ export class BankBranchMasterComponent implements OnInit {
       res.forEach((e: any) => {
         console.log('res data =>', e);
         let obj = {
-          "bbId": e.bbId,
-          "bbBankId": e.bbBankId.bankId,
-          "bankBranchName": e.bankBranchName,          
-          "is_Active": e.is_Active,
-          "bbBankId_name": e.bbBankId.bankName,
+          bbId: e.bbId,
+          bbBankId: e.bbBankId.bankId,
+          bankBranchName: e.bankBranchName,
+          is_Active: e.is_Active,
+          bbBankId_name: e.bbBankId.bankName,
         };
         this.branch.push(obj);
         for (let i = 0; i < this.branch.length; i++) {
-          this.branch[i].srNumber = i + 1;
+          this.branch[i].id = i + 1;
         }
       });
       this.data = [...this.branch];
@@ -221,24 +229,30 @@ export class BankBranchMasterComponent implements OnInit {
   deleteBankBranch(bbId: any) {
     this.http.deleteBankBranchData(bbId).subscribe((data) => {
       this.data = undefined;
-      this.getAllBankBranch();      
-      this.status==false
+      this.getAllBankBranch();
+      this.status == false;
     });
-    
   }
   confirmAction(e: any) {
-    
+    if (e == false) {
+      this.getAllBankBranch();
+    } else {
+      if (e.is_Active == false) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Message form User component',
+          detail: 'Allready Deleted',
+        });
+      } else {
+        this.deleteBankBranch(e.bbId);
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Message form User component',
+          detail: 'Deleted Sucessfully',
+        });
+      }
+    }
     console.log('Deleted' + JSON.stringify(e));
-
-    if(e.is_Active==true){
-      this.deleteBankBranch(e.bbId);  
-      this.messageService.add({ severity: 'success', summary: 'success', detail: 'Bank Master is already Disabled' });
-
-    }
-    else if(e.is_Active==false){
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Bank Master is Disabled' });
-
-    }
   }
 
   submitBankBranch(bankBranchData: any) {

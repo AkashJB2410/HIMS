@@ -3,12 +3,46 @@ import subModuleData from './subModuleSidebarConfig.json';
 import * as subModule_table_config from './subModuleTableConfig.json';
 import { MessageService } from 'primeng/api';
 import { SubModuleService } from './sub-module.service';
-import Application_breadcrumb from './breadcrum.json'
+import Application_breadcrumb from './breadcrum.json';
+import { CommonService } from 'src/app/core/shared/service/common.service';
 @Component({
   selector: 'app-sub-module',
   templateUrl: './sub-module.component.html',
 })
 export class SubModuleComponent implements OnInit {
+  editData: any;
+  status: boolean;
+  st: any;
+  temp: any;
+
+  onEdit(st: any) {
+    let array = []
+    array.push(st.editRow.mstId);
+    array.push(st.editRow.groupId);
+    let obj = {
+      "submoduleId": st.editRow.submoduleId,
+      "label": st.editRow.label,
+      "icon": st.editRow.icon,
+      "routerLink": st.editRow.routerLink,
+      "SubModuleSequence": st.editRow.SubModuleSequence,
+      "mstId": array,
+    };
+    this.editData = obj;
+    this.status = false;
+    this.st = st;
+    console.log(st);
+  }
+
+  onAdd(e: any) {
+    this.editData = [];
+    this.common.sendEditData(false);
+    this.status = true;
+  }
+
+  buttonEvent(e: any) {
+    this.editData = undefined;
+    this.common.sendEditData(false);
+  }
 
   Bulkdelete(e: any) {
     if (e.length == 1) {
@@ -50,7 +84,7 @@ export class SubModuleComponent implements OnInit {
       }
     }
   }
-  Application_breadcrumb=Application_breadcrumb
+  Application_breadcrumb = Application_breadcrumb;
   toast: any = {};
   showToast: any;
   Message: any;
@@ -65,15 +99,15 @@ export class SubModuleComponent implements OnInit {
   formdata: any;
   mstDropDwon: any[] = [];
   mstModuleList: any[] = [];
-  sidebarJSON: any;
+  sidebarJSON =subModuleData ;
   map = new Map<String, String>();
-
   mstModulesId: any;
   mstModulesName: any;
 
   constructor(
     private messageService: MessageService,
-    private http: SubModuleService
+    private http: SubModuleService,
+    private common: CommonService
   ) {}
 
   ngOnInit(): void {
@@ -168,15 +202,12 @@ export class SubModuleComponent implements OnInit {
     this.http.GetAllSubModuleData().subscribe((res) => {
       res.forEach((e: any) => {
         let obj = {
-          
-
           "submoduleId": e.subModuleId,
           "label": e.label,
           "icon": e.icon,
           "routerLink": e.routerLink,
           "SubModuleSequence": e.sequence,
 
-          
           "mstId": e.mstGroup.mstModule.moduleId,
           "mstLabel": e.mstGroup.mstModule.label,
 
@@ -188,6 +219,10 @@ export class SubModuleComponent implements OnInit {
         this.gridData.push(obj);
         console.log('objet ==>', obj);
       });
+      for (let i = 0; i < this.gridData.length; i++) {
+        this.gridData[i].id = i + 1;
+      }
+      this.gridData;
       this.dataGrid = [...this.gridData];
       this.isdataReady = true;
     });
@@ -234,7 +269,7 @@ export class SubModuleComponent implements OnInit {
     console.log('From User Management ==> ', e);
     if (e == 'reset') {
       console.log(e);
-    } else if (e.idInput == true) {
+    } else if (this.status == true) {
       console.log(e);
       this.dataGrid = undefined;
       this.submitSubModuleData(e);
@@ -255,14 +290,14 @@ export class SubModuleComponent implements OnInit {
     }
   }
   submitSubModuleData(roleData: any) {
-    this.http.saveSubModuleData(roleData).subscribe((data) => {
+    this.http.saveSubModuleData(roleData).subscribe((dataGrid) => {
       this.dataGrid = undefined;
       this.getAllSubModuleData();
     });
   }
 
   updateSubModuleData(roleData: any) {
-    this.http.updateSubModule(roleData).subscribe((data) => {
+    this.http.updateSubModule(roleData).subscribe((dataGrid) => {
       this.dataGrid = undefined;
       this.getAllSubModuleData();
     });
