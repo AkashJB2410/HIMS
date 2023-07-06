@@ -8,7 +8,7 @@
     {
       "label": "Unit",
       "routerLink": "/master-page/all-masters/unit",
-      "imgSrc": "assets/unit-configuration/unit.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "Department",
@@ -18,7 +18,7 @@
     {
       "label": "Sub Department",
       "routerLink": "/master-page/all-masters/sub-department",
-      "imgSrc": "assets/Queue.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "Desiganation",
@@ -28,12 +28,12 @@
     {
       "label": "Spetiality",
       "routerLink": "/master-page/all-masters/spetiality",
-      "imgSrc": "assets/Queue.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "Super Speciality",
       "routerLink": "/master-page/all-masters/super-speciality",
-      "imgSrc": "assets/Queue.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "Staff",
@@ -83,12 +83,12 @@
     {
       "label": "Action Button",
       "routerLink": "/master-page/all-masters/action-button",
-      "imgSrc": "assets/unit-configuration/action-button.png"
+      "imgSrc": "assets/unit-configuration/actionbutton.png"
     },
     {
       "label": "Action Role",
       "routerLink": "/master-page/all-masters/action-role",
-      "imgSrc": "assets/OPD Dashboard.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "Action User Role",
@@ -103,27 +103,27 @@
     {
       "label": "Cluster",
       "routerLink": "/master-page/all-master/cluster",
-      "imgSrc": "assets/OPD Dashboard.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "User Info",
       "routerLink": "/master-page/all-masters/user-info",
-      "imgSrc": "assets/OPD Dashboard.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "Trimster",
       "routerLink": "/master-page/all-masters/trimster",
-      "imgSrc": "assets/OPD Dashboard.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "LOV type",
       "routerLink": "/master-page/all-masters/lov-type",
-      "imgSrc": "assets/IPD Dashboard.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "LOV Value",
       "routerLink": "/master-page/all-masters/lov-value",
-      "imgSrc": "assets/IPD Dashboard.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     }
   ]
 }
