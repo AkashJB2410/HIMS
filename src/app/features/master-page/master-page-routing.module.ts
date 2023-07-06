@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MasterPageComponent } from './master-page.component';
-import { ApplicationConfigComponent } from '../application-config/application-config.component';
 
 const routes: Routes = [
   {
@@ -135,8 +134,6 @@ const routes: Routes = [
       { path: 'all-masters/lov-value', loadChildren: () => import('./../lov-value/lov-value-routing.module').then( m => m.LovValueRoutingModule)},
       { path: 'configurations', loadChildren: () => import('./../configurations/configurations.module').then(m => m.ConfigurationsModule) },
       { path: 'settings', loadChildren: () => import('./../settings/settings.module').then(m => m.SettingsModule) },
-      { path: 'all-masters/cluster', loadChildren: () => import('./../cluster/cluster-routing.module').then( m => m.ClusterRoutingModule)},
-      { path: 'all-masters/payment-mode', loadChildren: () => import('./../payment-mode/payment-mode-routing.module').then( m => m.PaymentModeRoutingModule)},
 
     ],
     // canActivate: [AuthGuardGuard]

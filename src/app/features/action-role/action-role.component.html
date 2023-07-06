@@ -13,9 +13,13 @@
     (confirmAction)="confirmAction($event)"
     (onAdd)="saveActionRole($event)"
     (onEdit)="editActionRole($event)"
+    (editRow)="editRow($event)" 
+    (addRow)="addRow($event)" 
     (Bulkdelete)="BulkDeleteRow($event)" 
     (changeEvents)="changeCheckBox($event)"
     >
+<app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="formdata" [editData]="editData" (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
+
 </app-super-grid>
 <p-toast></p-toast>
 
