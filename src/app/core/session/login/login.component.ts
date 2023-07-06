@@ -93,7 +93,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.loginForm.value.captcha && this.loginForm.value.organisation.organization_Id != "") {
+    // if (this.loginForm.value.captcha && this.loginForm.value.organisation.organization_Id != "") {
+
+    if (this.loginForm.value.captcha) {
       this.http.Logincheck(this.loginForm.value)
         .subscribe(data => {
           let a = + data.loginFailed
@@ -107,7 +109,7 @@ export class LoginComponent implements OnInit {
             this.messageService.add({ severity: 'success', summary: 'Login', detail: 'Logged in successfully.' });
             sessionStorage.setItem('loggedUser', this.encrypt.transform(JSON.stringify(data)));
             sessionStorage.setItem('loggedIn', 'true');
-            this.router.navigateByUrl('/master-page/home');
+            this.router.navigateByUrl('/master-page/user-management');
           } else if (data.password != this.loginForm.value.password) {
             this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
           }

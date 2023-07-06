@@ -1,5 +1,5 @@
 <div class="">
-    <!-- <img src="{{base1}}"> -->
+    <!-- <img height="40px" width="40px" src="{{base1}}"> -->
     <h6 class="{{formJson.formTitleClass}}"><i class="{{formJson.formTitleLogo}}"></i>{{formJson.formTitle}}</h6>
     <form [formGroup]="form">
         <div class="{{formJson.class}}">
@@ -7,7 +7,6 @@
             <ng-container *ngFor="let formData of formControls; let i = index">
                 <div class="{{formData.class}}" [id]="'id'+formData.fieldName" [ngClass]="formData.visible ? 'visible' : 'hidden'">
                     <label *ngIf="formData.label != ''" for="{{formData.fieldName}}" class="{{formData.lblclass}}">{{formData.label}}</label>
-
                     <div *ngIf="formData.fieldType == formStaticText.TEXT">
                         <input type="{{formData.inputType}}" id="{{formData.fieldName}}" name="{{formData.fieldName}}"
                             class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
@@ -39,12 +38,6 @@
                         [(ngModel)]="formData.fieldValue" optionLabel="name" optionValue="code" [showClear]="true"
                         class="{{formData.valueclass}}" [showClear]="false" (onChange)="changeEvent($event, formData)">
                     </p-dropdown>
-                    <p-multiSelect *ngIf="formData.fieldType == formStaticText.MULTISELECT" [options]="formData.values"
-                        [inputId]="formData.fieldName" [formControlName]="formData.fieldName"
-                        [ngClass]="formData.editable ? formData.valueclass : 'input-box1 '"
-                        [(ngModel)]="formData.fieldValue" optionLabel="name" optionValue="code" [showClear]="true"
-                        class="{{formData.valueclass}}" [showClear]="false" (onChange)="changeEvent($event, formData)">
-                    </p-multiSelect>
                     <div class="{{formData.valueclass}}" *ngIf="formData.fieldType === formStaticText.RADIO">
                         <div *ngFor="let opt of formData.values">
                             <p-radioButton name="{{formData.fieldName}}" value="{{opt.code}}"
@@ -117,8 +110,7 @@
                         <button *ngFor="let icon of formData.icons" (click)="btnClick(icon.subtype)"
                             [ngClass]="formData. isDisabled ? formData.valueclass : 'butn-custom-dark-blue1 '"
                             class="{{icon.valueclass}}" pTooltip="{{icon.tooltip}}"
-                            tooltipPosition="{{icon.toolPosition}}"><i class="{{icon.class}}"
-                                (window:keydown.enter)="btnClick(icon.subtype)"
+                            tooltipPosition="{{icon.toolPosition}}" ><i class="{{icon.class}}" (window:keydown.enter)="btnClick(icon.subtype)"
                                 (window:keydown.esc)="btnClick(icon.subtype)"></i>
                         </button>
                     </div>

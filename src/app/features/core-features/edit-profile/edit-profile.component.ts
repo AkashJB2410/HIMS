@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DecryptPipe, EncryptPipe } from 'src/app/core/shared/pipes/encrypt-decrypt.pipe';
 
 @Component({
   selector: 'app-edit-profile',
@@ -7,20 +8,22 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./edit-profile.component.css']
 })
 export class EditProfileComponent implements OnInit {
-loginForm :any
-  constructor() { }
+Editform :any
+logindata:any
+  constructor( private decrypt: DecryptPipe) { }
 
   ngOnInit(): void {
-
-    this.loginForm = new FormGroup({
-      username: new FormControl("", [Validators.required]),
-      mobileNumber: new FormControl("", [Validators.required]),
-      emailId: new FormControl("", [Validators.required]),
-      password: new FormControl("", [Validators.required]),
+   this.logindata  = JSON.parse(this.decrypt.transform(sessionStorage.getItem('loggedUser')))
+     console.log(this.logindata)
+    this.Editform = new FormGroup({
+      username: new FormControl(this.logindata.userName, [Validators.required]),
+      mobileNumber: new FormControl(this.logindata.emailId, [Validators.required]),
+      emailId: new FormControl(this.logindata.emailId, [Validators.required]),
+      // password: new FormControl("", [Validators.required]),
     });
     this.onSubmit()
   }
   onSubmit() {
-    console.log(this.loginForm.value.username)
+    console.log(this.Editform.value.username)
  }
 }
