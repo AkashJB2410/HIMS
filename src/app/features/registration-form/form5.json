@@ -1,0 +1,139 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Medical History",
+        "formTitleClass": "formclass",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar": "p-sidebar-lg",
+        "formControls": [
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Patient Alcohol Habit",
+                "type": "radio",
+                "class": "col-md-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": " radio-button",
+                "placeholder": "********",
+                "formControlName": "alcoholRad",
+                "defaultValue":[""],
+                "message": {
+                    "required": "Patient Alcohol Habit is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Yes",
+                        "code": "Y",
+                        "editable": true
+                    },
+                    {
+                        "name": "No",
+                        "code": "N",
+                        "editable": true
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "If Yes How Many Year.",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Number of year",
+                "formControlName": "alcoholQuestion1",
+                "message": {
+                    "required": "If Yes How Many Year is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Patient Tobacoo Habit",
+                "type": "radio",
+                "class": "col-md-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": " radio-button",
+                "placeholder": "********",
+                "formControlName": "tobacooRad",
+                "defaultValue":[""],
+                "message": {
+                    "required": "Patient Tobacoo Habit is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Yes",
+                        "code": "Y",
+                        "editable": true
+                    },
+                    {
+                        "name": "No",
+                        "code": "N",
+                        "editable": true
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "If Yes How Many Year.",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Number of year",
+                "formControlName": "tobacooQuestion1",
+                "message": {
+                    "required": "If Yes How Many Year is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 32,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-3",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

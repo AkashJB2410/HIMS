@@ -1,0 +1,72 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "",
+        "formTitleClass": "",
+        "formTitleLogo":"",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar": "p-sidebar-lg",
+        "formControls": [
+            {
+                "id": 17,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "data":"",
+                "type": "divider",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "defaultValue":"01/2023",
+                "valueclass": "",
+                "formControlName": "divider",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 32,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-3",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Submit",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 33,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-3",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+            
+        ]
+    }
+}

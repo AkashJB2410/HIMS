@@ -1,0 +1,176 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "DEMOGRAPHICS",
+        "formTitleClass": "formclass",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar": "p-sidebar-lg",
+        "formControls": [
+            {
+                "id": 1,
+                "isEditable": false,
+                "isVisible": false,
+                "label": "UHID",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Patient UHID",
+                "formControlName": "UHID",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 15,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Blood Group",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectBlood",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "A+",
+                        "code": "A+"
+                    },
+                    {
+                        "name": "B+",
+                        "code": "B+"
+                    },
+                    {
+                        "name": "o+",
+                        "code": "o+"
+                    },
+                    {
+                        "name": "AB+",
+                        "code": "AB+"
+                    },
+                    {
+                        "name": "A-",
+                        "code": "A-"
+                    },
+                    {
+                        "name": "B-",
+                        "code": "B-"
+                    },
+                    {
+                        "name": "o-",
+                        "code": "o-"
+                    },
+                    {
+                        "name": "AB-",
+                        "code": "AB-"
+                    }
+                ],
+                "message": {
+                    "required": "Blood Group is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 15,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Ethincity",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectEthincity",
+                "values": [],
+                "message": {
+                    "required": "Ethincity is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Religion",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Religion",
+                "formControlName": "religionInput",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "",
+                "inputType": "empty",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-3 my-1 ",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "staticText",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 32,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-3",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}
