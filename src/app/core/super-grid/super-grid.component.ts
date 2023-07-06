@@ -41,16 +41,19 @@ export class SuperGridComponent implements OnInit {
 
   deleteRow(e: any) {
     this.deleteRowData = e;
+    document.documentElement.style.setProperty('--width', '0rem');
     this.GetConfirm()
   }
 
   BulkdeleteRow(e: any) {
     this.bulkdelete = e
     this.show = true;
+    document.documentElement.style.setProperty('--width', '0rem');
     this.GetConfirm()
   }
 
   editRow(editRow: any) {
+    this.handelBackdrop();
     this.visibleSidebar = true;
     let edit = "edit";
     this.onEdit.emit({editRow, edit});
@@ -62,6 +65,7 @@ export class SuperGridComponent implements OnInit {
   }
   
   addRow(addRow: any) {
+    this.handelBackdrop();
     this.visibleSidebar = true;
     let add = "add";
     this.onAdd.emit({addRow, add});
@@ -109,6 +113,18 @@ export class SuperGridComponent implements OnInit {
 
   fitereddata(e: any) {
     this.fiteredData.emit(e);
+  }
+
+  handelBackdrop() {
+    if (this.config.sidebar == "p-sidebar-sm") {
+      document.documentElement.style.setProperty('--width', '20rem');
+    } else if (this.config.sidebar == "p-sidebar-md") {
+      document.documentElement.style.setProperty('--width', '40rem');
+    } else if (this.config.sidebar == "p-sidebar-lg") {
+      document.documentElement.style.setProperty('--width', '60rem');
+    } else {
+      document.documentElement.style.setProperty('--width', '80rem');
+    }
   }
 
 }

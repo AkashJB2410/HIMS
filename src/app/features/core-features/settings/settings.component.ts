@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import Vtabs from '../../core/shared/objects/setting.json';
+import Vtabs from '../../../core/shared/objects/setting.json';
 import { ThemeService } from 'src/app/core/shared/service/theme.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SessionService } from 'src/app/core/shared/service/session.service';
@@ -22,49 +22,18 @@ export class SettingsComponent implements OnInit {
   }
   themeOptins: any = []
   @Output() renderComponents = new EventEmitter<any>();
-  activeStateButton: any;
-  dateFormats: any = []
-  Currency: any = []
-  formatDate: any;
-  ForCurrency: any;
-  ForThemes:any;
+  activeStateButton: any; 
   formatDateVAlue: any;
-  form = new FormGroup({
-    dateformat: new FormControl(''),
-    currency: new FormControl(''),
-    themes: new FormControl('')
-
-  });
   formData: Partial<{ dateformat: string; currency: string; }>;
   personalizationData: any;
-  ThemePersonalization: any =[];
+  ThemePersonalization: any = [];
   constructor(private themeService: ThemeService,
     private http: SessionService) { }
   ngAfterViewInit(): void {
     this.activeState = JSON.parse(localStorage.getItem('activeState'))
   }
   ngOnInit(): void {
-    this.dateFormats = [
-      { name: 'Select date', value: 'select-date' },
-      { name: 'Short Date', value: 'M/d/yy' },
-      { name: 'Medium Date', value: 'MMM d, y' },
-      { name: 'Long Date', value: 'MMMM d, y' },
-      { name: 'Full Date', value: 'EEEE, MMMM d, y' },
-
-    ]
-    this.Currency = [
-      { name: 'Select currency', value: 'select-currency' },
-      { name: 'INR', value: 'INR' },
-      { name: 'CAD', value: 'CAD' },
-      { name: 'USD', value: 'USD' },
-      { name: 'EUR', value: 'EUR' },
-
-    ],
-    this.ThemePersonalization = [
-      { name: 'Select theme', value: 'select-theme' },
-      { name: 'Light theme', value: 'light-theme' },
-      { name: 'Dark theme', value: 'dark-theme' },
-    ]
+    
     this.themeOptins = [
       {
         label: 'Dark theme',
@@ -124,11 +93,4 @@ export class SettingsComponent implements OnInit {
   setActiveButton(themeOptins: any) {
     this.activeStateButton = themeOptins;
   }
-  onSubmit() {
-    this.http.addPersonalization(this.form.value.dateformat,this.form.value.currency,this.form.value.themes)
-      .subscribe(data => {
-        this.personalizationData = data
-      });
-  }
-
 }

@@ -11,6 +11,10 @@
     (confirmAction)="confirmAction($event)"
     (fiteredData)="fiteredData($event)"
     (isActive)="isActive($event)"
-    (Bulkdelete)="Bulkdelete($event)">
+    (Bulkdelete)="Bulkdelete($event)"(onEdit)="onEdit($event)"
+    (onAdd)="onAdd($event)"
+    (onEdit)="onEdit($event)">
+    <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="sidebarJSON" [editData]="editData"
+    (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
+>
 </app-super-grid>
-<p-toast></p-toast>

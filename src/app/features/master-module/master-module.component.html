@@ -12,8 +12,13 @@
     (fiteredData)="fiteredData($event)"
     (onEdit)="onEdit($event)"
     (isActive)="isActive($event)"
-    (checkBoxClick)="checkBoxClick($event)"
-    (ondeletechecked)="ondeletechecked($event)"
-    (onDelete)="onDelete($event)"
-    (Bulkdelete)="Bulkdelete($event)">
+    (Bulkdelete)="Bulkdelete($event)"
+    (onEdit)="onEdit($event)"
+    (onAdd)="onAdd($event)"
+    [editData]="editData">
+
+    
+    <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="sidebarJSON" [editData]="editData"
+    (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
+>
 </app-super-grid>

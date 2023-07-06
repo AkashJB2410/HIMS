@@ -4,13 +4,14 @@
     *ngIf="data"
     [configurations] ="configurations" 
     [tableConfig] = "orgDetails"
-    [sidebarJSON] = "addneworganization"
     [tableData]= "data"
-    (sideBarEvent)="sidebarData($event)"
     (confirmAction)="confirmAction($event)"
     (onAdd)="saveOrg($event)"
     (onEdit)="editOrg($event)"
     (isActive)="isActive($event)"
-    (Bulkdelete)="bulkDeleteRows($event)" 
-    >
+    (Bulkdelete)="bulkDeleteRows($event)" >
+    <app-form
+    projectTowards="sidebar" *ngIf="editData" [formJSON]="addneworganization" [editData]="editData"
+    (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"
+   ></app-form>
 ></app-super-grid>

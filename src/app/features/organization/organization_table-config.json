@@ -91,5 +91,6 @@
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
     "buttonlbl":"Add Organization",
-    "textLength":16
+    "textLength":16,
+    "sidebar": "p-sidebar-md"
 }

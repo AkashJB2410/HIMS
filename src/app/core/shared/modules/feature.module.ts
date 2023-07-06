@@ -41,7 +41,7 @@ import { MasterPageModule } from 'src/app/features/master-page/master-page.modul
     // UserManagementModule,
     // DicomImageViewerModule,
     // DashboardModule,
-    // SharedModule
+    SharedModule
   ],
   providers: [
     MessageService,

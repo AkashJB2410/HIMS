@@ -383,3 +383,6 @@ input::placeholder {
   text-align: center;
   color: #000000;
 }
+.rememberMe{
+display: flex;
+margin-top: 5px;}

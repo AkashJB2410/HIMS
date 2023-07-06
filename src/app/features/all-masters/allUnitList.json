@@ -26,6 +26,16 @@
       "imgSrc": "assets/unit-configuration/designation.png"
     },
     {
+      "label": "Spetiality",
+      "routerLink": "/master-page/all-masters/spetiality",
+      "imgSrc": "assets/Queue.png"
+    },
+    {
+      "label": "Super Speciality",
+      "routerLink": "/master-page/all-masters/super-speciality",
+      "imgSrc": "assets/Queue.png"
+    },
+    {
       "label": "Staff",
       "routerLink": "/master-page/all-masters/staff",
       "imgSrc": "assets/unit-configuration/staff.png"
@@ -92,7 +102,7 @@
     },
     {
       "label": "Cluster",
-      "routerLink": "/master-page/all-masters/import-data",
+      "routerLink": "/master-page/all-master/cluster",
       "imgSrc": "assets/OPD Dashboard.png"
     },
     {

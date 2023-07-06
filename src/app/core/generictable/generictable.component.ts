@@ -200,6 +200,9 @@ export class GenerictableComponent implements OnInit {
   }
 
 
-
+   disable() {
+    (document.getElementById("deleteId") as HTMLButtonElement).disabled=true;
+   }
+  
 }
 

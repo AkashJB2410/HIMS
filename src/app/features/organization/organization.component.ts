@@ -4,6 +4,7 @@ import addneworg from './organizationForm.json'
 import { MessageService } from 'primeng/api';
 import { OrganizationServiceService } from './organization.service';
 import organization_breadcrumb from './organization-breadcrumb.json'
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-organization',
@@ -27,7 +28,9 @@ export class OrganizationComponent implements OnInit {
   isdataReady = false;
   saveMethod: boolean=false;
   organization_breadcrumb =organization_breadcrumb;
-  constructor(private messageService: MessageService,private http: OrganizationServiceService) { }
+  editData:any;
+
+  constructor(private messageService: MessageService,private http: OrganizationServiceService, private common:CommonService) { }
   
   ngOnInit(): void {
     
@@ -57,12 +60,21 @@ export class OrganizationComponent implements OnInit {
     this.visibleSidebar = true;
   }
 
+  buttonEvent(e:any){
+    this.editData=undefined;
+    this.common.sendEditData(false);
+  }
+
   saveOrg(e:any){
+    this.addneworganization.form.formControls[0].isVisible=false;
     this.saveMethod = true;
+    this.editData=[];
+    this.common.sendEditData(false);
   }
 
   editOrg(e:any){
-
+    this.addneworganization.form.formControls[0].isVisible=true;
+    this.editData=e.editRow;
   }
 
   isActive(data:any){

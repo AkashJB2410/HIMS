@@ -2,7 +2,7 @@
     "tableName": "Action Buttons Table",
     "tableHeaders": [
         {
-            "field": "srNumber",
+            "field": "id",
             "header": "Sr. No",
             "iseditable": false,
             "class": "text-center"
@@ -50,5 +50,6 @@
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
     "buttonlbl": "Add Action Buttons",
-    "textLength": 16
+    "textLength": 16,
+    "sidebar": "p-sidebar-sm"
 }
