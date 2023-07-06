@@ -4,6 +4,7 @@ import actionroleTableConfig from './actionRole-tableConfig.json';
 import { MessageService } from 'primeng/api';
 import actionroleFormData from './action-role.json';
 import ActionRole_breadcrumb from './actionRole-breadcrumb.json'
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-action-role',
@@ -15,7 +16,7 @@ export class ActionRoleComponent implements OnInit {
   showToast: any;
   Message: any;
   data: any = [];
-  actionRole: any = [] = [];
+  actionRole: any = [];
   config: any;
   visibleSidebar: boolean = false;
   configurations: any;
@@ -24,6 +25,8 @@ export class ActionRoleComponent implements OnInit {
   bulkdelete: any;
   sidebarJSON: any = actionroleFormData;
   formdata: any;
+  editData:any;
+  status :boolean = false;
   saveMethod: boolean = false;
   editMethod: boolean = false;
   flagAdd: boolean = false;
@@ -36,7 +39,8 @@ export class ActionRoleComponent implements OnInit {
 
   constructor(
     private messageService: MessageService,
-    private http: ActionRoleService
+    private http: ActionRoleService,
+    private common:CommonService
   ) {}
 
   ngOnInit(): void {
@@ -55,16 +59,30 @@ export class ActionRoleComponent implements OnInit {
     this.config = actionroleTableConfig;
   }
 
+  buttonEvent(e:any){
+    this.editData=undefined;
+this.common.sendEditData(false);
+  }
+
   editRow(e: any) {
     this.visibleSidebar = true;
   }
 
+  addRow(e: any) {
+    this.visibleSidebar = true;
+  }
+
   saveActionRole(data: any) {
-    this.saveMethod = true;
+    this.editData = [];
+    this.common.sendEditData(false);
+    this.status = true;
+    // this.saveMethod = true;
   }
 
   editActionRole(e: any) {
-    this.editMethod = true;
+    // this.editMethod = true;
+    this.editData = e.editRow;
+    this.status = false;
   }
 
 
