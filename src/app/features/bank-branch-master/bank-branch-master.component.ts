@@ -17,6 +17,17 @@ export class BankBranchMasterComponent implements OnInit {
   isDelete: boolean;
   editData: any;
 
+
+  changeEvents(e:any){
+    // let defaultObj = {
+    //   name: e[0],
+    //   code: e[0]
+    // };
+    // console.log(e)
+    // addnew.form.formControls[1].values[0]=defaultObj;
+
+  }
+
   isActive(data: any) {
     if (!data.is_Active) {
       this.http.isActiveData(data).subscribe((b_Data) => {
