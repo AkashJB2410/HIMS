@@ -38,7 +38,7 @@ export class MasterPageComponent implements OnInit {
     this.masterJSON.masterData.sidenavItems = [];
     this.http.GetAllSideNavData().subscribe((res) => {
       console.log("sidenavdata => ", res.sidenavItems.sort((a: { sequence: number; }, b: { sequence: number; }) => Number(a.sequence) - Number(b.sequence)));
-      this.sidenavData=[];
+      this.sidenavData = [];
       res.sidenavItems.forEach((sidenav: any) => {
         this.sidenavData.push(sidenav)
       });

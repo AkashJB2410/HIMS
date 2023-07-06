@@ -15,15 +15,15 @@ export class GroupModuleComponent implements OnInit {
   tableConfig: any;
   visibleSidebar: boolean = true;
   groupFormData: any = groupForm;
-  Group_breadcrumb=Group_breadcrumb
+  Group_breadcrumb = Group_breadcrumb
   configurations: any;
   data: any;
   formdata: any;
   isdataReady = false;
   groupData: any = [];
   flag: any;
-  editData:any;
-  constructor(private messageService: MessageService, private http: GroupModuleService,private common:CommonService, private sidenav:MasterPageComponent) { }
+  editData: any;
+  constructor(private messageService: MessageService, private http: GroupModuleService, private common: CommonService, private sidenav: MasterPageComponent) { }
 
   ngOnInit(): void {
     this.configurations = {
@@ -39,27 +39,27 @@ export class GroupModuleComponent implements OnInit {
   }
 
   onAdd(e: any) {
-    this.editData=[]
+    this.editData = []
     this.flag = e;
   }
 
-  onEdit(e:any){
-    this.flag=e.edit
+  onEdit(e: any) {
+    this.flag = e.edit
     let obj = {
       "groupId": e.editRow.groupId,
-          "mstModule": e.editRow.mstModule,
-          "lable": e.editRow.lable,
-          "icon": e.editRow.icon,
-          "routerLink": e.editRow.routerLink,
-          "sequence": e.editRow.sequence,
-          "is_Active": e.editRow.is_Active,
-          "mstModule_name": e.editRow.mstModule,
+      "mstModule": e.editRow.mstModule,
+      "lable": e.editRow.lable,
+      "icon": e.editRow.icon,
+      "routerLink": e.editRow.routerLink,
+      "sequence": e.editRow.sequence,
+      "is_Active": e.editRow.is_Active,
+      "mstModule_name": e.editRow.mstModule,
     }
-    this.editData=obj;
+    this.editData = obj;
   }
-  buttonEvent(e:any){
-    this.editData=undefined;
-this.common.sendEditData(false);
+  buttonEvent(e: any) {
+    this.editData = undefined;
+    this.common.sendEditData(false);
   }
 
   isActive(event: string) {
@@ -81,35 +81,35 @@ this.common.sendEditData(false);
   }
   BulkDeleteRows(e: any) {
     this.groupData = [];
- 
+
     if (e != '') {
-      e.forEach((data:any) => {
-        if(data.is_Active!=false){
-        let obj ={
-          "groupId": data.groupId,
+      e.forEach((data: any) => {
+        if (data.is_Active != false) {
+          let obj = {
+            "groupId": data.groupId,
+          }
+          this.deleteGroup(obj.groupId);
+        } else {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'selected Rows',
+            detail: ' Deleted.',
+          });
         }
-        this.deleteGroup(obj.groupId);
-      } else{
-        this.messageService.add({
-          severity: 'error',
-          summary: 'selected Rows',
-          detail: ' Deleted.',
-        });
-      }
       });
       this.messageService.add({
         severity: 'success',
         summary: 'success',
         detail: 'Delete All Data successfull.',
       });
-    }else{
+    } else {
       this.messageService.add({
         severity: 'error',
         summary: 'select Rows',
         detail: 'Rows are not selected.',
       });
     }
- 
+
   }
   sidebarData(e: any) {
     if (e != 'reset') {
@@ -132,23 +132,23 @@ this.common.sendEditData(false);
   }
 
   confirmAction(e: any) {
-    if(e != false){
-    this.deleteGroup(e.groupId);
-    this.messageService.add({
-      severity: 'success',
-      summary: 'Message form User component',
-      detail: 'Deleted Sucessfully',
-    });
-  }
+    if (e != false) {
+      this.deleteGroup(e.groupId);
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Message form User component',
+        detail: 'Deleted Sucessfully',
+      });
+    }
   }
 
   getAllGroup() {
     this.data = undefined;
     this.groupData = [];
     this.http.GetAllGroupData().subscribe((res) => {
-      res.forEach((e: any, index:any) => {
+      res.forEach((e: any, index: any) => {
         let obj = {
-          "id":index,
+          "id": index,
           "groupId": e.groupId,
           "mstModule": e.mstModule.moduleId,
           "lable": e.lable,
@@ -166,7 +166,7 @@ this.common.sendEditData(false);
         this.data[i].srNumber = i + 1;
       }
       this.data;
-      if(this.isdataReady){
+      if (this.isdataReady) {
         this.sidenav.getALLSideNavData();
       }
     })
