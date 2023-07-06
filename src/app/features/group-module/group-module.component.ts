@@ -166,10 +166,10 @@ export class GroupModuleComponent implements OnInit {
         this.data[i].srNumber = i + 1;
       }
       this.data;
-      if (this.isdataReady) {
-        this.sidenav.getALLSideNavData();
-      }
-    })
+    });
+    if (this.isdataReady) {
+      this.sidenav.getALLSideNavData();
+    }
   }
 
   updateGroup(groupId: any) {
