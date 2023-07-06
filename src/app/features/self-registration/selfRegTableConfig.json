@@ -20,6 +20,7 @@
         {"field": "mobileNo","header": "MobileNo"},
         {"field": "is_Active","header": "is_Active"} 
     ],
+    "sidebar": "p-sidebar-lg",
     "globalFilter": ["userId","firstName","middleName","lastName","gender_Type","age","mobileNo","is_Active"],
     "rows" : 10,
     "showCurrentPageReport" : true,

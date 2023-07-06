@@ -1,1 +1,3 @@
-<p>self-registration works!</p>
+
+<app-form  [formJSON]="selfRegFormData" [editData]="editData"
+    (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>

@@ -14,4 +14,5 @@
     (isActive)="isActive($event)"
     (onAdd)="onAdd($event)"
     (onEdit)="onEdit($event)">
+    <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="ApplictionFormData" [editData]="editData" (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
 </app-super-grid>

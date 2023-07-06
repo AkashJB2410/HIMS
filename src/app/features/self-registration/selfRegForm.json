@@ -1,0 +1,513 @@
+{
+    "form": {
+        "class": "row spacer",
+        "formTitle": "Self Registration",
+        "formTitleClass": "formclass",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar": "p-sidebar-lg",
+        "formControls": [
+            {
+                "id": 0,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "data":"PERSONAL DETAILS",
+                "type": "divider",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "defaultValue":"01/2023",
+                "valueclass": "",
+                "formControlName": "divider",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": false,
+                "isVisible": false,
+                "label": "Patient UID",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Patient UID",
+                "formControlName": "PatientUID",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Title",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-1 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectTitle",
+                "message": {
+                    "required": "Title is required",
+                    "pattern": ""
+                },
+                "values": [],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "First Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter First Name...",
+                "formControlName": "firstNameInput",
+                "message": {
+                    "required": "First Name is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z]+$"
+                }
+            },
+            {
+                "id": 4,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Middle Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Middle Name...",
+                "formControlName": "middleNameInput",
+                "message": {
+                    "required": "Middle Name is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },
+            {
+                "id": 5,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Last Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Last Name...",
+                "formControlName": "lastNameInput",
+                "message": {
+                    "required": "Last Name is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 6,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Gender",
+                "type": "select",
+                "value": "",
+                "class": "col-md-2  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectGender",
+                "values": [],
+                "message": {
+                    "required": "Gender is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Age",
+                "type": "text",
+                "maxLength": 3,
+                "class": "col-md-1 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "value": "",
+                "placeholder": "",
+                "formControlName": "age",
+                "message": {
+                    "required": "Date is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 7,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Mobile No.",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Mobile No.",
+                "formControlName": "mobileNoInput",
+                "message": {
+                    "required": "Mobile No. is required",
+                    "pattern": "Please re-enter using a valid 10-digit mobile number."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z0-9@.,\\s-]+$"
+                }
+            },
+            {
+                "id": 8,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Email ID",
+                "type": "text",
+                "inputType": "email",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "xyz123@example.com",
+                "formControlName": "emailInput",
+                "message": {
+                    "required": "Email is required",
+                    "pattern": "Please enter correct format"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+                }
+            },
+            {
+                "id": 11,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Blood Group",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectBlood",
+                "values": [],
+                "message": {
+                    "required": "Blood Group is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 12,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "data":" ADDRESS DEATILS",
+                "type": "divider",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "defaultValue":"01/2023",
+                "valueclass": "",
+                "formControlName": "divider",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 13,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "dependentdropdown",
+                "class": "col-md-4",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectState",
+                "message": {
+                    "required": "State is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "label": "State",
+                        "values": []
+                    },
+                    {
+                        "label": "Districts",
+                        "values": []
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 14,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Village",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-2  my-3",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectVillage",
+                "values": [],
+                "message": {
+                    "required": "Village is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 15,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Pin Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-2 my-3",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Pin Code...",
+                "formControlName": "pinCodeInput",
+                "message": {
+                    "required": "Pin Code is required",
+                    "pattern": "Please re-enter valid pin code."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$"
+                }
+            },
+            {
+                "id": 16,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Address",
+                "type": "textarea",
+                "inputType": "textarea",
+                "class": "col-md-4 my-3",
+                "lblclass": "custom-label",
+                "valueclass": "textarea-custom",
+                "row":"2",
+                "placeholder": "",
+                "formControlName": "addressInput",
+                "message": {
+                    "required": "Address is required",
+                    "pattern": "invalid"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
+                }
+            },
+            {
+                "id": 17,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "data":"APPOINTEMENT DETAILS",
+                "type": "divider",
+                "class": "col-md-12 ",
+                "lblclass": "custom-label",
+                "defaultValue":"01/2023",
+                "valueclass": "",
+                "formControlName": "divider",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 18,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Department",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectDepartment",
+                "values": [],
+                "message": {
+                    "required": "Department is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 19,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Appointment Date",
+                "type": "date",
+                "format": "MM-dd",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "custom-p-calendar",
+                "value": "04/22/2023",
+                "placeholder": "",
+                "formControlName": "userBirthdate",
+                "message": {
+                    "required": "Date is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 20,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Additional Comments",
+                "type": "textarea",
+                "inputType": "textarea",
+                "class": "col-md-6 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "textarea-custom",
+                "row":"3",
+                "placeholder": "",
+                "formControlName": "addressInput",
+                "message": {
+                    "required": "Address is required",
+                    "pattern": "invalid"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
+                }
+            },
+            {
+                "id": 21,
+                "isEditable": false,
+                "isVisible": false,
+                "label": "Is_Active",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Is_Active",
+                "formControlName": "isActiveInput",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 22,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-3",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 23,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-3",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}
