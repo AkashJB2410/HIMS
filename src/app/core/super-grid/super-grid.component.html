@@ -9,7 +9,7 @@
 </app-generictable>
 
 <!----------- Delete modal ----------->
-<p-confirmDialog [position]="'top'" [style]="{width: '30vw'}"></p-confirmDialog>
+<p-confirmDialog [position]="'top'"></p-confirmDialog>
 
 <!----------- SideBar ----------->
 <app-sidebar *ngIf="configurations.isSideBar" [visibleSidebar]="visibleSidebar" [sidebarConfig]="config" (sidebarData)="sidebarData($event)" >

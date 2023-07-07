@@ -7,8 +7,8 @@
 </div>
 
 <p-dialog [showHeader]="false" [position]="'top'" (onHide)="close()" [(visible)]="displayModal" [modal]="true"
-  [style]="{width: '20vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
-  <app-form *ngIf="FData" [formJSON]="FData" [editData]="editData" (formData)="response($event)"></app-form>
+  [style]="{width: '15vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+  <app-form *ngIf="FData" [formJSON]="FData" [editData]="editDataCheckbox" (formData)="response($event)"></app-form>
 </p-dialog>
 
 <p-dialog header="Save filter" #cd [position]="'top'" [closable] ="true" (onHide)="close()" [(visible)]="saveFilter" [modal]="true"

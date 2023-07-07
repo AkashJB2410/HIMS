@@ -11,12 +11,15 @@ export class DependentDropdownComponent implements OnInit {
   dropdown3: any = [];
   drop2: any;
   drop3: any;
+  drop1DefaultValue: any;
+  drop2DefaultValue: any;
+  drop3DefaultValue: any;
   outputData: Array<any> = [];
   constructor() { }
   @Input() data: any;
   @Input() defaultData: any;
   @Output() dependentDrop = new EventEmitter<any>();
-  @Input() defaultValue:any;
+  @Input() defaultValue: any;
 
   ngOnInit(): void {
     for (let i = 0; i < this.data.length; i++) {
@@ -25,11 +28,22 @@ export class DependentDropdownComponent implements OnInit {
     this.data.forEach((element: any) => {
       this.outputData[element];
     });
+
     this.dropdown1 = this.data[0].values;
     this.dropdown2 = this.data[1].values;
-
     if (this.data.length == 3) {
       this.dropdown3 = this.data[2].values;
+    }
+    if (this.defaultData != undefined) {
+      this.dropdown1 = this.data[0].values;
+      this.drop2 = this.data[1].values;
+      this.drop1DefaultValue = this.defaultData[0];
+      this.drop2DefaultValue = this.defaultData[1];
+    }
+
+    if (this.data.length == 3 && this.defaultData != undefined) {
+      this.drop3 = this.data[2].values;
+      this.drop3DefaultValue = this.defaultData[2];
     }
   }
 
@@ -56,7 +70,7 @@ export class DependentDropdownComponent implements OnInit {
   }
 
   thirdDropValue(e: any) {
-    this.outputData[1] = e.value;
+    this.outputData[2] = e.value;
     this.dependentDrop.emit(this.outputData);
   }
 }

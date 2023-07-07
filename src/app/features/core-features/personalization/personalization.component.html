@@ -1,0 +1,44 @@
+<!-- <div class="cardDesign">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <p-card class="verticalCards">
+            <p class="headerTheme">Personalization</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <label>Set Date Format</label>
+                    <p-dropdown formControlName="dateformat" optionValue="value" [options]="dateFormats"
+                        [(ngModel)]="formatDate" optionLabel="name"></p-dropdown>
+                </div>
+                <div class="col-md-4">
+                    <label>Set Currency</label>
+                    <p-dropdown formControlName="currency" optionValue="value" [options]="Currency"
+                        [(ngModel)]="ForCurrency" optionLabel="name"></p-dropdown>
+                </div>
+                <div class="col-md-4">
+                    <label>Set Themes</label>
+                    <p-dropdown formControlName="themes" optionValue="value" [options]="ThemePersonalization"
+                        [(ngModel)]="ForThemes" optionLabel="name"></p-dropdown>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12"> <button class="buttonCss" type="submit">Apply</button>
+                </div>
+            </div>
+        </p-card>
+    </form>
+</div> -->
+<p-breadcrumb [model]="" ></p-breadcrumb>
+<h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Application Configuration</h3>
+<app-super-grid 
+    *ngIf="data"
+    [configurations]="configurations" 
+    [tableData]="data" 
+    [tableConfig]="tableConfig"
+    [sidebarJSON]="sidebarJSON" 
+    (sideBarEvent)="sidebarData($event)"
+    (addRow)="addRow($event)" 
+    (onAdd)="onAdd($event)"
+    (onEdit)="onEdit($event)">
+    <app-form projectTowards="sidebar"  [formJSON]="sidebarJSON" 
+    ></app-form>
+</app-super-grid>

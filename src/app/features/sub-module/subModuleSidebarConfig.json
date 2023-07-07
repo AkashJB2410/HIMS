@@ -119,6 +119,7 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "selectInput",
+                "defaultValues":[],
                 "message": {
                     "required": "State is required",
                     "pattern": ""

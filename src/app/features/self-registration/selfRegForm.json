@@ -2,7 +2,7 @@
     "form": {
         "class": "row spacer ",
         "formTitle": "Self Registration",
-        "formTitleClass": "formclass mt-1",
+        "formTitleClass": "Sidebar-title-md mt-4",
         "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
         "formType": "edit",
@@ -67,7 +67,24 @@
                     "required": "Title is required",
                     "pattern": ""
                 },
-                "values": [],
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Mr",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Mrs",
+                        "code": "2"
+                    },
+                    {
+                        "name": "Miss",
+                        "code": "3"
+                    }
+                ],
                 "validations": {
                     "required": false,
                     "pattern": ""
@@ -85,7 +102,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter First Name...",
-                "formControlName": "firstNameInput",
+                "formControlName": "firstName",
                 "message": {
                     "required": "First Name is required",
                     "pattern": "Numbers not allowed."
@@ -106,7 +123,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Middle Name...",
-                "formControlName": "middleNameInput",
+                "formControlName": "middleName",
                 "message": {
                     "required": "Middle Name is required",
                     "pattern": "Numbers not allowed."
@@ -127,13 +144,13 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Last Name...",
-                "formControlName": "lastNameInput",
+                "formControlName": "lastName",
                 "message": {
                     "required": "Last Name is required",
                     "pattern": "Numbers not allowed."
                 },
                 "validations": {
-                    "required": false,
+                    "required": true,
                     "pattern": ""
                 }
             },
@@ -149,13 +166,30 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "selectGender",
-                "values": [],
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Male",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Female",
+                        "code": "2"
+                    },
+                    {
+                        "name": "Other",
+                        "code": "3"
+                    }
+                ],
                 "message": {
                     "required": "Gender is required",
                     "pattern": ""
                 },
                 "validations": {
-                    "required": false,
+                    "required": true,
                     "pattern": ""
                 }
             },
@@ -192,7 +226,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Mobile No.",
-                "formControlName": "mobileNoInput",
+                "formControlName": "mobileNo",
                 "message": {
                     "required": "Mobile No. is required",
                     "pattern": "Please re-enter using a valid 10-digit mobile number."
@@ -213,7 +247,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "xyz123@example.com",
-                "formControlName": "emailInput",
+                "formControlName": "email",
                 "message": {
                     "required": "Email is required",
                     "pattern": "Please enter correct format"
@@ -235,7 +269,44 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "selectBlood",
-                "values": [],
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "A+",
+                        "code": "1"
+                    },
+                    {
+                        "name": "A-",
+                        "code": "2"
+                    },
+                    {
+                        "name": "B+",
+                        "code": "3"
+                    },
+                    {
+                        "name": "B-",
+                        "code": "1"
+                    },
+                    {
+                        "name": "AB+",
+                        "code": "2"
+                    },
+                    {
+                        "name": "AB-",
+                        "code": "3"
+                    },
+                    {
+                        "name": "O+",
+                        "code": "2"
+                    },
+                    {
+                        "name": "O-",
+                        "code": "3"
+                    }
+                ],
                 "message": {
                     "required": "Blood Group is required",
                     "pattern": ""
@@ -247,7 +318,7 @@
             },
             {
                 "id": 12,
-                "isEditable": true,
+                "isEditable": false,
                 "isVisible": true,
                 "transient": false,
                 "label": "",
@@ -268,33 +339,112 @@
                 }
             },
             {
-                "id": 13,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
                 "label": "",
                 "type": "dependentdropdown",
-                "class": "col-md-4",
+                "class": "col-md-6 ",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
-                "formControlName": "selectState",
+                "formControlName": "state",
+                "defaultValue": "",
                 "message": {
-                    "required": "State is required",
+                    "required": "state is required",
                     "pattern": ""
                 },
                 "values": [
                     {
                         "label": "State",
-                        "values": []
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": ""
+                            },
+                            {
+                                "name": "Maharashtra",
+                                "code": "1"
+                            },
+                            {
+                                "name": "Bihar",
+                                "code": "2"
+                            }
+                        ]
                     },
                     {
                         "label": "Districts",
-                        "values": []
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": "",
+                                "Mcode": ""
+                            },
+                            {
+                                "name": "Pune",
+                                "code": "1",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Satara",
+                                "code": "2",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Sangli",
+                                "code": "3",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Patna",
+                                "code": "4",
+                                "Mcode": "2"
+                            },
+                            {
+                                "name": "Mujjafarpur",
+                                "code": "5",
+                                "Mcode": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "City",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": "",
+                                "Mcode": ""
+                            },
+                            {
+                                "name": "Pune",
+                                "code": "1",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "PCMC",
+                                "code": "2",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Sangli",
+                                "code": "3",
+                                "Mcode": "2"
+                            },
+                            {
+                                "name": "Patna",
+                                "code": "4",
+                                "Mcode": "2"
+                            },
+                            {
+                                "name": "Mujjafarpur",
+                                "code": "5",
+                                "Mcode": "2"
+                            }
+                        ]
                     }
                 ],
                 "validations": {
-                    "required": false,
+                    "required": true,
                     "pattern": ""
                 }
             },
@@ -305,18 +455,33 @@
                 "label": "Village",
                 "type": "select",
                 "value": "M",
-                "class": "col-md-2  my-3",
+                "class": "col-md-2 ",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "selectVillage",
-                "values": [],
+                "values": [{
+                    "name": "Select an Option",
+                    "code": ""
+                },
+                {
+                    "name": "Parvati",
+                    "code": "1"
+                },
+                {
+                    "name": "Sadashiv Pet",
+                    "code": "2"
+                },
+                {
+                    "name": "Manapa",
+                    "code": "3"
+                }],
                 "message": {
                     "required": "Village is required",
                     "pattern": ""
                 },
                 "validations": {
-                    "required": false,
+                    "required": true,
                     "pattern": ""
                 }
             },
@@ -327,11 +492,11 @@
                 "label": "Pin Code",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-2 my-3",
+                "class": "col-md-2 ",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Pin Code...",
-                "formControlName": "pinCodeInput",
+                "formControlName": "pinCode",
                 "message": {
                     "required": "Pin Code is required",
                     "pattern": "Please re-enter valid pin code."
@@ -348,18 +513,18 @@
                 "label": "Address",
                 "type": "textarea",
                 "inputType": "textarea",
-                "class": "col-md-4 my-3",
+                "class": "col-md-4 mt-1",
                 "lblclass": "custom-label",
                 "valueclass": "textarea-custom",
                 "row":"2",
                 "placeholder": "",
-                "formControlName": "addressInput",
+                "formControlName": "address",
                 "message": {
                     "required": "Address is required",
                     "pattern": "invalid"
                 },
                 "validations": {
-                    "required": false,
+                    "required": true,
                     "pattern": "^[a-zA-Z0-9.,\\s-]+$"
                 }
             },
@@ -397,7 +562,22 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "selectDepartment",
-                "values": [],
+                "values": [{
+                    "name": "Select an Option",
+                    "code": ""
+                },
+                {
+                    "name": "Internal medicine",
+                    "code": "1"
+                },
+                {
+                    "name": "Cardiology",
+                    "code": "2"
+                },
+                {
+                    "name": "Radiology",
+                    "code": "3"
+                }],
                 "message": {
                     "required": "Department is required",
                     "pattern": ""
@@ -419,13 +599,13 @@
                 "valueclass": "custom-p-calendar",
                 "value": "04/22/2023",
                 "placeholder": "",
-                "formControlName": "userBirthdate",
+                "formControlName": "userAppointment",
                 "message": {
-                    "required": "Date is required",
+                    "required": "AppointmentDate is required",
                     "pattern": ""
                 },
                 "validations": {
-                    "required": false,
+                    "required": true,
                     "pattern": ""
                 }
             },
@@ -441,7 +621,7 @@
                 "valueclass": "textarea-custom",
                 "row":"3",
                 "placeholder": "",
-                "formControlName": "addressInput",
+                "formControlName": "additionalComment",
                 "message": {
                     "required": "Address is required",
                     "pattern": "invalid"
@@ -479,7 +659,7 @@
                 "transient": true,
                 "type": "button",
                 "subtype": "save",
-                "class": "col-md-1",
+                "class": "col-md-2",
                 "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",
@@ -498,7 +678,7 @@
                 "type": "button",
                 "subtype": "reset",
                 "btnLabel": "Back",
-                "class": "col-md-1",
+                "class": "col-md-2",
                 "valueclass": "button-login-yellow",
                 "icon": "",
                 "isDisabled": false,

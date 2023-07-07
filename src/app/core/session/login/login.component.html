@@ -1,4 +1,4 @@
-<section id="bg" >
+<section id="bg">
     <div class="container center-card">
         <div class="row">
             <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
@@ -15,41 +15,41 @@
                         Now login with your correct password.
                     </div>
                     <div class="login-body p-1 p-md-2">
-                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                        <div class="login-body-wrapper mx-auto">
-                            <div class="form-group mb-6">
-                                <label for="email" class="label-txt">Email</label>
-                                <!-- <input type="email" formControlName="emailId" class="login-control form-control-sm" name=""
-                                    id="email" aria-describedby="helpId" placeholder="Enter Registered Email ID" > -->
-                                    <input type="text"  formControlName="emailId"  class="input-box login-input" placeholder="Enter Registered Email ID"  (blur)="getOrganiszation($event.target)" >
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                            <div class="login-body-wrapper mx-auto">
+                                <div class="form-group mb-6">
+                                    <label for="email" class="label-txt">Email</label>
+                                    <input type="text" formControlName="emailId" class="input-box login-input"
+                                        placeholder="Enter Registered Email ID"
+                                        (blur)="getOrganiszation($event.target)">
+                                </div>
+                                <div class="form-group mb-6 login-input">
+                                    <label for="email" class="label-txt">Password</label>
+                                    <p-password formControlName="password" placeholder="Enter password "
+                                        [toggleMask]="true" [feedback]="false"></p-password>
+                                </div>
+                                <div class="form-group mb-6 login-input">
+                                    <label _ngcontent-spn-c57="" for="email" class="label-txt mb-1">Organisation</label>
+                                    <p-dropdown [options]="orgList" formControlName="organisation"
+                                        optionLabel="organization_Type"></p-dropdown>
+                                </div>
+                                <div class="form-group mt-6 login-input" style="margin-top: 10px;">
+                                    <app-captcha (captchaEmitData)="getCaptcha($event)"></app-captcha>
+                                </div>
+                                <span class="forgotPass" routerLink="/forgot-password">Forgot Password ?</span>
+                                <div class="rememberMe">
+                                    <input type="checkbox" value="lsRememberMe" id="rememberMe"
+                                        (change)="lsRememberMe($event.target)"> <label style="margin-left: 4px;"
+                                        for="rememberMe">Remember me</label>
+                                </div>
+                                <button class="btn btn-primary btn-block btn-lg btn-fnt"
+                                    [disabled]="!loginForm.valid">Login</button>
+                                <div style="text-align: center;">
+                                    <a style="font-size: 14px;" routerLink="/self-registration">Self Registration</a>
+                                </div>
                             </div>
-                            <div class="form-group mb-6 login-input" >
-                                <label for="email" class="label-txt">Password</label>
-                                <!-- <input type="email" formControlName="password" class="login-control form-control-sm" name=""
-                                    id="email" aria-describedby="helpId" placeholder="Enter password..."> -->
-                                    <!-- <input type="password" placeholder="Enter password..."   
-                                    pPassword > -->
-                                    <p-password formControlName="password"  placeholder="Enter password " [toggleMask]="true" [feedback]="false"></p-password>
-                            </div>
-                            <div class="form-group mb-6 login-input">
-                                <label _ngcontent-spn-c57="" for="email"  class="label-txt mb-1">Organisation</label>
-                                <p-dropdown [options]="orgList" formControlName="organisation" optionLabel="organization_Type"></p-dropdown>
-                                <!-- <select class="form-select" formControlName="organisation" aria-label="Default select example">
-                                    <option selected>Select Organization</option>
-                                    <option *ngFor="let org of orgList">{{org.organization_Type}}</option>
-                                </select> -->
-                            </div>
-                            <div class="form-group mt-6 login-input" style="margin-top: 10px;">
-                                <app-captcha (captchaEmitData)="getCaptcha($event)"></app-captcha>
-                            </div>
-                            <span class="forgotPass" routerLink="/forgot-password">Forgot Password ?</span>
-                            <button class="btn btn-primary btn-block btn-lg btn-fnt" [disabled]="!loginForm.valid">Login</button>
-                        <div style="text-align: center;">
-                            <a style="font-size: 14px;" routerLink="/self-registration">Self Registration</a>
-                        </div>
-                        </div>
-                    </form>
-                </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

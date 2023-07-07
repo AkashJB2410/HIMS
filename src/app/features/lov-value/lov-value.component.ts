@@ -23,7 +23,7 @@ export class LovValueComponent implements OnInit {
   isdataReady = false;
   LOVData: any = [];
   flag: any;
-editData:any
+  editData:any
  
   constructor(private messageService: MessageService, private http: LovValueService, private common:CommonService) { }
 
@@ -187,6 +187,7 @@ this.common.sendEditData(false);
       this.getAllLovValue();
     });
   }
+  
   assignOptions() {
     this.formdata = Object.assign({}, LOVForm);
     this.formdata.form.formControls.forEach((data: any) => {

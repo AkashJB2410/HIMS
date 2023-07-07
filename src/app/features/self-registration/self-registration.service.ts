@@ -21,7 +21,7 @@ export class SelfRegistrationService {
   }
 
   saveSelfRegData(data: any): Observable<any> {
-    const url = "http://localhost:8081/api/v1/addAppConfig";
+    const url = "http://localhost:8082/mst_patient/create";
     return this.PostCall(url, data);
   }
 
