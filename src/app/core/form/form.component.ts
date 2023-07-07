@@ -95,7 +95,7 @@ export class FormComponent implements OnInit {
 
   changeEvent(event: any, data: any) {
     this.events = [];
-    if (event.checked[0] == '')
+    if (event.checked != undefined && event.checked[0] == '')
       event.checked.shift();
     this.events.push(event);
     this.events.push(data);
