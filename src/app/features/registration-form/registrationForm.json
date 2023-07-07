@@ -27,7 +27,7 @@
                     "pattern": ""
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -134,7 +134,7 @@
                 "formControlName": "firstNameInput",
                 "message": {
                     "required": "First Name is required",
-                    "pattern": "Numbers not allowed."
+                    "pattern": "Only Alphabets are Allowed"
                 },
                 "validations": {
                     "required": true,
@@ -155,11 +155,11 @@
                 "formControlName": "middleNameInput",
                 "message": {
                     "required": "Middle Name is required",
-                    "pattern": "Numbers not allowed."
+                    "pattern": "Only Alphabets are Allowed."
                 },
                 "validations": {
                     "required": false,
-                    "pattern": "^[a-zA-Z ]*$"
+                    "pattern": "^[a-zA-Z]*$"
                 }
             },
             {
@@ -176,11 +176,11 @@
                 "formControlName": "lastNameInput",
                 "message": {
                     "required": "Last Name is required",
-                    "pattern": "Numbers not allowed."
+                    "pattern": "Only Alphabets are Allowed"
                 },
                 "validations": {
                     "required": false,
-                    "pattern": ""
+                    "pattern": "^[a-zA-Z]*$"
                 }
             },
             {
@@ -201,7 +201,7 @@
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[a-zA-Z0-9@.,\\s-]+$"
+                    "pattern": "^\\d{10}$"
                 }
             },
             {
@@ -486,7 +486,7 @@
                     "pattern": ""
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -501,7 +501,6 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "dependentdropdown",
-                "defaultValue": "",
                 "message": {
                     "required": "Gender is required",
                     "pattern": ""
@@ -598,11 +597,11 @@
                 "formControlName": "addressLine1Input",
                 "message": {
                     "required": "Address Line 1 is required",
-                    "pattern": "Numbers not allowed."
+                    "pattern": "Only Alphanumeric, dot, comma, backslash, space, and hyphen"
                 },
                 "validations": {
                     "required": false,
-                    "pattern": ""
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
                 }
             },
             {
@@ -619,11 +618,11 @@
                 "formControlName": "addressLine2Input",
                 "message": {
                     "required": "Address Line 2 is required",
-                    "pattern": "Numbers not allowed."
+                    "pattern": "Only Alphanumeric, dot, comma, backslash, space, and hyphen"
                 },
                 "validations": {
                     "required": false,
-                    "pattern": ""
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
                 }
             },
             {
@@ -684,7 +683,7 @@
                     "pattern": ""
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             }

@@ -10,27 +10,6 @@
         "formControls": [
             {
                 "id": 1,
-                "isEditable": false,
-                "isVisible": false,
-                "label": "UHID",
-                "inputType": "text",
-                "type": "text",
-                "class": "col-md-3 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Patient UHID",
-                "formControlName": "UHID",
-                "message": {
-                    "required": "",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 1,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "PRN Number",
@@ -73,15 +52,15 @@
                     },
                     {
                         "name": "Platinium",
-                        "code": "Platinium"
+                        "code": "1"
                     },
                     {
                         "name": "Gold",
-                        "code": "Gold"
+                        "code": "2"
                     },
                     {
                         "name": "Silver",
-                        "code": "Silver"
+                        "code": "3"
                     }
                 ],
                 "validations": {
