@@ -67,6 +67,7 @@
         "Delete",
         "isActive"
     ],
+    "sidebar":"p-sidebar-md",
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
     "buttonlbl": "Add Application Config",
