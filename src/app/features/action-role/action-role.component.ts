@@ -109,25 +109,32 @@ this.common.sendEditData(false);
     });
   }
 
-  isActive(data: any) {
-    if (data.is_Deleted) {
-      this.http.reactiveActionRole(data)
-        .subscribe(b_Data => {
-          this.data = undefined;
-          this.getAllActionRoleData();
-        })
-      this.messageService.add({
-        severity: 'success',
-        summary: 'Enable',
-        detail: 'Action Role Enable Successfully'
-      });
-    } else if (!data.is_Deleted) {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Error',
-        detail: 'Action Role is already Active'
-      });
-    }
+  // isActive(data: any) {
+  //   if (data.is_Deleted) {
+  //     this.http.reactiveActionRole(data)
+  //       .subscribe(b_Data => {
+  //         this.data = undefined;
+  //         this.getAllActionRoleData();
+  //       })
+  //     this.messageService.add({
+  //       severity: 'success',
+  //       summary: 'Enable',
+  //       detail: 'Action Role Enable Successfully'
+  //     });
+  //   } else if (!data.is_Deleted) {
+  //     this.messageService.add({
+  //       severity: 'error',
+  //       summary: 'Error',
+  //       detail: 'Action Role is already Active'
+  //     });
+  //   }
+  // }
+
+  isActive(event: string) {
+    this.http.reactiveActionRole(event).subscribe((data) => {
+      this.data = undefined;
+      this.getAllActionRoleData();
+    });
   }
 
 

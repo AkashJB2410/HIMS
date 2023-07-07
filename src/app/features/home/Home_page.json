@@ -6,7 +6,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/OPD Dashboard.png",
+      "image":"assets/Dashboard/OPD Dashboard.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -16,7 +16,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/IPD Dashboard.png",
+      "image":"assets/Dashboard/IPD Dashboard.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -26,7 +26,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/Emergency Dashboard.png",
+      "image":"assets/Dashboard/Emergency Dashboard.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -36,7 +36,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/FeedBack Dashboard.png",
+      "image":"assets/Dashboard/feedback.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -46,7 +46,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/Fature Dashboard.png",
+      "image":"assets/Dashboard/fature.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -56,7 +56,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/Quick-Patient.png",
+      "image":"assets/Dashboard/Quick-Patient.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -66,7 +66,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/Patient-Reg.png",
+      "image":"assets/Dashboard/Patient-Reg.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -76,7 +76,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/IPD-Quick-Reg.png",
+      "image":"assets/Dashboard/IPD-Quick-Reg.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -86,7 +86,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/Emergency-Quick-Reg.png",
+      "image":"assets/Dashboard/Emergency-Quick-Reg.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -96,7 +96,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/Queue.png",
+      "image":"assets/Dashboard/Queue.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -106,7 +106,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/IPD.png",
+      "image":"assets/Dashboard/IPD.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -116,7 +116,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/nursing station.png",
+      "image":"assets/Dashboard/nursing station.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -126,7 +126,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/lab.png",
+      "image":"assets/Dashboard/lab.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -136,7 +136,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/Rediology.png",
+      "image":"assets/Dashboard/Rediology.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -146,7 +146,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/billing.png",
+      "image":"assets/Dashboard/billing.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
@@ -156,7 +156,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/Pharmacy.png",
+      "image":"assets/Dashboard/Pharmacy.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"
