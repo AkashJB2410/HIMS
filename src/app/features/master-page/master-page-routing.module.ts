@@ -133,7 +133,7 @@ const routes: Routes = [
       { path: 'configurations', loadChildren: () => import('./../configurations/configurations.module').then(m => m.ConfigurationsModule) },
       { path: 'all-master/cluster', loadChildren: () => import('./../cluster/cluster-routing.module').then(m => m.ClusterRoutingModule) },
       { path: 'all-masters/spetiality', loadChildren: () => import('./../spetiality/spetiality.module').then(m => m.SpetialityModule) },
-      { path: 'settings', loadChildren: () => import('../core-features/core-features.module').then(m => m.CoreFeaturesModule) },
+      { path: 'core-features', loadChildren: () => import('../core-features/core-features.module').then(m => m.CoreFeaturesModule) },
     ],
     // canActivate: [AuthGuardGuard]
   }];
