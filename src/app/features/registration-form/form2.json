@@ -51,19 +51,19 @@
                         "values": [
                             {
                                 "name": "Maharashtra",
-                                "code": "Maharashtra"
+                                "code": "1"
                             },
                             {
                                 "name": "Delhi",
-                                "code": "Delhi"
+                                "code": "2"
                             },
                             {
                                 "name": "Goa",
-                                "code": "Goa"
+                                "code": "3"
                             },
                             {
                                 "name": "Gujarat",
-                                "code": "Gujarat"
+                                "code": "4"
                             }
                         ]
                     },
@@ -72,63 +72,63 @@
                         "values": [
                             {
                                 "name": "Kolhapur",
-                                "code": "Kolhapur",
-                                "Mcode":"Maharashtra"
+                                "code": "1",
+                                "Mcode":"1"
                             },
                             {
                                 "name": "Latur",
-                                "code": "Latur",
-                                "Mcode":"Maharashtra"
+                                "code": "2",
+                                "Mcode":"1"
                             },
                             {
                                 "name": "Mumbai City",
-                                "code": "Mumbai City",
-                                "Mcode":"Maharashtra"
+                                "code": "3",
+                                "Mcode":"1"
                             },
                             {
                                 "name": "Mumbai Suburban",
-                                "code": "Mumbai Suburban",
-                                "Mcode":"Maharashtra"
+                                "code": "4",
+                                "Mcode":"1"
                             },
                             {
                                 "name": "Nagpur",
-                                "code": "Nagpur",
-                                "Mcode":"Maharashtra"
+                                "code": "5",
+                                "Mcode":"1"
                             },
                             {
                                 "name": "Nanded",
-                                "code": "Nanded",
-                                "Mcode":"Maharashtra"
+                                "code": "6",
+                                "Mcode":"1"
                             },
                             {
                                 "name": "Nandurbar",
-                                "code": "Nandurbar",
-                                "Mcode":"Maharashtra"
+                                "code": "7",
+                                "Mcode":"1"
                             },
                             {
                                 "name": "Nashik",
-                                "code": "Nashik",
-                                "Mcode":"Maharashtra"
+                                "code": "8",
+                                "Mcode":"1"
                             },
                             {
                                 "name": "Osmanabad",
-                                "code": "Osmanabad",
-                                "Mcode":"Maharashtra"
+                                "code": "9",
+                                "Mcode":"1"
                             },
                             {
                                 "name": "Palghar",
-                                "code": "Palghar",
-                                "Mcode":"Maharashtra"
+                                "code": "10",
+                                "Mcode":"1"
                             },
                             {
                                 "name": "Parbhani",
-                                "code": "Parbhani",
-                                "Mcode":"Maharashtra"
+                                "code": "11",
+                                "Mcode":"1"
                             },
                             {
                                 "name": "Pune",
-                                "code": "Pune",
-                                "Mcode":"Maharashtra"
+                                "code": "12",
+                                "Mcode":"1"
                             }
                         ]
                     }
