@@ -37,12 +37,14 @@ export class RegistrationFormComponent implements OnInit {
   sidebarJSON: any = rgistrationData;
   sidebarButtonJSON: any = rgistBUttonData;
   formData: any;
-  formData1:any;
-  formData2:any;
-  formData3:any;
-  formData4:any;
-  formData5:any;
-  formData6:any;
+  formData1: any;
+  formData2: any;
+  formData3: any;
+  formData4: any;
+  formData5: any;
+  formData6: any;
+
+  registartionFormData: any[] = [];
   isForm: any = true;
   flag: any;
   gridData: any[];
@@ -55,8 +57,61 @@ export class RegistrationFormComponent implements OnInit {
   agedday: any;
   editData: any;
   tabularFormData = patientTabularFormData;
+  paramObj: any = {
+    "patientIdentificationTypeId": "",
+    "patientIdentificationTypeName": "",
+    "patientTitleId": "",
+    "patientTitleName": "",
+    "patientFirstname": "",
+    "patientMiddlename": "",
+    "patientLastname": "",
+    "patientDob": "",
+    "patientAge": "",
+    "patientMaritalStatusId": "",
+    "patientMaritalStatusName": "",
+    "profileImage": "",
+    "patientMobileNumber": "",
+    "patientAddressLine1": "",
+    "patientAddressLine2": "",
+    "patientCityId": "",
+    "patientCityName": "",
+    "patientStateId": "",
+    "patientStateName": "",
+    "patientCountryId": "",
+    "patientCountryName": "",
+    "patientBloodGroupId": "",
+    "patientBloodGroupName": "",
+    "patientEthinicityId": "",
+    "patientEthinicityName": "",
+    "patientReligion": "",
+    "patientBlock": "",
+    "patientPrnNumber": "",
+    "patientPrivilageId": "",
+    "patientPrivilageName": "",
+    "patientInsuranceNumber": "",
+    "patientInsurancePolicyNumber": "",
+    "patientInsuranceCompanyNumber": "",
+    "patientInsuranceCompanyName": "",
+    "patientIsTobacoConsume": false,
+    "patientIsTobacoConsumeYear": "",
+    "patientIsAlcoholConsume": false,
+    "patientIsAlcoholConsumeYear": "",
+    "patientOccupation": "",
+    "patientReferredBy": "",
+    "patientLanguages": "",
+    "patientPhoneNumber": "",
+    "patientUploadImage": "",
+    "patientRegistrationSource": "",
+    "patientSocialStatusId": "",
+    "patientSocialStatusName": "",
+    "patientHealthId": "",
+    "patientHealthNumber": "",
+    "patientEmail": ""
+
+  };
 
   constructor(private messageService: MessageService, private common: CommonService, public datepipe: DatePipe, private http: RegistrationFormService, private form$: FormService) { }
+
 
   ngOnInit(): void {
     this.assignDropDownOptions();
@@ -70,10 +125,10 @@ export class RegistrationFormComponent implements OnInit {
     this.getConfigForTable();
 
   }
-  sidebarDataForm1(e:any){
+  sidebarDataForm1(e: any) {
 
   }
-  rowClickData(e:any){}
+  rowClickData(e: any) { }
   assignDropDownOptions() {
     this.formData = Object.assign({}, rgistrationData);
     this.formData.form.formControls.forEach((data: any) => {
@@ -455,7 +510,7 @@ export class RegistrationFormComponent implements OnInit {
     }
     if (e[1].fieldName == "userBirthdate") {
       console.log("date of birth => ", e[0])
-      let age =this.datepipe.transform(e[0], "MM/dd/yyyy")
+      let age = this.datepipe.transform(e[0], "MM/dd/yyyy")
       this.calculateAge(age);
       this.form$.reRenderForm(this.formData.form.formControls[13], this.getage, 'autofill');
     }
@@ -465,78 +520,84 @@ export class RegistrationFormComponent implements OnInit {
     this.data = undefined;
     this.gridData = [];
     this.http.GetAllPatientData().subscribe(res => {
-      res.forEach((e: any,index:any) => {
+      res.forEach((e: any, index: any) => {
         console.log("Patient data => ", e)
         let date = this.datepipe.transform(
-          e.dob, "MM/dd/yyyy"
+          e.patientDob, "MM/dd/yyyy"
         );
         console.log("date birth date => ", date)
         let obj = {
-            "id":index,
-            "patientId": e.patientId,
-            "patientIdentificationTypeId": e.patientIdentificationTypeId,
-            "patientTitleId": e.patientTitleId,
-            "patientFirstname": e.patientFirstname,
-            "patientMiddlename": e.patientMiddlename,
-            "patientLastname": e.patientLastname,
+          "id": index,
+          "patientId": e.patientId,
+          
+          "patientTitleId": e.patientTitleId,
+          "patientFirstname": e.patientFirstname,
+          "patientMiddlename": e.patientMiddlename,
+          "patientLastname": e.patientLastname,
+          "patientMobileNumber": e.patientMobileNumber,
+          "patientIdentificationTypeId": e.patientIdentificationTypeId,
+          "patientIdentificationNo": "",
+          "patientMaritalStatusId": e.patientMaritalStatusId,
+          "DOBRad":"Age",
+          "patientDob": date,
+          
+          "patientAge": e.patientAge,
+          "patientGender": "2",
+          // "dependentdropdown":[]
+          
+          "patientAddressLine1": e.patientAddressLine1,
+          "patientAddressLine2": e.patientAddressLine2,
+          "patientCityId": e.patientCityId,
+          "patientStateId": e.patientStateId,
+          "patientCountryId": e.patientCountryId,
+          "patientBloodGroupId": e.patientBloodGroupId,
+          "patientEthinicityId": e.patientEthinicityId,
+          "patientReligion": e.patientReligion,
+          "patientSocialStatusId": e.patientSocialStatusId,
+          "patientBlock": e.patientBlock,
+          "patientPrnNumber": e.patientPrnNumber,
+          "patientPrivilageId": e.patientPrivilageId,
+          "patientInsuranceNumber": e.patientInsuranceNumber,
+          "patientInsurancePolicyNumber": e.patientInsurancePolicyNumber,
+          "patientInsuranceCompanyNumber": e.patientInsuranceCompanyNumber,
+          "patientInsuranceCompanyName": e.patientInsuranceCompanyName,
+          "patientIsTobacoConsume": e.patientIsTobacoConsume,
+          "patientIsTobacoConsumeYear": e.patientIsTobacoConsumeYear,
+          "patientIsAlcoholConsume": e.patientIsAlcoholConsume,
+          "patientIsAlcoholConsumeYear": e.patientIsAlcoholConsumeYear,
+          "patientIsHaveDiabeties": e.patientIsHaveDiabeties,
+          "patientIsHaveDiabetiesYear": e.patientIsHaveDiabetiesYear,
 
-            "patientDob": e.patientDob,
-            "patientAge": e.patientAge,
-            "patientMaritalStatusId": e.patientMaritalStatusId,
-            "patientMobileNumber": e.patientMobileNumber,
-            "patientAddressLine1": e.patientAddressLine1,
-            "patientAddressLine2": e.patientAddressLine2,
-            "patientCityId": e.patientCityId,
-            "patientStateId": e.patientStateId,
-            "patientCountryId": e.patientCountryId,
-            "patientBloodGroupId":e.patientBloodGroupId,
-            "patientEthinicityId": e.patientEthinicityId,
-            "patientReligion": e.patientReligion,
-            "patientSocialStatusId": e.patientSocialStatusId,
-            "patientBlock": e.patientBlock,
-            "patientPrnNumber": e.patientPrnNumber,
-            "patientPrivilageId": e.patientPrivilageId,
-            "patientInsuranceNumber": e.patientInsuranceNumber,
-            "patientInsurancePolicyNumber": e.patientInsurancePolicyNumber,
-            "patientInsuranceCompanyNumber": e.patientInsuranceCompanyNumber,
-            "patientInsuranceCompanyName": e.patientInsuranceCompanyName,
-            "patientIsTobacoConsume": e.patientIsTobacoConsume,
-            "patientIsTobacoConsumeYear": e.patientIsTobacoConsumeYear,
-            "patientIsAlcoholConsume": e.patientIsAlcoholConsume,
-            "patientIsAlcoholConsumeYear": e.patientIsAlcoholConsumeYear,
-            "patientIsHaveDiabeties": e.patientIsHaveDiabeties,
-            "patientIsHaveDiabetiesYear": e.patientIsHaveDiabetiesYear,
-
-            "patientOccupation": e.patientOccupation,
-            "patientReferredBy": e.patientReferredBy,
-            "patientLanguages": e.patientLanguages,
-            "patientPhoneNumber": e.patientPhoneNumber,
+          "patientOccupation": e.patientOccupation,
+          "patientReferredBy": e.patientReferredBy,
+          "patientLanguages": e.patientLanguages,
+          "patientPhoneNumber": e.patientPhoneNumber,
 
 
-            "patientIdentificationTypeName": e.patientIdentificationTypeName,
-            "patientTitleName": e.patientTitleName,
-            "patientMaritalStatusName": e.patientMaritalStatusName,
-            "patientCityName": e.patientCityName,
-            "patientStateName": e.patientStateName,
-            "patientCountryName": e.patientCountryName,
-            "patientBloodGroupName": e.patientBloodGroupName,
-            "patientEthinicityName": e.patientEthinicityName,
-            "patientSocialStatusName": e.patientSocialStatusName,
-            "patientPrivilageName": e.patientPrivilageName,
-            
+          "patientIdentificationTypeName": e.patientIdentificationTypeName,
+          "patientTitleName": e.patientTitleName,
+          "patientMaritalStatusName": e.patientMaritalStatusName,
+          "patientCityName": e.patientCityName,
+          "patientStateName": e.patientStateName,
+          "patientCountryName": e.patientCountryName,
+          "patientBloodGroupName": e.patientBloodGroupName,
+          "patientEthinicityName": e.patientEthinicityName,
+          "patientSocialStatusName": e.patientSocialStatusName,
+          "patientPrivilageName": e.patientPrivilageName,
 
-            "patientMrNo": e.patientMrNo,
-            "profileImage": e.profileImage,
-            "patientEmail": e.patientEmail,
-            
-            "patientHealthId": e.patientHealthId,
-            "patientHealthNumber": e.patientHealthNumber,
-            
-            "patientIsHaveSugar": e.patientIsHaveSugar,
-            "patientIsHaveSugarYear": e.patientIsHaveSugarYear,
-            "patientUploadImage": e.patientUploadImage,
-            "patientRegistrationSource": e.patientRegistrationSource,
-            "isActive": e.isActive
+
+          "patientMrNo": e.patientMrNo,
+          "profileImage": e.profileImage,
+          "patientEmail": e.patientEmail,
+
+          "patientHealthId": e.patientHealthId,
+          "patientHealthNumber": e.patientHealthNumber,
+
+          "patientIsHaveSugar": e.patientIsHaveSugar,
+          "patientIsHaveSugarYear": e.patientIsHaveSugarYear,
+          "patientUploadImage": e.patientUploadImage,
+          "patientRegistrationSource": e.patientRegistrationSource,
+          "isActive": e.isActive
 
         }
         this.gridData.push(obj);
@@ -614,19 +675,105 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   sidebarData(e: any) {
-    console.log("sidebar data => ",e)
-    if (this.isAddEditFlag == "add") {
-      this.submitUserData(e, this.imgName);
+    console.log("sidebar data => ", e)
+    if (this.isAddEditFlag.add == "add") {
+      this.submitUserData(this.paramObj);
       this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
 
     } else {
-      this.updateUserData(e);
+      this.updateUserData(this.paramObj);
       this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data updated successfull.' });
 
     }
   }
 
-  submitUserData(userData: any, img: any) {
+  saveRegistartionForm(e: any) {
+    console.log("saveRegistartionForm => ", this.paramObj);
+    this.paramObj = {
+      "patientIdentificationTypeId": e.selectIdentificationType,
+      "patientTitleId": e.selectTitle,
+      "patientFirstname": e.firstNameInput,
+      "patientMiddlename": e.middleNameInput,
+      "patientLastname": e.lastNameInput,
+
+      "patientDob": e.userBirthdate,
+      "patientAge": e.ageText,
+      "patientMaritalStatusId": e.selectMaritalStatus,
+      "patientMobileNumber": e.mobileNoInput,
+      "patientAddressLine1": e.addressLine1Input,
+      "patientAddressLine2": e.addressLine2Input,
+      "patientCityId": e.selectCity,
+      "patientStateId": e.selectState,
+      "patientCountryId": e.selectCountry,
+      "patientId":e.patientId
+
+    }
+    console.log("saveRegistartionForm => ", this.paramObj);
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+  }
+  saveFormOne(e: any) {
+
+    this.paramObj = {
+      "patientBloodGroupId": e.selectBlood,
+      "patientEthinicityId": e.selectEthincity,
+      "patientReligion": e.religionInput,
+
+    }
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+    console.log("saveFormOne => ", this.paramObj);
+  }
+  saveFormTwo(e: any) {
+    this.paramObj = {
+      "patientStateId": [e.selectState[0], e.selectState[1]],
+
+    }
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+    console.log("saveRegistartionForm => ", this.paramObj);
+  }
+  saveFormThree(e: any) {
+    this.paramObj = {
+      "patientPrnNumber": e.PRNNumber,
+      "patientPrivilageId": e.privilageType,
+    }
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+    console.log("saveRegistartionForm => ", this.paramObj);
+  }
+  saveFormFour(e: any) {
+    this.paramObj = {
+      "patientInsuranceNumber": e.insuranceNo,
+      "patientInsurancePolicyNumber": e.policyNo,
+      "patientInsuranceCompanyNumber": e.companyNo,
+      "patientInsuranceCompanyName": e.companyName
+    }
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+    console.log("saveRegistartionForm => ", this.paramObj);
+  }
+  saveFormFive(e: any) {
+// diabetesQuestion1
+
+// diabetesRad
+
+    this.paramObj = {
+      "patientIsTobacoConsume": e.alcoholRad,
+      "patientIsTobacoConsumeYear": e.alcoholQuestion1,
+      "patientIsAlcoholConsume": e.tobacooRad,
+      "patientIsAlcoholConsumeYear": e.tobacooQuestion1,
+
+    }
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+    console.log("saveRegistartionForm => ", this.paramObj);
+  }
+  saveFormSix(e: any) {
+    this.paramObj = {
+      "patientOccupation": e.occupation,
+      "patientReferredBy": e.refferedBy,
+      "patientLanguages": e.language,
+      "patientPhoneNumber": e.phoneNo,
+    }
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+    console.log("saveRegistartionForm => ", this.paramObj);
+  }
+  submitUserData(userData: any) {
     this.http.savePatientData(userData)
       .subscribe(data => {
         this.data = undefined;
@@ -655,41 +802,61 @@ export class RegistrationFormComponent implements OnInit {
     this.common.sendEditData(false);
   }
 
-  dataForm(e: any){
-    this.data=e;
+  dataForm(e: any) {
+    this.data = e;
   }
   onAdd(e: any) {
-    this.editData=[]
+    this.editData = []
     this.isAddEditFlag = e;
   }
   onEdit(e: any) {
     this.isAddEditFlag = e.edit;
+    let date = this.datepipe.transform(
+      e.editRow.patientDob, "MM/dd/yyyy"
+    );
     let edit = {
+      "divider1":"",
       "patientId": e.editRow.patientId,
-      "patientMrNo": e.editRow.patientMrNo,
-      "patientIdentificationTypeId": e.editRow.patientIdentificationTypeId,
-      "patientIdentificationTypeName": e.editRow.patientIdentificationTypeName,
       "patientTitleId": e.editRow.patientTitleId,
-      "patientTitleName": e.editRow.patientTitleName,
       "patientFirstname": e.editRow.patientFirstname,
       "patientMiddlename": e.editRow.patientMiddlename,
       "patientLastname": e.editRow.patientLastname,
-      "patientDob": e.editRow.patientDob,
-      "patientAge": e.editRow.patientAge,
-      "patientMaritalStatusId": e.editRow.patientMaritalStatusId,
-      "patientMaritalStatusName": e.editRow.patientMaritalStatusName,
-      "profileImage": e.editRow.profileImage,
       "patientMobileNumber": e.editRow.patientMobileNumber,
-      "patientEmail": e.editRow.patientEmail,
+      "patientIdentificationTypeId": e.editRow.patientIdentificationTypeId,
+      "patientIdentificationNumber": "2234 1234 1234",
+      "patientMaritalStatusId": e.editRow.patientMaritalStatusId,
+      "DOBRad":"",
+      "patientDob": date,
+      "AgeRad":["Age"],
+      "patientAge": e.editRow.patientAge,
+      "patientGender":"2",
+      "divider2":"",
+      "dependentdropdown":[e.editRow.patientCountryId,e.editRow.patientStateId,e.editRow.patientCityId],
+      // "patientCountryId": ,
+      // "patientStateId": ,
+      // "patientCityId": ,
       "patientAddressLine1": e.editRow.patientAddressLine1,
       "patientAddressLine2": e.editRow.patientAddressLine2,
-      "patientCityId": e.editRow.patientCityId,
-      "patientCityName": e.editRow.patientCityName,
-      "patientStateId": e.editRow.patientStateId,
-      "patientStateName": e.editRow.patientStateName,
-      "patientCountryId": e.editRow.patientCountryId,
+      "staticText1":"",
       "patientCountryName": e.editRow.patientCountryName,
-      "patientBloodGroupId":e.patientBloodGroupId,
+      "patientMaritalStatusName": e.editRow.patientMaritalStatusName,
+      
+
+      "patientTitleName": e.editRow.patientTitleName,
+      
+      
+      
+      
+      "profileImage": e.editRow.profileImage,
+      
+      "patientEmail": e.editRow.patientEmail,
+      
+      
+      "patientCityName": e.editRow.patientCityName,
+      
+      "patientStateName": e.editRow.patientStateName,
+      
+      "patientBloodGroupId": e.patientBloodGroupId,
       "patientBloodGroupName": e.editRow.patientBloodGroupName,
       "patientHealthId": e.editRow.patientHealthId,
       "patientHealthNumber": e.editRow.patientHealthNumber,
@@ -720,7 +887,9 @@ export class RegistrationFormComponent implements OnInit {
       "patientPhoneNumber": e.editRow.patientPhoneNumber,
       "patientUploadImage": e.editRow.patientUploadImage,
       "patientRegistrationSource": e.editRow.patientRegistrationSource,
-      "isActive": e.editRow.isActive
+      "isActive": e.editRow.isActive,
+      "patientMrNo": e.editRow.patientMrNo,
+      "patientIdentificationTypeName": e.editRow.patientIdentificationTypeName,
 
     }
     this.editData = edit;
@@ -728,50 +897,50 @@ export class RegistrationFormComponent implements OnInit {
     // this.form$.reRenderForm(this.sidebarJSON.form.formControls[1], false, 'isVisible');
   }
 
-  tabularValue(e:any){
-    console.log("tabular => ",e);
-    if(e.id==0){
-      this.formData1=form1Data;
-      this.formData2='';
-      this.formData3='';
-      this.formData4='';
-      this.formData5='';
-      this.formData6='';
-    }else if(e.id==1){
-      this.formData1='';
-      this.formData2=form2Data;
-      this.formData3='';
-      this.formData4='';
-      this.formData5='';
-      this.formData6='';
-    }else if(e.id==2){
-      this.formData1='';
-      this.formData2='';
-      this.formData3=form3Data;
-      this.formData4='';
-      this.formData5='';
-      this.formData6='';
-    }else if(e.id==3){
-      this.formData1='';
-      this.formData2='';
-      this.formData3='';
-      this.formData4=form4Data;
-      this.formData5='';
-      this.formData6='';
-    }else if(e.id==4){
-      this.formData1='';
-      this.formData2='';
-      this.formData3='';
-      this.formData4='';
-      this.formData5=form5Data;
-      this.formData6='';
-    }else if(e.id==5){
-      this.formData1='';
-      this.formData2='';
-      this.formData3='';
-      this.formData4='';
-      this.formData5='';
-      this.formData6=form6Data;
+  tabularValue(e: any) {
+    console.log("tabular => ", e);
+    if (e.id == 0) {
+      this.formData1 = form1Data;
+      this.formData2 = '';
+      this.formData3 = '';
+      this.formData4 = '';
+      this.formData5 = '';
+      this.formData6 = '';
+    } else if (e.id == 1) {
+      this.formData1 = '';
+      this.formData2 = form2Data;
+      this.formData3 = '';
+      this.formData4 = '';
+      this.formData5 = '';
+      this.formData6 = '';
+    } else if (e.id == 2) {
+      this.formData1 = '';
+      this.formData2 = '';
+      this.formData3 = form3Data;
+      this.formData4 = '';
+      this.formData5 = '';
+      this.formData6 = '';
+    } else if (e.id == 3) {
+      this.formData1 = '';
+      this.formData2 = '';
+      this.formData3 = '';
+      this.formData4 = form4Data;
+      this.formData5 = '';
+      this.formData6 = '';
+    } else if (e.id == 4) {
+      this.formData1 = '';
+      this.formData2 = '';
+      this.formData3 = '';
+      this.formData4 = '';
+      this.formData5 = form5Data;
+      this.formData6 = '';
+    } else if (e.id == 5) {
+      this.formData1 = '';
+      this.formData2 = '';
+      this.formData3 = '';
+      this.formData4 = '';
+      this.formData5 = '';
+      this.formData6 = form6Data;
     }
 
   }
@@ -783,11 +952,6 @@ export class RegistrationFormComponent implements OnInit {
     yearNow = now.getFullYear();
     monthNow = now.getMonth();
     dateNow = now.getDate();
-
-    console.log("yearNow =======> ",yearNow)
-    console.log("monthNow =======> ",monthNow)
-    console.log("dateNow =======> ",dateNow);
-    console.log("dateString ===> ", dateString);
     dob = new Date(dateString.substring(6, 10),
       dateString.substring(0, 2) - 1,
       dateString.substring(3, 5)
@@ -795,11 +959,6 @@ export class RegistrationFormComponent implements OnInit {
     yearDob = dob.getFullYear();
     monthDob = dob.getMonth();
     dateDob = dob.getDate();
-
-
-    console.log("yearDob =======> ",yearDob)
-    console.log("monthDob =======> ",monthDob)
-    console.log("dateDob =======> ",dateDob);
     monthAge = 0;
     dateAge = 0;
     yearAge = yearNow - yearDob;
@@ -820,16 +979,16 @@ export class RegistrationFormComponent implements OnInit {
       }
     }
 
-    console.log("monthAge =======> ",monthAge)
-    console.log("dateAge =======> ",dateAge)
-    console.log("yearAge =======> ",yearAge)
+    console.log("monthAge =======> ", monthAge)
+    console.log("dateAge =======> ", dateAge)
+    console.log("yearAge =======> ", yearAge)
     this.getage = yearAge;
     this.agemon = monthAge;
     this.agedday = dateAge;
 
-    console.log("age =======> ",this.getage)
-    console.log("agemon =======> ",this.agemon)
-    console.log("agedat =======> ",this.agedday)
+    console.log("age =======> ", this.getage)
+    console.log("agemon =======> ", this.agemon)
+    console.log("agedat =======> ", this.agedday)
 
   }
 }

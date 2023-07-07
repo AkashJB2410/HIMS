@@ -1,9 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Insurance Details",
-        "formTitleClass": "formclass",
-        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formTitle": "",
+        "formTitleClass": "",
+        "formTitleLogo":"",
         "formName": "Form1",
         "formType": "edit",
         "sidebar": "p-sidebar-lg",
@@ -99,7 +99,7 @@
                 "transient": true,
                 "type": "button",
                 "subtype": "save",
-                "class": "col-md-3",
+                "class": "col-md-2",
                 "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",

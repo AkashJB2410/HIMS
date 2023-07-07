@@ -1,9 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Additional Details",
-        "formTitleClass": "formclass",
-        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formTitle": "",
+        "formTitleClass": "",
+        "formTitleLogo":"",
         "formName": "Form1",
         "formType": "edit",
         "sidebar": "p-sidebar-lg",
@@ -100,9 +100,9 @@
                 "type": "button",
                 "subtype": "save",
                 "class": "col-md-2",
-                "valueclass": "butn-dark-blue btn-md",
+                "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
-                "icon": "pi pi-user-plus",
+                "icon": "",
                 "isDisabled": false,
                 "formControlName": "",
                 "validations": {

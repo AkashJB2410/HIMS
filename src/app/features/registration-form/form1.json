@@ -1,34 +1,13 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "DEMOGRAPHICS",
-        "formTitleClass": "formclass",
-        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formTitle": "",
+        "formTitleClass": "",
+        "formTitleLogo":"",
         "formName": "Form1",
         "formType": "edit",
         "sidebar": "p-sidebar-lg",
         "formControls": [
-            {
-                "id": 1,
-                "isEditable": false,
-                "isVisible": false,
-                "label": "UHID",
-                "inputType": "text",
-                "type": "text",
-                "class": "col-md-3 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Patient UHID",
-                "formControlName": "UHID",
-                "message": {
-                    "required": "",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
             {
                 "id": 15,
                 "isEditable": true,
@@ -160,7 +139,7 @@
                 "transient": true,
                 "type": "button",
                 "subtype": "save",
-                "class": "col-md-3",
+                "class": "col-md-2",
                 "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",

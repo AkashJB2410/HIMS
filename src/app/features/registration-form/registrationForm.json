@@ -19,9 +19,9 @@
                 "type": "divider",
                 "class": "col-md-12 my-1",
                 "lblclass": "custom-label",
-                "defaultValue":"01/2023",
+                "defaultValue":"",
                 "valueclass": "",
-                "formControlName": "divider",
+                "formControlName": "divider1",
                 "message": {
                     "required": "",
                     "pattern": ""
@@ -216,7 +216,56 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "selectIdentificationType",
-                "values": [],
+                "values": [
+                    {
+                            "name": "Select Identification Type",
+                            "code": "0"
+                     },
+                     {
+                        "name": "Aadhar Card",
+                        "code": "1"
+                     },
+                     {
+                        "name": "Passport",
+                        "code": "2"
+                     },
+                     {
+                        "name": "Pan Card",
+                        "code": "3"
+                     },
+                     {
+                        "name": "Voter Card",
+                        "code": "4"
+                     },
+                     {
+                        "name": "Ration Card",
+                        "code": "5"
+                     },
+                     {
+                        "name": "ANC Number",
+                        "code": "6"
+                     },
+                     {
+                        "name": "CHS Number",
+                        "code": "7"
+                     },
+                     {
+                        "name": "Army Identify Card",
+                        "code": "8"
+                     },
+                     {
+                        "name": "Driving Licence",
+                        "code": "9"
+                     },
+                     {
+                        "name": "Other",
+                        "code": "10"
+                     },
+                     {
+                        "name": "ABHA Id",
+                        "code": "11"
+                     }
+                ],
                 "message": {
                     "required": "Identification Type is required",
                     "pattern": ""
@@ -266,11 +315,11 @@
                     },
                     {
                         "name": "Married ",
-                        "code": "M"
+                        "code": "1"
                     },
                     {
                         "name": "Unmarried ",
-                        "code": "UM"
+                        "code": "2"
                     }
                 ],
                 "message": {
@@ -289,7 +338,7 @@
                 "label": "",
                 "inputType": "radio",
                 "type": "radio",
-                "class": "col-md-2  my-1",
+                "class": "col-md-1  my-1",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
@@ -312,23 +361,22 @@
             },
             {
                 "id": 11,
-                "isEditable": false,
+                "isEditable": true,
                 "isVisible": true,
+                "transient": false,
                 "label": "",
                 "type": "date",
-                "format": "MM-dd",
-                "class": "col-md-1 my-1",
+                "class": "col-md-2 my-1",
                 "lblclass": "custom-label",
-                "valueclass": "custom-p-calendar",
-                "value": "04/22/2023",
-                "placeholder": "",
+                "valueclass": "",
+                "defaultValue": "",
                 "formControlName": "userBirthdate",
                 "message": {
                     "required": "Date is required",
                     "pattern": ""
                 },
                 "validations": {
-                    "required": false,
+                    "required": true,
                     "pattern": ""
                 }
             },
@@ -339,7 +387,7 @@
                 "label": "",
                 "inputType": "radio",
                 "type": "radio",
-                "class": "col-md-2  my-1",
+                "class": "col-md-1  my-1",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
@@ -367,7 +415,7 @@
                 "label": "",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-1 my-1",
+                "class": "col-md-2 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Age",
@@ -432,7 +480,7 @@
                 "lblclass": "custom-label",
                 "defaultValue":"01/2023",
                 "valueclass": "",
-                "formControlName": "divider",
+                "formControlName": "divider2",
                 "message": {
                     "required": "",
                     "pattern": ""
@@ -443,66 +491,94 @@
                 }
             },
             {
-                "id": 20,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Country",
-                "type": "select",
-                "value": "M",
-                "class": "col-md-3  my-1",
+                "transient": true,
+                "label": "",
+                "type": "dependentdropdown",
+                "class": "col-md-9",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
-                "formControlName": "selectCountry",
-                "values": [],
+                "formControlName": "dependentdropdown",
+                "defaultValue": "",
                 "message": {
-                    "required": "Country is required",
+                    "required": "Gender is required",
                     "pattern": ""
                 },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 19,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "State",
-                "type": "select",
-                "value": "M",
-                "class": "col-md-3  my-1",
-                "lblclass": "custom-label",
-                "valueclass": "",
-                "placeholder": "Select option",
-                "formControlName": "selectState",
-                "values": [],
-                "message": {
-                    "required": "State is required",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 18,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "City",
-                "type": "select",
-                "value": "M",
-                "class": "col-md-3  my-1",
-                "lblclass": "custom-label",
-                "valueclass": "",
-                "placeholder": "Select option",
-                "formControlName": "selectCity",
-                "values": [],
-                "message": {
-                    "required": "City is required",
-                    "pattern": ""
-                },
+                "values": [
+                    {
+                        "label": "Country",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": ""
+                            },
+                            {
+                                "name": "India",
+                                "code": "1"
+                            },
+                            {
+                                "name": "Canada",
+                                "code": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "State",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": ""
+                            },
+                            {
+                                "name": "Maharashtra",
+                                "code": "1",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Bihar",
+                                "code": "2",
+                                "Mcode": "1"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "City",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": "",
+                                "Mcode": ""
+                            },
+                            {
+                                "name": "Pune",
+                                "code": "1",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Satara",
+                                "code": "2",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Sangli",
+                                "code": "3",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Patna",
+                                "code": "4",
+                                "Mcode": "2"
+                            },
+                            {
+                                "name": "Mujjafarpur",
+                                "code": "5",
+                                "Mcode": "2"
+                            }
+                        ]
+                    }
+                ],
                 "validations": {
                     "required": false,
                     "pattern": ""
@@ -562,7 +638,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "custom-text",
                 "placeholder": "",
-                "formControlName": "staticText",
+                "formControlName": "staticText1",
                 "message": {
                     "required": "",
                     "pattern": ""
@@ -579,7 +655,7 @@
                 "transient": true,
                 "type": "button",
                 "subtype": "save",
-                "class": "col-md-3",
+                "class": "col-md-2",
                 "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",

@@ -17,20 +17,26 @@
     (rowClickData)="rowClickData($event)">
 
     <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="formData" [editData]="editData"
-       (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)" (changeEvents)="changeSelectItem($event)"></app-form>
+        (formData)="saveRegistartionForm($event)" (changeEvents)="changeSelectItem($event)"></app-form>
+
     <app-tabular-forms projectTowards="sidebar" [tabularJSON]="tabularFormData" (tabularEmitData)="tabularValue($event)">
         <app-form *ngIf="formData1" projectTowards="sidebar" [formJSON]="formData1" 
-       (btnEvent)="buttonEvent($event)" (formData)="sidebarDataForm1($event)"></app-form>
+        (formData)="saveFormOne($event)"></app-form>
+
        <app-form *ngIf="formData2" projectTowards="sidebar"  [formJSON]="formData2" 
-       (btnEvent)="buttonEvent($event)" (formData)="sidebarDataForm1($event)"></app-form>
+        (formData)="saveFormTwo($event)"></app-form>
+
        <app-form *ngIf="formData3" projectTowards="sidebar"  [formJSON]="formData3" 
-       (btnEvent)="buttonEvent($event)" (formData)="sidebarDataForm1($event)"></app-form>
+        (formData)="saveFormThree($event)"></app-form>
+
        <app-form *ngIf="formData4" projectTowards="sidebar"  [formJSON]="formData4" 
-       (btnEvent)="buttonEvent($event)" (formData)="sidebarDataForm1($event)"></app-form>
+        (formData)="saveFormFour($event)"></app-form>
+
        <app-form *ngIf="formData5" projectTowards="sidebar"  [formJSON]="formData5" 
-       (btnEvent)="buttonEvent($event)" (formData)="sidebarDataForm1($event)"></app-form>
+        (formData)="saveFormFive($event)"></app-form>
+
        <app-form *ngIf="formData6" projectTowards="sidebar"  [formJSON]="formData6" 
-       (btnEvent)="buttonEvent($event)" (formData)="sidebarDataForm1($event)"></app-form>
+       (formData)="saveFormSix($event)"></app-form>
     </app-tabular-forms>
     <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="sidebarButtonJSON" [editData]="editData"
        (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
