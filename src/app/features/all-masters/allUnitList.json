@@ -13,7 +13,7 @@
     {
       "label": "Department",
       "routerLink": "/master-page/all-masters/department",
-      "imgSrc": "assets/unit-configuration/department.png"
+      "imgSrc": "assets/unit-configuration/Department.png"
     },
     {
       "label": "Sub Department",
@@ -23,7 +23,7 @@
     {
       "label": "Desiganation",
       "routerLink": "/master-page/all-masters/desiganation",
-      "imgSrc": "assets/unit-configuration/designation.png"
+      "imgSrc": "assets/unit-configuration/Designation.png"
     },
     {
       "label": "Spetiality",
@@ -38,7 +38,7 @@
     {
       "label": "Staff",
       "routerLink": "/master-page/all-masters/staff",
-      "imgSrc": "assets/unit-configuration/staff.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "Manage Staff",
@@ -68,7 +68,7 @@
     {
       "label": "Role",
       "routerLink": "/master-page/all-masters/role-management",
-      "imgSrc": "assets/unit-configuration/role.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "Action Module",
@@ -118,7 +118,7 @@
     {
       "label": "LOV type",
       "routerLink": "/master-page/all-masters/lov-type",
-      "imgSrc": "assets/unit-configuration/action-sub-module.png"
+      "imgSrc": "assets/unit-configuration/employee-status.png"
     },
     {
       "label": "LOV Value",
