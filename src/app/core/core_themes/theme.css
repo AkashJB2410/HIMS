@@ -1600,7 +1600,7 @@ body {
 }
 
 .p-dropdown .p-inputtext {
-  padding: 0.375rem 0.75rem !important;
+padding: 9px 5px 5px 5px!important;
 }
 
 /*-------------------------Dropdown End-------------------------------------*/
@@ -2636,4 +2636,7 @@ body {
   background: rgb(76 165 255 / 10%)!important;
   border-color: rgba(0, 0, 0, 0.12)!important;
   color: rgb(76 165 255)!important;
+}
+.p-radiobutton:not(.p-radiobutton-disabled):hover {
+  box-shadow: none!important;
 }
