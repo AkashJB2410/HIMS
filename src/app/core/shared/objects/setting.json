@@ -3,12 +3,7 @@
     "cardClass":"col-md-9 ps-0",
     "cardHeight":"cardHeight",
     "tabular": [
-        {
-            "label": "Themes",
-            "image":"/assets/verticalCard.png",
-            "imgCss":"verticalCardImage",
-            "theme" : false
-        },
+   
         {
             "label": "Personalization",
             "image":"/assets/verticalCard.png",
@@ -17,22 +12,13 @@
 
         },
         {
-            "label": "Currency",
+            "label": "Profile Details",
             "image":"/assets/verticalCard.png",
             "imgCss":"verticalCardImage",
             "theme" : false
 
-        },
-        {
-            "label": "Date Format",
-            "image":"/assets/verticalCard.png",
-            "imgCss":"verticalCardImage"
-        },
-        {
-            "label": "Notification",
-            "image":"/assets/verticalCard.png",
-            "imgCss":"verticalCardImage"
         }
+    
         
     ]
 

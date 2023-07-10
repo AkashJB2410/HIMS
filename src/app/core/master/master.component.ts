@@ -19,6 +19,7 @@ export class MasterComponent implements OnInit {
   personalization: any;
   @Input() masterJSON: any;
   @Output() notification = new EventEmitter<any>();
+  @Output() sidenavItem = new EventEmitter<any>(); 
   constructor(private themeService: ThemeService) { }
 
   ngOnInit(): void {
@@ -42,5 +43,8 @@ export class MasterComponent implements OnInit {
 
   notificationEvent(e: any) {
     this.notification.emit(e)
+  }
+  sidenavItems(item:any){
+    this.sidenavItem.emit(item)
   }
 }
