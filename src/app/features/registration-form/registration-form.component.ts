@@ -524,18 +524,16 @@ export class RegistrationFormComponent implements OnInit {
   }
   changeSelect(e:any){
     if (e[1].fieldName == "alcoholRad" && e[1].values[0].code ==true) {
-      this.form$.reRenderForm(this.formData5.form.formControls[2], true, 'isVisible');
+      this.form$.reRenderForm(this.formData5.form.formControls[1], true, 'isVisible');
     }
     if (e[1].fieldName == "tobacooRad" && e[1].values[0].code==true ) {
-      this.form$.reRenderForm(this.formData5.form.formControls[4], true, 'isVisible');
+      this.form$.reRenderForm(this.formData5.form.formControls[3], true, 'isVisible');
     }
     if (e[1].fieldName == "diabetesRad" && e[1].values[0].code ==true) {
+      this.form$.reRenderForm(this.formData5.form.formControls[4], true, 'isVisible');
       this.form$.reRenderForm(this.formData5.form.formControls[6], true, 'isVisible');
     }
       
-      
-     
-
   }
   getAllPatientData() {
     this.data = undefined;
@@ -624,9 +622,9 @@ export class RegistrationFormComponent implements OnInit {
         this.gridData.push(obj);
       })
       this.data = [...this.gridData];
-      for (let i = 0; i < this.data.length; i++) {
-        this.data[i].srNumber = i + 1;
-      }
+      // for (let i = 0; i < this.data.length; i++) {
+      //   this.data[i].srNumber = i + 1;
+      // }
       this.data;
       this.isdataReady = true;
     })
@@ -719,6 +717,7 @@ export class RegistrationFormComponent implements OnInit {
 
       "patientDob": e.userBirthdate,
       "patientAge": e.ageText,
+      "patientBloodGroupId": e.selectBlood,
       "patientMaritalStatusId": e.selectMaritalStatus,
       "patientMobileNumber": e.mobileNoInput,
       "patientAddressLine1": e.addressLine1Input,
@@ -736,7 +735,7 @@ export class RegistrationFormComponent implements OnInit {
   saveFormOne(e: any) {
 
     this.paramObj = {
-      "patientBloodGroupId": e.selectBlood,
+      
       "patientEthinicityId": e.selectEthincity,
       "patientReligion": e.religionInput,
 
@@ -956,42 +955,30 @@ export class RegistrationFormComponent implements OnInit {
   tabularValue(e: any) {
     console.log("tabular => ", e);
     if (e.id == 0) {
-      this.formData1 = form1Data;
-      this.formData2 = '';
-      this.formData3 = '';
-      this.formData4 = '';
-      this.formData5 = '';
-      this.formData6 = '';
-    } else if (e.id == 1) {
-      this.formData1 = '';
       this.formData2 = form2Data;
       this.formData3 = '';
       this.formData4 = '';
       this.formData5 = '';
       this.formData6 = '';
-    } else if (e.id == 2) {
-      this.formData1 = '';
+    } else if (e.id == 1) {
       this.formData2 = '';
       this.formData3 = form3Data;
       this.formData4 = '';
       this.formData5 = '';
       this.formData6 = '';
-    } else if (e.id == 3) {
-      this.formData1 = '';
+    } else if (e.id == 2) {
       this.formData2 = '';
       this.formData3 = '';
       this.formData4 = form4Data;
       this.formData5 = '';
       this.formData6 = '';
-    } else if (e.id == 4) {
-      this.formData1 = '';
+    } else if (e.id == 3) {
       this.formData2 = '';
       this.formData3 = '';
       this.formData4 = '';
       this.formData5 = form5Data;
       this.formData6 = '';
-    } else if (e.id == 5) {
-      this.formData1 = '';
+    } else if (e.id == 4) {
       this.formData2 = '';
       this.formData3 = '';
       this.formData4 = '';

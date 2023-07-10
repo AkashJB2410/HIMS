@@ -4,6 +4,7 @@ import selfRegForm from './selfRegForm.json';
 import selfRegbreadcrumb from './selfReg_breadcrumb.json'
 import { CommonService } from 'src/app/core/shared/service/common.service';
 import { SelfRegistrationService } from './self-registration.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-self-registration',
@@ -23,7 +24,7 @@ export class SelfRegistrationComponent implements OnInit {
   flag: any;
   errorFlag: boolean = false;
   editData: any
-  constructor(private messageService: MessageService, private http: SelfRegistrationService) { }
+  constructor(private messageService: MessageService, private http: SelfRegistrationService, private router:Router) { }
 
   ngOnInit(): void {
 
@@ -31,6 +32,9 @@ export class SelfRegistrationComponent implements OnInit {
 
   buttonEvent(e: any) {
     this.editData = undefined;
+    if(e=="reset"){
+this.router.navigateByUrl('')
+    }
   }
   sidebarData(e: any) {
     if (e != 'reset') {

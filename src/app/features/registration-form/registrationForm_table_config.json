@@ -1,7 +1,6 @@
 {
     "tableName": "Registration Table",
     "tableHeaders": [
-        {"field": "srNumber", "header": "Sr. No","iseditable": false,"class": "text-center"},
         {"field": "patientFirstname","header": "FirstName","iseditable": false , "class":""},
         {"field": "patientMiddlename","header": "MiddleName","iseditable": false , "class":""},
         {"field": "patientLastname","header": "LastName","iseditable": false , "class":""},
@@ -29,7 +28,7 @@
     "isActions": ["Edit", "Delete","isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "expand":false,
-    "buttonlbl":"Registration",
+    "buttonlbl":"",
     "textLength":16,
     "sidebar":"p-sidebar-xl"
 }

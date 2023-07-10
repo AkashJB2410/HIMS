@@ -208,6 +208,28 @@
                 "id": 7,
                 "isEditable": true,
                 "isVisible": true,
+                "label": "Email ID",
+                "type": "text",
+                "inputType": "email",
+                "maxLength": 5,
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "xyz123@example.com",
+                "formControlName": "emailInput",
+                "message": {
+                    "required": "Email is required",
+                    "pattern": "Please enter correct format"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+                }
+            },
+            {
+                "id": 7,
+                "isEditable": true,
+                "isVisible": true,
                 "label": "Identification Type",
                 "type": "select",
                 "value": "M",
@@ -370,6 +392,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "defaultValue": "",
+                "placeholder": "Birthdate",
                 "formControlName": "userBirthdate",
                 "message": {
                     "required": "Date is required",
@@ -461,6 +484,143 @@
                 ],
                 "message": {
                     "required": "Gender is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 15,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Blood Group",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectBlood",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "A+",
+                        "code": "1"
+                    },
+                    {
+                        "name": "B+",
+                        "code": "2"
+                    },
+                    {
+                        "name": "o+",
+                        "code": "3"
+                    },
+                    {
+                        "name": "AB+",
+                        "code": "4"
+                    },
+                    {
+                        "name": "A-",
+                        "code": "5"
+                    },
+                    {
+                        "name": "B-",
+                        "code": "6"
+                    },
+                    {
+                        "name": "o-",
+                        "code": "7"
+                    },
+                    {
+                        "name": "AB-",
+                        "code": "8"
+                    }
+                ],
+                "message": {
+                    "required": "Blood Group is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 15,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Ethincity",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectEthincity",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": " Telagu",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Kamati",
+                        "code": "2"
+                    }
+                ],
+                "message": {
+                    "required": "Ethincity is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Religion",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Religion",
+                "formControlName": "religionInput",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 29,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Image Upload",
+                "type": "imageUpload",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "imgUpload",
+                "placeholder": "",
+                "formControlName": "imgUpl",
+                "defaultValue":"",
+                "message": {
+                    "required": "Img is required",
                     "pattern": ""
                 },
                 "validations": {
@@ -623,6 +783,27 @@
                 "validations": {
                     "required": false,
                     "pattern": "^[a-zA-Z0-9.,\\s-]+$"
+                }
+            },
+            {
+                "id": 22,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Pin Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Pin Code...",
+                "formControlName": "pinCodeInput",
+                "message": {
+                    "required": "Pin Code is required",
+                    "pattern": "Please re-enter valid pin code."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$"
                 }
             },
             {

@@ -117,7 +117,7 @@
             {
                 "id": 10,
                 "isEditable": true,
-                "isVisible": true,
+                "isVisible": false,
                 "label": "",
                 "inputType": "empty",
                 "type": "staticText",
