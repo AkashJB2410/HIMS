@@ -7,7 +7,7 @@
 
 
 
-<p-tabMenu #tab [model]="tabularData" (click)="handleChange(tab)"></p-tabMenu>
+<p-tabMenu #tab [model]="tabularData.tabular" (click)="handleChange(tab)" [activeItem]="tabularData.tabular[tabularData.activeTab]"></p-tabMenu>
 <ng-content></ng-content>
 
 <!-- <p-pickList [source]="list1" [target]="list2">

@@ -95,15 +95,4 @@ export class SessionService {
     const url = myConstants.LOCALHOSTURL + "api/v1/organizationData?emailId=" + email;
     return this.http.get<any>(url);
   }
-  
-  addPersonalization(dateFormat: any, currency: any, theme: any): Observable<any> {
-    const param = {
-      "dateFormat": dateFormat,
-      "currency": currency,
-      "theme": theme
-    };
-    const url = myConstants.LOCALHOSTURL + "api/v1/addPersonalization";
-    return this.http.post<any>(url, param);
-
-  }
 }
