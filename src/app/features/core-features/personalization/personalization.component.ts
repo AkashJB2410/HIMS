@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { SessionService } from 'src/app/core/shared/service/session.service';
+import data from '../personalization/personalizationform.json'
+import tableHeaders from '../personalization/personalization-tableconfig.json'
 
 @Component({
   selector: 'app-personalization',
@@ -21,7 +23,11 @@ export class PersonalizationComponent implements OnInit {
     themes: new FormControl('')
 
   });
+  sidebarJSON = data
+  tableConfig = tableHeaders;
+  data :any =[]
   formData: Partial<{ dateformat: string; currency: string; }>;
+  configurations: { isFilter: boolean; isTable: boolean; isSideBar: boolean; isConfirmation: boolean; };
   constructor(  private http: SessionService) { }
 
   ngOnInit(): void {
@@ -46,6 +52,20 @@ export class PersonalizationComponent implements OnInit {
         { name: 'Light theme', value: 'light-theme' },
         { name: 'Dark theme', value: 'dark-theme' },
       ]
+      this.configurations = {
+        "isFilter": false,
+        "isTable": true,
+        "isSideBar": true,
+        "isConfirmation": true
+      };
+      // data.forEach((ele: any) => {
+      //   let transformedData = {
+      //     "Theme": ele.Theme,
+      //     "Currency": ele.Currency,
+      //     "DateFormat": ele.DateFormat, 
+      //   }
+      //   this.data.push(transformedData);
+      // })
   }
     onSubmit() {
       this.http.addPersonalization(this.form.value.dateformat, this.form.value.currency, this.form.value.themes)
@@ -53,4 +73,24 @@ export class PersonalizationComponent implements OnInit {
           this.personalizationData = data
         });
     }
+
+   
+    onAdd(e: any) {
+   
+    }
+    getConfigForTable() {
+      this.tableConfig = tableHeaders;
+      ;
+    }
+    onEdit(e:any){
+   
+    }
+    sidebarData(e: any) {
+    }
+    confirmAction(e: any) {
+    }
+    addRow(e: any) {
+      
+    }
+  
 }

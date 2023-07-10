@@ -1,0 +1,183 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "",
+        "formTitleClass": "",
+        "formTitleLogo":"",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar": "p-sidebar-lg",
+        "formControls": [
+            {
+                "id": 1,
+                "isEditable": false,
+                "isVisible": false,
+                "label": "UHID",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Patient UHID",
+                "formControlName": "UHID",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 19,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "dependentdropdown",
+                "class": "col-md-6 ",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectState",
+                "message": {
+                    "required": "State is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "label": "State",
+                        "values": [
+                            {
+                                "name": "Maharashtra",
+                                "code": "1"
+                            },
+                            {
+                                "name": "Delhi",
+                                "code": "2"
+                            },
+                            {
+                                "name": "Goa",
+                                "code": "3"
+                            },
+                            {
+                                "name": "Gujarat",
+                                "code": "4"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Districts",
+                        "values": [
+                            {
+                                "name": "Kolhapur",
+                                "code": "1",
+                                "Mcode":"1"
+                            },
+                            {
+                                "name": "Latur",
+                                "code": "2",
+                                "Mcode":"1"
+                            },
+                            {
+                                "name": "Mumbai City",
+                                "code": "3",
+                                "Mcode":"1"
+                            },
+                            {
+                                "name": "Mumbai Suburban",
+                                "code": "4",
+                                "Mcode":"1"
+                            },
+                            {
+                                "name": "Nagpur",
+                                "code": "5",
+                                "Mcode":"1"
+                            },
+                            {
+                                "name": "Nanded",
+                                "code": "6",
+                                "Mcode":"1"
+                            },
+                            {
+                                "name": "Nandurbar",
+                                "code": "7",
+                                "Mcode":"1"
+                            },
+                            {
+                                "name": "Nashik",
+                                "code": "8",
+                                "Mcode":"1"
+                            },
+                            {
+                                "name": "Osmanabad",
+                                "code": "9",
+                                "Mcode":"1"
+                            },
+                            {
+                                "name": "Palghar",
+                                "code": "10",
+                                "Mcode":"1"
+                            },
+                            {
+                                "name": "Parbhani",
+                                "code": "11",
+                                "Mcode":"1"
+                            },
+                            {
+                                "name": "Pune",
+                                "code": "12",
+                                "Mcode":"1"
+                            }
+                        ]
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "",
+                "inputType": "empty",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-6 my-1 ",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "staticText",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 32,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-2",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

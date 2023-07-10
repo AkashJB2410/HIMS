@@ -19,7 +19,6 @@ import { OrganizationModule } from './features/organization/organizationModule';
 import { RegistrationFormComponent } from './features/registration-form/registration-form.component';
 import { RegistrationFormModule } from './features/registration-form/registration-form.module';
 import { SharedModule } from './core/shared/modules/shared.module';
-
 import { HomeComponent } from './features/home/home.component';
 import { EmergencyQuickRegistrationComponent } from './features/emergency-quick-registration/emergency-quick-registration.component';
 import { ErPatientListComponent } from './features/er-patient-list/er-patient-list.component';
@@ -77,10 +76,6 @@ import { PharmacySaleReturnComponent } from './features/pharmacy-sale-return/pha
 import { PharmacyBillSettlementComponent } from './features/pharmacy-bill-settlement/pharmacy-bill-settlement.component';
 import { PharmacyBillEditComponent } from './features/pharmacy-bill-edit/pharmacy-bill-edit.component';
 import { NursingIndentComponent } from './features/nursing-indent/nursing-indent.component';
-import { AmbulanceRequisitionComponent } from './features/ambulance-requisition/ambulance-requisition.component';
-import { OpdApplicationFormComponent } from './features/opd-application-form/opd-application-form.component';
-import { IpdApplicationFormComponent } from './features/ipd-application-form/ipd-application-form.component';
-import { EmgApplicationFormComponent } from './features/emg-application-form/emg-application-form.component';
 import { NewAdmissionRequestComponent } from './features/new-admission-request/new-admission-request.component';
 import { ListOfAdmissionRequestComponent } from './features/list-of-admission-request/list-of-admission-request.component';
 import { AdmissionListComponent } from './features/admission-list/admission-list.component';
@@ -103,7 +98,6 @@ import { LabReportsComponent } from './features/lab-reports/lab-reports.componen
 import { LabConsumptionReportComponent } from './features/lab-consumption-report/lab-consumption-report.component';
 import { LabOrderComponent } from './features/lab-order/lab-order.component';
 import { PacsComponent } from './features/pacs/pacs.component';
-import { RequisitionComponent } from './features/requisition/requisition.component';
 import { TransferComponent } from './features/transfer/transfer.component';
 import { ReceiveComponent } from './features/receive/receive.component';
 import { CurrentStockReportComponent } from './features/current-stock-report/current-stock-report.component';
@@ -112,16 +106,6 @@ import { RadiologyCofirmationComponent } from './features/radiology-cofirmation/
 import { QuickRadiologyConfirmationComponent } from './features/quick-radiology-confirmation/quick-radiology-confirmation.component';
 import { AdditionalChargesComponent } from './features/additional-charges/additional-charges.component';
 import { RadiologyReportsComponent } from './features/radiology-reports/radiology-reports.component';
-import { ResultsUpdateComponent } from './features/results-update/results-update.component';
-import { DispatchGovtComponent } from './features/dispatch-govt/dispatch-govt.component';
-import { CovidBillingSummaryComponent } from './features/covid-billing-summary/covid-billing-summary.component';
-import { CashFlowComponent } from './features/cash-flow/cash-flow.component';
-import { BatchListComponent } from './features/batch-list/batch-list.component';
-import { BatchResultsEntryComponent } from './features/batch-results-entry/batch-results-entry.component';
-import { QaApprovalComponent } from './features/qa-approval/qa-approval.component';
-import { BulkReportDownloadComponent } from './features/bulk-report-download/bulk-report-download.component';
-import { CovidWalkInRegistrationsComponent } from './features/covid-walk-in-registrations/covid-walk-in-registrations.component';
-import { CovidWalkInSearchComponent } from './features/covid-walk-in-search/covid-walk-in-search.component';
 import { BankMasterComponent } from './features/bank-master/bank-master.component';
 import { EmployeeStatusComponent } from './features/employee-status/employee-status.component';
 import { ActionButtonComponent } from './features/action-button/action-button.component';
@@ -139,6 +123,7 @@ import { ApplicationConfigComponent } from './features/application-config/applic
 import { LovTypeComponent } from './features/lov-type/lov-type.component';
 import { LovValueComponent } from './features/lov-value/lov-value.component';
 import { ConfigurationsComponent } from './features/configurations/configurations.component';
+import { SelfRegistrationComponent } from './features/self-registration/self-registration.component';
 import { ClusterComponent } from './features/cluster/cluster.component';
 import { SpetialityComponent } from './features/spetiality/spetiality.component';
 import { CoreFeaturesComponent } from './features/core-features/core-features.component';
@@ -208,10 +193,6 @@ import { CoreFeaturesComponent } from './features/core-features/core-features.co
     PharmacyBillSettlementComponent,
     PharmacyBillEditComponent,
     NursingIndentComponent,
-    AmbulanceRequisitionComponent,
-    OpdApplicationFormComponent,
-    IpdApplicationFormComponent,
-    EmgApplicationFormComponent,
     NewAdmissionRequestComponent,
     ListOfAdmissionRequestComponent,
     AdmissionListComponent,
@@ -234,7 +215,6 @@ import { CoreFeaturesComponent } from './features/core-features/core-features.co
     LabConsumptionReportComponent,
     LabOrderComponent,
     PacsComponent,
-    RequisitionComponent,
     TransferComponent,
     ReceiveComponent,
     CurrentStockReportComponent,
@@ -243,16 +223,6 @@ import { CoreFeaturesComponent } from './features/core-features/core-features.co
     QuickRadiologyConfirmationComponent,
     AdditionalChargesComponent,
     RadiologyReportsComponent,
-    ResultsUpdateComponent,
-    DispatchGovtComponent,
-    CovidBillingSummaryComponent,
-    CashFlowComponent,
-    BatchListComponent,
-    BatchResultsEntryComponent,
-    QaApprovalComponent,
-    BulkReportDownloadComponent,
-    CovidWalkInRegistrationsComponent,
-    CovidWalkInSearchComponent,
     BankMasterComponent,
     ActionRoleComponent,
     DepartmentComponent,
@@ -269,6 +239,7 @@ import { CoreFeaturesComponent } from './features/core-features/core-features.co
     LovTypeComponent,
     LovValueComponent,
     ConfigurationsComponent,
+    SelfRegistrationComponent,
     ClusterComponent,
     SpetialityComponent,
     CoreFeaturesComponent

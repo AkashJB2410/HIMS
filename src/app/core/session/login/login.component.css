@@ -176,7 +176,7 @@ input::placeholder {
 
 .login-card {
   background: #fff;
-  padding: 30px 30px 60px 30px;
+  padding: 30px 30px 40px 30px;
   margin-bottom: 30px;
   border-radius: 5px;
   max-width: 400px;
@@ -316,7 +316,7 @@ input::placeholder {
 }
 
 .btn-lg {
-  width: 330px;
+  width: 100%;
   height: 50px;
   display: flex;
   flex-direction: row;
