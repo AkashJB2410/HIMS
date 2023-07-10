@@ -61,7 +61,7 @@ import { MoreandlessComponent } from 'src/app/core/moreandless/moreandless.compo
 import { KeyFilterModule } from 'primeng/keyfilter';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import { FormService } from '../service/form.service';
-import { DecryptPipe, EncryptPipe } from '../pipes/encrypt-decrypt.pipe';
+import { DecryptPipe, EncryptPipe, RMWhiteSpaces } from '../pipes/encrypt-decrypt.pipe';
 import { CustomDatePipe } from '../pipes/custom-date.pipe';
 import { UserService } from '../service/user.service';
 import { SuperFormComponent } from '../../super-form/super-form.component';
@@ -112,6 +112,7 @@ import { CommonService } from '../service/common.service';
         DependentDropdownComponent,
         EncryptPipe,
         DecryptPipe,
+        RMWhiteSpaces,
         EncodePipe,
         DecodePipe,
         CustomDatePipe,
@@ -204,6 +205,7 @@ import { CommonService } from '../service/common.service';
         SessionComponent,
         EncryptPipe,
         DecryptPipe,
+        RMWhiteSpaces,
         EncodePipe,
         DecodePipe,
         CustomDatePipe,
@@ -273,6 +275,7 @@ import { CommonService } from '../service/common.service';
         DatePipe,
         EncryptPipe,
         DecryptPipe,
+        RMWhiteSpaces,
         EncodePipe,
         DecodePipe,
         CustomDatePipe,

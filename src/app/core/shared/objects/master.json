@@ -56,8 +56,7 @@
     },
     "sidenavItems": [
       {
-        "label": "TabularForm",
-        "id": "TabularForm",
+        "label": "Tabular Form",
         "icon": "bi bi-person-up",
         "group": [
           {
@@ -91,7 +90,7 @@
         ]
       },
       {
-        "label": "GenericTable",
+        "label": "Generic  Table",
         "icon": "pi pi-list",
         "group": [
           {
@@ -103,7 +102,7 @@
         ]
       },
       {
-        "label": "Form",
+        "label": "Form vk",
         "icon": "pi pi-fw pi-book",
         "routerLink": "/master-page/worklist",
         "group": []
@@ -122,7 +121,6 @@
       },
       {
         "label": "Configuration",
-        "id": "Configuration",
         "icon": "pi pi-fw pi-book",
         "group": [
           {

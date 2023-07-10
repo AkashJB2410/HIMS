@@ -34,11 +34,11 @@
     [configurations]="configurations" 
     [tableData]="data" 
     [tableConfig]="tableConfig"
-    [sidebarJSON]="sidebarJSON" 
-    (sideBarEvent)="sidebarData($event)"
-    (addRow)="addRow($event)" 
+    (editRow)="editRow($event)"
     (onAdd)="onAdd($event)"
-    (onEdit)="onEdit($event)">
-    <app-form projectTowards="sidebar"  [formJSON]="sidebarJSON" 
+    (onEdit)="onEdit($event)"
+    (sideBarEvent)="closeSidebar($event)"
+    (confirmAction)="confirmAction($event)">
+    <app-form projectTowards="sidebar" *ngIf="editdata" (btnEvent)="btnEvent($event)" [editData]="editdata" (formData)="savePersonalization($event)" [formJSON]="sidebarJSON" 
     ></app-form>
 </app-super-grid>
