@@ -12,7 +12,7 @@ export const data =
             "inventoryStatus": "INSTOCK",
             "rating": 5,
             "date":"2023-05-02",
-            "isActive": false,
+            "is_Active": false,
         },
         {
             "id": "1001",
@@ -25,7 +25,7 @@ export const data =
             "quantity": 61,
             "inventoryStatus": "INSTOCK",
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1002",
@@ -39,7 +39,7 @@ export const data =
             "inventoryStatus": "LOWSTOCK",
             "ratig": 3,
             "date":"2023-05-02",
-            "isActive": false
+            "is_Active": false
         },
         {
             "id": "1003",
@@ -52,7 +52,7 @@ export const data =
             "quantity": 25,
             "inventoryStatus": "INSTOCK",
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1004",
@@ -65,7 +65,7 @@ export const data =
             "quantity": 73,
             "inventoryStatus": "INSTOCK",
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1005",
@@ -77,9 +77,8 @@ export const data =
             "category": "Accessories",
             "quantity": 0,
             "inventoryStatus": "OUTOFSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
             
         },
         {
@@ -92,9 +91,8 @@ export const data =
             "category": "Accessories",
             "quantity": 5,
             "inventoryStatus": "LOWSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1007",
@@ -106,9 +104,8 @@ export const data =
             "category": "Accessories",
             "quantity": 23,
             "inventoryStatus": "INSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1008",
@@ -120,9 +117,8 @@ export const data =
             "category": "Electronics",
             "quantity": 2,
             "inventoryStatus": "LOWSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1009",
@@ -134,9 +130,8 @@ export const data =
             "category": "Electronics",
             "quantity": 63,
             "inventoryStatus": "INSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1010",
@@ -148,9 +143,8 @@ export const data =
             "category": "Accessories",
             "quantity": 0,
             "inventoryStatus": "OUTOFSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1011",
@@ -162,9 +156,8 @@ export const data =
             "category": "Electronics",
             "quantity": 23,
             "inventoryStatus": "INSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1012",
@@ -176,9 +169,8 @@ export const data =
             "category": "Clothing",
             "quantity": 74,
             "inventoryStatus": "INSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1013",
@@ -190,9 +182,8 @@ export const data =
             "category": "Clothing",
             "quantity": 0,
             "inventoryStatus": "OUTOFSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1014",
@@ -204,9 +195,8 @@ export const data =
             "category": "Electronics",
             "quantity": 8,
             "inventoryStatus": "LOWSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1015",
@@ -218,9 +208,8 @@ export const data =
             "category": "Clothing",
             "quantity": 34,
             "inventoryStatus": "INSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1016",
@@ -232,9 +221,8 @@ export const data =
             "category": "Fitness",
             "quantity": 12,
             "inventoryStatus": "INSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1017",
@@ -246,9 +234,8 @@ export const data =
             "category": "Clothing",
             "quantity": 42,
             "inventoryStatus": "INSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1018",
@@ -260,9 +247,8 @@ export const data =
             "category": "Accessories",
             "quantity": 41,
             "inventoryStatus": "INSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1019",
@@ -274,9 +260,8 @@ export const data =
             "category": "Fitness",
             "quantity": 63,
             "inventoryStatus": "INSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1020",
@@ -288,9 +273,8 @@ export const data =
             "category": "Accessories",
             "quantity": 0,
             "inventoryStatus": "OUTOFSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1021",
@@ -302,9 +286,8 @@ export const data =
             "category": "Fitness",
             "quantity": 6,
             "inventoryStatus": "LOWSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1022",
@@ -316,9 +299,8 @@ export const data =
             "category": "Accessories",
             "quantity": 62,
             "inventoryStatus": "INSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         },
         {
             "id": "1023",
@@ -330,9 +312,8 @@ export const data =
             "category": "Clothing",
             "quantity": 2,
             "inventoryStatus": "LOWSTOCK",
-
             "date":"2023-05-02",
-            "isActive": true
+            "is_Active": true
         }
     ]
 

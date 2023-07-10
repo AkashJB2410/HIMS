@@ -16,12 +16,10 @@
             </ul>
         </div>
     </div>
-    <div *ngIf="allFlag.theme" class={{verticalTabs.cardClass}}>
+    <!-- <div *ngIf="allFlag.theme" class={{verticalTabs.cardClass}}>
         <div class="cardDesign">
             <p-card class="verticalCards">
                 <p class="headerTheme"> Change Theme </p>
-                <!-- <img (click)="changeTheme('dark-theme')" class="themeImage" src="../../../assets/darkTheme.png">
-                <img (click)="changeTheme('light-theme')" class="themeImage" src="/assets/lightTheme.png"> -->
                 <p-menubar [class.optionActive]="themeOptins === activeStateButton"
                     (click)="setActiveButton(themeOptins)" #menu pTooltip="Setting" tooltipPosition="bottom"
                     [model]="themeOptins">
@@ -29,11 +27,11 @@
                 </p-menubar>
             </p-card>
         </div>
-    </div>
-    <div *ngIf="allFlag.language" class={{verticalTabs.cardClass}}>
+    </div> -->
+    <div *ngIf="allFlag.Personalization" class={{verticalTabs.cardClass}}>
         <app-personalization></app-personalization>
     </div>
-    <div *ngIf="allFlag.currency" class={{verticalTabs.cardClass}}>
+    <div *ngIf="allFlag.EditForm" class={{verticalTabs.cardClass}}>
         <div class="cardDesign">
             <p-card class="verticalCards">
                 <p class="headerTheme">Edit Profile</p>
@@ -41,12 +39,12 @@
             </p-card>
         </div>
     </div>
-    <div *ngIf="allFlag.dateFormat" class={{verticalTabs.cardClass}}>
+    <!-- <div *ngIf="allFlag.dateFormat" class={{verticalTabs.cardClass}}>
         <div class="cardDesign">
             <p-card class="verticalCards">
                 <p class="headerTheme">Date Format</p>
                 <h1>hello world</h1>
             </p-card>
         </div>
-    </div>
+    </div> -->
 </div>

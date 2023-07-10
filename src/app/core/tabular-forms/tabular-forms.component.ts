@@ -16,16 +16,7 @@ export class TabularFormsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.tabularData = this.tabularJSON.tabular;
-
-    this.items = [
-      {label: 'Computer', routerLink: '/master-page/user-management'},
-      {label: 'Notebook', routerLink: '/master-page/user-management'},
-      {label: 'Accessories', routerLink: '/master-page/user-management'},
-      {label: 'Backpacks', routerLink: '/master-page/user-management'},
-      {label: 'Item', routerLink: '/master-page/worklist'}
-  ];
-
+    this.tabularData = this.tabularJSON;
   }
 
   handleChange(e: any) {

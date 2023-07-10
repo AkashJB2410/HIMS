@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import * as CryptoJS from 'crypto-js';
 import { KEY } from "../objects/constants";
 
-@Pipe({ 
+@Pipe({
   name: 'encrypted'
 })
 export class EncryptPipe implements PipeTransform {
@@ -15,7 +15,7 @@ export class EncryptPipe implements PipeTransform {
   }
 }
 
-@Pipe({ 
+@Pipe({
   name: 'decrypted'
 })
 export class DecryptPipe implements PipeTransform {
@@ -26,5 +26,14 @@ export class DecryptPipe implements PipeTransform {
     } else {
       return "false";
     }
+  }
+}
+
+@Pipe({
+  name: 'rmWhiteSpaces'
+})
+export class RMWhiteSpaces implements PipeTransform {
+  transform(text: string) {
+    return text.replace(/\s/g, "");
   }
 }

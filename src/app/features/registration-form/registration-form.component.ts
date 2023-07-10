@@ -56,6 +56,12 @@ export class RegistrationFormComponent implements OnInit {
   agemon: any;
   agedday: any;
   editData: any;
+  demoEditData:any;
+  addressEditData:any;
+  hospitalEditData:any;
+  insorunceEditData:any;
+  medicalEditData:any;
+  addEditData:any;
   tabularFormData = patientTabularFormData;
   paramObj: any = {
     "patientIdentificationTypeId": "",
@@ -516,6 +522,21 @@ export class RegistrationFormComponent implements OnInit {
     }
 
   }
+  changeSelect(e:any){
+    if (e[1].fieldName == "alcoholRad" && e[1].values[0].code ==true) {
+      this.form$.reRenderForm(this.formData5.form.formControls[2], true, 'isVisible');
+    }
+    if (e[1].fieldName == "tobacooRad" && e[1].values[0].code==true ) {
+      this.form$.reRenderForm(this.formData5.form.formControls[4], true, 'isVisible');
+    }
+    if (e[1].fieldName == "diabetesRad" && e[1].values[0].code ==true) {
+      this.form$.reRenderForm(this.formData5.form.formControls[6], true, 'isVisible');
+    }
+      
+      
+     
+
+  }
   getAllPatientData() {
     this.data = undefined;
     this.gridData = [];
@@ -678,7 +699,7 @@ export class RegistrationFormComponent implements OnInit {
     console.log("sidebar data => ", e)
     if (this.isAddEditFlag.add == "add") {
       this.submitUserData(this.paramObj);
-      this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+      this.messageService.add({ severity: 'success', summary: 'success', detail: 'Your registration has been successfully completed!' });
 
     } else {
       this.updateUserData(this.paramObj);
@@ -705,11 +726,12 @@ export class RegistrationFormComponent implements OnInit {
       "patientCityId": e.selectCity,
       "patientStateId": e.selectState,
       "patientCountryId": e.selectCountry,
-      "patientId":e.patientId
+      "patientId":e.patientId,
+      "patientRegistrationSource": "Counter"
 
     }
     console.log("saveRegistartionForm => ", this.paramObj);
-    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
   }
   saveFormOne(e: any) {
 
@@ -719,7 +741,7 @@ export class RegistrationFormComponent implements OnInit {
       "patientReligion": e.religionInput,
 
     }
-    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
     console.log("saveFormOne => ", this.paramObj);
   }
   saveFormTwo(e: any) {
@@ -727,7 +749,7 @@ export class RegistrationFormComponent implements OnInit {
       "patientStateId": [e.selectState[0], e.selectState[1]],
 
     }
-    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
     console.log("saveRegistartionForm => ", this.paramObj);
   }
   saveFormThree(e: any) {
@@ -735,7 +757,7 @@ export class RegistrationFormComponent implements OnInit {
       "patientPrnNumber": e.PRNNumber,
       "patientPrivilageId": e.privilageType,
     }
-    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
     console.log("saveRegistartionForm => ", this.paramObj);
   }
   saveFormFour(e: any) {
@@ -745,7 +767,7 @@ export class RegistrationFormComponent implements OnInit {
       "patientInsuranceCompanyNumber": e.companyNo,
       "patientInsuranceCompanyName": e.companyName
     }
-    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
     console.log("saveRegistartionForm => ", this.paramObj);
   }
   saveFormFive(e: any) {
@@ -760,7 +782,7 @@ export class RegistrationFormComponent implements OnInit {
       "patientIsAlcoholConsumeYear": e.tobacooQuestion1,
 
     }
-    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue.' });
     console.log("saveRegistartionForm => ", this.paramObj);
   }
   saveFormSix(e: any) {
@@ -770,7 +792,7 @@ export class RegistrationFormComponent implements OnInit {
       "patientLanguages": e.language,
       "patientPhoneNumber": e.phoneNo,
     }
-    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data save successfull.' });
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue.' });
     console.log("saveRegistartionForm => ", this.paramObj);
   }
   submitUserData(userData: any) {
@@ -841,11 +863,7 @@ export class RegistrationFormComponent implements OnInit {
       "patientCountryName": e.editRow.patientCountryName,
       "patientMaritalStatusName": e.editRow.patientMaritalStatusName,
       
-
       "patientTitleName": e.editRow.patientTitleName,
-      
-      
-      
       
       "profileImage": e.editRow.profileImage,
       
@@ -856,43 +874,81 @@ export class RegistrationFormComponent implements OnInit {
       
       "patientStateName": e.editRow.patientStateName,
       
-      "patientBloodGroupId": e.patientBloodGroupId,
-      "patientBloodGroupName": e.editRow.patientBloodGroupName,
+     
       "patientHealthId": e.editRow.patientHealthId,
       "patientHealthNumber": e.editRow.patientHealthNumber,
       "patientSocialStatusId": e.editRow.patientSocialStatusId,
       "patientSocialStatusName": e.editRow.patientSocialStatusName,
-      "patientEthinicityId": e.editRow.patientEthinicityId,
-      "patientEthinicityName": e.editRow.patientEthinicityName,
-      "patientReligion": e.editRow.patientReligion,
+     
+      
       "patientBlock": e.editRow.patientBlock,
-      "patientPrnNumber": e.editRow.patientPrnNumber,
-      "patientPrivilageId": e.editRow.patientPrivilageId,
-      "patientPrivilageName": e.editRow.patientPrivilageName,
-      "patientInsuranceNumber": e.editRow.patientInsuranceNumber,
-      "patientInsurancePolicyNumber": e.editRow.patientInsurancePolicyNumber,
-      "patientInsuranceCompanyNumber": e.editRow.patientInsuranceCompanyNumber,
-      "patientInsuranceCompanyName": e.editRow.patientInsuranceCompanyName,
-      "patientIsTobacoConsume": e.editRow.patientIsTobacoConsume,
-      "patientIsTobacoConsumeYear": e.editRow.patientIsTobacoConsumeYear,
-      "patientIsAlcoholConsume": e.editRow.patientIsAlcoholConsume,
-      "patientIsAlcoholConsumeYear": e.editRow.patientIsAlcoholConsumeYear,
-      "patientIsHaveSugar": e.editRow.patientIsHaveSugar,
-      "patientIsHaveSugarYear": e.editRow.patientIsHaveSugarYear,
-      "patientIsHaveDiabeties": e.editRow.patientIsHaveDiabeties,
-      "patientIsHaveDiabetiesYear": e.editRow.patientIsHaveDiabetiesYear,
-      "patientOccupation": e.editRow.patientOccupation,
-      "patientReferredBy": e.editRow.patientReferredBy,
-      "patientLanguages": e.editRow.patientLanguages,
-      "patientPhoneNumber": e.editRow.patientPhoneNumber,
+      
+      
+      
+      // "patientOccupation": e.editRow.patientOccupation,
+      // "patientReferredBy": e.editRow.patientReferredBy,
+      // "patientLanguages": e.editRow.patientLanguages,
+      // "patientPhoneNumber": e.editRow.patientPhoneNumber,
       "patientUploadImage": e.editRow.patientUploadImage,
       "patientRegistrationSource": e.editRow.patientRegistrationSource,
       "isActive": e.editRow.isActive,
       "patientMrNo": e.editRow.patientMrNo,
       "patientIdentificationTypeName": e.editRow.patientIdentificationTypeName,
+      
 
     }
     this.editData = edit;
+    let demogarfic={
+      "patientBloodGroupId": e.editRow.patientBloodGroupId,
+      "patientEthinicityId": e.editRow.patientEthinicityId,
+      "patientReligion": e.editRow.patientReligion,
+      "patientBloodGroupName": e.editRow.patientBloodGroupName,
+      "patientEthinicityName": e.editRow.patientEthinicityName
+    }
+    this.demoEditData=demogarfic;
+    let address={
+      "patientSocialStatusId": e.editRow.patientSocialStatusId,
+      "patientSocialStatusName": e.editRow.patientSocialStatusName,
+
+    }
+    this.addressEditData=address;
+    let hospital={
+      "patientPrnNumber": e.editRow.patientPrnNumber,
+      "patientPrivilageId": e.editRow.patientPrivilageId,
+      "patientPrivilageName": e.editRow.patientPrivilageName,
+    }
+    this.hospitalEditData=hospital;
+    let insorunce={
+      "patientInsuranceNumber": e.editRow.patientInsuranceNumber,
+      "patientInsurancePolicyNumber": e.editRow.patientInsurancePolicyNumber,
+      "patientInsuranceCompanyNumber": e.editRow.patientInsuranceCompanyNumber,
+      "patientInsuranceCompanyName": e.editRow.patientInsuranceCompanyName,
+     
+    }
+    this.insorunceEditData=insorunce;
+    let medical={
+      "patientIsAlcoholConsume": [e.editRow.patientIsAlcoholConsume],
+      "patientIsAlcoholConsumeYear": e.editRow.patientIsAlcoholConsumeYear,
+      "patientIsTobacoConsume":[ e.editRow.patientIsTobacoConsume],
+      "patientIsTobacoConsumeYear": e.editRow.patientIsTobacoConsumeYear,
+      "statix":"",
+      "patientIsHaveDiabeties": [e.editRow.patientIsHaveDiabeties],
+      "patientIsHaveDiabetiesYear": e.editRow.patientIsHaveDiabetiesYear,
+      // "patientIsHaveSugar": e.editRow.patientIsHaveSugar,
+      // "patientIsHaveSugarYear": e.editRow.patientIsHaveSugarYear,
+
+    }
+    this.medicalEditData=medical;
+    let additionDetailsEdit = {
+     
+      "patientOccupation": e.editRow.patientOccupation,
+      "patientReferredBy": e.editRow.patientReferredBy,
+      "patientLanguages": e.editRow.patientLanguages,
+      "patientPhoneNumber": e.editRow.patientPhoneNumber
+
+    }
+    this.addEditData=additionDetailsEdit;
+    
     // this.common.sendEditData(e.editRow);
     // this.form$.reRenderForm(this.sidebarJSON.form.formControls[1], false, 'isVisible');
   }
