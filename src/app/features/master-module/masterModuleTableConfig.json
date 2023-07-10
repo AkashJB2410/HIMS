@@ -55,7 +55,7 @@
         "routerLink",
         "sequence"
     ],
-    "rows": 15,
+    "rows": 11,
     "showCurrentPageReport": true,
     "rowsPerPageOptions": [
         10,

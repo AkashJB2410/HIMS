@@ -7,15 +7,34 @@ import * as myConstants from "../objects/constants";
   providedIn: 'root'
 })
 export class SessionService {
+  character: any;
 
   constructor(private http: HttpClient) { }
   headers = new HttpHeaders().set('Content-type', 'application/json');
 
+  // Logincheck(obj: any): Observable<any> {
+  //   const url = myConstants.LOCALHOSTURL + "api/v1/login";
+  //   const headers = new HttpHeaders().set('Content-type', 'application/json');
+
+  //   return this.http.post<any>(url, obj, { headers })
+  // }
+
+
   Logincheck(obj: any): Observable<any> {
-    const url = myConstants.LOCALHOSTURL + "api/v1/login";
+    const abc={
+      "emailId":"rahul.hirve",
+      "password":"rahul@123"
+    }
+    // const username="rohit@123"
+    // for(let i=0;i<obj.emailId.length-10;i++){
+    //   this.character += obj.emailId.charAt(i);
+    // }
+    // console.log(this.character)
+    
+    const url = "https://esahaj.jk.gov.in/jnk_reports/goto/B8F4Bl9Vz?orgId=1";
     const headers = new HttpHeaders().set('Content-type', 'application/json');
 
-    return this.http.post<any>(url, obj, { headers })
+    return this.http.post<any>(url, abc, { headers })
   }
 
   GetAllCollectionData() {

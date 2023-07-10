@@ -4,7 +4,7 @@
         [showCurrentPageReport]="config.showCurrentPageReport" [rowsPerPageOptions]="config.rowsPerPageOptions"
         [loading]="config.loading" [(selection)]="chekboxes" selectionMode="single"
         [globalFilterFields]="config.globalFilter" [rowHover]="config.rowHover" dataKey="id"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" (click)="disableContextMenu()"
+        currentPageReportTemplate="{last}/{totalRecords} " (click)="disableContextMenu()"
         oncontextmenu="return false;">
         <ng-template pTemplate="caption">
             <div class="tableFeatures">
