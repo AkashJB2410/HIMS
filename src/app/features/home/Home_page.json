@@ -156,7 +156,7 @@
       "icon": "bi bi-person-up",
       "routerLink": "/master-page/user-management",
       "listClass": "col-md-2",
-      "image":"assets/Dashboard/pharmacy.png",
+      "image":"assets/Dashboard/Pharmacy.png",
       "Css":"homepageCss",
       "LabelCss":"labelcss",
       "imgcss":"imgcenter"

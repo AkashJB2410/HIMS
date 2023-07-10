@@ -5,7 +5,7 @@ import ApplictionTable from './ApplicationConfig_TableConfig.json';
 import { ApplicationConfigService } from './application-config.service';
 import Application_breadcrumb from './Application_breadcrumb.json'
 import { CommonService } from 'src/app/core/shared/service/common.service';
-
+import tab from './tab.json';
 @Component({
   selector: 'app-application-config',
   templateUrl: './application-config.component.html',
@@ -23,6 +23,10 @@ export class ApplicationConfigComponent implements OnInit {
   flag: any;
   errorFlag: boolean = false;
   editData:any
+  tabData=tab
+  tabular(e:any){
+console.log(e)
+  }
   constructor(private messageService: MessageService, private http: ApplicationConfigService,private common:CommonService) { }
 
   ngOnInit(): void {
