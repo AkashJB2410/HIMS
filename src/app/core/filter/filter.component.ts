@@ -137,6 +137,7 @@ export class FilterComponent implements OnInit {
   }
 
   response(e: any) {
+    delete e.formId;
     let i = 0;
     let data = JSON.parse(localStorage.getItem('filterData'));
     for (const key in e) {
@@ -153,7 +154,7 @@ export class FilterComponent implements OnInit {
     this.filterData = data;
     localStorage.setItem('editData', JSON.stringify(e));
     this.displayModal = false;
-  }
+  } 
 
   saveFilterData() {
     this.saveFilter = false;
