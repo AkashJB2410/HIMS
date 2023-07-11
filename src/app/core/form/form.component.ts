@@ -161,6 +161,7 @@ export class FormComponent implements OnInit {
       btn.disabled = !data.value;
     }
   }
+  
   visibility(data: any) {
     if (data.value) {
       document.getElementById("id" + data.formData.formControlName).style.display = "block";
@@ -168,6 +169,7 @@ export class FormComponent implements OnInit {
       document.getElementById("id" + data.formData.formControlName).style.display = "none";
     }
   }
+  
   addValidations(data: any) {
     let ctrl = this.form.get(data.formData.formControlName);
     if (data.value.required && data.value.pattern != "") {

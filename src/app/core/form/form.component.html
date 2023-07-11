@@ -66,7 +66,7 @@
                     <div *ngIf="formData.fieldType == formStaticText.DATE">
                         <p-calendar inputId="{{formData.fieldName}}" [name]="formData.fieldName "
                             [formControlName]="formData.fieldName" class="{{formData.valueclass}}"
-                            [(ngModel)]="formData.fieldValue" [showButtonBar]="true" [showIcon]="true" inputId="icon"
+                            [(ngModel)]="formData.fieldValue" [showButtonBar]="false" [showIcon]="true" inputId="icon"
                             (onSelect)="changeEvent($event, formData)">
                         </p-calendar>
                     </div>
