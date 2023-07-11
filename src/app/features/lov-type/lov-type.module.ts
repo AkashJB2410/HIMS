@@ -5,7 +5,9 @@ import { LovTypeRoutingModule } from './lov-type-routing.module';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    
+  ],
   imports: [
     CommonModule,
     LovTypeRoutingModule

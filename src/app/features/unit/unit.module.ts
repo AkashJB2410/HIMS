@@ -2,13 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UnitRoutingModule } from './unit-routing.module';
+import { UnitComponent } from './unit.component';
+import { SharedModule } from 'src/app/core/shared/modules/shared.module';
+
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    UnitComponent
+  ],
   imports: [
     CommonModule,
-    UnitRoutingModule
+    UnitRoutingModule,
+    SharedModule
   ]
 })
 export class UnitModule { }
