@@ -77,15 +77,17 @@ import { VerticalTabularComponent } from '../../vertical-tabular/vertical-tabula
 import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { HomePageComponent } from 'src/app/core/home-page/home-page.component';
-import {BadgeModule} from 'primeng/badge';
-import {AvatarModule} from 'primeng/avatar';
-import {AvatarGroupModule} from 'primeng/avatargroup';
+import { BadgeModule } from 'primeng/badge';
+import { AvatarModule } from 'primeng/avatar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
 import { SettingsComponent } from 'src/app/features/core-features/settings/settings.component';
 import { Settings } from '@cornerstonejs/core';
 import { PersonalizationComponent } from 'src/app/features/core-features/personalization/personalization.component';
 import { EditProfileComponent } from 'src/app/features/core-features/edit-profile/edit-profile.component';
 import { Interceptor } from '../service/interceptor';
 import { CommonService } from '../service/common.service';
+import { AccordionModule } from 'primeng/accordion';
+import { AccordionComponent } from '../../accordion/accordion.component';
 
 @NgModule({
     declarations: [
@@ -126,7 +128,8 @@ import { CommonService } from '../service/common.service';
         HomePageComponent,
         SettingsComponent,
         PersonalizationComponent,
-        EditProfileComponent
+        EditProfileComponent,
+        AccordionComponent
     ],
     imports: [
         CommonModule,
@@ -179,7 +182,8 @@ import { CommonService } from '../service/common.service';
         BadgeModule,
         MultiSelectModule,
         AvatarModule,
-        AvatarGroupModule
+        AvatarGroupModule,
+        AccordionModule
     ],
     exports: [
         //============= Core Components =============
@@ -220,6 +224,7 @@ import { CommonService } from '../service/common.service';
         SettingsComponent,
         PersonalizationComponent,
         EditProfileComponent,
+        AccordionComponent,
         //============= Core Imports =============
 
         FormsModule,
@@ -266,7 +271,8 @@ import { CommonService } from '../service/common.service';
         BadgeModule,
         MultiSelectModule,
         AvatarModule,
-        AvatarGroupModule
+        AvatarGroupModule,
+        AccordionModule
     ],
     providers: [
         MessageService,

@@ -91,7 +91,6 @@
                             pRipple icon="pi pi-file-edit " class="p-button-rounded icon-pencil edit-btn "
                             (click)="editProduct(rowData)"></button>
 
-
                         <button *ngIf="config.isActions.includes('Delete')" id="abc{{rowData.id}}" pTooltip="Delete"
                             tooltipPosition="left" pButton pRipple icon="pi pi-trash"
                             class="p-button-rounded icon-delete icon-delete " [disabled]="!rowData.is_Active"

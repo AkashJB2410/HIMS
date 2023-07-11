@@ -1,0 +1,5 @@
+<p-accordion (onOpen)="handleChange($event)" (onClose)="handleChange($event)">
+    <p-accordionTab *ngFor="let acc of data" header="{{acc.label}}">
+        <ng-content></ng-content>
+    </p-accordionTab>
+</p-accordion>
