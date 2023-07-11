@@ -50,9 +50,7 @@ export class GenerictableComponent implements OnInit {
   @Output() onAdd = new EventEmitter<string>();
   @Output() onRowClickData = new EventEmitter<string>();
   @Output() isActive = new EventEmitter<string>();
-
-  constructor(private toast: MessageService) { }
-
+  constructor(private toast: MessageService) {}
   ngOnInit() {
     if (this.tableData == undefined)
       this.tableData = data;

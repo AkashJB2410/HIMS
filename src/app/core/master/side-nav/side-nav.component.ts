@@ -64,6 +64,8 @@ export class SideNavComponent implements OnInit {
 
   setStateAsActive(item: any) {
     this.activeState = item;
+    this.emitSidenaClick(item);
+
   }
   setStateAsActiveSubchild(SubChilditem: any) {
     this.activeStateSubchild = SubChilditem;
