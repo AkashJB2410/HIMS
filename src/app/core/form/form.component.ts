@@ -148,7 +148,11 @@ export class FormComponent implements OnInit {
       if (data.value) {
         ctrl.enable();
         let element = document.getElementById(data.formData.formControlName)
-        element.className = "input-box"
+        if (data.formData.type == "date" || data.formData.type == "dateRange") {
+          element.className = "p-inputtext p-component";
+        } else {
+          element.className = "input-box"
+        }
       } else {
         ctrl.disable();
       }

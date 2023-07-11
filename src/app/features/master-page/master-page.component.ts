@@ -36,11 +36,17 @@ export class MasterPageComponent implements OnInit {
 
   getALLSideNavData() {
     this.masterJSON.masterData.sidenavItems = [];
-    this.sidenavData=[];
     this.http.GetAllSideNavData().subscribe((res) => {
       console.log("sidenavdata => ", res.sidenavItems.sort((a: { sequence: number; }, b: { sequence: number; }) => Number(a.sequence) - Number(b.sequence)));
+      this.sidenavData = [];
       res.sidenavItems.forEach((sidenav: any) => {
         this.sidenavData.push(sidenav)
+      });
+      this.sidenavData.forEach(module => {
+        module.group.sort((a: { sequence: number; }, b: { sequence: number; }) => Number(a.sequence) - Number(b.sequence));
+        module.group.forEach((group: { submodules: { sequence: number; }[]; }) => {
+          group.submodules.sort((a: { sequence: number; }, b: { sequence: number; }) => Number(a.sequence) - Number(b.sequence));
+        });
       });
       this.masterJSON.masterData.sidenavItems = this.sidenavData;
       console.log("sidenavdata => ", this.masterJSON.masterData.sidenavItems)
@@ -95,7 +101,5 @@ export class MasterPageComponent implements OnInit {
         this.GetAllNotifications()
       })
     }
-
-
   }
 }

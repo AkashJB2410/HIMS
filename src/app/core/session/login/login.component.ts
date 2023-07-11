@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { SessionService } from '../../shared/service/session.service';
-import { EncryptPipe } from '../../shared/pipes/encrypt-decrypt.pipe';
+import { DecryptPipe, EncryptPipe } from '../../shared/pipes/encrypt-decrypt.pipe';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import login from './login.json';
 
@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router,
     private messageService: MessageService,
     private http: SessionService,
-    private encrypt: EncryptPipe) { }
+    private encrypt: EncryptPipe,
+    private decrypt: DecryptPipe) { }
 
   ngOnInit() {
     // localStorage.clear();
@@ -104,16 +105,19 @@ export class LoginComponent implements OnInit {
           } else if (a == 3) {
             this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
             this.timer(1);
-          } else if (data.password == this.loginForm.value.password) {
+          } else if (data.result[0].password == (this.loginForm.value.password)) {
             this.timerFlag2 = false;
             this.messageService.add({ severity: 'success', summary: 'Login', detail: 'Logged in successfully.' });
             sessionStorage.setItem('loggedUser', this.encrypt.transform(JSON.stringify(data)));
             sessionStorage.setItem('loggedIn', 'true');
             this.router.navigateByUrl('/master-page/user-management');
-          } else if (data.password != this.loginForm.value.password) {
+          } else if (data.result[0].password!= this.decrypt.transform(this.loginForm.value.password)) {
             this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
+            this.router.navigateByUrl('/master-page/user-management');
           }
+          localStorage.setItem("loggedIn",data.result[0].loggedIn)
         });
+        
     } else {
       if (!this.loginForm.value.captcha) {
         this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid captcha' });

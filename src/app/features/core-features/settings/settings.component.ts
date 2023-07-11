@@ -15,10 +15,9 @@ export class SettingsComponent implements OnInit {
   activeList: any;
   Theme: string;
   allFlag = {
-    theme: true,
-    language: false,
-    currency: false,
-    dateFormat: false
+    Personalization: true,
+    EditForm: false,
+
   }
   themeOptins: any = []
   @Output() renderComponents = new EventEmitter<any>();
@@ -54,10 +53,9 @@ export class SettingsComponent implements OnInit {
   }
   restFlag() {
     this.allFlag = {
-      theme: false,
-      language: false,
-      currency: false,
-      dateFormat: false
+      Personalization: false,
+      EditForm: false,
+ 
 
     }
   }
@@ -73,10 +71,8 @@ export class SettingsComponent implements OnInit {
       }
       this.defaultSelecter(list);
       switch (list.label) {
-        case "Themes": this.restFlag(); this.allFlag.theme = true; break
-        case "Personalization": this.restFlag(); this.allFlag.language = true; break
-        case "Currency": this.restFlag(); this.allFlag.currency = true; break
-        case "Date Format": this.restFlag(); this.allFlag.dateFormat = true; break
+        case "Personalization": this.restFlag(); this.allFlag.Personalization = true; break
+        case "Profile Details": this.restFlag(); this.allFlag.EditForm = true; break
         default:
           break;
       }

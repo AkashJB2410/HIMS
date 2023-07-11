@@ -27,35 +27,35 @@
                     },
                     {
                         "name": "A+",
-                        "code": "A+"
+                        "code": "1"
                     },
                     {
                         "name": "B+",
-                        "code": "B+"
+                        "code": "2"
                     },
                     {
                         "name": "o+",
-                        "code": "o+"
+                        "code": "3"
                     },
                     {
                         "name": "AB+",
-                        "code": "AB+"
+                        "code": "4"
                     },
                     {
                         "name": "A-",
-                        "code": "A-"
+                        "code": "5"
                     },
                     {
                         "name": "B-",
-                        "code": "B-"
+                        "code": "6"
                     },
                     {
                         "name": "o-",
-                        "code": "o-"
+                        "code": "7"
                     },
                     {
                         "name": "AB-",
-                        "code": "AB-"
+                        "code": "8"
                     }
                 ],
                 "message": {
@@ -79,7 +79,20 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "selectEthincity",
-                "values": [],
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": " Telagu",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Kamati",
+                        "code": "2"
+                    }
+                ],
                 "message": {
                     "required": "Ethincity is required",
                     "pattern": ""

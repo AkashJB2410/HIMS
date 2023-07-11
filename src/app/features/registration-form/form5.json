@@ -1,7 +1,7 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "",
+        "formTitle": "Medical",
         "formTitleClass": "",
         "formTitleLogo":"",
         "formName": "Form1",
@@ -19,7 +19,6 @@
                 "valueclass": " radio-button",
                 "placeholder": "********",
                 "formControlName": "alcoholRad",
-                "defaultValue":[""],
                 "message": {
                     "required": "Patient Alcohol Habit is required",
                     "pattern": ""
@@ -27,12 +26,12 @@
                 "values": [
                     {
                         "name": "Yes",
-                        "code": "Y",
+                        "code": true,
                         "editable": true
                     },
                     {
                         "name": "No",
-                        "code": "N",
+                        "code": false,
                         "editable": true
                     }
                 ],
@@ -44,7 +43,7 @@
             {
                 "id": 1,
                 "isEditable": true,
-                "isVisible": true,
+                "isVisible": false,
                 "label": "If Yes How Many Year.",
                 "type": "text",
                 "inputType": "text",
@@ -73,7 +72,6 @@
                 "valueclass": " radio-button",
                 "placeholder": "********",
                 "formControlName": "tobacooRad",
-                "defaultValue":[""],
                 "message": {
                     "required": "Patient Tobacoo Habit is required",
                     "pattern": ""
@@ -81,12 +79,12 @@
                 "values": [
                     {
                         "name": "Yes",
-                        "code": "Y",
+                        "code": true,
                         "editable": true
                     },
                     {
                         "name": "No",
-                        "code": "N",
+                        "code": false,
                         "editable": true
                     }
                 ],
@@ -98,7 +96,7 @@
             {
                 "id": 1,
                 "isEditable": true,
-                "isVisible": true,
+                "isVisible": false,
                 "label": "If Yes How Many Year.",
                 "type": "text",
                 "inputType": "text",
@@ -149,7 +147,6 @@
                 "valueclass": " radio-button",
                 "placeholder": "********",
                 "formControlName": "diabetesRad",
-                "defaultValue":[""],
                 "message": {
                     "required": "Patient Has Diabetes is required",
                     "pattern": ""
@@ -157,12 +154,12 @@
                 "values": [
                     {
                         "name": "Yes",
-                        "code": "Y",
+                        "code": true,
                         "editable": true
                     },
                     {
                         "name": "No",
-                        "code": "N",
+                        "code": false,
                         "editable": true
                     }
                 ],
@@ -174,7 +171,7 @@
             {
                 "id": 1,
                 "isEditable": true,
-                "isVisible": true,
+                "isVisible": false,
                 "label": "If Yes How Many Year.",
                 "type": "text",
                 "inputType": "text",
