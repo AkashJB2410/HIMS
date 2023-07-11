@@ -2,33 +2,35 @@
     <app-form [formJSON]="selfRegFormData" [editData]="editData" (btnEvent)="buttonEvent($event)"
         (formData)="sidebarData($event)"></app-form>
 </div> -->
-<section>
+
+
+<div class="">
     <div class="row">
-        <div class="col-3 fixed-sidebar fixed">
-            <div class="col-md-12  d-none d-sm-none d-md-flex flex-column justify-content-center p-5">
+        <div class="col-3 sidenav">
+            <div class="col-md-12  d-none d-sm-none d-md-flex flex-column justify-content-center p-4">
                 <div class="img-bg text-center">
                     <img src="../../../assets/core_assets/Medimazemain.png" class="img-fluid img-responsive w-100">
                 </div>
             </div>
             <div class="col-md-12  d-none d-sm-none d-md-flex flex-column justify-content-center p-3">
                 <div class="img-bg text-center">
-                    <img src="../../../assets/core_assets/reg_page.png" class="img-fluid img-responsive w-75">
+                    <img src="../../../assets/core_assets/reg_page.png" class="img-fluid img-responsive w-100">
                 </div>
             </div>
             <div class="col-md-12  d-none d-sm-none d-md-flex flex-column justify-content-center p-3">
                 <div class="img-bg text-center">
-                    <h4>SELF REGISTRATION <br>FORM</h4>
+                    <h5>SELF REGISTRATION <br>FORM</h5>
                 </div>
             </div>
-            <div class="col-md-12  d-none d-sm-none d-md-flex flex-column justify-content-center p-3 mt-4">
+            <div class="footer  d-none d-sm-none d-md-flex flex-column justify-content-center p-3 mt-9">
                 <div class="img-bg text-center">
                     <p>Generic Components Ver 1.2 2023 © Powered by Medimaze Software Pvt Ltd</p>
                 </div>
             </div>
         </div>
-        <div class="col form-registration">
+        <div class="col main">
             <app-form [formJSON]="selfRegFormData" [editData]="editData" (btnEvent)="buttonEvent($event)"
                 (formData)="sidebarData($event)"></app-form>
         </div>
     </div>
-</section>
+</div>

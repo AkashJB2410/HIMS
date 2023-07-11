@@ -2,7 +2,7 @@
     "form": {
         "class": "row spacer ",
         "formTitle": "Self Registration",
-        "formTitleClass": "Sidebar-title-sm mt-4",
+        "formTitleClass": "Sidebar-title-lg mt-4",
         "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
         "formType": "edit",
