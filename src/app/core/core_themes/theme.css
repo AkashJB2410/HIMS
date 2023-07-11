@@ -2648,3 +2648,7 @@ body {
 .form-check-input {
   margin-top: 9px !important;
 }
+
+.p-accordion .p-accordion-header .p-accordion-header-link {
+  padding: 0.5rem !important;
+}
