@@ -7,7 +7,7 @@
     [configurations]="configurations" 
     [tableData]="data" 
     [tableConfig]="config" 
-    (sideBarEvent)="sidebarData($event)" 
+    (sideBarEvent)="closeSidebarData($event)" 
     (confirmAction)="confirmAction($event)"
     (changeEvents)="changeSelectItem($event)"
     (Bulkdelete)="BulkDeleteRows($event)" 
@@ -18,6 +18,21 @@
 
     <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="formData" [editData]="editData"
         (formData)="saveRegistartionForm($event)" (changeEvents)="changeSelectItem($event)"></app-form>
+
+        <app-super-grid
+        projectTowards="sidebar"
+        *ngIf="data" 
+    [configurations]="configurations" 
+    [tableData]="data" 
+    [tableConfig]="config" 
+    (sideBarEvent)="closeSidebarData($event)" 
+    (confirmAction)="confirmAction($event)"
+    (changeEvents)="changeSelectItem($event)"
+    (Bulkdelete)="BulkDeleteRows($event)" 
+    (onAdd)="onAdd($event)" 
+    (onEdit)="onEdit($event)" 
+    (isActive)="isActive($event)"
+    (rowClickData)="rowClickData($event)"></app-super-grid>
 
     <app-tabular-forms projectTowards="sidebar" [tabularJSON]="tabularFormData" (tabularEmitData)="tabularValue($event)">
         <app-form *ngIf="formData1" projectTowards="sidebar" [formJSON]="formData1" [editData]="demoEditData" 

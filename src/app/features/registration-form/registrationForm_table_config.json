@@ -28,6 +28,7 @@
     "isActions": ["Edit", "Delete","isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "expand":false,
+    "addButton":true,
     "buttonlbl":"",
     "textLength":16,
     "sidebar":"p-sidebar-xl"

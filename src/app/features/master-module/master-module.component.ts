@@ -195,6 +195,9 @@ export class MasterModuleComponent implements OnInit {
       console.log('data' + data);
     });
   }
+  closeSidebarData(e:any){
+    this.editData=undefined;
+  }
   sidebarData(e: any) {
     console.log('From User Management ==> ', e);
     if (e == 'reset') {

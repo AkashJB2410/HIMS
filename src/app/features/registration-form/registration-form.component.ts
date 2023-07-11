@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as table_config from './registrationForm_table_config.json';
 import registrationForm from "./registrationForm.json";
 import { MessageService } from 'primeng/api';
@@ -17,6 +17,8 @@ import form4Data from './form4.json';
 import form5Data from './form5.json';
 import form6Data from './form6.json';
 import rgistBUttonData from './RegistButton.json';
+import { DataServiceService } from '../master-page/data-service.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-registration-form',
@@ -56,12 +58,12 @@ export class RegistrationFormComponent implements OnInit {
   agemon: any;
   agedday: any;
   editData: any;
-  demoEditData:any;
-  addressEditData:any;
-  hospitalEditData:any;
-  insorunceEditData:any;
-  medicalEditData:any;
-  addEditData:any;
+  demoEditData: any;
+  addressEditData: any;
+  hospitalEditData: any;
+  insorunceEditData: any;
+  medicalEditData: any;
+  addEditData: any;
   tabularFormData = patientTabularFormData;
   paramObj: any = {
     "patientIdentificationTypeId": "",
@@ -115,11 +117,31 @@ export class RegistrationFormComponent implements OnInit {
     "patientEmail": ""
 
   };
+  receivedData: any;
+  private subscription: Subscription;
+  constructor(private messageService: MessageService, private common: CommonService, public datepipe: DatePipe, private http: RegistrationFormService, private form$: FormService, private dataService: DataServiceService) {
 
-  constructor(private messageService: MessageService, private common: CommonService, public datepipe: DatePipe, private http: RegistrationFormService, private form$: FormService) { }
-
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 
   ngOnInit(): void {
+    this.formData = Object.assign({}, rgistrationData);
+    this.formData.form.formControls[0].isVisible = false;
+    this.formData.form.formControls[1].isVisible = false;
+    this.subscription = this.dataService.outputData$.subscribe(
+      data => {
+        this.receivedData = data;
+        console.log("label label====>>", this.receivedData.label);
+        if (this.receivedData.label == "Quick Patient Reg + Visit" && this.formData.form.formControls[0].formControlName == "OPDRad") {
+          this.formData.form.formControls[0].isVisible = true;
+        }else if (this.receivedData.label == "IPD Quick Registration" && this.formData.form.formControls[1].formControlName == "IPDRad") {
+          this.formData.form.formControls[1].isVisible = true;
+        }
+      }
+    );
+
     this.assignDropDownOptions();
     this.configurations = {
       "isFilter": false,
@@ -522,18 +544,18 @@ export class RegistrationFormComponent implements OnInit {
     }
 
   }
-  changeSelect(e:any){
-    if (e[1].fieldName == "alcoholRad" && e[1].values[0].code ==true) {
+  changeSelect(e: any) {
+    if (e[1].fieldName == "alcoholRad" && e[1].values[0].code == true) {
       this.form$.reRenderForm(this.formData5.form.formControls[1], true, 'isVisible');
     }
-    if (e[1].fieldName == "tobacooRad" && e[1].values[0].code==true ) {
+    if (e[1].fieldName == "tobacooRad" && e[1].values[0].code == true) {
       this.form$.reRenderForm(this.formData5.form.formControls[3], true, 'isVisible');
     }
-    if (e[1].fieldName == "diabetesRad" && e[1].values[0].code ==true) {
+    if (e[1].fieldName == "diabetesRad" && e[1].values[0].code == true) {
       this.form$.reRenderForm(this.formData5.form.formControls[4], true, 'isVisible');
       this.form$.reRenderForm(this.formData5.form.formControls[6], true, 'isVisible');
     }
-      
+
   }
   getAllPatientData() {
     this.data = undefined;
@@ -548,7 +570,7 @@ export class RegistrationFormComponent implements OnInit {
         let obj = {
           "id": index,
           "patientId": e.patientId,
-          
+
           "patientTitleId": e.patientTitleId,
           "patientFirstname": e.patientFirstname,
           "patientMiddlename": e.patientMiddlename,
@@ -557,13 +579,13 @@ export class RegistrationFormComponent implements OnInit {
           "patientIdentificationTypeId": e.patientIdentificationTypeId,
           "patientIdentificationNo": "",
           "patientMaritalStatusId": e.patientMaritalStatusId,
-          "DOBRad":"Age",
+          "DOBRad": "Age",
           "patientDob": date,
-          
+
           "patientAge": e.patientAge,
           "patientGender": "2",
           // "dependentdropdown":[]
-          
+
           "patientAddressLine1": e.patientAddressLine1,
           "patientAddressLine2": e.patientAddressLine2,
           "patientCityId": e.patientCityId,
@@ -692,10 +714,14 @@ export class RegistrationFormComponent implements OnInit {
     }
 
   }
-
+  closeSidebarData(e: any) {
+    this.editData = undefined;
+  }
   sidebarData(e: any) {
     console.log("sidebar data => ", e)
-    if (this.isAddEditFlag.add == "add") {
+    if (e == 'reset') {
+      console.log(e);
+    } else if (this.isAddEditFlag.add == "add") {
       this.submitUserData(this.paramObj);
       this.messageService.add({ severity: 'success', summary: 'success', detail: 'Your registration has been successfully completed!' });
 
@@ -725,7 +751,7 @@ export class RegistrationFormComponent implements OnInit {
       "patientCityId": e.selectCity,
       "patientStateId": e.selectState,
       "patientCountryId": e.selectCountry,
-      "patientId":e.patientId,
+      "patientId": e.patientId,
       "patientRegistrationSource": "Counter"
 
     }
@@ -735,7 +761,7 @@ export class RegistrationFormComponent implements OnInit {
   saveFormOne(e: any) {
 
     this.paramObj = {
-      
+
       "patientEthinicityId": e.selectEthincity,
       "patientReligion": e.religionInput,
 
@@ -770,9 +796,9 @@ export class RegistrationFormComponent implements OnInit {
     console.log("saveRegistartionForm => ", this.paramObj);
   }
   saveFormFive(e: any) {
-// diabetesQuestion1
+    // diabetesQuestion1
 
-// diabetesRad
+    // diabetesRad
 
     this.paramObj = {
       "patientIsTobacoConsume": e.alcoholRad,
@@ -836,7 +862,7 @@ export class RegistrationFormComponent implements OnInit {
       e.editRow.patientDob, "MM/dd/yyyy"
     );
     let edit = {
-      "divider1":"",
+      "divider1": "",
       "patientId": e.editRow.patientId,
       "patientTitleId": e.editRow.patientTitleId,
       "patientFirstname": e.editRow.patientFirstname,
@@ -846,44 +872,44 @@ export class RegistrationFormComponent implements OnInit {
       "patientIdentificationTypeId": e.editRow.patientIdentificationTypeId,
       "patientIdentificationNumber": "2234 1234 1234",
       "patientMaritalStatusId": e.editRow.patientMaritalStatusId,
-      "DOBRad":"",
+      "DOBRad": "",
       "patientDob": date,
-      "AgeRad":["Age"],
+      "AgeRad": ["Age"],
       "patientAge": e.editRow.patientAge,
-      "patientGender":"2",
-      "divider2":"",
-      "dependentdropdown":[e.editRow.patientCountryId,e.editRow.patientStateId,e.editRow.patientCityId],
+      "patientGender": "2",
+      "divider2": "",
+      "dependentdropdown": [e.editRow.patientCountryId, e.editRow.patientStateId, e.editRow.patientCityId],
       // "patientCountryId": ,
       // "patientStateId": ,
       // "patientCityId": ,
       "patientAddressLine1": e.editRow.patientAddressLine1,
       "patientAddressLine2": e.editRow.patientAddressLine2,
-      "staticText1":"",
+      "staticText1": "",
       "patientCountryName": e.editRow.patientCountryName,
       "patientMaritalStatusName": e.editRow.patientMaritalStatusName,
-      
+
       "patientTitleName": e.editRow.patientTitleName,
-      
+
       "profileImage": e.editRow.profileImage,
-      
+
       "patientEmail": e.editRow.patientEmail,
-      
-      
+
+
       "patientCityName": e.editRow.patientCityName,
-      
+
       "patientStateName": e.editRow.patientStateName,
-      
-     
+
+
       "patientHealthId": e.editRow.patientHealthId,
       "patientHealthNumber": e.editRow.patientHealthNumber,
       "patientSocialStatusId": e.editRow.patientSocialStatusId,
       "patientSocialStatusName": e.editRow.patientSocialStatusName,
-     
-      
+
+
       "patientBlock": e.editRow.patientBlock,
-      
-      
-      
+
+
+
       // "patientOccupation": e.editRow.patientOccupation,
       // "patientReferredBy": e.editRow.patientReferredBy,
       // "patientLanguages": e.editRow.patientLanguages,
@@ -893,61 +919,61 @@ export class RegistrationFormComponent implements OnInit {
       "isActive": e.editRow.isActive,
       "patientMrNo": e.editRow.patientMrNo,
       "patientIdentificationTypeName": e.editRow.patientIdentificationTypeName,
-      
+
 
     }
     this.editData = edit;
-    let demogarfic={
+    let demogarfic = {
       "patientBloodGroupId": e.editRow.patientBloodGroupId,
       "patientEthinicityId": e.editRow.patientEthinicityId,
       "patientReligion": e.editRow.patientReligion,
       "patientBloodGroupName": e.editRow.patientBloodGroupName,
       "patientEthinicityName": e.editRow.patientEthinicityName
     }
-    this.demoEditData=demogarfic;
-    let address={
+    this.demoEditData = demogarfic;
+    let address = {
       "patientSocialStatusId": e.editRow.patientSocialStatusId,
       "patientSocialStatusName": e.editRow.patientSocialStatusName,
 
     }
-    this.addressEditData=address;
-    let hospital={
+    this.addressEditData = address;
+    let hospital = {
       "patientPrnNumber": e.editRow.patientPrnNumber,
       "patientPrivilageId": e.editRow.patientPrivilageId,
       "patientPrivilageName": e.editRow.patientPrivilageName,
     }
-    this.hospitalEditData=hospital;
-    let insorunce={
+    this.hospitalEditData = hospital;
+    let insorunce = {
       "patientInsuranceNumber": e.editRow.patientInsuranceNumber,
       "patientInsurancePolicyNumber": e.editRow.patientInsurancePolicyNumber,
       "patientInsuranceCompanyNumber": e.editRow.patientInsuranceCompanyNumber,
       "patientInsuranceCompanyName": e.editRow.patientInsuranceCompanyName,
-     
+
     }
-    this.insorunceEditData=insorunce;
-    let medical={
+    this.insorunceEditData = insorunce;
+    let medical = {
       "patientIsAlcoholConsume": [e.editRow.patientIsAlcoholConsume],
       "patientIsAlcoholConsumeYear": e.editRow.patientIsAlcoholConsumeYear,
-      "patientIsTobacoConsume":[ e.editRow.patientIsTobacoConsume],
+      "patientIsTobacoConsume": [e.editRow.patientIsTobacoConsume],
       "patientIsTobacoConsumeYear": e.editRow.patientIsTobacoConsumeYear,
-      "statix":"",
+      "statix": "",
       "patientIsHaveDiabeties": [e.editRow.patientIsHaveDiabeties],
       "patientIsHaveDiabetiesYear": e.editRow.patientIsHaveDiabetiesYear,
       // "patientIsHaveSugar": e.editRow.patientIsHaveSugar,
       // "patientIsHaveSugarYear": e.editRow.patientIsHaveSugarYear,
 
     }
-    this.medicalEditData=medical;
+    this.medicalEditData = medical;
     let additionDetailsEdit = {
-     
+
       "patientOccupation": e.editRow.patientOccupation,
       "patientReferredBy": e.editRow.patientReferredBy,
       "patientLanguages": e.editRow.patientLanguages,
       "patientPhoneNumber": e.editRow.patientPhoneNumber
 
     }
-    this.addEditData=additionDetailsEdit;
-    
+    this.addEditData = additionDetailsEdit;
+
     // this.common.sendEditData(e.editRow);
     // this.form$.reRenderForm(this.sidebarJSON.form.formControls[1], false, 'isVisible');
   }

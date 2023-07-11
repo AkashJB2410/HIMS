@@ -12,6 +12,65 @@
             {
                 "id": 0,
                 "isEditable": true,
+                "isVisible": false,
+                "label": "",
+                "inputType": "radio",
+                "type": "radio",
+                "class": "col-md-1 mt-4 my-1",
+                "lblclass": "custom-label",
+                "valueclass": " radio-button",
+                "placeholder": "********",
+                "formControlName": "OPDRad",
+                "defaultValue":["OPD"],
+                "message": {
+                    "required": "DOB is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "OPD",
+                        "code": "OPD",
+                        "editable": false
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 0,
+                "isEditable": true,
+                "isVisible": false,
+                "label": "",
+                "inputType": "radio",
+                "type": "radio",
+                "class": "col-md-1 mt-4 my-1",
+                "lblclass": "custom-label",
+                "valueclass": " radio-button",
+                "placeholder": "********",
+                "defaultValue":["IPD"],
+                "formControlName": "IPDRad",
+                "message": {
+                    "required": "DOB is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "IPD",
+                        "code": "IPD",
+                        "editable": false
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            
+            {
+                "id": 0,
+                "isEditable": true,
                 "isVisible": true,
                 "transient": false,
                 "label": "",
