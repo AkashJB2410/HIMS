@@ -1,0 +1,14 @@
+{
+    "tabular": [
+        {
+            "id": 0,
+            "label": "Address Details",
+            "icon": "pi pi-fw pi-file"
+        },
+        {
+            "id": 1,
+            "label": "Medical History",
+            "icon": "pi pi-fw pi-cog"
+        }
+    ]
+}

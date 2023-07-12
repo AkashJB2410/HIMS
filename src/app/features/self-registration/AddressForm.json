@@ -1,0 +1,268 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "",
+        "formTitleClass": "",
+        "formTitleLogo": "",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar": "p-sidebar-lg",
+        "formControls": [
+            {
+                "id": 0,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Address",
+                "type": "textarea",
+                "inputType": "textarea",
+                "class": "col-md-4 mt-1",
+                "lblclass": "custom-label",
+                "valueclass": "textarea-custom",
+                "row": "2",
+                "placeholder": "",
+                "formControlName": "address",
+                "message": {
+                    "required": "Address is required",
+                    "pattern": "invalid"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Landmark",
+                "type": "textarea",
+                "inputType": "textarea",
+                "class": "col-md-4 mt-1",
+                "lblclass": "custom-label",
+                "valueclass": "textarea-custom",
+                "row": "2",
+                "placeholder": "",
+                "formControlName": "address",
+                "message": {
+                    "required": "Address is required",
+                    "pattern": "invalid"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "dependentdropdown",
+                "class": "col-md-6 ",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "state",
+                "defaultValue": "",
+                "message": {
+                    "required": "state is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "label": "State",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": ""
+                            },
+                            {
+                                "name": "Maharashtra",
+                                "code": "1"
+                            },
+                            {
+                                "name": "Bihar",
+                                "code": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Districts",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": "",
+                                "Mcode": ""
+                            },
+                            {
+                                "name": "Pune",
+                                "code": "1",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Satara",
+                                "code": "2",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Dharashiv",
+                                "code": "3",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Patna",
+                                "code": "4",
+                                "Mcode": "2"
+                            },
+                            {
+                                "name": "Mujjafarpur",
+                                "code": "5",
+                                "Mcode": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "taluka",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": "",
+                                "Mcode": ""
+                            },
+                            {
+                                "name": "haveli",
+                                "code": "1",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Ausa",
+                                "code": "2",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Lohara",
+                                "code": "3",
+                                "Mcode": "2"
+                            },
+                            {
+                                "name": "Patna",
+                                "code": "4",
+                                "Mcode": "2"
+                            },
+                            {
+                                "name": "Mujjafarpur",
+                                "code": "5",
+                                "Mcode": "2"
+                            }
+                        ]
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Village",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-2 ",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectVillage",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Parvati",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Sadashiv Pet",
+                        "code": "2"
+                    },
+                    {
+                        "name": "Manapa",
+                        "code": "3"
+                    }
+                ],
+                "message": {
+                    "required": "Village is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 4,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Pin Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-2 ",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Pin Code...",
+                "formControlName": "pinCode",
+                "message": {
+                    "required": "Pin Code is required",
+                    "pattern": "Please re-enter valid pin code."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$"
+                }
+            },
+            {
+                "id": 5,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "",
+                "inputType": "empty",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-6 my-1 ",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "staticText",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 6,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-2",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}
