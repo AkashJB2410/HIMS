@@ -3,7 +3,7 @@
         "class": "row",
         "formId":"patientRegistration",
         "formTitle": "Patient Registration",
-        "formTitleClass": "Sidebar-title-md",
+        "formTitleClass": "Sidebar-title-md ",
         "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
         "formType": "edit",
@@ -16,14 +16,14 @@
                 "label": "",
                 "inputType": "radio",
                 "type": "radio",
-                "class": "col-md-1 mt-4 my-1",
+                "class": "col-md-1 mt-1 my-1",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
                 "formControlName": "OPDRad",
                 "defaultValue":["OPD"],
                 "message": {
-                    "required": "DOB is required",
+                    "required": "OPD is required",
                     "pattern": ""
                 },
                 "values": [
@@ -45,14 +45,14 @@
                 "label": "",
                 "inputType": "radio",
                 "type": "radio",
-                "class": "col-md-1 mt-4 my-1",
+                "class": "col-md-1 mt-1 my-1",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
                 "defaultValue":["IPD"],
                 "formControlName": "IPDRad",
                 "message": {
-                    "required": "DOB is required",
+                    "required": "IPD is required",
                     "pattern": ""
                 },
                 "values": [
@@ -128,6 +128,50 @@
                     "pattern": ""
                 },
                 "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Mr",
+                        "code": "Mr"
+                    },
+                    {
+                        "name": "Mrs.",
+                        "code": "Mrs."
+                    },
+                    {
+                        "name": "B/O Boy",
+                        "code": "B/O Boy"
+                    },
+                    {
+                        "name": "B/O Girl",
+                        "code": "B/O Girl"
+                    },
+                    {
+                        "name": "Dr.",
+                        "code": "Dr."
+                    },
+                    {
+                        "name": "Dr. Mr",
+                        "code": "Dr. Mr"
+                    },
+                    {
+                        "name": "Dr. Ms",
+                        "code": "Dr. Ms"
+                    },
+                    {
+                        "name": "Miss.",
+                        "code": "Miss."
+                    },
+                    {
+                        "name": "Master",
+                        "code": "Master"
+                    },
+                    {
+                        "name": "Smt.",
+                        "code": "Smt."
+                    }
                 ],
                 "validations": {
                     "required": false,
@@ -340,7 +384,7 @@
                 "label": "",
                 "inputType": "radio",
                 "type": "radio",
-                "class": "col-md-1 my-1",
+                "class": "col-md-1 mt-4",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
@@ -390,7 +434,7 @@
                 "label": "",
                 "inputType": "radio",
                 "type": "radio",
-                "class": "col-md-1  my-1 ",
+                "class": "col-md-1  mt-4 ",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
@@ -445,6 +489,22 @@
                 "placeholder": "Select option",
                 "formControlName": "selectGender",
                 "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Male",
+                        "code": "M"
+                    },
+                    {
+                        "name": "Female",
+                        "code": "F"
+                    },
+                    {
+                        "name": "Other",
+                        "code": "o"
+                    }
                 ],
                 "message": {
                     "required": "Gender is required",

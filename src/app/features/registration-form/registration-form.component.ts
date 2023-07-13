@@ -60,7 +60,7 @@ export class RegistrationFormComponent implements OnInit {
   registartionFormData: any[] = [];
   isForm: any = true;
   flag: any;
-  gridData: any[]=[];
+  gridData: any[] = [];
   isAddEditFlag: any;
   items: any = Breadcrumbs;
   imgName: any
@@ -82,55 +82,76 @@ export class RegistrationFormComponent implements OnInit {
   isShowServices = false;
   servData: any[] = [];
   paramObj: any = {
-    "patientIdentificationTypeId": "",
-    "patientIdentificationTypeName": "",
+    "id":"",
+    "patientId": "",
+    "patientMrNo": "",
     "patientTitleId": "",
     "patientTitleName": "",
     "patientFirstname": "",
     "patientMiddlename": "",
     "patientLastname": "",
+    "patientFullname": "",
+    "patientMobileNumber": "",
+    "patientEmail": "",
     "patientDob": "",
-    "patientAge": "",
+    "patientIdentificationTypeId": "",
+    "patientIdentificationTypeName": "",
     "patientMaritalStatusId": "",
     "patientMaritalStatusName": "",
-    "profileImage": "",
-    "patientMobileNumber": "",
-    "patientAddressLine1": "",
-    "patientAddressLine2": "",
-    "patientCityId": "",
-    "patientCityName": "",
-    "patientStateId": "",
-    "patientStateName": "",
-    "patientCountryId": "",
-    "patientCountryName": "",
-    "patientBloodGroupId": "",
-    "patientBloodGroupName": "",
-    "patientEthinicityId": "",
-    "patientEthinicityName": "",
-    "patientReligion": "",
-    "patientBlock": "",
-    "patientPrnNumber": "",
-    "patientPrivilageId": "",
-    "patientPrivilageName": "",
-    "patientInsuranceNumber": "",
-    "patientInsurancePolicyNumber": "",
-    "patientInsuranceCompanyNumber": "",
-    "patientInsuranceCompanyName": "",
-    "patientIsTobacoConsume": false,
-    "patientIsTobacoConsumeYear": "",
-    "patientIsAlcoholConsume": false,
-    "patientIsAlcoholConsumeYear": "",
-    "patientOccupation": "",
-    "patientReferredBy": "",
-    "patientLanguages": "",
-    "patientPhoneNumber": "",
-    "patientUploadImage": "",
-    "patientRegistrationSource": "",
-    "patientSocialStatusId": "",
-    "patientSocialStatusName": "",
+    "patientAddress": "",
+    "patientDemographics": "",
+    "patientInsurance": "",
+    "patientMedicalHistory": "",
+    "patientAddInfo": "",
+    "patientPrivilege": "",
     "patientHealthId": "",
     "patientHealthNumber": "",
-    "patientEmail": ""
+    "patientUploadImage": "",
+    "patientRegistrationSource": "",
+
+    "demographicsId": "",
+    "demographicsAge": "",
+    "demographicsGenderId": "",
+    "demographicsGenderName": "",
+    "demographicsBloodGroupId": "",
+    "demographicsBloodGroupName": "",
+    "demographicsEthinicityId": "",
+    "demographicsEthinicityName": "",
+    "demographicsReligion": "",
+    "demographicsSocialStatusId": "",
+    "demographicsSocialStatusName": "",
+    "demographicsPatientId": "",
+    "addressId": "",
+    "addressLine1": "",
+    "addressLine2": "",
+    "addressblock": "",
+    "addressVillageId": "",
+    "addressVillageName": "",
+    "addressTalukaId": "",
+    "addressTalukaName": "",
+    "addressCityId": "",
+    "addressCityName": "",
+    "addressStateId": "",
+    "addressStateName": "",
+    "addressCountryId": "",
+    "addressCountryName": "",
+    "addressPatientId": "",
+    "addressPinCode": "",
+    "permanentAddressLine1": "",
+    "permanentAddressLine2": "",
+    "permanentAddressblock": "",
+    "permanentAddressVillageId": "",
+    "permanentAddressVillageName": "",
+    "permanentAddressTalukaId": "",
+    "permanentAddressTalukaName": "",
+    "permanentAddressCityId": "",
+    "permanentAddressCityName": "",
+    "permanentAddressStateId": "",
+    "permanentAddressStateName": "",
+    "permanentAddressCountryId": "",
+    "permanentAddressCountryName": "",
+    "permanentAddressPinCode": "",
+    "isActive": ""
 
   };
   receivedData: any;
@@ -180,7 +201,7 @@ export class RegistrationFormComponent implements OnInit {
       "isConfirmation": true
     };
     this.getAllPatientData();
-    // this.getAllData();
+    this.getAllData();
     this.filterData = filterdata;
     // this.getAllUserData();
     this.getConfigForTable();
@@ -210,57 +231,57 @@ export class RegistrationFormComponent implements OnInit {
       //     })
       //   })
       // }
-      if (data.formControlName === "selectTitle") {
-        data.values = [];
-        let defaultObj = {
-          "name": "Select Title",
-          "code": ""
-        }
-        data.values.push(defaultObj);
-        this.http.GetAllTitleData().subscribe(item => {
-          item.forEach((e: any) => {
-            let obj = {
-              "name": e.value,
-              "code": e.lovListId
-            }
-            data.values.push(obj);
-          })
-        })
-      }
-      if (data.formControlName === "selectYear") {
-        data.values = [];
-        let defaultObj = {
-          "name": "Select an Option",
-          "code": "0"
-        }
-        data.values.push(defaultObj);
-        this.http.GetAllMstDurationData().subscribe((item: any[]) => {
-          item.forEach((e: any) => {
-            let obj = {
-              "name": e.durationType,
-              "code": e.durationId
-            }
-            data.values.push(obj);
-          })
-        })
-      }
-      if (data.formControlName === "selectGender") {
-        data.values = [];
-        let defaultObj = {
-          "name": "Select Gender",
-          "code": ""
-        }
-        data.values.push(defaultObj);
-        this.http.GetAllmstGenderData().subscribe(item => {
-          item.forEach((e: any) => {
-            let obj = {
-              "name": e.value,
-              "code": e.lovListId
-            }
-            data.values.push(obj);
-          })
-        })
-      }
+      // if (data.formControlName === "selectTitle") {
+      //   data.values = [];
+      //   let defaultObj = {
+      //     "name": "Select Title",
+      //     "code": ""
+      //   }
+      //   data.values.push(defaultObj);
+      //   this.http.GetAllTitleData().subscribe(item => {
+      //     item.forEach((e: any) => {
+      //       let obj = {
+      //         "name": e.value,
+      //         "code": e.lovListId
+      //       }
+      //       data.values.push(obj);
+      //     })
+      //   })
+      // }
+      // if (data.formControlName === "selectYear") {
+      //   data.values = [];
+      //   let defaultObj = {
+      //     "name": "Select an Option",
+      //     "code": "0"
+      //   }
+      //   data.values.push(defaultObj);
+      //   this.http.GetAllMstDurationData().subscribe((item: any[]) => {
+      //     item.forEach((e: any) => {
+      //       let obj = {
+      //         "name": e.durationType,
+      //         "code": e.durationId
+      //       }
+      //       data.values.push(obj);
+      //     })
+      //   })
+      // }
+      // if (data.formControlName === "selectGender") {
+      //   data.values = [];
+      //   let defaultObj = {
+      //     "name": "Select Gender",
+      //     "code": ""
+      //   }
+      //   data.values.push(defaultObj);
+      //   this.http.GetAllmstGenderData().subscribe(item => {
+      //     item.forEach((e: any) => {
+      //       let obj = {
+      //         "name": e.value,
+      //         "code": e.lovListId
+      //       }
+      //       data.values.push(obj);
+      //     })
+      //   })
+      // }
       // if (data.formControlName === "selectBlood") {
       //   data.values = [];
       //   let defaultObj = {
@@ -278,168 +299,168 @@ export class RegistrationFormComponent implements OnInit {
       //     })
       //   })
       // }
-      if (data.formControlName === "selectState") {
-        // data.values = [];
-        data.values.forEach((a: any) => {
-          if (a.label === "State") {
-            a.values = [];
-            let defaultObj = {
-              "name": "Select State",
-              "code": ""
-            }
-            a.values.push(defaultObj);
-            this.http.GetAllMstStateData().subscribe((item: any[]) => {
-              item.forEach((e: any) => {
-                let obj = {
-                  "name": e.stateName,
-                  "code": e.stateId
-                }
-                a.values.push(obj);
-              })
-            })
-          }
-          if (a.label === "Districts") {
-            a.values = [];
-            let defaultObj = {
-              "name": "Select Districts",
-              "code": "",
-              "Mcode": ""
-            }
-            a.values.push(defaultObj);
-            this.http.GetAllMstDistrictData().subscribe((item: any[]) => {
-              item.forEach((e: any) => {
-                let obj = {
-                  "name": e.districtName,
-                  "code": e.districtId,
-                  "Mcode": e.stateId.stateId
-                }
-                a.values.push(obj);
-              })
-            })
-          }
-        })
-      }
-      if (data.formControlName === "selectTaluka") {
-        data.values = [];
-        let defaultObj = {
-          "name": "Select Taluka",
-          "code": ""
-        }
-        data.values.push(defaultObj);
-        this.http.GetAllMstTalukaData().subscribe((item: any[]) => {
-          item.forEach((e: any) => {
-            let obj = {
-              "name": e.talukaName,
-              "code": e.talukaId
-            }
-            data.values.push(obj);
-          })
-        })
-      }
-      if (data.formControlName === "selectVillage") {
-        data.values = [];
-        let defaultObj = {
-          "name": "Select Village",
-          "code": ""
-        }
-        data.values.push(defaultObj);
-        this.http.GetAllVillageData().subscribe((item: any[]) => {
-          item.forEach((e: any) => {
-            let obj = {
-              "name": e.villageName,
-              "code": e.villageid
-            }
-            data.values.push(obj);
-          })
-        })
-      }
-      if (data.formControlName === "selectDepartment") {
-        data.values = [];
-        let defaultObj = {
-          "name": "Select Department",
-          "code": ""
-        }
-        data.values.push(defaultObj);
-        this.http.GetAllMstDepartment().subscribe((item: any[]) => {
-          console.log("department => ", item)
-          item.forEach((e: any) => {
-            let obj = {
-              "name": e.departmentName,
-              "code": e.departmentId
-            }
-            data.values.push(obj);
-          })
-        })
-      }
-      if (data.formControlName === "selectSubDepartment") {
-        data.values = [];
-        let defaultObj = {
-          "name": "Select Sub-Department",
-          "code": ""
-        }
-        data.values.push(defaultObj);
-        this.http.GetAllSubDepartmentData().subscribe((item: any[]) => {
-          console.log("Sub department => ", item)
-          item.forEach((e: any) => {
-            let obj = {
-              "name": e.subDepartment,
-              "code": e.subDepartmentId
-            }
-            data.values.push(obj);
-          })
-        })
-      }
-      if (data.formControlName === "selectDoctor") {
-        data.values = [];
-        let defaultObj = {
-          "name": "Select Doctor",
-          "code": ""
-        }
-        data.values.push(defaultObj);
-        this.http.GetAllDoctorData().subscribe((item: any[]) => {
-          item.forEach((e: any) => {
-            let obj = {
-              "name": e.doctorName,
-              "code": e.doctorId
-            }
-            data.values.push(obj);
-          })
-        })
-      }
-      if (data.formControlName === "selectRelativeTitle") {
-        data.values = [];
-        let defaultObj = {
-          "name": "Select Relative Title",
-          "code": ""
-        }
-        data.values.push(defaultObj);
-        this.http.GetAllRelativeTitle().subscribe((item: any[]) => {
-          item.forEach((e: any) => {
-            let obj = {
-              "name": e.relativeTitleType,
-              "code": e.relativeTitleId
-            }
-            data.values.push(obj);
-          })
-        })
-      }
-      if (data.formControlName === "selectWard") {
-        data.values = [];
-        let defaultObj = {
-          "name": "Select Ward",
-          "code": ""
-        }
-        data.values.push(defaultObj);
-        this.http.GetAllWardData().subscribe((item: any[]) => {
-          item.forEach((e: any) => {
-            let obj = {
-              "name": e.wardDetails,
-              "code": e.mstWardDetailsid
-            }
-            data.values.push(obj);
-          })
-        })
-      }
+      // if (data.formControlName === "selectState") {
+      //   // data.values = [];
+      //   data.values.forEach((a: any) => {
+      //     if (a.label === "State") {
+      //       a.values = [];
+      //       let defaultObj = {
+      //         "name": "Select State",
+      //         "code": ""
+      //       }
+      //       a.values.push(defaultObj);
+      //       this.http.GetAllMstStateData().subscribe((item: any[]) => {
+      //         item.forEach((e: any) => {
+      //           let obj = {
+      //             "name": e.stateName,
+      //             "code": e.stateId
+      //           }
+      //           a.values.push(obj);
+      //         })
+      //       })
+      //     }
+      //     if (a.label === "Districts") {
+      //       a.values = [];
+      //       let defaultObj = {
+      //         "name": "Select Districts",
+      //         "code": "",
+      //         "Mcode": ""
+      //       }
+      //       a.values.push(defaultObj);
+      //       this.http.GetAllMstDistrictData().subscribe((item: any[]) => {
+      //         item.forEach((e: any) => {
+      //           let obj = {
+      //             "name": e.districtName,
+      //             "code": e.districtId,
+      //             "Mcode": e.stateId.stateId
+      //           }
+      //           a.values.push(obj);
+      //         })
+      //       })
+      //     }
+      //   })
+      // }
+      // if (data.formControlName === "selectTaluka") {
+      //   data.values = [];
+      //   let defaultObj = {
+      //     "name": "Select Taluka",
+      //     "code": ""
+      //   }
+      //   data.values.push(defaultObj);
+      //   this.http.GetAllMstTalukaData().subscribe((item: any[]) => {
+      //     item.forEach((e: any) => {
+      //       let obj = {
+      //         "name": e.talukaName,
+      //         "code": e.talukaId
+      //       }
+      //       data.values.push(obj);
+      //     })
+      //   })
+      // }
+      // if (data.formControlName === "selectVillage") {
+      //   data.values = [];
+      //   let defaultObj = {
+      //     "name": "Select Village",
+      //     "code": ""
+      //   }
+      //   data.values.push(defaultObj);
+      //   this.http.GetAllVillageData().subscribe((item: any[]) => {
+      //     item.forEach((e: any) => {
+      //       let obj = {
+      //         "name": e.villageName,
+      //         "code": e.villageid
+      //       }
+      //       data.values.push(obj);
+      //     })
+      //   })
+      // }
+      // if (data.formControlName === "selectDepartment") {
+      //   data.values = [];
+      //   let defaultObj = {
+      //     "name": "Select Department",
+      //     "code": ""
+      //   }
+      //   data.values.push(defaultObj);
+      //   this.http.GetAllMstDepartment().subscribe((item: any[]) => {
+      //     console.log("department => ", item)
+      //     item.forEach((e: any) => {
+      //       let obj = {
+      //         "name": e.departmentName,
+      //         "code": e.departmentId
+      //       }
+      //       data.values.push(obj);
+      //     })
+      //   })
+      // }
+      // if (data.formControlName === "selectSubDepartment") {
+      //   data.values = [];
+      //   let defaultObj = {
+      //     "name": "Select Sub-Department",
+      //     "code": ""
+      //   }
+      //   data.values.push(defaultObj);
+      //   this.http.GetAllSubDepartmentData().subscribe((item: any[]) => {
+      //     console.log("Sub department => ", item)
+      //     item.forEach((e: any) => {
+      //       let obj = {
+      //         "name": e.subDepartment,
+      //         "code": e.subDepartmentId
+      //       }
+      //       data.values.push(obj);
+      //     })
+      //   })
+      // }
+      // if (data.formControlName === "selectDoctor") {
+      //   data.values = [];
+      //   let defaultObj = {
+      //     "name": "Select Doctor",
+      //     "code": ""
+      //   }
+      //   data.values.push(defaultObj);
+      //   this.http.GetAllDoctorData().subscribe((item: any[]) => {
+      //     item.forEach((e: any) => {
+      //       let obj = {
+      //         "name": e.doctorName,
+      //         "code": e.doctorId
+      //       }
+      //       data.values.push(obj);
+      //     })
+      //   })
+      // }
+      // if (data.formControlName === "selectRelativeTitle") {
+      //   data.values = [];
+      //   let defaultObj = {
+      //     "name": "Select Relative Title",
+      //     "code": ""
+      //   }
+      //   data.values.push(defaultObj);
+      //   this.http.GetAllRelativeTitle().subscribe((item: any[]) => {
+      //     item.forEach((e: any) => {
+      //       let obj = {
+      //         "name": e.relativeTitleType,
+      //         "code": e.relativeTitleId
+      //       }
+      //       data.values.push(obj);
+      //     })
+      //   })
+      // }
+      // if (data.formControlName === "selectWard") {
+      //   data.values = [];
+      //   let defaultObj = {
+      //     "name": "Select Ward",
+      //     "code": ""
+      //   }
+      //   data.values.push(defaultObj);
+      //   this.http.GetAllWardData().subscribe((item: any[]) => {
+      //     item.forEach((e: any) => {
+      //       let obj = {
+      //         "name": e.wardDetails,
+      //         "code": e.mstWardDetailsid
+      //       }
+      //       data.values.push(obj);
+      //     })
+      //   })
+      // }
     })
   }
   events(e: any) {
@@ -449,74 +470,74 @@ export class RegistrationFormComponent implements OnInit {
   changeSelectItem(e: any) {
     console.log("changeSelectItem e => ", e)
     if (e[1].fieldName == "selectIdentificationType" && e[0].value != "") {
-      this.form$.reRenderForm(this.formData.form.formControls[8], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[11], true, 'isEditable');
       if (e[0].value == "1") {
         let validations = {
           "required": true,
           "pattern": "^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[8], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
       } else if (e[0].value == "2") {
         let validations = {
           "required": true,
           "pattern": "^[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[8], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
       } else if (e[0].value == "3") {
         let validations = {
           "required": true,
           "pattern": "[A-Z]{3}[0-9]{4}[A-Z]{1}"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[8], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
       } else if (e[0].value == "4") {
         let validations = {
           "required": true,
           "pattern": "^[A-Z]{3}[0-9]{7}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[8], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
       } else if (e[0].value == "3") {
         let validations = {
           "required": true,
           "pattern": "^\\d{10,12}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[8], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
       } else if (e[0].value == "6") {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[8], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
       }
       else if (e[0].value == "7") {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[8], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
       } else if (e[0].value == "8") {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[8], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
       } else if (e[0].value == "9") {
         let validations = {
           "required": true,
           "pattern": "^(([A-Z]{2}[0-9]{2})( )|([A-Z]{2}-[0-9]{2}))((19|20)[0-9][0-9])[0-9]{7}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[8], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
       } else if (e[0].value == "10") {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[8], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
       } else if (e[0].value == "11") {
         let validations = {
           "required": true,
           "pattern": "^[1-9]{2}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[8], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
       }
     }
 
@@ -611,19 +632,51 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   getAllData() {
-    this.data = undefined;
-    this.gridData = [];
-    // this.getAllPatientData();
-    // this.getAllMstDemographicsData();
-    // this.getAllAddDetatils();
-    console.log("gridData ==>> ", this.data);
-    // let allData=this.http.getALLDataFromAPIs()
-    // console.log("Alll data =================>> ", allData);
-  }
-  patient: any;
-  address: any;
-  getPatientData() { }
+    this.http.getDataFromApis().subscribe(
+      ([api1Response, api2Response]) => {
+        // Handle the responses from both APIs
+        console.log('API 1 Response:', api1Response);
+        console.log('API 2 Response:', api2Response);
+        api1Response[1].result.forEach((e: any, index: any) => {
+          let date = this.datepipe.transform(
+            e.patientDob, "MM/dd/yyyy"
+          );
+          this.paramObj = {
+            "id": index,
+            "patientId": e.patientId,
+            "patientMrNo": e.patientMrNo,
+            "patientTitleId": e.patientTitleId,
+            "patientTitleName": e.patientTitleName,
+            "patientFirstname": e.patientFirstname,
+            "patientMiddlename": e.patientMiddlename,
+            "patientLastname": e.patientLastname,
+            "patientFullname": e.patientFullname,
+            "patientMobileNumber": e.patientMobileNumber,
+            "patientEmail": e.patientEmail,
+            "patientIdentificationTypeId": e.patientIdentificationTypeId,
+            "patientIdentificationTypeName": e.patientIdentificationTypeName,
+            "patientIdentificationNo": "",
+            "patientMaritalStatusId": e.patientMaritalStatusId,
+            "patientMaritalStatusName": e.patientMaritalStatusName,
+            "patientDob": date,
+            "isActive": e.isActive
+          }
 
+        })
+
+
+        this.gridData.push(api1Response[1].result);
+        console.log('API 1 Response this.gridData:', this.gridData);
+        this.gridData.push(api2Response[1].result);
+        console.log('API 2 Response this.gridData:', this.gridData);
+
+      },
+      error => {
+        // Handle any errors
+        console.error('Error:', error);
+      }
+    );
+  }
 
   getAllPatientData() {
     this.http.GetAllMstPatientData().subscribe(res => {
@@ -931,8 +984,8 @@ export class RegistrationFormComponent implements OnInit {
     this.http.getFilterData(e)
       .subscribe((data: any[]) => {
         this.data = undefined;
-       
-        this.data =  data[1].result;
+
+        this.data = data[1].result;
       })
   }
 

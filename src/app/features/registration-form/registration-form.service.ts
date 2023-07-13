@@ -46,25 +46,36 @@ export class RegistrationFormService {
     return this.http.get(url, { params: params });
   }
 
-  getALLDataFromAPIs(): any {
-    forkJoin([
-      this.GetAllMstPatientData(),
-      this.GetAllDemographicsData(),
-      this.GetAllMstAddress()
-    ]).subscribe(
-      ([dataFromAPI1, dataFromAPI2, dataFromAPI3]) => {
-        // Handle the data from both APIs
-        console.log('Data from API 1:', dataFromAPI1);
-        console.log('Data from API 2:', dataFromAPI2);
-        console.log('Data from API 2:', dataFromAPI3);
-      },
-      (error) => {
-        // Handle error if any API request fails
-        console.error('Error:', error);
-      }
-    );
-  }
+  // getALLDataFromAPIs(): any {
+  //   forkJoin([
+  //     this.GetAllMstPatientData(),
+  //     this.GetAllDemographicsData(),
+  //     this.GetAllMstAddress()
+  //   ]).subscribe(
+  //     ([dataFromAPI1, dataFromAPI2, dataFromAPI3]) => {
+  //       // Handle the data from both APIs
+  //       console.log('Data from API 1:', dataFromAPI1);
+  //       console.log('Data from API 2:', dataFromAPI2);
+  //       console.log('Data from API 2:', dataFromAPI3);
+  //     },
+  //     (error) => {
+  //       // Handle error if any API request fails
+  //       console.error('Error:', error);
+  //     }
+  //   );
+  // }
+  // const getAllMstPatient='http://localhost:8082/mst_patient/list';
 
+  // Define two separate API endpoints
+  readonly  mst_patient = 'http://localhost:8082/mst_patient/list';
+  readonly mst_demographics = 'http://localhost:8082/mst_demographics/list';
+
+  getDataFromApis(): Observable<any[]> {
+    const api1Request = this.http.get(this.mst_patient);
+    const api2Request = this.http.get(this.mst_demographics);
+  
+    return forkJoin([api1Request, api2Request]);
+  }
   //mst_patient APIs
 
   GetAllMstPatientData() {
