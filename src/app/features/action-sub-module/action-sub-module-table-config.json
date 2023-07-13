@@ -43,5 +43,6 @@
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
     "buttonlbl":"Add Sub_Module",
+    "addButton":true,
     "textLength":16
 }

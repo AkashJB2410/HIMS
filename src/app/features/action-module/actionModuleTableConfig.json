@@ -59,5 +59,6 @@
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
     "buttonlbl": "Add Action Module",
+    "addButton":true,
     "textLength": 16
 }
