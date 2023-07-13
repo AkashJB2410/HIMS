@@ -1,7 +1,7 @@
 {
     "form": {
         "class": "row spacer ",
-        "formTitle": "Self Registration",
+        "formTitle": "SELF REGISTRATION",
         "formTitleClass": "Sidebar-title-lg mt-2",
         "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
@@ -447,27 +447,9 @@
                 "transient": true,
                 "type": "button",
                 "subtype": "save",
-                "class": "col-md-2",
+                "class": "col-md-1",
                 "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
-                "icon": "",
-                "isDisabled": false,
-                "formControlName": "",
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 23,
-                "isEditable": true,
-                "isVisible": true,
-                "transient": true,
-                "type": "button",
-                "subtype": "reset",
-                "btnLabel": "Back",
-                "class": "col-md-2",
-                "valueclass": "button-login-yellow",
                 "icon": "",
                 "isDisabled": false,
                 "formControlName": "",

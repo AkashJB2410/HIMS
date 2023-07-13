@@ -79,7 +79,7 @@
                                 "Mcode": "1"
                             },
                             {
-                                "name": "Satara",
+                                "name": "Latur",
                                 "code": "2",
                                 "Mcode": "1"
                             },
@@ -235,7 +235,7 @@
                 "transient": true,
                 "type": "button",
                 "subtype": "save",
-                "class": "col-md-2",
+                "class": "col-md-1",
                 "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",
