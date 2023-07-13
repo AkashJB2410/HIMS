@@ -4,7 +4,9 @@
 <!----------- Generic Table ----------->
 <app-generictable *ngIf="configurations.isTable && data" [config]="config" [tableData]="data" (onEdit)="editRow($event)"
     (isActive)="isactive($event)" (onDelete)="deleteRow($event)" (onDeletechecked)="BulkdeleteRow($event)"
-    (inlineEdit)="inlineedit($event)" (onAdd)="addRow($event)" (onRowClickData)="onRowClick($event)">
+    (inlineEdit)="inlineedit($event)" (OnScannerClick)="onScannerClick($event)" (OnOPDclick)="onOPDclick($event)"
+    (OnEmergencyClick)="onEmergencyClick($event)" (OnIPDclick)="onIPDclick($event)" (onAdd)="addRow($event)"
+    (onRowClickData)="onRowClick($event)" (OnServiceclick)="onServiceclick($event)">
     <ng-content select="[projectTowards=table]"></ng-content>
 </app-generictable>
 
@@ -18,7 +20,7 @@
 </p-confirmDialog>
 
 <!----------- SideBar ----------->
-<app-sidebar *ngIf="configurations.isSideBar" [visibleSidebar]="visibleSidebar" [sidebarConfig]="config"
-    (sidebarData)="sidebarData($event)">
+<app-sidebar *ngIf="configurations.isSideBar" [visibleSidebar]="visibleSidebar" [sidebarJSON]="sideBarJson"
+    [sidebarConfig]="config" (sidebarData)="sidebarData($event)">
     <ng-content select="[projectTowards=sidebar]"></ng-content>
 </app-sidebar>

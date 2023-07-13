@@ -14,6 +14,11 @@ export class SuperGridComponent implements OnInit {
   deleteRowData: any;
   bulkdelete: any;
   isActiveData: any;
+  OnScannerData: any;
+  OnEmergencyData: any;
+  OnIPDData: any;
+  OnOPDDAta: any;
+  OnServiceData: any
   visibleSidebar: boolean = false;
   @Input() configurations: any;
   @Input() tableConfig: any;
@@ -27,18 +32,47 @@ export class SuperGridComponent implements OnInit {
   @Output() rowClickData = new EventEmitter;
   @Output() Bulkdelete = new EventEmitter;
   @Output() isActive = new EventEmitter<string>();
+  @Output() OnScannerClick = new EventEmitter<string>();
+  @Output() OnEmergencyClick = new EventEmitter<string>();
+  @Output() OnIPDclick = new EventEmitter<string>();
+  @Output() OnOPDclick = new EventEmitter<string>();
+  @Output() OnServiceclick = new EventEmitter<string>();
   @Output() onEdit = new EventEmitter<any>();
   @Output() onAdd = new EventEmitter<any>();
   @Output() changeEvents = new EventEmitter<any>();
+  sideBarJson: any;
 
   constructor(private confirmationService: ConfirmationService) { }
 
   ngOnInit(): void {
+    this.sideBarJson = this.sidebarJSON
     this.config = this.tableConfig;
     this.data = this.tableData;
     this.filterData = this.filterJSON
   }
 
+  onScannerClick(e: any) {
+    this.OnScannerData = e
+    this.OnScannerClick.emit(e);
+  }
+  onEmergencyClick(e: any) {
+    this.OnEmergencyData = e;
+    this.OnEmergencyClick.emit(e)
+  }
+  onIPDclick(e: any) {
+    this.OnIPDData = e;
+    this.OnIPDclick.emit(e);
+  }
+
+  onOPDclick(e: any) {
+    this.OnOPDDAta = e;
+    this.OnOPDclick.emit(e);
+  }
+
+  onServiceclick(e: any) {
+    this.OnServiceData = e;
+    this.OnServiceclick.emit(e);
+  }
   deleteRow(e: any) {
     this.deleteRowData = e;
     document.documentElement.style.setProperty('--width', '0rem');
@@ -56,19 +90,19 @@ export class SuperGridComponent implements OnInit {
     this.handelBackdrop();
     this.visibleSidebar = true;
     let edit = "edit";
-    this.onEdit.emit({editRow, edit});
+    this.onEdit.emit({ editRow, edit });
   }
-  
+
   isactive(e: any) {
     this.isActiveData = e;
     this.isActive.emit(e);
   }
-  
+
   addRow(addRow: any) {
     this.handelBackdrop();
     this.visibleSidebar = true;
     let add = "add";
-    this.onAdd.emit({addRow, add});
+    this.onAdd.emit({ addRow, add });
   }
 
   confirm(e: any) {
@@ -82,10 +116,10 @@ export class SuperGridComponent implements OnInit {
     this.visibleSidebar = e;
     this.sideBarEvent.emit(e);
   }
-  changeEvent(event: any){
+  changeEvent(event: any) {
     this.changeEvents.emit(event);
   }
-  
+
   selectedData(fiteredData: any) {
     this.fiteredData.emit(fiteredData);
   }

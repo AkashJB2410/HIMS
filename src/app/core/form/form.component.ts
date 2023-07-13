@@ -5,8 +5,9 @@ import { FormControlTypes, IFormField } from './form.interface';
 import { CustomDatePipe } from '../shared/pipes/custom-date.pipe';
 import { FormService } from '../shared/service/form.service';
 import { Observable, Subscriber, elementAt, observable } from 'rxjs';
-import { file } from '@rxweb/reactive-form-validators';
+import { async, file } from '@rxweb/reactive-form-validators';
 import { img } from './base64Image';
+import { Base64Converter } from "../shared/objects/base64converter";
 
 @Component({
   selector: 'app-form',
@@ -26,6 +27,7 @@ export class FormComponent implements OnInit {
   date = new Date();
   base1 = img;
   events: any = [];
+  astreik = false;
   regex: Array<string> = ['int', 'num', 'alpha', 'alphanum'];
   formValid: boolean = false;
   primeNgComponents: Array<string> = ['month', 'select', 'radio', 'checkbox', 'date', 'dateRange', 'password'];
@@ -62,16 +64,15 @@ export class FormComponent implements OnInit {
   }
 
   onImageUpload(event: any, id: any) {
-    id.fieldValue = event.target.files[0];
+    id.fieldValue = this.convertToBase64(event.target.files[0], id);
   }
 
-  covertToBase64(file: File, control: any) {
+  convertToBase64(file: File, control: any) {
     const observable = new Observable((subscriber: Subscriber<any>) => {
       this.readFile(file, subscriber);
     });
     observable.subscribe((d) => {
       this.form.get(control.fieldName).setValue(d);
-      console.log(d)
     })
   }
 
@@ -90,7 +91,6 @@ export class FormComponent implements OnInit {
 
   onFilesUpload(event: any, id: any) {
     id.fieldValue = event.target.files;
-
   }
 
   changeEvent(event: any, data: any) {
@@ -161,7 +161,7 @@ export class FormComponent implements OnInit {
       btn.disabled = !data.value;
     }
   }
-  
+
   visibility(data: any) {
     if (data.value) {
       document.getElementById("id" + data.formData.formControlName).style.display = "block";
@@ -169,7 +169,7 @@ export class FormComponent implements OnInit {
       document.getElementById("id" + data.formData.formControlName).style.display = "none";
     }
   }
-  
+
   addValidations(data: any) {
     let ctrl = this.form.get(data.formData.formControlName);
     if (data.value.required && data.value.pattern != "") {

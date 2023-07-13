@@ -7,11 +7,15 @@
             <ng-container *ngFor="let formData of formControls; let i = index">
                 <div class="{{formData.class}}" [id]="'id'+formData.fieldName"
                     [ngClass]="formData.visible ? 'visible' : 'hidden'">
-                    <label *ngIf="formData.label != ''" for="{{formData.fieldName}}"
-                        class="{{formData.lblclass}}">{{formData.label}}</label>
+                    <div>
+                        <label *ngIf="formData.label != ''" for="{{formData.fieldName}}"
+                            class="{{formData.lblclass}}">{{formData.label}} <span *ngIf="formData.validations.required"
+                                style="color: red;"> * </span></label>
+                    </div>
+
                     <div *ngIf="formData.fieldType == formStaticText.TEXT">
                         <input type="{{formData.inputType}}" id="{{formData.fieldName}}" name="{{formData.fieldName}}"
-                            class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
+                            class="form-controls" [formControlName]="formData.fieldName"
                             [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
                             minlength="{{formData.minlength}}" maxlength="{{formData.maxlength}}"
                             [(ngModel)]="formData.fieldValue" placeholder="{{formData.placeholder}}"
@@ -72,6 +76,7 @@
                             [(ngModel)]="formData.fieldValue" [showButtonBar]="false" [showIcon]="true" inputId="icon"
                             (onSelect)="changeEvent($event, formData)">
                         </p-calendar>
+                        <!-- <p-calendar name="basic" ></p-calendar> -->
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.DATERANGE">
                         <p-calendar inputId="{{formData.fieldName}}" [dateFormat]="formData.format"
