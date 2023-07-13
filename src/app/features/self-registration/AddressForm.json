@@ -29,29 +29,7 @@
                     "required": true,
                     "pattern": "^[a-zA-Z0-9.,\\s-]+$"
                 }
-            },
-            {
-                "id": 1,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Landmark",
-                "type": "textarea",
-                "inputType": "textarea",
-                "class": "col-md-4 mt-1",
-                "lblclass": "custom-label",
-                "valueclass": "textarea-custom",
-                "row": "2",
-                "placeholder": "",
-                "formControlName": "address",
-                "message": {
-                    "required": "Address is required",
-                    "pattern": "invalid"
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
-                }
-            },
+            },           
             {
                 "id": 2,
                 "isEditable": true,
@@ -59,7 +37,7 @@
                 "transient": false,
                 "label": "",
                 "type": "dependentdropdown",
-                "class": "col-md-6 ",
+                "class": "col-md-6 mt-1",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
@@ -163,36 +141,19 @@
                     "pattern": ""
                 }
             },
+            
             {
                 "id": 3,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Village",
-                "type": "select",
-                "value": "M",
-                "class": "col-md-2 ",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-2 mt-1",
                 "lblclass": "custom-label",
-                "valueclass": "",
-                "placeholder": "Select option",
+                "valueclass": "input-box",
+                "placeholder": "",
                 "formControlName": "selectVillage",
-                "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    },
-                    {
-                        "name": "Parvati",
-                        "code": "1"
-                    },
-                    {
-                        "name": "Sadashiv Pet",
-                        "code": "2"
-                    },
-                    {
-                        "name": "Manapa",
-                        "code": "3"
-                    }
-                ],
                 "message": {
                     "required": "Village is required",
                     "pattern": ""
@@ -203,16 +164,38 @@
                 }
             },
             {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Landmark",
+                "type": "textarea",
+                "inputType": "textarea",
+                "class": "col-md-4 mt-1",
+                "lblclass": "custom-label",
+                "valueclass": "textarea-custom",
+                "row": "2",
+                "placeholder": "",
+                "formControlName": "address",
+                "message": {
+                    "required": "Address is required",
+                    "pattern": "invalid"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
+                }
+            },
+            {
                 "id": 4,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Pin Code",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-2 ",
+                "class": "col-md-2 mt-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Enter Pin Code...",
+                "placeholder": "",
                 "formControlName": "pinCode",
                 "message": {
                     "required": "Pin Code is required",
@@ -231,7 +214,7 @@
                 "inputType": "empty",
                 "type": "staticText",
                 "data": "",
-                "class": "col-md-6 my-1 ",
+                "class": "col-md-4 my-1 ",
                 "lblclass": "custom-label",
                 "valueclass": "custom-text",
                 "placeholder": "",
