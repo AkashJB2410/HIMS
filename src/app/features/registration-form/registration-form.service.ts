@@ -47,7 +47,7 @@ export class RegistrationFormService {
       "mobileNo":data.mobileNoInput,
       "identificationNo":data.identificatioNoInput[0]
     };
-    const url = "http://localhost:8082/api/v1/searchPatient";
+    const url = "http://localhost:8082/mst_patient/search";
     return this.PostCall(url, param);
   }
 
