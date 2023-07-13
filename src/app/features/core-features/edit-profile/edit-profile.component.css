@@ -42,3 +42,9 @@ body {
     cursor: pointer;
     border: solid 1px #BA68C8
 }
+.savebtn{
+    background-color: #374476 !important;
+    border-color: #374476 !important;
+    margin-top: 20px;
+    float:right
+}

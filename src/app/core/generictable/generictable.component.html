@@ -1,5 +1,6 @@
 <div class="">
-    <p-table #dt id="dataTable" [value]="tableData" [resizableColumns]="config.resizableColumns" columnResizeMode="fit"
+    <p-table #dt id="dataTable" [value]="tableData" [reorderableColumns]="config.isDragAndDrop"
+        [reorderableColumns]="config.isDragAndDrop" [resizableColumns]="config.resizableColumns" columnResizeMode="fit"
         [rows]="config.rows" [paginator]="config.paginator" [columns]="selectedColumns" styleClass="{{config.stripped}}"
         [showCurrentPageReport]="config.showCurrentPageReport" [rowsPerPageOptions]="config.rowsPerPageOptions"
         [loading]="config.loading" [(selection)]="chekboxes" selectionMode="single"
@@ -23,16 +24,19 @@
                 </div>
                 <div class="item5 mx-1">
                     <span *ngIf="config.addButton">
-                        <button class="btn butn-sucss me-1 wordwrap" pRipple (click)="AddNewProduct($event)">
-                            <i class="pi pi-plus" style="padding-right: 8px;"
-                                pTooltip="{{config.buttonlbl}}"></i>{{config.buttonlbl}}</button>
+                        <button class="btn butn-sucss me-1" pTooltip="Add New" tooltipPosition="top" pRipple
+                            (click)="AddNewProduct($event)">
+                            <i class="pi pi-plus" pTooltip="{{config.buttonlbl}}"></i>{{config.buttonlbl}}</button>
                     </span>
-                    <button class="btn butn-wrng me-1" pTooltip="Export To PDF" tooltipPosition="top" pRipple
-                        (click)="exportPdf()"><i class="pi pi-file-pdf"></i></button>
-                    <button class="btn butn-sucss me-1" pTooltip="Export To Excel" tooltipPosition="top" pRipple
-                        (click)="exportExcel()"><i class="pi pi-file-excel"></i></button>
-                    <button class="btn butn-dngr me-1" pTooltip="Bulk Delete" tooltipPosition="top" pRipple
-                        (click)="ondeletechecked()"><i class="pi pi-trash"></i></button>
+                    <button *ngIf="config.bulkAction.includes('PDF')" class="btn butn-wrng me-1"
+                        pTooltip="Export To PDF" tooltipPosition="top" pRipple (click)="exportPdf()"><i
+                            class="pi pi-file-pdf"></i></button>
+                    <button *ngIf="config.bulkAction.includes('EXCEL')" class="btn butn-sucss me-1"
+                        pTooltip="Export To Excel" tooltipPosition="top" pRipple (click)="exportExcel()"><i
+                            class="pi pi-file-excel"></i></button>
+                    <button *ngIf="config.bulkAction.includes('Delete')" class="btn butn-dngr me-1"
+                        pTooltip="Bulk Delete" tooltipPosition="top" pRipple (click)="ondeletechecked()"><i
+                            class="pi pi-trash"></i></button>
                 </div>
             </div>
         </ng-template>
@@ -43,7 +47,7 @@
                     <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                 </th>
                 <th style="width : 7rem; padding: 0.25rem 0.25rem;" pSortableColumn="{{col.field}}"
-                    *ngFor="let col of columns" pResizableColumn>
+                    *ngFor="let col of columns" pResizableColumn pReorderableColumn>
                     <div class="flex justify-content-center align-items-center">
                         {{col.header}}
                         <!-- <p-columnFilter type="text" field="{{col.field}}" display="menu"></p-columnFilter> -->
@@ -85,27 +89,51 @@
                         {{rowData[col.field]}}
                     </ng-template>
                 </td> -->
-                <td *ngIf="config.isActions" style="padding: 0.25rem 0.25rem; width: 4rem ; text-align: center;">
+                <td *ngIf="config.isActions" style="padding: 0.25rem 0.25rem; width: 12rem ; text-align: center;">
                     <ng-container>
-                        <button *ngIf="config.isActions.includes('Edit')" pTooltip="Edit" tooltipPosition="left" pButton
-                            pRipple icon="pi pi-file-edit " class="p-button-rounded icon-pencil edit-btn "
-                            (click)="editProduct(rowData)"></button>
+                        <button *ngIf="config.isActions.includes('Edit')"  pTooltip="Edit" tooltipPosition="top" class="shorcut-iocns"><i>
+                                <img src="../../../assets/core_assets/edit.png" class="image-size"
+                                    (click)="editProduct(rowData)"></i>
+                        </button>
 
-                        <button *ngIf="config.isActions.includes('Delete')" id="abc{{rowData.id}}" pTooltip="Delete"
-                            tooltipPosition="left" pButton pRipple icon="pi pi-trash"
-                            class="p-button-rounded icon-delete icon-delete " [disabled]="!rowData.is_Active"
-                            (click)="ondelete(rowData);disable(rowData)"></button>
+                        <button *ngIf="config.isActions.includes('Delete')" pTooltip="Delete" tooltipPosition="top" class="shorcut-iocns" id="abc{{rowData.id}}"
+                             [disabled]="!rowData.is_Active"><i>
+                                <img src="../../../assets/core_assets/delete.png"
+                                    (click)="ondelete(rowData);disable(rowData)" class="image-size"></i></button>
 
-                        <button *ngIf="config.isActions.includes('Viewer')" pTooltip="Viewer" tooltipPosition="left"
-                            pButton pRipple icon="pi pi-window-maximize" style="background-color: black;"
-                            routerLink="/dicom-viewer" class="p-button-rounded "></button>
-
+                        <!-- new Add  -->
+                        <button *ngIf="config.isActions.includes('Scanner')" pTooltip="Scanner" tooltipPosition="top" class="shorcut-iocns"><i>
+                                <img src="../../../assets/core_assets/barcode-scanner.png" class="image-size"
+                                    (click)="ScannerClick($event,rowData)" ></i>
+                        </button>
+                        <button *ngIf="config.isActions.includes('Emergency')" pTooltip="Emergency" tooltipPosition="top" class="shorcut-iocns"><i>
+                                <img src="../../../assets/core_assets/alarm.png" class="image-size"
+                                    (click)="emergencyClick($event,rowData)" ></i>
+                        </button>
+                        <button *ngIf="config.isActions.includes('IPD')" pTooltip="IPD" tooltipPosition="top" class="shorcut-iocns"><i>
+                                <img src="../../../assets/core_assets/hospital-bed.png" class="image-size"
+                                    (click)="IPDclick($event,rowData)"></i>
+                        </button>
+                        <button *ngIf="config.isActions.includes('OPD')" pTooltip="OPD" tooltipPosition="top" class="shorcut-iocns"><i>
+                                <img src="../../../assets/core_assets/examination.png" class="image-size"
+                                    (click)="OPDclick($event,rowData)" ></i>
+                        </button>
+                        <button *ngIf="config.isActions.includes('Servies')" pTooltip="Servies" tooltipPosition="top" class="shorcut-iocns"><i>
+                                <img src="../../../assets/core_assets/healthcare.png" class="image-size"
+                                    (click)="serviceClick($event,rowData)" ></i>
+                        </button>
+                        <!-- new Add  -->
+                        <button *ngIf="config.isActions.includes('Viewer')" class="shorcut-iocns" pTooltip="Viewer"
+                            tooltipPosition="top" pButton pRipple icon="pi pi-window-maximize"
+                            style="background-color: black;" routerLink="/dicom-viewer"
+                            class="p-button-rounded "></button>
                         <div *ngIf="config.isActions.includes('isActive')"
                             class="form-check form-switch form-check-inline">
                             <input class="form-check-input float-end" id="abc{{rowData.id}}"
                                 (click)="active($event,rowData)" [checked]="rowData.is_Active" pTooltip="Active"
-                                tooltipPosition="left" type="checkbox" role="switch">
+                                tooltipPosition="top" type="checkbox" role="switch">
                         </div>
+
                     </ng-container>
                 </td>
                 <td *ngIf="config.expand" style="text-align: center;">
