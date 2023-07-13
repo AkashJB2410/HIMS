@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import masterData from './master.json';
 import { MessageService } from 'primeng/api';
 import { MasterPageService } from './master-page.service';
+import { DataServiceService } from './data-service.service';
 
 @Component({
   selector: 'app-master-page',
@@ -17,9 +18,10 @@ export class MasterPageComponent implements OnInit {
   count: any;
   id: any;
   sidenavData: any[] = [];
+  @Output() sideBarLabel= new EventEmitter;
   constructor(
     private messageService: MessageService,
-    private http: MasterPageService
+    private http: MasterPageService,private dataService: DataServiceService
   ) { }
 
   ngOnInit(): void {
@@ -101,5 +103,17 @@ export class MasterPageComponent implements OnInit {
         this.GetAllNotifications()
       })
     }
+  }
+  SideNav(e:any){
+    console.log("sidenav items =>",e);
+    
+      // this.sideBarLabel.emit(e);
+      this.emitData(e);
+
+  }
+
+  emitData(e:any) {
+    // const data = 'Some output data';
+    this.dataService.emitOutputData(e);
   }
 }

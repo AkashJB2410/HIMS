@@ -3,7 +3,7 @@
         "class": "row",
         "formId":"patientRegistration",
         "formTitle": "Patient Registration",
-        "formTitleClass": "Sidebar-title-md",
+        "formTitleClass": "Sidebar-title-md ",
         "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
         "formType": "edit",
@@ -11,6 +11,65 @@
         "formControls": [
             {
                 "id": 0,
+                "isEditable": true,
+                "isVisible": false,
+                "label": "",
+                "inputType": "radio",
+                "type": "radio",
+                "class": "col-md-1 mt-1 my-1",
+                "lblclass": "custom-label",
+                "valueclass": " radio-button",
+                "placeholder": "********",
+                "formControlName": "OPDRad",
+                "defaultValue":["OPD"],
+                "message": {
+                    "required": "OPD is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "OPD",
+                        "code": "OPD",
+                        "editable": false
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": false,
+                "label": "",
+                "inputType": "radio",
+                "type": "radio",
+                "class": "col-md-1 mt-1 my-1",
+                "lblclass": "custom-label",
+                "valueclass": " radio-button",
+                "placeholder": "********",
+                "defaultValue":["IPD"],
+                "formControlName": "IPDRad",
+                "message": {
+                    "required": "IPD is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "IPD",
+                        "code": "IPD",
+                        "editable": false
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            
+            {
+                "id": 2,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -32,7 +91,7 @@
                 }
             },
             {
-                "id": 1,
+                "id": 3,
                 "isEditable": false,
                 "isVisible": false,
                 "label": "Patient Id",
@@ -53,7 +112,7 @@
                 }
             },
             {
-                "id": 2,
+                "id": 4,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Title",
@@ -75,43 +134,43 @@
                     },
                     {
                         "name": "Mr",
-                        "code": "1"
+                        "code": "Mr"
                     },
                     {
                         "name": "Mrs.",
-                        "code": "2"
+                        "code": "Mrs."
                     },
                     {
                         "name": "B/O Boy",
-                        "code": "3"
+                        "code": "B/O Boy"
                     },
                     {
                         "name": "B/O Girl",
-                        "code": "4"
+                        "code": "B/O Girl"
                     },
                     {
                         "name": "Dr.",
-                        "code": "5"
+                        "code": "Dr."
                     },
                     {
                         "name": "Dr. Mr",
-                        "code": "6"
+                        "code": "Dr. Mr"
                     },
                     {
                         "name": "Dr. Ms",
-                        "code": "7"
+                        "code": "Dr. Ms"
                     },
                     {
                         "name": "Miss.",
-                        "code": "8"
+                        "code": "Miss."
                     },
                     {
                         "name": "Master",
-                        "code": "9"
+                        "code": "Master"
                     },
                     {
                         "name": "Smt.",
-                        "code": "10"
+                        "code": "Smt."
                     }
                 ],
                 "validations": {
@@ -121,7 +180,7 @@
             },
             
             {
-                "id": 3,
+                "id": 5,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "First Name",
@@ -142,7 +201,7 @@
                 }
             },
             {
-                "id": 4,
+                "id": 6,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Middle Name",
@@ -163,7 +222,7 @@
                 }
             },
             {
-                "id": 5,
+                "id": 7,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Last Name",
@@ -184,7 +243,7 @@
                 }
             },
             {
-                "id": 6,
+                "id": 8,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Mobile No.",
@@ -205,7 +264,29 @@
                 }
             },
             {
-                "id": 7,
+                "id": 9,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Email ID",
+                "type": "text",
+                "inputType": "email",
+                "maxLength": 5,
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "xyz123@example.com",
+                "formControlName": "emailInput",
+                "message": {
+                    "required": "Email is required",
+                    "pattern": "Please enter correct format"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+                }
+            },
+            {
+                "id": 10,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Identification Type",
@@ -276,7 +357,7 @@
                 }
             },
             {
-                "id": 8,
+                "id": 11,
                 "isEditable": false,
                 "isVisible": true,
                 "label": "Identification Number",
@@ -297,7 +378,260 @@
                 }
             },
             {
-                "id": 9,
+                "id": 12,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "",
+                "inputType": "radio",
+                "type": "radio",
+                "class": "col-md-1 mt-4",
+                "lblclass": "custom-label",
+                "valueclass": " radio-button",
+                "placeholder": "********",
+                "formControlName": "DOBRad",
+                "message": {
+                    "required": "DOB is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "DOB",
+                        "code": "DOB",
+                        "editable": false
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 13,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "date",
+                "class": "col-md-2 my-1 mt-4",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "defaultValue": "",
+                "placeholder": "Birthdate",
+                "formControlName": "userBirthdate",
+                "message": {
+                    "required": "Date is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 14,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "",
+                "inputType": "radio",
+                "type": "radio",
+                "class": "col-md-1  mt-4 ",
+                "lblclass": "custom-label",
+                "valueclass": " radio-button",
+                "placeholder": "********",
+                "formControlName": "DOBRad",
+                "message": {
+                    "required": "Age is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Age",
+                        "code": "Age",
+                        "editable": false
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 15,
+                "isEditable": false,
+                "isVisible": true,
+                "label": "",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-2 mt-4 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Age",
+                "formControlName": "ageText",
+                "message": {
+                    "required": "Age is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 16,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Gender",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-2",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectGender",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Male",
+                        "code": "M"
+                    },
+                    {
+                        "name": "Female",
+                        "code": "F"
+                    },
+                    {
+                        "name": "Other",
+                        "code": "o"
+                    }
+                ],
+                "message": {
+                    "required": "Gender is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 17,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Blood Group",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectBlood",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "A+",
+                        "code": "1"
+                    },
+                    {
+                        "name": "B+",
+                        "code": "2"
+                    },
+                    {
+                        "name": "o+",
+                        "code": "3"
+                    },
+                    {
+                        "name": "AB+",
+                        "code": "4"
+                    },
+                    {
+                        "name": "A-",
+                        "code": "5"
+                    },
+                    {
+                        "name": "B-",
+                        "code": "6"
+                    },
+                    {
+                        "name": "o-",
+                        "code": "7"
+                    },
+                    {
+                        "name": "AB-",
+                        "code": "8"
+                    }
+                ],
+                "message": {
+                    "required": "Blood Group is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 18,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Ethincity",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectEthincity",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": " Telagu",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Kamati",
+                        "code": "2"
+                    }
+                ],
+                "message": {
+                    "required": "Ethincity is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 19,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Religion",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Religion",
+                "formControlName": "religionInput",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 20,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Marital Status",
@@ -332,314 +666,20 @@
                 }
             },
             {
-                "id": 10,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "",
-                "inputType": "radio",
-                "type": "radio",
-                "class": "col-md-1 mt-4 my-1",
-                "lblclass": "custom-label",
-                "valueclass": " radio-button",
-                "placeholder": "********",
-                "formControlName": "DOBRad",
-                "message": {
-                    "required": "DOB is required",
-                    "pattern": ""
-                },
-                "values": [
-                    {
-                        "name": "DOB",
-                        "code": "DOB",
-                        "editable": false
-                    }
-                ],
-                "validations": {
-                    "required": true,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 11,
-                "isEditable": true,
-                "isVisible": true,
-                "transient": false,
-                "label": "",
-                "type": "date",
-                "class": "col-md-2 my-1 mt-4",
-                "lblclass": "custom-label",
-                "valueclass": "",
-                "defaultValue": "",
-                "formControlName": "userBirthdate",
-                "message": {
-                    "required": "Date is required",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": true,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 12,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "",
-                "inputType": "radio",
-                "type": "radio",
-                "class": "col-md-1  my-1 mt-4",
-                "lblclass": "custom-label",
-                "valueclass": " radio-button",
-                "placeholder": "********",
-                "formControlName": "DOBRad",
-                "message": {
-                    "required": "Age is required",
-                    "pattern": ""
-                },
-                "values": [
-                    {
-                        "name": "Age",
-                        "code": "Age",
-                        "editable": false
-                    }
-                ],
-                "validations": {
-                    "required": true,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 13,
-                "isEditable": false,
-                "isVisible": true,
-                "label": "",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-2 mt-4 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Age",
-                "formControlName": "ageText",
-                "message": {
-                    "required": "Age is required",
-                    "pattern": "Numbers not allowed."
-                },
-                "validations": {
-                    "required": true,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 14,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Gender",
-                "type": "select",
-                "value": "",
-                "class": "col-md-3  my-2",
-                "lblclass": "custom-label",
-                "valueclass": "",
-                "placeholder": "Select option",
-                "formControlName": "selectGender",
-                "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    },
-                    {
-                        "name": "Male",
-                        "code": "1"
-                    },
-                    {
-                        "name": "Female",
-                        "code": "2"
-                    },
-                    {
-                        "name": "Other",
-                        "code": "3"
-                    }
-                ],
-                "message": {
-                    "required": "Gender is required",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 15,
-                "isEditable": true,
-                "isVisible": true,
-                "transient": false,
-                "label": "",
-                "data":"COMMUNICATION ADDRESS",
-                "type": "divider",
-                "class": "col-md-12 my-1",
-                "lblclass": "custom-label",
-                "defaultValue":"01/2023",
-                "valueclass": "",
-                "formControlName": "divider2",
-                "message": {
-                    "required": "",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "isEditable": true,
-                "isVisible": true,
-                "transient": true,
-                "label": "",
-                "type": "dependentdropdown",
-                "class": "col-md-9",
-                "lblclass": "custom-label",
-                "valueclass": "",
-                "placeholder": "Select option",
-                "formControlName": "dependentdropdown",
-                "message": {
-                    "required": "Gender is required",
-                    "pattern": ""
-                },
-                "values": [
-                    {
-                        "label": "Country",
-                        "values": [
-                            {
-                                "name": "Select an Option",
-                                "code": ""
-                            },
-                            {
-                                "name": "India",
-                                "code": "1"
-                            },
-                            {
-                                "name": "Canada",
-                                "code": "2"
-                            }
-                        ]
-                    },
-                    {
-                        "label": "State",
-                        "values": [
-                            {
-                                "name": "Select an Option",
-                                "code": ""
-                            },
-                            {
-                                "name": "Maharashtra",
-                                "code": "1",
-                                "Mcode": "1"
-                            },
-                            {
-                                "name": "Bihar",
-                                "code": "2",
-                                "Mcode": "1"
-                            }
-                        ]
-                    },
-                    {
-                        "label": "City",
-                        "values": [
-                            {
-                                "name": "Select an Option",
-                                "code": "",
-                                "Mcode": ""
-                            },
-                            {
-                                "name": "Pune",
-                                "code": "1",
-                                "Mcode": "1"
-                            },
-                            {
-                                "name": "Satara",
-                                "code": "2",
-                                "Mcode": "1"
-                            },
-                            {
-                                "name": "Sangli",
-                                "code": "3",
-                                "Mcode": "1"
-                            },
-                            {
-                                "name": "Patna",
-                                "code": "4",
-                                "Mcode": "2"
-                            },
-                            {
-                                "name": "Mujjafarpur",
-                                "code": "5",
-                                "Mcode": "2"
-                            }
-                        ]
-                    }
-                ],
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 3,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Address Line 1",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Address Line 1 ...",
-                "formControlName": "addressLine1Input",
-                "message": {
-                    "required": "Address Line 1 is required",
-                    "pattern": "Only Alphanumeric, dot, comma, backslash, space, and hyphen"
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
-                }
-            },
-            {
-                "id": 3,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Address Line 2",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Address Line 2 ...",
-                "formControlName": "addressLine2Input",
-                "message": {
-                    "required": "Address Line 2 is required",
-                    "pattern": "Only Alphanumeric, dot, comma, backslash, space, and hyphen"
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
-                }
-            },
-            {
                 "id": 21,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "",
-                "inputType": "empty",
-                "type": "staticText",
-                "data": "",
-                "class": "col-md-9 my-1 ",
+                "transient": false,
+                "label": "Image Upload",
+                "type": "imageUpload",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
-                "valueclass": "custom-text",
+                "valueclass": "imgUpload",
                 "placeholder": "",
-                "formControlName": "staticText1",
+                "formControlName": "imgUpl",
+                "defaultValue":"",
                 "message": {
-                    "required": "",
+                    "required": "Img is required",
                     "pattern": ""
                 },
                 "validations": {
@@ -648,7 +688,7 @@
                 }
             },
             {
-                "id": 22,
+                "id": 23,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,
@@ -666,7 +706,7 @@
                 }
             },
             {
-                "id": 23,
+                "id": 24,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,

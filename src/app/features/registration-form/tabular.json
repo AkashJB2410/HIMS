@@ -2,32 +2,32 @@
     "tabular": [
         {
             "id": 0,
-            "label": "DEMOGRAPHICS",
-            "icon": "pi pi-fw pi-home"
-        },
-        {
-            "id": 1,
             "label": "Detailed Address",
             "icon": "pi pi-fw pi-calendar"
         },
         {
-            "id": 2,
+            "id": 1,
             "label": "Hospital Association",
             "icon": "pi pi-fw pi-pencil"
         },
         {
-            "id": 3,
+            "id": 2,
             "label": "Insurance Details",
             "icon": "pi pi-fw pi-file"
         },
         {
-            "id": 4,
+            "id": 3,
             "label": "Medical History",
             "icon": "pi pi-fw pi-cog"
         },
         {
-            "id": 5,
+            "id": 4,
             "label": "Additional Details",
+            "icon": "pi pi-fw pi-cog"
+        },
+        {
+            "id": 5,
+            "label": "MLC",
             "icon": "pi pi-fw pi-cog"
         }
     ]
