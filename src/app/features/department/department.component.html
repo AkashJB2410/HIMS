@@ -8,9 +8,12 @@
     [sidebarJSON]="sidebar_Update_Input"
     (sideBarEvent)="sidebarData($event)"
     (confirmAction)="confirmAction($event)"
-    (onAdd)="saveDepartment($event)"
-    (onEdit)="editDepartment($event)"
+    (editRow)="editRow($event)" 
+    (addRow)="addRow($event)"
     (isActive)="isActive($event)"
-    (Bulkdelete)="BulkDeleteRow($event)" 
-></app-super-grid>
-<p-toast></p-toast>
+    (onAdd)="onAdd($event)"
+    (onEdit)="onEdit($event)"
+    (Bulkdelete)="BulkDeleteRow($event)">
+    <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="sidebar_Update_Input" [editData]="editData" (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
+</app-super-grid>
+<!-- <p-toast></p-toast> -->

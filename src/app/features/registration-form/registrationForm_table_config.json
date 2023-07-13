@@ -2,27 +2,21 @@
     "tableName": "Registration Table",
     "tableHeaders": [
         {"field": "srNumber", "header": "Sr. No","iseditable": false,"class": "text-center"},
-        {"field": "firstName","header": "FirstName","iseditable": false , "class":""},
-        {"field": "middleName","header": "MiddleName","iseditable": false , "class":""},
-        {"field": "lastName","header": "LastName","iseditable": false , "class":""},
-        {"field": "gender_Type","header": "Gender","iseditable": false , "class":""},
-        {"field": "age","header": "Age","iseditable": false , "class":"text-center"},
-        {"field": "mobileNo","header": "MobileNo","iseditable": false , "class":""},
-        {"field": "doctorName","header": "Doctor","iseditable": false , "class":""},
-        {"field": "is_Active","header": "Is_Active","iseditable": false , "class":""}
+        {"field": "patientFirstname","header": "FirstName","iseditable": false , "class":""},
+        {"field": "patientMiddlename","header": "MiddleName","iseditable": false , "class":""},
+        {"field": "patientLastname","header": "LastName","iseditable": false , "class":""},
+        {"field": "patientAge","header": "Age","iseditable": false , "class":"text-center"},
+        {"field": "patientMobileNumber","header": "MobileNo","iseditable": false , "class":""}
+        
     ],
     "PdfHeaders": [
-        {"field": "userId","header": "userId"},
-        {"field": "firstName","header": "FirstName"},
-        {"field": "middleName","header": "MiddleName"},
-        {"field": "lastName","header": "LastName"},
-        {"field": "gender_Type","header": "Gender"},
-        {"field": "age","header": "Age"},
-        {"field": "mobileNo","header": "MobileNo"},
-        {"field": "doctorName","header": "Doctor"},
-        {"field": "is_Active","header": "is_Active"} 
+        {"field": "patientFirstname","header": "FirstName"},
+        {"field": "patientMiddlename","header": "MiddleName"},
+        {"field": "patientLastname","header": "LastName"},
+        {"field": "patientAge","header": "Age"},
+        {"field": "patientMobileNumber","header": "MobileNo"} 
     ],
-    "globalFilter": ["userId","firstName","middleName","lastName","gender_Type","age","mobileNo","doctorName","is_Active"],
+    "globalFilter": ["patientFirstname","patientMiddlename","patientLastname","patientAge","patientMobileNumber"],
     "rows" : 10,
     "showCurrentPageReport" : true,
     "rowsPerPageOptions" : [10,25,50],
@@ -35,6 +29,8 @@
     "isActions": ["Edit", "Delete","isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "expand":false,
+	"addButton":true,
     "buttonlbl":"Registration",
-    "textLength":16
+    "textLength":16,
+    "sidebar":"p-sidebar-xl"
 }

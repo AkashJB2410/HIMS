@@ -51,8 +51,8 @@ export class RegistrationFormService {
     return this.PostCall(url, param);
   }
 
-  GetAllUserData() {
-    const url = "http://localhost:8082/api/v1/allUserData";
+  GetAllPatientData() {
+    const url = "http://localhost:8082/mst_patient/list";
     return this.http.get<any>(url);
   }
   GetAllTitleData() {
@@ -131,134 +131,77 @@ export class RegistrationFormService {
     return this.PostCall(url, param);
   }
 
-  saveUserData(data: any, img: any): Observable<any> {
-    const param = {
-      "mobileNo": data.mobileNoInput,
-      "firstName": data.firstNameInput,
-      "middleName": data.middleNameInput,
-      "lastName": data.lastNameInput,
-      "dob": data.userBirthdate,
-      "age": data.ageText,
-      "emailId": data.emailInput,
-      "pincode": data.pinCodeInput,
-      "address": data.addressInput,
-      "identificationNo": data.identificationNoInput,
-      "userImage": img,
-      "departmentId": "1",
-      "departmentName": "Orthopedics",
-      "subDepartmentId": "1",
-      "subDepartment": "Administrator",
-      "relationId": "1",
-      "relationName": "Sagar",
-      "mstTitle": {
-          "titleId": data.selectTitle,
-          
-      },
-      "identificationType": {
-          "identificationTypeId": data.selectIdentificationType
-        
-      },
-      "mstGender": {
-          "mstGenderId": data.selectGender,
-         
-      },
-      "mstBloodGroup": {
-          "bloodgroupId": data.selectBlood,
-          
-      },
-      "mstState": {
-          "stateId": data.selectState[0],
-          
-         
-      },
-      "mstDistrict": {
-          "districtId": data.selectState[1],
-        
-      },
-      "mstDoctor": {
-          "doctorId": data.selectDoctor,
-         
-      },
-      "mstDuration": {
-          "durationId": data.selectYear,
-          
-      },
-      "mstWardDetails": {
-          "mstWardDetailsid": data.selectWard,
-        
-  
-      }
-    };
-    const url = "http://localhost:8082/api/v1/addUser";
-    return this.PostCall(url, param);
+  savePatientData(data: any): Observable<any> {
+    // const param = {
+            
+    //     "patientIdentificationTypeId": data.selectIdentificationType,
+    //     "patientIdentificationTypeName": "Aadhar Card",
+    //     "patientTitleId": "1",
+    //     "patientTitleName": "Mrs",
+    //     "patientFirstname": data.firstNameInput,
+    //     "patientMiddlename": "B",
+    //     "patientLastname": "Patil",
+    //     "patientDob": data.userBirthdate,
+    //     "patientAge": "23",
+    //     "patientMaritalStatusId": "1",
+    //     "patientMaritalStatusName": "Unmarried",
+    //     "profileImage": "null",
+    //     "patientMobileNumber": data.mobileNoInput,
+    //     "patientAddressLine1": data.addressLine1Input,
+    //     "patientAddressLine2": data.addressLine2Input,
+    //     "patientCityId": "10",
+    //     "patientCityName": "Pune",
+    //     "patientStateId": "5",
+    //     "patientStateName": "Maharashtra",
+    //     "patientCountryId": "2",
+    //     "patientCountryName": "India",
+    //     "patientBloodGroupId": "1",
+    //     "patientBloodGroupName": "A+ve",
+    //     "patientEthinicityId": "",
+    //     "patientEthinicityName": "",
+    //     "patientReligion": "",
+    //     "patientBlock": "",
+    //     "patientPrnNumber": "",
+    //     "patientPrivilageId": "",
+    //     "patientPrivilageName": "",
+    //     "patientInsuranceNumber": "",
+    //     "patientInsurancePolicyNumber": "",
+    //     "patientInsuranceCompanyNumber": "",
+    //     "patientInsuranceCompanyName": "",
+    //     "patientIsTobacoConsume": false,
+    //     "patientIsTobacoConsumeYear": "",
+    //     "patientIsAlcoholConsume": false,
+    //     "patientIsAlcoholConsumeYear": "",
+    //     "patientIsHaveSugar": false,
+    //     "patientIsHaveSugarYear": "",
+    //     "patientIsHaveDiabeties": false,
+    //     "patientIsHaveDiabetiesYear": "",
+    //     "patientOccupation": "Unemployed",
+    //     "patientReferredBy": "",
+    //     "patientLanguages": "",
+    //     "patientPhoneNumber": "",
+    //     "patientUploadImage": "",
+    //     "patientRegistrationSource": "",
+    //     "patientSocialStatusId": "",
+    //     "patientSocialStatusName": "",
+    //     "patientHealthId": "",
+    //     "patientHealthNumber": "",
+    //     "patientEmail": "seema123@gmail.com"
+
+    // };
+    const url = "http://localhost:8082/mst_patient/create";
+    return this.PostCall(url, data);
   }
 
-  deleteUserData(roleId: any) {
-    const url = "http://localhost:8082/api/v1/deleteUser/" + roleId;
+  deletePatientData(patientId: any) {
+    const url = "http://localhost:8082/mst_patient/deleteById/" + patientId;
     return this.http.delete<any>(url);
   }
 
-  updateUserData(data: any) {
-    const param = {
-      "userId": data.PatientUID,
-      "mobileNo": data.mobileNoInput,
-      "firstName": data.firstNameInput,
-      "middleName": data.middleNameInput,
-      "lastName": data.lastNameInput,
-      "dob": data.userBirthdate,
-      "age": data.ageText,
-      "emailId": data.emailInput,
-      "pincode": data.pinCodeInput,
-      "address": data.addressInput,
-      "identificationNo": data.identificationNoInput,
-      "userImage": data.imgUpl,
-      "departmentId": "1",
-      "departmentName": "Orthopedics",
-      "subDepartmentId": "1",
-      "subDepartment": "Administrator",
-      "relationId": "1",
-      "relationName": "Sagar",
-      "mstTitle": {
-          "titleId": data.selectTitle,
-          
-      },
-      "identificationType": {
-          "identificationTypeId": data.selectIdentificationType
-        
-      },
-      "mstGender": {
-          "mstGenderId": data.selectGender,
-         
-      },
-      "mstBloodGroup": {
-          "bloodgroupId": data.selectBlood,
-          
-      },
-      "mstState": {
-          "stateId": data.selectState[0],
-          
-         
-      },
-      "mstDistrict": {
-          "districtId": data.selectState[1],
-        
-      },
-      "mstDoctor": {
-          "doctorId": data.selectDoctor,
-         
-      },
-      "mstDuration": {
-          "durationId": data.selectYear,
-          
-      },
-      "mstWardDetails": {
-          "mstWardDetailsid": data.selectWard,
-        
-  
-      }
-    };
-    const url = "http://localhost:8080/api/v1/role/userUpdate/" + data.idInput;
-    return this.http.put<any>(url, param);
+  updateUserData(data:any) {
+
+    const url = "http://localhost:8082/mst_patient/update" ;
+    return this.http.put<any>(url, data);
   }
 
   isActiveData(data: any) {

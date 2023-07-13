@@ -64,7 +64,7 @@
                     "pattern": "Only Alphabets and hyphen are Allowed."
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": "^[a-z\\s-]+$"
                 }
             },
@@ -106,7 +106,7 @@
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[0-9]+$"
+                    "pattern": "^[0-9.]+$"
                 }
             },
             {
@@ -119,6 +119,7 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "selectInput",
+                "defaultValues":[],
                 "message": {
                     "required": "State is required",
                     "pattern": ""

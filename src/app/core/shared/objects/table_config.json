@@ -27,5 +27,6 @@
     "expand":true,
     "buttonlbl":"New Product",
     "textLength":16,
-    "sidebar": "p-sidebar-lg"
+    "sidebar": "p-sidebar-lg",
+    "addButton":true
 }

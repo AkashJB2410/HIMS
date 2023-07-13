@@ -28,17 +28,18 @@ export class DependentDropdownComponent implements OnInit {
     this.data.forEach((element: any) => {
       this.outputData[element];
     });
-    
+
     this.dropdown1 = this.data[0].values;
     this.dropdown2 = this.data[1].values;
-    this.dropdown3 = this.data[2].values;
-    
+    if (this.data.length == 3) {
+      this.dropdown3 = this.data[2].values;
+    }
     if (this.defaultData != undefined) {
       this.dropdown1 = this.data[0].values;
       this.drop2 = this.data[1].values;
       this.drop1DefaultValue = this.defaultData[0];
       this.drop2DefaultValue = this.defaultData[1];
-    } 
+    }
 
     if (this.data.length == 3 && this.defaultData != undefined) {
       this.drop3 = this.data[2].values;

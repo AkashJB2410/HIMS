@@ -267,10 +267,10 @@
   text-align: center !important;
   background-color: #CD9C1D !important;
   letter-spacing: 0.2px !important;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) !important;
-  box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24) !important;
+  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) !important;
+  box-shadow: 0px 4px 12px rgba(55, 81, 255, 0.24) !important; */
   border-radius: 8px !important;
-  font-weight: 600 !important;
+  /* font-weight: 600 !important; */
   font-size: 14px !important;
   line-height: 20px !important;
   text-align: center !important;
@@ -705,19 +705,6 @@ option:hover {
 }
 
 /* -----------------------All Related To Input  Css End-------------------------- */
-
-/*---------------------All Related To check-box-Button Css-start-------------------------------*/
-
-.p-field-checkbox {
-  color: black;
-  display: flex !important;
-}
-
-.checkbox-btn-vertical {
-  gap: 1.25rem !important;
-  align-items: center !important;
-  margin-bottom: 25px;
-}
 
 /* -------------After Click on checkbox colour Start--------------------- */
 .p-checkbox .p-checkbox-box.p-highlight {
@@ -1275,7 +1262,7 @@ ul p.verticaltab {
   height: 27px;
   width: 400px;
   background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 17px !important;
+  font-size: 14px !important;
   padding-top: 4px;
   padding-bottom: 23px;
 }
@@ -1399,7 +1386,9 @@ input[type="file"]::file-selector-button {
   color: white !important;
   border-radius: 8px !important;
   background-color: #4CA5FF;
+  cursor: pointer;
 }
+
 input[type="file"]::before {
   position: absolute;
   pointer-events: none;
@@ -1411,3 +1400,9 @@ input[type="file"]::before {
   background-image: url("../../../assets/core_assets/share.png");
 }
 /* ------------All reated to Images upload Css End------------------------------ */
+
+
+.form-check-input:checked {
+  background-color: #54B029 !important;
+  border-color: #54B029 !important;
+}

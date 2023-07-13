@@ -31,7 +31,7 @@ export class GenerictableComponent implements OnInit {
   contextmenu = false;
   contextmenuX = 0;
   contextmenuY = 0;
-  Is_active=true
+  Is_active = true
   contextMenus: any = [
     { "menu": "Edit", "img": "../../../assets/core_assets/edit.png" },
     { "menu": "Duplicate", "img": "../../../assets/core_assets/duplicate.png" },
@@ -50,16 +50,14 @@ export class GenerictableComponent implements OnInit {
   @Output() onAdd = new EventEmitter<string>();
   @Output() onRowClickData = new EventEmitter<string>();
   @Output() isActive = new EventEmitter<string>();
-
-  constructor(private toast: MessageService) { }
-
+  constructor(private toast: MessageService) {}
   ngOnInit() {
-    if (this.tableData == undefined )
+    if (this.tableData == undefined)
       this.tableData = data;
 
     if (this.config == undefined)
       this.config = this.config;
-     
+
 
     this.exportColumns = this.config.tableHeaders.map((config: any) => ({ title: config.header, dataKey: config.field }));
     this.colNames = this.config.tableHeaders
@@ -77,13 +75,13 @@ export class GenerictableComponent implements OnInit {
     this.contextmenuY = event.pageY;
     this.contextmenu = true;
   }
-  
+
   //disables the menu
   disableContextMenu() {
     this.contextmenu = false;
   }
 
-  rightClick(list: any){
+  rightClick(list: any) {
     this.disableContextMenu();
     alert(JSON.stringify(this.rowData));
   }
@@ -195,14 +193,20 @@ export class GenerictableComponent implements OnInit {
     return color;
   }
 
-  active(e: any) {
+  active(event: any, e: any) {
     this.isActive.emit(e);
+    if (event.target.checked)
+      this.enable(e);
+    else
+      this.disable(e)
+  
   }
 
-
-   disable() {
-    (document.getElementById("deleteId") as HTMLButtonElement).disabled=true;
-   }
-  
+  disable(row: any) {
+    (document.getElementById("abc" + row.id) as HTMLButtonElement).disabled = true;
+  }
+  enable(row: any) {
+    (document.getElementById("abc" + row.id) as HTMLButtonElement).disabled = false;
+  }
 }
 

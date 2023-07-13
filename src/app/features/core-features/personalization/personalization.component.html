@@ -1,4 +1,4 @@
-<div class="cardDesign">
+<!-- <div class="cardDesign">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <p-card class="verticalCards">
             <p class="headerTheme">Personalization</p>
@@ -26,4 +26,19 @@
             </div>
         </p-card>
     </form>
-</div>
+</div> -->
+<p-breadcrumb [model]="" ></p-breadcrumb>
+<h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Application Configuration</h3>
+<app-super-grid 
+    *ngIf="data"
+    [configurations]="configurations" 
+    [tableData]="data" 
+    [tableConfig]="tableConfig"
+    (editRow)="editRow($event)"
+    (onAdd)="onAdd($event)"
+    (onEdit)="onEdit($event)"
+    (sideBarEvent)="closeSidebar($event)"
+    (confirmAction)="confirmAction($event)">
+    <app-form projectTowards="sidebar" *ngIf="editdata" (btnEvent)="btnEvent($event)" [editData]="editdata" (formData)="savePersonalization($event)" [formJSON]="sidebarJSON" 
+    ></app-form>
+</app-super-grid>

@@ -1,0 +1,9 @@
+{
+    "itemsList": [
+        {
+            "label": "Self Registration",
+            "icon": "",
+            "routerLink": ""
+        }
+    ]
+}

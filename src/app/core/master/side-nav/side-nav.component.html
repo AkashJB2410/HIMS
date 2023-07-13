@@ -25,7 +25,7 @@
           <li class="nav-item" *ngFor="let item of list.sidenavItems" (click)="setStateAsActive(item)">
             <ng-container *ngIf="item.group.length == 0 ; else list">
               <div *ngIf="item.routerLink != undefined">
-                <a [class.parentMenu]="item === activeState" [href]="'#'+item.label" data-bs-toggle="collapse"
+                <a [class.parentMenu]="item === activeState" href="#{{item.label | rmWhiteSpaces}}" data-bs-toggle="collapse"
                   class="sidenav-menu" routerLink="{{item.routerLink}}" pTooltip="{{item.label}}">
                   <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
                     [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{item.label}}</span>
@@ -40,21 +40,20 @@
               </div>
             </ng-container>
             <ng-template #list>
-              <a [class.parentMenu]="item === activeState" [href]="'#'+item.label" data-bs-toggle="collapse"
+              <a [class.parentMenu]="item === activeState" href="#{{item.label | rmWhiteSpaces}}" data-bs-toggle="collapse"
                 class="sidenav-menu " pTooltip="{{item.label}}">
                 <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
                   [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
-                  style="margin-right: auto;">{{item.label}}</span> <i id="{{item.label}}" childItemsub-module
+                  style="margin-right: auto;">{{item.label}}</span> <i id="{{item.label | rmWhiteSpaces}}" childItemsub-module
                   [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
                   class="bi bi-chevron-down downarrow"></i>
               </a>
-              <ul class="collapse nav flex-column" id="{{item.label}}" data-bs-parent="#menu">
+              <ul class="collapse nav flex-column" id="{{item.label | rmWhiteSpaces}}" data-bs-parent="#menu">
                 <li class="w-100" *ngFor="let childItem of item.group" (click)="setStateAsActiveChild(childItem)"
                   style="cursor: pointer;">
                   <ng-container *ngIf="childItem.submodules.length == 0; else list1">
                     <div *ngIf="childItem.routerLink != undefined">
-                      <a [class.childMenu]="childItem === activeStatechild" [href]="'#'+childItem.label"
-                        data-bs-toggle="collapse" class="sidenav-menu vsm-dropdown"
+                      <a [class.childMenu]="childItem === activeStatechild" href="#{{childItem.label | rmWhiteSpaces}}" data-bs-toggle="collapse" class="sidenav-menu vsm-dropdown"
                         routerLink="{{childItem.routerLink}}" pTooltip="{{childItem.label}}">
                         <i class="{{childItem.icon}}"></i> <span class="d-sm-inline ms-2"
                           [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{childItem.label}}</span>
@@ -69,15 +68,15 @@
                     </div>
                   </ng-container>
                   <ng-template #list1>
-                    <a [class.childMenu]="childItem === activeStatechild" [href]="'#'+childItem.label"
+                    <a [class.childMenu]="childItem === activeStatechild" href="#{{childItem.label | rmWhiteSpaces}}"
                       data-bs-toggle="collapse" class="sidenav-menu " pTooltip="{{childItem.label}}">
                       <i class="{{childItem.icon}}"></i> <span class="d-sm-inline ms-2"
                         [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
                         style="margin-right: auto;">{{childItem.label}}</span>
-                      <i id="{{item.label}}" [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
+                      <i id="{{item.label | rmWhiteSpaces}}" [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
                         class="bi bi-chevron-down downarrow"></i>
                     </a>
-                    <ul class="collapse nav flex-column " id="{{childItem.label}}" data-bs-parent="#menu">
+                    <ul class="collapse nav flex-column " id="{{childItem.label|rmWhiteSpaces}}" data-bs-parent="#menu">
                       <div class="subchildMargin">
                         <li class="w-100" *ngFor="let child of childItem.submodules"
                           (click)="setStateAsActiveSubchild(child)" style="cursor: pointer;">
@@ -115,15 +114,12 @@
         </li>
       </ul> -->
       <footer class="footer fixed-bottom">
-        <!-- <h6 class="footer">Design & Developed by Techjivaa Software Pvt Ltd</h6> -->
         <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span
-          class="float-md-left d-block d-md-inline-block">Generic Components Ver 1.2   |   2023 © Powered by Techjivaa Software Pvt Ltd.
-        </span><span class="float-md-right d-block d-md-inline-blockd-none d-lg-block">Last Login : 10 June 2023, 09:30 PM</span></p>
+          class="float-md-left d-block d-md-inline-block">Generic Components Ver 1.2 | 2023 © Powered by Medimaze Pvt Ltd.
+        </span><span class="float-md-right d-block d-md-inline-blockd-none d-lg-block">Last login : {{LastLoginTimeDate}}</span></p>
       </footer>
     </div>
-
   </div>
-
   <div id="content">
     <app-header [headerInput]="list" (navToggle)="clickEvent()" (notification)="notificationEvent($event)"></app-header>
     <div class="">

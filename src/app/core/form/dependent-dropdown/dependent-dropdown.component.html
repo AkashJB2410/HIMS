@@ -23,7 +23,7 @@
             [showClear]="true" [showClear]="false" (onChange)="secondDropValue($event)"></p-dropdown>
     </div>
     <div class="col">
-        <label for="{{data[1].code}}">{{data[1].label}}</label>
+        <label for="{{data[2].code}}">{{data[2].label}}</label>
         <p-dropdown inputId="drop3" [(ngModel)]="drop3DefaultValue" [options]="drop3" [inputId]="data.code" optionLabel="name" optionValue="code"
             [showClear]="true" [showClear]="false" (onChange)="thirdDropValue($event)"></p-dropdown>
     </div>

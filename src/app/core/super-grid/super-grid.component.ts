@@ -80,8 +80,8 @@ export class SuperGridComponent implements OnInit {
 
   sidebarData(e: any) {
     this.visibleSidebar = e;
+    this.sideBarEvent.emit(e);
   }
-
   changeEvent(event: any){
     this.changeEvents.emit(event);
   }
@@ -110,11 +110,9 @@ export class SuperGridComponent implements OnInit {
       }
     });
   }
-
   fitereddata(e: any) {
     this.fiteredData.emit(e);
   }
-
   handelBackdrop() {
     if (this.config.sidebar == "p-sidebar-sm") {
       document.documentElement.style.setProperty('--width', '20rem');

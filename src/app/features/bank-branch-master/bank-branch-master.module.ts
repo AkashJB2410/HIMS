@@ -1,12 +1,17 @@
+
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { BankBranchMasterComponent } from './bank-branch-master.component';
-const routes: Routes = [
-  {path:'',component:BankBranchMasterComponent}
-];
+import { CommonModule } from '@angular/common';
+import { SharedModule } from 'src/app/core/shared/modules/shared.module';
+import { BankBranchMasterRoutingModule } from './bank-branch-master.routingModule';
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  declarations: [
+
+  ],
+  imports: [
+    CommonModule,
+    BankBranchMasterRoutingModule,
+
+  ]
 })
 export class BankBranchMasterModule { }
