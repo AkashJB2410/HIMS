@@ -3,58 +3,51 @@
 <h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Patient Registration</h3>
 <!-- <app-filter *ngIf="configurations.isFilter" [filterData]="filterData" (selectedData)="fiteredData($event)"></app-filter> -->
 
-<app-super-grid *ngIf="data" 
-    [configurations]="configurations" 
-    [tableData]="data" 
-    [tableConfig]="config" 
-    (sideBarEvent)="closeSidebarData($event)" 
-    (confirmAction)="confirmAction($event)"
-    (changeEvents)="changeSelectItem($event)"
-    (Bulkdelete)="BulkDeleteRows($event)" 
-    (onAdd)="onAdd($event)" 
-    (onEdit)="onEdit($event)" 
-    (isActive)="isActive($event)"
-    (rowClickData)="rowClickData($event)">
+<app-super-grid *ngIf="data" [configurations]="configurations" [tableData]="data" [tableConfig]="config"
+    (sideBarEvent)="closeSidebarData($event)" (confirmAction)="confirmAction($event)"
+    (changeEvents)="changeSelectItem($event)" (Bulkdelete)="BulkDeleteRows($event)" (onAdd)="onAdd($event)"
+    (onEdit)="onEdit($event)" (isActive)="isActive($event)" (rowClickData)="rowClickData($event)">
 
     <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="formData" [editData]="editData"
         (formData)="saveRegistartionForm($event)" (changeEvents)="changeSelectItem($event)"></app-form>
 
-        <app-super-grid
-        projectTowards="sidebar"
-        *ngIf="data" 
-    [configurations]="configurations" 
-    [tableData]="data" 
-    [tableConfig]="config" 
-    (sideBarEvent)="closeSidebarData($event)" 
-    (confirmAction)="confirmAction($event)"
-    (changeEvents)="changeSelectItem($event)"
-    (Bulkdelete)="BulkDeleteRows($event)" 
-    (onAdd)="onAdd($event)" 
-    (onEdit)="onEdit($event)" 
-    (isActive)="isActive($event)"
-    (rowClickData)="rowClickData($event)"></app-super-grid>
+    <app-accordion projectTowards="sidebar" [accordionData]="accordionData">
+        <app-form projectTowards="sidebar" *ngIf="formDateCommAdd" [formJSON]="formDateCommAdd" [editData]="editData"
+            (formData)="saveRegistartionForm($event)" (changeEvents)="changeSelectItem($event)"></app-form>
+    </app-accordion>
+    <div *ngIf="isShowServices" projectTowards="sidebar">
+        <app-super-grid  *ngIf="servData" [configurations]="serviceConfig" [tableData]="servData"
+            [tableConfig]="configServ" (sideBarEvent)="closeSidebarData($event)" (confirmAction)="confirmAction($event)"
+            (changeEvents)="changeSelectItem($event)" (Bulkdelete)="BulkDeleteRows($event)" (onAdd)="onAdd($event)"
+            (onEdit)="onEdit($event)" (isActive)="isActive($event)"
+            (rowClickData)="rowClickData($event)"></app-super-grid>
+    </div>
+    <app-tabular-forms projectTowards="sidebar" [tabularJSON]="tabularFormData"
+        (tabularEmitData)="tabularValue($event)">
+        <app-form *ngIf="formData1" projectTowards="sidebar" [formJSON]="formData1" [editData]="demoEditData"
+            (formData)="saveFormOne($event)"></app-form>
 
-    <app-tabular-forms projectTowards="sidebar" [tabularJSON]="tabularFormData" (tabularEmitData)="tabularValue($event)">
-        <app-form *ngIf="formData1" projectTowards="sidebar" [formJSON]="formData1" [editData]="demoEditData" 
-        (formData)="saveFormOne($event)"></app-form>
+        <app-form *ngIf="formData2" projectTowards="sidebar" [formJSON]="formData2" [editData]="addressEditData"
+            (formData)="saveFormTwo($event)"></app-form>
 
-       <app-form *ngIf="formData2" projectTowards="sidebar"  [formJSON]="formData2" [editData]="addressEditData"
-        (formData)="saveFormTwo($event)"></app-form>
+        <app-form *ngIf="formData3" projectTowards="sidebar" [formJSON]="formData3" [editData]="hospitalEditData"
+            (formData)="saveFormThree($event)"></app-form>
 
-       <app-form *ngIf="formData3" projectTowards="sidebar"  [formJSON]="formData3" [editData]="hospitalEditData"
-        (formData)="saveFormThree($event)"></app-form>
+        <app-form *ngIf="formData4" projectTowards="sidebar" [formJSON]="formData4" [editData]="insorunceEditData"
+            (formData)="saveFormFour($event)"></app-form>
 
-       <app-form *ngIf="formData4" projectTowards="sidebar"  [formJSON]="formData4" [editData]="insorunceEditData"
-        (formData)="saveFormFour($event)"></app-form>
+        <app-form *ngIf="formData5" projectTowards="sidebar" [formJSON]="formData5" [editData]="medicalEditData"
+            (formData)="saveFormFive($event)" (changeEvents)="changeSelect($event)"></app-form>
 
-       <app-form *ngIf="formData5" projectTowards="sidebar"  [formJSON]="formData5" [editData]="medicalEditData"
-        (formData)="saveFormFive($event)"(changeEvents)="changeSelect($event)"></app-form>
+        <app-form *ngIf="formData6" projectTowards="sidebar" [formJSON]="formData6" [editData]="addEditData"
+            (formData)="saveFormSix($event)"></app-form>
 
-       <app-form *ngIf="formData6" projectTowards="sidebar"  [formJSON]="formData6" [editData]="addEditData" 
-       (formData)="saveFormSix($event)"></app-form>
+        <app-form *ngIf="formDataMLC" projectTowards="sidebar" [formJSON]="formDataMLC" [editData]="mlcEditData"
+            (formData)="saveFormMLC($event)"></app-form>
+
     </app-tabular-forms>
     <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="sidebarButtonJSON" [editData]="editData"
-       (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
+        (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
 
 </app-super-grid>
 <p-toast></p-toast>

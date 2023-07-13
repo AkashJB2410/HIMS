@@ -1,7 +1,7 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Medical",
+        "formTitle": "",
         "formTitleClass": "",
         "formTitleLogo":"",
         "formName": "Form1",
@@ -9,6 +9,336 @@
         "sidebar": "p-sidebar-lg",
         "formControls": [
             {
+                "id":1,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Past medication conditions",
+                "type": "multiselect",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "ms",
+                "defaultValue": "F",
+                "message": {
+                    "required": "Past medication conditions is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Diabetes",
+                        "code": "MH"
+                    },
+                    {
+                        "name": "Hypertension",
+                        "code": "BH"
+                    },
+                    {
+                        "name": "Heart Disease",
+                        "code": "HR"
+                    },
+                    {
+                        "name": "Asthma",
+                        "code": "KA"
+                    },
+                    {
+                        "name": "Cancer",
+                        "code": "KA"
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id":2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Family medical history",
+                "type": "multiselect",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "ms",
+                "defaultValue": "",
+                "message": {
+                    "required": "Family medical history is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Diabetes",
+                        "code": "MH"
+                    },
+                    {
+                        "name": "Hypertension",
+                        "code": "BH"
+                    },
+                    {
+                        "name": "Heart Disease",
+                        "code": "HR"
+                    },
+                    {
+                        "name": "Asthma",
+                        "code": "KA"
+                    },
+                    {
+                        "name": "Cancer",
+                        "code": "KA"
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id":3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Allergies",
+                "type": "multiselect",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "ms",
+                "defaultValue": "",
+                "message": {
+                    "required": "Allergies is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Medications",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Foods",
+                        "code": "2"
+                    },
+                    {
+                        "name": "Environmental Factors",
+                        "code": "3"
+                    },
+                    {
+                        "name": "Other",
+                        "code": "4"
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 4,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Previous Treatment",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-2",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectPreviousTreatment",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Medications",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Therapies",
+                        "code": "2"
+                    },
+                    {
+                        "name": "Other Interventions",
+                        "code": "2"
+                    }
+                ],
+                "message": {
+                    "required": "Police Station is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id":5,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Surgical History",
+                "type": "radio",
+                "class": "col-md-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": " radio-button",
+                "placeholder": "********",
+                "formControlName": "surgicalRad",
+                "message": {
+                    "required": "Surgical History is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Yes",
+                        "code": true,
+                        "editable": true
+                    },
+                    {
+                        "name": "No",
+                        "code": false,
+                        "editable": true
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 6,
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Surgeries Details",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Number of year",
+                "formControlName": "surgeriesDetails",
+                "message": {
+                    "required": "Surgeries Details is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id":7,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Medication history",
+                "type": "radio",
+                "class": "col-md-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": " radio-button",
+                "placeholder": "********",
+                "formControlName": "medicationRad",
+                "message": {
+                    "required": "Medication history is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Yes",
+                        "code": true,
+                        "editable": true
+                    },
+                    {
+                        "name": "No",
+                        "code": false,
+                        "editable": true
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 8,
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Medication Details",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Number of year",
+                "formControlName": "medicationDetails",
+                "message": {
+                    "required": "Medication Details is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id":9,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Previous Diagnostics",
+                "type": "radio",
+                "class": "col-md-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": " radio-button",
+                "placeholder": "********",
+                "formControlName": "diagnosticsRad",
+                "message": {
+                    "required": "Previous Diagnostics Habit is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Yes",
+                        "code": true,
+                        "editable": true
+                    },
+                    {
+                        "name": "No",
+                        "code": false,
+                        "editable": true
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Previous Diagnostics Details",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Number of year",
+                "formControlName": "diagnosticsDetails",
+                "message": {
+                    "required": "Previous Diagnostics Detailsis required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id":11,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -41,7 +371,7 @@
                 }
             },
             {
-                "id": 1,
+                "id": 12,
                 "isEditable": true,
                 "isVisible": false,
                 "label": "If Yes How Many Year.",
@@ -62,6 +392,7 @@
                 }
             },
             {
+                "id":13,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -94,7 +425,7 @@
                 }
             },
             {
-                "id": 1,
+                "id": 14,
                 "isEditable": true,
                 "isVisible": false,
                 "label": "If Yes How Many Year.",
@@ -115,7 +446,7 @@
                 }
             },
             {
-                "id": 10,
+                "id": 15,
                 "isEditable": true,
                 "isVisible": false,
                 "label": "",
@@ -137,6 +468,7 @@
                 }
             },
             {
+                "id":16,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -169,7 +501,7 @@
                 }
             },
             {
-                "id": 1,
+                "id": 17,
                 "isEditable": true,
                 "isVisible": false,
                 "label": "If Yes How Many Year.",
@@ -190,7 +522,7 @@
                 }
             },
             {
-                "id": 10,
+                "id": 18,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "",
@@ -212,7 +544,7 @@
                 }
             },
             {
-                "id": 32,
+                "id": 19,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,

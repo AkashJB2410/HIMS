@@ -1,7 +1,7 @@
 import { formatDate } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -21,12 +21,85 @@ export class RegistrationFormService {
   }
 
 
-  GetAllPatientData() {
+  getALLDataFromAPIs(): any {
+    forkJoin([
+      this.GetAllMstPatientData(),
+      this.GetAllDemographicsData(),
+      this.GetAllMstAddress()
+    ]).subscribe(
+      ([dataFromAPI1, dataFromAPI2,dataFromAPI3]) => {
+        // Handle the data from both APIs
+        console.log('Data from API 1:', dataFromAPI1);
+        console.log('Data from API 2:', dataFromAPI2);
+        console.log('Data from API 2:', dataFromAPI3);
+      },
+      (error) => {
+        // Handle error if any API request fails
+        console.error('Error:', error);
+      }
+    );
+  }
+
+//mst_patient APIs
+
+  GetAllMstPatientData() {
     const url = "http://localhost:8082/mst_patient/list";
     return this.http.get<any>(url);
   }
+
+  savePatientData(data: any): Observable<any> {
+    const url = "http://localhost:8080/mst_patient/create";
+    return this.PostCall(url, data);
+  }
+
+  updateUserData(data:any) {
+    const url = "http://localhost:8080/mst_patient/update" ;
+    return this.http.put<any>(url, data);
+  }
+
+  deletePatientData(patientId: any) {
+    const url = "http://localhost:8080/mst_patient/deleteById/" + patientId;
+    return this.http.delete<any>(url);
+  }
+
+  
+//mst_demographics APIs
+
+  GetAllDemographicsData() {
+    const url = "http://localhost:8082/mst_demographics/list";
+    return this.http.get<any>(url);
+  }
+
+  //mst_address APIs
+
+  GetAllMstAddress() {
+    const url = "http://localhost:8082/mst_address/list";
+    return this.http.get<any>(url);
+  }
+//mst_patient_add_info APIs
+  GetAllMstPatientAddInfo() {
+    const url = "http://localhost:8082/mst_patient_add_info/list";
+    return this.http.get<any>(url);
+  }
+//mst_privilege APIs
+  GetAllMstPrivilege() {
+    const url = "http://localhost:8082/mst_privilege/list";
+    return this.http.get<any>(url);
+  }
+//mst_medicalhistory APIs
+  GetAllMedicalHistory() {
+    const url = "http://localhost:8082/mst_medicalhistory/list";
+    return this.http.get<any>(url);
+  }
+//mst_Insurence APIs
+  GetAllMstInsurence() {
+    const url = "http://localhost:8082/mst_Insurence/list";
+    return this.http.get<any>(url);
+  }
+
+//Master Management
   GetAllTitleData() {
-    const url = "http://localhost:8082/api/v1/allTitleData";
+    const url = "http://localhost:8083/mstLovList/allTypeData/1";
     return this.http.get<any>(url);
   }
   GetAllBloodGroupData() {
@@ -34,7 +107,7 @@ export class RegistrationFormService {
     return this.http.get<any>(url);
   }
   GetAllmstGenderData() {
-    const url = "http://localhost:8082/api/v1/allMstGender";
+    const url = "http://localhost:8083/mstLovList/allTypeData/2";
     return this.http.get<any>(url);
   }
   GetAllIdentificationTypeData() {
@@ -101,78 +174,7 @@ export class RegistrationFormService {
     return this.PostCall(url, param);
   }
 
-  savePatientData(data: any): Observable<any> {
-    // const param = {
-            
-    //     "patientIdentificationTypeId": data.selectIdentificationType,
-    //     "patientIdentificationTypeName": "Aadhar Card",
-    //     "patientTitleId": "1",
-    //     "patientTitleName": "Mrs",
-    //     "patientFirstname": data.firstNameInput,
-    //     "patientMiddlename": "B",
-    //     "patientLastname": "Patil",
-    //     "patientDob": data.userBirthdate,
-    //     "patientAge": "23",
-    //     "patientMaritalStatusId": "1",
-    //     "patientMaritalStatusName": "Unmarried",
-    //     "profileImage": "null",
-    //     "patientMobileNumber": data.mobileNoInput,
-    //     "patientAddressLine1": data.addressLine1Input,
-    //     "patientAddressLine2": data.addressLine2Input,
-    //     "patientCityId": "10",
-    //     "patientCityName": "Pune",
-    //     "patientStateId": "5",
-    //     "patientStateName": "Maharashtra",
-    //     "patientCountryId": "2",
-    //     "patientCountryName": "India",
-    //     "patientBloodGroupId": "1",
-    //     "patientBloodGroupName": "A+ve",
-    //     "patientEthinicityId": "",
-    //     "patientEthinicityName": "",
-    //     "patientReligion": "",
-    //     "patientBlock": "",
-    //     "patientPrnNumber": "",
-    //     "patientPrivilageId": "",
-    //     "patientPrivilageName": "",
-    //     "patientInsuranceNumber": "",
-    //     "patientInsurancePolicyNumber": "",
-    //     "patientInsuranceCompanyNumber": "",
-    //     "patientInsuranceCompanyName": "",
-    //     "patientIsTobacoConsume": false,
-    //     "patientIsTobacoConsumeYear": "",
-    //     "patientIsAlcoholConsume": false,
-    //     "patientIsAlcoholConsumeYear": "",
-    //     "patientIsHaveSugar": false,
-    //     "patientIsHaveSugarYear": "",
-    //     "patientIsHaveDiabeties": false,
-    //     "patientIsHaveDiabetiesYear": "",
-    //     "patientOccupation": "Unemployed",
-    //     "patientReferredBy": "",
-    //     "patientLanguages": "",
-    //     "patientPhoneNumber": "",
-    //     "patientUploadImage": "",
-    //     "patientRegistrationSource": "",
-    //     "patientSocialStatusId": "",
-    //     "patientSocialStatusName": "",
-    //     "patientHealthId": "",
-    //     "patientHealthNumber": "",
-    //     "patientEmail": "seema123@gmail.com"
 
-    // };
-    const url = "http://localhost:8082/mst_patient/create";
-    return this.PostCall(url, data);
-  }
-
-  deletePatientData(patientId: any) {
-    const url = "http://localhost:8082/mst_patient/deleteById/" + patientId;
-    return this.http.delete<any>(url);
-  }
-
-  updateUserData(data:any) {
-
-    const url = "http://localhost:8082/mst_patient/update" ;
-    return this.http.put<any>(url, data);
-  }
 
   isActiveData(data: any) {
     const param = {

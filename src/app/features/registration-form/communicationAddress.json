@@ -9,56 +9,6 @@
         "sidebar": "p-sidebar-lg",
         "formControls": [
             {
-                "isEditable": true,
-                "isVisible": true,
-                "transient": false,
-                "label": "",
-                "type": "checkbox",
-                "class": "col-md-6",
-                "lblclass": "custom-label",
-                "valueclass": "p-field-checkbox",
-                "placeholder": "",
-                "value": "",
-                "formControlName": "checkbox",
-                "defaultValue": "",
-                "message": {
-                    "required": "Category is required",
-                    "pattern": ""
-                },
-                "values": [
-                    {
-                        "name": "Is your permanent address same as communication address?",
-                        "code": "Acc"
-                    }
-                ],
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 10,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "",
-                "inputType": "empty",
-                "type": "staticText",
-                "data": "",
-                "class": "col-md-6 my-1 ",
-                "lblclass": "custom-label",
-                "valueclass": "custom-text",
-                "placeholder": "",
-                "formControlName": "staticText",
-                "message": {
-                    "required": "",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
                 "id": 2,
                 "isEditable": true,
                 "isVisible": true,

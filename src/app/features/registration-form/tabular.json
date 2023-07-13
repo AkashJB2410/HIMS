@@ -24,6 +24,11 @@
             "id": 4,
             "label": "Additional Details",
             "icon": "pi pi-fw pi-cog"
+        },
+        {
+            "id": 5,
+            "label": "MLC",
+            "icon": "pi pi-fw pi-cog"
         }
     ]
 }
