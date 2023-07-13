@@ -12,14 +12,14 @@ export class SessionService {
   headers = new HttpHeaders().set('Content-type', 'application/json');
 
   Logincheck(obj: any): Observable<any> {
-    const url = myConstants.LOCALHOSTURL + "api/v1/login";
+    const url = myConstants.LOCALHOSTURL + "authentication/userLogin";
     const headers = new HttpHeaders().set('Content-type', 'application/json');
 
     return this.http.post<any>(url, obj, { headers })
   }
 
   GetAllCollectionData() {
-    const url = myConstants.LOCALHOSTURL + "api/v1/AllCOllectionData";
+    const url = myConstants.LOCALHOSTURL + "authentication/AllCOllectionData";
     return this.http.get<any>(url);
   }
 
@@ -34,7 +34,7 @@ export class SessionService {
         "mobileNo": data.mobileNo
       };
     }
-    const url = myConstants.LOCALHOSTURL + "api/v1/verify";
+    const url = myConstants.LOCALHOSTURL + "authentication/verify";
     const headers = new HttpHeaders().set('Content-type', 'application/json');
     return this.http.post<any>(url, param, { headers })
   }
@@ -50,7 +50,7 @@ export class SessionService {
         "mobileNo": data.mobileNo
       };
     }
-    const url = myConstants.LOCALHOSTURL + "api/v1/sendOTP";
+    const url = myConstants.LOCALHOSTURL + "authentication/sendOTP";
     const headers = new HttpHeaders().set('Content-type', 'application/json');
     return this.http.post<any>(url, param, { headers })
   }
@@ -68,7 +68,7 @@ export class SessionService {
         "otp": otp
       };
     }
-    const url = myConstants.LOCALHOSTURL + "api/v1/verifyOTP";
+    const url = myConstants.LOCALHOSTURL + "authentication/verifyOTP";
     const headers = new HttpHeaders().set('Content-type', 'application/json');
     return this.http.post<any>(url, param, { headers })
 
@@ -87,12 +87,12 @@ export class SessionService {
         "password": password
       };
     }
-    const url = myConstants.LOCALHOSTURL + "api/v1/passwordUpdate";
+    const url = myConstants.LOCALHOSTURL + "authentication/passwordUpdate";
     return this.http.put<any>(url, param);
   }
 
   orgData(email: any) {
-    const url = myConstants.LOCALHOSTURL + "api/v1/organizationData?emailId=" + email;
+    const url = myConstants.LOCALHOSTURL + "authentication/organizationData?emailId=" + email;
     return this.http.get<any>(url);
   }
 }

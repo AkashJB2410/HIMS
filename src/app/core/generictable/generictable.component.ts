@@ -50,7 +50,13 @@ export class GenerictableComponent implements OnInit {
   @Output() onAdd = new EventEmitter<string>();
   @Output() onRowClickData = new EventEmitter<string>();
   @Output() isActive = new EventEmitter<string>();
-  constructor(private toast: MessageService) {}
+  @Output() OnScannerClick = new EventEmitter<string>();
+  @Output() OnEmergencyClick = new EventEmitter<string>();
+  @Output() OnIPDclick = new EventEmitter<string>();
+  @Output() OnOPDclick = new EventEmitter<string>();
+  @Output() OnServiceclick = new EventEmitter<string>();
+
+  constructor(private toast: MessageService) { }
   ngOnInit() {
     if (this.tableData == undefined)
       this.tableData = data;
@@ -199,7 +205,6 @@ export class GenerictableComponent implements OnInit {
       this.enable(e);
     else
       this.disable(e)
-  
   }
 
   disable(row: any) {
@@ -207,6 +212,21 @@ export class GenerictableComponent implements OnInit {
   }
   enable(row: any) {
     (document.getElementById("abc" + row.id) as HTMLButtonElement).disabled = false;
+  }
+  ScannerClick(event: any, e: any) {
+    this.OnScannerClick.emit(e);
+  }
+  emergencyClick(event: any, e: any) {
+    this.OnEmergencyClick.emit(e);
+  }
+  IPDclick(event: any, e: any) {
+    this.OnIPDclick.emit(e);
+  }
+  OPDclick(event: any, e: any) {
+    this.OnOPDclick.emit(e);
+  }
+  serviceClick(event: any, e: any) {
+    this.OnServiceclick.emit(e);
   }
 }
 

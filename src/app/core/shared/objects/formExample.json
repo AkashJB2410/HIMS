@@ -1,0 +1,529 @@
+{
+    "form": {
+        "formId": "abc1",
+        "class": "row",
+        "formTitle": "Page Title",
+        "formTitleClass": "Sidebar-title-md",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "sidebar": "p-sidebar-md",
+        "formControls": [
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "label": "Email",
+                "type": "text",
+                "inputType": "email",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "xyz123@example.com",
+                "formControlName": "userEmail",
+                "defaultValue": "DefaultVaule",
+                "maxlength": "10",
+                "minlength": "2",
+                "message": {
+                    "required": "Email is required",
+                    "pattern": "Please enter correct format"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z]+$"
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter name...",
+                "formControlName": "userName",
+                "defaultValue": 9,
+                "maxlength": "10",
+                "message": {
+                    "required": "Name is required",
+                    "pattern": "Only numbers are allowed"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[0-9.]+$"
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Password",
+                "type": "password",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "********",
+                "formControlName": "userPassword",
+                "defaultValue": "Default",
+                "message": {
+                    "required": "Password is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "type": "radio",
+                "class": "col-md-2",
+                "valueclass": " radio-button mt-3",
+                "formControlName": "genderRad",
+                "defaultValue": [true],
+                "message": {
+                    "required": "Gender is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Male",
+                        "code": true,
+                        "editable": true
+                    },
+                    {
+                        "name": "Female",
+                        "code": false,
+                        "editable": true
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Dropdown",
+                "type": "select",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "genderDrop",
+                "defaultValue": "F",
+                "message": {
+                    "required": "Gender is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Female",
+                        "code": "F"
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Birthdate Date",
+                "type": "date",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "defaultValue": "1/1/2023",
+                "formControlName": "userBirthdate",
+                "message": {
+                    "required": "Date is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Date Range Picker",
+                "type": "dateRange",
+                "value": "04/22/2023 - 05/22/2023",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "",
+                "format": "yyyy-MM-dd",
+                "formControlName": "booking",
+                "defaultValue": "1/1/2023",
+                "message": {
+                    "required": "Date is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Birth month",
+                "type": "month",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "defaultValue": "01/2023",
+                "valueclass": "",
+                "formControlName": "monthPicker",
+                "message": {
+                    "required": "Month is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "label": "",
+                "type": "dependentdropdown",
+                "class": "col-md-6",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "state",
+                "defaultValue": "",
+                "message": {
+                    "required": "Gender is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "label": "State",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": ""
+                            },
+                            {
+                                "name": "Maharashtra",
+                                "code": "MH"
+                            },
+                            {
+                                "name": "Bihar",
+                                "code": "BH"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Districts",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": "",
+                                "Mcode": ""
+                            },
+                            {
+                                "name": "Pune",
+                                "code": "Pun",
+                                "Mcode": "MH"
+                            },
+                            {
+                                "name": "Satara",
+                                "code": "Sat",
+                                "Mcode": "MH"
+                            },
+                            {
+                                "name": "Sangli",
+                                "code": "San",
+                                "Mcode": "MH"
+                            },
+                            {
+                                "name": "Patna",
+                                "code": "Pat",
+                                "Mcode": "BH"
+                            },
+                            {
+                                "name": "Mujjafarpur",
+                                "code": "Muj",
+                                "Mcode": "BH"
+                            }
+                        ]
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "checkbox",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "p-field-checkbox mt-4",
+                "placeholder": "",
+                "value": "",
+                "formControlName": "checkbox",
+                "defaultValue": [
+                    "Acc"
+                ],
+                "message": {
+                    "required": "Category is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Accessories",
+                        "code": "Acc"
+                    },
+                    {
+                        "name": "Electronics",
+                        "code": "Ele"
+                    },
+                    {
+                        "name": "Clothing",
+                        "code": "Clo"
+                    },
+                    {
+                        "name": "Fitness",
+                        "code": "Fit"
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Textarea",
+                "type": "textarea",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "textarea-custom",
+                "row": "2",
+                "placeholder": "",
+                "defaultValue": "Default",
+                "formControlName": "address",
+                "maxlength": "10",
+                "message": {
+                    "required": "Address is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Confirm Password",
+                "type": "confirmPassword",
+                "class": "col-md-3 ",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "",
+                "formControlName": "cnfPass",
+                "defaultValue": "Default",
+                "message": {
+                    "required": "Password is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isVisible": true,
+                "type": "button",
+                "subtype": "cancel",
+                "btnLabel": "Cancel",
+                "class": "col-md-2",
+                "valueclass": "butn-custom-dark-blue",
+                "icon": "pi pi-times",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isVisible": true,
+                "type": "button",
+                "subtype": "submit",
+                "class": "col-md-2",
+                "valueclass": "butn-custom-wrng",
+                "btnLabel": "Submit",
+                "icon": "pi pi-check",
+                "isDisabled": false,
+                "formControlName": "btn1",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Image Upload",
+                "type": "imageUpload",
+                "class": "col-md-2",
+                "lblclass": "custom-label",
+                "valueclass": "imgUpload",
+                "placeholder": "",
+                "formControlName": "imgUpl",
+                "defaultValue": "",
+                "message": {
+                    "required": "Img is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Files Uplaod",
+                "type": "filesUpload",
+                "class": "col-md-2",
+                "lblclass": "custom-label",
+                "valueclass": " imgUpload",
+                "placeholder": "",
+                "formControlName": "filesUpl",
+                "defaultValue": "",
+                "message": {
+                    "required": "Password is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isVisible": true,
+                "type": "icon",
+                "label": "Icon",
+                "class": "col-md-1",
+                "icons": [
+                    {
+                        "class": "pi pi-check ",
+                        "isDisabled": false,
+                        "subtype": "submit",
+                        "valueclass": "icon-button-primary",
+                        "tooltip": "Press It",
+                        "toolPosition": "top"
+                    },
+                    {
+                        "class": "pi pi-check",
+                        "isDisabled": false,
+                        "subtype": "submit",
+                        "valueclass": "icon-button-warn",
+                        "tooltip": "Press It",
+                        "toolPosition": "top"
+                    }
+                ]
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "label": "",
+                "type": "staticText",
+                "data": "Note: Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci sequi at harum eaque nam! Perspiciatis sunt, odit nulla doloremque obcaecati eum et animi vel facere, dolor nesciunt repellat repudiandae? Quidem repellat aut accusamus doloremque debitis ex ut ad cumque officia.",
+                "class": "col-md-12 custom-text",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "anchor",
+                "defaultValue": "",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "data": "COMMUNICATION ADDRESS",
+                "type": "divider",
+                "class": "col-md-12"
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Multi Select Dropdown",
+                "type": "multiselect",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "ms",
+                "defaultValue": "F",
+                "message": {
+                    "required": "Gender is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Maharashtra",
+                        "code": "MH"
+                    },
+                    {
+                        "name": "Bihar",
+                        "code": "BH"
+                    },
+                    {
+                        "name": "Haryana",
+                        "code": "HR"
+                    },
+                    {
+                        "name": "Karnataka",
+                        "code": "KA"
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

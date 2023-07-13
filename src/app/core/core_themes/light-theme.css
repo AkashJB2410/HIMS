@@ -1045,34 +1045,6 @@ for custom input box size use w-25 , w-50, w-75 on column of it
 
 /* -------------icons button classes with Hover End------------- */
 
-/* ----------------------Form Title Css Start------------------------------- */
-.formclass {
-  color: white !important;
-  height: 11px;
-  width: 400px;
-  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 14px !important;
-  padding-top: 3px;
-  padding-bottom: 19px;
-}
-
-.formclass::before,
-.divider::after {
-  flex: 1;
-  height: 20px;
-  width: 5px;
-  content: '';
-  padding: 2px;
-  background-color: rgb(252, 252, 252);
-  margin: 5px;
-}
-.bi-file-earmark-medical::before {
-  content: "\f373";
-  padding-right: 10px !important;
-  vertical-align: 0px;
-}
-/* ----------------------Form Title Css End------------------------------- */
-
 /* ---------------------form Title for sideBar SM Css Start-------------------------- */
 .Sidebar-title-sm {
   color: white !important;
@@ -1094,16 +1066,17 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   background-color: rgb(252, 252, 252);
   margin: 5px;
 }
+
 /* ---------------------form Title for sideBar SM Css End-------------------------- */
 
 /* ---------------------form Title for sideBar LG Css Start-------------------------- */
 .Sidebar-title-lg {
+  width: 465px;
   color: white !important;
   height: 11px;
-  width: 448px;
   background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
   font-size: 14px !important;
-  padding-top: 3px;
+  padding-top: 4px;
   padding-bottom: 19px;
 }
 
@@ -1115,19 +1088,18 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   content: '';
   padding: 2px;
   background-color: rgb(252, 252, 252);
-  margin: 5px;
+  margin: 6px;
 }
 
 /* ---------------------form Title for sideBar LG Css End-------------------------- */
-
 /* ---------------------form Title for sideBar MD Css Start-------------------------- */
 .Sidebar-title-md {
   color: white !important;
   height: 11px;
-  width: 340px;
+  width: 421px;
   background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
   font-size: 14px !important;
-  padding-top: 3px;
+  padding-top: 4px;
   padding-bottom: 19px;
 }
 
@@ -1139,12 +1111,10 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   content: '';
   padding: 2px;
   background-color: rgb(252, 252, 252);
-  margin: 5px;
+  margin: 6px;
 }
 
 /* ---------------------form Title for sideBar MD Css End-------------------------- */
-
-
 ul p.verticaltab {
   background-color: #CD9C1D;
   color: white;
@@ -1185,101 +1155,6 @@ ul p.verticaltab {
    color: black;
 } */
 
-
-.formclass {
-  color: white !important;
-  height: 11px;
-  width: 246px;
-  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 14px !important;
-  padding-top: 4px;
-  padding-bottom: 19px;
-}
-
-.formclass::before,
-.divider::after {
-  flex: 1;
-  height: 20px;
-  width: 5px;
-  content: '';
-  padding: 2px;
-  background-color: rgb(252, 252, 252);
-  margin: 6px;
-}
-
-/* ---------------------form Title for sideBar SM Css End-------------------------- */
-
-/* ---------------------form Title for sideBar LG Css Start-------------------------- */
-.Sidebar-title-lg {
-  width: 465px;
-  color: white !important;
-  height: 11px;
-  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 14px !important;
-  padding-top: 4px;
-  padding-bottom: 19px;
-}
-
-.Sidebar-title-lg::before,
-.divider::after {
-  flex: 1;
-  height: 20px;
-  width: 5px;
-  content: '';
-  padding: 2px;
-  background-color: rgb(252, 252, 252);
-  margin: 6px;
-}
-
-/* ---------------------form Title for sideBar LG Css End-------------------------- */
-
-/* ---------------------form Title for sideBar MD Css Start-------------------------- */
-.Sidebar-title-md {
-  color: white !important;
-  height: 11px;
-  width: 421px;
-  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 14px !important;
-  padding-top: 4px;
-  padding-bottom: 19px;
-}
-
-.Sidebar-title-md::before,
-.divider::after {
-  flex: 1;
-  height: 20px;
-  width: 5px;
-  content: '';
-  padding: 2px;
-  background-color: rgb(252, 252, 252);
-  margin: 6px;
-}
-
-/* ---------------------form Title for sideBar MD Css End-------------------------- */
-
-.formclass {
-  color: white !important;
-  height: 27px;
-  width: 400px;
-  background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 14px !important;
-  padding-top: 4px;
-  padding-bottom: 23px;
-}
-
-.formclass::before,
-.divider::after {
-  flex: 1;
-  height: 29px;
-  width: 5px;
-  content: '';
-  padding: 2px;
-  background-color: rgb(252, 252, 252);
-  margin: 6px;
-}
-
-/* ----------------------Form Title Css End------------------------------- */
-
 .bi-file-earmark-medical::before {
   content: "\f373";
   padding-right: 10px !important;
@@ -1288,6 +1163,14 @@ ul p.verticaltab {
 
 .p-breadcrumb .p-menuitem-link {
   padding: 0rem !important
+}
+
+.p-breadcrumb {
+  background: none !important;
+  border-radius: 4px;
+  border: none !important;
+  padding: 0rem !important;
+  margin-bottom: 5px;
 }
 
 .p-toast .p-toast-message.p-toast-message-warn {
@@ -1353,12 +1236,12 @@ ul p.verticaltab {
   box-shadow: 0px 0px 0px 8px #FEEED7;
   border-radius: 9px !important;
 }
+
 .p-toast .p-toast-message.p-toast-message-info .p-toast-message-icon {
   -webkit-box-shadow: 0px 0px 0px 8px #CCF0FF;
   -moz-box-shadow: 0px 0px 0px 8px #CCF0FF;
   box-shadow: 0px 0px 0px 8px #CCF0FF;
   border-radius: 9px !important;
-
 }
 
 .p-toast .p-toast-message .p-toast-icon-close {
@@ -1370,6 +1253,7 @@ ul p.verticaltab {
   transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
   color: #000000 !important;
 }
+
 /* ---------------All Taost Css End-------------------------- */
 
 /* ------------All reated to Images upload Css Start------------------------------ */
@@ -1399,10 +1283,60 @@ input[type="file"]::before {
   content: "";
   background-image: url("../../../assets/core_assets/share.png");
 }
+
 /* ------------All reated to Images upload Css End------------------------------ */
 
-
+/* -------------------In generic table togle button css Start----------------------------- */
 .form-check-input:checked {
   background-color: #54B029 !important;
   border-color: #54B029 !important;
+}
+.form-check
+{
+  min-height: 0rem !important
+}
+
+/* -------------------In generic table togle button css Start----------------------------- */
+
+/* -------------------------Date Picker Css Start------------------------------- */
+.p-datepicker table td {
+  padding: 0rem !important;
+}
+
+.p-datepicker .p-datepicker-buttonbar {
+  padding: 0rem !important;
+}
+
+.p-datepicker .p-datepicker-header {
+  padding: 0rem !important;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+  padding: 0rem !important;
+}
+
+.p-datepicker table td>span {
+  width: 1.5rem !important;
+  height: 2rem !important;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year,
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+  padding: 0rem !important;
+}
+/* -------------------------Date Picker Css End------------------------------- */
+
+.shorcut-iocns{
+  border-radius: 6px;
+  height: 24 !important;
+  width: 24px !important;
+  border: none !important;
+  background: rgba(240, 240, 240, 1) !important;
+  margin: 2px !important;
+  padding-left: 3px !important
+}
+.image-size
+{
+width: 18px !important;
+height: 18px !important;
 }
