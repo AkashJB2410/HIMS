@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CommonService } from '../shared/service/common.service';
 
+
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -20,13 +21,15 @@ export class SidebarComponent implements OnInit {
   @Input() editRowData: any;
   @Input() visibleSidebar: any;
   @Input() sidebarConfig: any;
+  @Input() sidebarJSON: any;
   @Output() sidebarData = new EventEmitter<boolean>;
   @Output() changeEvents = new EventEmitter<boolean>;
-
+  Sidebardata:any
   constructor(private common: CommonService) { }
 
   ngOnInit(): void {
     // this.handelBackdrop();
+    this.Sidebardata=this.sidebarJSON
     this.common.getEditData().subscribe(data => {
       if (!data) {
         this.visibleSidebar = data;

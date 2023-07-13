@@ -26,7 +26,6 @@
     "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
     "isCheckbox" : true,
     "resizableColumns": true,
-	"isDragAndDrop":true,
     "isActions": ["Edit", "Delete","isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "expand":false,
