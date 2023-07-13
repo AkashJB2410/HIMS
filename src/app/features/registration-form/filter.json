@@ -52,15 +52,15 @@
                 "id": 6,
                 "isEditable": true,
                 "isVisible": false,
-                "label": "Identification Number",
+                "label": "MR.No",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Enter Mobile No.",
+                "placeholder": "Enter Mr.No",
                 "defaultValue":"",
-                "formControlName": "identificatioNoInput",
+                "formControlName": "mrNoInput",
                 "message": {
                     "required": "zxvzd",
                     "pattern": ""

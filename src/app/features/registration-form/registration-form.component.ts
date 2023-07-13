@@ -60,7 +60,7 @@ export class RegistrationFormComponent implements OnInit {
   registartionFormData: any[] = [];
   isForm: any = true;
   flag: any;
-  gridData: any[];
+  gridData: any[]=[];
   isAddEditFlag: any;
   items: any = Breadcrumbs;
   imgName: any
@@ -69,7 +69,7 @@ export class RegistrationFormComponent implements OnInit {
   agemon: any;
   agedday: any;
 
-  filterData :any;
+  filterData: any;
   editData: any;
   demoEditData: any;
   addressEditData: any;
@@ -136,13 +136,13 @@ export class RegistrationFormComponent implements OnInit {
   receivedData: any;
   private subscription: Subscription;
   constructor(private messageService: MessageService, private common: CommonService, public datepipe: DatePipe, private http: RegistrationFormService, private form$: FormService, private dataService: DataServiceService) {
-    this.patient=this.http.GetAllMstPatientData().subscribe(res => {})
-    this.address=this.http.GetAllMstAddress().subscribe(res=>{})
-    forkJoin([this.patient, this.address])
-    .subscribe(res => {
-      this.data = res;
-      console.log ('User and Post', res);
-    });
+    // this.patient=this.http.GetAllMstPatientData().subscribe(res => {})
+    // this.address=this.http.GetAllMstAddress().subscribe(res=>{})
+    // forkJoin([this.patient, this.address])
+    // .subscribe(res => {
+    //   this.data = res;
+    //   console.log ('User and Post', res);
+    // });
   }
 
 
@@ -179,8 +179,8 @@ export class RegistrationFormComponent implements OnInit {
       "isSideBar": false,
       "isConfirmation": true
     };
-    // this.getAllPatientData();
-    this.getAllData();
+    this.getAllPatientData();
+    // this.getAllData();
     this.filterData = filterdata;
     // this.getAllUserData();
     this.getConfigForTable();
@@ -261,23 +261,23 @@ export class RegistrationFormComponent implements OnInit {
           })
         })
       }
-      if (data.formControlName === "selectBlood") {
-        data.values = [];
-        let defaultObj = {
-          "name": "Select Blood",
-          "code": "0"
-        }
-        data.values.push(defaultObj);
-        this.http.GetAllBloodGroupData().subscribe((item: any[]) => {
-          item.forEach((e: any) => {
-            let obj = {
-              "name": e.bloodgroupName,
-              "code": e.bloodgroupId
-            }
-            data.values.push(obj);
-          })
-        })
-      }
+      // if (data.formControlName === "selectBlood") {
+      //   data.values = [];
+      //   let defaultObj = {
+      //     "name": "Select Blood",
+      //     "code": "0"
+      //   }
+      //   data.values.push(defaultObj);
+      //   this.http.GetAllBloodGroupData().subscribe((item: any[]) => {
+      //     item.forEach((e: any) => {
+      //       let obj = {
+      //         "name": e.bloodgroupName,
+      //         "code": e.bloodgroupId
+      //       }
+      //       data.values.push(obj);
+      //     })
+      //   })
+      // }
       if (data.formControlName === "selectState") {
         // data.values = [];
         data.values.forEach((a: any) => {
@@ -318,7 +318,6 @@ export class RegistrationFormComponent implements OnInit {
             })
           }
         })
-
       }
       if (data.formControlName === "selectTaluka") {
         data.values = [];
@@ -579,34 +578,34 @@ export class RegistrationFormComponent implements OnInit {
   }
   changeSelect(e: any) {
     if (e[1].fieldName == "surgicalRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[5], true, 'isVisible');
+      this.form$.reRenderForm(this.formData5.form.formControls[5], true, 'isEditable');
     } else if (e[1].fieldName == "surgicalRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[5], false, 'isVisible');
+      this.form$.reRenderForm(this.formData5.form.formControls[5], false, 'isEditable');
     }
     if (e[1].fieldName == "medicationRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[7], true, 'isVisible');
+      this.form$.reRenderForm(this.formData5.form.formControls[7], true, 'isEditable');
     } else if (e[1].fieldName == "medicationRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[7], false, 'isVisible');
+      this.form$.reRenderForm(this.formData5.form.formControls[7], false, 'isEditable');
     }
     if (e[1].fieldName == "diagnosticsRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[9], true, 'isVisible');
+      this.form$.reRenderForm(this.formData5.form.formControls[9], true, 'isEditable');
     } else if (e[1].fieldName == "diagnosticsRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[9], false, 'isVisible');
+      this.form$.reRenderForm(this.formData5.form.formControls[9], false, 'isEditable');
     }
     if (e[1].fieldName == "alcoholRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[11], true, 'isVisible');
+      this.form$.reRenderForm(this.formData5.form.formControls[11], true, 'isEditable');
     } else if (e[1].fieldName == "alcoholRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[11], false, 'isVisible');
+      this.form$.reRenderForm(this.formData5.form.formControls[11], false, 'isEditable');
     }
     if (e[1].fieldName == "tobacooRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[13], true, 'isVisible');
+      this.form$.reRenderForm(this.formData5.form.formControls[13], true, 'isEditable');
     } else if (e[1].fieldName == "tobacooRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[13], false, 'isVisible');
+      this.form$.reRenderForm(this.formData5.form.formControls[13], false, 'isEditable');
     }
     if (e[1].fieldName == "diabetesRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[16], true, 'isVisible');
+      this.form$.reRenderForm(this.formData5.form.formControls[15], true, 'isEditable');
     } else if (e[1].fieldName == "diabetesRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[16], false, 'isVisible');
+      this.form$.reRenderForm(this.formData5.form.formControls[15], false, 'isEditable');
     }
 
   }
@@ -618,18 +617,17 @@ export class RegistrationFormComponent implements OnInit {
     // this.getAllMstDemographicsData();
     // this.getAllAddDetatils();
     console.log("gridData ==>> ", this.data);
-    let allData=this.http.getALLDataFromAPIs()
+    // let allData=this.http.getALLDataFromAPIs()
     // console.log("Alll data =================>> ", allData);
   }
-  patient:any;
-  address:any;
-  getPatientData(){ }
- 
+  patient: any;
+  address: any;
+  getPatientData() { }
+
 
   getAllPatientData() {
     this.http.GetAllMstPatientData().subscribe(res => {
       res[1].result.forEach((e: any, index: any) => {
-
         console.log("Patient data => ", e)
         let date = this.datepipe.transform(
           e.patientDob, "MM/dd/yyyy"
@@ -646,70 +644,16 @@ export class RegistrationFormComponent implements OnInit {
           "patientLastname": e.patientLastname,
           "patientFullname": e.patientFullname,
           "patientMobileNumber": e.patientMobileNumber,
+          "patientEmail": e.patientEmail,
           "patientIdentificationTypeId": e.patientIdentificationTypeId,
+          "patientIdentificationTypeName": e.patientIdentificationTypeName,
           "patientIdentificationNo": "",
           "patientMaritalStatusId": e.patientMaritalStatusId,
-          "DOBRad":"Age",
-          "patientDob": date,
-          
-          "patientAge": e.patientAge,
-          "patientGender": "2",
-          // "dependentdropdown":[]
-          
-          "patientAddressLine1": e.patientAddressLine1,
-          "patientAddressLine2": e.patientAddressLine2,
-          "patientCityId": e.patientCityId,
-          "patientStateId": e.patientStateId,
-          "patientCountryId": e.patientCountryId,
-          "patientBloodGroupId": e.patientBloodGroupId,
-          "patientEthinicityId": e.patientEthinicityId,
-          "patientReligion": e.patientReligion,
-          "patientSocialStatusId": e.patientSocialStatusId,
-          "patientBlock": e.patientBlock,
-          "patientPrnNumber": e.patientPrnNumber,
-          "patientPrivilageId": e.patientPrivilageId,
-          "patientInsuranceNumber": e.patientInsuranceNumber,
-          "patientInsurancePolicyNumber": e.patientInsurancePolicyNumber,
-          "patientInsuranceCompanyNumber": e.patientInsuranceCompanyNumber,
-          "patientInsuranceCompanyName": e.patientInsuranceCompanyName,
-          "patientIsTobacoConsume": e.patientIsTobacoConsume,
-          "patientIsTobacoConsumeYear": e.patientIsTobacoConsumeYear,
-          "patientIsAlcoholConsume": e.patientIsAlcoholConsume,
-          "patientIsAlcoholConsumeYear": e.patientIsAlcoholConsumeYear,
-          "patientIsHaveDiabeties": e.patientIsHaveDiabeties,
-          "patientIsHaveDiabetiesYear": e.patientIsHaveDiabetiesYear,
-
-          "patientOccupation": e.patientOccupation,
-          "patientReferredBy": e.patientReferredBy,
-          "patientLanguages": e.patientLanguages,
-          "patientPhoneNumber": e.patientPhoneNumber,
-          "districtName": e.mstDistrict.districtName,
-
-
-          "patientIdentificationTypeName": e.patientIdentificationTypeName,
           "patientMaritalStatusName": e.patientMaritalStatusName,
-          "patientCityName": e.patientCityName,
-          "patientStateName": e.patientStateName,
-          "patientCountryName": e.patientCountryName,
-          "patientBloodGroupName": e.patientBloodGroupName,
-          "patientEthinicityName": e.patientEthinicityName,
-          "patientSocialStatusName": e.patientSocialStatusName,
-          "patientPrivilageName": e.patientPrivilageName,
-          "profileImage": e.profileImage,
-          "patientEmail": e.patientEmail,
-          "patientAddress": e.patientAddress,
-          "patientDemographics": e.patientDemographics,
-          "patientInsurance": e.patientInsurance,
-          "patientMedicalHistory": e.patientMedicalHistory,
-          "patientAddInfo": e.patientAddInfo,
-          "patientPrivilege": e.patientPrivilege,
-          "patientHealthId": e.patientHealthId,
-          "patientHealthNumber": e.patientHealthNumber,
-          "patientUploadImage": e.patientUploadImage,
-          "patientRegistrationSource": e.patientRegistrationSource,
+          "patientDob": date,
           "isActive": e.isActive
         }
-        this.gridData.push(e);
+        this.gridData.push(obj);
         console.log("mst_patient => ", this.gridData);
       })
 
@@ -740,9 +684,9 @@ export class RegistrationFormComponent implements OnInit {
         //   "isActive": e.isActive
 
         // }
-        this.gridData.push(e);
+        // this.gridData.push(e);
       })
-      this.data = [...this.gridData];
+      // this.data = [...this.gridData];
       // for (let i = 0; i < this.data.length; i++) {
       //   this.data[i].srNumber = i + 1;
       // }
@@ -788,10 +732,10 @@ export class RegistrationFormComponent implements OnInit {
         //   "isActive": true,
         //   "isDeleted": false
         // }
-        this.gridData.push(e);
+        // this.gridData.push(e);
       })
       console.log("mst_patient_address => ", this.gridData);
-      this.data = [...this.gridData];
+      // this.data = [...this.gridData];
     })
   }
 
@@ -877,11 +821,11 @@ export class RegistrationFormComponent implements OnInit {
     }
   }
 
-// <<<<<<< HEAD
-//   submitUserData(userData: any, img: any) {
-//     this.http.saveUserData(userData, img)
-//       .subscribe((data: any) => {
-// =======
+  // <<<<<<< HEAD
+  //   submitUserData(userData: any, img: any) {
+  //     this.http.saveUserData(userData, img)
+  //       .subscribe((data: any) => {
+  // =======
   saveRegistartionForm(e: any) {
     console.log("saveRegistartionForm => ", this.paramObj);
     this.paramObj = {
@@ -987,7 +931,8 @@ export class RegistrationFormComponent implements OnInit {
     this.http.getFilterData(e)
       .subscribe((data: any[]) => {
         this.data = undefined;
-        this.data = data;
+       
+        this.data =  data[1].result;
       })
   }
 

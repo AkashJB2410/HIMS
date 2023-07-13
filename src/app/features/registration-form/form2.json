@@ -188,41 +188,43 @@
                 }
             },
             {
-                "id": 3,
+                "id": 0,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Address Line 1",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1",
+                "label": "Address",
+                "type": "textarea",
+                "inputType": "textarea",
+                "class": "col-md-4 mt-1",
                 "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Address Line 1 ...",
-                "formControlName": "addressLine1Input",
+                "valueclass": "textarea-custom",
+                "row": "2",
+                "placeholder": "",
+                "formControlName": "address",
                 "message": {
-                    "required": "Address Line 1 is required",
-                    "pattern": "Only Alphanumeric, dot, comma, backslash, space, and hyphen"
+                    "required": "Address is required",
+                    "pattern": "invalid"
                 },
                 "validations": {
-                    "required": false,
+                    "required": true,
                     "pattern": "^[a-zA-Z0-9.,\\s-]+$"
                 }
             },
             {
-                "id": 3,
+                "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Address Line 2",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1",
+                "label": "Landmark",
+                "type": "textarea",
+                "inputType": "textarea",
+                "class": "col-md-4 mt-1",
                 "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Address Line 2 ...",
-                "formControlName": "addressLine2Input",
+                "valueclass": "textarea-custom",
+                "row": "2",
+                "placeholder": "",
+                "formControlName": "address",
                 "message": {
-                    "required": "Address Line 2 is required",
-                    "pattern": "Only Alphanumeric, dot, comma, backslash, space, and hyphen"
+                    "required": "Address is required",
+                    "pattern": "invalid"
                 },
                 "validations": {
                     "required": false,
@@ -258,7 +260,7 @@
                 "inputType": "empty",
                 "type": "staticText",
                 "data": "",
-                "class": "col-md-6 my-1 ",
+                "class": "col-md-3 my-1 ",
                 "lblclass": "custom-label",
                 "valueclass": "custom-text",
                 "placeholder": "",

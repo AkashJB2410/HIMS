@@ -9,7 +9,7 @@
         "sidebar": "p-sidebar-lg",
         "formControls": [
             {
-                "id":1,
+                "id":0,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -53,7 +53,7 @@
                 }
             },
             {
-                "id":2,
+                "id":1,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -97,7 +97,7 @@
                 }
             },
             {
-                "id":3,
+                "id":2,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -137,7 +137,7 @@
                 }
             },
             {
-                "id": 4,
+                "id": 3,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Previous Treatment",
@@ -176,13 +176,13 @@
                 }
             },
             {
-                "id":5,
+                "id":4,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
                 "label": "Surgical History",
                 "type": "radio",
-                "class": "col-md-2 my-1",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
@@ -209,9 +209,9 @@
                 }
             },
             {
-                "id": 6,
-                "isEditable": true,
-                "isVisible": false,
+                "id": 5,
+                "isEditable": false,
+                "isVisible": true,
                 "label": "Surgeries Details",
                 "type": "text",
                 "inputType": "text",
@@ -230,13 +230,13 @@
                 }
             },
             {
-                "id":7,
+                "id":6,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
                 "label": "Medication history",
                 "type": "radio",
-                "class": "col-md-2 my-1",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
@@ -263,9 +263,9 @@
                 }
             },
             {
-                "id": 8,
-                "isEditable": true,
-                "isVisible": false,
+                "id": 7,
+                "isEditable": false,
+                "isVisible": true,
                 "label": "Medication Details",
                 "type": "text",
                 "inputType": "text",
@@ -284,13 +284,13 @@
                 }
             },
             {
-                "id":9,
+                "id":8,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
                 "label": "Previous Diagnostics",
                 "type": "radio",
-                "class": "col-md-2 my-1",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
@@ -317,9 +317,9 @@
                 }
             },
             {
-                "id": 10,
-                "isEditable": true,
-                "isVisible": false,
+                "id": 9,
+                "isEditable": false,
+                "isVisible": true,
                 "label": "Previous Diagnostics Details",
                 "type": "text",
                 "inputType": "text",
@@ -338,13 +338,13 @@
                 }
             },
             {
-                "id":11,
+                "id":10,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
                 "label": "Patient Alcohol Habit",
                 "type": "radio",
-                "class": "col-md-2 my-1",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
@@ -371,9 +371,9 @@
                 }
             },
             {
-                "id": 12,
-                "isEditable": true,
-                "isVisible": false,
+                "id": 11,
+                "isEditable": false,
+                "isVisible": true,
                 "label": "If Yes How Many Year.",
                 "type": "text",
                 "inputType": "text",
@@ -392,13 +392,13 @@
                 }
             },
             {
-                "id":13,
+                "id":12,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
                 "label": "Patient Tobacoo Habit",
                 "type": "radio",
-                "class": "col-md-2 my-1",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
@@ -425,9 +425,9 @@
                 }
             },
             {
-                "id": 14,
-                "isEditable": true,
-                "isVisible": false,
+                "id": 13,
+                "isEditable": false,
+                "isVisible": true,
                 "label": "If Yes How Many Year.",
                 "type": "text",
                 "inputType": "text",
@@ -446,35 +446,13 @@
                 }
             },
             {
-                "id": 15,
-                "isEditable": true,
-                "isVisible": false,
-                "label": "",
-                "inputType": "empty",
-                "type": "staticText",
-                "data": "",
-                "class": "col-md-2 my-1 ",
-                "lblclass": "custom-label",
-                "valueclass": "custom-text",
-                "placeholder": "",
-                "formControlName": "staticText",
-                "message": {
-                    "required": "",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id":16,
+                "id":14,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
                 "label": "Patient Has Diabetes",
                 "type": "radio",
-                "class": "col-md-2 my-1",
+                "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
@@ -501,9 +479,9 @@
                 }
             },
             {
-                "id": 17,
-                "isEditable": true,
-                "isVisible": false,
+                "id": 15,
+                "isEditable": false,
+                "isVisible": true,
                 "label": "If Yes How Many Year.",
                 "type": "text",
                 "inputType": "text",
@@ -522,29 +500,7 @@
                 }
             },
             {
-                "id": 18,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "",
-                "inputType": "empty",
-                "type": "staticText",
-                "data": "",
-                "class": "col-md-7 my-1 ",
-                "lblclass": "custom-label",
-                "valueclass": "custom-text",
-                "placeholder": "",
-                "formControlName": "staticText",
-                "message": {
-                    "required": "",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 19,
+                "id": 16,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,

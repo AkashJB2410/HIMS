@@ -36,19 +36,14 @@ export class RegistrationFormService {
   // }
 
   getFilterData(data: any): Observable<any> {
-    const param = {
-      "userId": "",
-      "firstName": data.firstNameInput[0],
-      "middleName": "",
-      "dob": "",
-      "age": "",
-      "emailId": "",
-      "address": "",
-      "mobileNo":data.mobileNoInput,
-      "identificationNo":data.identificatioNoInput[0]
-    };
+
+    let params = new HttpParams();
+    params =params.set('patientFirstname', data.firstNameInput);
+    params =params.set('patientMobileNumber', data.mobileNoInput);
+    params =params.set('patientMrNo', data.mrNoInput);
+
     const url = "http://localhost:8082/mst_patient/search";
-    return this.PostCall(url, param);
+    return this.http.get(url, { params: params });
   }
 
   getALLDataFromAPIs(): any {
@@ -57,7 +52,7 @@ export class RegistrationFormService {
       this.GetAllDemographicsData(),
       this.GetAllMstAddress()
     ]).subscribe(
-      ([dataFromAPI1, dataFromAPI2,dataFromAPI3]) => {
+      ([dataFromAPI1, dataFromAPI2, dataFromAPI3]) => {
         // Handle the data from both APIs
         console.log('Data from API 1:', dataFromAPI1);
         console.log('Data from API 2:', dataFromAPI2);
@@ -70,7 +65,7 @@ export class RegistrationFormService {
     );
   }
 
-//mst_patient APIs
+  //mst_patient APIs
 
   GetAllMstPatientData() {
     const url = "http://localhost:8082/mst_patient/list";
@@ -82,8 +77,8 @@ export class RegistrationFormService {
     return this.PostCall(url, data);
   }
 
-  updateUserData(data:any) {
-    const url = "http://localhost:8080/mst_patient/update" ;
+  updateUserData(data: any) {
+    const url = "http://localhost:8080/mst_patient/update";
     return this.http.put<any>(url, data);
   }
 
@@ -92,8 +87,8 @@ export class RegistrationFormService {
     return this.http.delete<any>(url);
   }
 
-  
-//mst_demographics APIs
+
+  //mst_demographics APIs
 
   GetAllDemographicsData() {
     const url = "http://localhost:8082/mst_demographics/list";
@@ -106,28 +101,28 @@ export class RegistrationFormService {
     const url = "http://localhost:8082/mst_address/list";
     return this.http.get<any>(url);
   }
-//mst_patient_add_info APIs
+  //mst_patient_add_info APIs
   GetAllMstPatientAddInfo() {
     const url = "http://localhost:8082/mst_patient_add_info/list";
     return this.http.get<any>(url);
   }
-//mst_privilege APIs
+  //mst_privilege APIs
   GetAllMstPrivilege() {
     const url = "http://localhost:8082/mst_privilege/list";
     return this.http.get<any>(url);
   }
-//mst_medicalhistory APIs
+  //mst_medicalhistory APIs
   GetAllMedicalHistory() {
     const url = "http://localhost:8082/mst_medicalhistory/list";
     return this.http.get<any>(url);
   }
-//mst_Insurence APIs
+  //mst_Insurence APIs
   GetAllMstInsurence() {
     const url = "http://localhost:8082/mst_Insurence/list";
     return this.http.get<any>(url);
   }
 
-//Master Management
+  //Master Management
   GetAllTitleData() {
     const url = "http://localhost:8083/mstLovList/allTypeData/1";
     return this.http.get<any>(url);

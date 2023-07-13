@@ -340,7 +340,7 @@
                 "label": "",
                 "inputType": "radio",
                 "type": "radio",
-                "class": "col-md-1 mt-4 my-1",
+                "class": "col-md-1 my-1",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
@@ -390,7 +390,7 @@
                 "label": "",
                 "inputType": "radio",
                 "type": "radio",
-                "class": "col-md-1  my-1 mt-4",
+                "class": "col-md-1  my-1 ",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
@@ -620,28 +620,6 @@
                 "defaultValue":"",
                 "message": {
                     "required": "Img is required",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 22,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "",
-                "inputType": "empty",
-                "type": "staticText",
-                "data": "",
-                "class": "col-md-9 my-1 ",
-                "lblclass": "custom-label",
-                "valueclass": "custom-text",
-                "placeholder": "",
-                "formControlName": "staticText1",
-                "message": {
-                    "required": "",
                     "pattern": ""
                 },
                 "validations": {
