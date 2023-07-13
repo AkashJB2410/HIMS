@@ -1,5 +1,5 @@
 import { formatDate } from '@angular/common';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, forkJoin } from 'rxjs';
 
@@ -20,6 +20,36 @@ export class RegistrationFormService {
     return this.http.post<any>(url, param)
   }
 
+  // getFilterData(data:any){
+  //   let params = new HttpParams();
+
+  //   // params = params.set('firstName', data.firstNameInput[0]);
+  //   // params = params.set('mobileNo', data.mobileNoInput);
+  //   // params = params.set('identificationNo', data.identificatioNoInput[0]);
+
+  //   const param = {
+  //     "mobileNo": data.mobileNoInput
+  //   }
+
+  //  const url = "http://localhost:8082/api/v1/searchPatient";
+  //   return this.http.post<any>(url);
+  // }
+
+  getFilterData(data: any): Observable<any> {
+    const param = {
+      "userId": "",
+      "firstName": data.firstNameInput[0],
+      "middleName": "",
+      "dob": "",
+      "age": "",
+      "emailId": "",
+      "address": "",
+      "mobileNo":data.mobileNoInput,
+      "identificationNo":data.identificatioNoInput[0]
+    };
+    const url = "http://localhost:8082/mst_patient/search";
+    return this.PostCall(url, param);
+  }
 
   getALLDataFromAPIs(): any {
     forkJoin([

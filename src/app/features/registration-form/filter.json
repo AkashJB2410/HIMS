@@ -1,0 +1,115 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "",
+        "formName": "Form1",
+        "formControls": [
+            {
+                "id": 6,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Mobile Number",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Mobile No.",
+                "defaultValue":"",
+                "formControlName": "mobileNoInput",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "First Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter First Name...",
+                "defaultValue":"",
+                "formControlName": "firstNameInput",
+                "message": {
+                    "required": "First Name is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 6,
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Identification Number",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Mobile No.",
+                "defaultValue":"",
+                "formControlName": "identificatioNoInput",
+                "message": {
+                    "required": "zxvzd",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isVisible": true,
+                "label": "",
+                "type": "icon",
+                "class": "col-md-3",
+                "icons": [
+                    {
+                        "class": "pi pi-search",
+                        "isDisabled": false,
+                        "subtype": "search",
+                        "valueclass": "icon-button-primary",
+                        "tooltip": "Search",
+                        "toolPosition": "top"
+                    },
+                    {
+                        "class": "pi pi-filter",
+                        "isDisabled": false,
+                        "subtype": "openFilter",
+                        "valueclass": "icon-button-primary",
+                        "tooltip": "Filter",
+                        "toolPosition": "top"
+                    },
+                    {
+                        "class": "pi pi-sync",
+                        "isDisabled": false,
+                        "subtype": "reset",
+                        "valueclass": "icon-button-warn",
+                        "tooltip": "Reset",
+                        "toolPosition": "top"
+                    },
+                    {
+                        "class": "pi pi-save",
+                        "isDisabled": false,
+                        "subtype": "submit",
+                        "valueclass": "icon-button-warn",
+                        "tooltip": "Save Filter",
+                        "toolPosition": "top"
+                    }
+                ]
+            }
+        ]
+    }
+}
