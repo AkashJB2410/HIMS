@@ -23,7 +23,7 @@ export class GroupModuleComponent implements OnInit {
   groupData: any = [];
   flag: any;
   editData: any;
-  constructor(private messageService: MessageService, private http: GroupModuleService, private common: CommonService, private sidenav: MasterPageComponent) { }
+  constructor(private messageService: MessageService, private http: GroupModuleService, private common: CommonService) { }
 
   ngOnInit(): void {
     this.configurations = {
@@ -167,9 +167,6 @@ export class GroupModuleComponent implements OnInit {
       }
       this.data;
     });
-    if (this.isdataReady) {
-      this.sidenav.getALLSideNavData();
-    }
   }
 
   updateGroup(groupId: any) {
