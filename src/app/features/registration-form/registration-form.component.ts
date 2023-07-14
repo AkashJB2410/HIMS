@@ -655,77 +655,77 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   getAllData() {
-    this.http.getDataFromApis().subscribe(
-      ([api1Response, api2Response,api3Response]) => {
-        // Handle the responses from both APIs
-        console.log('API 1 Response:', api1Response[1].result);
-        console.log('API 2 Response:', api2Response[1].result);
-        console.log('API 3 Response:', api3Response[1].result);
-        api1Response[1].result.forEach((e: any, index: any) => {
-          let date = this.datepipe.transform(
-            e.patientDob, "MM/dd/yyyy"
-          );
-          this.paramObj = {
-            "id": index,
-            "patientId": e.patientId,
-            "patientMrNo": e.patientMrNo,
-            "patientTitleId": e.patientTitleId,
-            "patientTitleName": e.patientTitleName,
-            "patientFirstname": e.patientFirstname,
-            "patientMiddlename": e.patientMiddlename,
-            "patientLastname": e.patientLastname,
-            "patientFullname": e.patientFullname,
-            "patientMobileNumber": e.patientMobileNumber,
-            "patientEmail": e.patientEmail,
-            "patientIdentificationTypeId": e.patientIdentificationTypeId,
-            "patientIdentificationTypeName": e.patientIdentificationTypeName,
-            "patientIdentificationNo": "",
-            "patientMaritalStatusId": e.patientMaritalStatusId,
-            "patientMaritalStatusName": e.patientMaritalStatusName,
-            "patientDob": date,
-            "isActive": e.isActive
-          }
-        })
-        this.gridData.push(api1Response[1].result);
-        console.log("this gridData =====>>>>>",this.gridData);
-        api3Response[1].result.forEach((e: any) => {
-          let saveAdd={
-            "addressId": "",
-            "addressLine1": "",
-            "addressLine2": "",
-            "addressblock": "",
-            "addressVillageId": "",
-            "addressVillageName": "",
-            "addressTalukaId": "",
-            "addressTalukaName": "",
-            "addressCityId": "",
-            "addressCityName": "",
-            "addressStateId": "",
-            "addressStateName": "",
-            "addressCountryId": "",
-            "addressCountryName": "",
-            "addressPatientId": "",
-            "addressPinCode": "",
-          }
-          this.gridData.forEach(res=>{
-            if(res.patientId==e.addressPatientId){
-              this.merged = this.mergeObjects(res, saveAdd);
-            }
-          })
+    // this.http.getDataFromApis().subscribe(
+    //   ([api1Response, api2Response,api3Response]) => {
+    //     // Handle the responses from both APIs
+    //     console.log('API 1 Response:', api1Response[1].result);
+    //     console.log('API 2 Response:', api2Response[1].result);
+    //     console.log('API 3 Response:', api3Response[1].result);
+    //     api1Response[1].result.forEach((e: any, index: any) => {
+    //       let date = this.datepipe.transform(
+    //         e.patientDob, "MM/dd/yyyy"
+    //       );
+    //       this.paramObj = {
+    //         "id": index,
+    //         "patientId": e.patientId,
+    //         "patientMrNo": e.patientMrNo,
+    //         "patientTitleId": e.patientTitleId,
+    //         "patientTitleName": e.patientTitleName,
+    //         "patientFirstname": e.patientFirstname,
+    //         "patientMiddlename": e.patientMiddlename,
+    //         "patientLastname": e.patientLastname,
+    //         "patientFullname": e.patientFullname,
+    //         "patientMobileNumber": e.patientMobileNumber,
+    //         "patientEmail": e.patientEmail,
+    //         "patientIdentificationTypeId": e.patientIdentificationTypeId,
+    //         "patientIdentificationTypeName": e.patientIdentificationTypeName,
+    //         "patientIdentificationNo": "",
+    //         "patientMaritalStatusId": e.patientMaritalStatusId,
+    //         "patientMaritalStatusName": e.patientMaritalStatusName,
+    //         "patientDob": date,
+    //         "isActive": e.isActive
+    //       }
+    //     })
+    //     this.gridData.push(api1Response[1].result);
+    //     console.log("this gridData =====>>>>>",this.gridData);
+    //     api3Response[1].result.forEach((e: any) => {
+    //       let saveAdd={
+    //         "addressId": "",
+    //         "addressLine1": "",
+    //         "addressLine2": "",
+    //         "addressblock": "",
+    //         "addressVillageId": "",
+    //         "addressVillageName": "",
+    //         "addressTalukaId": "",
+    //         "addressTalukaName": "",
+    //         "addressCityId": "",
+    //         "addressCityName": "",
+    //         "addressStateId": "",
+    //         "addressStateName": "",
+    //         "addressCountryId": "",
+    //         "addressCountryName": "",
+    //         "addressPatientId": "",
+    //         "addressPinCode": "",
+    //       }
+          // this.gridData.forEach(res=>{
+          //   if(res.patientId==e.addressPatientId){
+          //     this.merged = this.mergeObjects(res, saveAdd);
+          //   }
+          // })
           
-        })
-        console.log('API merged ===>>>:', this.merged);
-        console.log('API 1 Response this.gridData:', this.gridData);
-        this.gridData.push(api3Response[1].result);
-        console.log('API 2 Response this.gridData:', this.gridData);
-        console.log('API 2 Response this.gridData:', this.gridData);
+    //     })
+    //     console.log('API merged ===>>>:', this.merged);
+    //     console.log('API 1 Response this.gridData:', this.gridData);
+    //     this.gridData.push(api3Response[1].result);
+    //     console.log('API 2 Response this.gridData:', this.gridData);
+    //     console.log('API 2 Response this.gridData:', this.gridData);
 
-      },
-      error => {
-        // Handle any errors
-        console.error('Error:', error);
-      }
-    );
+    //   },
+    //   error => {
+    //     // Handle any errors
+    //     console.error('Error:', error);
+    //   }
+    // );
   }
 
   getAllPatientData() {
