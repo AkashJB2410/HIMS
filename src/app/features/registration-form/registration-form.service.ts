@@ -38,9 +38,9 @@ export class RegistrationFormService {
   getFilterData(data: any): Observable<any> {
 
     let params = new HttpParams();
-    params =params.set('patientFirstname', data.firstNameInput);
-    params =params.set('patientMobileNumber', data.mobileNoInput);
-    params =params.set('patientMrNo', data.mrNoInput);
+    params = params.set('patientFirstname', data.firstNameInput);
+    params = params.set('patientMobileNumber', data.mobileNoInput);
+    params = params.set('patientMrNo', data.mrNoInput);
 
     const url = "http://localhost:8082/mst_patient/search";
     return this.http.get(url, { params: params });
@@ -67,15 +67,30 @@ export class RegistrationFormService {
   // const getAllMstPatient='http://localhost:8082/mst_patient/list';
 
   // Define two separate API endpoints
-  readonly  mst_patient = 'http://localhost:8082/mst_patient/list';
+  readonly mst_patient = 'http://localhost:8082/mst_patient/list';
   readonly mst_demographics = 'http://localhost:8082/mst_demographics/list';
+  readonly mst_address='http://localhost:8082/mst_address/list';
 
   getDataFromApis(): Observable<any[]> {
     const api1Request = this.http.get(this.mst_patient);
     const api2Request = this.http.get(this.mst_demographics);
-  
-    return forkJoin([api1Request, api2Request]);
+    const api3Request = this.http.get(this.mst_address);
+
+    return forkJoin([api1Request, api2Request,api3Request]);
   }
+  readonly mst_patient_save = 'http://localhost:8082/mst_patient/create';
+  readonly mst_address_save = 'http://localhost:8082/mst_address/create';
+
+  saveDataFromApis(mstPatient: any, mstAddress: any): Observable<any[]> {
+    const postRequest1$ = this.http.post(this.mst_patient_save, mstPatient);
+    const postRequest2$ = this.http.post(this.mst_address_save, mstAddress);
+
+    return forkJoin([postRequest1$, postRequest2$]);
+  }
+
+
+
+
   //mst_patient APIs
 
   GetAllMstPatientData() {

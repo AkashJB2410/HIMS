@@ -407,7 +407,7 @@
             },
             {
                 "id": 13,
-                "isEditable": true,
+                "isEditable": false,
                 "isVisible": true,
                 "transient": false,
                 "label": "",

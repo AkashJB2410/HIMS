@@ -188,6 +188,27 @@
                 }
             },
             {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Village",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 mt-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "",
+                "formControlName": "selectVillage",
+                "message": {
+                    "required": "Village is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
                 "id": 0,
                 "isEditable": true,
                 "isVisible": true,
@@ -250,28 +271,6 @@
                 "validations": {
                     "required": false,
                     "pattern": "^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$"
-                }
-            },
-            {
-                "id": 10,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "",
-                "inputType": "empty",
-                "type": "staticText",
-                "data": "",
-                "class": "col-md-3 my-1 ",
-                "lblclass": "custom-label",
-                "valueclass": "custom-text",
-                "placeholder": "",
-                "formControlName": "staticText",
-                "message": {
-                    "required": "",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
                 }
             },
             {
