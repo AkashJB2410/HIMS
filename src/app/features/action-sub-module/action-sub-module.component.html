@@ -1,5 +1,5 @@
 <p-breadcrumb [model]="ActionSubModule_breadcrumb.itemsList" ></p-breadcrumb>
-<h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Action Sub Module</h3>
+<h3 class="Sidebar-title-md"><i class="bi bi-file-earmark-medical"></i>Action Sub Module</h3>
 <app-super-grid
     *ngIf="table_Data"
     [configurations]="configurations"
@@ -10,5 +10,9 @@
     (confirmAction)="confirmAction($event)"
     (onAdd)="saveActionSubModule($event)"
     (onEdit)="editActionSubModule($event)"
+    (editRow)="editRow($event)" 
+    (addRow)="addRow($event)"
     (isActive)="isActive($event)"
-></app-super-grid>
+>
+<app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="sidebar_Update_Input" [editData]="editData" (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
+</app-super-grid>

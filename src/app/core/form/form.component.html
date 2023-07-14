@@ -51,7 +51,7 @@
                                 [(ngModel)]="formData.fieldValue" inputId="{{opt.code}}"
                                 (onClick)="changeEvent($event, formData)" formControlName="{{formData.fieldName}}">
                             </p-radioButton>
-                            <label for="{{opt.code}}">{{opt.name}}</label>
+                            <label for="{{opt.code}}" class="label-radio">{{opt.name}}</label>
                         </div>
                     </div>
                     <div class="{{formData.valueclass}}"
