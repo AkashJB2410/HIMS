@@ -4,6 +4,7 @@ import addnew from './actionModuleSidebarConfig.json';
 import { MessageService } from 'primeng/api';
 import { ActionModuleService } from './action-module.service';
 import ActionModule_breadcrumb from "./actionModule-breadcrumb.json";
+import { CommonService } from 'src/app/core/shared/service/common.service';
 @Component({
   selector: 'app-action-module',
   templateUrl: './action-module.component.html',
@@ -20,10 +21,10 @@ export class ActionModuleComponent implements OnInit {
     });
   }
   
-  onAdd(Event: any) {
-    console.log(Event);
+  // onAdd(Event: any) {
+  //   console.log(Event);
     
-  }
+  // }
 
   table: any;
   visibleSidebar: boolean = true;
@@ -32,7 +33,9 @@ export class ActionModuleComponent implements OnInit {
   data: any;
   isdataReady = false;
   ActionModule_breadcrumb =ActionModule_breadcrumb;
-  constructor(private messageService: MessageService,private http: ActionModuleService) { }
+  editData: any
+  flag: any;
+  constructor(private messageService: MessageService,private http: ActionModuleService,private common: CommonService) { }
 
   ngOnInit(): void {
     this.configurations = {
@@ -45,12 +48,27 @@ export class ActionModuleComponent implements OnInit {
     this.getActionModules();
   }
 
+  onAdd(e: any) {
+    this.editData = []
+    this.flag = e.add;
+  }
+
+  onEdit(e: any) {
+    this.editData = e.editRow;
+    this.flag = false;
+  }
+
   buttonClick(e: any) {
     if (e == 'next') {
       console.log(e);
     } else if (e == 'cancel') {
       console.log(e);
     }
+  }
+
+  buttonEvent(e: any) {
+    this.editData = undefined;
+    this.common.sendEditData(false);
   }
 
   getConfigForTable() {
