@@ -105,7 +105,7 @@ export class SelfRegistrationComponent implements OnInit {
 
   saveAddressData(e: any) {
     this.paramObj = {
-      "patientStateId": [e.selectState[0], e.selectState[1]],
+      "patientStateId": [e.state[0], e.state[1],e.state[2]],
 
     }
     this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
@@ -127,6 +127,8 @@ export class SelfRegistrationComponent implements OnInit {
     this.editData = undefined;
     if(e=="reset"){
 this.router.navigateByUrl('')
+    } else{
+     this.sidebarData(e);
     }
   }
   sidebarData(e: any) {

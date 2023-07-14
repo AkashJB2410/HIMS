@@ -183,8 +183,8 @@
                 "label": "Surgical History",
                 "type": "radio",
                 "class": "col-md-3 my-1",
-                "lblclass": "custom-label",
-                "valueclass": " radio-button",
+                "lblclass": "custom-label ",
+                "valueclass": " radio-button ",
                 "placeholder": "********",
                 "formControlName": "surgicalRad",
                 "message": {
