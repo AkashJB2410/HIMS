@@ -2,6 +2,13 @@
   <div class="sidebarMenu-custom " [ngClass]="status ? 'darSideBar' : 'genisSideBar'"
     [style.backgroundColor]="list.theme.sidenavBG">
     <div class="sideBarOrta ">
+      <div class="nav-item" class="toggle wrap-toggle mt-2" (click)="clickEvent()">
+        <a *ngIf="!status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/Toggle.png"
+              pTooltip="Collapse" tooltipPosition="top" class="togglefix"></i></a>
+        <a *ngIf="status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/Toggle.png"
+              pTooltip="Expand Sidenav" tooltipPosition="top" style=" -webkit-transform: scaleX(-1);
+              transform: scaleX(-1);"></i></a>
+      </div>
       <ul id="sidebar_menu" class="nav flex-column">
         <li>
           <div class="sidenavLogo" *ngIf="!status">
@@ -12,21 +19,16 @@
           <li> <img src="{{list.header.onlyLogo}}" class="img img-fluid img-responsive collapsedLogo" alt="Logo">
           </li>
         </div>
-        <div class="nav-item" class="toggle" (click)="clickEvent()">
-          <a *ngIf="!status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/Toggle.png"
-                pTooltip="Collapse" tooltipPosition="top" class="togglefix"></i></a>
-          <a *ngIf="status" class="sidenav-menu"><i><img src="../../../../assets/core_assets/Toggle.png"
-                pTooltip="Expand Sidenav" tooltipPosition="top" style=" -webkit-transform: scaleX(-1);
-                transform: scaleX(-1);"></i></a>
-        </div>
+
       </ul>
       <div class="scroll">
         <ul id="sidebar_menu" class="nav flex-column">
           <li class="nav-item" *ngFor="let item of list.sidenavItems" (click)="setStateAsActive(item)">
             <ng-container *ngIf="item.group.length == 0 ; else list">
               <div *ngIf="item.routerLink != undefined">
-                <a [class.parentMenu]="item === activeState" href="#{{item.label | rmWhiteSpaces}}" data-bs-toggle="collapse"
-                  class="sidenav-menu" routerLink="{{item.routerLink}}" pTooltip="{{item.label}}">
+                <a [class.parentMenu]="item === activeState" href="#{{item.label | rmWhiteSpaces}}"
+                  data-bs-toggle="collapse" class="sidenav-menu" routerLink="{{item.routerLink}}"
+                  pTooltip="{{item.label}}">
                   <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
                     [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{item.label}}</span>
                 </a>
@@ -40,12 +42,12 @@
               </div>
             </ng-container>
             <ng-template #list>
-              <a [class.parentMenu]="item === activeState" href="#{{item.label | rmWhiteSpaces}}" data-bs-toggle="collapse"
-                class="sidenav-menu " pTooltip="{{item.label}}">
+              <a [class.parentMenu]="item === activeState" href="#{{item.label | rmWhiteSpaces}}"
+                data-bs-toggle="collapse" class="sidenav-menu " pTooltip="{{item.label}}">
                 <i class="{{item.icon}}"></i> <span class="d-sm-inline ms-2"
                   [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
-                  style="margin-right: auto;">{{item.label}}</span> <i id="{{item.label | rmWhiteSpaces}}" childItemsub-module
-                  [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
+                  style="margin-right: auto;">{{item.label}}</span> <i id="{{item.label | rmWhiteSpaces}}"
+                  childItemsub-module [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
                   class="bi bi-chevron-down downarrow"></i>
               </a>
               <ul class="collapse nav flex-column" id="{{item.label | rmWhiteSpaces}}" data-bs-parent="#menu">
@@ -53,7 +55,8 @@
                   style="cursor: pointer;">
                   <ng-container *ngIf="childItem.submodules.length == 0; else list1">
                     <div *ngIf="childItem.routerLink != undefined">
-                      <a [class.childMenu]="childItem === activeStatechild" href="#{{childItem.label | rmWhiteSpaces}}" data-bs-toggle="collapse" class="sidenav-menu vsm-dropdown"
+                      <a [class.childMenu]="childItem === activeStatechild" href="#{{childItem.label | rmWhiteSpaces}}"
+                        data-bs-toggle="collapse" class="sidenav-menu vsm-dropdown"
                         routerLink="{{childItem.routerLink}}" pTooltip="{{childItem.label}}">
                         <i class="{{childItem.icon}}"></i> <span class="d-sm-inline ms-2"
                           [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'">{{childItem.label}}</span>
@@ -73,7 +76,8 @@
                       <i class="{{childItem.icon}}"></i> <span class="d-sm-inline ms-2"
                         [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
                         style="margin-right: auto;">{{childItem.label}}</span>
-                      <i id="{{item.label | rmWhiteSpaces}}" [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
+                      <i id="{{item.label | rmWhiteSpaces}}"
+                        [ngClass]="statusLink ? 'navLinkDar' : 'navLinkGenis animated fadeInRight'"
                         class="bi bi-chevron-down downarrow"></i>
                     </a>
                     <ul class="collapse nav flex-column " id="{{childItem.label|rmWhiteSpaces}}" data-bs-parent="#menu">
@@ -115,8 +119,10 @@
       </ul> -->
       <footer class="footer fixed-bottom">
         <p class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span
-          class="float-md-left d-block d-md-inline-block"> <span class="notranslate">Generic Components Ver 1.2 | 2023 © Powered by Medimaze Pvt Ltd. </span>
-        </span><span class="float-md-right d-block d-md-inline-blockd-none d-lg-block">Last login : {{LastLoginTimeDate}}</span></p>
+            class="float-md-left d-block d-md-inline-block"> <span class="notranslate">Generic Components Ver 1.2 | 2023
+              © Powered by Medimaze Pvt Ltd. </span>
+          </span><span class="float-md-right d-block d-md-inline-blockd-none d-lg-block">Last login :
+            {{LastLoginTimeDate}}</span></p>
       </footer>
     </div>
   </div>
@@ -128,10 +134,6 @@
         <router-outlet></router-outlet>
       </div>
     </div>
-  
+
   </div>
 </div>
-
-
-
-

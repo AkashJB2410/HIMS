@@ -1,44 +1,50 @@
-<div class="container rounded bg-white mt-5 mb-5">
-    <div class="row">
-        <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center">
-                <input type="file" id="input" style="display:none;">
-                <label for="input"><img class="rounded-circle" id="image" width="160px"
-                        src="../../../../assets/core_assets/Medimaze Favicon Dark.png">
-                </label>
+<div class="container rounded bg-white  mb-5">
+    <h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Edit Profile</h3>
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-3 border-right">
+                <div class="d-flex flex-column align-items-center text-center side-line">
+                    <input type="file" formControlName="profileImage" id="input" (change)="onFileChange($event)"
+                        style="display:none;">
+                    <label for="input"><img class="rounded-circle" id="image" width="160px"
+                            src="../../../../assets/core_assets/Medimaze Favicon Dark.png">
+                    </label>
+                    <h4 class="name-title">{{user}}</h4>
+                </div>
             </div>
-        </div>
-        <div class="col-md-5 border-right">
-            <div>
-                <form [formGroup]="Editform" (ngSubmit)="onSubmit()">
-                    <div class="login-body-wrapper mx-auto">
-                        <div class="form-group mb-6">
-                            <label for="username" class="label-txt">Username</label>
-                            <input type="text" formControlName="username" class="input-box login-input"
-                                placeholder="Enter username">
+            <div class="col-md-9 border-right">
+                <div>
+
+                    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+                        <div class="login-body-wrapper mx-auto">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group mb-6">
+                                        <label for="username" class="label-txt">Username</label>
+                                        <input type="text" formControlName="userName" class="input-box login-input"
+                                            placeholder="Enter username">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group mb-6">
+                                        <label for="email" class="label-txt">Email</label>
+                                        <input type="text" formControlName="emailId" class="input-box login-input"
+                                            placeholder="Enter Registered Email ID">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group mb-6">
+                                        <label for="mobileNumber" class="label-txt">Mobile Number</label>
+                                        <input type="text" formControlName="mobileNo" class="input-box login-input"
+                                            placeholder="Enter Mobile number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group mb-6">
+                                <button class="btn butn-custom-dark-blue savebtn">Save
+                                </button>
+                            </div>
+
                         </div>
-                        <!-- <div class="form-group mb-6 login-input">
-                            <label for="password" class="label-txt">Password</label>
-                            <p-password formControlName="password" placeholder="Enter password "
-                                [toggleMask]="true" [feedback]="false"></p-password>
-                        </div> -->
-                        <div class="form-group mb-6">
-                            <label for="email" class="label-txt">Email</label>
-                            <input type="text" formControlName="emailId" class="input-box login-input"
-                                placeholder="Enter Registered Email ID">
-                        </div>
-                        <div class="form-group mb-6">
-                            <label for="mobileNumber" class="label-txt">Mobile Number</label>
-                            <input type="text" formControlName="mobileNumber" class="input-box login-input"
-                                placeholder="Enter Mobile number">
-                        </div>
-                        <div class="form-group mb-6">
-                            <button  class="btn btn-success btn-block btn-lg btn-fnt savebtn">Save
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+                    </form>
+                </div>

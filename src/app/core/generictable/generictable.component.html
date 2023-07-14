@@ -17,10 +17,10 @@
                             placeholder="Search keyword" />
                     </span>
                 </div>
-                <div class="col-md-1 mx-1">
-                    <p-multiSelect [options]="colNames" pTooltip="Selected Columns" tooltipPosition="top"
-                        [(ngModel)]="selectedColumns" optionLabel="header" selectedItemsLabel="{0} columns selected"
-                        [style]="{minWidth: '50px'}" placeholder="Choose Columns"></p-multiSelect>
+                <div class=" mx-1">
+                        <p-multiSelect [options]="colNames" pTooltip="Selected Columns" tooltipPosition="top"
+                        [(ngModel)]="selectedColumns" optionLabel="header" selectedItemsLabel="{0}"
+                        [style]="{maxWidth: '38px'}" dropdownIcon=" pi pi-ellipsis-v"  ></p-multiSelect>  
                 </div>
                 <div class="item5 mx-1">
                     <span *ngIf="config.addButton">

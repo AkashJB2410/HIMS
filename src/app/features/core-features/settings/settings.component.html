@@ -29,12 +29,17 @@
         </div>
     </div> -->
     <div *ngIf="allFlag.Personalization" class={{verticalTabs.cardClass}}>
-        <app-personalization></app-personalization>
+        <div class="cardDesign">
+            <p-card class="verticalCards">
+                <app-personalization></app-personalization>
+            </p-card>
+        </div>
+       
     </div>
     <div *ngIf="allFlag.EditForm" class={{verticalTabs.cardClass}}>
         <div class="cardDesign">
             <p-card class="verticalCards">
-                <p class="headerTheme">Edit Profile</p>
+                <!-- <p class="headerTheme">Edit Profile</p> -->
              <app-edit-profile></app-edit-profile>
             </p-card>
         </div>

@@ -27,7 +27,7 @@ export class PersonalizationService {
 
   }
   getallPersonalization() {
-    const url = myConstants.LOCALHOSTURL + "personalization/allPersonalization";
+    const url = myConstants.LOCALHOSTURL + "personalization/getAllPersonalizationData?page=0&size=10";
     return this.http.get<any>(url);
   }
 }

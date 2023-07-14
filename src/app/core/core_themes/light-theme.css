@@ -1051,9 +1051,10 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   height: 11px;
   width: 263px;
   background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 14px !important;
-  padding-top: 3px;
-  padding-bottom: 19px;
+  font-size: 12px !important;
+  padding-top: 4px;
+  padding-bottom: 16px;
+  line-height: 1;
 }
 
 .Sidebar-title-sm::before,
@@ -1064,7 +1065,7 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   content: '';
   padding: 2px;
   background-color: rgb(252, 252, 252);
-  margin: 5px;
+  margin: 6px;
 }
 
 /* ---------------------form Title for sideBar SM Css End-------------------------- */
@@ -1075,9 +1076,10 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   color: white !important;
   height: 11px;
   background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 14px !important;
+  font-size: 12px !important;
   padding-top: 4px;
-  padding-bottom: 19px;
+  padding-bottom: 16px;
+  line-height: 1;
 }
 
 .Sidebar-title-lg::before,
@@ -1098,9 +1100,10 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   height: 11px;
   width: 421px;
   background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 14px !important;
+  font-size: 12px !important;
   padding-top: 4px;
-  padding-bottom: 19px;
+  padding-bottom: 16px;
+  line-height: 1;
 }
 
 .Sidebar-title-md::before,
@@ -1113,6 +1116,7 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   background-color: rgb(252, 252, 252);
   margin: 6px;
 }
+
 
 /* ---------------------form Title for sideBar MD Css End-------------------------- */
 ul p.verticaltab {
@@ -1155,9 +1159,19 @@ ul p.verticaltab {
    color: black;
 } */
 
+
+@media only screen and (max-width: 600px) {
+  .Sidebar-title-lg {
+    width: 100%;
+  }
+}
+
+/* ---------------------form Title for sideBar LG Css End-------------------------- */
+/* ----------------------Form Title Css End------------------------------- */
+
 .bi-file-earmark-medical::before {
   content: "\f373";
-  padding-right: 10px !important;
+  padding-right: 5px !important;
   vertical-align: 0px;
 }
 
@@ -1291,8 +1305,8 @@ input[type="file"]::before {
   background-color: #54B029 !important;
   border-color: #54B029 !important;
 }
-.form-check
-{
+
+.form-check {
   min-height: 0rem !important
 }
 
@@ -1324,9 +1338,10 @@ input[type="file"]::before {
 .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
   padding: 0rem !important;
 }
+
 /* -------------------------Date Picker Css End------------------------------- */
 
-.shorcut-iocns{
+.shorcut-iocns {
   border-radius: 6px;
   height: 24 !important;
   width: 24px !important;
@@ -1335,8 +1350,8 @@ input[type="file"]::before {
   margin: 2px !important;
   padding-left: 3px !important
 }
-.image-size
-{
-width: 18px !important;
-height: 18px !important;
+
+.image-size {
+  width: 18px !important;
+  height: 18px !important;
 }
