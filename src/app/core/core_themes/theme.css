@@ -2539,10 +2539,11 @@ body {
   padding-right: 10px;
 } */
 .spacer {
-  margin-top: 10px;
+  margin-top: 15px;
   margin-bottom: 5rem;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
 }
 
 .contextMenus {
@@ -2720,4 +2721,13 @@ body {
 
 .p-accordion .p-accordion-header .p-accordion-header-link {
   padding: 0.5rem !important;
+}
+
+.side-line {
+  border-right: 1px solid #dedede;
+  height: 62vh;
+}
+
+.p-overlay-badge .p-badge {
+  top: 5px !important;
 }

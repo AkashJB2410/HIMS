@@ -49,7 +49,12 @@ export class SideNavComponent implements OnInit {
 
   ngOnInit(): void {
     this.lastLogin = localStorage.getItem("loggedIn")
-    this.LastLoginTimeDate = this.datepipe.transform(this.lastLogin, 'MMMM d, y h:mm a	');
+    if(this.lastLogin == "null"){
+      this.LastLoginTimeDate = ""
+    }else{
+      this.LastLoginTimeDate = this.datepipe.transform(this.lastLogin, 'MMMM d, y h:mm a');
+
+    }
     this.list = this.masterJSON.masterData;
   }
 
