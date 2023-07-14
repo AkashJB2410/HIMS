@@ -229,10 +229,15 @@ a.article :hover {
 }
 
 .footer {
-    background: linear-gradient(0deg, #D6D6D6 0%, #FAFAFA 67.26%);
+    /* background: #d5d5d5;
     color: #424242;
     padding: 0.8rem;
-    transition: 0.4s
+    transition: 0.4s */
+    background: #d5d5d5;
+    color: #424242;
+    padding: 5px;
+    transition: 0.4s;
+    height: 25px;
 }
 
 .genisSideBar .footer {
@@ -591,4 +596,7 @@ li a.subchildMenu {
     border-radius: 4px;
     margin-right: 5px;
     margin-left: 5px;
+}
+.wrap-toggle{
+    margin: auto;
 }

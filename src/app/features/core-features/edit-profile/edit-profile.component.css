@@ -43,8 +43,15 @@ body {
     border: solid 1px #BA68C8
 }
 .savebtn{
-    background-color: #374476 !important;
-    border-color: #374476 !important;
     margin-top: 20px;
-    float:right
+    float:left;
+    width: 15%;
 }
+.name-title{
+    font-size: 25px!important;
+    margin-top: 1rem;
+}
+.rounded-circle{
+    border:0.5rem solid rgb(139 139 139 / 20%);
+}
+

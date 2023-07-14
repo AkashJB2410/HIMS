@@ -1,6 +1,6 @@
 <div class="">
     <!-- <img height="40px" width="40px" src="{{base1}}"> -->
-    <h6 class="{{formJson.formTitleClass}}"><i class="{{formJson.formTitleLogo}}"></i>{{formJson.formTitle}}</h6>
+    <h6 class="{{formJson.formTitleClass}}"><i class="{{formJson.formTitleLogo}}"></i>{{formJson.formTitle | uppercase}}</h6>
     <form [formGroup]="form">
         <div class="{{formJson.class}}">
             <!-- <span *ngIf="formValid" style="color: red;">Please fill all required fields</span> -->
@@ -108,7 +108,7 @@
                             [ngClass]="formData.editable ? formData.valueclass : 'imgUpload1'"
                             class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
                             [(ngModel)]="formData.fieldValue" accept="image/*"
-                            (change)="onImageUpload($event, formData); changeEvent($event, formData)" />
+                            (change)="onFilesUpload($event, formData); changeEvent($event, formData)" />
                     </div>
                     <div *ngIf="formData.fieldType == formStaticText.FILESUPLOAD">
                         <input id="{{formData.fieldName}}" type="file" name="{{formData.fieldName}}"
