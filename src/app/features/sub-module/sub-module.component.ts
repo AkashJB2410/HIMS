@@ -109,7 +109,6 @@ export class SubModuleComponent implements OnInit {
     private messageService: MessageService,
     private http: SubModuleService,
     private common: CommonService,
-    private sidenav: MasterPageComponent
   ) {}
 
   ngOnInit(): void {
@@ -228,9 +227,6 @@ export class SubModuleComponent implements OnInit {
       this.dataGrid = [...this.gridData];
       this.isdataReady = true;
     });
-    if(this.isdataReady){
-      this.sidenav.getALLSideNavData();
-    }
   }
 
   getConfigForTable() {
