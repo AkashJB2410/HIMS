@@ -3,13 +3,13 @@
     "tableHeaders": [
         {
             "field":"id",
-            "header":"Sr. No.","iseditable": false , "class":"text-center"
+            "header":"Sr. No.","iseditable": false , "class":""
         },
         {
             "field": "keyName",
             "header": "Key Name",
             "iseditable": false,
-            "class": "text-center"
+            "class": ""
         },
         {
             "field": "keyValue",
@@ -58,6 +58,9 @@
     "isVisible": false,
     "buttonlbl": "ADD",
     "textLength": 16,
-    "addButton":true
+    "addButton":true,
+    "bulkAction":["PDF","EXCEL","Delete"],
+    "isDragAndDrop":true
+
 
 }

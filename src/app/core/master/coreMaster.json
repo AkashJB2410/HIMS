@@ -1,0 +1,28 @@
+{
+    "masterData": {
+      "theme": {
+        "sidenavBG": "#174875",
+        "headerBG": "#EEEEEE",
+        "footerBG": "#EEEEEE"
+      },
+      "header": {
+        "logo": "../../assets/sahaj.pngs",
+        "whiteLogo": "../../assets/core_assets/medimazefull.png",
+        "usericon": "../../assets/Icon.png",
+        "setting": "../../assets/setting.png",
+        "notification": {
+          "count":"",
+          "data": []
+        },
+        "dp": "../../assets/userlogo.png",
+        "sidenavLogo":"/assets/medimazefull.png",
+        "onlyLogo":"/assets/medimazesmall.png"
+      },
+      "sidenavItems": [],
+      "footer": {
+        "logo": "../../assets/Techjivaa-svg-removebg.png",
+        "dp": "../../assets/userlogo.png",
+        "username": "Satyam Singh"
+      }
+    }
+  }
