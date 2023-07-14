@@ -29,11 +29,13 @@ export class ForgotPasswordComponent implements OnInit {
 
   inputForm = new FormGroup({
     emailId: new FormControl(''),
-    mobileNo: new FormControl('')
+    mobileNo: new FormControl(''),
+    whatsAppNo:new FormControl('')
   });
   timeLeft: any = 60;
   chooseMethod: boolean = true;
   emailFlag: boolean = false;
+  whatsappflag:boolean=false;
   emailOrMobileCard: boolean = false;
   otpScreen: boolean = false;
   resetPassword: boolean = false;
@@ -50,8 +52,13 @@ export class ForgotPasswordComponent implements OnInit {
   continueWith(e: any) {
     if (e == "email") {
       this.emailFlag = true;
-    } else {
+      this.whatsappflag=false
+    } else if(e=="whatsapp"){
+      this.whatsappflag=true
       this.emailFlag = false;
+    }else{
+      this.emailFlag = false;
+      this.whatsappflag=false;
     }
     this.emailOrMobileCard = true;
   }
@@ -67,6 +74,11 @@ export class ForgotPasswordComponent implements OnInit {
             this.onGetVerificationCode();
           } else if (data.status == "Invalid") {
             this.messageService.add({ severity: 'error', summary: 'Invalid email id ...!', detail: 'Please enter valid credentials.' });
+          }else if(data.metadata.message="Valid WhatsApp No"){
+            this.chooseMethod = false;
+            this.emailOrMobileCard = false;
+            this.otpScreen = true;
+            this.onGetVerificationCode();
           }
         })
     }
@@ -98,10 +110,10 @@ export class ForgotPasswordComponent implements OnInit {
   verifyOTP(e: any) {
     this.http.verifyOTP(e, this.inputForm.value)
       .subscribe(data => {
-        if (data.otp == "Valid") {
+        if (data.metadata.message == "OTP is valid for whatsapp no") {
           this.otpScreen = false;
           this.resetPassword = true;
-        } else if (data.otp == "Invalid") {
+        } else if (data.metadata.message == "OTP is not valid for whatsapp no") {
           this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid OTP...!' });
         }
       })
@@ -128,7 +140,7 @@ export class ForgotPasswordComponent implements OnInit {
     if (!this.btnDissabled) {
       this.http.updatePassword(this.inputForm.value, this.repassword)
         .subscribe(data => {
-          if (data.update == "success") {
+          if (data.metadata.message == "Password Update Sucessfully") {
             this.messageService.add({ severity: 'success', summary: 'Password updated successfully.', detail: '' });
             this.resetPassword = false;
             this.successScreen = true;

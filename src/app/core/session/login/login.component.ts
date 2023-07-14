@@ -98,22 +98,20 @@ export class LoginComponent implements OnInit {
 
     if (this.loginForm.value.captcha) {
       this.http.Logincheck(this.loginForm.value)
-        .subscribe(data => {
-          let a = + data.loginFailed
-          if (a <= 2) {
-            this.messageService.add({ severity: 'error', summary: 'Your entered password is wrong', detail: 'Your account will be locked due to 3 failed attempts.. No of attempts left  : ' + a });
-          } else if (a == 3) {
-            this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
-            this.timer(1);
+        .subscribe(data => {          
+          if(data.metadata.message=="failedAttempts =>1" || data.metadata.message=="failedAttempts =>2"){
+            this.messageService.add({ severity: 'error', summary: 'Your entered password is wrong', detail: 'Your account will be locked due to 3 failed attempts.. No of attempts left  : ' + data.metadata.message.charAt(length+1) });
+          }else if(data.metadata.message=="failedAttempts =>3" ){ 
+            this.timer(1);       
           } else if (data.result[0].password == (this.loginForm.value.password)) {
             this.timerFlag2 = false;
             this.messageService.add({ severity: 'success', summary: 'Login', detail: 'Logged in successfully.' });
             sessionStorage.setItem('loggedUser', this.encrypt.transform(JSON.stringify(data)));
             sessionStorage.setItem('loggedIn', 'true');
-            this.router.navigateByUrl('/master-page/user-management');
+            this.router.navigateByUrl('/master-page/home');
           } else if (data.result[0].password!= this.decrypt.transform(this.loginForm.value.password)) {
             this.messageService.add({ severity: 'error', summary: 'Error', detail: data.message });
-            this.router.navigateByUrl('/master-page/user-management');
+            this.router.navigateByUrl('/master-page/home');
           }
           localStorage.setItem("loggedIn",data.result[0].loggedIn)
         });

@@ -7,38 +7,19 @@ import * as myConstants from "../objects/constants";
   providedIn: 'root'
 })
 export class SessionService {
-  character: any;
 
   constructor(private http: HttpClient) { }
   headers = new HttpHeaders().set('Content-type', 'application/json');
 
-  // Logincheck(obj: any): Observable<any> {
-  //   const url = myConstants.LOCALHOSTURL + "api/v1/login";
-  //   const headers = new HttpHeaders().set('Content-type', 'application/json');
-
-  //   return this.http.post<any>(url, obj, { headers })
-  // }
-
-
   Logincheck(obj: any): Observable<any> {
-    const abc={
-      "emailId":"rahul.hirve",
-      "password":"rahul@123"
-    }
-    // const username="rohit@123"
-    // for(let i=0;i<obj.emailId.length-10;i++){
-    //   this.character += obj.emailId.charAt(i);
-    // }
-    // console.log(this.character)
-    
-    const url = "https://esahaj.jk.gov.in/jnk_reports/goto/B8F4Bl9Vz?orgId=1";
+    const url = myConstants.LOCALHOSTURL + "authentication/userLogin";
     const headers = new HttpHeaders().set('Content-type', 'application/json');
 
-    return this.http.post<any>(url, abc, { headers })
+    return this.http.post<any>(url, obj, { headers })
   }
 
   GetAllCollectionData() {
-    const url = myConstants.LOCALHOSTURL + "api/v1/AllCOllectionData";
+    const url = myConstants.LOCALHOSTURL + "authentication/AllCOllectionData";
     return this.http.get<any>(url);
   }
 
@@ -48,12 +29,16 @@ export class SessionService {
       param = {
         "emailId": data.emailId
       };
-    } else {
+    } else if(data.mobileNo != '') {
       param = {
         "mobileNo": data.mobileNo
       };
+    }else{
+      param={
+        "whatsAppNo":data.whatsAppNo
+      }
     }
-    const url = myConstants.LOCALHOSTURL + "api/v1/verify";
+    const url = myConstants.LOCALHOSTURL + "authentication/verify";
     const headers = new HttpHeaders().set('Content-type', 'application/json');
     return this.http.post<any>(url, param, { headers })
   }
@@ -64,12 +49,16 @@ export class SessionService {
       param = {
         "emailId": data.emailId
       };
-    } else {
+    } else if(data.mobileNo != '') {
       param = {
         "mobileNo": data.mobileNo
       };
+    }else{
+      param={
+        "whatsAppNo":data.whatsAppNo
+      }
     }
-    const url = myConstants.LOCALHOSTURL + "api/v1/sendOTP";
+    const url = myConstants.LOCALHOSTURL + "authentication/sendOTP";
     const headers = new HttpHeaders().set('Content-type', 'application/json');
     return this.http.post<any>(url, param, { headers })
   }
@@ -81,13 +70,18 @@ export class SessionService {
         "emailId": data.emailId,
         "otp": otp
       };
-    } else {
+    } else if(data.whatsAppNo!=''){
+        param={
+          "whatsAppNo":data.whatsAppNo,
+          "whatsAppOTP":otp
+        }
+    }else{
       param = {
         "mobileNo": data.mobileNo,
-        "otp": otp
+        "mobileOTP": otp
       };
     }
-    const url = myConstants.LOCALHOSTURL + "api/v1/verifyOTP";
+    const url = myConstants.LOCALHOSTURL + "authentication/verifyOTP";
     const headers = new HttpHeaders().set('Content-type', 'application/json');
     return this.http.post<any>(url, param, { headers })
 
@@ -100,18 +94,23 @@ export class SessionService {
         "emailId": data.emailId,
         "password": password
       };
-    } else {
-      param = {
-        "mobileNo": data.mobileNo,
-        "password": password
-      };
-    }
-    const url = myConstants.LOCALHOSTURL + "api/v1/passwordUpdate";
+    }else if(data.whatsAppNo!=''){
+      param={
+        "whatsAppNo":data.whatsAppNo,
+        "password":password
+      }
+  }else{
+    param = {
+      "mobileNo": data.mobileNo,
+      "password": password
+    };
+  }
+    const url = myConstants.LOCALHOSTURL + "authentication/passwordUpdate";
     return this.http.put<any>(url, param);
   }
 
   orgData(email: any) {
-    const url = myConstants.LOCALHOSTURL + "api/v1/organizationData?emailId=" + email;
+    const url = myConstants.LOCALHOSTURL + "authentication/organizationData?emailId=" + email;
     return this.http.get<any>(url);
   }
 }
