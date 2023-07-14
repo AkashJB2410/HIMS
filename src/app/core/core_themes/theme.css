@@ -2746,3 +2746,12 @@ body {
 .p-tabmenu .p-tabmenu-nav{
   border: none!important;
 }
+
+.side-line {
+  border-right: 1px solid #dedede;
+  height: 62vh;
+}
+
+.p-overlay-badge .p-badge {
+  top: 5px !important;
+}

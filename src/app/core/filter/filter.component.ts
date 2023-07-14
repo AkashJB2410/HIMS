@@ -4,6 +4,8 @@ import { MessageService, PrimeNGConfig } from 'primeng/api';
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
+  styleUrls: ['./filter.component.css'],
+
   styles: [`
   :host ::ng-deep .p-component-overlay {
     width: 100%;
@@ -24,6 +26,7 @@ export class FilterComponent implements OnInit {
   filterName: any;
   filtersArray: any = [];
   editDataCheckbox: any;
+  activeState: any;
   constructor() { }
 
   ngOnInit(): void {
@@ -170,6 +173,10 @@ export class FilterComponent implements OnInit {
   renderFilter(data: any) {
     this.filterData = undefined;
     this.filterData = data.filterJson;
+  }
+  setStateAsActive(a: any) {
+    this.activeState = a;
+
   }
 
 }

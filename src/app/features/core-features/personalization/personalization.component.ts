@@ -142,7 +142,7 @@ export class PersonalizationComponent implements OnInit {
   getPersonalization() {
     this.http.getallPersonalization().subscribe(res => {
       let records: any[] = []
-      res.result.forEach((e: any, index: any) => {
+      res.content.forEach((e: any, index: any) => {
         let obj = {
           "id": ++index,
           "personalizationId": e.personalizationId,

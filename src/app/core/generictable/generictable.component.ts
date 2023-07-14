@@ -58,6 +58,9 @@ export class GenerictableComponent implements OnInit {
 
   constructor(private toast: MessageService) { }
   ngOnInit() {
+
+    // JSON.parse(localStorage.getItem('Selected Column Value'))
+    JSON.parse(localStorage.getItem(this.pdfName))
     if (this.tableData == undefined)
       this.tableData = data;
 
@@ -67,10 +70,16 @@ export class GenerictableComponent implements OnInit {
 
     this.exportColumns = this.config.tableHeaders.map((config: any) => ({ title: config.header, dataKey: config.field }));
     this.colNames = this.config.tableHeaders
+
     this.rows = this.config.rows;
 
-    this.pdfName = this.config.tableName
-    this._selectedColumns = this.colNames;
+    this.pdfName = this.config.tableName;
+    if (JSON.parse(localStorage.getItem(this.pdfName)) != null) {
+      this._selectedColumns = JSON.parse(localStorage.getItem(this.pdfName))
+    }
+    else {
+      this._selectedColumns = this.colNames
+    }
   }
 
   onrightClick(event: any, rowdata: any) {
@@ -173,10 +182,14 @@ export class GenerictableComponent implements OnInit {
 
   @Input() get selectedColumns(): any[] {
     return this._selectedColumns;
+
   }
 
   set selectedColumns(val: any[]) {
-    this._selectedColumns = this.colNames.filter((col: any) => val.includes(col));
+    this._selectedColumns = this.colNames.filter((col: any) => val.includes(col),
+    );
+    // localStorage.setItem("Selected Column Value",JSON.stringify(this._selectedColumns))
+    localStorage.setItem(this.pdfName, JSON.stringify(this._selectedColumns))
   }
 
   onRowClick(row_Data: any) {
@@ -213,6 +226,7 @@ export class GenerictableComponent implements OnInit {
   enable(row: any) {
     (document.getElementById("abc" + row.id) as HTMLButtonElement).disabled = false;
   }
+
   ScannerClick(event: any, e: any) {
     this.OnScannerClick.emit(e);
   }
