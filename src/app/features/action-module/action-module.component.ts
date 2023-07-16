@@ -83,6 +83,10 @@ export class ActionModuleComponent implements OnInit {
     this.visibleSidebar = true;
   }
 
+  closeSidebarData(e: any) {
+    this.editData = undefined;
+  }
+
   sidebarData(e: any) {
     console.log('From User Management ==> ', e);
     if (e == 'reset') {

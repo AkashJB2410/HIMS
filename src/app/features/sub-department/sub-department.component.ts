@@ -123,6 +123,10 @@ this.common.sendEditData(false);
     this.status = false;
   }
 
+  closeSidebarData(e: any) {
+    this.editData = undefined;
+  }
+
   onAdd(e: any) {
     this.editData = [];
     this.common.sendEditData(false);

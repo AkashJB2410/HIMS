@@ -1,13 +1,13 @@
 
 <p-breadcrumb [model]="ActionModule_breadcrumb.itemsList" ></p-breadcrumb>
-<h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Action Module</h3>
+<h3 class="Sidebar-title-md "><i class="bi bi-file-earmark-medical"></i>Action Module</h3>
 <app-super-grid  
 *ngIf="data"
 [configurations] ="configurations" 
 [tableConfig] = "table"
 [sidebarJSON] = "addNew"
 [tableData]= "data"
-(sideBarEvent)="sidebarData($event)"
+(sideBarEvent)="closeSidebarData($event)"
 (confirmAction)="confirmAction($event)"
 (editRow)="editRow($event)"
 (addRow)="addRow($event)"
