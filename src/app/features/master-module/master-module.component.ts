@@ -101,7 +101,6 @@ export class MasterModuleComponent implements OnInit {
     private messageService: MessageService,
     private http: MasterModuleService,
     private common:CommonService,
-    private sidenav:MasterPageComponent
   ) {}
 
   ngOnInit(): void {
@@ -133,8 +132,6 @@ export class MasterModuleComponent implements OnInit {
       }
       this.data;
     });
-    if(this.isdataReady){
-    this.sidenav.getALLSideNavData();}
   }
 
   getConfigForTable() {
