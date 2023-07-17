@@ -64,6 +64,10 @@ export class ActionSubModuleComponent implements OnInit {
     this.visibleSiderbar = true;
   }
 
+  closeSidebarData(e: any) {
+    this.editData = undefined;
+  }
+
   saveActionSubModule(e:any){
     // this.saveMethod = true;
     this.editData = []
