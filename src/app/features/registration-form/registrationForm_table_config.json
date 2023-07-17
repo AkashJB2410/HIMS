@@ -25,7 +25,7 @@
     "isCheckbox" : true,
     "resizableColumns": true,
 	"isDragAndDrop":true,
-    "isActions": ["Edit", "Delete" ,"isActive","Scanner","Emergency","IPD","OPD","Servies"],
+    "isActions": ["Edit","Scanner","Emergency","IPD","OPD","Servies"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "expand":false,
     "addButton":true,

@@ -80,12 +80,38 @@ export class RegistrationFormService {
   }
   readonly mst_patient_save = 'http://localhost:8082/mst_patient/create';
   readonly mst_address_save = 'http://localhost:8082/mst_address/create';
+  readonly mst_privilege_save = 'http://localhost:8082/mst_privilege/create';
+  readonly mst_insurance_save = 'http://localhost:8082/mst_insurance/create';
+  readonly mst_medical_history_save = 'http://localhost:8082/mst_medical_history/create';
+  readonly mst_patient_add_info_save = 'http://localhost:8082/mst_patient_add_info/create';
+  readonly mst_medical_legal_case_save = 'http://localhost:8082/mst_medical_legal_case/create';
 
-  saveDataFromApis(mstPatient: any, mstAddress: any): Observable<any[]> {
-    const postRequest1$ = this.http.post(this.mst_patient_save, mstPatient);
-    const postRequest2$ = this.http.post(this.mst_address_save, mstAddress);
 
-    return forkJoin([postRequest1$, postRequest2$]);
+  saveDataFromApis(mstPatient: any, mstAddress:any,mstPrivilege:any,mstInsurance:any,mstMedicalHistory:any,mstAdditionalInfo:any,mstMLC:any): Observable<any[]> {
+    let postRequest1$ ,postRequest2$,postRequest3$, postRequest4$,postRequest5$,postRequest6$,postRequest7$ ;
+    if(mstPatient != undefined){
+      postRequest1$ = this.http.post(this.mst_patient_save, mstPatient);
+    }
+    if(mstAddress != undefined){
+      postRequest2$ = this.http.post(this.mst_address_save, mstAddress);
+    }
+    if(mstPrivilege != undefined){
+      postRequest3$ = this.http.post(this.mst_privilege_save, mstPrivilege);
+    }
+    if(mstInsurance != undefined){
+      postRequest4$ = this.http.post(this.mst_insurance_save, mstInsurance);
+    }
+    if(mstMedicalHistory != undefined){
+      postRequest5$ = this.http.post(this.mst_medical_history_save, mstMedicalHistory);
+    }
+    if(mstAdditionalInfo != undefined){
+      postRequest6$ = this.http.post(this.mst_patient_add_info_save, mstAdditionalInfo);
+    }
+    if(mstMLC != undefined){
+      postRequest7$ = this.http.post(this.mst_medical_legal_case_save, mstMLC);
+    }
+    
+    return forkJoin([postRequest1$, postRequest2$,postRequest3$,postRequest4$,postRequest5$,postRequest6$,postRequest7$]);
   }
 
 

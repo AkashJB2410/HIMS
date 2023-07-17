@@ -64,7 +64,7 @@
                     }
                 ],
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -72,6 +72,7 @@
                 "id": 10,
                 "isEditable": true,
                 "isVisible": true,
+                "transient":true,
                 "label": "",
                 "inputType": "empty",
                 "type": "staticText",

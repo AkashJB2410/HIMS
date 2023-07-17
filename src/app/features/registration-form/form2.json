@@ -40,6 +40,7 @@
                 "id": 10,
                 "isEditable": true,
                 "isVisible": true,
+                "transient":true,
                 "label": "",
                 "inputType": "empty",
                 "type": "staticText",
@@ -70,7 +71,7 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "defaultValue":"1",
-                "formControlName": "selectPoliceStation",
+                "formControlName": "selectCountry",
                 "values": [
                     {
                         "name": "Select an Option",
@@ -93,7 +94,7 @@
             {
                 "isEditable": true,
                 "isVisible": true,
-                "transient": true,
+                "transient": false,
                 "label": "",
                 "type": "dependentdropdown",
                 "class": "col-md-9",
@@ -102,7 +103,7 @@
                 "placeholder": "Select option",
                 "formControlName": "dependentdropdown",
                 "message": {
-                    "required": "Gender is required",
+                    "required": "",
                     "pattern": ""
                 },
                 "values": [
@@ -188,23 +189,38 @@
                 }
             },
             {
-                "id": 3,
+                "id": 2,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Village",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 mt-1",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
                 "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "defaultValue":"1",
                 "formControlName": "selectVillage",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Pimpari",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Chikhali",
+                        "code": "2"
+                    }
+                ],
                 "message": {
-                    "required": "Village is required",
+                    "required": "Police Station is required",
                     "pattern": ""
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -220,7 +236,7 @@
                 "valueclass": "textarea-custom",
                 "row": "2",
                 "placeholder": "",
-                "formControlName": "address",
+                "formControlName": "addressInput",
                 "message": {
                     "required": "Address is required",
                     "pattern": "invalid"
@@ -242,7 +258,7 @@
                 "valueclass": "textarea-custom",
                 "row": "2",
                 "placeholder": "",
-                "formControlName": "address",
+                "formControlName": "landmarkInput",
                 "message": {
                     "required": "Address is required",
                     "pattern": "invalid"

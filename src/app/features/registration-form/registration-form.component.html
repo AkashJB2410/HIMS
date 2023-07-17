@@ -9,24 +9,6 @@
     (sideBarEvent)="closeSidebarData($event)" (confirmAction)="confirmAction($event)"
     (changeEvents)="changeSelectItem($event)" (Bulkdelete)="BulkDeleteRows($event)" (onAdd)="onAdd($event)"
     (onEdit)="onEdit($event)" (isActive)="isActive($event)" (rowClickData)="rowClickData($event)">
-<!-- =======
-<app-super-grid *ngIf="data" 
-    [configurations]="configurations" 
-    [tableData]="data" 
-    [filterJSON]="filterData" 
-    (fiteredData)="fiteredData($event)"
-    [tableConfig]="config"
-    [sidebarJSON]="formData" 
-    [tableConfig]="config" 
-    (sideBarEvent)="sidebarData($event)" 
-    (confirmAction)="confirmAction($event)"
-    (changeEvents)="changeSelectItem($event)"
-    (Bulkdelete)="BulkDeleteRows($event)" 
-    (onAdd)="onAdd($event)" 
-    (onEdit)="onEdit($event)" 
-    (isActive)="isActive($event)"
-    (rowClickData)="rowClickData($event)">
->>>>>>> b8084bf52e6c873dc1484c207f2ca966b10d8341 -->
 
     <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="formData" [editData]="editData"
         (formData)="saveRegistartionForm($event)" (changeEvents)="changeSelectItem($event)"></app-form>
@@ -44,11 +26,11 @@
     </div>
     <app-tabular-forms projectTowards="sidebar" [tabularJSON]="tabularFormData"
         (tabularEmitData)="tabularValue($event)">
-        <app-form *ngIf="formData1" projectTowards="sidebar" [formJSON]="formData1" [editData]="demoEditData"
-            (formData)="saveFormOne($event)"></app-form>
+        <!-- <app-form *ngIf="formData1" projectTowards="sidebar" [formJSON]="formData1" [editData]="demoEditData"
+            (formData)="saveFormOne($event)"></app-form> -->
 
         <app-form *ngIf="formData2" projectTowards="sidebar" [formJSON]="formData2" [editData]="addressEditData"
-            (formData)="saveFormTwo($event)"></app-form>
+            (formData)="saveAddress($event)"></app-form>
 
         <app-form *ngIf="formData3" projectTowards="sidebar" [formJSON]="formData3" [editData]="hospitalEditData"
             (formData)="saveFormThree($event)"></app-form>

@@ -134,43 +134,43 @@
                     },
                     {
                         "name": "Mr",
-                        "code": "Mr"
+                        "code": "1"
                     },
                     {
                         "name": "Mrs.",
-                        "code": "Mrs."
+                        "code": "2"
                     },
                     {
                         "name": "B/O Boy",
-                        "code": "B/O Boy"
+                        "code": "3"
                     },
                     {
                         "name": "B/O Girl",
-                        "code": "B/O Girl"
+                        "code": "4"
                     },
                     {
                         "name": "Dr.",
-                        "code": "Dr."
+                        "code": "5"
                     },
                     {
                         "name": "Dr. Mr",
-                        "code": "Dr. Mr"
+                        "code": "6"
                     },
                     {
                         "name": "Dr. Ms",
-                        "code": "Dr. Ms"
+                        "code": "7"
                     },
                     {
                         "name": "Miss.",
-                        "code": "Miss."
+                        "code": "8"
                     },
                     {
                         "name": "Master",
-                        "code": "Master"
+                        "code": "9"
                     },
                     {
                         "name": "Smt.",
-                        "code": "Smt."
+                        "code": "10"
                     }
                 ],
                 "validations": {
@@ -495,15 +495,15 @@
                     },
                     {
                         "name": "Male",
-                        "code": "M"
+                        "code": "1"
                     },
                     {
                         "name": "Female",
-                        "code": "F"
+                        "code": "2"
                     },
                     {
                         "name": "Other",
-                        "code": "o"
+                        "code": "3"
                     }
                 ],
                 "message": {

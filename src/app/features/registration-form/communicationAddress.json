@@ -138,23 +138,38 @@
                 }
             },
             {
-                "id": 3,
+                "id": 2,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Village",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 mt-1",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
                 "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "defaultValue":"1",
                 "formControlName": "selectVillage",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Pimpari",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Chikhali",
+                        "code": "2"
+                    }
+                ],
                 "message": {
-                    "required": "Village is required",
+                    "required": "Police Station is required",
                     "pattern": ""
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
