@@ -5,6 +5,7 @@
         "formTitleClass": "Sidebar-title-sm",
         "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
+        "formType": "edit",
         "sidebar": "p-sidebar-sm",
         "formControls": [
             {

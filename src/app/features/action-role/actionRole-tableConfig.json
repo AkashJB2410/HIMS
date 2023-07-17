@@ -14,7 +14,6 @@
         {"field": "is_Active","header": "isActive","iseditable": false,"class":""}
     ],
     "PdfHeaders": [
-        {"field": "srNumber","header": "Sr. No"},
         {"field": "arId","header": "Id"} ,
         {"field": "arRoleId_Name","header": "Role"},
         {"field": "arActionModuleMst","header": "Action Module"},
@@ -40,7 +39,13 @@
     "resizableColumns": true,
     "isActions": ["Edit", "Delete","isActive" ],
     "editicon":"../../../assets/icons/Group 1823.png",
+    "isVisible":false,
     "expand":false,
-    "buttonlbl":"Add Action Role",
-    "textLength":16
+    "buttonlbl":"",
+    "textLength":16,
+    "isDragAndDrop":true,
+    "addButton":true,
+    "bulkAction":["PDF","EXCEL"]
+   
+
 }

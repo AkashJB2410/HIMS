@@ -44,11 +44,11 @@ export class ActionRoleService {
   updateActionRoleData(data: any) {
     const param = {
             "arId": data.idInput,
-            "arActionSubModuleMst": {
-              "asmId": data.selectActionSubModule
-            },
             "arRoleId": {
               "roleId": data.selectRole
+            },
+            "arActionSubModuleMst": {
+              "asmId": data.selectActionSubModule
             },
             "arAdd": data.addCheckbox[0],
             "arView": data.viewCheckbox[0],
@@ -57,7 +57,7 @@ export class ActionRoleService {
             "arSearch": data.searchCheckbox[0],
             "arApprove": data.approveCheckbox[0],
     }
-    const url = "http://localhost:8081/api/v1/updateActionRole/";
+    const url = "http://localhost:8081/api/v1/updateActionRole/" + data.arId;
     return this.http.put<any>(url, param);
   }
 

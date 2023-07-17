@@ -5,6 +5,7 @@
         "formTitleLogo":"bi bi-file-earmark-medical",
         "formTitle": "Add Action Sub Module",
         "formName": "Form1",
+        "formType": "edit",
         "sidebar": "p-sidebar-sm",
         "formControls": [
             {

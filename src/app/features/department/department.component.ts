@@ -162,6 +162,10 @@ export class DepartmentComponent implements OnInit {
     } else {}
   }
 
+  closeSidebarData(e: any) {
+    this.editData = undefined;
+  }
+
   sidebarData(e: any) {
     if (e != 'reset') {
       if (this.flag == "add") {
