@@ -15,7 +15,7 @@ export class MasterService {
   }
 
   getAllSideNavData(){
-    const url = "http://localhost:8080/api/v1/allSideNavFormData";
+    const url = "http://localhost:8083/mstModule/allSideNavFormData";
     return this.http.get<any>(url);
   }
   
