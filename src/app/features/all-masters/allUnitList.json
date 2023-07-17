@@ -8,17 +8,17 @@
     {
       "label": "Master Module",
       "routerLink": "/master-page/group-module",
-      "imgSrc": "assets/unit-configuration/Master-Module.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "Group Module",
       "routerLink": "/master-page/sub-module",
-      "imgSrc": "assets/unit-configuration/Group-Module.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "Sub Module",
       "routerLink": "/master-page/sub-module",
-      "imgSrc": "assets/unit-configuration/Sub-Module.png"
+      "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "Unit",

@@ -33,10 +33,10 @@ export class AllMastersComponent implements OnInit {
   constructor(private allMastersService:AllMastersService) { }
 
   ngOnInit(): void {
-    console.log(this.allMastersService.getMasterSelector());
-    if(this.allMastersService.getMasterSelector()!=null){
-      this.renderComponents(this.allMastersService.getMasterSelector());
-    }
+   let  obj=localStorage.getItem('activeTab');
+   if(obj){
+    this.renderComponents(JSON.parse(obj));
+   }
   }
 
   restFlag(){
@@ -57,7 +57,7 @@ export class AllMastersComponent implements OnInit {
   }
 
   renderComponents(e: any) { 
-  this.allMastersService.addMasterSelector(e);
+  localStorage.setItem('activeTab', JSON.stringify(e));
   this.restFlag();
     switch (e.label) {
       case "Admission Configuration": this.allFlag.admiFlag=true; break
