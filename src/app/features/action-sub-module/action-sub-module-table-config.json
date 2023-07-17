@@ -42,6 +42,9 @@
     "isActions": ["Edit", "Delete", "isActive"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "isVisible":false,
-    "buttonlbl":"Add Sub_Module",
-    "textLength":16
+    "buttonlbl":"",
+    "addButton":true,
+    "textLength":16,
+    "isDragAndDrop":true,
+   "bulkAction":["PDF","EXCEL"]
 }

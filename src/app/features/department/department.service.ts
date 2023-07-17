@@ -6,9 +6,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DepartmentService {
-  isActiveData(event: string) {
-    throw new Error('Method not implemented.');
-  }
 
   constructor(private http:HttpClient) { }
 

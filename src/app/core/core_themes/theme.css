@@ -1346,10 +1346,15 @@ body {
   background-color: #262626
 }
 
-/* .butn-custom-dark-blue {
-  width: 100%;
-  height: 40px;
-} */
+.butn-custom-dark-blue {
+  width: 75%;
+  height: 35px;
+}
+
+.button-login-yellow {
+  width: 75% !important;
+  height: 35px !important;
+}
 
 .custom-card-login-white {
   --bs-card-spacer-y: 1rem;
@@ -2539,11 +2544,10 @@ body {
   padding-right: 10px;
 } */
 .spacer {
-  margin-top: 15px;
-  margin-bottom: 5rem;
-  padding-left: 20px;
-  padding-right: 20px;
-
+  margin-top: 10px;
+  margin-bottom: 3rem;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .contextMenus {
@@ -2721,6 +2725,26 @@ body {
 
 .p-accordion .p-accordion-header .p-accordion-header-link {
   padding: 0.5rem !important;
+  border: 1px solid #c1c1c1 !important;
+}
+
+.p-accordion .p-accordion-content {
+  border: 1px solid #c1c1c1 !important;
+}
+
+.p-tabmenu-nav-content {
+  border: 1px solid #c1c1c1 !important;
+  border-radius: 5px !important;
+  margin-top: 1rem;
+}
+/* .label-radio{
+  display: contents;
+} */
+.p-accordion .p-accordion-tab{
+  box-shadow: none!important;
+}
+.p-tabmenu .p-tabmenu-nav{
+  border: none!important;
 }
 
 .side-line {

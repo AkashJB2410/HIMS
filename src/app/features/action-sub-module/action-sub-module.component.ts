@@ -4,6 +4,7 @@ import { MessageService } from 'primeng/api';
 import action_Sub_Module_Form from './action-sub-module-input-from.json';
 import action_Sub_Module_Table_Config from './action-sub-module-table-config.json'
 import ActionSubModule_breadcrumb from './actionSub-breadcrumb.json'
+import { CommonService } from 'src/app/core/shared/service/common.service';
 
 @Component({
   selector: 'app-action-sub-module',
@@ -20,8 +21,9 @@ export class ActionSubModuleComponent implements OnInit {
   sidebar_Update_Input: any = action_Sub_Module_Form;
   saveMethod: boolean = false;
   ActionSubModule_breadcrumb =ActionSubModule_breadcrumb;
-
-  constructor(private messageService:MessageService, private http:ActionSubModuleService) { }
+  editData: any
+  flag: any;
+  constructor(private messageService:MessageService, private http:ActionSubModuleService,private common: CommonService) { }
 
   ngOnInit(): void {
     this.configurations={
@@ -49,11 +51,32 @@ export class ActionSubModuleComponent implements OnInit {
     this.visibleSiderbar=true;
   }
 
-  saveActionSubModule(data:any){
-    this.saveMethod = true;
+  // onAdd(e: any) {
+  
+  // }
+
+  buttonEvent(e: any) {
+    this.editData = undefined;
+    this.common.sendEditData(false);
   }
 
-  editActionSubModule(data:any){
+  addRow(e: any) {
+    this.visibleSiderbar = true;
+  }
+
+  closeSidebarData(e: any) {
+    this.editData = undefined;
+  }
+
+  saveActionSubModule(e:any){
+    // this.saveMethod = true;
+    this.editData = []
+    this.flag = e.add;
+  }
+
+  editActionSubModule(e:any){
+    this.editData = e.editRow;
+    this.flag = false;
   }
 
   isActive(data:any){
