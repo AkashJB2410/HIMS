@@ -30,7 +30,5 @@
     "textLength":16,
     "sidebar": "p-sidebar-lg",
     "addButton":true,
-    "bulkAction":["PDF","EXCEL","Delete"]
-    
+    "bulkAction":["PDF","EXCEL","Delete"]   
 }
-

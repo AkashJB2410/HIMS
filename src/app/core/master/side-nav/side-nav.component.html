@@ -84,6 +84,7 @@
                       <div class="subchildMargin">
                         <li class="w-100" *ngFor="let child of childItem.submodules"
                           (click)="setStateAsActiveSubchild(child)" style="cursor: pointer;">
+                          <p style="color: white; margin: 0px;">{{child.permission}}</p>
                           <div *ngIf="child.routerLink != undefined">
                             <a [class.subchildMenu]="child === activeStateSubchild" class="sidenav-menu vsm-dropdown">
                               <i class="{{child.icon}} " pTooltip="{{child.label}}"
