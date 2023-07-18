@@ -58,4 +58,4 @@ build-job:
     stage: build 
     script:
         - npm i
-        - ng serve
+        - npm start
