@@ -48,7 +48,7 @@
 #     - echo "Deploying application..."
 #     - echo "Application successfully deployed."
 
-image: node 16.15.0
+image: node:16.14.2-bullseye
 
 
 stages:          # List of stages for jobs, and their order of execution

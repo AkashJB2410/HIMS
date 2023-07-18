@@ -20,7 +20,7 @@
 
 .butn-custom-dark-blue {
   width: 100%;
-  height: 33px;
+  height: 35px;
   background-color: #415988;
   cursor: pointer;
   --bs-btn-color: #fff;
@@ -571,6 +571,7 @@
 .p-input-icon-left-search-icon>i:first-of-type {
   left: 1rem;
   color: rgba(0, 0, 0, 0.6) !important;
+  margin-top: -5px !important;
 }
 
 /*--------In Table search Icon Color End-------------------------------*/
@@ -1065,7 +1066,7 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   content: '';
   padding: 2px;
   background-color: rgb(252, 252, 252);
-  margin: 6px;
+  margin: 4px;
 }
 
 /* ---------------------form Title for sideBar SM Css End-------------------------- */
@@ -1090,7 +1091,7 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   content: '';
   padding: 2px;
   background-color: rgb(252, 252, 252);
-  margin: 6px;
+  margin: 4px;
 }
 
 /* ---------------------form Title for sideBar LG Css End-------------------------- */
@@ -1114,7 +1115,7 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   content: '';
   padding: 2px;
   background-color: rgb(252, 252, 252);
-  margin: 6px;
+  margin: 4px;
 }
 
 

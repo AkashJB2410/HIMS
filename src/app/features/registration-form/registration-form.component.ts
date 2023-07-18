@@ -56,8 +56,8 @@ export class RegistrationFormComponent implements OnInit {
   formDataMLC: any = MLCFormData;
   formDateCommAdd: any = commAddFromData;
   accordionData = {
-    "id": 1,
-    "label": "ADDITIONAL INFORMATION"
+    "id": 0,
+    "label": "COMMUNICATION ADDRESS"
 };
   registartionFormData: any[] = [];
   isForm: any = true;
