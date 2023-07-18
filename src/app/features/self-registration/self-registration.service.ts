@@ -15,13 +15,8 @@ export class SelfRegistrationService {
     return this.http.post<any>(url, param, { headers })
   }
 
-  GetAllSelfRegData() {
-    const url = "http://localhost:8081/api/v1/allAppConfig";
-    return this.http.get<any>(url);
-  }
-
   saveSelfRegData(data: any): Observable<any> {
-    const url = "http://localhost:8082/mst_patient/create";
+    const url = " http://localhost:8082/mst_patient/create";
     return this.PostCall(url, data);
   }
 

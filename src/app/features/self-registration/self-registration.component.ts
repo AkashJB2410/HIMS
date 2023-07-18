@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import selfRegForm from './selfRegForm.json';
 import selfRegbreadcrumb from './selfReg_breadcrumb.json';
@@ -8,7 +8,7 @@ import medicalForm from './MedicalForm.json';
 import { CommonService } from 'src/app/core/shared/service/common.service';
 import { SelfRegistrationService } from './self-registration.service';
 import { Router } from '@angular/router';
-
+import selfButton from './selfRegButton.json'
 @Component({
   selector: 'app-self-registration',
   templateUrl: './self-registration.component.html',
@@ -27,67 +27,18 @@ export class SelfRegistrationComponent implements OnInit {
   flag: any;
   errorFlag: boolean = false;
   editData: any
-
+  selfButton = selfButton;
   tabularFormData = tabular
   addressEditData: any;
   medicalEditData: any;
-  formData1: any =addressForm;
-  formData2: any ;
+  formData1: any = addressForm;
+  formData2: any;
   formData3: any;
   paramObj: any = {
-    "patientIdentificationTypeId": "",
-    "patientIdentificationTypeName": "",
-    "patientTitleId": "",
-    "patientTitleName": "",
-    "patientFirstname": "",
-    "patientMiddlename": "",
-    "patientLastname": "",
-    "patientDob": "",
-    "patientAge": "",
-    "patientMaritalStatusId": "",
-    "patientMaritalStatusName": "",
-    "profileImage": "",
-    "patientMobileNumber": "",
-    "patientAddressLine1": "",
-    "patientAddressLine2": "",
-    "patientCityId": "",
-    "patientCityName": "",
-    "patientStateId": "",
-    "patientStateName": "",
-    "patientCountryId": "",
-    "patientCountryName": "",
-    "patientBloodGroupId": "",
-    "patientBloodGroupName": "",
-    "patientEthinicityId": "",
-    "patientEthinicityName": "",
-    "patientReligion": "",
-    "patientBlock": "",
-    "patientPrnNumber": "",
-    "patientPrivilageId": "",
-    "patientPrivilageName": "",
-    "patientInsuranceNumber": "",
-    "patientInsurancePolicyNumber": "",
-    "patientInsuranceCompanyNumber": "",
-    "patientInsuranceCompanyName": "",
-    "patientIsTobacoConsume": false,
-    "patientIsTobacoConsumeYear": "",
-    "patientIsAlcoholConsume": false,
-    "patientIsAlcoholConsumeYear": "",
-    "patientOccupation": "",
-    "patientReferredBy": "",
-    "patientLanguages": "",
-    "patientPhoneNumber": "",
-    "patientUploadImage": "",
-    "patientRegistrationSource": "",
-    "patientSocialStatusId": "",
-    "patientSocialStatusName": "",
-    "patientHealthId": "",
-    "patientHealthNumber": "",
-    "patientEmail": ""
-
+   
   };
 
-  constructor(private messageService: MessageService, private http: SelfRegistrationService, private router:Router) { }
+  constructor( private elementRef: ElementRef,private messageService: MessageService, private http: SelfRegistrationService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -100,67 +51,48 @@ export class SelfRegistrationComponent implements OnInit {
     } else if (e.id == 1) {
       this.formData1 = "";
       this.formData2 = medicalForm;
-    } 
-  }
-
-  saveAddressData(e: any) {
-    this.paramObj = {
-      "patientStateId": [e.state[0], e.state[1],e.state[2]],
-
     }
-    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
-    console.log("saveRegistartionForm => ", this.paramObj);
   }
-  saveMedicalData(e: any) {
-    this.paramObj = {
-      "patientIsTobacoConsume": e.alcoholRad,
-      "patientIsTobacoConsumeYear": e.alcoholQuestion1,
-      "patientIsAlcoholConsume": e.tobacooRad,
-      "patientIsAlcoholConsumeYear": e.tobacooQuestion1,
-
+  FormData(e: any) {
+    if (e == "save") {
+      this.http.saveSelfRegData(this.selfFormData).subscribe((resData) => {
+        this.data = undefined;
+      }, (error) => {                              //Error callback
+        this.errorFlag = true;
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: "This key name is alredy exit" });
+      });
+      this.messageService.add({ severity: 'success', summary: 'success', detail: 'Your registration has been successfully completed!' });
+    } else {
+      this.router.navigateByUrl('')
     }
-    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue.' });
-    console.log("saveRegistartionForm => ", this.paramObj);
   }
 
   buttonEvent(e: any) {
     this.editData = undefined;
-    if(e=="reset"){
-this.router.navigateByUrl('')
-    } else{
-     this.sidebarData(e);
+    if (e == "reset") {
+      this.router.navigateByUrl('')
+    } else {
+      this.FormData(e);
     }
   }
+  selfFormData: any
   sidebarData(e: any) {
     if (e != 'reset') {
       const param = {
-        "patientTitleId": e.patientTitleId,
         "patientTitleName": e.selectTitle,
         "patientFirstname": e.firstName,
         "patientMiddlename": e.middleName,
         "patientLastname": e.lastName,
         "patientAge": e.age,
         "patientMobileNumber": e.mobileNo,
-        "patientAddressLine1": e.address,
-        "patientCityId": e.state[2],
-        "patientCityName": e.patientCityName,
-        "patientStateId": e.state[0],
+        "patientEmail": e.email,
+        "patientGenderId": e.selectGender,
+        "patientBloodGroupId": e.selectBlood,
+        "patientAddress":e.address,
+        "additionalComment":e.additionalComment,
         "patientRegistrationSource": "Self"
       };
-      this.http.saveSelfRegData(param).subscribe((resData) => {
-        this.data = undefined;
-        if (resData.id != "") {
-          this.messageService.add({
-            severity: 'success',
-            summary: 'success',
-            detail: 'Data save successfull.',
-          });
-        }
-      }, (error) => {                              //Error callback
-        console.log('error caught in component : ', error.error.error)
-        this.errorFlag = true;
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: "This key name is alredy exit" });
-      });
+      this.selfFormData = param;
     }
   }
 }
