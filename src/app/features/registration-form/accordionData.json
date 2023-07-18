@@ -4,6 +4,10 @@
         {
             "id": 0,
             "label": "COMMUNICATION ADDRESS"
+        },
+        {
+            "id": 1,
+            "label": "ADDITIONAL INFORMATION"
         }
     ]
 }

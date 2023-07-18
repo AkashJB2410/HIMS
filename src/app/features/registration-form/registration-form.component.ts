@@ -11,11 +11,11 @@ import { DatePipe } from '@angular/common';
 import filterdata from './filter.json';
 import { CommonService } from 'src/app/core/shared/service/common.service';
 import patientTabularFormData from './tabular.json';
-import form2Data from './form2.json';
-import form3Data from './form3.json';
-import form4Data from './form4.json';
-import form5Data from './form5.json';
-import form6Data from './form6.json';
+import permanentAddressFormData from './permanentAddress.json';
+import hospitalAssociationFormData from './hospitalAssociation.json';
+import insuranceDetailsFormData from './insuranceDetails.json';
+import medicalHistoryFormData from './medicalHistory.json';
+import additionalDetailsFormData from './additionalDetails.json';
 import MLCFormData from './MLC .json';
 import commAddFromData from './communicationAddress.json';
 import rgistBUttonData from './RegistButton.json';
@@ -48,14 +48,17 @@ export class RegistrationFormComponent implements OnInit {
   sidebarButtonJSON: any = rgistBUttonData;
   formData: any;
   formData1: any = '';
-  formData2: any = '';
-  formData3: any = '';
-  formData4: any = '';
-  formData5: any = '';
-  formData6: any = '';
-  formDataMLC: any = '';
+  perAddressFormData: any = permanentAddressFormData;
+  hospitalAssFormData: any = hospitalAssociationFormData;
+  insuranceDetailsFormData: any = insuranceDetailsFormData;
+  medicalHisFormData: any = medicalHistoryFormData;
+  addDetailsFormData: any = additionalDetailsFormData;
+  formDataMLC: any = MLCFormData;
   formDateCommAdd: any = commAddFromData;
-  accordionData = acc;
+  accordionData = {
+    "id": 1,
+    "label": "ADDITIONAL INFORMATION"
+};
   registartionFormData: any[] = [];
   isForm: any = true;
   flag: any;
@@ -89,6 +92,8 @@ export class RegistrationFormComponent implements OnInit {
   mstAdditionalDetails:any;
   mstMLC:any;
   merged: any;
+  tabularIndex:any;
+  accordionIndex:any;
   paramObj: any = {
     "id": "",
     "patientId": "",
@@ -187,13 +192,6 @@ export class RegistrationFormComponent implements OnInit {
   receivedData: any;
   private subscription: Subscription;
   constructor(private messageService: MessageService, private common: CommonService, public datepipe: DatePipe, private http: RegistrationFormService, private form$: FormService, private dataService: DataServiceService) {
-    // this.patient=this.http.GetAllMstPatientData().subscribe(res => {})
-    // this.address=this.http.GetAllMstAddress().subscribe(res=>{})
-    // forkJoin([this.patient, this.address])
-    // .subscribe(res => {
-    //   this.data = res;
-    //   console.log ('User and Post', res);
-    // });
   }
 
 
@@ -205,11 +203,11 @@ export class RegistrationFormComponent implements OnInit {
       data => {
         this.receivedData = data;
         console.log("label label====>>", this.receivedData.label);
-        if (this.receivedData.label == "Quick Patient Reg + Visit" && this.formData.form.formControls[0].formControlName == "OPDRad") {
+        if (this.receivedData.label == "OPD" && this.formData.form.formControls[0].formControlName == "OPDRad") {
           this.formData.form.formControls[0].isVisible = true;
           this.isShowServices = !this.isShowServices;
           this.servData = dataOPD;
-        } else if (this.receivedData.label == "IPD Quick Registration" && this.formData.form.formControls[1].formControlName == "IPDRad") {
+        } else if (this.receivedData.label == "IPD" && this.formData.form.formControls[1].formControlName == "IPDRad") {
           this.formData.form.formControls[1].isVisible = true;
           this.isShowServices = !this.isShowServices;
           this.servData = dataIPD;
@@ -233,7 +231,6 @@ export class RegistrationFormComponent implements OnInit {
     this.getAllPatientData();
     this.getAllData();
     this.filterData = filterdata;
-    // this.getAllUserData();
     this.getConfigForTable();
 
   }
@@ -623,36 +620,50 @@ export class RegistrationFormComponent implements OnInit {
   }
   changeSelect(e: any) {
     if (e[1].fieldName == "surgicalRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[5], true, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[5], true, 'isEditable');
     } else if (e[1].fieldName == "surgicalRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[5], false, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[5], false, 'isEditable');
     }
     if (e[1].fieldName == "medicationRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[7], true, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[7], true, 'isEditable');
     } else if (e[1].fieldName == "medicationRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[7], false, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[7], false, 'isEditable');
     }
     if (e[1].fieldName == "diagnosticsRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[9], true, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[9], true, 'isEditable');
     } else if (e[1].fieldName == "diagnosticsRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[9], false, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[9], false, 'isEditable');
     }
     if (e[1].fieldName == "alcoholRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[11], true, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[11], true, 'isEditable');
     } else if (e[1].fieldName == "alcoholRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[11], false, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[11], false, 'isEditable');
     }
     if (e[1].fieldName == "tobacooRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[13], true, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[13], true, 'isEditable');
     } else if (e[1].fieldName == "tobacooRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[13], false, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[13], false, 'isEditable');
     }
     if (e[1].fieldName == "smokingRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[15], true, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[15], true, 'isEditable');
     } else if (e[1].fieldName == "smokingRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[15], false, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[15], false, 'isEditable');
     }
 
+  }
+
+  changeAddressEvent(e:any){
+    console.log("chnage event address => ",e);
+  }
+
+  changePerAddressEvent(e:any){
+    console.log("chnage event address => ",e);
+    if(e[0].checked[0]==true){
+      this.form$.reRenderForm(this.perAddressFormData.form.formControls[4], "2", 'autofill');
+      this.form$.reRenderForm(this.perAddressFormData.form.formControls[5], "2", 'autofill');
+      this.form$.reRenderForm(this.perAddressFormData.form.formControls[6], "2", 'autofill');
+      this.form$.reRenderForm(this.perAddressFormData.form.formControls[7], "2", 'autofill');
+    }
   }
 
   mergeObjects<T extends object>(target: T, ...sources: object[]): T {
@@ -660,77 +671,77 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   getAllData() {
-    // this.http.getDataFromApis().subscribe(
-    //   ([api1Response, api2Response,api3Response]) => {
-    //     // Handle the responses from both APIs
-    //     console.log('API 1 Response:', api1Response[1].result);
-    //     console.log('API 2 Response:', api2Response[1].result);
-    //     console.log('API 3 Response:', api3Response[1].result);
-    //     api1Response[1].result.forEach((e: any, index: any) => {
-    //       let date = this.datepipe.transform(
-    //         e.patientDob, "MM/dd/yyyy"
-    //       );
-    //       this.paramObj = {
-    //         "id": index,
-    //         "patientId": e.patientId,
-    //         "patientMrNo": e.patientMrNo,
-    //         "patientTitleId": e.patientTitleId,
-    //         "patientTitleName": e.patientTitleName,
-    //         "patientFirstname": e.patientFirstname,
-    //         "patientMiddlename": e.patientMiddlename,
-    //         "patientLastname": e.patientLastname,
-    //         "patientFullname": e.patientFullname,
-    //         "patientMobileNumber": e.patientMobileNumber,
-    //         "patientEmail": e.patientEmail,
-    //         "patientIdentificationTypeId": e.patientIdentificationTypeId,
-    //         "patientIdentificationTypeName": e.patientIdentificationTypeName,
-    //         "patientIdentificationNo": "",
-    //         "patientMaritalStatusId": e.patientMaritalStatusId,
-    //         "patientMaritalStatusName": e.patientMaritalStatusName,
-    //         "patientDob": date,
-    //         "isActive": e.isActive
-    //       }
-    //     })
-    //     this.gridData.push(api1Response[1].result);
-    //     console.log("this gridData =====>>>>>",this.gridData);
-    //     api3Response[1].result.forEach((e: any) => {
-    //       let saveAdd={
-    //         "addressId": "",
-    //         "addressLine1": "",
-    //         "addressLine2": "",
-    //         "addressblock": "",
-    //         "addressVillageId": "",
-    //         "addressVillageName": "",
-    //         "addressTalukaId": "",
-    //         "addressTalukaName": "",
-    //         "addressCityId": "",
-    //         "addressCityName": "",
-    //         "addressStateId": "",
-    //         "addressStateName": "",
-    //         "addressCountryId": "",
-    //         "addressCountryName": "",
-    //         "addressPatientId": "",
-    //         "addressPinCode": "",
-    //       }
-    // this.gridData.forEach(res=>{
-    //   if(res.patientId==e.addressPatientId){
-    //     this.merged = this.mergeObjects(res, saveAdd);
-    //   }
-    // })
+    this.http.getDataFromApis().subscribe(
+      ([api1Response, api2Response,api3Response]) => {
+        // Handle the responses from both APIs
+        console.log('API 1 Response:', api1Response[1].result);
+        console.log('API 2 Response:', api2Response[1].result);
+        console.log('API 3 Response:', api3Response[1].result);
+        api1Response[1].result.forEach((e: any, index: any) => {
+          let date = this.datepipe.transform(
+            e.patientDob, "MM/dd/yyyy"
+          );
+          this.paramObj = {
+            "id": index,
+            "patientId": e.patientId,
+            "patientMrNo": e.patientMrNo,
+            "patientTitleId": e.patientTitleId,
+            "patientTitleName": e.patientTitleName,
+            "patientFirstname": e.patientFirstname,
+            "patientMiddlename": e.patientMiddlename,
+            "patientLastname": e.patientLastname,
+            "patientFullname": e.patientFullname,
+            "patientMobileNumber": e.patientMobileNumber,
+            "patientEmail": e.patientEmail,
+            "patientIdentificationTypeId": e.patientIdentificationTypeId,
+            "patientIdentificationTypeName": e.patientIdentificationTypeName,
+            "patientIdentificationNo": "",
+            "patientMaritalStatusId": e.patientMaritalStatusId,
+            "patientMaritalStatusName": e.patientMaritalStatusName,
+            "patientDob": date,
+            "isActive": e.isActive
+          }
+        })
+        this.gridData.push(api1Response[1].result);
+        console.log("this gridData =====>>>>>",this.gridData);
+        api3Response[1].result.forEach((e: any) => {
+          let saveAdd={
+            "addressId": "",
+            "addressLine1": "",
+            "addressLine2": "",
+            "addressblock": "",
+            "addressVillageId": "",
+            "addressVillageName": "",
+            "addressTalukaId": "",
+            "addressTalukaName": "",
+            "addressCityId": "",
+            "addressCityName": "",
+            "addressStateId": "",
+            "addressStateName": "",
+            "addressCountryId": "",
+            "addressCountryName": "",
+            "addressPatientId": "",
+            "addressPinCode": "",
+          }
+    this.gridData.forEach(res=>{
+      if(res.patientId==e.addressPatientId){
+        this.merged = this.mergeObjects(res, saveAdd);
+      }
+    })
 
-    //     })
-    //     console.log('API merged ===>>>:', this.merged);
-    //     console.log('API 1 Response this.gridData:', this.gridData);
-    //     this.gridData.push(api3Response[1].result);
-    //     console.log('API 2 Response this.gridData:', this.gridData);
-    //     console.log('API 2 Response this.gridData:', this.gridData);
+        })
+        console.log('API merged ===>>>:', this.merged);
+        console.log('API 1 Response this.gridData:', this.gridData);
+        this.gridData.push(api3Response[1].result);
+        console.log('API 2 Response this.gridData:', this.gridData);
+        console.log('API 2 Response this.gridData:', this.gridData);
 
-    //   },
-    //   error => {
-    //     // Handle any errors
-    //     console.error('Error:', error);
-    //   }
-    // );
+      },
+      error => {
+        // Handle any errors
+        console.error('Error:', error);
+      }
+    );
   }
 
   getAllPatientData() {
@@ -1241,52 +1252,13 @@ export class RegistrationFormComponent implements OnInit {
     }
     this.mlcEditData = mlcEditDataObj;
   }
+  accordionrEmitData(e:any){
+    console.log("accordion => ", e);
+    this.accordionIndex=e;
 
+  }
   tabularValue(e: any) {
-    console.log("tabular => ", e);
-    if (e.id == 0) {
-      this.formData2 = form2Data;
-      this.formData3 = '';
-      this.formData4 = '';
-      this.formData5 = '';
-      this.formData6 = '';
-      this.formDataMLC = '';
-    } else if (e.id == 1) {
-      this.formData2 = '';
-      this.formData3 = form3Data;
-      this.formData4 = '';
-      this.formData5 = '';
-      this.formData6 = '';
-      this.formDataMLC = '';
-    } else if (e.id == 2) {
-      this.formData2 = '';
-      this.formData3 = '';
-      this.formData4 = form4Data;
-      this.formData5 = '';
-      this.formData6 = '';
-      this.formDataMLC = '';
-    } else if (e.id == 3) {
-      this.formData2 = '';
-      this.formData3 = '';
-      this.formData4 = '';
-      this.formData5 = form5Data;
-      this.formData6 = '';
-      this.formDataMLC = '';
-    } else if (e.id == 4) {
-      this.formData2 = '';
-      this.formData3 = '';
-      this.formData4 = '';
-      this.formData5 = '';
-      this.formData6 = form6Data;
-      this.formDataMLC = '';
-    } else if (e.id == 5) {
-      this.formData2 = '';
-      this.formData3 = '';
-      this.formData4 = '';
-      this.formData5 = '';
-      this.formData6 = '';
-      this.formDataMLC = MLCFormData;
-    }
+    this.tabularIndex=e.id;
   }
 
   calculateAge(dateString: any) {

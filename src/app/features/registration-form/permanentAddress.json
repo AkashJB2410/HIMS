@@ -28,7 +28,7 @@
                 "values": [
                     {
                         "name": "Is your permanent address same as communication address?",
-                        "code": "Acc"
+                        "code": true
                     }
                 ],
                 "validations": {
@@ -242,7 +242,7 @@
                     "pattern": "invalid"
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": "^[a-zA-Z0-9.,\\s-]+$"
                 }
             },
