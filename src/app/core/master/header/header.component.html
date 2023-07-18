@@ -53,7 +53,7 @@
             </p-menubar>
         </li> -->
         <li>
-            <img src="{{list.header.dp}}" pTooltip="Profile" tooltipPosition="bottom" (click)="op1.toggle($event)"
+            <img src="{{userDetails.profileImage}}" width="30px" height="30px" pTooltip="Profile" tooltipPosition="bottom" (click)="op1.toggle($event)"
                 class="userlogo" alt="Profile Pic">
             <p-overlayPanel #op1  [showCloseIcon]="false">
                 <ul style="padding:0px" >
@@ -70,4 +70,3 @@
     <div class="fixed-con">
         <div class="goog-te-gadget" id='google_translate_element'></div>
     </div>
- 

@@ -34,15 +34,24 @@ export class DependentDropdownComponent implements OnInit {
     if (this.data.length == 3) {
       this.dropdown3 = this.data[2].values;
     }
-    if (this.defaultData != undefined) {
+    if (this.defaultData != undefined && this.defaultData != "") {
       this.dropdown1 = this.data[0].values;
-      this.drop2 = this.data[1].values;
+      this.drop2 = this.data[1].values.filter((ele: any) => {
+        if (ele.Mcode == this.defaultData[0] || ele.Mcode == "") {
+          return ele;
+        }
+      });
       this.drop1DefaultValue = this.defaultData[0];
       this.drop2DefaultValue = this.defaultData[1];
     }
 
     if (this.data.length == 3 && this.defaultData != undefined) {
-      this.drop3 = this.data[2].values;
+      // this.drop3 = this.data[2].values;
+      this.drop3 = this.data[2].values.filter((ele: any) => {
+        if (ele.Mcode == this.defaultData[2] || ele.Mcode == "") {
+          return ele;
+        }
+      });
       this.drop3DefaultValue = this.defaultData[2];
     }
   }

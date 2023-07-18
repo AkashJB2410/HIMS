@@ -32,6 +32,7 @@ export class FormComponent implements OnInit {
   regex: Array<string> = ['int', 'num', 'alpha', 'alphanum'];
   formValid: boolean = false;
   primeNgComponents: Array<string> = ['month', 'select', 'radio', 'checkbox', 'date', 'dateRange', 'password'];
+  displayModal: any;
   @Input() formJSON: any;
   @Input() editData: any;
   @Output() formData = new EventEmitter<any>();
@@ -51,7 +52,9 @@ export class FormComponent implements OnInit {
     this.form$.renderNewForm.subscribe(data => {
       this.renderForm(data);
     });
-
+    this.form$.openModal.subscribe(data => {
+      this.showModal(data);
+    });
   }
 
   catpchaValue(value: any, control: any) {
@@ -64,10 +67,8 @@ export class FormComponent implements OnInit {
     ctrl.setValue(value);
   }
 
-
-  
   onFilesUpload(event: any, id: any) {
-   id.fieldValue = event.target.files;
+    id.fieldValue = event.target.files;
   }
 
   changeEvent(event: any, data: any) {
@@ -76,6 +77,7 @@ export class FormComponent implements OnInit {
       event.checked.shift();
     this.events.push(event);
     this.events.push(data);
+    this.events.push(this.form.value);
     this.changeEvents.emit(this.events);
   }
 
@@ -108,6 +110,9 @@ export class FormComponent implements OnInit {
     } else if (data.funtonality == 'validations') {
       this.addValidations(data);
     }
+  }
+  showModal(data: any){
+    this.displayModal = data;
   }
 
   resetControl(data: any) {
@@ -248,6 +253,7 @@ export class FormComponent implements OnInit {
       formValue.formId = this.formJson.formId ? this.formJson.formId : ""
       this.formData.emit(formValue);
       this.btnEvent.emit(event);
+      this.form.reset();
     } else {
       this.formValid = true;
       Object.keys(this.form.controls).forEach(field => {
