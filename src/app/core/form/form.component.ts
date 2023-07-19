@@ -253,7 +253,7 @@ export class FormComponent implements OnInit {
       formValue.formId = this.formJson.formId ? this.formJson.formId : ""
       this.formData.emit(formValue);
       this.btnEvent.emit(event);
-      this.form.reset();
+      // this.form.reset();
     } else {
       this.formValid = true;
       Object.keys(this.form.controls).forEach(field => {
