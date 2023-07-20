@@ -96,11 +96,10 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     // if (this.loginForm.value.captcha && this.loginForm.value.organisation.organization_Id != "") {
-
     if (this.loginForm.value.captcha) {
       this.http.Logincheck(this.loginForm.value)
         .subscribe({
-          next:data=>{
+          next: data => {
             if (data.metadata.message == "failedAttempts =>1" || data.metadata.message == "failedAttempts =>2") {
               this.messageService.add({ severity: 'error', summary: 'Your entered password is wrong', detail: 'Your account will be locked due to 3 failed attempts.. No of attempts left  : ' + data.metadata.message.charAt(length + 1) });
             } else if (data.metadata.message == "failedAttempts =>3") {
@@ -108,21 +107,23 @@ export class LoginComponent implements OnInit {
             } else if (data.metadata.message == "Login Successfully") {
               this.timerFlag2 = false;
               this.messageService.add({ severity: 'success', summary: 'Login', detail: 'Logged in successfully.' });
-              sessionStorage.setItem('loggedUser', this.encrypt.transform(JSON.stringify(data.result[0])));
+              sessionStorage.setItem('loggedUser', this.encrypt.transform(JSON.stringify(data.result)));
               // sessionStorage.setItem('loggedIn', 'true');
+              localStorage.setItem('acessToken', this.encrypt.transform(JSON.stringify(data.result.acessToken)));
+              localStorage.setItem('refreshToken', this.encrypt.transform(JSON.stringify(data.result.refreshToken)));
               this.router.navigateByUrl('/master-page/user-management');
             } else {
               this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Something went wrong' });
             }
             localStorage.setItem("loggedIn", data.result[0].lastLoggedInTime)
           },
-          error: error=>{
+          error: error => {
             this.errorMessage = error.message;
             this.messageService.add({
               severity: 'error',
               summary: 'Something went wrong',
               detail: this.errorMessage,
-            });    
+            });
           }
         });
     } else {
@@ -133,7 +134,7 @@ export class LoginComponent implements OnInit {
       }
     }
   }
-  
+
   lsRememberMe(e: any) {
     // if (e.checked && this.loginForm.value.emailId != "" && this.loginForm.value.password != "" && this.loginForm.value.organisation.organization_Id != "") {
     if (e.checked && this.loginForm.value.emailId != "" && this.loginForm.value.password != "") {
@@ -145,5 +146,4 @@ export class LoginComponent implements OnInit {
     }
   }
 }
-
 

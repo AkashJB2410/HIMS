@@ -986,14 +986,16 @@ for custom input box size use w-25 , w-50, w-75 on column of it
 
 /* -------------icons classes start------------- */
 .headerIcon {
-  font-size: 20px !important;
+ font-size: 18px !important;
   color: #415988;
-  margin-right: 20px;
+  margin-right: 15px;
+
 }
 
 .headerIcon1 {
-  font-size: 20px !important;
+  font-size: 18px !important;
   color: #415988;
+  margin-right: 10px;
 }
 
 .bi-gear::before {
@@ -1101,19 +1103,20 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   height: 11px;
   width: 421px;
   background: linear-gradient(90deg, #364067 50%, rgba(99, 190, 203, 0) 100%);
-  font-size: 12px !important;
+  font-size: 13px !important;
   padding-top: 4px;
   padding-bottom: 16px;
+  letter-spacing: 0.8px;
   line-height: 1;
 }
 
 .Sidebar-title-md::before,
 .divider::after {
   flex: 1;
-  height: 20px;
-  width: 5px;
   content: '';
   padding: 2px;
+  height: 20px;
+  width: 5px;
   background-color: rgb(252, 252, 252);
   margin: 4px;
 }
@@ -1344,10 +1347,10 @@ input[type="file"]::before {
 
 .shorcut-iocns {
   border-radius: 6px;
-  height: 24 !important;
+  height: 24px !important;
   width: 24px !important;
   border: none !important;
-  background: rgba(240, 240, 240, 1) !important;
+  /* background: rgba(240, 240, 240, 1) !important; */
   margin: 2px !important;
   padding-left: 3px !important
 }
@@ -1356,3 +1359,11 @@ input[type="file"]::before {
   width: 18px !important;
   height: 18px !important;
 }
+
+.imagereducer{
+border-radius: 50px;
+border: 2px solid #959595;
+width:30px;
+height:30px;
+}
+

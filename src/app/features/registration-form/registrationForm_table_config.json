@@ -32,5 +32,6 @@
     "buttonlbl":"",
     "textLength":16,
     "sidebar":"p-sidebar-xl",
-	 "bulkAction":["PDF","EXCEL"]
+	"bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL"],
+    "isProfileDisplay":false  
 }

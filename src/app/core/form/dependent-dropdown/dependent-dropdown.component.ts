@@ -17,18 +17,19 @@ export class DependentDropdownComponent implements OnInit {
   outputData: Array<any> = [];
   constructor() { }
   @Input() data: any;
+  @Input() formData: any
   @Input() defaultData: any;
   @Output() dependentDrop = new EventEmitter<any>();
   @Input() defaultValue: any;
 
   ngOnInit(): void {
+  
     for (let i = 0; i < this.data.length; i++) {
       this.outputData[i] = [];
     }
     this.data.forEach((element: any) => {
       this.outputData[element];
     });
-
     this.dropdown1 = this.data[0].values;
     this.dropdown2 = this.data[1].values;
     if (this.data.length == 3) {
