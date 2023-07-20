@@ -1,6 +1,7 @@
 <div class="">
     <!-- <img height="40px" width="40px" src="{{base1}}"> -->
-    <h6 class="{{formJson.formTitleClass}}"><i class="{{formJson.formTitleLogo}}"></i>{{formJson.formTitle | uppercase}}</h6>
+    <h6 class="{{formJson.formTitleClass}}"><i class="{{formJson.formTitleLogo}}"></i>{{formJson.formTitle | uppercase}}
+    </h6>
     <form [formGroup]="form">
         <div class="{{formJson.class}}">
             <!-- <span *ngIf="formValid" style="color: red;">Please fill all required fields</span> -->
@@ -135,7 +136,7 @@
                     </div>
                     <div class="{{formData.valueclass}}"
                         *ngIf="formData.fieldType === formStaticText.DEPENDENTDROPDOWN">
-                        <app-dependent-dropdown [data]="formData.values" [defaultData]="formData.fieldValue"
+                        <app-dependent-dropdown [data]="formData.values" [formData]="formData" [defaultData]="formData.fieldValue"
                             (dependentDrop)="dependentDrop($event, formData)"></app-dependent-dropdown>
                     </div>
                     <p-multiSelect *ngIf="formData.fieldType == formStaticText.MULTISELECT" [options]="formData.values"
@@ -165,6 +166,6 @@
     </form>
 </div>
 
-<p-dialog header="Title" [(visible)]="displayModal">
+<p-dialog header="Title" [(visible)]="displayModal" [draggable]="false">
     <ng-content></ng-content>
 </p-dialog>

@@ -11,5 +11,6 @@
 
 <p-sidebar [(visible)]="visibleSidebar" position="right" styleClass="{{sidebarConfig.sidebar}}" [dismissible]="false"
     (onHide)="onHide($event)">
+      <ng-template pTemplate="header"><span style="margin-left: 18px;" class="{{sidebarJSON.form.sidebarTitleClass}}"><i class="{{sidebarJSON.form.sidebarTitleLogo}}"></i>{{sidebarJSON.form.sideBarTitle |uppercase}}</span></ng-template>
     <ng-content></ng-content>
 </p-sidebar>

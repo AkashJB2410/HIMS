@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   Information: any[];
   selectedTheme: any;
   show = false;
+  profileshow =false;
   @Input() headerInput: any;
   @Output() navToggle = new EventEmitter<boolean>();
   @Output() notification = new EventEmitter<boolean>();
@@ -26,6 +27,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     private elementRef: ElementRef) { }
 
   ngOnInit(): void {
+
 
     this.list = this.headerInput;
     this.userDetails = JSON.parse(this.decrypt.transform(sessionStorage.getItem('loggedUser')));
@@ -96,7 +98,9 @@ export class HeaderComponent implements OnInit, AfterViewInit {
           }
         ]
       }]
-    
+      if(this.userDetails.profileImage == ""){
+        this.profileshow = true;
+      }
     // setTimeout(() => {
     //   let a = document.getElementsByClassName('goog-te-combo')[0] as HTMLSelectElement;
     //   a.options[0].value = "hi";
