@@ -133,7 +133,6 @@ export class LoginComponent implements OnInit {
       }
     }
   }
-
   
   lsRememberMe(e: any) {
     // if (e.checked && this.loginForm.value.emailId != "" && this.loginForm.value.password != "" && this.loginForm.value.organisation.organization_Id != "") {

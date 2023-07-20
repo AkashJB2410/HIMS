@@ -3,6 +3,7 @@ import Vtabs from '../../../core/shared/objects/setting.json';
 import { ThemeService } from 'src/app/core/shared/service/theme.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SessionService } from 'src/app/core/shared/service/session.service';
+import { DecryptPipe } from 'src/app/core/shared/pipes/encrypt-decrypt.pipe';
 
 @Component({
   selector: 'app-settings',
@@ -26,13 +27,13 @@ export class SettingsComponent implements OnInit {
   formData: Partial<{ dateformat: string; currency: string; }>;
   personalizationData: any;
   ThemePersonalization: any = [];
+  logindata: any;
   constructor(private themeService: ThemeService,
     private http: SessionService) { }
   ngAfterViewInit(): void {
     this.activeState = JSON.parse(localStorage.getItem('activeState'))
   }
   ngOnInit(): void {
-    
     this.themeOptins = [
       {
         label: 'Dark theme',

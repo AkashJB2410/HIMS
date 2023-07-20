@@ -18,9 +18,9 @@
                     </span>
                 </div>
                 <div class=" mx-1">
-                        <p-multiSelect [options]="colNames" pTooltip="Selected Columns" tooltipPosition="top"
+                    <p-multiSelect [options]="colNames" pTooltip="Selected Columns" tooltipPosition="top"
                         [(ngModel)]="selectedColumns" optionLabel="header" selectedItemsLabel="{0}"
-                        [style]="{maxWidth: '38px'}" dropdownIcon=" pi pi-ellipsis-v"  ></p-multiSelect>  
+                        [style]="{maxWidth: '38px'}" dropdownIcon=" pi pi-ellipsis-v"></p-multiSelect>
                 </div>
                 <div class="item5 mx-1">
                     <span *ngIf="config.addButton">
@@ -91,38 +91,43 @@
                 </td> -->
                 <td *ngIf="config.isActions" style="padding: 0.25rem 0.25rem; width: 12rem ; text-align: center;">
                     <ng-container>
-                        <button *ngIf="config.isActions.includes('Edit')"  pTooltip="Edit" tooltipPosition="top" class="shorcut-iocns"><i>
+                        <button *ngIf="config.isActions.includes('Edit')" pTooltip="Edit" tooltipPosition="top"
+                            class="shorcut-iocns"><i>
                                 <img src="../../../assets/core_assets/edit.png" class="image-size"
                                     (click)="editProduct(rowData)"></i>
                         </button>
 
-                        <button *ngIf="config.isActions.includes('Delete')" pTooltip="Delete" tooltipPosition="top" class="shorcut-iocns" id="abc{{rowData.id}}"
-                             [disabled]="!rowData.is_Active"><i>
+                        <button *ngIf="config.isActions.includes('Delete')" pTooltip="Delete" tooltipPosition="top"
+                            class="shorcut-iocns" id="abc{{rowData.id}}" [disabled]="!rowData.is_Active"><i>
                                 <img src="../../../assets/core_assets/delete.png"
                                     (click)="ondelete(rowData);disable(rowData)" class="image-size"></i></button>
 
-                        <!-- new Add  -->
-                        <button *ngIf="config.isActions.includes('Scanner')" pTooltip="Scanner" tooltipPosition="top" class="shorcut-iocns"><i>
+                        <button *ngIf="config.isActions.includes('Scanner')" pTooltip="Scanner" tooltipPosition="top"
+                            class="shorcut-iocns"><i>
                                 <img src="../../../assets/core_assets/barcode-scanner.png" class="image-size"
-                                    (click)="ScannerClick($event,rowData)" ></i>
+                                    (click)="ScannerClick($event,rowData)"></i>
                         </button>
-                        <button *ngIf="config.isActions.includes('Emergency')" pTooltip="Emergency" tooltipPosition="top" class="shorcut-iocns"><i>
+                        <button *ngIf="config.isActions.includes('Emergency')" pTooltip="Emergency"
+                            tooltipPosition="top" class="shorcut-iocns"><i>
                                 <img src="../../../assets/core_assets/alarm.png" class="image-size"
-                                    (click)="emergencyClick($event,rowData)" ></i>
+                                    (click)="emergencyClick($event,rowData)"></i>
                         </button>
-                        <button *ngIf="config.isActions.includes('IPD')" pTooltip="IPD" tooltipPosition="top" class="shorcut-iocns"><i>
+                        <button *ngIf="config.isActions.includes('IPD')" pTooltip="IPD" tooltipPosition="top"
+                            class="shorcut-iocns"><i>
                                 <img src="../../../assets/core_assets/hospital-bed.png" class="image-size"
                                     (click)="IPDclick($event,rowData)"></i>
                         </button>
-                        <button *ngIf="config.isActions.includes('OPD')" pTooltip="OPD" tooltipPosition="top" class="shorcut-iocns"><i>
+                        <button *ngIf="config.isActions.includes('OPD')" pTooltip="OPD" tooltipPosition="top"
+                            class="shorcut-iocns"><i>
                                 <img src="../../../assets/core_assets/examination.png" class="image-size"
-                                    (click)="OPDclick($event,rowData)" ></i>
+                                    (click)="OPDclick($event,rowData)"></i>
                         </button>
-                        <button *ngIf="config.isActions.includes('Servies')" pTooltip="Servies" tooltipPosition="top" class="shorcut-iocns"><i>
+                        <button *ngIf="config.isActions.includes('Servies')" pTooltip="Servies" tooltipPosition="top"
+                            class="shorcut-iocns"><i>
                                 <img src="../../../assets/core_assets/healthcare.png" class="image-size"
-                                    (click)="serviceClick($event,rowData)" ></i>
+                                    (click)="serviceClick($event,rowData)"></i>
                         </button>
-                        <!-- new Add  -->
+
                         <button *ngIf="config.isActions.includes('Viewer')" class="shorcut-iocns" pTooltip="Viewer"
                             tooltipPosition="top" pButton pRipple icon="pi pi-window-maximize"
                             style="background-color: black;" routerLink="/dicom-viewer"
@@ -133,6 +138,8 @@
                                 (click)="active($event,rowData)" [checked]="rowData.is_Active" pTooltip="Active"
                                 tooltipPosition="top" type="checkbox" role="switch">
                         </div>
+                        
+                      
 
                     </ng-container>
                 </td>

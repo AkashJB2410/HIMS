@@ -1,6 +1,6 @@
 {
     "form": {
-        "class": "row spacer ",
+        "class": "row",
         "formTitle": "SELF REGISTRATION",
         "formTitleClass": "Sidebar-title-lg mt-2",
         "formTitleLogo": "bi bi-file-earmark-medical",
@@ -8,6 +8,29 @@
         "formType": "edit",
         "sidebar": "p-sidebar-lg",
         "formControls": [
+            {
+                "id": 7,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Mobile No.",
+                "type": "text",
+                "maxlength": "10",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Mobile No.",
+                "formControlName": "mobileNo",
+                "defaultValue": "1234567890",
+                "message": {
+                    "required": "Mobile No. is required",
+                    "pattern": "Please re-enter using a valid 10-digit mobile number."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z0-9@.,\\s-]+$"
+                }
+            },
             {
                 "isEditable": true,
                 "isVisible": true,
@@ -88,6 +111,7 @@
                 "valueclass": "input-box",
                 "placeholder": "Enter First Name...",
                 "formControlName": "firstName",
+                "defaultValue": "ABC",
                 "message": {
                     "required": "First Name is required",
                     "pattern": "Numbers not allowed."
@@ -130,12 +154,13 @@
                 "valueclass": "input-box",
                 "placeholder": "Enter Last Name...",
                 "formControlName": "lastName",
+                "defaultValue": "PQR",
                 "message": {
                     "required": "Last Name is required",
                     "pattern": "Numbers not allowed."
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -151,6 +176,7 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "selectGender",
+                "defaultValue": "1",
                 "values": [
                     {
                         "name": "Select an Option",
@@ -201,28 +227,6 @@
                 }
             },
             {
-                "id": 7,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Mobile No.",
-                "type": "text",
-                "maxlength": "10",
-                "inputType": "text",
-                "class": "col-md-3 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter Mobile No.",
-                "formControlName": "mobileNo",
-                "message": {
-                    "required": "Mobile No. is required",
-                    "pattern": "Please re-enter using a valid 10-digit mobile number."
-                },
-                "validations": {
-                    "required": true,
-                    "pattern": "^[a-zA-Z0-9@.,\\s-]+$"
-                }
-            },
-            {
                 "id": 8,
                 "isEditable": true,
                 "isVisible": true,
@@ -241,6 +245,28 @@
                 "validations": {
                     "required": false,
                     "pattern": "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+                }
+            },
+            {
+                "id": 5,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Mother Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Last Name...",
+                "formControlName": "MotherName",
+                "defaultValue": "XYZ",
+                "message": {
+                    "required": "Last Name is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
                 }
             },
             {
@@ -263,7 +289,7 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "department",
-                "defaultValue": "",
+                "defaultValue": ["1","1","1"],
                 "message": {
                     "required": "Department is required",
                     "pattern": ""
@@ -411,6 +437,7 @@
                 "row": "2",
                 "placeholder": "",
                 "formControlName": "address",
+                "defaultValue": "test",
                 "message": {
                     "required": "Address is required",
                     "pattern": "invalid"
@@ -431,9 +458,9 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "",
-                "formControlName": "selectVillage",
+                "formControlName": "landmark",
                 "message": {
-                    "required": "Village is required",
+                    "required": "",
                     "pattern": ""
                 },
                 "validations": {
@@ -548,7 +575,7 @@
                     }
                 ],
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -564,12 +591,13 @@
                 "valueclass": "input-box",
                 "placeholder": "",
                 "formControlName": "selectVillage",
+                "defaultValue": "test2",
                 "message": {
                     "required": "Village is required",
                     "pattern": ""
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -586,6 +614,7 @@
                 "valueclass": "input-box",
                 "placeholder": "",
                 "formControlName": "pinCode",
+                "defaultValue": "123456",
                 "message": {
                     "required": "Pin Code is required",
                     "pattern": "Please re-enter valid pin code."

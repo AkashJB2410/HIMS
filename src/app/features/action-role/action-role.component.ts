@@ -35,6 +35,7 @@ export class ActionRoleComponent implements OnInit {
   flagDelete: boolean = false;
   flagEdit: boolean = false;
   flagSearch: boolean = false;
+  flag: any;
   ActionRole_breadcrumb =ActionRole_breadcrumb;
 
   constructor(
@@ -53,10 +54,16 @@ export class ActionRoleComponent implements OnInit {
     };
     this.getAllActionRoleData();
     this.getConfigForTable();
+   
   }
 
   getConfigForTable() {
     this.config = actionroleTableConfig;
+  }
+
+  onAdd(e: any) {
+    this.editData = []
+    this.flag = e.add;
   }
 
   buttonEvent(e:any){
@@ -72,18 +79,27 @@ this.common.sendEditData(false);
     this.visibleSidebar = true;
   }
 
-  saveActionRole(data: any) {
-    this.editData = [];
-    this.common.sendEditData(false);
-    this.status = true;
-    // this.saveMethod = true;
+  onEdit(e: any) {
+    this.editData = e.editRow;
+    this.flag = false;
+  }
+  
+  closeSidebarData(e: any) {
+    this.editData = undefined;
   }
 
-  editActionRole(e: any) {
-    // this.editMethod = true;
-    this.editData = e.editRow;
-    this.status = false;
-  }
+  // saveActionRole(data: any) {
+  //   this.editData = [];
+  //   this.common.sendEditData(false);
+  //   this.status = true;
+  //   // this.saveMethod = true;
+  // }
+
+  // editActionRole(e: any) {
+  //   // this.editMethod = true;
+  //   this.editData = e.editRow;
+  //   this.status = false;
+  // }
 
 
   assignDropDownOptions() {
@@ -109,27 +125,6 @@ this.common.sendEditData(false);
     });
   }
 
-  // isActive(data: any) {
-  //   if (data.is_Deleted) {
-  //     this.http.reactiveActionRole(data)
-  //       .subscribe(b_Data => {
-  //         this.data = undefined;
-  //         this.getAllActionRoleData();
-  //       })
-  //     this.messageService.add({
-  //       severity: 'success',
-  //       summary: 'Enable',
-  //       detail: 'Action Role Enable Successfully'
-  //     });
-  //   } else if (!data.is_Deleted) {
-  //     this.messageService.add({
-  //       severity: 'error',
-  //       summary: 'Error',
-  //       detail: 'Action Role is already Active'
-  //     });
-  //   }
-  // }
-
   isActive(event: string) {
     this.http.reactiveActionRole(event).subscribe((data) => {
       this.data = undefined;
@@ -149,8 +144,7 @@ this.common.sendEditData(false);
           id:index,
           arId: e.arId,
           arRoleId: e.arRoleId.roleId,
-          asmActionModuleId:
-            e.arActionSubModuleMst.asmActionModuleId.actionModuleId,
+          asmActionModuleId: e.arActionSubModuleMst.asmActionModuleId.actionModuleId,
           arActionSubModuleMst_Id: e.arActionSubModuleMst.asmId,
           arAdd: e.arAdd,
           arApprove: e.arApprove,

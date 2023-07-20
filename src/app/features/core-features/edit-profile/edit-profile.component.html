@@ -1,20 +1,19 @@
 <div class="container rounded bg-white  mb-5">
-    <h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Edit Profile</h3>
+    <!-- <h3 class="formclass"><i class="bi bi-file-earmark-medical"></i>Edit Profile</h3> -->
     <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col-md-3 border-right">
                 <div class="d-flex flex-column align-items-center text-center side-line">
                     <input type="file" formControlName="profileImage" id="input" (change)="onFileChange($event)"
                         style="display:none;">
-                    <label for="input"><img class="rounded-circle" id="image" width="160px"
-                            src="../../../../assets/core_assets/Medimaze Favicon Dark.png">
+                    <label for="input"><img class="rounded-circle" id="image" width="150px" height="150px"
+                        src="{{image}}">
                     </label>
                     <h4 class="name-title">{{user}}</h4>
                 </div>
             </div>
             <div class="col-md-9 border-right">
                 <div>
-
                     <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
                         <div class="login-body-wrapper mx-auto">
                             <div class="row">
@@ -22,6 +21,7 @@
                                     <div class="form-group mb-6">
                                         <label for="username" class="label-txt">Username</label>
                                         <input type="text" formControlName="userName" class="input-box login-input"
+                                        
                                             placeholder="Enter username">
                                     </div>
                                 </div>
