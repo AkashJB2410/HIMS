@@ -71,6 +71,94 @@
                 }
             },
             {
+                "id": 6,
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Health Id",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Health Id",
+                "defaultValue":"",
+                "formControlName": "patientHealthIdInput",
+                "message": {
+                    "required": "zxvzd",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 6,
+                "isEditable": true,
+                "isVisible": false,
+                "label": "Health No.",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Health No.",
+                "defaultValue":"",
+                "formControlName": "patientHealthNoInput",
+                "message": {
+                    "required": "zxvzd",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 13,
+                "isEditable": false,
+                "isVisible": true,
+                "transient": false,
+                "label": "Start Date",
+                "type": "date",
+                "class": "col-md-2 my-1 mt-4",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "defaultValue": "",
+                "placeholder": "Enter Start Date",
+                "formControlName": "startDateInput",
+                "message": {
+                    "required": "Date is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 13,
+                "isEditable": false,
+                "isVisible": true,
+                "transient": false,
+                "label": "End Date",
+                "type": "date",
+                "class": "col-md-2 my-1 mt-4",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "defaultValue": "",
+                "placeholder": "Enter End Date",
+                "formControlName": "endDateInput",
+                "message": {
+                    "required": "Date is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
                 "isVisible": true,
                 "label": "",
                 "type": "icon",

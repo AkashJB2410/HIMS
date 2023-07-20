@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as table_config from './registrationForm_table_config.json';
+import * as mobile_table_config from './mobileSerch_table_config.json';
 import registrationForm from "./registrationForm.json";
 import { MessageService } from 'primeng/api';
 import { RegistrationFormService } from './registration-form.service';
-import * as role_table_config from './registrationForm_table_config.json';
 import rgistrationData from './registrationForm.json';
 import { FormService } from 'src/app/core/shared/service/form.service';
 import Breadcrumbs from './breadcrumb.json';
@@ -26,6 +26,7 @@ import configService from './service_table_config.json';
 import { dataOPD } from "./serviceData";
 import { dataIPD } from './servIPDData';
 
+
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
@@ -33,21 +34,19 @@ import { dataIPD } from './servIPDData';
 })
 export class RegistrationFormComponent implements OnInit {
 
-  toast: any = {};
-  showToast: any;
-  Message: any;
   data: any[];
   config: any;
   configServ: any;
+  configMobi: any;
   visibleSidebar: boolean = false;
   configurations: any;
   serviceConfig: any;
+  mobileConfig: any;
   tableConfig: any;
   isdataReady = false;
   sidebarJSON: any = rgistrationData;
   sidebarButtonJSON: any = rgistBUttonData;
   formData: any;
-  formData1: any = '';
   perAddressFormData: any = permanentAddressFormData;
   hospitalAssFormData: any = hospitalAssociationFormData;
   insuranceDetailsFormData: any = insuranceDetailsFormData;
@@ -58,15 +57,25 @@ export class RegistrationFormComponent implements OnInit {
   accordionData = {
     "id": 0,
     "label": "COMMUNICATION ADDRESS"
-};
+  };
+  accordionTabTwo = {
+    "id": 1,
+    "label": "ADDITIONAL INFORMATION"
+  }
   registartionFormData: any[] = [];
   isForm: any = true;
   flag: any;
   gridData: any[] = [];
+  mergedGridData: any[] = [];
+  mergedAddGridData: any[] = [];
+  mergedInsuranceGridData: any[] = [];
+  mergedMlcGridData: any[] = [];
+  mergedPrivalegeGridData: any[] = [];
+  mergedPaiGridData: any[] = [];
+  mergedMhGridData: any[] = [];
   isAddEditFlag: any;
   items: any = Breadcrumbs;
   imgName: any
-  dateOfBirth: any;
   getage: any;
   agemon: any;
   agedday: any;
@@ -84,16 +93,83 @@ export class RegistrationFormComponent implements OnInit {
   isShowServices = false;
   servData: any[] = [];
   mstPatient: any;
-  mstAddress: any;
+  mstAddress: any = {
+    "addressLine1": "",
+    "addressLine2": "",
+    "addressblock": "",
+    "addressVillageId": "",
+    "addressVillageName": "",
+    "addressTalukaId": "",
+    "addressTalukaName": "",
+    "addressCityId": "",
+    "addressCityName": "",
+    "addressStateId": "",
+    "addressStateName": "",
+    "addressCountryId": "",
+    "addressCountryName": "",
+    "addressPatientId": "",
+    "addressPinCode": "",
+    "permanentAddressCityId": "",
+    "permanentAddressCityName": "string",
+    "permanentAddressCountryId": "",
+    "permanentAddressCountryName": "string",
+    "permanentAddressLandmark": "",
+    "permanentAddressLine": "",
+    "permanentAddressPinCode": "",
+    "permanentAddressStateId": "",
+    "permanentAddressStateName": "string",
+    "permanentAddressTalukaId": "",
+    "permanentAddressTalukaName": "string",
+    "permanentAddressVillageId": "",
+    "permanentAddressVillageName": "",
+    "permanentAddressblock": "string"
+  };
   mstPerAddress: any;
-  mstHospitalAss:any;
-  mstInsurance:any;
-  mstMedicalHistory:any;
-  mstAdditionalDetails:any;
-  mstMLC:any;
+  mstHospitalAss: any = {
+    "privilegeId": "",
+    "privilegeName": "string",
+    "privilegePatientId": ""
+  };
+  mstInsurance: any =
+    {
+      "insuranceCompanyName": "",
+      "insuranceCompanyNumber": "",
+      "insuranceNumber": "",
+      "insurancePolicyNumber": "",
+      "insurancePatientId": ""
+    };
+  mstMedicalHistory: any = {
+    "mhIsAlcoholConsume": "",
+    "mhIsAlcoholConsumeYear": "",
+    "mhIsMedicationHistory": "",
+    "mhIsMedicationHistoryYear": "",
+    "mhIsPreviousDiagnosis": "",
+    "mhIsPreviousDiagnosisYear": "",
+    "mhIsSmoker": "",
+    "mhIsSmokerYear": "",
+    "mhIsSurgicalHistory": "",
+    "mhIsSurgicalHistoryYear": "",
+    "mhIsTobacoConsume": "",
+    "mhIsTobacoConsumeYear": "",
+    "mhPatientId": ""
+  };
+  mstAdditionalDetails: any = {
+    "paiLanguages": "",
+    "paiOccupation": "",
+    "paiPhoneNumber": "",
+    "paiReferredBy": "",
+    "paiPatientId": "",
+  };
+  mstMLC: any = {
+    "mlcPoliceStationId": "",
+    "mlcPoliceStationName": "string",
+    "mlcTypeId": "",
+    "mlcTypeName": "string",
+    "mlcPatientId": "",
+  };
   merged: any;
-  tabularIndex:any;
-  accordionIndex:any;
+  tabularIndex: any;
+  accordionIndex: any;
   paramObj: any = {
     "id": "",
     "patientId": "",
@@ -190,8 +266,11 @@ export class RegistrationFormComponent implements OnInit {
 
   };
   receivedData: any;
+  middleName: any = '';
+  lastName: any = '';
   private subscription: Subscription;
-  constructor(private messageService: MessageService, private common: CommonService, public datepipe: DatePipe, private http: RegistrationFormService, private form$: FormService, private dataService: DataServiceService) {
+  constructor(private messageService: MessageService, private common: CommonService, public datepipe: DatePipe,
+    private http: RegistrationFormService, private form$: FormService, private dataService: DataServiceService) {
   }
 
 
@@ -228,7 +307,13 @@ export class RegistrationFormComponent implements OnInit {
       "isSideBar": false,
       "isConfirmation": true
     };
-    this.getAllPatientData();
+    this.mobileConfig = {
+      "isFilter": false,
+      "isTable": true,
+      "isSideBar": false,
+      "isConfirmation": true
+    }
+    // this.getAllPatientData();
     this.getAllData();
     this.filterData = filterdata;
     this.getConfigForTable();
@@ -496,6 +581,9 @@ export class RegistrationFormComponent implements OnInit {
   }
   changeSelectItem(e: any) {
     console.log("changeSelectItem e => ", e)
+    if (e[1].fieldName == "mobileNoInput" && e[0] != "") {
+      this.form$.showModal(true);
+    }
     if (e[1].fieldName == "selectIdentificationType" && e[0].value != "") {
       this.form$.reRenderForm(this.formData.form.formControls[11], true, 'isEditable');
       if (e[0].value == "1") {
@@ -649,16 +737,15 @@ export class RegistrationFormComponent implements OnInit {
     } else if (e[1].fieldName == "smokingRad" && e[0].value == "false") {
       this.form$.reRenderForm(this.medicalHisFormData.form.formControls[15], false, 'isEditable');
     }
-
   }
 
-  changeAddressEvent(e:any){
-    console.log("chnage event address => ",e);
+  changeAddressEvent(e: any) {
+    console.log("chnage event address => ", e);
   }
 
-  changePerAddressEvent(e:any){
-    console.log("chnage event address => ",e);
-    if(e[0].checked[0]==true){
+  changePerAddressEvent(e: any) {
+    console.log("chnage event address => ", e);
+    if (e[0].checked[0] == true) {
       this.form$.reRenderForm(this.perAddressFormData.form.formControls[4], "2", 'autofill');
       this.form$.reRenderForm(this.perAddressFormData.form.formControls[5], "2", 'autofill');
       this.form$.reRenderForm(this.perAddressFormData.form.formControls[6], "2", 'autofill');
@@ -672,16 +759,20 @@ export class RegistrationFormComponent implements OnInit {
 
   getAllData() {
     this.http.getDataFromApis().subscribe(
-      ([api1Response, api2Response,api3Response]) => {
+      ([api1Response, api2Response, api3Response, api4Response, api5Response, api6Response, api7Response]) => {
         // Handle the responses from both APIs
         console.log('API 1 Response:', api1Response[1].result);
         console.log('API 2 Response:', api2Response[1].result);
         console.log('API 3 Response:', api3Response[1].result);
+        console.log('API 4 Response:', api4Response[1].result);
+        console.log('API 5 Response:', api5Response[1].result);
+        console.log('API 6 Response:', api6Response[1].result);
+        console.log('API 7 Response:', api7Response[1].result);
         api1Response[1].result.forEach((e: any, index: any) => {
           let date = this.datepipe.transform(
             e.patientDob, "MM/dd/yyyy"
           );
-          this.paramObj = {
+          let patientData = {
             "id": index,
             "patientId": e.patientId,
             "patientMrNo": e.patientMrNo,
@@ -701,41 +792,150 @@ export class RegistrationFormComponent implements OnInit {
             "patientDob": date,
             "isActive": e.isActive
           }
+          this.gridData.push(patientData);
         })
-        this.gridData.push(api1Response[1].result);
-        console.log("this gridData =====>>>>>",this.gridData);
-        api3Response[1].result.forEach((e: any) => {
-          let saveAdd={
-            "addressId": "",
-            "addressLine1": "",
-            "addressLine2": "",
-            "addressblock": "",
-            "addressVillageId": "",
-            "addressVillageName": "",
-            "addressTalukaId": "",
-            "addressTalukaName": "",
-            "addressCityId": "",
-            "addressCityName": "",
-            "addressStateId": "",
-            "addressStateName": "",
-            "addressCountryId": "",
-            "addressCountryName": "",
-            "addressPatientId": "",
-            "addressPinCode": "",
+        console.log("this gridData =====>>>>>", this.gridData);
+        api2Response[1].result.forEach((e: any) => {
+          let addressData = {
+            "addressCityId": e.addressCityId,
+            "addressCityName": e.addressCityName,
+            "addressCountryId": e.addressCountryId,
+            "addressCountryName": e.addressCountryName,
+            "addressId": e.addressId,
+            "addressLandmark": e.addressLandmark,
+            "addressLine": e.addressLine,
+            "addressPatientId": e.addressPatientId,
+            "addressPinCode": e.addressPinCode,
+            "addressStateId": e.addressStateId,
+            "addressStateName": e.addressStateName,
+            "addressTalukaId": e.addressTalukaId,
+            "addressTalukaName": e.addressTalukaName,
+            "addressVillageId": e.addressVillageId,
+            "addressVillageName": e.addressVillageName,
+            "addressblock": e.addressblock,
+            "permanentAddressCityId": e.permanentAddressCityId,
+            "permanentAddressCityName": e.permanentAddressCityName,
+            "permanentAddressCountryId": e.permanentAddressCountryId,
+            "permanentAddressCountryName": e.permanentAddressCountryName,
+            "permanentAddressLandmark": e.permanentAddressLandmark,
+            "permanentAddressLine": e.permanentAddressLine,
+            "permanentAddressPinCode": e.permanentAddressPinCode,
+            "permanentAddressStateId": e.permanentAddressStateId,
+            "permanentAddressStateName": e.permanentAddressStateName,
+            "permanentAddressTalukaId": e.permanentAddressTalukaId,
+            "permanentAddressTalukaName": e.permanentAddressTalukaName,
+            "permanentAddressVillageId": e.permanentAddressVillageId,
+            "permanentAddressVillageName": e.permanentAddressVillageName,
+            "permanentAddressblock": e.permanentAddressblock,
           }
-    this.gridData.forEach(res=>{
-      if(res.patientId==e.addressPatientId){
-        this.merged = this.mergeObjects(res, saveAdd);
-      }
-    })
-
+          this.gridData.forEach(res => {
+            if (res.patientId == e.addressPatientId) {
+              this.merged = this.mergeObjects(res, addressData);
+              this.mergedGridData.push(this.merged);
+            }
+          })
         })
-        console.log('API merged ===>>>:', this.merged);
-        console.log('API 1 Response this.gridData:', this.gridData);
-        this.gridData.push(api3Response[1].result);
-        console.log('API 2 Response this.gridData:', this.gridData);
-        console.log('API 2 Response this.gridData:', this.gridData);
+        this.merged = '';
+        api3Response[1].result.forEach((e: any) => {
+          let privilegeData = {
+            "privilegeId": e.privilegeId,
+            "privilegeName": e.privilegeName,
+            "privilegePatientId": e.privilegePatientId,
+          }
+          this.mergedGridData.forEach(res => {
+            if (res.patientId == e.privilegePatientId) {
+              this.merged = this.mergeObjects(res, privilegeData);
+              this.mergedPrivalegeGridData.push(this.merged);
+            }
+          })
+        })
 
+        this.merged = '';
+        api4Response[1].result.forEach((e: any) => {
+          let insuranceData = {
+            "insuranceCompanyName": e.insuranceCompanyName,
+            "insuranceCompanyNumber": e.insuranceCompanyNumber,
+            "insuranceId": e.insuranceId,
+            "insuranceNumber": e.insuranceNumber,
+            "insurancePatientId": e.insurancePatientId,
+            "insurancePolicyNumber": e.insurancePolicyNumber,
+          }
+          this.mergedPrivalegeGridData.forEach(res => {
+            if (res.patientId == e.insurancePatientId) {
+              this.merged = this.mergeObjects(res, insuranceData);
+              this.mergedInsuranceGridData.push(this.merged);
+            }
+          })
+        })
+        this.merged = '';
+        api5Response[1].result.forEach((e: any) => {
+          let mhData = {
+            "mhId": e.mhId,
+            "mhIsAlcoholConsume": e.mhIsAlcoholConsume,
+            "mhIsAlcoholConsumeYear": e.mhIsAlcoholConsumeYear,
+            "mhIsMedicationHistory": e.mhIsMedicationHistory,
+            "mhIsMedicationHistoryYear": e.mhIsMedicationHistoryYear,
+            "mhIsPreviousDiagnosis": e.mhIsPreviousDiagnosis,
+            "mhIsPreviousDiagnosisYear": e.mhIsPreviousDiagnosisYear,
+            "mhIsSmoker": e.mhIsSmoker,
+            "mhIsSmokerYear": e.mhIsSmokerYear,
+            "mhIsSurgicalHistory": e.mhIsSurgicalHistory,
+            "mhIsSurgicalHistoryYear": e.mhIsSurgicalHistoryYear,
+            "mhIsTobacoConsume": e.mhIsTobacoConsume,
+            "mhIsTobacoConsumeYear": e.mhIsTobacoConsumeYear,
+            "mhPatientId": e.mhIsTobacoConsumeYear,
+          }
+          this.mergedInsuranceGridData.forEach(res => {
+            if (res.patientId == e.mhPatientId) {
+              this.merged = this.mergeObjects(res, mhData);
+              this.mergedMhGridData.push(this.merged);
+            }
+          })
+        })
+        this.merged = '';
+        api6Response[1].result.forEach((e: any) => {
+          let paiData = {
+            "paiId": e.paiId,
+            "paiLanguages": e.paiLanguages,
+            "paiOccupation": e.paiOccupation,
+            "paiPatientId": e.paiPatientId,
+            "paiPhoneNumber": e.paiPhoneNumber,
+            "paiReferredBy": e.paiReferredBy,
+          }
+          this.mergedMhGridData.forEach(res => {
+            if (res.patientId == e.paiPatientId) {
+              this.merged = this.mergeObjects(res, paiData);
+              this.mergedPaiGridData.push(this.merged);
+            }
+          })
+        })
+        this.merged = '';
+        api7Response[1].result.forEach((e: any) => {
+          let mlcData = {
+            "mlcId": "",
+            "mlcPatientId": "",
+            "mlcPoliceStationId": "",
+            "mlcPoliceStationName": "",
+            "mlcTypeId": "",
+            "mlcTypeName": "",
+          }
+          this.mergedPaiGridData.forEach(res => {
+            if (res.patientId == e.mlcPatientId) {
+              this.merged = this.mergeObjects(res, mlcData);
+              this.mergedMlcGridData.push(this.merged);
+            }
+          })
+        })
+        this.merged = '';
+        this.data = [...this.mergedMlcGridData];
+        this.gridData = [];
+        this.mergedGridData = [];
+        this.mergedInsuranceGridData = [];
+        this.mergedMhGridData = [];
+        this.mergedMlcGridData = [];
+        this.mergedPaiGridData = [];
+        this.mergedPrivalegeGridData = [];
+        console.log('API Data ===>>>:', this.data);
       },
       error => {
         // Handle any errors
@@ -744,124 +944,10 @@ export class RegistrationFormComponent implements OnInit {
     );
   }
 
-  getAllPatientData() {
-    this.http.GetAllMstPatientData().subscribe(res => {
-      res[1].result.forEach((e: any, index: any) => {
-        console.log("Patient data => ", e)
-        let date = this.datepipe.transform(
-          e.patientDob, "MM/dd/yyyy"
-        );
-        console.log("date birth date => ", date)
-        let obj = {
-          "id": index,
-          "patientId": e.patientId,
-          "patientMrNo": e.patientMrNo,
-          "patientTitleId": e.patientTitleId,
-          "patientTitleName": e.patientTitleName,
-          "patientFirstname": e.patientFirstname,
-          "patientMiddlename": e.patientMiddlename,
-          "patientLastname": e.patientLastname,
-          "patientFullname": e.patientFullname,
-          "patientMobileNumber": e.patientMobileNumber,
-          "patientEmail": e.patientEmail,
-          "patientIdentificationTypeId": e.patientIdentificationTypeId,
-          "patientIdentificationTypeName": e.patientIdentificationTypeName,
-          "patientIdentificationNo": "",
-          "patientMaritalStatusId": e.patientMaritalStatusId,
-          "patientMaritalStatusName": e.patientMaritalStatusName,
-          "patientDob": date,
-          "isActive": e.isActive
-        }
-        this.gridData.push(obj);
-        console.log("mst_patient => ", this.gridData);
-      })
-
-      this.data = [...this.gridData];
-      // for (let i = 0; i < this.data.length; i++) {
-      //   this.data[i].srNumber = i + 1;
-      // }
-      this.isdataReady = true;
-    })
-  }
-
-  getAllMstDemographicsData() {
-    this.http.GetAllDemographicsData().subscribe(res => {
-      res[1].result.forEach((e: any, index: any) => {
-        // let obj = {
-        //   "demographicsId": e.demographicsId,
-        //   "demographicsAge": e.demographicsAge,
-        //   "demographicsGenderId": e.demographicsGenderId,
-        //   "demographicsGenderName": e.demographicsGenderName,
-        //   "demographicsBloodGroupId": e.demographicsBloodGroupId,
-        //   "demographicsBloodGroupName": e.demographicsBloodGroupName,
-        //   "demographicsEthinicityId": e.demographicsEthinicityId,
-        //   "demographicsEthinicityName": e.demographicsEthinicityName,
-        //   "demographicsReligion": e.demographicsReligion,
-        //   "demographicsSocialStatusId": e.demographicsSocialStatusId,
-        //   "demographicsSocialStatusName": e.demographicsSocialStatusName,
-        //   "demographicsPatientId": e.demographicsPatientId,
-        //   "isActive": e.isActive
-
-        // }
-        // this.gridData.push(e);
-      })
-      // this.data = [...this.gridData];
-      // for (let i = 0; i < this.data.length; i++) {
-      //   this.data[i].srNumber = i + 1;
-      // }
-    })
-
-    console.log("mst_patient => ", this.gridData);
-  }
-
-  getAllAddDetatils() {
-    this.http.GetAllDemographicsData().subscribe(res => {
-      res[1].result.forEach((e: any, index: any) => {
-        // let obj = {
-        //   "addressId": e.addressId,
-        //   "addressLine1": e.addressLine1,
-        //   "addressLine2": e.addressLine2,
-        //   "addressblock": e.addressblock,
-        //   "addressVillageId": e.addressVillageId,
-        //   "addressVillageName": e.addressVillageName,
-        //   "addressTalukaId": e.addressTalukaId,
-        //   "addressTalukaName": e.addressTalukaName,
-        //   "addressCityId": e.addressCityId,
-        //   "addressCityName": e.addressCityName,
-        //   "addressStateId": e.addressStateId,
-        //   "addressStateName": e.addressStateName,
-        //   "addressCountryId": e.addressCountryId,
-        //   "addressCountryName": e.addressCountryName,
-        //   "addressPatientId": e.addressPatientId,
-        //   "addressPinCode": e.addressPinCode,
-        //   "permanentAddressLine1": e.permanentAddressLine1,
-        //   "permanentAddressLine2": e.permanentAddressLine2,
-        //   "permanentAddressblock": e.permanentAddressblock,
-        //   "permanentAddressVillageId": e.permanentAddressVillageId,
-        //   "permanentAddressVillageName": e.permanentAddressVillageName,
-        //   "permanentAddressTalukaId": e.permanentAddressTalukaId,
-        //   "permanentAddressTalukaName": e.permanentAddressTalukaName,
-        //   "permanentAddressCityId": e.permanentAddressCityId,
-        //   "permanentAddressCityName": e.permanentAddressCityName,
-        //   "permanentAddressStateId": e.permanentAddressStateId,
-        //   "permanentAddressStateName": e.permanentAddressStateName,
-        //   "permanentAddressCountryId": e.permanentAddressCountryId,
-        //   "permanentAddressCountryName": e.permanentAddressCountryName,
-        //   "permanentAddressPinCode": e.permanentAddressPinCode,
-        //   "isActive": true,
-        //   "isDeleted": false
-        // }
-        // this.gridData.push(e);
-      })
-      console.log("mst_patient_address => ", this.gridData);
-      // this.data = [...this.gridData];
-    })
-  }
-
   getConfigForTable() {
-    // this.data = data;
-    this.config = role_table_config;
+    this.config = table_config;
     this.configServ = configService;
+    this.configMobi = mobile_table_config;
   }
 
   editRow(e: any) {
@@ -869,11 +955,8 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   confirmAction(e: any) {
-    // this.messageService.add({ severity: 'success', summary: 'Message form User component', detail: 'Deleted Sucessfully' });
-    // console.log(e)
     this.data = undefined;
     this.deletePatientData(e.patientId);
-
     this.messageService.add({ severity: 'success', summary: 'Message form User component', detail: 'Deleted Sucessfully' });
     console.log("Deleted" + JSON.stringify(e))
   }
@@ -881,47 +964,16 @@ export class RegistrationFormComponent implements OnInit {
   deletePatientData(patientId: any) {
     this.http.deletePatientData(patientId)
       .subscribe(data => {
-        this.getAllPatientData();
+        this.getAllData();
       })
   }
   isActive(event: string) {
     this.http.isActiveData(event).subscribe((data: any) => {
       this.data = undefined;
-      this.getAllPatientData();
+      this.getAllData();
     });
   }
 
-  BulkDeleteRows(e: any) {
-    this.data = [];
-    if (e != '') {
-      e.forEach((data: any) => {
-        if (data.is_Active != false) {
-          let obj = {
-            "userId": data.userId,
-          }
-          this.deletePatientData(obj.userId);
-        } else {
-          this.messageService.add({
-            severity: 'error',
-            summary: 'selected Rows',
-            detail: ' Deleted.',
-          });
-        }
-      });
-      this.messageService.add({
-        severity: 'success',
-        summary: 'success',
-        detail: 'Delete All Data successfull.',
-      });
-    } else {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'select Rows',
-        detail: 'Rows are not selected.',
-      });
-    }
-
-  }
   closeSidebarData(e: any) {
     this.editData = undefined;
   }
@@ -930,38 +982,52 @@ export class RegistrationFormComponent implements OnInit {
     if (e == 'reset') {
       console.log(e);
     } else if (this.isAddEditFlag.add == "add") {
-      
-       this.http.saveDataFromApis(this.mstPatient, this.mstAddress,this.mstHospitalAss,this.mstInsurance,this.mstMedicalHistory,this.mstAdditionalDetails,this.mstMLC).subscribe(
-        (response: any[]) => {
-          this.data = undefined;
-          this.getAllPatientData();
-          // Handle the responses from all the POST requests
-          console.log('Response 1:', response);
-          // console.log('Response 2:', response[1]);
-          // console.log('Response 3:', response[2]);
-          // console.log('Response 4:', response[3]);
-          // console.log('Response 5:', response[4]);
-          // console.log('Response 6:', response[5]);
-          // console.log('Response 7:', response[6]);
-         
-        },
-        (error: any) => {
-          console.error('Error:', error);
-        }
-      );
-      // this.data = undefined;
-      // this.getAllPatientData();
-      this.messageService.add({ severity: 'success', summary: 'success', detail: 'Your registration has been successfully completed!' });
+      this.http.saveMstRelation(this.mstPatient).subscribe((res: any) => {
+        console.log("mstPatient ==>> res ", res[1].result);
+        this.mstAddress.addressPatientId = res[1].result.patientId;
+        this.mstHospitalAss.privilegePatientId = res[1].result.patientId;
+        this.mstInsurance.insurancePatientId = res[1].result.patientId;
+        this.mstMedicalHistory.mhPatientId = res[1].result.patientId;
+        this.mstAdditionalDetails.paiPatientId = res[1].result.patientId;
+        this.mstMLC.mlcPatientId = res[1].result.patientId;
+
+      })
+      setTimeout(() => {
+        this.http.saveDataFromApis(this.mstAddress, this.mstHospitalAss, this.mstInsurance, this.mstMedicalHistory, this.mstAdditionalDetails, this.mstMLC).subscribe(
+          (response: any[]) => {
+            this.data = undefined;
+            this.getAllData();
+            // Handle the responses from all the POST requests
+            // console.log('Response 1:', response);
+            console.log('Response 2:', response[0][1].result);
+            console.log('Response 3:', response[1][1].result);
+            console.log('Response 4:', response[2][1].result);
+            console.log('Response 5:', response[3][1].result);
+            console.log('Response 6:', response[4][1].result);
+            console.log('Response 7:', response[5][1].result);
+          },
+          (error: any) => {
+            console.error('Error:', error);
+          });
+        this.messageService.add({ severity: 'success', summary: 'success', detail: 'Your registration has been successfully completed!' });
+      }, 1000)
+
     } else {
       this.updateUserData(this.paramObj);
       this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data updated successfull.' });
-
     }
   }
 
   saveRegistartionForm(e: any) {
-    let fullName = e.firstNameInput + " " + e.middleNameInput + " " + e.lastNameInput;
-    console.log("full name ==>>", fullName)
+    if (e.middleNameInput != undefined) {
+      this.middleName = e.middleNameInput;
+    }
+    if (e.lastNameInput != undefined) {
+      this.lastName = e.lastNameInput;
+    }
+    let fullName = e.firstNameInput + " " + this.middleName + " " + this.lastName;
+    let fullNamestring=fullName.split(" ").join("");
+    console.log("full name ==>>", fullNamestring)
     let date = this.datepipe.transform(
       e.userBirthdate, "MM/dd/yyyy"
     );
@@ -974,7 +1040,7 @@ export class RegistrationFormComponent implements OnInit {
       "patientEthinicityId": e.selectEthincity,
       "patientEthinicityName": "string",
       "patientFirstname": e.firstNameInput,
-      "patientFullname": fullName,
+      "patientFullname": fullNamestring,
       "patientGenderId": e.selectGender,
       "patientGenderName": "string",
       "patientIdentificationTypeId": e.selectIdentificationType,
@@ -994,8 +1060,8 @@ export class RegistrationFormComponent implements OnInit {
     console.log("mstPatient => ", this.mstPatient);
     this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
   }
+
   saveAddress(e: any) {
-    
     this.mstAddress = {
       "addressLine1": e.addressInput,
       "addressLine2": e.landmarkInput,
@@ -1012,18 +1078,18 @@ export class RegistrationFormComponent implements OnInit {
       "addressCountryName": "",
       "addressPatientId": e.pinCodeInput,
       "addressPinCode": "",
-      "permanentAddressCityId": e.dependentdropdown[1],
+      "permanentAddressCityId": e.perAddDependentdropdown[1],
       "permanentAddressCityName": "string",
-      "permanentAddressCountryId": e.selectCountry,
+      "permanentAddressCountryId": e.perAddSelectCountry,
       "permanentAddressCountryName": "string",
-      "permanentAddressLandmark": e.landmarkInput,
-      "permanentAddressLine": e.addressInput,
-      "permanentAddressPinCode": e.pinCodeInput,
-      "permanentAddressStateId": e.dependentdropdown[0],
+      "permanentAddressLandmark": e.perAddLandmarkInput,
+      "permanentAddressLine": e.perAddAddressInput,
+      "permanentAddressPinCode": e.perAddPinCodeInput,
+      "permanentAddressStateId": e.perAddDependentdropdown[0],
       "permanentAddressStateName": "string",
-      "permanentAddressTalukaId": e.dependentdropdown[2],
+      "permanentAddressTalukaId": e.perAddDependentdropdown[2],
       "permanentAddressTalukaName": "string",
-      "permanentAddressVillageId": e.selectVillage,
+      "permanentAddressVillageId": e.perAddSelectVillage,
       "permanentAddressVillageName": "",
       "permanentAddressblock": "string"
     }
@@ -1031,42 +1097,23 @@ export class RegistrationFormComponent implements OnInit {
     this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
   }
 
-  savePermentAddress(e: any) {
-    this.mstPerAddress = {
-      "permanentAddressCityId": e.dependentdropdown[1],
-      "permanentAddressCityName": "string",
-      "permanentAddressCountryId": e.selectCountry,
-      "permanentAddressCountryName": "string",
-      "permanentAddressLandmark": e.landmarkInput,
-      "permanentAddressLine": e.addressInput,
-      "permanentAddressPinCode": e.pinCodeInput,
-      "permanentAddressStateId": e.dependentdropdown[0],
-      "permanentAddressStateName": "string",
-      "permanentAddressTalukaId": e.dependentdropdown[2],
-      "permanentAddressTalukaName": "string",
-      "permanentAddressVillageId": e.selectVillage,
-      "permanentAddressVillageName": "",
-      "permanentAddressblock": "string"
-    }
-    console.log("mstPerAddress=> ", this.mstPerAddress);
-    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
-  }
   saveFormThree(e: any) {
     this.mstHospitalAss = {
       "privilegeId": e.privilageType,
       "privilegeName": "string",
-      "privilegePatientId": "string"
+      "privilegePatientId": ""
     }
     this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
     console.log("mstHospitalAss => ", this.mstHospitalAss);
   }
   saveFormFour(e: any) {
-    this.mstInsurance = 
+    this.mstInsurance =
     {
       "insuranceCompanyName": e.companyName,
-      "insuranceCompanyNumber":  e.companyNo,
+      "insuranceCompanyNumber": e.companyNo,
       "insuranceNumber": e.insuranceNo,
       "insurancePolicyNumber": e.policyNo,
+      "insurancePatientId": ""
     }
     this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
     console.log("mstInsurance => ", this.mstInsurance);
@@ -1084,46 +1131,42 @@ export class RegistrationFormComponent implements OnInit {
       "mhIsSurgicalHistory": e.surgeriesDetails,
       "mhIsSurgicalHistoryYear": e.surgicalRad,
       "mhIsTobacoConsume": e.tobacooRad,
-      "mhIsTobacoConsumeYear": e.tobacooQuestion1
+      "mhIsTobacoConsumeYear": e.tobacooQuestion1,
+      "mhPatientId": ""
     }
     this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue.' });
     console.log("mstMedicalHistory => ", this.mstMedicalHistory);
   }
   saveFormSix(e: any) {
-    this.mstAdditionalDetails ={
+    this.mstAdditionalDetails = {
       "paiLanguages": e.language,
       "paiOccupation": e.occupation,
       "paiPhoneNumber": e.phoneNo,
-      "paiReferredBy": e.refferedBy
+      "paiReferredBy": e.refferedBy,
+      "paiPatientId": "",
     }
     this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue.' });
     console.log("mstAdditionalDetails => ", this.mstAdditionalDetails);
   }
 
   saveFormMLC(e: any) {
-    this.mstMLC={
-      "mlcPoliceStationId":  e.selectPoliceStation,
+    this.mstMLC = {
+      "mlcPoliceStationId": e.selectPoliceStation,
       "mlcPoliceStationName": "string",
-      "mlcTypeId":e.selectMLCType,
-      "mlcTypeName": "string"
+      "mlcTypeId": e.selectMLCType,
+      "mlcTypeName": "string",
+      "mlcPatientId": "",
     }
     this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue.' });
     console.log("mstMLC => ", this.mstMLC);
   }
 
-  submitUserData(userData: any) {
-    this.http.savePatientData(userData)
-      .subscribe(data => {
-        this.data = undefined;
-        this.getAllPatientData();
-      })
-  }
 
   updateUserData(userId: any) {
     this.http.updateUserData(userId)
       .subscribe((data: any) => {
         this.data = undefined;
-        this.getAllPatientData();
+        this.getAllData();
       })
   }
 
@@ -1132,7 +1175,6 @@ export class RegistrationFormComponent implements OnInit {
     this.http.getFilterData(e)
       .subscribe((data: any[]) => {
         this.data = undefined;
-
         this.data = data[1].result;
       })
   }
@@ -1232,33 +1274,28 @@ export class RegistrationFormComponent implements OnInit {
       "statix": "",
       "patientIsHaveDiabeties": [e.editRow.patientIsHaveDiabeties],
       "patientIsHaveDiabetiesYear": e.editRow.patientIsHaveDiabetiesYear,
-      // "patientIsHaveSugar": e.editRow.patientIsHaveSugar,
-      // "patientIsHaveSugarYear": e.editRow.patientIsHaveSugarYear,
 
     }
     this.medicalEditData = medical;
     let additionDetailsEdit = {
-
       "patientOccupation": e.editRow.patientOccupation,
       "patientReferredBy": e.editRow.patientReferredBy,
       "patientLanguages": e.editRow.patientLanguages,
       "patientPhoneNumber": e.editRow.patientPhoneNumber
-
     }
     this.addEditData = additionDetailsEdit;
 
     let mlcEditDataObj = {
-
     }
     this.mlcEditData = mlcEditDataObj;
   }
-  accordionrEmitData(e:any){
+  accordionrEmitData(e: any) {
     console.log("accordion => ", e);
-    this.accordionIndex=e;
+    this.accordionIndex = e;
 
   }
   tabularValue(e: any) {
-    this.tabularIndex=e.id;
+    this.tabularIndex = e.id;
   }
 
   calculateAge(dateString: any) {
@@ -1298,9 +1335,5 @@ export class RegistrationFormComponent implements OnInit {
     this.agemon = monthAge;
     this.agedday = dateAge;
   }
-}
-
-function moment(dob: any) {
-  throw new Error('Function not implemented.');
 }
 

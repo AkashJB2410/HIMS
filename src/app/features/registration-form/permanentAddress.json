@@ -19,7 +19,7 @@
                 "valueclass": "p-field-checkbox",
                 "placeholder": "",
                 "value": "",
-                "formControlName": "checkbox",
+                "formControlName": "perAddCheckbox",
                 "defaultValue": "",
                 "message": {
                     "required": "Category is required",
@@ -71,7 +71,7 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "defaultValue":"1",
-                "formControlName": "selectCountry",
+                "formControlName": "perAddSelectCountry",
                 "values": [
                     {
                         "name": "Select an Option",
@@ -101,7 +101,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
-                "formControlName": "dependentdropdown",
+                "formControlName": "perAddDependentdropdown",
                 "message": {
                     "required": "",
                     "pattern": ""
@@ -200,7 +200,7 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "defaultValue":"1",
-                "formControlName": "selectVillage",
+                "formControlName": "perAddSelectVillage",
                 "values": [
                     {
                         "name": "Select an Option",
@@ -236,7 +236,7 @@
                 "valueclass": "textarea-custom",
                 "row": "2",
                 "placeholder": "",
-                "formControlName": "addressInput",
+                "formControlName": "perAddAddressInput",
                 "message": {
                     "required": "Address is required",
                     "pattern": "invalid"
@@ -258,7 +258,7 @@
                 "valueclass": "textarea-custom",
                 "row": "2",
                 "placeholder": "",
-                "formControlName": "landmarkInput",
+                "formControlName": "perAddLandmarkInput",
                 "message": {
                     "required": "Address is required",
                     "pattern": "invalid"
@@ -279,7 +279,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Pin Code...",
-                "formControlName": "pinCodeInput",
+                "formControlName": "perAddPinCodeInput",
                 "message": {
                     "required": "Pin Code is required",
                     "pattern": "Please re-enter valid pin code."
@@ -287,6 +287,29 @@
                 "validations": {
                     "required": false,
                     "pattern": "^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$"
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "transient":true,
+                "label": "",
+                "inputType": "empty",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-10 my-1 ",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "staticText",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
                 }
             },
             {
