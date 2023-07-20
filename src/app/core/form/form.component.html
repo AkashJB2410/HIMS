@@ -1,0 +1,170 @@
+<div class="">
+    <!-- <img height="40px" width="40px" src="{{base1}}"> -->
+    <h6 class="{{formJson.formTitleClass}}"><i class="{{formJson.formTitleLogo}}"></i>{{formJson.formTitle | uppercase}}</h6>
+    <form [formGroup]="form">
+        <div class="{{formJson.class}}">
+            <!-- <span *ngIf="formValid" style="color: red;">Please fill all required fields</span> -->
+            <ng-container *ngFor="let formData of formControls; let i = index">
+                <div class="{{formData.class}}" [id]="'id'+formData.fieldName"
+                    [ngClass]="formData.visible ? 'visible' : 'hidden'">
+                    <div>
+                        <label *ngIf="formData.label != ''" for="{{formData.fieldName}}"
+                            class="{{formData.lblclass}}">{{formData.label}} <span *ngIf="formData.validations.required"
+                                style="color: red;"> * </span></label>
+                    </div>
+
+                    <div *ngIf="formData.fieldType == formStaticText.TEXT">
+                        <input type="{{formData.inputType}}" id="{{formData.fieldName}}" name="{{formData.fieldName}}"
+                            class="form-controls" [formControlName]="formData.fieldName"
+                            [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
+                            minlength="{{formData.minlength}}" maxlength="{{formData.maxlength}}"
+                            [(ngModel)]="formData.fieldValue" placeholder="{{formData.placeholder}}"
+                            (blur)="blurValue($event.target, formData)">
+                    </div>
+                    <div *ngIf="formData.fieldType == formStaticText.MONTH">
+                        <p-calendar inputId="{{formData.fieldName}}" [(ngModel)]="formData.fieldValue"
+                            [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
+                            [formControlName]="formData.fieldName" [showIcon]="true" view="month" dateFormat="mm/yy"
+                            [readonlyInput]="true" (onClick)="changeEvent($event, formData)">
+                        </p-calendar>
+                    </div>
+                    <div *ngIf="formData.fieldType == formStaticText.STATICTEXT">
+                        <p id="{{formData.fieldName}}" class="{{formData.valueclass}}">{{formData.data}}</p>
+                    </div>
+                    <div *ngIf="formData.fieldType == formStaticText.PASSWORD">
+                        <p-password inputId="{{formData.fieldName}}" [formControlName]="formData.fieldName"
+                            [placeholder]="formData.placeholder" class="{{formData.valueclass}}"
+                            [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
+                            [(ngModel)]="formData.fieldValue" [feedback]="false" [toggleMask]="true"
+                            (onClick)="changeEvent($event, formData)">
+                        </p-password>
+                    </div>
+                    <p-dropdown *ngIf="formData.fieldType == formStaticText.SELECT" [options]="formData.values"
+                        [inputId]="formData.fieldName" [formControlName]="formData.fieldName"
+                        [ngClass]="formData.editable ? formData.valueclass : 'input-box1 '"
+                        [(ngModel)]="formData.fieldValue" optionLabel="name" optionValue="code" [showClear]="true"
+                        class="{{formData.valueclass}}" [showClear]="false" (onChange)="changeEvent($event, formData)">
+                    </p-dropdown>
+                    <div class="{{formData.valueclass}}" *ngIf="formData.fieldType === formStaticText.RADIO">
+                        <div *ngFor="let opt of formData.values">
+                            <p-radioButton name="{{formData.fieldName}}" value="{{opt.code}}"
+                                [(ngModel)]="formData.fieldValue" inputId="{{opt.code}}"
+                                (onClick)="changeEvent($event, formData)" formControlName="{{formData.fieldName}}">
+                            </p-radioButton>
+                            <label for="{{opt.code}}">{{opt.name}}</label>
+                        </div>
+                    </div>
+                    <div class="{{formData.valueclass}}"
+                        [ngClass]="formData.editable ? formData.valueclass : 'p-field-checkbox1 '"
+                        *ngIf="formData.fieldType == formStaticText.CHECKBOX">
+                        <div *ngFor="let opt of formData.values" class="p-field-checkbox">
+                            <p-checkbox [name]="formData.fieldName" [formControlName]="formData.fieldName"
+                                [value]="opt.code" [(ngModel)]="formData.fieldValue" [inputId]="opt.code"
+                                (onChange)="changeEvent($event, formData)">
+                            </p-checkbox>
+                            <label class="ms-1" for="{{opt.code}}">{{opt.name}}</label>
+                        </div>
+                    </div>
+                    <div class="{{formData.valueclass}}"
+                        [ngClass]="formData.editable ? formData.valueclass : 'p-field-checkbox1 '"
+                        *ngIf="formData.fieldType == formStaticText.DIVIDER">
+                        <p-divider layout="horizontal"><b>{{formData.data}}</b></p-divider>
+                    </div>
+                    <div *ngIf="formData.fieldType == formStaticText.DATE">
+                        <p-calendar inputId="{{formData.fieldName}}" [name]="formData.fieldName "
+                            [formControlName]="formData.fieldName" class="{{formData.valueclass}}"
+                            [(ngModel)]="formData.fieldValue" [showButtonBar]="false" [showIcon]="true" inputId="icon"
+                            (onSelect)="changeEvent($event, formData)">
+                        </p-calendar>
+                        <!-- <p-calendar name="basic" ></p-calendar> -->
+                    </div>
+                    <div *ngIf="formData.fieldType == formStaticText.DATERANGE">
+                        <p-calendar inputId="{{formData.fieldName}}" [dateFormat]="formData.format"
+                            [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
+                            [name]="formData.fieldName" class="{{formData.valueclass}}"
+                            [formControlName]="formData.fieldName" [(ngModel)]="formData.fieldValue"
+                            [showButtonBar]="false" [showIcon]="true" selectionMode="range" [readonlyInput]="true"
+                            (onClick)="changeEvent($event, formData)">
+                        </p-calendar>
+                    </div>
+                    <div *ngIf="formData.fieldType == formStaticText.TEXTAREA">
+                        <textarea id="{{formData.fieldName}}" name="{{formData.fieldName}}" rows={{formData.row}}
+                            [ngClass]="formData.editable ? formData.valueclass : 'textarea-custom1'"
+                            [formControlName]="formData.fieldName" [(ngModel)]="formData.fieldValue"
+                            placeholder="{{formData.placeholder}}" (blur)="blurValue($event, formData)"></textarea>
+                    </div>
+                    <div *ngIf="formData.fieldType == formStaticText.ANCHOR">
+                        <a type="anchor" class="{{formData.lblclass}}" id="{{formData.fieldName}}"
+                            [routerLink]="formData.placeholder">{{formData.fieldName}}</a>
+                    </div>
+                    <div *ngIf="formData.fieldType == formStaticText.BUTTON"
+                        [ngClass]="(formData.label == '') ? 'mt-3' : ''">
+                        <button pRipple type="{{formData.subtype}}" [disabled]="formData.isDisabled"
+                            class="btn {{formData.valueclass}}" (click)="btnClick(formData.subtype)"><i
+                                class="{{formData.icon}}" style="padding-right:7px"></i>{{formData.btnLabel}}</button>
+                    </div>
+                    <div *ngIf="formData.fieldType == formStaticText.IMAGEUPLOAD">
+                        <input id="{{formData.fieldName}}" type="file" name="{{formData.fieldName}}"
+                            [ngClass]="formData.editable ? formData.valueclass : 'imgUpload1'"
+                            class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
+                            [(ngModel)]="formData.fieldValue" accept="image/*"
+                            (change)="onFilesUpload($event, formData); changeEvent($event, formData)" />
+                    </div>
+                    <div *ngIf="formData.fieldType == formStaticText.FILESUPLOAD">
+                        <input id="{{formData.fieldName}}" type="file" name="{{formData.fieldName}}"
+                            class="{{formData.valueclass}}" [formControlName]="formData.fieldName"
+                            [(ngModel)]="formData.fieldValue" multiple (change)="onFilesUpload($event, formData)" />
+                    </div>
+                    <div *ngIf="formData.fieldType == formStaticText.ICON"
+                        [ngClass]="(formData.label == '') ? 'mt-3' : ''">
+                        <button *ngFor="let icon of formData.icons" (click)="btnClick(icon.subtype)"
+                            [ngClass]="formData. isDisabled ? formData.valueclass : 'butn-custom-dark-blue1 '"
+                            class="{{icon.valueclass}}" pTooltip="{{icon.tooltip}}"
+                            tooltipPosition="{{icon.toolPosition}}"><i class="{{icon.class}}"
+                                (window:keydown.enter)="btnClick(icon.subtype)"
+                                (window:keydown.esc)="btnClick(icon.subtype)"></i>
+                        </button>
+                    </div>
+                    <div *ngIf="formData.fieldType == formStaticText.CONFIRMPASSWORD">
+                        <app-re-enter id="{{formData.fieldName}}"
+                            (confirmPass)="confirmPassword($event, formData)"></app-re-enter>
+                    </div>
+                    <div *ngIf="formData.fieldType == formStaticText.CAPTCHA" class="{{formData.valueclass}}">
+                        <app-captcha id="{{formData.fieldName}}"
+                            (captchaEmitData)="catpchaValue($event, formData)"></app-captcha>
+                    </div>
+                    <div class="{{formData.valueclass}}"
+                        *ngIf="formData.fieldType === formStaticText.DEPENDENTDROPDOWN">
+                        <app-dependent-dropdown [data]="formData.values" [defaultData]="formData.fieldValue"
+                            (dependentDrop)="dependentDrop($event, formData)"></app-dependent-dropdown>
+                    </div>
+                    <p-multiSelect *ngIf="formData.fieldType == formStaticText.MULTISELECT" [options]="formData.values"
+                        [inputId]="formData.fieldName" [formControlName]="formData.fieldName"
+                        [ngClass]="formData.editable ? formData.valueclass : 'input-box1 '"
+                        [(ngModel)]="formData.fieldValue" optionLabel="name" optionValue="code" [showClear]="true"
+                        class="{{formData.valueclass}}" [showClear]="false" (onChange)="changeEvent($event, formData)">
+                    </p-multiSelect>
+                    <!-- Error Messages Here -->
+
+                    <div class="error-txt-msg"
+                        *ngIf="form.controls[formData.fieldName].value == '0' && form.controls[formData.fieldName].touched"
+                        style="color: red; ">
+                        {{formData.message.required}}
+                    </div>
+                    <div class="error-txt-msg"
+                        *ngIf="form.controls[formData.fieldName].hasError('required') && form.controls[formData.fieldName].touched">
+                        {{formData.message.required}}
+                    </div>
+                    <div class="error-txt-msg"
+                        *ngIf="form.controls[formData.fieldName].hasError('pattern') && form.controls[formData.fieldName].touched">
+                        {{formData.message.pattern}}
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </form>
+</div>
+
+<p-dialog header="Title" [(visible)]="displayModal">
+    <ng-content></ng-content>
+</p-dialog>

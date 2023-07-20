@@ -1,0 +1,186 @@
+{
+    "loginForm": {
+        "backgroundImg": "../../../../assets/Techjivaa-Light-Logo.png",
+        "backgroundImgCSS": "img img-responsive  img-fluid logo-img",
+        "backgroundColour": "#b6c1c8",
+        "classContainer": "container center-card",
+        "cardClass": "col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4",
+        "cardColorCSS": "custom-card-login",
+        "logoCSS": "logo text-center",
+        "form": {
+            "class": "row ",
+            "formTitle": "LOGIN SCREEN",
+            "titlelblclass": "lbl-center-login",
+            "formName": "Form1",
+            "isEditabke": "edit",
+            "formControls": [
+                {
+                    "id": 10,
+                    "isEditable": true,
+                    "isVisible": false,
+                    "label": "",
+                    "inputType": "password",
+                    "type": "staticText",
+                    "data": "Enter your email and password below",
+                    "class": "col-md-12 lbl-center-text ",
+                    "lblclass": "l",
+                    "valueclass": "",
+                    "placeholder": "",
+                    "formControlName": "anchor",
+                    "message": {
+                        "required": "",
+                        "pattern": ""
+                    },
+                    "validations": {
+                        "required": false,
+                        "pattern": ""
+                    }
+                },
+                {
+                    "id": "emailInput",
+                    "isEditable": true,
+                    "isVisible": true,
+                    "label": "Email",
+                    "type": "text",
+                    "inputType": "text",
+                    "maxLength": 5,
+                    "class": "col-md-12 my-1",
+                    "lblclass": "custom-label-login",
+                    "valueclass": "input-box",
+                    "placeholder": "Email address",
+                    "formControlName": "emailId",
+                    "message": {
+                        "required": "Email is required",
+                        "pattern": "Please enter correct format"
+                    },
+                    "validations": {
+                        "required": true,
+                        "pattern": "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,6}$"
+                    }
+                },
+                {
+                    "id": "passwordInput",
+                    "isEditable": true,
+                    "isVisible": true,
+                    "label": "Password",
+                    "type": "password",
+                    "inputType": "password",
+                    "class": "col-md-12 my-1",
+                    "lblclass": "custom-label-login",
+                    "valueclass": "",
+                    "placeholder": "  Password",
+                    "formControlName": "password",
+                    "message": {
+                        "required": "Password is required",
+                        "pattern": ""
+                    },
+                    "validations": {
+                        "required": true,
+                        "pattern": ""
+                    }
+                },
+                {
+                    "isEditable": true,
+                    "isVisible": true,
+                    "label": "",
+                    "type": "anchor",
+                    "inputType": "anchor",
+                    "valueclass": "lbl-end",
+                    "maxLength": 5,
+                    "class": "col-md-12 lbl-end forgot-css ",
+                    "lblclass": "lbl-end lbl-center-login-anchor ",
+                    "id": "anchor",
+                    "placeholder": "/forgot-password",
+                    "formControlName": "Forgot Password?",
+                    "message": {
+                        "required": "",
+                        "pattern": ""
+                    },
+                    "validations": {
+                        "required": false,
+                        "pattern": ""
+                    }
+                },
+                {
+                    "isEditable": true,
+                    "isVisible": true,
+                    "label": "",
+                    "type": "captcha",
+                    "inputType": "captcha",
+                    "lblclass": "",
+                    "class": "col-md-12",
+                    "valueclass": "",
+                    "placeholder": "Captcha",
+                    "formControlName": "captcha",
+                    "message": {
+                        "required": "Invalid captcha ...!",
+                        "pattern": ""
+                    },
+                    "validations": {
+                        "required": false,
+                        "pattern": ""
+                    }
+                },
+                {
+                    "isEditable": true,
+                    "isVisible": true,
+                    "type": "button",
+                    "subtype": "login",
+                    "valueclass": "butn-custom-dark-blue",
+                    "btnLabel": "Log in",
+                    "icon": "",
+                    "isDisabled": false,
+                    "formControlName": "loginBtn",
+                    "validations": {
+                        "required": false,
+                        "pattern": ""
+                    }
+                },
+                {
+                    "id": 10,
+                    "isEditable": true,
+                    "isVisible": false,
+                    "label": "",
+                    "inputType": "",
+                    "type": "staticText",
+                    "data": "Don't have an account ?",
+                    "class": "col-md-8 lbl-end txt-sign-up pe-1",
+                    "lblclass": "lbl-center-statictext ",
+                    "valueclass": "static-text-size lbl-end",
+                    "placeholder": "",
+                    "formControlName": "anchor",
+                    "message": {
+                        "required": "",
+                        "pattern": ""
+                    },
+                    "validations": {
+                        "required": false,
+                        "pattern": ""
+                    }
+                },
+                {
+                    "isEditable": true,
+                    "isVisible": false,
+                    "label": "",
+                    "type": "anchor",
+                    "inputType": "anchor",
+                    "valueclass": "lbl-end",
+                    "maxLength": 5,
+                    "class": "col-md-4 ps-0",
+                    "lblclass": "lbl-start-text lbl-center-login-signup ",
+                    "id": "anchor",
+                    "placeholder": "Sign up",
+                    "formControlName": "Sign up",
+                    "message": {
+                        "required": "",
+                        "pattern": ""
+                    },
+                    "validations": {
+                        "required": false,
+                        "pattern": ""
+                    }
+                }
+            ]
+        }
+    }
+}

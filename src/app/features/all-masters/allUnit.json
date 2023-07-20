@@ -1,0 +1,1825 @@
+{
+    "Forms":[
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Action Button",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-bootstrap",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/action-button",
+                        "formControlName": "Action Button",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Action Module",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-boxes",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/action-module",
+                        "formControlName": "Action Module",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Action Role",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-people",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/action-role",
+                        "formControlName": "Action Role",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Action SubModule",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-box",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/action-sub-module",
+                        "formControlName": "Action SubModule",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Action User Role",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-person",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/bank-master",
+                        "formControlName": "Action User Role",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Application Configuration",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-google-play",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/application-config",
+                        "formControlName": "Application Configuration",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Bank Branch Master",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-bank",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/bank-branch-master",
+                        "formControlName": "Bank Branch Master",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Bank Master",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-bank2",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/bank-master",
+                        "formControlName": "Bank Master",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Cluster",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-bounding-box",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/bank-master",
+                        "formControlName": "Cluster",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Department",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-person-workspace",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/department",
+                        "formControlName": "Department",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Designation",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-person-rolodex",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/bank-master",
+                        "formControlName": "Designation",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Employment Status",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-person-vcard",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/employee-status",
+                        "formControlName": "Employment Status",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Import Data",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-database-down",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/bank-master",
+                        "formControlName": "Import Data",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "LOV Value",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-database-down",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/lov-value",
+                        "formControlName": "LOV Value",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Manage Staff",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-person-fill-gear",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/bank-master",
+                        "formControlName": "Manage Staff",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Organization",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-building-fill-gear",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/organization",
+                        "formControlName": "Organization",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Police Station",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-person-video2",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/bank-master",
+                        "formControlName": "Police Station",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Role",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-person-add",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/role-management",
+                        "formControlName": "Role",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Social Status",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-signal",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/bank-master",
+                        "formControlName": "Social Status",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Spaciality",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-gear-wide-connected",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/spetiality",
+                        "formControlName": "Spaciality",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Staff",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-person-lock",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/bank-master",
+                        "formControlName": "Staff",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Sub Department",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-person-square",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/sub-department",
+                        "formControlName": "Sub Department",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Super Speciality",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-motherboard",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/bank-master",
+                        "formControlName": "Super Speciality",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Unit",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-unity",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/unit",
+                        "formControlName": "Unit",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "User Info",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-info",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/bank-master",
+                        "formControlName": "bankMaster",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "LOV type",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-info",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/lov-type",
+                        "formControlName": "LOV type",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        }
+    ]
+}
+

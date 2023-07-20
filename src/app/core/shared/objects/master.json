@@ -1,0 +1,147 @@
+{
+  "masterData": {
+    "theme": {
+      "sidenavBG": "#174875",
+      "headerBG": "#EEEEEE",
+      "footerBG": "#EEEEEE"
+    },
+    "header": {
+      "logo": "../../assets/Techjivaa-svg-removebg.png",
+      "whiteLogo": "../../assets/core_assets/medimazefull.png",
+      "usericon": "../../assets/Icon.png",
+      "setting": "../../assets/setting.png",
+      "notification": {
+        "count": "9",
+        "data": [
+          {
+            "title": "Final Presentation",
+            "msg": "Classify notifications by three levels: high, medium, and low.",
+            "readFlag": false
+          },
+          {
+            "title": "Notification System",
+            "msg": "There are a few broadsteps to follow when designing a notification system.",
+            "readFlag": false
+          },
+          {
+            "title": "Design Principle",
+            "msg": "When embarking on notification design, the essential design principle to keep in mind is that they must assist (not impede) people to perform tasks.",
+            "readFlag": true
+          },
+          {
+            "title": "Final Presentation",
+            "msg": "Classify notifications by three levels: high, medium, and low.",
+            "readFlag": false
+          },
+          {
+            "title": "Notification System",
+            "msg": "There are a few broadsteps to follow when designing a notification system.",
+            "readFlag": true
+          },
+          {
+            "title": "Design Principle",
+            "msg": "When embarking on notification design, the essential design principle to keep in mind is that they must assist (not impede) people to perform tasks.",
+            "readFlag": false
+          },
+          {
+            "title": "Final Presentation",
+            "msg": "Classify notifications by three levels: high, medium, and low.",
+            "readFlag": true
+          }
+        ]
+      },
+      "dp": "../../assets/userlogo.png",
+      "sidenavLogo": "/assets/Techjivaa-White-Logo.png",
+      "onlyLogo": "/assets//core_assets/medimazesmall.png"
+    },
+    "sidenavItems": [
+      {
+        "label": "Tabular Form",
+        "icon": "bi bi-person-up",
+        "group": [
+          {
+            "label": "Dashboard",
+            "icon": "bi bi-person-up",
+            "routerLink": "/master-page/dashboard",
+            "submodules": []
+          },
+          {
+            "label": "Google URL",
+            "icon": "bi bi-person-up",
+            "url": "https://www.google.com/",
+            "submodules": []
+          },
+          {
+            "label": "Group",
+            "icon": "pi pi-fw pi-book",
+            "submodules": [
+              {
+                "label": "Sub child",
+                "icon": "bi bi-person-up",
+                "routerLink": "/master-page/user-management"
+              },
+              {
+                "label": "Google URL",
+                "icon": "bi bi-person-up",
+                "url": "https://www.google.com/"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Generic  Table",
+        "icon": "pi pi-list",
+        "group": [
+          {
+            "label": "Table",
+            "icon": "bi bi-person-up",
+            "routerLink": "/master-page/user-management",
+            "submodules": []
+          }
+        ]
+      },
+      {
+        "label": "Form vk",
+        "icon": "pi pi-fw pi-book",
+        "routerLink": "/master-page/worklist",
+        "group": []
+      },
+      {
+        "label": "Cards",
+        "icon": "pi pi-fw pi-book",
+        "routerLink": "/master-page/card-demo",
+        "group": []
+      },
+      {
+        "label": "Google",
+        "icon": "pi pi-fw pi-book",
+        "url": "https://www.google.com/",
+        "group": []
+      },
+      {
+        "label": "Configuration",
+        "icon": "pi pi-fw pi-book",
+        "group": [
+          {
+            "label": "Email Configurations",
+            "icon": "",
+            "routerLink": "configurations/email-configuration",
+            "submodules": []
+          },
+          {
+            "label": "SMS Configurations",
+            "icon": "",
+            "routerLink": "configurations/sms-configuration",
+            "submodules": []
+          }
+        ]
+      }
+    ],
+    "footer": {
+      "logo": "../../assets/Techjivaa-svg-removebg.png",
+      "dp": "../../assets/userlogo.png",
+      "username": "Satyam Singh"
+    }
+  }
+}

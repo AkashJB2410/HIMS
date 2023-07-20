@@ -1,0 +1,55 @@
+{
+    "tableName": "Action Buttons Table",
+    "tableHeaders": [
+        {
+            "field": "id",
+            "header": "Sr. No",
+            "iseditable": false,
+            "class": "text-center"
+        },
+        {
+            "field": "abName",
+            "header": "Action Button Name",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "is_Active",
+            "header": "IsActive",
+            "iseditable": false,
+            "class": ""
+        }        
+    ],
+    "PdfHeaders": [
+        {
+            "field": "abName",
+            "header": "Action Button Name"
+        }
+    ],
+    "globalFilter": [
+        "abName"
+    ],
+    "rows": 10,
+    "showCurrentPageReport": true,
+    "rowsPerPageOptions": [
+        10,
+        25,
+        50
+    ],
+    "paginator": true,
+    "rowHover": true,
+    "loading": false,
+    "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox": true,
+    "resizableColumns": true,
+    "isActions": [
+        "Edit",
+        "Delete",
+        "isActive"
+    ],
+    "editicon": "../../../assets/icons/Group 1823.png",
+    "isVisible": false,
+    "buttonlbl": "Add Action Buttons",
+    "textLength": 16,
+    "sidebar": "p-sidebar-sm"
+}

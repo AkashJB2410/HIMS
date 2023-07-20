@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~primeicons/primeicons.css';
+@import './app/core/core_themes/theme.css';
+
+/* @import './dark-theme.css';  */
+/* @import './light-theme.css'; */
+
+/* Google translate CSS */
+#google_translate_element{
+    margin: 5px 10px;
+  }
+  
+  #google_translate_element select{
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 11px !important;
+    padding: 5px 8px;
+    margin-top: 25px !important;
+    margin-left: 10px;
+  }
+  
+  .goog-logo-link{
+    display:none !important;
+  }
+  
+  .goog-te-gadget{
+    color:transparent!important;
+  }
+  
+  .VIpgJd-ZVi9od-l4eHX-hSRGPd{
+    display: none !important;
+  }
+  
+  .skiptranslate .VIpgJd-ZVi9od-l4eHX-hSRGPd{
+    display: none !important;
+  } 
+  
+  .skiptranslate .goog-te-gadget > span > a {
+    display: none !important;
+  }
+  
+  .goog-te-banner-frame{
+    display:none !important;
+  }
+  
+  .VIpgJd-ZVi9od-ORHb-OEVmcd{
+    display: none !important;
+    width: 35% !important;
+    left: 22rem !important;
+    top: 0px !important;
+  }
+    
+  .google-translate-upper-div{
+    position: relative;
+    right: 0;
+  }
+  
+   .VIpgJd-ZVi9od-TvD9Pc-hSRGPd{
+    display: none !important;
+  } 
+
+  .goog-te-banner-frame{
+    display: none !important;
+    top: 0px !important;
+  }
+
+  body{
+    top: 0px !important;
+  }
+  
+  .VIpgJd-ZVi9od-aZ2wEe-OiiCO-ti6hGc {
+    --webkit-transform: scale(.0);
+    transform: scale(.0);
+    opacity: 0.1;
+}
+
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf-ti6hGc {
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+  left: 0px !important;
+  display: none !important;
+  /* top: -14px; */
+}
+
+/* .VIpgJd-suEOdc .VIpgJd-yAWNEb-L7lbkb .skiptranslate{
+ display: none;
+} */

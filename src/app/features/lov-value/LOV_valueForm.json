@@ -1,0 +1,181 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "LOV Value",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar":"p-sidebar-sm",
+        "formControls": [
+           
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "transient": false,
+                "label": "LOV List ID",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter lovlistId",
+                "formControlName": "lovlistId",
+                "message": {
+                    "required": "groupId is required",
+                    "pattern": "pattern is not match"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "LOV TypeID",
+                "type": "select",
+                "class": "col-md-12  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectlovType",
+                "message": {
+                    "required": "lovtypeID is required",
+                    "pattern": "pattern is not match"
+                },
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Value",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter value",
+                "formControlName": "value",
+                "message": {
+                    "required": "value is required",
+                    "pattern": "pattern is not match"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Type Of Field",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter type of field",
+                "formControlName": "typeOfField",
+                "message": {
+                    "required": "description is required",
+                    "pattern": "pattern is not match"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[A-Za-z\\s-/]+$"
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Description",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter description",
+                "formControlName": "description",
+                "message": {
+                    "required": "description is required",
+                    "pattern": "pattern is not match"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            
+            
+           
+            {
+                "isEditable": false,
+                "isVisible": false,
+                "transient": false,
+                "label": "is_Active",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "valueclass":"input-box",
+                "placeholder": "Enter id",
+                "formControlName": "is_Active",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue ",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },            
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-4",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

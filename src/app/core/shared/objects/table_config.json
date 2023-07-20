@@ -1,0 +1,34 @@
+{
+    "tableName": "Products Table",
+    "tableHeaders": [
+        {"field": "code","header": "Code","iseditable": false , "class":""} ,
+        {"field": "name","header": "Name","iseditable": true, "class":""},
+        {"field": "inventoryStatus","header": "Inventory Status","iseditable": false, "class":""},
+        {"field": "category","header": "Category","iseditable": false, "class":""},
+        {"field": "quantity","header": "Quantity","iseditable": false, "class":"text-center"}
+    ],
+    "getColors":[
+        { "status":"INSTOCK", "color": "#119C2B"},
+        { "status":"LOWSTOCK", "color": "#FF792E"},
+        { "status":"OUTOFSTOCK", "color": "red"}
+    ],
+    "globalFilter": ["code","name","quantity","inventoryStatus"],
+    "rows" : 16,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [15,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "resizableColumns": true,
+    "isDragAndDrop":true,
+    "isActions": ["Edit", "Delete" ,"isActive","Viewer","Scanner","Emergency","IPD","OPD","Servies"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "expand":true,
+    "buttonlbl":"",
+    "textLength":16,
+    "sidebar": "p-sidebar-lg",
+    "addButton":true,
+    "bulkAction":["PDF","EXCEL","Delete"]   
+}

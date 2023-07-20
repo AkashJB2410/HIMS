@@ -1,0 +1,26 @@
+<!----------- Generic Filter ----------->
+<app-filter *ngIf="configurations.isFilter" [filterData]="filterData" (selectedData)="fitereddata($event)"></app-filter>
+
+<!----------- Generic Table ----------->
+<app-generictable *ngIf="configurations.isTable && data" [config]="config" [tableData]="data" (onEdit)="editRow($event)"
+    (isActive)="isactive($event)" (onDelete)="deleteRow($event)" (onDeletechecked)="BulkdeleteRow($event)"
+    (inlineEdit)="inlineedit($event)" (OnScannerClick)="onScannerClick($event)" (OnOPDclick)="onOPDclick($event)"
+    (OnEmergencyClick)="onEmergencyClick($event)" (OnIPDclick)="onIPDclick($event)" (onAdd)="addRow($event)"
+    (onRowClickData)="onRowClick($event)" (OnServiceclick)="onServiceclick($event)">
+    <ng-content select="[projectTowards=table]"></ng-content>
+</app-generictable>
+
+<!----------- Delete modal ----------->
+<!-- <p-confirmDialog #cd [position]="'top'" [style]="{width: '30vw'}"></p-confirmDialog> -->
+<p-confirmDialog #cd [position]="'top'" [style]="{width: '50vw'}">
+    <ng-template pTemplate="footer">
+        <button type="button" class="btn butn-custom-dark-blue" (click)="cd.reject()">No</button>
+        <button type="button" class="btn butn-custom-wrng" (click)="cd.accept()">Yes</button>
+    </ng-template>
+</p-confirmDialog>
+
+<!----------- SideBar ----------->
+<app-sidebar *ngIf="configurations.isSideBar" [visibleSidebar]="visibleSidebar" [sidebarJSON]="sideBarJson"
+    [sidebarConfig]="config" (sidebarData)="sidebarData($event)">
+    <ng-content select="[projectTowards=sidebar]"></ng-content>
+</app-sidebar>

@@ -1,0 +1,91 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Account Recovery",
+        "formName": "Form1",
+        "formType": "edit",
+        "formControls": [
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "label": "",
+                "type": "staticText",
+                "data": "To help keep your account safe,Techjivaa wants to make sure it's really you trying to sign in ",
+                "class": "col-md-12 my-1",
+                "placeholder": "********",
+                "formControlName": "note1",
+                "message": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "label": "",
+                "type": "staticText",
+                "data": "A verification code was just sent to ",
+                "class": "col-md-12 my-1",
+                "placeholder": "********",
+                "formControlName": "note2",
+                "message": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "label": "",
+                "type": "staticText",
+                "data": "An Mobile Number with a verification code was just send to ",
+                "class": "col-md-12 my-1",
+                "placeholder": "********",
+                "formControlName": "note3",
+                "message": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "valueclass":"input-box",
+                "placeholder": "Enter code...",
+                "formControlName": "code",
+                "message": {
+                    "required": "Code is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "submit",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Next",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+
+        ]
+    }
+}

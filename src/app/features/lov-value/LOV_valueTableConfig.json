@@ -1,0 +1,95 @@
+{
+    "tableName": "Unit Table",
+    "tableHeaders": [
+        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":"text-center"},
+    
+        {
+            "field": "lovTypeName",
+            "header": "LOV Type Name",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "value",
+            "header": "Value",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "typeOfField",
+            "header": "Type Of Field",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "description",
+            "header": "Description",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "is_Active",
+            "header": "IsActive",
+            "iseditable": false,
+            "class": ""
+        }
+    ],
+    "PdfHeaders": [
+        {"field": "srNumber","header": "Sr Number"},
+
+        {
+            "field": "lovlistId",
+            "header": "ID"
+        },
+        {
+            "field": "lovTypeName",
+            "header": "LOV Type Name"
+        },
+        {
+            "field": "description",
+            "header": "Description"
+        },
+        {
+            "field": "typeOfField",
+            "header": "Type Of Field"
+        },
+        {
+            "field": "value",
+            "header": "Value"
+        },
+        {
+            "field": "is_Active",
+            "header": "IsActive"
+        }
+    ],
+    "globalFilter": [
+        "lovlistId",
+        "lovTypeId",
+        "typeOfField",
+        "value",
+        "is_Active"
+    ],
+    "rows": 50,
+    "showCurrentPageReport": true,
+    "rowsPerPageOptions": [
+        10,
+        25,
+        50
+    ],
+    "paginator": true,
+    "rowHover": true,
+    "loading": false,
+    "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox": true,
+    "resizableColumns": true,
+    "isActions": [
+        "Edit",
+        "Delete",
+        "isActive"
+    ],
+    "sidebar":"p-sidebar-sm",
+    "editicon": "../../../assets/icons/Group 1823.png",
+    "isVisible": false,
+    "buttonlbl": "Add LOV Value",
+    "textLength": 16
+}

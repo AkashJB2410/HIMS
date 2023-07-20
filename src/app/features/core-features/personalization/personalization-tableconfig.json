@@ -1,0 +1,66 @@
+{
+    "tableName": "Personalization",
+    "tableHeaders": [
+        {
+            "field":"id",
+            "header":"Sr. No.","iseditable": false , "class":""
+        },
+        {
+            "field": "keyName",
+            "header": "Key Name",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "keyValue",
+            "header": "Key Value",
+            "iseditable": false,
+            "class": ""
+        }
+    ],
+    "PdfHeaders": [
+        {
+            "field":"id",
+            "header":"Sr. No."
+        },
+        {
+            "field": "keyName",
+            "header": "Key Name"
+        },
+        {
+            "field": "keyValue",
+            "header": "Key Value"
+        }
+    ],
+    "globalFilter": [
+       "keyname","keyvalue"
+    ],
+    "rows": 50,
+    "showCurrentPageReport": true,
+    "rowsPerPageOptions": [
+        10,
+        25,
+        50
+    ],
+    "paginator": true,
+    "rowHover": true,
+    "loading": false,
+    "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox": true,
+    "resizableColumns": true,
+    "isActions": [
+        "Edit",
+        "Delete",
+        "isActive"
+    ],
+    "sidebar":"p-sidebar-md",
+    "editicon": "../../../assets/icons/Group 1823.png",
+    "isVisible": false,
+    "buttonlbl": "ADD",
+    "textLength": 16,
+    "addButton":true,
+    "bulkAction":["PDF","EXCEL","Delete"],
+    "isDragAndDrop":true
+
+
+}

@@ -1,0 +1,24 @@
+{
+    "itemsList": [
+        {
+            "label": "Configurations",
+            "icon": "",
+            "routerLink": ""
+        },
+        {
+            "label": "All Masters",
+            "icon": "",
+            "routerLink": "/master-page/all-masters"
+        },
+        {
+            "label": "Unit Configurations",
+            "icon": "",
+            "routerLink": "/master-page/all-masters"
+        },
+        {
+            "label": "LOV Type",
+            "icon": "",
+            "routerLink":"all-masters/lov-type"
+        }
+    ]
+}

@@ -1,0 +1,81 @@
+{
+    "tableName": "MasterModule Table",
+    "tableHeaders": [
+        {
+            "field": "label",
+            "header": "Label",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "icon",
+            "header": "Icon",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "routerLink",
+            "header": "Router Link",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "sequence",
+            "header": "Sequence",
+            "iseditable": false,
+            "class": "text-center"
+        },
+        {
+            "field": "is_Active",
+            "header": "isActive",
+            "iseditable": false,
+            "class": "text-center"
+        }
+    ],
+    "PdfHeaders": [
+        {
+            "field": "label",
+            "header": "Label"
+        },
+        {
+            "field": "icon",
+            "header": "Icon"
+        },
+        {
+            "field": "routerLink",
+            "header": "Router Link"
+        },
+        {
+            "field": "sequence",
+            "header": "Sequence"
+        }
+    ],
+    "globalFilter": [
+        "icon","label",
+        "routerLink",
+        "sequence"
+    ],
+    "rows": 15,
+    "showCurrentPageReport": true,
+    "rowsPerPageOptions": [
+        10,
+        25,
+        50
+    ],
+    "paginator": true,
+    "rowHover": true,
+    "loading": false,
+    "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox": true,
+    "resizableColumns": true,
+    "isActions": [
+        "Edit",
+        "Delete",
+        "isActive"
+    ],
+    "editicon": "../../../assets/icons/Group 1823.png",
+    "isVisible": false,
+    "buttonlbl": "Add MasterModule",
+    "textLength": 16,
+    "sidebar":"p-sidebar-sm"
+}

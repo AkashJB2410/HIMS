@@ -1,0 +1,78 @@
+{
+    "listClass":"col-md-3 pe-0 card-scroll",
+    "cardClass":"col-md-9 ps-0",
+    "tabular": [
+        {
+            "id":0,
+            "label": "Admission Configuration",
+            "image":"/assets/core_assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+        },
+        {
+            "id":1,
+            "label": "Discharge Configuration",
+            "image":"/assets/core_assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+        },
+        {
+            "id":2,
+            "label": "Billing Configuration",
+            "image":"/assets/core_assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+        },
+        {
+            "id":3,
+            "label": "Doctor Schedule",
+            "image":"/assets/core_assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+        },
+        {
+            "id":4,
+            "label": "EMR Configuration",
+            "image":"/assets/core_assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+        },
+        {
+            "id":5,
+            "label": "Inventory Configuration",
+            "image":"/assets/core_assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+        },
+        {
+            "id":6,
+            "label": "OT Configuration",
+            "image":"/assets/core_assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+        },
+        {
+            "id":7,
+            "label": "Pathology Configuration",
+            "image":"/assets/core_assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+        },
+        {
+            "id":8,
+            "label": "Radiology Configuration",
+            "image":"/assets/core_assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+        },
+        {
+            "id":9,
+            "label": "Patient Configuration",
+            "image":"/assets/core_assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+        },
+        {
+            "id":10,
+            "label": "Unit Configuration",
+            "image":"/assets/core_assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+        },
+        {
+            "id":11,
+            "label": "Nursing Station Configuration",
+            "image":"/assets/core_assets/verticalCard.png",
+            "imgCss":"verticalCardImage"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+<p-breadcrumb [model]="Group_breadcrumb.itemsList" ></p-breadcrumb>
+<h3 class="Sidebar-title-md"><i class="bi bi-file-earmark-medical"></i>Group Module</h3>
+<app-super-grid 
+    *ngIf="data"
+    [configurations]="configurations" 
+    [tableData]="data" 
+    [tableConfig]="tableConfig"
+    [sidebarJSON]="groupFormData" 
+    (sideBarEvent)="sidebarData($event)" 
+    (confirmAction)="confirmAction($event)"
+    (Bulkdelete)="BulkDeleteRows($event)"
+    (editRow)="editRow($event)" 
+    (addRow)="addRow($event)"
+    (isActive)="isActive($event)" 
+    (onAdd)="onAdd($event)"
+    (onEdit)="onAdd($event)"
+    (onEdit)="onEdit($event)">
+    <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="groupFormData" [editData]="editData" (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
+     </app-super-grid>

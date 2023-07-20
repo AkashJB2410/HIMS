@@ -1,0 +1,163 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "SMS Configuration",
+        "formName": "Form1",
+        "sidebar": "p-sidebar-md",
+        "formControls": [
+            {
+                "id": 0,
+                "isEditable": false,
+                "isVisible": false,
+                "label": "Id",
+                "type": "text",
+                "inputType": "number",
+                "class": "col-md-4  my-1",
+                "lblclass": "cst-label",
+                "valueclass": "input-box",
+                "placeholder": "",
+                "formControlName": "idInput",
+                "mandatoryMessage": "Code is required",
+                "message": "Code is required",                
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Number",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"cst-label",
+                "valueclass":"input-box",
+                "placeholder": "Enter to number...",
+                "formControlName": "toNumberInput",
+                "message": {
+                    "required": "To number is required",
+                    "pattern": "Only numbers allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[0-9]*$"
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Message",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"cst-label",
+                "valueclass":"input-box",
+                "placeholder": "Enter sms message...",
+                "formControlName": "smsMessageInput",
+                "message": {
+                    "required": "Message is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 7,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Date",
+                "type": "date",
+                "format": "yyyy-MM-dd",
+                "class": "col-md-4 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box-lg custom-p-calendar",
+                "value": "04/22/2023",
+                "placeholder": "",
+                "formControlName": "dateTimeInput",
+                "message": {
+                    "required": "Date is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Status",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-4 my-1",
+                "lblclass":"cst-label",
+                "valueclass":"input-box",
+                "placeholder": "Enter sms status...",
+                "formControlName": "smsStatusInput",
+                "message": {
+                    "required": "Status is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Retry count",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-4 my-1",
+                "lblclass":"cst-label",
+                "valueclass":"input-box",
+                "placeholder": "Enter retry count...",
+                "formControlName": "retryCountInput",
+                "message": {
+                    "required": "Retry count is required",
+                    "pattern": "Only numbers are allowed."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[0-9]*$"
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue ",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

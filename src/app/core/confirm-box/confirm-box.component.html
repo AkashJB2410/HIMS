@@ -1,0 +1,8 @@
+<p-confirmDialog #cd  [position]="'top'">
+    <ng-template pTemplate="header">
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <button type="button" pButton icon="{{msg.icon}}" label="{{msg.title}}" #{{msg.event}}
+            (click)="confirmEvent(msg.event)" *ngFor="let msg of message.buttons"></button>
+    </ng-template>
+</p-confirmDialog>

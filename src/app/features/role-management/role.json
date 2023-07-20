@@ -1,0 +1,108 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Add Role Management",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formName": "Form1",
+        "sidebar": "p-sidebar-sm",
+        "formControls": [
+            {
+                "id": 0,
+                "isEditable": false,
+                "isVisible": true,
+                "label": "Role ID",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": "",
+                "formControlName": "roleId",
+                "message": "Code is required",                
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 0,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Role Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": "",
+                "formControlName": "roleName",
+                "message": {
+                    "required": "Plase Enter Role Name",
+                    "pattern": "Only Alphabete are Allowed"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]+$"
+                }
+            },
+            {
+                "id": 0,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Role Description",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": "",
+                "formControlName": "roleDescription",   
+                "message": {
+                    "required": "Plase Enter Role Description",
+                    "pattern": "Only Letters and Number are Allowed"
+                },             
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z0-9 ]+$"
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-6",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-6",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

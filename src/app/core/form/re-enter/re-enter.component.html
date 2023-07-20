@@ -1,0 +1,7 @@
+<div class="my-1">
+    <p-password placeholder="Password" (onBlur)="pass($event)" [toggleMask]="true"></p-password>
+</div>
+<div class="mt-2">
+    <label for="reEnter" class="custom-label-login">Confirm Password</label>
+    <p-password inputId="reEnter" placeholder="Confirm Password" (onBlur)="repass($event)" [toggleMask]="true"></p-password>
+</div>

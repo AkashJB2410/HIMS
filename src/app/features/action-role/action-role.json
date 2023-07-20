@@ -1,0 +1,317 @@
+{
+    "form": {
+        "class": "row",
+        "formTitleClass": "Sidebar-title-md",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formTitle": "Action Role",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar": "p-sidebar-md",
+        "formControls": [
+            {
+                "id": 0,
+                "isEditable": false,
+                "isVisible": true,
+                "label": "Id",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": "",
+                "formControlName": "idInput",
+                "mandatoryMessage": "Code is required",
+                "message": "Code is required",                
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Role",
+                "type": "select",
+                "class": "col-md-12  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectRole",
+                "message": {
+                    "required": "Role is required",
+                    "pattern": ""
+                },
+                "values": [
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Action Module",
+                "type": "select",
+                "class": "col-md-12  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectActionModule",
+                "message": {
+                    "required": "Action Module is required",
+                    "pattern": ""
+                },
+                "values": [
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Action Sub Module",
+                "type": "select",
+                "class": "col-md-12  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectActionSubModule",
+                "message": {
+                    "required": "Action Sub Module is required",
+                    "pattern": ""
+                },
+                "values": [
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "checkbox",
+                "class": "col-md-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "checkbox-btn-vertical",
+                "placeholder": "",
+                "value": "",
+                "formControlName": "addCheckbox",
+                "message": {
+                    "required": "Action is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Add",
+                        "code": "add"
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "checkbox",
+                "class": "col-md-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "checkbox-btn-vertical",
+                "placeholder": "",
+                "value": "",
+                "formControlName": "approveCheckbox",
+                "message": {
+                    "required": "Approve action role is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Approve",
+                        "code": "app"
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "checkbox",
+                "class": "col-md-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "checkbox-btn-vertical",
+                "placeholder": "",
+                "value": "",
+                "formControlName": "deleteCheckbox",
+                "message": {
+                    "required": "Delete action role is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Delete",
+                        "code": "del"
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "checkbox",
+                "class": "col-md-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "checkbox-btn-vertical",
+                "placeholder": "",
+                "value": "",
+                "formControlName": "editCheckbox",
+                "message": {
+                    "required": "Edit action role is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Edit",
+                        "code": "edit"
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "checkbox",
+                "class": "col-md-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "checkbox-btn-vertical",
+                "placeholder": "",
+                "value": "",
+                "formControlName": "searchCheckbox",
+                "message": {
+                    "required": "Search action role is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Search",
+                        "code": "search"
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "checkbox",
+                "class": "col-md-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "checkbox-btn-vertical",
+                "placeholder": "",
+                "value": "",
+                "formControlName": "viewCheckbox",
+                "message": {
+                    "required": "View action role is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "View",
+                        "code": "view"
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 0,
+                "isEditable": false,
+                "isVisible": true,
+                "label": "Is Active",
+                "type": "text",
+                "inputType": "number",
+                "class": "col-md-12 my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": "",
+                "formControlName": "isActiveInput",
+                "mandatoryMessage": "Is_Active is required",
+                "message": "Is_Active is required",                
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-6",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-6",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+
+           
+        ]
+    }
+}

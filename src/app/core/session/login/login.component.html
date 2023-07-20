@@ -1,0 +1,134 @@
+<section id="bg">
+    <div class="container center-card">
+        <div class="row">
+            <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+                <div class="login-card rounded-lg overflow-hidden bg-white mx-auto">
+                    <!-- <div class="image">
+                    </div> -->
+                    <div class="login-card-header">
+                        <h3 class="text-center">{{loginFormData.loginForm.form.formTitle}}</h3>
+                    </div>
+                    <div class="lbl-center-login" *ngIf="timerFlag">
+                        Try logging in after {{display}} mins.
+                    </div>
+                    <div class="lbl-center-login" *ngIf="timerFlag2">
+                        Now login with your correct password.
+                    </div>
+                    <div class="login-body p-1 p-md-2">
+                        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                            <div class="login-body-wrapper mx-auto">
+                                <div class="form-group mb-6">
+                                    <label for="email" class="label-txt">Email</label>
+                                    <input type="text" formControlName="emailId" class="input-box login-input"
+                                        placeholder="Enter Registered Email ID"
+                                        (blur)="getOrganiszation($event.target)">
+                                </div>
+                                <div class="form-group mb-6 login-input">
+                                    <label for="email" class="label-txt">Password</label>
+                                    <p-password formControlName="password" placeholder="Enter password "
+                                        [toggleMask]="true" [feedback]="false"></p-password>
+                                </div>
+                                <div class="form-group mb-6 login-input">
+                                    <label _ngcontent-spn-c57="" for="email" class="label-txt mb-1">Organisation</label>
+                                    <p-dropdown [options]="orgList" formControlName="organisation"
+                                        optionLabel="organization_Type"></p-dropdown>
+                                </div>
+                                <div class="form-group mt-6 login-input" style="margin-top: 10px;">
+                                    <app-captcha (captchaEmitData)="getCaptcha($event)"></app-captcha>
+                                </div>
+                                <span class="forgotPass" routerLink="/forgot-password">Forgot Password ?</span>
+                                <div class="rememberMe">
+                                    <input type="checkbox" value="lsRememberMe" id="rememberMe"
+                                        (change)="lsRememberMe($event.target)"> <label style="margin-left: 4px;"
+                                        for="rememberMe">Remember me</label>
+                                </div>
+                                <button class="btn btn-primary btn-block btn-lg btn-fnt"
+                                    [disabled]="!loginForm.valid">Login</button>
+                                <div style="text-align: center;">
+                                    <a  class="Self-reg mt-2" routerLink="/self-registration">Self Registration</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <section class="wrapper-login" id="bg">
+    <div class="row">
+        <div class="login-body p-1 p-md-2">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="login-body-wrapper mx-auto">
+                    <div class="form-group mb-6">
+                        <label for="email" class="label-txt">Email</label>
+                        <input type="email" formControlName="emailId" class="login-control form-control-sm" name=""
+                            id="email" aria-describedby="helpId" placeholder="Enter Registered Email ID" (blur)="getEmail($event.target)">
+                    </div>
+                    <div class="form-group mb-6">
+                        <label for="email" class="label-txt">Email</label>
+                        <input type="email" formControlName="password" class="login-control form-control-sm" name=""
+                            id="email" aria-describedby="helpId" placeholder="Enter password...">
+                    </div>
+                    <div class="form-group mb-6">
+                        <label _ngcontent-spn-c57="" for="email" class="label-txt">Organisation</label>
+                        <select class="form-select" formControlName="organisation" aria-label="Default select example">
+                            <option selected>Select Organization</option>
+                            <option *ngFor="let org of orgList"></option>
+                        </select>
+                    </div>
+                    <app-captcha (captchaEmitData)="getCaptcha($event)"></app-captcha>
+                    <button class="btn btn-primary btn-block btn-lg btn-fnt" [disabled]="!loginForm.valid">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section> -->
+<!-- <section class="section-100">
+    <div class="container">
+        <div class="login-card rounded-lg overflow-hidden bg-white mx-auto">
+            <img src="../../../../assets/core_assets/back.png" class="cursor">
+            <div class="login-card_header">
+                <h3 class="text-center">Forgot Password? </h3>
+                <h1 class="text-center txt"><small>Don’t worry, it happens to the best of us.</small></h1>
+            </div>
+            <div class="login-body p-1 p-md-2">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <div class="login-body-wrapper mx-auto">
+                        <div class="form-group mb-4">
+                            <label for="email" class="label-txt">Email</label>
+                            <input type="email" formControlName="emailId" class="login-control form-control-sm"
+                                name="" id="email" aria-describedby="helpId"
+                                placeholder="Enter Registered Email ID">
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="email" class="label-txt">Email</label>
+                            <input type="email" formControlName="password" class="login-control form-control-sm"
+                                name="" id="email" aria-describedby="helpId"
+                                placeholder="Enter password...">
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-md-4">
+                                <label _ngcontent-spn-c57="" for="email" class="label-txt">CountryCode</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>+91</option>
+                                    <option value="1">+91</option>
+                                    <option value="2">+21</option>
+                                    <option value="3">+36</option>
+                                </select>
+                            </div>
+                            <div class="col-md-8">
+                                <label _ngcontent-spn-c57="" for="email" class="label-txt">10-Digit Mobile
+                                    Number</label>
+                                <input formControlName="mobileNo" type="email" class="login-control form-control-sm"
+                                    name="" id="email" aria-describedby="helpId"
+                                    placeholder="Enter Registered Email ID" #emailId>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block btn-lg btn-fnt">Verify</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section> -->

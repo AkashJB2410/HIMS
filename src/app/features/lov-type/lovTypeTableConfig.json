@@ -1,0 +1,86 @@
+{
+    "tableName": "Lovtype Table",
+    "tableHeaders": [
+        {
+            "field": "id",
+            "header": "index",
+            "iseditable": false,
+            "class": "text-center"
+        },
+        {
+            "field": "code",
+            "header": "Code",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "name",
+            "header": "Name",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "description",
+            "header": "Description",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "is_Active",
+            "header": "isActive",
+            "iseditable": false,
+            "class": ""
+        }
+    ],
+    "PdfHeaders": [
+        {
+            "field": "id",
+            "header": "Sr. No"
+        },
+        {
+            "field": "lovTypeId",
+            "header": "lovTypeId"
+        },
+        {
+            "field": "code",
+            "header": "code"
+        },
+        {
+            "field": "name",
+            "header": "name"
+        },
+        {
+            "field": "description",
+            "header": "description"
+        }
+    ],
+    "globalFilter": [
+        "lovTypeId",
+        "code",
+        "name",
+        "description"
+    ],
+    "rows": 15,
+    "showCurrentPageReport": true,
+    "rowsPerPageOptions": [
+        10,
+        25,
+        50
+    ],
+    "paginator": true,
+    "rowHover": true,
+    "loading": false,
+    "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox": true,
+    "resizableColumns": true,
+    "isActions": [
+        "Edit",
+        "Delete",
+        "isActive"
+    ],
+    "editicon": "../../../assets/icons/Group 1823.png",
+    "isVisible": false,
+    "buttonlbl": "Add LOV type",
+    "textLength": 16,
+    "sidebar": "p-sidebar-sm"
+}

@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand fixed-top px-2 navCss" [style.backgroundColor]="list.theme.headerBG">
+    <div class="navbar-collapse">
+    </div>
+    <ul class="navbar-nav">
+        <li>
+            <i class="bi bi-bell headerIcon"   pBadge style="font-size: 8px;" value={{headerData.notification.count}}  pTooltip="Notifications" tooltipPosition="bottom" (click)="op.toggle($event)"></i>
+            <p-overlayPanel  #op [showCloseIcon]="false" [style]="{width: '22rem'}">
+                <div class="flexNotification">
+                    <!-- <h4 class="item1">Notifications</h4> -->
+                    <h6 class="item2" (click)="notificationEvent('readAll')">Mark all as read</h6>
+                </div>
+                <ul class="cssUl container" [class.show]="show">
+                    <li class="notiList profileItems"
+                        [ngClass]="(notifiaction.readFlag == true) ? 'notification-blu' : 'notification'"
+                        *ngFor="let notifiaction of headerData.notification.data"
+                        (click)="notificationEvent(notifiaction)">
+                        <b>{{notifiaction.title}}</b>
+                        <div class="notiMsg">{{notifiaction.msg}}</div>
+                    </li>
+                </ul>
+                <div>
+                    <p class="ViewAllCss"  (click)="show = !show">{{ show ? 'View Less': 'View More' }}</p> 
+                </div>
+            </p-overlayPanel>
+        </li>
+        <!-- <li>
+            <i (click)="menu1.toggle($event)" class="bi bi-info-circle headerIcon1"></i>
+            <p-tieredMenu class="tieredmenu" #menu1 [model]="Information" [popup]="true">
+        <li><a (click)="changeTheme('dark-theme')" class="mr-3 cursor-pointer">
+            </a>
+        </li>
+        </p-tieredMenu>
+        </li>
+         <li>
+            <i (click)="menu.toggle($event)" class="bi bi-gear headerIcon"></i>
+            <p-tieredMenu class="themes" #menu [model]="themeOptins" [popup]="true">
+        <li>
+            <i (click)="menu.toggle($event)" class="bi bi-gear headerIcon"></i>
+            <p-tieredMenu class="" #menu [model]="themeOptins" [popup]="true">
+        <li><a (click)="changeTheme('dark-theme')" class="mr-3 cursor-pointer">
+            </a>
+        </li>
+        </p-tieredMenu>
+        </li> -->
+        <!-- <li>
+            <p-menubar pTooltip="Help" tooltipPosition="bottom"  #menu [model]="Information">
+                <a class="mr-3 cursor-pointer"></a>
+            </p-menubar>
+        </li> -->
+        <!-- <li>
+            <p-menubar #menu pTooltip="Setting" tooltipPosition="bottom" [model]="themeOptins">
+                <a (click)="changeTheme('dark-theme')" class="mr-3 cursor-pointer"></a>
+            </p-menubar>
+        </li> -->
+        <li>
+            <img src="{{userDetails.profileImage}}" width="30px" height="30px" pTooltip="Profile" tooltipPosition="bottom" (click)="op1.toggle($event)"
+                class="userlogo" alt="Profile Pic">
+            <p-overlayPanel #op1  [showCloseIcon]="false">
+                <ul style="padding:0px" >
+                    <li class="profileItems"><i class="pi pi-user iconcss"></i>{{userDetails.userName}}</li>
+                    <p-divider class="dividerCss"></p-divider>
+                    <li class="profileItems"> <i class="pi pi-user iconcss"></i>Change Password</li>
+                    <li class="profileItems" (click)="setting()"><i class="pi pi-cog iconcss"></i> Setting</li>
+                    <li class="profileItems"><i class="pi pi-lock  iconcss"></i>My Account</li>
+                    <li class="profileItems" (click)="logOut()"><i class="pi pi-power-off iconcss"></i> Logout</li>
+                </ul>
+            </p-overlayPanel>
+        </li>
+    </ul>
+    <div class="fixed-con">
+        <div class="goog-te-gadget" id='google_translate_element'></div>
+    </div>

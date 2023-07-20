@@ -1,0 +1,96 @@
+{
+    "tableName": "Organization Table",
+    "tableHeaders": [
+        {
+            "field":"id",
+            "header":"Sr. No.",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "orgName",
+            "header": "Name",
+            "iseditable": false , "class":""
+        },
+        {
+            "field": "orgEmail",
+            "header": "Email ID",
+            "iseditable": false , "class":""
+        },
+        {
+            "field": "orgMobile",
+            "header": "Mobile No.",
+            "iseditable": false , "class":""
+        },
+        {
+            "field": "orgAddress",
+            "header": "Address",
+            "iseditable": false , "class":""
+        },
+        {
+            "field": "orgContactPerson",
+            "header": "Contact Person",
+            "iseditable": false , "class":""
+        },
+        {
+            "field": "orgPhone",
+            "header": "Phone No.",
+            "iseditable": false , "class":""
+        },
+        {
+            "field": "is_Active",
+            "header": "Active Status",
+            "iseditable": false , "class":""
+        }
+    ],
+    "PdfHeaders": [
+        {
+           
+            "field":"id",
+            "header":"Sr. No."
+        },
+        {
+            "field": "orgName",
+            "header": "Organization Name"
+        },
+        {
+            "field": "orgEmail",
+            "header": "Organization Email ID"
+        },
+        {
+            "field": "orgMobile",
+            "header": "Organization Mobile No."
+        },
+        {
+            "field": "orgAddress",
+            "header": "Organization Address"
+        },
+        {
+            "field": "orgContactPerson",
+            "header": "Organization Contact Person"
+        },
+        {
+            "field": "orgPhone",
+            "header": "Organization Phone NO."
+        },
+        {
+            "field": "is_Active",
+            "header": "Active Status"
+        }
+    ],
+    "globalFilter": ["id","orgName","orgEmail","orgMobile","orgAddress","orgContactPerson","orgPhone","is_Active"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [10,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "resizableColumns": true,
+    "isActions": ["Edit", "Delete", "isActive"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "isVisible":false,
+    "buttonlbl":"Add Organization",
+    "textLength":16,
+    "sidebar": "p-sidebar-md"
+}

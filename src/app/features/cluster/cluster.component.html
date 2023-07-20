@@ -1,0 +1,17 @@
+<p-breadcrumb [model]="Cluster_Breadcrumb.itemsList" ></p-breadcrumb>
+<h3 class="Sidebar-title-md"><i class="bi bi-file-earmark-medical"></i>Cluster</h3>
+<app-super-grid
+    *ngIf="table_Data"
+    [configurations]="configurations"
+    [tableData]="table_Data"
+    [tableConfig] = "table_Config"
+    (confirmAction)="confirmAction($event)"
+    (onAdd)="saveCluster($event)"
+    (onEdit)="editCluster($event)"
+    (isActive)="isActive($event)"
+    (Bulkdelete)="bulkDeleteRows($event)" >
+    <app-form
+    projectTowards="sidebar" *ngIf="editData" [formJSON]="sidebar_Update_Input" [editData]="editData"
+    (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"
+   ></app-form>
+</app-super-grid>

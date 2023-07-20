@@ -1,0 +1,167 @@
+{
+    "Row": "row",
+    "HomeList": [
+    {
+      "label": "OPD Dashboard",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/OPD Dashboard.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "IPD Dashboard",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/IPD Dashboard.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Emergency Dashboard",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/Emergency Dashboard.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "FeedBack Dashboard",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/feedback.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Fature Dashboard",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/fature.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Quick Patient Registration",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/Quick-Patient.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Registration",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/Patient-Reg.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "IPD Quick Registration",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/IPD-Quick-Reg.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Emergency Quick Registration",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/Emergency-Quick-Reg.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Queue",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/Queue.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "IPD",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/IPD.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Nursing Station",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/nursing station.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Lab",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/lab.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Rediology",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/Rediology.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Billing",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/billing.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    },
+    {
+      "label": "Pharmacy",
+      "icon": "bi bi-person-up",
+      "routerLink": "/master-page/user-management",
+      "listClass": "col-md-2",
+      "image":"assets/Dashboard/Pharmacy.png",
+      "Css":"homepageCss",
+      "LabelCss":"labelcss",
+      "imgcss":"imgcenter"
+    }
+  
+  ]
+  
+}
