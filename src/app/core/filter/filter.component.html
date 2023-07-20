@@ -15,7 +15,7 @@
     <img style="margin-left: 8px;" src="../../../assets/core_assets/closeicon.png"></button>
 </div>
 <p-dialog [showHeader]="false" [position]="'top'" (onHide)="close()" [(visible)]="displayModal" [modal]="true"
-  [style]="{width: '15vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
+  [style]="{width: '20vw'}" [baseZIndex]="10000" [draggable]="false" [resizable]="false">
   <app-form *ngIf="FData" [formJSON]="FData" [editData]="editDataCheckbox" (formData)="response($event)"></app-form>
 </p-dialog>
 
