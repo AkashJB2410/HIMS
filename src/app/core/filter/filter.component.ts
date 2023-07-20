@@ -157,7 +157,7 @@ export class FilterComponent implements OnInit {
     this.filterData = data;
     localStorage.setItem('editData', JSON.stringify(e));
     this.displayModal = false;
-  } 
+  }
 
   saveFilterData() {
     this.saveFilter = false;
@@ -174,9 +174,8 @@ export class FilterComponent implements OnInit {
     this.filterData = undefined;
     this.filterData = data.filterJson;
   }
+  
   setStateAsActive(a: any) {
     this.activeState = a;
-
   }
-
 }

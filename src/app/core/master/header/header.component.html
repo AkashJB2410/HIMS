@@ -2,7 +2,7 @@
     <div class="navbar-collapse">
     </div>
     <ul class="navbar-nav">
-        <li>
+        <li style="margin-top: 2px;">
             <i class="bi bi-bell headerIcon"   pBadge style="font-size: 8px;" value={{headerData.notification.count}}  pTooltip="Notifications" tooltipPosition="bottom" (click)="op.toggle($event)"></i>
             <p-overlayPanel  #op [showCloseIcon]="false" [style]="{width: '22rem'}">
                 <div class="flexNotification">
@@ -22,6 +22,7 @@
                     <p class="ViewAllCss"  (click)="show = !show">{{ show ? 'View Less': 'View More' }}</p> 
                 </div>
             </p-overlayPanel>
+            <i class="bi bi-headset headerIcon1"  pTooltip="Help" tooltipPosition="bottom"></i>
         </li>
         <!-- <li>
             <i (click)="menu1.toggle($event)" class="bi bi-info-circle headerIcon1"></i>
@@ -53,15 +54,16 @@
             </p-menubar>
         </li> -->
         <li>
-            <img src="{{userDetails.profileImage}}" width="30px" height="30px" pTooltip="Profile" tooltipPosition="bottom" (click)="op1.toggle($event)"
+            <img *ngIf="profileshow" src="{{userDetails.profileImage}}" width="30px" height="30px" pTooltip="Profile" tooltipPosition="bottom" (click)="op1.toggle($event)"
+                class="userlogo" alt="Profile Pic">
+            <img *ngIf="!profileshow" src="../../../../assets/core_assets/defaultuser.jpg" width="30px" height="30px" pTooltip="Profile" tooltipPosition="bottom" (click)="op1.toggle($event)"
                 class="userlogo" alt="Profile Pic">
             <p-overlayPanel #op1  [showCloseIcon]="false">
                 <ul style="padding:0px" >
                     <li class="profileItems"><i class="pi pi-user iconcss"></i>{{userDetails.userName}}</li>
                     <p-divider class="dividerCss"></p-divider>
-                    <li class="profileItems"> <i class="pi pi-user iconcss"></i>Change Password</li>
                     <li class="profileItems" (click)="setting()"><i class="pi pi-cog iconcss"></i> Setting</li>
-                    <li class="profileItems"><i class="pi pi-lock  iconcss"></i>My Account</li>
+                    <li class="profileItems"> <i class="pi pi-user iconcss"></i>Change Password</li>
                     <li class="profileItems" (click)="logOut()"><i class="pi pi-power-off iconcss"></i> Logout</li>
                 </ul>
             </p-overlayPanel>

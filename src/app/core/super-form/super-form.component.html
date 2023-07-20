@@ -1,23 +1,33 @@
 <div *ngFor="let form of superFormData.Forms; let i = index">
+
     <ng-container *ngIf="form.formType == 'Form'; else stepper">
         <app-form [formJSON]="form" (formData)="formData($event, i)"></app-form>
     </ng-container>
+
     <ng-template #stepper>
         <ng-container *ngIf="form.formType == 'Stepper Form'; else tabular">
             <app-stepper-form [stepperJSON]="form.stepper"
                 (stepperEmitData)="stepperData($event, i)"></app-stepper-form>
         </ng-container>
     </ng-template>
+
     <ng-template #tabular>
         <ng-container *ngIf="form.formType == 'Tabular Form'; else default">
-            <app-tabular-forms [tabularJSON]="form.tabular"
-                (tabularEmitData)="tabularData($event, i)"></app-tabular-forms>
+            <p-tabView [(activeIndex)]="index">
+                <p-tabPanel [header]="item.label" *ngFor="let item of form.tabular.tabularHeaders; let j = index"
+                    [selected]="form.tabular.activeTab">
+                    <app-form *ngIf="form.tabular.tabularForms[i]" [formJSON]="form.tabular.tabularForms[j]" ></app-form>
+                </p-tabPanel>
+            </p-tabView>
         </ng-container>
     </ng-template>
+
     <ng-template #default>
         <p>Error</p>
     </ng-template>
+
 </div>
+
 <div class="float-right">
     <button pRipple type="button" class="btn butn-dark-blue" (click)="saveAndProceed()"><i class=""
             style="padding-right:7px"></i>

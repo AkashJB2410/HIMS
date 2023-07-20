@@ -39,6 +39,7 @@ export class GenerictableComponent implements OnInit {
     { "menu": "Remove", "img": "../../../assets/core_assets/bin.png" },
     { "menu": "Properties", "img": "../../../assets/core_assets/tool.png" }
   ]
+  radiobutton:any =[];
   chekboxes: any = [];
   @Input() config: any;
   @Input() tableData: any[];
@@ -58,7 +59,6 @@ export class GenerictableComponent implements OnInit {
 
   constructor(private toast: MessageService) { }
   ngOnInit() {
-
     // JSON.parse(localStorage.getItem('Selected Column Value'))
     JSON.parse(localStorage.getItem(this.pdfName))
     if (this.tableData == undefined)
@@ -80,6 +80,8 @@ export class GenerictableComponent implements OnInit {
     else {
       this._selectedColumns = this.colNames
     }
+
+  
   }
 
   onrightClick(event: any, rowdata: any) {

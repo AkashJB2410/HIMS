@@ -77,7 +77,7 @@ export class FormComponent implements OnInit {
       event.checked.shift();
     this.events.push(event);
     this.events.push(data);
-    this.events.push(this.form.value);
+    this.events.push(this.form.getRawValue());
     this.changeEvents.emit(this.events);
   }
 
@@ -85,6 +85,7 @@ export class FormComponent implements OnInit {
     this.events = [];
     this.events.push(event.value);
     this.events.push(data);
+    this.events.push(this.form.getRawValue());
     this.changeEvents.emit(this.events);
   }
 
@@ -94,6 +95,7 @@ export class FormComponent implements OnInit {
     this.events = [];
     this.events.push(control);
     this.events.push(value);
+    this.events.push(this.form.getRawValue());
     this.changeEvents.emit(this.events);
   }
 
@@ -111,7 +113,7 @@ export class FormComponent implements OnInit {
       this.addValidations(data);
     }
   }
-  showModal(data: any){
+  showModal(data: any) {
     this.displayModal = data;
   }
 
@@ -249,11 +251,31 @@ export class FormComponent implements OnInit {
             format.dateFormat
           );
         }
+        if (element.fieldType == 'dependentdropdown') {
+          if (element.values.length == 2) {
+            if (this.form.value[element.fieldName] != "" && this.form.value[element.fieldName][1].length == 0) {
+              this.form.controls[element.fieldName].setErrors({ 'required': true });
+            } else {
+              let obj1 = element.values[0].values.filter((ele: any) => { if (ele.code == formValue[element.fieldName][0]) { return ele } });
+              formValue[element.fieldName][0] = obj1[0];
+              let obj2 = element.values[1].values.filter((ele: any) => { if (ele.code == formValue[element.fieldName][1]) { return ele } });
+              formValue[element.fieldName][1] = obj2[0];
+            }
+          } else if (element.values.length == 3) {
+            if (this.form.value[element.fieldName] != "" && this.form.value[element.fieldName][1].length == 0 || this.form.value[element.fieldName][2].length == 0) {
+              this.form.controls[element.fieldName].setErrors({ 'required': true });
+            }
+          }
+        }
+        if (element.fieldType == 'select') {
+          let obj = element.values.filter((ele: any) => { if (ele.code == element.fieldValue) { return ele } });
+          formValue[element.fieldName] = obj[0];
+        }
       });
       formValue.formId = this.formJson.formId ? this.formJson.formId : ""
       this.formData.emit(formValue);
       this.btnEvent.emit(event);
-      this.form.reset();
+      // this.form.reset();
     } else {
       this.formValid = true;
       Object.keys(this.form.controls).forEach(field => {

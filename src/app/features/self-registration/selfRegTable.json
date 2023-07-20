@@ -1,0 +1,40 @@
+{
+    "tableName": "Unit Table",
+    "tableHeaders": [
+        {
+            "field": "srNumber",
+            "header": "Sr. No",
+            "iseditable": false,
+            "class": "text-center"
+        },
+        {
+            "field": "patientFirstname",
+            "header": "First Name",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "patientMobileNumber",
+            "header": "Mobile No",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "patientDob",
+            "header": "Date of Birth",
+            "iseditable": false,
+            "class": ""
+        }
+    ],
+    "rows": 50,
+    "showCurrentPageReport": true,
+    "paginator": false,
+    "rowHover": true,
+    "loading": false,
+    "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox": false,
+    "resizableColumns": true,
+    "textLength": 30,
+    "bulkAction":["PDF","EXCEL","Delete"]   
+
+}
