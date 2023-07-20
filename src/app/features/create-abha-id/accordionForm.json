@@ -157,7 +157,7 @@
                 "isVisible": true,
                 "type": "icon",
                 "label": "",
-                "class": "col-md-10",
+                "class": "col-md-1",
                 "icons": [
                     {
                         "class": "bi bi-file-pdf",
@@ -166,7 +166,15 @@
                         "valueclass": "icon-button-primary",
                         "tooltip": "Download Card PDF",
                         "toolPosition": "top"
-                    },
+                    }
+                ]
+            },
+            {
+                "isVisible": true,
+                "type": "icon",
+                "label": "",
+                "class": "col-md-9",
+                "icons": [
                     {
                         "class": "bi bi-filetype-png",
                         "isDisabled": false,
