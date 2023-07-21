@@ -3,8 +3,8 @@ import tabularTab from './tabularJSON.json'
 import abhaForm from './createABHA.json'
 import fechForm from './fetchABHA.json'
 import accordionForm from './accordionForm.json'
-import { FormService } from 'src/app/core/shared/service/form.service';
 import { MessageService } from 'primeng/api';
+import { FormService } from 'src/app/core/shared/service/form.service';
 
 @Component({
   selector: 'app-create-abha-id',
@@ -16,11 +16,9 @@ export class CreateAbhaIdComponent implements OnInit {
   formData1: any
   formData2: any
   accordion = {
-    "data": {
       "id": 0,
       "label": "Profile Details (As per Aadhaar)",
       "selected": true
-    }
   }
   accForm = accordionForm;
   editData: any;
@@ -46,7 +44,7 @@ export class CreateAbhaIdComponent implements OnInit {
   }
 
   createAbha(e: any) {
-    this.accordion.data.label = "Profile Details (As per Aadhaar)";
+    this.accordion.label = "Profile Details (As per Aadhaar)";
     this.acc = true;
     this.formId = e.formId;
     const data = {
@@ -100,7 +98,7 @@ export class CreateAbhaIdComponent implements OnInit {
   }
 
   fetchAbha(e: any) {
-    this.accordion.data.label = "Profile Details (As per ABHA)";
+    this.accordion.label = "Profile Details (As per ABHA)";
     this.acc = true;
     this.formId = e.formId;
     const data = {
