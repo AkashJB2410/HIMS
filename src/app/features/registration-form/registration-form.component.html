@@ -4,7 +4,7 @@
 
 <app-super-grid *ngIf="data" [configurations]="configurations" [filterJSON]="filterData"
     (fiteredData)="fiteredData($event)" [tableData]="data" [tableConfig]="config"
-    (sideBarEvent)="closeSidebarData($event)" (confirmAction)="confirmAction($event)"
+    [sidebarJSON]="formData" (sideBarEvent)="closeSidebarData($event)" (confirmAction)="confirmAction($event)"
     (changeEvents)="changeSelectItem($event)" (onAdd)="onAdd($event)"
     (onEdit)="onEdit($event)" (isActive)="isActive($event)" (rowClickData)="rowClickData($event)">
 
@@ -12,10 +12,10 @@
         (formData)="saveRegistartionForm($event)" (changeEvents)="changeSelectItem($event)">
     
         <app-super-grid *ngIf="data" [configurations]="mobileConfig" [filterJSON]="filterData"
-        (fiteredData)="fiteredData($event)" [tableData]="data" [tableConfig]="configMobi"
+        (fiteredData)="fiteredData($event)" [tableData]="mobileGridData" [tableConfig]="configMobi"
         (sideBarEvent)="closeSidebarData($event)" (confirmAction)="confirmAction($event)"
         (changeEvents)="changeSelectItem($event)" (onAdd)="onAdd($event)"
-        (onEdit)="onEdit($event)" (isActive)="isActive($event)" (rowClickData)="rowClickData($event)"></app-super-grid>
+        (onEdit)="onEdit($event)" (isActive)="isActive($event)" (rowClickData)="mobileRowClickData($event)"></app-super-grid>
     
     </app-form>
 

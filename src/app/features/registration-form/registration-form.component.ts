@@ -34,6 +34,7 @@ import { dataIPD } from './servIPDData';
 export class RegistrationFormComponent implements OnInit {
 
   data: any[];
+  mobileGridData: any[];
   config: any;
   configServ: any;
   configMobi: any;
@@ -45,7 +46,7 @@ export class RegistrationFormComponent implements OnInit {
   isdataReady = false;
   sidebarJSON: any = rgistrationData;
   sidebarButtonJSON: any = rgistBUttonData;
-  formData: any;
+  formData: any = rgistrationData;
   perAddressFormData: any = permanentAddressFormData;
   hospitalAssFormData: any = hospitalAssociationFormData;
   insuranceDetailsFormData: any = insuranceDetailsFormData;
@@ -265,19 +266,18 @@ export class RegistrationFormComponent implements OnInit {
 
   };
   receivedData: any;
-  middleName: any = '';
-  lastName: any = '';
-  formTitle:any;
+  startDate: any = "";
+  endDate: any = "";
+  formTitle: any;
   private subscription: Subscription;
   constructor(private messageService: MessageService, private common: CommonService, public datepipe: DatePipe,
     private http: RegistrationFormService, private form$: FormService, private dataService: DataServiceService) {
   }
-  
+
   ngOnInit(): void {
-    this.formData = Object.assign({}, rgistrationData);
+    // this.formData = Object.assign({}, rgistrationData);
     this.formData.form.formControls[0].isVisible = false;
     this.formData.form.formControls[1].isVisible = false;
-    this.formTitle="PATIENT REGISTRATION"
     this.subscription = this.dataService.outputData$.subscribe(
       data => {
         this.receivedData = data;
@@ -286,12 +286,12 @@ export class RegistrationFormComponent implements OnInit {
           this.formData.form.formControls[0].isVisible = true;
           this.isShowServices = !this.isShowServices;
           this.servData = dataOPD;
-          this.formTitle="OPD REGISTRATION";
+          this.formTitle = "OPD REGISTRATION";
         } else if (this.receivedData.label == "IPD" && this.formData.form.formControls[1].formControlName == "IPDRad") {
           this.formData.form.formControls[1].isVisible = true;
           this.isShowServices = !this.isShowServices;
           this.servData = dataIPD;
-          this.formTitle="IPD REGISTRATION";
+          this.formTitle = "IPD REGISTRATION";
         }
       }
     );
@@ -325,6 +325,25 @@ export class RegistrationFormComponent implements OnInit {
 
   }
   rowClickData(e: any) { }
+  mobileRowClickData(e: any) {
+    console.log("Mobile data =>", e);
+    this.form$.reRenderForm(this.formData.form.formControls[4], e.patientTitleId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[5], e.patientFirstname, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[6], e.patientMiddlename, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[7], e.patientLastname, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[8], e.patientMobileNumber, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[9], e.patientEmail, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[10], e.patientIdentificationTypeId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[11], e.patientIdentificationTypeNumber, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[13], e.patientDob, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[15], e.patientAge, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[16], e.patientGenderId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[17], e.patientBloodGroupId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[18], e.patientEthinicityId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[19], e.patientReligion, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[20], e.patientMaritalStatusId, 'autofill');
+
+  }
   assignDropDownOptions() {
     this.formData = Object.assign({}, rgistrationData);
     this.formData.form.formControls.forEach((data: any) => {
@@ -584,7 +603,14 @@ export class RegistrationFormComponent implements OnInit {
   changeSelectItem(e: any) {
     console.log("changeSelectItem e => ", e)
     if (e[1].fieldName == "mobileNoInput" && e[0] != "") {
-      this.form$.showModal(true);
+
+      this.mobileGridData = undefined;
+      this.http.mobileSerchData(e[0]).subscribe((data: any) => {
+        this.mobileGridData = data[1].result;
+        this.form$.showModal(true);
+        console.log("this.mobileGridData ===>", this.mobileGridData)
+
+      });
     }
     if (e[1].fieldName == "selectIdentificationType" && e[0].value != "") {
       this.form$.reRenderForm(this.formData.form.formControls[11], true, 'isEditable');
@@ -788,12 +814,20 @@ export class RegistrationFormComponent implements OnInit {
             "patientEmail": e.patientEmail,
             "patientIdentificationTypeId": e.patientIdentificationTypeId,
             "patientIdentificationTypeName": e.patientIdentificationTypeName,
-            "patientIdentificationNo": "",
+            "patientIdentificationTypeNumber": e.patientIdentificationTypeNumber,
             "patientMaritalStatusId": e.patientMaritalStatusId,
             "patientMaritalStatusName": e.patientMaritalStatusName,
             "patientDob": date,
             "image": e.patientUploadImage,
-            "isActive": e.isActive
+            "isActive": e.isActive,
+            "patientAge": e.patientAge,
+            "patientBloodGroupId": e.patientBloodGroupId,
+            "patientBloodGroupName": e.patientBloodGroupName,
+            "patientEthinicityId": e.patientEthinicityId,
+            "patientEthinicityName": e.patientEthinicityName,
+            "patientGenderId": e.patientGenderId,
+            "patientGenderName": e.patientGenderName,
+            "patientReligion": e.patientReligion
           }
           this.gridData.push(patientData);
         })
@@ -998,7 +1032,7 @@ export class RegistrationFormComponent implements OnInit {
       console.log(e);
     } else if (this.isAddEditFlag.add == "add") {
       this.submitMstPatient(this.mstPatient);
-    
+
       setTimeout(() => {
         this.http.saveDataFromApis(this.mstAddress, this.mstHospitalAss, this.mstInsurance, this.mstMedicalHistory, this.mstAdditionalDetails, this.mstMLC).subscribe(
           (response: any[]) => {
@@ -1017,7 +1051,7 @@ export class RegistrationFormComponent implements OnInit {
             console.error('Error:', error);
           });
         this.messageService.add({ severity: 'success', summary: 'success', detail: 'Your registration has been successfully completed!' });
-      },3000)
+      }, 1000)
 
     } else {
       this.updateUserData(this.paramObj);
@@ -1032,37 +1066,36 @@ export class RegistrationFormComponent implements OnInit {
     // if (e.lastNameInput != undefined) {
     //   this.lastName = e.lastNameInput;
     // }
-    let fullName = e.firstNameInput + " " + this.middleName + " " + this.lastName;
+    // let fullName = e.firstNameInput + " " + this.middleName + " " + this.lastName;
     // let fullNamestring=fullName.split(" ").join("");
     // console.log("full name ==>>", fullNamestring)
     let date = this.datepipe.transform(
       e.userBirthdate, "MM/dd/yyyy"
     );
     this.mstPatient = {
-      "patientAge": e.ageText,
-      "patientBloodGroupId": e.selectBlood.code,
-      "patientBloodGroupName": e.selectBlood.name,
-      "patientDob": date,
-      "patientEmail": e.emailInput,
-      "patientEthinicityId": e.selectEthincity.code,
-      "patientEthinicityName": e.selectEthincity.name,
-      "patientFirstname": e.firstNameInput,
-      "patientFullname": fullName,
-      "patientGenderId": e.selectGender.code,
-      "patientGenderName": e.selectGender.name,
-      "patientIdentificationTypeId": e.selectIdentificationType.code,
-      "patientIdentificationTypeName": e.selectIdentificationType.name,
-      "patientIdentificationTypeNumber": e.identificationNoInput,
-      "patientLastname": e.lastNameInput,
-      "patientMaritalStatusId": e.selectMaritalStatus.code,
-      "patientMaritalStatusName": e.selectMaritalStatus.name,
-      "patientMiddlename": e.middleNameInput,
-      "patientMobileNumber": e.mobileNoInput,
+      "patientAge": e.ageText || '',
+      // "patientBloodGroupId": e.selectBlood.code || '',
+      "patientBloodGroupName": e.selectBlood.name || '',
+      "patientDob": date || '',
+      "patientEmail": e.emailInput || '',
+      "patientEthinicityId": e.selectEthincity.code || '',
+      "patientEthinicityName": e.selectEthincity.name || '',
+      "patientFirstname": e.firstNameInput || '',
+      "patientGenderId": e.selectGender.code || '',
+      "patientGenderName": e.selectGender.name || '',
+      "patientIdentificationTypeId": e.selectIdentificationType.code || '',
+      "patientIdentificationTypeName": e.selectIdentificationType.name || '',
+      "patientIdentificationTypeNumber": e.identificationNoInput || '',
+      "patientLastname": e.lastNameInput || '',
+      "patientMaritalStatusId": e.selectMaritalStatus.code || '',
+      "patientMaritalStatusName": e.selectMaritalStatus.name || '',
+      "patientMiddlename": e.middleNameInput || '',
+      "patientMobileNumber": e.mobileNoInput || '',
       "patientRegistrationSource": "Conter",
-      "patientReligion": e.religionInput,
-      "patientTitleId": e.selectTitle.code,
-      "patientTitleName": e.selectTitle.name,
-      "patientUploadImage": "string"
+      "patientReligion": e.religionInput || '',
+      "patientTitleId": e.selectTitle.code || '',
+      "patientTitleName": e.selectTitle.name || '',
+      "patientUploadImage": ""
     }
     console.log("mstPatient => ", this.mstPatient);
     this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
@@ -1179,7 +1212,18 @@ export class RegistrationFormComponent implements OnInit {
 
   fiteredData(e: any) {
     this.data = undefined;
-    this.http.getFilterData(e)
+    if (e.startDateInput != "") {
+      this.startDate = this.datepipe.transform(
+        e.startDateInput, "yyyy-MM-dd"
+      );
+    }
+    if (e.endDateInput != "") {
+      this.endDate = this.datepipe.transform(
+        e.endDateInput, "yyyy-MM-dd"
+      );
+    }
+
+    this.http.getFilterData(e, this.startDate, this.endDate)
       .subscribe((data: any[]) => {
         this.data = undefined;
         this.data = data[1].result;
@@ -1213,24 +1257,26 @@ export class RegistrationFormComponent implements OnInit {
       "patientMiddlename": e.editRow.patientMiddlename,
       "patientLastname": e.editRow.patientLastname,
       "patientMobileNumber": e.editRow.patientMobileNumber,
+      "patientEmail": e.editRow.patientEmail,
       "patientIdentificationTypeId": e.editRow.patientIdentificationTypeId,
-      "patientIdentificationNumber": "2234 1234 1234",
-      "patientMaritalStatusId": e.editRow.patientMaritalStatusId,
+      "patientIdentificationTypeNumber": e.editRow.patientIdentificationTypeNumber,
       "DOBRad": "",
       "patientDob": date,
       "AgeRad": ["Age"],
       "patientAge": e.editRow.patientAge,
-      "patientGender": "2",
+      "patientGenderId": e.editRow.patientGenderId,
+      "patientBloodGroupId": e.editRow.patientBloodGroupId,
+
+
+
       "divider2": "",
       "dependentdropdown": [e.editRow.patientCountryId, e.editRow.patientStateId, e.editRow.patientCityId],
-      "patientAddressLine1": e.editRow.patientAddressLine1,
-      "patientAddressLine2": e.editRow.patientAddressLine2,
       "staticText1": "",
       "patientCountryName": e.editRow.patientCountryName,
       "patientMaritalStatusName": e.editRow.patientMaritalStatusName,
       "patientTitleName": e.editRow.patientTitleName,
       "profileImage": e.editRow.profileImage,
-      "patientEmail": e.editRow.patientEmail,
+
       "patientCityName": e.editRow.patientCityName,
       "patientStateName": e.editRow.patientStateName,
       "patientHealthId": e.editRow.patientHealthId,
@@ -1243,6 +1289,8 @@ export class RegistrationFormComponent implements OnInit {
       "isActive": e.editRow.isActive,
       "patientMrNo": e.editRow.patientMrNo,
       "patientIdentificationTypeName": e.editRow.patientIdentificationTypeName,
+
+      "patientMaritalStatusId": e.editRow.patientMaritalStatusId,
     }
     this.editData = edit;
     let demogarfic = {

@@ -9,11 +9,11 @@ export class AccordionComponent implements OnInit {
 
   @Input() accordionData: any;
   data: any;
-  @Output() accordionrEmitData =  new EventEmitter<any>();
+  @Output() accordionrEmitData = new EventEmitter<any>();
   constructor() { }
 
   ngOnInit(): void {
-    this.data= this.accordionData;
+    this.data = this.accordionData;
   }
 
   handleChange(e: any) {

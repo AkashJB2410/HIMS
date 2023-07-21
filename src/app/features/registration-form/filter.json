@@ -52,6 +52,28 @@
                 "id": 6,
                 "isEditable": true,
                 "isVisible": false,
+                "label": "Full Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Full Name",
+                "defaultValue":"",
+                "formControlName": "patientFullnameInput",
+                "message": {
+                    "required": "zxvzd",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 6,
+                "isEditable": true,
+                "isVisible": false,
                 "label": "MR.No",
                 "type": "text",
                 "inputType": "text",

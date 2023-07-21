@@ -20,11 +20,16 @@ export class RegistrationFormService {
     return this.http.post<any>(url, param)
   }
 
-  getFilterData(data: any): Observable<any> {
+  getFilterData(data: any,startDate:any,endDate:any): Observable<any> {
     let params = new HttpParams();
     params = params.set('patientFirstname', data.firstNameInput);
     params = params.set('patientMobileNumber', data.mobileNoInput);
     params = params.set('patientMrNo', data.mrNoInput);
+    params = params.set('endDate', endDate);
+    params = params.set('startDate', startDate);
+    params = params.set('patientHealthNumber', data.patientHealthNoInput);
+    params = params.set('patientHealthId', data.patientHealthIdInput);
+    params = params.set('patientFullname', data.patientFullnameInput);
     const url = "http://localhost:8082/mst_patient/search";
     return this.http.get(url, { params: params });
   }
@@ -61,6 +66,11 @@ export class RegistrationFormService {
     const url = "http://localhost:8082/mst_patient/create";
     return this.PostCall(url, mstPatient);
   }
+  mobileSerchData(mobileNo: any): Observable<any> {
+    const url = "http://localhost:8082/mst_patient/byMobileNumber/" + mobileNo;
+    return this.http.get(url);
+  }
+
 
   saveDataFromApis(mstAddress: any, mstPrivilege: any, mstInsurance: any, mstMedicalHistory: any, mstAdditionalInfo: any, mstMLC: any): Observable<any[]> {
     let postRequest1$, postRequest2$, postRequest3$, postRequest4$, postRequest5$, postRequest6$, postRequest7$;
@@ -70,25 +80,25 @@ export class RegistrationFormService {
     // }
 
     // setTimeout(() => {                           // <<<---using ()=> syntax
-      if (mstAddress != undefined) {
-        postRequest2$ = this.http.post(this.mst_address_save, mstAddress);
-        // return forkJoin([postRequest2$]);
-      }
-      if (mstPrivilege != undefined) {
-        postRequest3$ = this.http.post(this.mst_privilege_save, mstPrivilege);
-      }
-      if (mstInsurance != undefined) {
-        postRequest4$ = this.http.post(this.mst_insurance_save, mstInsurance);
-      }
-      if (mstMedicalHistory != undefined) {
-        postRequest5$ = this.http.post(this.mst_medical_history_save, mstMedicalHistory);
-      }
-      if (mstAdditionalInfo != undefined) {
-        postRequest6$ = this.http.post(this.mst_patient_add_info_save, mstAdditionalInfo);
-      }
-      if (mstMLC != undefined) {
-        postRequest7$ = this.http.post(this.mst_medical_legal_case_save, mstMLC);
-      }
+    if (mstAddress != undefined) {
+      postRequest2$ = this.http.post(this.mst_address_save, mstAddress);
+      // return forkJoin([postRequest2$]);
+    }
+    if (mstPrivilege != undefined) {
+      postRequest3$ = this.http.post(this.mst_privilege_save, mstPrivilege);
+    }
+    if (mstInsurance != undefined) {
+      postRequest4$ = this.http.post(this.mst_insurance_save, mstInsurance);
+    }
+    if (mstMedicalHistory != undefined) {
+      postRequest5$ = this.http.post(this.mst_medical_history_save, mstMedicalHistory);
+    }
+    if (mstAdditionalInfo != undefined) {
+      postRequest6$ = this.http.post(this.mst_patient_add_info_save, mstAdditionalInfo);
+    }
+    if (mstMLC != undefined) {
+      postRequest7$ = this.http.post(this.mst_medical_legal_case_save, mstMLC);
+    }
     // }, 3000);
 
 

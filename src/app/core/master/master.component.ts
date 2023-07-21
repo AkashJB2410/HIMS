@@ -382,6 +382,23 @@ export class MasterComponent implements OnInit {
             ]
           }
         ]
+      },
+      {
+          "moduleId": 9,
+          "label": "Configuration",
+          "icon": "bi bi-gear-fill",
+          "routerLink": "",
+          "sequence": "123",
+          "group": [
+            {
+              "groupId": 1,
+              "label": "All Masters",
+              "icon": "",
+              "routerLink": "/master-page/all-masters",
+              "sequence": "1",
+              "submodules": []
+            }
+          ]
       }
     ];
 
@@ -548,7 +565,12 @@ export class MasterComponent implements OnInit {
         "subModuleId": 12,
         "permission": "D",
       },
-      
+      {
+        "moduleId": 9,
+        "groupId": 1,
+        "subModuleId": null,
+        "permission": "E",
+      }
     ]
 
     // let auth =  [
@@ -714,7 +736,12 @@ export class MasterComponent implements OnInit {
     //     "subModuleId": 12,
     //     "permission":  "E",
     //   },
-      
+    // {
+    //   "moduleId": 9,
+    //   "groupId": 1,
+    //   "subModuleId": null,
+    //   "permission": "D",
+    // }
     // ]
 
     allData = allData.filter(module => {

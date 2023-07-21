@@ -1,7 +1,14 @@
 {
     "tableName": "Mobile Table",
     "tableHeaders": [
-        {"field": "patientMobileNumber","header": "MobileNo","iseditable": false , "class":"text-center"}
+        {"field": "patientMrNo","header": "MR.No","iseditable": false , "class":""},
+        {"field": "patientTitleName","header": "Title","iseditable": false , "class":""},
+        {"field": "patientFullname","header": "Full Name","iseditable": false , "class":""},
+        {"field": "patientMobileNumber","header": "Mobile No.","iseditable": false , "class":"text-center"},
+        {"field": "patientDob","header": "DOB","iseditable": false , "class":"text-center"},
+        {"field": "patientAge","header": "Age","iseditable": false , "class":"text-center"},
+        {"field": "patientGenderName","header": "Gender","iseditable": false , "class":""}
+       
         
     ],
     "PdfHeaders": [
