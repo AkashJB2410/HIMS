@@ -1,9 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "",
-        "formTitleClass": "",
-        "formTitleLogo":"",
+        "sideBarTitle":"",
+        "sidebarTitleClass": "",
+        "sidebarTitleLogo": "",
         "formName": "Form1",
         "formType": "edit",
         "sidebar": "p-sidebar-lg",
@@ -106,11 +106,35 @@
                 "id": 10,
                 "isEditable": true,
                 "isVisible": true,
+                "transient":true,
                 "label": "",
                 "inputType": "empty",
                 "type": "staticText",
                 "data": "",
                 "class": "col-md-6 my-1 ",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "staticText",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "transient":true,
+                "label": "",
+                "inputType": "empty",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-10 my-1 ",
                 "lblclass": "custom-label",
                 "valueclass": "custom-text",
                 "placeholder": "",

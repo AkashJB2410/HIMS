@@ -1,9 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "",
-        "formTitleClass": "",
-        "formTitleLogo":"",
+        "sideBarTitle":"",
+        "sidebarTitleClass": "",
+        "sidebarTitleLogo": "",
         "formName": "Form1",
         "formType": "edit",
         "sidebar": "p-sidebar-lg",
@@ -48,7 +48,7 @@
                     }
                 ],
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -92,7 +92,7 @@
                     }
                 ],
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -132,7 +132,7 @@
                     }
                 ],
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -288,15 +288,15 @@
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
-                "label": "Previous Diagnostics",
+                "label": "Previous Diagnosis",
                 "type": "radio",
                 "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
-                "formControlName": "diagnosticsRad",
+                "formControlName": " DiagnosisRad",
                 "message": {
-                    "required": "Previous Diagnostics Habit is required",
+                    "required": "Previous  Diagnosis Habit is required",
                     "pattern": ""
                 },
                 "values": [
@@ -320,16 +320,16 @@
                 "id": 9,
                 "isEditable": false,
                 "isVisible": true,
-                "label": "Previous Diagnostics Details",
+                "label": "Previous Diagnosis Details",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Number of year",
-                "formControlName": "diagnosticsDetails",
+                "formControlName": " DiagnosissDetails",
                 "message": {
-                    "required": "Previous Diagnostics Detailsis required",
+                    "required": "Previous  Diagnosis Detailsis required",
                     "pattern": ""
                 },
                 "validations": {
@@ -450,15 +450,15 @@
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
-                "label": "Patient Has Diabetes",
+                "label": "Patient Smoking Habit",
                 "type": "radio",
                 "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": " radio-button",
                 "placeholder": "********",
-                "formControlName": "diabetesRad",
+                "formControlName": "smokingRad",
                 "message": {
-                    "required": "Patient Has Diabetes is required",
+                    "required": "Patient Smoking Habit is required",
                     "pattern": ""
                 },
                 "values": [
@@ -489,9 +489,32 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Number of year",
-                "formControlName": "diabetesQuestion1",
+                "formControlName": "smokingQuestion1",
                 "message": {
                     "required": "If Yes How Many Year is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "transient":true,
+                "label": "",
+                "inputType": "empty",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-10 my-1 ",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "staticText",
+                "message": {
+                    "required": "",
                     "pattern": ""
                 },
                 "validations": {
