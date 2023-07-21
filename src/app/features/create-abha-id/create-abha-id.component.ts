@@ -68,34 +68,34 @@ export class CreateAbhaIdComponent implements OnInit {
   }
 
   changeCreateAbha(e: any) {
-    const value = e[0];
-    if (e[1].fieldName == 'aadharNo') {
-      const regex = /^\\d{12}$/
-      if (regex.test(value)) {
-        this.acc = true
-      }
-      else {
-        this.acc = false
-      }
-    }
-    else if (e[1].fieldName == 'mobileNo') {
-      const regex = /^\\d{10}$/
-      if (regex.test(value)) {
-        this.acc = true
-      }
-      else {
-        this.acc = false
-      }
-    }
-    else if (e[1].fieldName == 'abhAaddress') {
-      const regex = /^[A-Za-z0-9._%+-]+@sbx$/
-      if (regex.test(value)) {
-        this.acc = true
-      }
-      else {
-        this.acc = false
-      }
-    }
+    // const value = e[0];
+    // if (e[1].fieldName == 'aadharNo') {
+    //   const regex = /^\\d{12}$/
+    //   if (regex.test(value)) {
+    //     this.acc = true
+    //   }
+    //   else {
+    //     this.acc = false
+    //   }
+    // }
+    // else if (e[1].fieldName == 'mobileNo') {
+    //   const regex = /^\\d{10}$/
+    //   if (regex.test(value)) {
+    //     this.acc = true
+    //   }
+    //   else {
+    //     this.acc = false
+    //   }
+    // }
+    // else if (e[1].fieldName == 'abhAaddress') {
+    //   const regex = /^[A-Za-z0-9._%+-]+@sbx$/
+    //   if (regex.test(value)) {
+    //     this.acc = true
+    //   }
+    //   else {
+    //     this.acc = false
+    //   }
+    // }
 
   }
 
