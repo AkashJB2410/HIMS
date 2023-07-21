@@ -34,94 +34,20 @@
         <div class="col main">
             <app-form [formJSON]="selfRegFormData" [editData]="editData" (btnEvent)="buttonEvent($event)"
                 (formData)="sidebarData($event)" (changeEvents)="changeEvents($event)">
-                <!-- Send mobile OTP-->
+               
                 <section class="section-100" *ngIf="otp">
                     <div class="container">
-                        <div class="login-card rounded-lg overflow-hidden bg-white mx-auto">
-                            <div class="login-card_header">
-                                <h3 class="text-center">Verifying Mobile Number </h3>
-                                <h1 class="text-center txt"><small>Don’t worry, it happens to the best of us.</small></h1>
-                            </div>
-                            <div class="login-body p-1 p-md-2">
-                                <form [formGroup]="inputForm" (ngSubmit)="onSubmitEmail()">
-                                    <div class="login-body-wrapper mx-auto">
-                                        <div class="form-group mb-4" *ngIf="emailFlag">
-                                            <label for="email" class="label-txt">Email</label>
-                                            <input type="email" formControlName="emailId" class="login-control form-control-sm"
-                                                name="" id="email" aria-describedby="helpId"
-                                                placeholder="Enter Registered Email ID">
-                                        </div>
-                                        <div class="row mb-5" *ngIf="!emailFlag && !whatsappflag">
-                                            <div class="col-md-4">
-                                                <label _ngcontent-spn-c57="" for="email" class="label-txt">CountryCode</label>
-                                                <select class="form-select" aria-label="Default select example">
-                                                    <option selected>+91</option>
-                                                    <option value="1">+91</option>
-                                                    <option value="2">+21</option>
-                                                    <option value="3">+36</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <label _ngcontent-spn-c57="" for="number" class="label-txt">10-Digit Mobile Number</label>
-                                                <input formControlName="mobileNo" type="number" class="login-control form-control-sm"
-                                                    aria-describedby="helpId"
-                                                    placeholder="Enter Mobile No" #emailId>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-5" *ngIf="whatsappflag">
-                                            <div class="col-md-4">
-                                                <label _ngcontent-spn-c57="" for="email" class="label-txt">CountryCode</label>
-                                                <select class="form-select" aria-label="Default select example">
-                                                    <option selected>+91</option>
-                                                    <option value="1">+91</option>
-                                                    <option value="2">+21</option>
-                                                    <option value="3">+36</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <label _ngcontent-spn-c57="" for="email" class="label-txt">10-Digit whatsapp Number</label>
-                                                <input formControlName="mobileNo" type="number" class="login-control form-control-sm"
-                                                    name="" id="email" aria-describedby="helpId"
-                                                    placeholder="Enter Registered Mobile">
-                                            </div>
-                                        </div>
-                                        <button class="btn btn-primary btn-block btn-lg btn-fnt">Verify</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                         <!-- Send mobile OTP-->
+                        <h1>We are verifying your number</h1>
+                        <div class="row" style="text-align: center;"><b>{{MobileNumber}}</b></div>
+                        
+                        <button *ngIf="sendOTPButton" type="button" class="btn btn-success" (click)="sendOTP($event)">Send OTP</button>
+                           <!-- verify Mobile OTP -->
+                           <button *ngIf="!sendOTPButton" type="button" class="btn btn-success" (click)="verifyOTP($event)">Verify OTP</button>
                     </div>
                 </section>
-                <!-- verify Mobile OTP -->
-                <section class="section-100" *ngIf="otpScreen">
-                    <div class="container">
-                        <div class="login-card rounded-lg overflow-hidden bg-white mx-auto">
-                            <img src="../../../../assets/core_assets/back.png" class="cursor" (click)="backtoSendOTP()">
-                            <div class="login-card_header">
-                                <h3 class="text-center">Check your mobile</h3>
-                                <h1 class="text-center txt"><small>We just sent an OTP to your registered mobile number</small></h1>
-                            </div>
-                            <div class="login-body p-1 p-md-2">
-                                <div class="login-body-wrapper mx-auto">
-                                    <div class="otp-input-wrapper mb-4">
-                                        <input type="text" maxlength="4" pattern="[0-9]*" autocomplete="off" #otp>
-                                        <svg viewBox="0 0 240 1" xmlns="http://www.w3.org/2000/svg">
-                                            <line x1="0" y1="0" x2="240" y2="0" stroke="#3e3e3e" stroke-width="2"
-                                                stroke-dasharray="44,22" />
-                                        </svg><br>
-                                        <p class="text-muted txt-cst text-center mt-4 mb-0">00:{{timeLeft}}</p>
-                                        <br>
-                                        <p class="text-muted txt-cst text-center">Didnt get a code?<b
-                                                (click)="onGetVerificationCode()">&nbsp;Resend</b>
-                                        </p>
-                                    </div>
-                                    <button class="btn btn-primary btn-block btn-lg btn-fnt" (click)="verifyOTP(otp.value)">Verify
-                                        OTP</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+             
+               
                 <app-super-grid *ngIf="data" [configurations]="configurations" [tableConfig]="tableConfig"
                     [tableData]="data" (rowClickData)="tableRowClick($event)"></app-super-grid>
             </app-form>

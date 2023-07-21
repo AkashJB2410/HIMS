@@ -1,0 +1,14 @@
+{
+    "tabular": [
+        {
+            "id": 0,
+            "label": "Generate ABHA ID",
+            "icon": "bi bi-person-badge"
+        },
+        {
+            "id": 1,
+            "label": "Fetch ABHA ID",
+            "icon": "bi bi-file-arrow-down-fill"
+        }
+    ]
+}
