@@ -116,12 +116,12 @@
             },
             {
                 "id": 13,
-                "isEditable": false,
-                "isVisible": true,
+                "isEditable": true,
+                "isVisible": false,
                 "transient": false,
                 "label": "Start Date",
                 "type": "date",
-                "class": "col-md-2 my-1 mt-4",
+                "class": "col-md-2 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "defaultValue": "",
@@ -132,18 +132,18 @@
                     "pattern": ""
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
             {
                 "id": 13,
-                "isEditable": false,
-                "isVisible": true,
+                "isEditable": true,
+                "isVisible": false,
                 "transient": false,
                 "label": "End Date",
                 "type": "date",
-                "class": "col-md-2 my-1 mt-4",
+                "class": "col-md-2 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "defaultValue": "",
@@ -154,7 +154,7 @@
                     "pattern": ""
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -181,21 +181,22 @@
                         "toolPosition": "top"
                     },
                     {
+                        "class": "pi pi-save",
+                        "isDisabled": false,
+                        "subtype": "submit",
+                        "valueclass": "icon-button-succes",
+                        "tooltip": "Save Filter",
+                        "toolPosition": "top"
+                    },
+                    {
                         "class": "pi pi-sync",
                         "isDisabled": false,
                         "subtype": "reset",
                         "valueclass": "icon-button-warn",
                         "tooltip": "Reset",
                         "toolPosition": "top"
-                    },
-                    {
-                        "class": "pi pi-save",
-                        "isDisabled": false,
-                        "subtype": "submit",
-                        "valueclass": "icon-button-warn",
-                        "tooltip": "Save Filter",
-                        "toolPosition": "top"
                     }
+                  
                 ]
             }
         ]

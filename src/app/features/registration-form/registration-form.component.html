@@ -1,6 +1,6 @@
 <!-- <p-breadcrumb [model]="items.itemsList"></p-breadcrumb> -->
 
-<h3 class="Sidebar-title-md "><i class="bi bi-file-earmark-medical"></i>PATIENT REGISTRATION</h3>
+<h3 class="Sidebar-title-md "><i class="bi bi-file-earmark-medical"></i>{{formTitle}}</h3>
 
 <app-super-grid *ngIf="data" [configurations]="configurations" [filterJSON]="filterData"
     (fiteredData)="fiteredData($event)" [tableData]="data" [tableConfig]="config"

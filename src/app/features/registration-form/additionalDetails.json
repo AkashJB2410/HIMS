@@ -1,9 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "",
-        "formTitleClass": "",
-        "formTitleLogo":"",
+        "sideBarTitle":"",
+        "sidebarTitleClass": "",
+        "sidebarTitleLogo": "",
         "formName": "Form1",
         "formType": "edit",
         "sidebar": "p-sidebar-lg",
@@ -106,11 +106,11 @@
                 "formControlName": "abhaId",
                 "message": {
                     "required": "ABHA ID is required",
-                    "pattern": ""
+                    "pattern": "Invalid ABHA Id"
                 },
                 "validations": {
                     "required": false,
-                    "pattern": ""
+                    "pattern": "^[1-9]{2}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
                 }
             },
             {
@@ -148,11 +148,11 @@
                 "formControlName": "aadharNo",
                 "message": {
                     "required": "Aadhar No. is required",
-                    "pattern": ""
+                    "pattern": "Invalid Aadhar no."
                 },
                 "validations": {
                     "required": false,
-                    "pattern": ""
+                    "pattern": "^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$"
                 }
             },
             {

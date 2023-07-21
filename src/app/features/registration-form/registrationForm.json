@@ -2,12 +2,10 @@
     "form": {
         "class": "row",
         "formId":"patientRegistration",
-        "formTitle": "Patient Registration",
-        "formTitleClass": "Sidebar-title-md ",
-        "formTitleLogo":"bi bi-file-earmark-medical",
-        "formName": "Form1",
         "formType": "edit",
-        "sidebar": "p-sidebar-lg",
+        "sideBarTitle":"Page Title",
+        "sidebarTitleClass": "Sidebar-title-md",
+        "sidebarTitleLogo": "bi bi-file-earmark-medical",
         "formControls": [
             {
                 "id": 0,
@@ -67,7 +65,27 @@
                     "pattern": ""
                 }
             },
-            
+            {
+                "id": 8,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Mobile No.",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1 mt-2",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Mobile No.",
+                "formControlName": "mobileNoInput",
+                "message": {
+                    "required": "Mobile No. is required",
+                    "pattern": "Please re-enter using a valid 10-digit mobile number."
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^\\d{10}$"
+                }
+            },
             {
                 "id": 2,
                 "isEditable": true,
@@ -243,27 +261,6 @@
                 }
             },
             {
-                "id": 8,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Mobile No.",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1 mt-2",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter Mobile No.",
-                "formControlName": "mobileNoInput",
-                "message": {
-                    "required": "Mobile No. is required",
-                    "pattern": "Please re-enter using a valid 10-digit mobile number."
-                },
-                "validations": {
-                    "required": true,
-                    "pattern": "^\\d{10}$"
-                }
-            },
-            {
                 "id": 9,
                 "isEditable": true,
                 "isVisible": true,
@@ -349,7 +346,7 @@
                 ],
                 "message": {
                     "required": "Identification Type is required",
-                    "pattern": ""
+                    "pattern": "Invalid pattern"
                 },
                 "validations": {
                     "required": true,

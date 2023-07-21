@@ -47,5 +47,5 @@
     "textLength":16,
     "sidebar":"p-sidebar-xl",
 	"bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL"],
-    "isProfileDisplay":false  
+    "isProfileDisplay":true  
 }

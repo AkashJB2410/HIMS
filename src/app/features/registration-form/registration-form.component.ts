@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as table_config from './registrationForm_table_config.json';
 import * as mobile_table_config from './mobileSerch_table_config.json';
-import registrationForm from "./registrationForm.json";
 import { MessageService } from 'primeng/api';
 import { RegistrationFormService } from './registration-form.service';
 import rgistrationData from './registrationForm.json';
@@ -268,16 +267,17 @@ export class RegistrationFormComponent implements OnInit {
   receivedData: any;
   middleName: any = '';
   lastName: any = '';
+  formTitle:any;
   private subscription: Subscription;
   constructor(private messageService: MessageService, private common: CommonService, public datepipe: DatePipe,
     private http: RegistrationFormService, private form$: FormService, private dataService: DataServiceService) {
   }
-
-
+  
   ngOnInit(): void {
     this.formData = Object.assign({}, rgistrationData);
     this.formData.form.formControls[0].isVisible = false;
     this.formData.form.formControls[1].isVisible = false;
+    this.formTitle="PATIENT REGISTRATION"
     this.subscription = this.dataService.outputData$.subscribe(
       data => {
         this.receivedData = data;
@@ -286,15 +286,17 @@ export class RegistrationFormComponent implements OnInit {
           this.formData.form.formControls[0].isVisible = true;
           this.isShowServices = !this.isShowServices;
           this.servData = dataOPD;
+          this.formTitle="OPD REGISTRATION";
         } else if (this.receivedData.label == "IPD" && this.formData.form.formControls[1].formControlName == "IPDRad") {
           this.formData.form.formControls[1].isVisible = true;
           this.isShowServices = !this.isShowServices;
           this.servData = dataIPD;
+          this.formTitle="IPD REGISTRATION";
         }
       }
     );
 
-    this.assignDropDownOptions();
+    // this.assignDropDownOptions();
     this.configurations = {
       "isFilter": true,
       "isTable": true,
@@ -790,6 +792,7 @@ export class RegistrationFormComponent implements OnInit {
             "patientMaritalStatusId": e.patientMaritalStatusId,
             "patientMaritalStatusName": e.patientMaritalStatusName,
             "patientDob": date,
+            "image": e.patientUploadImage,
             "isActive": e.isActive
           }
           this.gridData.push(patientData);
@@ -977,21 +980,25 @@ export class RegistrationFormComponent implements OnInit {
   closeSidebarData(e: any) {
     this.editData = undefined;
   }
+
+  submitMstPatient(Data: any) {
+    this.http.saveMstPatient(Data).subscribe((res: any) => {
+      console.log("mstPatient ==>> res ", res[1].result);
+      this.mstAddress.addressPatientId = res[1].result.patientId;
+      this.mstHospitalAss.privilegePatientId = res[1].result.patientId;
+      this.mstInsurance.insurancePatientId = res[1].result.patientId;
+      this.mstMedicalHistory.mhPatientId = res[1].result.patientId;
+      this.mstAdditionalDetails.paiPatientId = res[1].result.patientId;
+      this.mstMLC.mlcPatientId = res[1].result.patientId;
+    });
+  }
   sidebarData(e: any) {
     console.log("sidebar data => ", e)
     if (e == 'reset') {
       console.log(e);
     } else if (this.isAddEditFlag.add == "add") {
-      this.http.saveMstRelation(this.mstPatient).subscribe((res: any) => {
-        console.log("mstPatient ==>> res ", res[1].result);
-        this.mstAddress.addressPatientId = res[1].result.patientId;
-        this.mstHospitalAss.privilegePatientId = res[1].result.patientId;
-        this.mstInsurance.insurancePatientId = res[1].result.patientId;
-        this.mstMedicalHistory.mhPatientId = res[1].result.patientId;
-        this.mstAdditionalDetails.paiPatientId = res[1].result.patientId;
-        this.mstMLC.mlcPatientId = res[1].result.patientId;
-
-      })
+      this.submitMstPatient(this.mstPatient);
+    
       setTimeout(() => {
         this.http.saveDataFromApis(this.mstAddress, this.mstHospitalAss, this.mstInsurance, this.mstMedicalHistory, this.mstAdditionalDetails, this.mstMLC).subscribe(
           (response: any[]) => {
@@ -1010,7 +1017,7 @@ export class RegistrationFormComponent implements OnInit {
             console.error('Error:', error);
           });
         this.messageService.add({ severity: 'success', summary: 'success', detail: 'Your registration has been successfully completed!' });
-      }, 1000)
+      },3000)
 
     } else {
       this.updateUserData(this.paramObj);
@@ -1019,42 +1026,42 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   saveRegistartionForm(e: any) {
-    if (e.middleNameInput != undefined) {
-      this.middleName = e.middleNameInput;
-    }
-    if (e.lastNameInput != undefined) {
-      this.lastName = e.lastNameInput;
-    }
+    // if (e.middleNameInput != undefined) {
+    //   this.middleName = e.middleNameInput;
+    // }
+    // if (e.lastNameInput != undefined) {
+    //   this.lastName = e.lastNameInput;
+    // }
     let fullName = e.firstNameInput + " " + this.middleName + " " + this.lastName;
-    let fullNamestring=fullName.split(" ").join("");
-    console.log("full name ==>>", fullNamestring)
+    // let fullNamestring=fullName.split(" ").join("");
+    // console.log("full name ==>>", fullNamestring)
     let date = this.datepipe.transform(
       e.userBirthdate, "MM/dd/yyyy"
     );
     this.mstPatient = {
       "patientAge": e.ageText,
-      "patientBloodGroupId": e.selectBlood,
-      "patientBloodGroupName": "string",
+      "patientBloodGroupId": e.selectBlood.code,
+      "patientBloodGroupName": e.selectBlood.name,
       "patientDob": date,
       "patientEmail": e.emailInput,
-      "patientEthinicityId": e.selectEthincity,
-      "patientEthinicityName": "string",
+      "patientEthinicityId": e.selectEthincity.code,
+      "patientEthinicityName": e.selectEthincity.name,
       "patientFirstname": e.firstNameInput,
-      "patientFullname": fullNamestring,
-      "patientGenderId": e.selectGender,
-      "patientGenderName": "string",
-      "patientIdentificationTypeId": e.selectIdentificationType,
-      "patientIdentificationTypeName": "string",
+      "patientFullname": fullName,
+      "patientGenderId": e.selectGender.code,
+      "patientGenderName": e.selectGender.name,
+      "patientIdentificationTypeId": e.selectIdentificationType.code,
+      "patientIdentificationTypeName": e.selectIdentificationType.name,
       "patientIdentificationTypeNumber": e.identificationNoInput,
       "patientLastname": e.lastNameInput,
-      "patientMaritalStatusId": e.selectMaritalStatus,
-      "patientMaritalStatusName": "string",
+      "patientMaritalStatusId": e.selectMaritalStatus.code,
+      "patientMaritalStatusName": e.selectMaritalStatus.name,
       "patientMiddlename": e.middleNameInput,
       "patientMobileNumber": e.mobileNoInput,
       "patientRegistrationSource": "Conter",
       "patientReligion": e.religionInput,
-      "patientTitleId": e.selectTitle,
-      "patientTitleName": "string",
+      "patientTitleId": e.selectTitle.code,
+      "patientTitleName": e.selectTitle.name,
       "patientUploadImage": "string"
     }
     console.log("mstPatient => ", this.mstPatient);

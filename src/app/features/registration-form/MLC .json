@@ -1,9 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "",
-        "formTitleClass": "",
-        "formTitleLogo":"",
+        "sideBarTitle":"",
+        "sidebarTitleClass": "",
+        "sidebarTitleLogo": "",
         "formName": "Form1",
         "formType": "edit",
         "sidebar": "p-sidebar-lg",

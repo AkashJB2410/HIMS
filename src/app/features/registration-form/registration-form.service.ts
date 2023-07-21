@@ -57,7 +57,7 @@ export class RegistrationFormService {
   readonly mst_medical_legal_case_save = 'http://localhost:8082/mst_medical_legal_case/create';
 
 
-  saveMstRelation(mstPatient: any): Observable<any> {
+  saveMstPatient(mstPatient: any): Observable<any> {
     const url = "http://localhost:8082/mst_patient/create";
     return this.PostCall(url, mstPatient);
   }
