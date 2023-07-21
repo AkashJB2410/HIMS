@@ -31,6 +31,7 @@ export class SelfRegistrationComponent implements OnInit {
   editData: any;
   selfFormData: any;
   selfRegData: any
+  MobileNumber:any
   paramObj: any = {
 
   };
@@ -66,6 +67,7 @@ export class SelfRegistrationComponent implements OnInit {
   changeEvents(ch: any) {
     console.log(ch)
     if (ch[1].fieldName == "mobileNo") {
+      this.MobileNumber=ch[1].fieldValue;
       this.otp=true
       this.form.showModal(true)
       // this.getAllSelfReg();
@@ -150,135 +152,14 @@ age:any
       this.form.showModal(true);
     })
   }
-  // mobile verify
-  timeLeft: any = 60;
-  chooseMethod: boolean = true;
-  emailFlag: boolean = false;
-  whatsappflag: boolean = false;
-  emailOrMobileCard: boolean = false;
-  otpScreen: boolean = false;
-  resetPassword: boolean = false;
-  successScreen: boolean = false;
-  btnDissabled: boolean = false;
-  errorMessage: any;
 
-  backtoSelection() {
-    this.chooseMethod = true;
-    this.emailOrMobileCard = false;
-    this.otpScreen = false;
-    this.resetPassword = false;
-    this.successScreen = false;
-    this.btnDissabled = false;
+  // send otp
+  sendOTPButton:boolean=true
+  sendOTP(e:any){
+    this.sendOTPButton=false
   }
-  backtoSendOTP() {
-    this.chooseMethod = false;
-    this.emailOrMobileCard = true;
-    this.otpScreen = false;
-    this.resetPassword = false;
-    this.successScreen = false;
-    this.btnDissabled = false;
+  verifyOTP(e:any){
+    this.otp=false
+    this.getAllSelfReg();
   }
-
-  //verify OTP
-  inputForm = new FormGroup({
-    emailId: new FormControl(''),
-    mobileNo: new FormControl(''),
-  });
-  onSubmitEmail(){ 
-    this.http.mobileOTP(this.inputForm.value).subscribe({
-      next:data=>{
-        if ( data.metadata.message == 'Valid Mobile No' || data.metadata.message == 'Valid EmailId' ) {
-          this.chooseMethod = false;
-          this.emailOrMobileCard = false;
-          
-          this.onGetVerificationCode();
-        } else {
-          this.messageService.add({
-            severity: 'error',
-            summary: 'Invalid credentials!',
-            detail: 'Please enter valid credentials !',
-          });
-        }
-      },
-      error: error=>{
-        this.errorMessage = error.message;
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Something went wrong',
-          detail: this.errorMessage,
-        });
-
-      } 
-    });
-  }
-   // To send OTP to the verified number or email Id
-   onGetVerificationCode() {
-    this.startTimer();
-    this.http.sendOTP(this.inputForm.value).subscribe({
-      next:data=>{
-        if (data.metadata.message == 'OTP send sucessfully on mobile no.' || data.metadata.message == 'OTP send sucessfully on email-id' ) {
-          this.messageService.add({
-            severity: 'success',
-            summary: 'OTP sent Successfully.',
-            detail: '',
-          });
-          this.otpScreen = true;
-          this.chooseMethod = false;
-          this.emailOrMobileCard = false;
-          this.startTimer();
-        } else {
-          this.messageService.add({
-            severity: 'error',
-            summary: 'Something went wrong',
-            detail: 'OTP not sent !',
-          });
-          this.emailOrMobileCard = true;
-        }
-      },
-      error:error=>{
-        this.errorMessage = error.message;
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Something went wrong',
-          detail: this.errorMessage,
-        });
-      }      
-    });
-  }
- // Start timer to enter OTP
- startTimer() {
-  setInterval(() => {
-    if (this.timeLeft > 0) {
-      this.timeLeft--;
-    }
-  }, 1000);
-}
-
-// Tp check entered OTP is valid or not
-verifyOTP(e: any) {
-  this.http.verifyOTP(e, this.inputForm.value).subscribe({
-    next:data=>{
-      if ( data.metadata.message == 'OTP is valid for mobile no' || data.metadata.message == 'OTP is valid for email-id' ) {
-        this.otpScreen = false;
-        this.resetPassword = true;
-      } else {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Error',
-          detail: 'Invalid OTP !',
-        });
-      }
-    },
-    error:error=>{
-      this.errorMessage = error.message;
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Something went wrong',
-        detail: this.errorMessage,
-      });
-    }
-  });
-  
-}
-
 }

@@ -35,6 +35,6 @@
     "isCheckbox": false,
     "resizableColumns": true,
     "textLength": 30,
-    "bulkAction":["PDF","EXCEL","Delete"]   
+    "bulkAction":[]   
 
 }

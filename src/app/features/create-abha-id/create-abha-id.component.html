@@ -1,1 +1,15 @@
-<p>create-abha-id works!</p>
+<app-tabular-forms [tabularJSON]="tabular" (tabularEmitData)="tabularActiveTab($event)">
+
+    <app-form *ngIf="formData1" [formJSON]="formData1" (formData)="createAbha($event)" (changeEvents)="changeCreateAbha($event)">
+    </app-form>
+
+    <app-form *ngIf="formData2" [formJSON]="formData2" (formData)="fetchAbha($event)">
+    </app-form>
+
+    <app-accordion *ngIf="acc" [accordionData]="accordion">
+        <app-form *ngIf="accForm" [formJSON]="accForm" [editData]="editData"
+            (formData)="saveAccordion($event)" (changeEvents)="changeAccordion($event)" (btnEvent)="buttonEvent($event)">
+        </app-form> 
+    </app-accordion>
+
+</app-tabular-forms>

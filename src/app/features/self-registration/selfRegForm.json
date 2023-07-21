@@ -21,7 +21,6 @@
                 "valueclass": "input-box",
                 "placeholder": "Enter Mobile No.",
                 "formControlName": "mobileNo",
-                "defaultValue": "1234567890",
                 "message": {
                     "required": "Mobile No. is required",
                     "pattern": "Please re-enter using a valid 10-digit mobile number."
@@ -111,7 +110,6 @@
                 "valueclass": "input-box",
                 "placeholder": "Enter First Name...",
                 "formControlName": "firstName",
-                "defaultValue": "ABC",
                 "message": {
                     "required": "First Name is required",
                     "pattern": "Numbers not allowed."
@@ -154,7 +152,6 @@
                 "valueclass": "input-box",
                 "placeholder": "Enter Last Name...",
                 "formControlName": "lastName",
-                "defaultValue": "PQR",
                 "message": {
                     "required": "Last Name is required",
                     "pattern": "Numbers not allowed."
@@ -176,7 +173,6 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "selectGender",
-                "defaultValue": "1",
                 "values": [
                     {
                         "name": "Select an Option",
@@ -259,7 +255,6 @@
                 "valueclass": "input-box",
                 "placeholder": "Enter Last Name...",
                 "formControlName": "MotherName",
-                "defaultValue": "XYZ",
                 "message": {
                     "required": "Last Name is required",
                     "pattern": "Numbers not allowed."
@@ -289,7 +284,6 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "department",
-                "defaultValue": ["1","1","1"],
                 "message": {
                     "required": "Department is required",
                     "pattern": ""
@@ -437,7 +431,6 @@
                 "row": "2",
                 "placeholder": "",
                 "formControlName": "address",
-                "defaultValue": "test",
                 "message": {
                     "required": "Address is required",
                     "pattern": "invalid"
@@ -480,7 +473,6 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "formControlName": "state",
-                "defaultValue": "",
                 "message": {
                     "required": "state is required",
                     "pattern": ""
@@ -591,7 +583,6 @@
                 "valueclass": "input-box",
                 "placeholder": "",
                 "formControlName": "selectVillage",
-                "defaultValue": "test2",
                 "message": {
                     "required": "Village is required",
                     "pattern": ""
@@ -614,7 +605,6 @@
                 "valueclass": "input-box",
                 "placeholder": "",
                 "formControlName": "pinCode",
-                "defaultValue": "123456",
                 "message": {
                     "required": "Pin Code is required",
                     "pattern": "Please re-enter valid pin code."

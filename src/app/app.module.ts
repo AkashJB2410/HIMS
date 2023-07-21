@@ -99,7 +99,8 @@ import { CoreFeaturesComponent } from './features/core-features/core-features.co
     SelfRegistrationComponent,
     ClusterComponent,
     SpetialityComponent,
-    CoreFeaturesComponent
+    CoreFeaturesComponent,
+    
   ],
   imports: [
     CommonModule,

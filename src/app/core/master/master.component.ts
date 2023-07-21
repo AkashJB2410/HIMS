@@ -27,7 +27,8 @@ export class MasterComponent implements OnInit {
   constructor(private themeService: ThemeService, private masterSerivice: MasterService) { }
 
   ngOnInit(): void {
-    this.getALLSideNavData();
+    // this.getALLSideNavData();
+    this.getAuthorize();
     this.getAllNotifications()
     localStorage.setItem('personalization', JSON.stringify(personalization));
     this.personalization = personalization;
@@ -82,8 +83,6 @@ export class MasterComponent implements OnInit {
         });
       });
       this.masterJSON.masterData.sidenavItems = this.sidenavData
-      this.getAuthorize();
-
     });
   }
 
@@ -117,8 +116,41 @@ export class MasterComponent implements OnInit {
         "group": []
       },
       {
+        "moduleId": 2,
+        "label": "Registration",
+        "icon": "bi bi-person-up",
+        "routerLink": "",
+        "sequence": "123",
+        "group": [
+          {
+            "groupId": 1,
+            "label": "OPD",
+            "icon": "",
+            "routerLink": "/master-page/opd-registration-form",
+            "sequence": "1",
+            "submodules": []
+          },
+          {
+            "groupId": 2,
+            "label": "IPD",
+            "icon": "",
+            "routerLink": "/master-page/ipd-registration-form",
+            "sequence": "1",
+            "submodules": []
+          },
+          {
+            "groupId": 3,
+            "label": "ABHA",
+            "icon": "",
+            "routerLink": "/master-page/create-abha-id",
+            "sequence": "1",
+            "submodules": []
+          }
+        ]
+      },
+      {
         "moduleId": 7,
-        "label": "OPD",
+        "label": "Demo 1",
         "icon": "bi bi-person-up",
         "routerLink": "",
         "sequence": "123",
@@ -221,14 +253,14 @@ export class MasterComponent implements OnInit {
       },
       {
         "moduleId": 8,
-        "label": "IPD",
+        "label": "Demo 2",
         "icon": "bi bi-person-down",
         "routerLink": "",
         "sequence": "1",
         "group": [
           {
             "groupId": 32,
-            "label": "IPD Quick Registration",
+            "label": "IPD List",
             "icon": "",
             "routerLink": "/master-page/ipd-quick-registration",
             "sequence": "1",
@@ -358,7 +390,25 @@ export class MasterComponent implements OnInit {
         "moduleId": 1,
         "groupId": 1,
         "subModuleId": null,
-        "permission": ""
+        "permission": "E"
+      },
+      {
+        "moduleId": 2,
+        "groupId": 1,
+        "subModuleId": null,
+        "permission": "E"
+      },
+      {
+        "moduleId": 2,
+        "groupId": 2,
+        "subModuleId": null,
+        "permission": "E"
+      },
+      {
+        "moduleId": 2,
+        "groupId": 3,
+        "subModuleId": null,
+        "permission": "E"
       },
       {
         "moduleId": 7,
@@ -436,49 +486,49 @@ export class MasterComponent implements OnInit {
         "moduleId": 8,
         "groupId": 33,
         "subModuleId": 4,
-        "permission": "E"
+        "permission": "D"
       },
       {
         "moduleId": 8,
         "groupId": 33,
         "subModuleId": 5,
-        "permission": "E"
+        "permission": "D"
       },
       {
         "moduleId": 8,
         "groupId": 34,
         "subModuleId": 6,
-        "permission": "E"
+        "permission": "D"
       },
       {
         "moduleId": 8,
         "groupId": 34,
         "subModuleId": 7,
-        "permission": "E"
+        "permission": "D"
       },
       {
         "moduleId": 8,
         "groupId": 34,
         "subModuleId": 8,
-        "permission": "E"
+        "permission": "D"
       },
       {
         "moduleId": 8,
         "groupId": 35,
         "subModuleId": 9,
-        "permission": "E"
+        "permission": "D"
       },
       {
         "moduleId": 8,
         "groupId": 35,
         "subModuleId": 10,
-        "permission": "E"
+        "permission": "D"
       },
       {
         "moduleId": 8,
         "groupId": 35,
         "subModuleId": 11,
-        "permission": "E"
+        "permission": "D"
       },
       {
         "moduleId": 8,
@@ -498,8 +548,174 @@ export class MasterComponent implements OnInit {
         "subModuleId": 12,
         "permission": "D",
       },
-
+      
     ]
+
+    // let auth =  [
+    //   {
+    //     "moduleId": 1,
+    //     "groupId": 1,
+    //     "subModuleId": null,
+    //     "permission": "E"
+    //   },
+    // {
+    //   "moduleId": 2,
+    //   "groupId": 1,
+    //   "subModuleId": null,
+    //   "permission": "E"
+    // },
+    // {
+    //   "moduleId": 2,
+    //   "groupId": 2,
+    //   "subModuleId": null,
+    //   "permission": "E"
+    // },
+    // {
+    //   "moduleId": 2,
+    //   "groupId": 3,
+    //   "subModuleId": null,
+    //   "permission": "D"
+    // },
+    //   {
+    //     "moduleId": 7,
+    //     "groupId": 23,
+    //     "subModuleId": null,
+    //     "permission": "E"
+    //   },
+    //   {
+    //     "moduleId": 7,
+    //     "groupId": 24,
+    //     "subModuleId": null,
+    //     "permission": "E"
+    //   },
+    // {
+    //     "moduleId": 7,
+    //     "groupId": 25,
+    //     "subModuleId": null,
+    //     "permission": "E"
+    //   },
+    // {
+    //     "moduleId": 7,
+    //     "groupId": 26,
+    //     "subModuleId": null,
+    //     "permission": "E"
+    //   },
+    // {
+    //     "moduleId": 7,
+    //     "groupId": 27,
+    //     "subModuleId": null,
+    //     "permission": "E"
+    //   },
+    // {
+    //     "moduleId": 7,
+    //     "groupId": 28,
+    //     "subModuleId": null,
+    //     "permission": "E"
+    //   },
+    // {
+    //     "moduleId": 7,
+    //     "groupId": 29,
+    //     "subModuleId": null,
+    //     "permission": "E"
+    //   },
+    // {
+    //     "moduleId": 7,
+    //     "groupId": 30,
+    //     "subModuleId": null,
+    //     "permission": "E"
+    //   },
+    //   {
+    //     "moduleId": 7,
+    //     "groupId": 31,
+    //     "subModuleId": 1,
+    //     "permission": "D"
+    //   },
+    //   {
+    //     "moduleId": 7,
+    //     "groupId": 31,
+    //     "subModuleId": 2,
+    //     "permission": ""
+    //   },
+    //   {
+    //     "moduleId": 7,
+    //     "groupId": 31,
+    //     "subModuleId": 3,
+    //     "permission": ""
+    //   },
+    // {
+    //     "moduleId": 8,
+    //     "groupId": 32,
+    //     "subModuleId": null,
+    //     "permission": "E"
+    //   },
+    //   {
+    //     "moduleId": 8,
+    //     "groupId": 33,
+    //     "subModuleId": 4,
+    //     "permission": "E"
+    //   },
+    //  {
+    //     "moduleId": 8,
+    //     "groupId": 33,
+    //     "subModuleId": 5,
+    //     "permission": "E"
+    //   },
+    //   {
+    //     "moduleId": 8,
+    //     "groupId": 34,
+    //     "subModuleId": 6,
+    //     "permission": "E"
+    //   },
+    //   {
+    //     "moduleId": 8,
+    //     "groupId": 34,
+    //     "subModuleId": 7,
+    //     "permission": "E"
+    //   },
+    //   {
+    //     "moduleId": 8,
+    //     "groupId": 34,
+    //     "subModuleId": 8,
+    //     "permission": "E"
+    //   },
+    // {
+    //     "moduleId": 8,
+    //     "groupId": 35,
+    //     "subModuleId": 9,
+    //     "permission": "E"
+    //   },
+    //   {
+    //     "moduleId": 8,
+    //     "groupId": 35,
+    //     "subModuleId": 10,
+    //     "permission": "E"
+    //   },
+    //   {
+    //     "moduleId": 8,
+    //     "groupId": 35,
+    //     "subModuleId": 11,
+    //     "permission": "E"
+    //   },
+    // {
+    //     "moduleId": 8,
+    //     "groupId": 36,
+    //     "subModuleId": null,
+    //     "permission": "E"
+    //   },
+    // {
+    //     "moduleId": 8,
+    //     "groupId": 37,
+    //     "subModuleId": null,
+    //     "permission": "E"
+    //   },
+    // {
+    //     "moduleId": 8,
+    //     "groupId": 38,
+    //     "subModuleId": 12,
+    //     "permission":  "E",
+    //   },
+      
+    // ]
 
     allData = allData.filter(module => {
       const moduleAuth = auth.some(a => a.moduleId == module.moduleId && (a.permission == 'E' || a.permission == ''));
