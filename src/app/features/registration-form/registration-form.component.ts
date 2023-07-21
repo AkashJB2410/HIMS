@@ -1060,21 +1060,12 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   saveRegistartionForm(e: any) {
-    // if (e.middleNameInput != undefined) {
-    //   this.middleName = e.middleNameInput;
-    // }
-    // if (e.lastNameInput != undefined) {
-    //   this.lastName = e.lastNameInput;
-    // }
-    // let fullName = e.firstNameInput + " " + this.middleName + " " + this.lastName;
-    // let fullNamestring=fullName.split(" ").join("");
-    // console.log("full name ==>>", fullNamestring)
     let date = this.datepipe.transform(
       e.userBirthdate, "MM/dd/yyyy"
     );
     this.mstPatient = {
       "patientAge": e.ageText || '',
-      // "patientBloodGroupId": e.selectBlood.code || '',
+      "patientBloodGroupId": e.selectBlood.code || '',
       "patientBloodGroupName": e.selectBlood.name || '',
       "patientDob": date || '',
       "patientEmail": e.emailInput || '',
