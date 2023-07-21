@@ -13,7 +13,7 @@ export class AccordionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.data= this.accordionData;
+    this.data= this.accordionData.data;
   }
 
   handleChange(e: any) {
