@@ -10,64 +10,6 @@
             {
                 "id": 0,
                 "isEditable": true,
-                "isVisible": false,
-                "label": "",
-                "inputType": "radio",
-                "type": "radio",
-                "class": "col-md-1 mt-1 my-1",
-                "lblclass": "custom-label",
-                "valueclass": " radio-button",
-                "placeholder": "********",
-                "formControlName": "OPDRad",
-                "defaultValue":["OPD"],
-                "message": {
-                    "required": "OPD is required",
-                    "pattern": ""
-                },
-                "values": [
-                    {
-                        "name": "OPD",
-                        "code": "OPD",
-                        "editable": false
-                    }
-                ],
-                "validations": {
-                    "required": true,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 1,
-                "isEditable": true,
-                "isVisible": false,
-                "label": "",
-                "inputType": "radio",
-                "type": "radio",
-                "class": "col-md-1 mt-1 my-1",
-                "lblclass": "custom-label",
-                "valueclass": " radio-button",
-                "placeholder": "********",
-                "defaultValue":["IPD"],
-                "formControlName": "IPDRad",
-                "message": {
-                    "required": "IPD is required",
-                    "pattern": ""
-                },
-                "values": [
-                    {
-                        "name": "IPD",
-                        "code": "IPD",
-                        "editable": false
-                    }
-                ],
-                "validations": {
-                    "required": true,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 8,
-                "isEditable": true,
                 "isVisible": true,
                 "label": "Mobile No.",
                 "type": "text",
@@ -87,7 +29,7 @@
                 }
             },
             {
-                "id": 2,
+                "id": 1,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -109,7 +51,7 @@
                 }
             },
             {
-                "id": 3,
+                "id": 2,
                 "isEditable": false,
                 "isVisible": false,
                 "label": "Patient Id",
@@ -130,7 +72,7 @@
                 }
             },
             {
-                "id": 4,
+                "id": 3,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Title",
@@ -198,7 +140,7 @@
             },
             
             {
-                "id": 5,
+                "id": 4,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "First Name",
@@ -219,7 +161,7 @@
                 }
             },
             {
-                "id": 6,
+                "id": 5,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Middle Name",
@@ -240,7 +182,7 @@
                 }
             },
             {
-                "id": 7,
+                "id": 6,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Last Name",
@@ -261,7 +203,7 @@
                 }
             },
             {
-                "id": 16,
+                "id": 7,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Gender",
@@ -300,7 +242,7 @@
                 }
             },
             {
-                "id": 10,
+                "id": 8,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Identification Type",
@@ -354,11 +296,11 @@
                      },
                      {
                         "name": "Other",
-                        "code": "10"
+                        "code": 10
                      },
                      {
                         "name": "ABHA Id",
-                        "code": "11"
+                        "code": 11
                      }
                 ],
                 "message": {
@@ -371,7 +313,7 @@
                 }
             },
             {
-                "id": 11,
+                "id": 9,
                 "isEditable": false,
                 "isVisible": true,
                 "label": "Identification Number",
@@ -392,7 +334,7 @@
                 }
             },
             {
-                "id": 9,
+                "id": 10,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Email ID",
@@ -414,7 +356,7 @@
                 }
             },
             {
-                "id": 12,
+                "id": 11,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "",
@@ -442,7 +384,7 @@
                 }
             },
             {
-                "id": 13,
+                "id": 12,
                 "isEditable": false,
                 "isVisible": true,
                 "transient": false,
@@ -464,7 +406,7 @@
                 }
             },
             {
-                "id": 14,
+                "id": 13,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "",
@@ -492,7 +434,7 @@
                 }
             },
             {
-                "id": 15,
+                "id": 14,
                 "isEditable": false,
                 "isVisible": true,
                 "label": "",
@@ -513,7 +455,7 @@
                 }
             },
             {
-                "id": 17,
+                "id": 15,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Blood Group",
@@ -572,7 +514,7 @@
                 }
             },
             {
-                "id": 18,
+                "id": 16,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Ethincity",
@@ -607,7 +549,7 @@
                 }
             },
             {
-                "id": 19,
+                "id": 17,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Religion",
@@ -628,7 +570,7 @@
                 }
             },
             {
-                "id": 20,
+                "id": 18,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Marital Status",
@@ -663,7 +605,7 @@
                 }
             },
             {
-                "id": 21,
+                "id": 19,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -685,7 +627,7 @@
                 }
             },
             {
-                "id": 10,
+                "id": 20,
                 "isEditable": true,
                 "isVisible": true,
                 "transient":true,
@@ -708,7 +650,7 @@
                 }
             },
             {
-                "id": 23,
+                "id": 21,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,
@@ -726,7 +668,7 @@
                 }
             },
             {
-                "id": 24,
+                "id": 22,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,

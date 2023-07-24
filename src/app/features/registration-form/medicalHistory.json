@@ -9,6 +9,27 @@
         "sidebar": "p-sidebar-lg",
         "formControls": [
             {
+                "id": 2,
+                "isEditable": false,
+                "isVisible": false,
+                "label": "MH Id",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "MH Id",
+                "formControlName": "mhId",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
                 "id":0,
                 "isEditable": true,
                 "isVisible": true,
