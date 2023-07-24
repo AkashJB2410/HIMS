@@ -138,6 +138,7 @@ const routes: Routes = [
       { path: 'all-master/cluster', loadChildren: () => import('./../cluster/cluster-routing.module').then(m => m.ClusterRoutingModule) },
       { path: 'all-masters/spetiality', loadChildren: () => import('./../spetiality/spetiality.module').then(m => m.SpetialityModule) },
       { path: 'core-features', loadChildren: () => import('../core-features/core-features.module').then(m => m.CoreFeaturesModule) },
+    // {path:'all-masters/mst-doctor', loadChildren:()=> import('../mst-doctor/mst-doctor-routing.module').then(m=> m.MstDoctorRoutingModule)}
     ],
     // canActivate: [AuthGuardGuard]
   }];
