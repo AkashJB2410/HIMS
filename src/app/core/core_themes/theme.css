@@ -1447,9 +1447,11 @@ body {
 }
 
 .openlogo {
-  width: 70%;
-  height: 70%;
-  margin: 3rem;
+  width: 65%;
+  height: 65%;
+  margin-right: 39px !important;
+
+
 }
 
 .collapsedLogo {
@@ -2386,13 +2388,6 @@ body {
   display: none;
 }
 
-.togglefix {
-  height: 22px;
-  width: 22px;
-  margin-left: 18em;
-  cursor: pointer;
-}
-
 .p-breadcrumb ul li .p-menuitem-link .p-menuitem-text {
   color: rgba(0, 0, 0, 0.87);
   margin-left: 4px !important;
@@ -2422,9 +2417,17 @@ body {
 
 .togglefix {
   height: 22px;
+  margin-left: 18em;
+  width: 22px;
   cursor: pointer;
-  margin-left: 19em;
+  margin-top: -121px;
 }
+
+/* .togglefixclose {
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+} */
 
 .p-card .p-card-content {
   padding: 0.25rem 0 !important;
@@ -2735,6 +2738,7 @@ body {
 
 .p-accordion .p-accordion-header .p-accordion-header-link {
   padding: 0.5rem !important;
+  margin: 6px;
 }
 
 .side-line {
@@ -2744,4 +2748,9 @@ body {
 
 .p-overlay-badge .p-badge {
   top: 5px !important;
+}
+
+.cntr {
+  justify-content: center !important;
+  display: flex !important;
 }

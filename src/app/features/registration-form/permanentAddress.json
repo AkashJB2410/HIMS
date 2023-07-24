@@ -1,0 +1,335 @@
+{
+    "form": {
+        "class": "row",
+        "sideBarTitle":"",
+        "sidebarTitleClass": "",
+        "sidebarTitleLogo": "",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar": "p-sidebar-lg",
+        "formControls": [
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "checkbox",
+                "class": "col-md-6",
+                "lblclass": "custom-label",
+                "valueclass": "p-field-checkbox",
+                "placeholder": "",
+                "value": "",
+                "formControlName": "perAddCheckbox",
+                "defaultValue": "",
+                "message": {
+                    "required": "Category is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "name": "Is your permanent address same as communication address?",
+                        "code": true
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "transient":true,
+                "label": "",
+                "inputType": "empty",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-6 my-1 ",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "staticText",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Country",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "defaultValue":"1",
+                "formControlName": "perAddSelectCountry",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "India",
+                        "code": "1"
+                    }
+                ],
+                "message": {
+                    "required": "Police Station is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "dependentdropdown",
+                "class": "col-md-9",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "perAddDependentdropdown",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "label": "State",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": ""
+                            },
+                            {
+                                "name": "Maharashtra",
+                                "code": "1"                            },
+                            {
+                                "name": "Bihar",
+                                "code": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "District",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": "",
+                                "Mcode": ""
+                            },
+                            {
+                                "name": "Pune",
+                                "code": "1",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Satara",
+                                "code": "2",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Sangli",
+                                "code": "3",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Patna",
+                                "code": "4",
+                                "Mcode": "2"
+                            },
+                            {
+                                "name": "Mujjafarpur",
+                                "code": "5",
+                                "Mcode": "2"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Block/Taluka/Tahsils",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": ""
+                            },
+                            {
+                                "name": "Ambegaon",
+                                "code": "1",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Punecity",
+                                "code": "2",
+                                "Mcode": "1"
+                            },
+                            {
+                                "name": "Khed",
+                                "code": "3",
+                                "Mcode": "1"
+                            }
+                        ]
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Village",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "defaultValue":"1",
+                "formControlName": "perAddSelectVillage",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Pimpari",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Chikhali",
+                        "code": "2"
+                    }
+                ],
+                "message": {
+                    "required": "Police Station is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 0,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Address",
+                "type": "textarea",
+                "inputType": "textarea",
+                "class": "col-md-3 mt-1",
+                "lblclass": "custom-label",
+                "valueclass": "textarea-custom",
+                "row": "2",
+                "placeholder": "",
+                "formControlName": "perAddAddressInput",
+                "message": {
+                    "required": "Address is required",
+                    "pattern": "invalid"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Landmark",
+                "type": "textarea",
+                "inputType": "textarea",
+                "class": "col-md-3 mt-1",
+                "lblclass": "custom-label",
+                "valueclass": "textarea-custom",
+                "row": "2",
+                "placeholder": "",
+                "formControlName": "perAddLandmarkInput",
+                "message": {
+                    "required": "Address is required",
+                    "pattern": "invalid"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
+                }
+            },
+            {
+                "id": 22,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Pin Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Pin Code...",
+                "formControlName": "perAddPinCodeInput",
+                "message": {
+                    "required": "Pin Code is required",
+                    "pattern": "Please re-enter valid pin code."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$"
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "transient":true,
+                "label": "",
+                "inputType": "empty",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-10 my-1 ",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "staticText",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-2",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

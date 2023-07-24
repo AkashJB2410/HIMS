@@ -22,12 +22,18 @@ export class EditProfileComponent implements OnInit {
   base64Image: any;
   image: any;
   user: any;
+  Imageshow = false;
   constructor(private decrypt: DecryptPipe, private http: SessionService, private base64: Base64ConverterService,
     private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.logindata = JSON.parse(this.decrypt.transform(sessionStorage.getItem("loggedUser")))
     this.image = this.logindata.profileImage
+    if (this.image = !"") {
+      this.Imageshow = true;
+    }else{
+      this.Imageshow = false;
+    }
     this.editForm = new FormGroup({
       userName: new FormControl(this.logindata.userName || "", [Validators.required]),
       mobileNo: new FormControl(this.logindata.mobileNo || "", [Validators.required]),

@@ -1,0 +1,40 @@
+{
+    "tableName": "Mobile Table",
+    "tableHeaders": [
+        {"field": "patientMrNo","header": "MR.No","iseditable": false , "class":""},
+        {"field": "patientTitleName","header": "Title","iseditable": false , "class":""},
+        {"field": "patientFullname","header": "Full Name","iseditable": false , "class":""},
+        {"field": "patientMobileNumber","header": "Mobile No.","iseditable": false , "class":"text-center"},
+        {"field": "patientDob","header": "DOB","iseditable": false , "class":"text-center"},
+        {"field": "patientAge","header": "Age","iseditable": false , "class":"text-center"},
+        {"field": "patientGenderName","header": "Gender","iseditable": false , "class":""}
+       
+        
+    ],
+    "PdfHeaders": [
+        {"field": "patientFullname","header": "Patient Name"},
+        {"field": "patientMiddlename","header": "MiddleName"},
+        {"field": "patientLastname","header": "LastName"},
+        {"field": "patientDob","header": "Age"},
+        {"field": "patientMobileNumber","header": "MobileNo"} 
+    ],
+    "globalFilter": ["patientFirstname","patientMiddlename","patientLastname","patientAge","patientMobileNumber"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [10,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "resizableColumns": true,
+	"isDragAndDrop":true,
+    "isActions": ["Edit"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "expand":false,
+    "addButton":true,
+    "buttonlbl":"",
+    "textLength":16,
+    "sidebar":"p-sidebar-xl",
+	 "bulkAction":["PDF","EXCEL"]
+}

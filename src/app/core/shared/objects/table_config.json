@@ -21,14 +21,15 @@
     "loading" : false,
     "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
     "isCheckbox" : true,
+    "isRadioButton":true,
     "resizableColumns": true,
     "isDragAndDrop":true,
+    "isProfileDisplay":true,
     "isActions": ["Edit", "Delete" ,"isActive","Viewer","Scanner","Emergency","IPD","OPD","Servies"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "expand":true,
     "buttonlbl":"",
     "textLength":16,
     "sidebar": "p-sidebar-lg",
-    "addButton":true,
-    "bulkAction":["PDF","EXCEL","Delete"]   
+    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
 }

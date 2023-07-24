@@ -1,5 +1,5 @@
 <p-accordion (onOpen)="handleChange($event)" (onClose)="handleChange($event)">
-    <p-accordionTab header="{{data.label}}">
+    <p-accordionTab header="{{data.label}}" [selected]="data.selected">
         <ng-content></ng-content>
     </p-accordionTab>
 </p-accordion>

@@ -45,7 +45,9 @@ export class ActionRoleService {
     const param = {
             "arId": data.idInput,
             "arRoleId": {
-              "roleId": data.selectRole
+              "roleId": data.selectRole,
+          "arRoleId_Name": data.arRoleId.roleName,
+
             },
             "arActionSubModuleMst": {
               "asmId": data.selectActionSubModule

@@ -6,8 +6,11 @@
                 <div class="d-flex flex-column align-items-center text-center side-line">
                     <input type="file" formControlName="profileImage" id="input" (change)="onFileChange($event)"
                         style="display:none;">
-                    <label for="input"><img class="rounded-circle" id="image" width="150px" height="150px"
-                        src="{{image}}">
+                    <label *ngIf="Imageshow" for="input"><img class="rounded-circle" id="image" width="150px" height="150px"
+                        src="../../../../assets/core_assets/userDp.png" >
+                    </label>
+                    <label *ngIf="!Imageshow" for="input"><img class="rounded-circle" id="image" width="150px" height="150px"
+                        src="{{image}}" >
                     </label>
                     <h4 class="name-title">{{user}}</h4>
                 </div>

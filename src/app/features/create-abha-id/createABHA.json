@@ -1,0 +1,149 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "",
+        "formTitleClass": "",
+        "formTitleLogo": "",
+        "formName": "Form1",
+        "formId":"0",
+        "formType": "edit",
+        "sidebar": "p-sidebar-lg",
+        "formControls": [
+            {
+                
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Aadhaar Number",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-4",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Aadhaar Number",
+                "formControlName": "aadharNo",
+                "defaultValue": "",
+                "maxlength": "12",
+                "minlength": "12",
+                "message": {
+                    "required": "Aadhaar Number is required",
+                    "pattern": "Please enter correct format"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^\\d{12}$"
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Mobile Number",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-4",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Mobile Number",
+                "formControlName": "mobileNo",
+                "defaultValue": "",
+                "maxlength": "10",
+                "minlength": "10",
+                "message": {
+                    "required": "Mobile Number is required",
+                    "pattern": "Please enter correct format"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^\\d{10}$"
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "ABHA Address",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-4",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "ABHA Address",
+                "formControlName": "abhAaddress",
+                "defaultValue": "",
+                "maxlength": "",
+                "minlength": "",
+                "message": {
+                    "required": "ABHA Address is required",
+                    "pattern": "Please enter correct format"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z0-9._%+-]+@sbx$"
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "label": "",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-10 custom-text",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "spaceForButton",
+                "defaultValue": "",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-2",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Next",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "label": "",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-12 custom-text",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "spaceForAccrodion",
+                "defaultValue": "",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}
