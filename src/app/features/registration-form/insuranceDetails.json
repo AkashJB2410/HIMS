@@ -1,9 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "",
-        "formTitleClass": "",
-        "formTitleLogo":"",
+        "sideBarTitle":"",
+        "sidebarTitleClass": "",
+        "sidebarTitleLogo": "",
         "formName": "Form1",
         "formType": "edit",
         "sidebar": "p-sidebar-lg",
@@ -12,16 +12,16 @@
                 "id": 2,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Occupation",
+                "label": "Insurance No.",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Occupation",
-                "formControlName": "occupation",
+                "placeholder": "Insurance No.",
+                "formControlName": "insuranceNo",
                 "message": {
-                    "required": "Occupation is required",
+                    "required": "Insurance No. is required",
                     "pattern": "Numbers not allowed."
                 },
                 "validations": {
@@ -33,16 +33,16 @@
                 "id": 2,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Reffered By",
+                "label": "Policy No.",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Reffered By",
-                "formControlName": "refferedBy",
+                "placeholder": "Policy No.",
+                "formControlName": "policyNo",
                 "message": {
-                    "required": "Reffered By is required",
+                    "required": "Policy No. is required",
                     "pattern": "Numbers not allowed."
                 },
                 "validations": {
@@ -54,16 +54,16 @@
                 "id": 2,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Language",
+                "label": "Company No.",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Language",
-                "formControlName": "language",
+                "placeholder": "Company No.",
+                "formControlName": "companyNo",
                 "message": {
-                    "required": "Language is required",
+                    "required": "Company No. is required",
                     "pattern": "Numbers not allowed."
                 },
                 "validations": {
@@ -75,17 +75,40 @@
                 "id": 2,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Phone No.",
+                "label": "Company Name",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Phone No.",
-                "formControlName": "phoneNo",
+                "placeholder": "Company Name",
+                "formControlName": "companyName",
                 "message": {
-                    "required": "Phone No. is required",
+                    "required": "Company Name is required",
                     "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "transient":true,
+                "label": "",
+                "inputType": "empty",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-10 my-1 ",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "staticText",
+                "message": {
+                    "required": "",
+                    "pattern": ""
                 },
                 "validations": {
                     "required": false,

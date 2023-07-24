@@ -1,9 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "",
-        "formTitleClass": "",
-        "formTitleLogo":"",
+        "sideBarTitle":"",
+        "sidebarTitleClass": "",
+        "sidebarTitleLogo": "",
         "formName": "Form1",
         "formType": "edit",
         "sidebar": "p-sidebar-lg",
@@ -19,7 +19,7 @@
                 "valueclass": "p-field-checkbox",
                 "placeholder": "",
                 "value": "",
-                "formControlName": "checkbox",
+                "formControlName": "perAddCheckbox",
                 "defaultValue": "",
                 "message": {
                     "required": "Category is required",
@@ -28,7 +28,7 @@
                 "values": [
                     {
                         "name": "Is your permanent address same as communication address?",
-                        "code": "Acc"
+                        "code": true
                     }
                 ],
                 "validations": {
@@ -40,6 +40,7 @@
                 "id": 10,
                 "isEditable": true,
                 "isVisible": true,
+                "transient":true,
                 "label": "",
                 "inputType": "empty",
                 "type": "staticText",
@@ -70,7 +71,7 @@
                 "valueclass": "",
                 "placeholder": "Select option",
                 "defaultValue":"1",
-                "formControlName": "selectPoliceStation",
+                "formControlName": "perAddSelectCountry",
                 "values": [
                     {
                         "name": "Select an Option",
@@ -93,16 +94,16 @@
             {
                 "isEditable": true,
                 "isVisible": true,
-                "transient": true,
+                "transient": false,
                 "label": "",
                 "type": "dependentdropdown",
                 "class": "col-md-9",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
-                "formControlName": "dependentdropdown",
+                "formControlName": "perAddDependentdropdown",
                 "message": {
-                    "required": "Gender is required",
+                    "required": "",
                     "pattern": ""
                 },
                 "values": [
@@ -188,6 +189,42 @@
                 }
             },
             {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Village",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "defaultValue":"1",
+                "formControlName": "perAddSelectVillage",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Pimpari",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Chikhali",
+                        "code": "2"
+                    }
+                ],
+                "message": {
+                    "required": "Police Station is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
                 "id": 0,
                 "isEditable": true,
                 "isVisible": true,
@@ -199,13 +236,13 @@
                 "valueclass": "textarea-custom",
                 "row": "2",
                 "placeholder": "",
-                "formControlName": "address",
+                "formControlName": "perAddAddressInput",
                 "message": {
                     "required": "Address is required",
                     "pattern": "invalid"
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": "^[a-zA-Z0-9.,\\s-]+$"
                 }
             },
@@ -221,7 +258,7 @@
                 "valueclass": "textarea-custom",
                 "row": "2",
                 "placeholder": "",
-                "formControlName": "address",
+                "formControlName": "perAddLandmarkInput",
                 "message": {
                     "required": "Address is required",
                     "pattern": "invalid"
@@ -242,7 +279,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Pin Code...",
-                "formControlName": "pinCodeInput",
+                "formControlName": "perAddPinCodeInput",
                 "message": {
                     "required": "Pin Code is required",
                     "pattern": "Please re-enter valid pin code."
@@ -256,11 +293,12 @@
                 "id": 10,
                 "isEditable": true,
                 "isVisible": true,
+                "transient":true,
                 "label": "",
                 "inputType": "empty",
                 "type": "staticText",
                 "data": "",
-                "class": "col-md-3 my-1 ",
+                "class": "col-md-10 my-1 ",
                 "lblclass": "custom-label",
                 "valueclass": "custom-text",
                 "placeholder": "",

@@ -48,14 +48,28 @@
 #     - echo "Deploying application..."
 #     - echo "Application successfully deployed."
 
-image: node:16.14.2-bullseye
+#image: node:16.14.2-bullseye
 
 
-stages:          # List of stages for jobs, and their order of execution
+#stages:          # List of stages for jobs, and their order of execution
+#  - build
+#
+#build-job:
+#    stage: build
+#    script:
+#        - npm i
+#        - npm start
+
+image: docker:latest
+
+services:
+  - docker:dind
+
+stages:
   - build
 
-build-job:
-    stage: build 
-    script:
-        - npm i
-        - npm start
+build:
+  stage: build
+  script:
+    - docker build -t generic-ui .
+

@@ -155,6 +155,7 @@ age:any
 
   // send otp
   sendOTPButton:boolean=true
+  timeLeft: any = 60;
   sendOTP(e:any){
     this.sendOTPButton=false
   }
