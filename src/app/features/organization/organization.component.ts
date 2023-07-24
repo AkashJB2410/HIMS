@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import organizationDetails from './organization_table-config.json'
 import addneworg from './organizationForm.json'
 import { MessageService } from 'primeng/api';
-import { OrganizationServiceService } from './organization.service';
 import organization_breadcrumb from './organization-breadcrumb.json'
 import { CommonService } from 'src/app/core/shared/service/common.service';
+import { FeaturescommonService } from '../shared/featurescommon.service';
 
 @Component({
   selector: 'app-organization',
@@ -29,13 +29,18 @@ export class OrganizationComponent implements OnInit {
   saveMethod: boolean=false;
   organization_breadcrumb =organization_breadcrumb;
   editData:any;
+  apiGet="mstOrganization/list";
+  apiAdd="mstOrganization/create";
+  apiUpdate="mstOrganization/update";
+  apidelete="mstOrganization/inActivate";
+  apiactive="mstOrganization/activate";
 
-  constructor(private messageService: MessageService,private http: OrganizationServiceService, private common:CommonService) { }
+  constructor(private messageService: MessageService, private common:CommonService, private http:FeaturescommonService) { }
   
   ngOnInit(): void {
     
     this.configurations = {
-      "isFilter": true,
+      "isFilter": false,
       "isTable": true,
       "isSideBar": true,
       "isConfirmation": true
@@ -79,15 +84,15 @@ export class OrganizationComponent implements OnInit {
 
   isActive(data:any){
     
-    if(data.is_Deleted){
-      this.http.reactiveOrgData(data)
+    if(!data.isActive){
+      this.http.reactiveData(this.apiactive, data, data.orgId)
         .subscribe(b_Data => {
           this.data = undefined;
           this.getAllOrgData();
         })
         this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Organization Enable Successfully' });  
     }
-    else if(!data.is_Deleted){
+    else if(data.isActive){
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Organization is already Active' });
     }
   }
@@ -112,7 +117,7 @@ export class OrganizationComponent implements OnInit {
   submitOrgData(orgData: any) {
     console.log("hello");
     
-    this.http.saveOrgData(orgData)
+    this.http.addData(orgData, this.apiAdd)
       .subscribe(data => {
         this.data = undefined;
         this.getAllOrgData();
@@ -121,8 +126,8 @@ export class OrganizationComponent implements OnInit {
   } 
 
   getAllOrgData() {
-    this.http.GetAllOrgData().subscribe(res => {
-      this.data = res;
+    this.http.getData(this.apiGet).subscribe(res => {
+      this.data = res.content;
       this.isdataReady = true;
       for(let i=0; i<this.data.length;i++){
         this.data[i].id=i+1;
@@ -132,7 +137,7 @@ export class OrganizationComponent implements OnInit {
   }
 
   updateOrgData(orgData:any){
-    this.http.updateOrgData(orgData)
+    this.http.updateData(orgData, this.apiUpdate)
     .subscribe(data => {
       this.data = undefined;
       this.getAllOrgData();
@@ -142,7 +147,7 @@ export class OrganizationComponent implements OnInit {
 
 
   deleteOrgData(orgData: any) {
-    this.http.deleteOrgData(orgData.orgId)
+    this.http.deleteData(this.apidelete, orgData.orgId)
       .subscribe(data => {
         this.data = undefined;
         this.getAllOrgData();
@@ -151,12 +156,12 @@ export class OrganizationComponent implements OnInit {
   }
   
   confirmAction(e: any) {
-    if(e.is_Active==true){
+    if(e.isActive==true){
       this.data=undefined;
     this.deleteOrgData(e);    
     this.messageService.add({ severity: 'success', summary: 'Disabled', detail: 'Organization Disabled Successfully' });
     }
-    else if (e.is_Active==false){
+    else if (e.isActive==false){
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Organization is already Disabled' });
     }
     else{}
@@ -166,7 +171,7 @@ export class OrganizationComponent implements OnInit {
     let count = 0;
     if (bulk_Data != '') {
       bulk_Data.forEach((orgData: any) => {
-        if (orgData.is_Active == true) {
+        if (orgData.isActive == true) {
           this.deleteOrgData(orgData);
           count++;
         }
