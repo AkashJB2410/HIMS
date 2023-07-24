@@ -110,14 +110,11 @@ const routes: Routes = [
       { path: 'radiology-reports', loadChildren: () => import('./../radiology-reports/radiology-reports.module').then( m => m.RadiologyReportsModule)},
       { path: 'results-update', loadChildren: () => import('./../results-update/results-update.module').then( m => m.ResultsUpdateModule)},
       { path: 'dispatch-govt', loadChildren: () => import('./../dispatch-govt/dispatch-govt.module').then( m => m.DispatchGovtModule)},
-      { path: 'covid-billing-summary', loadChildren: () => import('./../covid-billing-summary/covid-billing-summary.module').then( m => m.CovidBillingSummaryModule)},
       { path: 'cash-flow', loadChildren: () => import('./../cash-flow/cash-flow.module').then( m => m.CashFlowModule)},
       { path: 'batch-list', loadChildren: () => import('./../batch-list/batch-list.module').then( m => m.BatchListModule)},
       { path: 'batch-results-entry', loadChildren: () => import('./../batch-results-entry/batch-results-entry.module').then( m => m.BatchResultsEntryModule)},
       { path: 'qa-approval', loadChildren: () => import('./../pacs/pacs.module').then( m => m.PacsModule)},
       { path: 'bulk-report-download', loadChildren: () => import('./../bulk-report-download/bulk-report-download.module').then( m => m.BulkReportDownloadModule)},
-      { path: 'covid-walk-in-registrations', loadChildren: () => import('./../covid-walk-in-registrations/covid-walk-in-registrations.module').then( m => m.CovidWalkInRegistrationsModule)},
-      { path: 'covid-walk-in-search', loadChildren: () => import('./../covid-walk-in-search/covid-walk-in-search.module').then( m => m.CovidWalkInSearchModule)},
       { path: 'all-masters/bank-master', loadChildren: () => import('./../bank-master/bank-master.module').then( m => m.BankMasterModule)},
       { path: 'all-masters/employee-status', loadChildren: () => import('./../employee-status/employee-status.module').then( m => m.EmployeeStatusModule)},      
       { path: 'all-masters/bank-master', loadChildren: () => import('./../bank-master/bank-master.module').then( m => m.BankMasterModule)}, 
@@ -138,6 +135,7 @@ const routes: Routes = [
       { path: 'all-master/cluster', loadChildren: () => import('./../cluster/cluster-routing.module').then(m => m.ClusterRoutingModule) },
       { path: 'all-masters/spetiality', loadChildren: () => import('./../spetiality/spetiality.module').then(m => m.SpetialityModule) },
       { path: 'core-features', loadChildren: () => import('../core-features/core-features.module').then(m => m.CoreFeaturesModule) },
+      { path: 'PatientConfig', loadChildren: () => import('../country/country.module').then(m => m.CountryModule) },
     ],
     // canActivate: [AuthGuardGuard]
   }];

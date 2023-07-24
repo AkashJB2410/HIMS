@@ -1,0 +1,14 @@
+{
+    "card": [
+        {
+            "label": "Country",
+            "routerLink": "/master-page/PatientConfig",
+            "imgSrc": "assets/unit-configuration/Organizations.png"
+        },
+        {
+            "label": "State",
+            "routerLink": "/master-page/PatientConfig",
+            "imgSrc": "assets/unit-configuration/action-sub-module.png"
+        }
+    ]
+}

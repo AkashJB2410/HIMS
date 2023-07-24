@@ -35,4 +35,22 @@
     </div>
   </div>
 
+
+  <div *ngIf="allFlag.patientFlag">
+    <div class="row ">
+      <div class="col-md-2 " *ngFor="let cards of patientList.card">
+        <div class="avatar-section mb-4">
+            <p-avatar [title]="title"  routerLink="{{cards.routerLink}}"
+        image="{{cards.imgSrc}}"
+        size="xlarge"
+        shape="circle"
+      ></p-avatar> 
+            
+      <h3 style="font-weight: bold;">{{cards.label}}</h3>
+    </div>
+    </div>
+     
+    </div><br>
+  </div>
+
 </app-vertical-tabular>

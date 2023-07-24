@@ -110,14 +110,11 @@ import { AdditionalChargesComponent } from './features/additional-charges/additi
 import { RadiologyReportsComponent } from './features/radiology-reports/radiology-reports.component';
 import { ResultsUpdateComponent } from './features/results-update/results-update.component';
 import { DispatchGovtComponent } from './features/dispatch-govt/dispatch-govt.component';
-import { CovidBillingSummaryComponent } from './features/covid-billing-summary/covid-billing-summary.component';
 import { CashFlowComponent } from './features/cash-flow/cash-flow.component';
 import { BatchListComponent } from './features/batch-list/batch-list.component';
 import { BatchResultsEntryComponent } from './features/batch-results-entry/batch-results-entry.component';
 import { QaApprovalComponent } from './features/qa-approval/qa-approval.component';
 import { BulkReportDownloadComponent } from './features/bulk-report-download/bulk-report-download.component';
-import { CovidWalkInRegistrationsComponent } from './features/covid-walk-in-registrations/covid-walk-in-registrations.component';
-import { CovidWalkInSearchComponent } from './features/covid-walk-in-search/covid-walk-in-search.component';
 import { BankBranchMasterComponent } from './features/bank-branch-master/bank-branch-master.component';
 import { ActionButtonModule } from './features/action-button/action-button.module';
 import { ActionModule } from './features/action-module/actionModule';
@@ -129,6 +126,7 @@ import { SelfRegistrationComponent } from './features/self-registration/self-reg
 import { ClusterComponent } from './features/cluster/cluster.component';
 import { SpetialityComponent } from './features/spetiality/spetiality.component';
 import { CoreFeaturesComponent } from './features/core-features/core-features.component';
+import { CountryComponent } from './features/country/country.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -229,14 +227,11 @@ import { CoreFeaturesComponent } from './features/core-features/core-features.co
     RadiologyReportsComponent,
     ResultsUpdateComponent,
     DispatchGovtComponent,
-    CovidBillingSummaryComponent,
     CashFlowComponent,
     BatchListComponent,
     BatchResultsEntryComponent,
     QaApprovalComponent,
     BulkReportDownloadComponent,
-    CovidWalkInRegistrationsComponent,
-    CovidWalkInSearchComponent,
     BankBranchMasterComponent,
     BedTransferComponent,
     GroupModuleComponent,
@@ -247,6 +242,7 @@ import { CoreFeaturesComponent } from './features/core-features/core-features.co
     ClusterComponent,
     SpetialityComponent,
     CoreFeaturesComponent,
+    CountryComponent,
     
   ],
   imports: [
