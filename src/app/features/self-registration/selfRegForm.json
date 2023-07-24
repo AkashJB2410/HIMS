@@ -393,17 +393,17 @@
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Additional Comments",
-                "type": "textarea",
-                "inputType": "textarea",
+                "type": "text",
+                "inputType": "time",
                 "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "textarea-custom",
                 "row": "2",
                 "placeholder": "",
-                "formControlName": "additionalComment",
+                "formControlName": "appointmentTime",
                 "message": {
-                    "required": "Address is required",
-                    "pattern": "invalid"
+                    "required": "Appointment Time is required",
+                    "pattern": ""
                 },
                 "validations": {
                     "required": false,

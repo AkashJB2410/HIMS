@@ -2,7 +2,6 @@ import { BankBranchMasterModule } from './features/bank-branch-master/bank-branc
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
@@ -56,6 +55,7 @@ import { SelfRegistrationComponent } from './features/self-registration/self-reg
 import { ClusterComponent } from './features/cluster/cluster.component';
 import { SpetialityComponent } from './features/spetiality/spetiality.component';
 import { CoreFeaturesComponent } from './features/core-features/core-features.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,7 +100,6 @@ import { CoreFeaturesComponent } from './features/core-features/core-features.co
     ClusterComponent,
     SpetialityComponent,
     CoreFeaturesComponent,
-    
   ],
   imports: [
     CommonModule,
