@@ -27,27 +27,48 @@
             </div>
             <div class="footer  d-none d-sm-none d-md-flex flex-column justify-content-center p-3 mt-9">
                 <div class="img-bg text-center">
-                    <p>Generic Components Ver 1.2 2023 © Powered by Medimaze Software Pvt Ltd</p>
+                    <p>Generic Components Ver 1.2 2023 © Powered by Medimaze Solution Pvt Ltd</p>
                 </div>
             </div>
         </div>
         <div class="col main">
             <app-form [formJSON]="selfRegFormData" [editData]="editData" (btnEvent)="buttonEvent($event)"
                 (formData)="sidebarData($event)" (changeEvents)="changeEvents($event)">
-               
+
                 <section class="section-100" *ngIf="otp">
                     <div class="container">
-                         <!-- Send mobile OTP-->
-                        <h1>We are verifying your number</h1>
-                        <div class="row" style="text-align: center;"><b>{{MobileNumber}}</b></div>
-                        
-                        <button *ngIf="sendOTPButton" type="button" class="btn btn-success" (click)="sendOTP($event)">Send OTP</button>
-                           <!-- verify Mobile OTP -->
-                           <button *ngIf="!sendOTPButton" type="button" class="btn btn-success" (click)="verifyOTP($event)">Verify OTP</button>
+                        <!-- Send mobile OTP-->
+                        <div *ngIf="sendOTPButton">
+                            <h1>We are sending you OTP</h1>
+                            <div class="row" style="text-align: center;"><b>{{MobileNumber}}</b></div>
+                            <button type="button" class="btn btn-success" (click)="sendOTP($event)">Send OTP</button>
+                        </div>
+                        <!-- verify Mobile OTP -->
+                        <div *ngIf="!sendOTPButton">
+                            <h1>We are verifying your OTP</h1>
+                            <div class="login-body p-1 p-md-2">
+                                <div class="login-body-wrapper mx-auto">
+                                    <div class="otp-input-wrapper mb-4">
+                                        <input type="text" maxlength="4" pattern="[0-9]*" autocomplete="off" #otp>
+                                        <svg viewBox="0 0 240 1" xmlns="http://www.w3.org/2000/svg">
+                                            <line x1="0" y1="0" x2="240" y2="0" stroke="#3e3e3e" stroke-width="2"
+                                                stroke-dasharray="44,22" />
+                                        </svg><br>
+                                        <p class="text-muted txt-cst text-center mt-4 mb-0">00:{{timeLeft}}</p>
+                                        <br>
+                                        <p class="text-muted txt-cst text-center">Didnt get a code?<b
+                                                >&nbsp;Resend</b>
+                                        </p>
+                                    </div>
+                                    <button *ngIf="!sendOTPButton" type="button" class="btn btn-success"
+                                (click)="verifyOTP($event)">Verify OTP</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
-             
-               
+
+
                 <app-super-grid *ngIf="data" [configurations]="configurations" [tableConfig]="tableConfig"
                     [tableData]="data" (rowClickData)="tableRowClick($event)"></app-super-grid>
             </app-form>
