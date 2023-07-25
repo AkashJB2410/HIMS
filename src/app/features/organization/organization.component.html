@@ -1,12 +1,12 @@
 <p-breadcrumb [model]="organization_breadcrumb.itemsList" ></p-breadcrumb>
 <h3 class="Sidebar-title-md"><i class="bi bi-file-earmark-medical"></i>Organization</h3>
 <app-super-grid
-    *ngIf="data"
+    *ngIf="data && isdataReady"
     [configurations] ="configurations" 
     [tableConfig] = "orgDetails"
     [tableData]= "data"
     (confirmAction)="confirmAction($event)"
-    (onAdd)="saveOrg($event)"
+    (onAdd)="addOrg($event)"
     (onEdit)="editOrg($event)"
     (isActive)="isActive($event)"
     (Bulkdelete)="bulkDeleteRows($event)" >
@@ -14,4 +14,6 @@
     projectTowards="sidebar" *ngIf="editData" [formJSON]="addneworganization" [editData]="editData"
     (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"
    ></app-form>
-></app-super-grid>
+</app-super-grid>
+
+<p-toast></p-toast>

@@ -34,6 +34,7 @@ export class OrganizationComponent implements OnInit {
   apiUpdate="mstOrganization/update";
   apidelete="mstOrganization/inActivate";
   apiactive="mstOrganization/activate";
+  message:any;
 
   constructor(private messageService: MessageService, private common:CommonService, private http:FeaturescommonService) { }
   
@@ -70,7 +71,7 @@ export class OrganizationComponent implements OnInit {
     this.common.sendEditData(false);
   }
 
-  saveOrg(e:any){
+  addOrg(e:any){
     this.addneworganization.form.formControls[0].isVisible=false;
     this.saveMethod = true;
     this.editData=[];
@@ -83,17 +84,17 @@ export class OrganizationComponent implements OnInit {
   }
 
   isActive(data:any){
-    
     if(!data.isActive){
       this.http.reactiveData(this.apiactive, data, data.orgId)
-        .subscribe(b_Data => {
+        .subscribe(resData => {
+          this.message=resData.metadata.message;
+          this.messageService.add({ severity: 'success', summary: 'Enable', detail: this.message });  
           this.data = undefined;
           this.getAllOrgData();
         })
-        this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Organization Enable Successfully' });  
     }
     else if(data.isActive){
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Organization is already Active' });
+        this.messageService.add({ severity: 'error', summary: 'Error' });
     }
   }
 
@@ -105,23 +106,20 @@ export class OrganizationComponent implements OnInit {
     } else if (this.saveMethod) {
       console.log(e)      
       this.submitOrgData(e);
-      this.messageService.add({ severity: 'success', summary: 'Added', detail: 'Organization Added Successfully' });
       this.saveMethod=false;
     } else {
       console.log(e);      
       this.updateOrgData(e);
-      this.messageService.add({ severity: 'success', summary: 'Updated', detail: 'Organization Updated Successfully.' });      
     }
   }  
 
   submitOrgData(orgData: any) {
-    console.log("hello");
-    
     this.http.addData(orgData, this.apiAdd)
-      .subscribe(data => {
+      .subscribe(resData => {
+        this.message=resData.metadata.message;
+        this.messageService.add({ severity: 'success', summary: 'Added', detail: this.message });  
         this.data = undefined;
         this.getAllOrgData();
-        console.log("data" + data)
       })
   } 
 
@@ -138,31 +136,32 @@ export class OrganizationComponent implements OnInit {
 
   updateOrgData(orgData:any){
     this.http.updateData(orgData, this.apiUpdate)
-    .subscribe(data => {
+    .subscribe(resData => {
+      this.message=resData.metadata.message;
+      this.messageService.add({ severity: 'success', summary: 'Updated', detail: this.message });  
       this.data = undefined;
       this.getAllOrgData();
-      console.log("data" + data)
     })
   }
 
 
   deleteOrgData(orgData: any) {
     this.http.deleteData(this.apidelete, orgData.orgId)
-      .subscribe(data => {
+      .subscribe(resData => {
+        this.message=resData.metadata.message;
+        this.messageService.add({ severity: 'success', summary: 'Disabled', detail: this.message });  
         this.data = undefined;
         this.getAllOrgData();
-        console.log("data" + data)
       })
   }
   
   confirmAction(e: any) {
     if(e.isActive==true){
       this.data=undefined;
-    this.deleteOrgData(e);    
-    this.messageService.add({ severity: 'success', summary: 'Disabled', detail: 'Organization Disabled Successfully' });
+    this.deleteOrgData(e); 
     }
     else if (e.isActive==false){
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Organization is already Disabled' });
+      this.messageService.add({ severity: 'error', summary: 'Error' });
     }
     else{}
   }

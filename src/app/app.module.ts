@@ -129,6 +129,7 @@ import { SelfRegistrationComponent } from './features/self-registration/self-reg
 import { ClusterComponent } from './features/cluster/cluster.component';
 import { SpetialityComponent } from './features/spetiality/spetiality.component';
 import { CoreFeaturesComponent } from './features/core-features/core-features.component';
+import { ManageStaffComponent } from './features/manage-staff/manage-staff.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -247,6 +248,7 @@ import { CoreFeaturesComponent } from './features/core-features/core-features.co
     ClusterComponent,
     SpetialityComponent,
     CoreFeaturesComponent,
+    ManageStaffComponent,
     
   ],
   imports: [

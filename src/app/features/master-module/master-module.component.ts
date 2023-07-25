@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { MasterModuleService } from './master-module.service';
 import mstModuleData from './masterModuleSidebarConfig.json';
-import * as mstModule_table_config from './masterModuleTableConfig.json';
+import mstModule_table_config from './masterModuleTableConfig.json';
 import Application_breadcrumb from './breadcrum.json'
 import { CommonService } from 'src/app/core/shared/service/common.service';
-import { MasterPageComponent } from './../master-page/master-page.component'
+import { FeaturescommonService } from '../shared/featurescommon.service';
+
 @Component({
   selector: 'app-master-module',
   templateUrl: './master-module.component.html',
@@ -15,9 +15,96 @@ import { MasterPageComponent } from './../master-page/master-page.component'
 export class MasterModuleComponent implements OnInit {
   editData: any;
   status: boolean;
+  Application_breadcrumb=Application_breadcrumb
+  toast: any = {};
+  showToast: any;
+  Message: any;
+  data: any;
+  config: any;
+  visibleSidebar: boolean = false;
+  configurations: any;
+  tableConfig: any;
+  isdataReady = false;
+  sidebarJSON: any = mstModuleData;
+  st: any;
+  apiGet="mstModule/list";
+  apiAdd="mstModule/create";
+  apiUpdate="mstModule/update";
+  apidelete="mstModule/inActivate";
+  apiactive="mstModule/activate";
   
+  constructor(
+    private messageService: MessageService,
+    private http: FeaturescommonService,
+    private common:CommonService,
+  ) {}
 
+  ngOnInit(): void {
+    this.configurations = {
+      isFilter: false,
+      isTable: true,
+      isSideBar: true,
+      isConfirmation: true,
+    };
+    this.getAllMstModuleData();
+    this.getConfigForTable();
+  }
 
+  getAllMstModuleData() {
+    this.http.getData(this.apiGet).subscribe((resData) => {
+      this.data=[];
+      this.data = resData.content;
+      this.isdataReady = true;
+      for (let i = 0; i < this.data.length; i++) {
+        this.data[i].id = i + 1;
+      }
+      this.data;
+    });
+  }
+
+  submitMstModuleData(moduleData: any) {
+    this.http.addData(moduleData, this.apiAdd).subscribe((resData) => {
+      this.data = undefined;
+      this.getAllMstModuleData();
+    });
+  }
+
+  updateMstModuleData(moduleData: any) {
+    this.http.updateData(moduleData, this.apiUpdate).subscribe((resData) => {
+      this.data = undefined;
+      this.getAllMstModuleData();
+      this.messageService.add({ severity: 'success', summary: 'Updated', detail: resData.metadata.message });  
+    });
+  }
+
+  isActive(e: any) {
+    if (e.is_Deleted == false) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Message form User component',
+        detail: 'Allready Enabled',
+      });
+    } else {
+      this.http.reactiveData(this.apiactive, e, e.moduleId).subscribe((data) => {
+        this.data = undefined;
+        this.getAllMstModuleData();
+        console.log('data' + data);
+      });
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Message form User component',
+        detail: 'Enabled Sucessfully',
+      });
+    }
+  }
+
+  deleteRoleData(moduleId: any) {
+    this.http.deleteData(this.apidelete, moduleId).subscribe((data) => {
+      this.data = undefined;
+      this.getAllMstModuleData();
+      console.log('data' + data);
+    });
+  }
 
   onEdit(st:any){
     this.editData=st.editRow;
@@ -83,37 +170,7 @@ export class MasterModuleComponent implements OnInit {
 
   }
 
-
-  Application_breadcrumb=Application_breadcrumb
-  toast: any = {};
-  showToast: any;
-  Message: any;
-  data: any;
-  config: any;
-  visibleSidebar: boolean = false;
-  configurations: any;
-  tableConfig: any;
-  isdataReady = false;
-  sidebarJSON: any = mstModuleData;
-  st: any;
-
-  constructor(
-    private messageService: MessageService,
-    private http: MasterModuleService,
-    private common:CommonService,
-  ) {}
-
-  ngOnInit(): void {
-    this.configurations = {
-      isFilter: false,
-      isTable: true,
-      isSideBar: true,
-      isConfirmation: true,
-    };
-    this.getAllMstModuleData();
-    // this.data = roleData;
-    this.getConfigForTable();
-  }
+ 
   buttonClick(e: any) {
     if (e == 'next') {
       console.log(e);
@@ -121,18 +178,7 @@ export class MasterModuleComponent implements OnInit {
       console.log(e);
     }
   }
-  getAllMstModuleData() {
-    this.http.GetAllMstModuleData().subscribe((res) => {
-      this.data=[];
-      this.data = res;
-      console.log("get all data",res)
-      this.isdataReady = true;
-      for (let i = 0; i < this.data.length; i++) {
-        this.data[i].id = i + 1;
-      }
-      this.data;
-    });
-  }
+  
 
   getConfigForTable() {
     // this.data = data;
@@ -143,26 +189,7 @@ export class MasterModuleComponent implements OnInit {
     this.visibleSidebar = true;
   }
 
-  isActive(e: any) {
-    if (e.is_Deleted == false) {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Message form User component',
-        detail: 'Allready Enabled',
-      });
-    } else {
-      this.http.isActiveData(e).subscribe((data) => {
-        this.data = undefined;
-        this.getAllMstModuleData();
-        console.log('data' + data);
-      });
-      this.messageService.add({
-        severity: 'success',
-        summary: 'Message form User component',
-        detail: 'Enabled Sucessfully',
-      });
-    }
-  }
+  
 
   confirmAction(e: any) {
    if(e==false){
@@ -185,13 +212,7 @@ export class MasterModuleComponent implements OnInit {
     console.log('Deleted' + JSON.stringify(e));
    }
   }
-  deleteRoleData(moduleId: any) {
-    this.http.deleteMstModule(moduleId).subscribe((data) => {
-      this.data = undefined;
-      this.getAllMstModuleData();
-      console.log('data' + data);
-    });
-  }
+ 
   closeSidebarData(e:any){
     this.editData=undefined;
   }
@@ -218,21 +239,9 @@ export class MasterModuleComponent implements OnInit {
     }
   }
 
-  submitMstModuleData(roleData: any) {
-    this.http.saveMstModuleData(roleData).subscribe((data) => {
-      this.data = undefined;
-      this.getAllMstModuleData();
-      console.log('data' + data);
-    });
-  }
+  
 
-  updateMstModuleData(idInput: any) {
-    this.http.updateMstModule(idInput).subscribe((data) => {
-      this.data = undefined;
-      this.getAllMstModuleData();
-      console.log('data' + data);
-    });
-  }
+ 
 
   fiteredData(e: any) {
     this.data = undefined;
