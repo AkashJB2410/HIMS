@@ -69,6 +69,7 @@ const routes: Routes = [
       { path: 'all-masters/super-speciality', loadChildren: () => import('./../super-speciality/super-speciality.module').then(m => m.SuperSpecialityModule) },
 
       { path: 'core-features', loadChildren: () => import('../core-features/core-features.module').then(m => m.CoreFeaturesModule) },
+    // {path:'all-masters/mst-doctor', loadChildren:()=> import('../mst-doctor/mst-doctor-routing.module').then(m=> m.MstDoctorRoutingModule)}
     ],
     // canActivate: [AuthGuardGuard]
   }];

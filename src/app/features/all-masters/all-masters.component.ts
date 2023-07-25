@@ -4,7 +4,7 @@ import allUnitList from './allUnitList.json';
 import allEmrList from './allEmrList.json';
 import Breadcrumbs from './breadcrumb.json';
 import { AllMastersService } from './all-masters.service';
-
+import allDoctorData from './allMSTDoctor.json'
 
 @Component({
   selector: 'app-all-masters',
@@ -18,7 +18,7 @@ export class AllMastersComponent implements OnInit {
   tabularSideData=tabularData;
   allUnitList:any =allUnitList;
   allEmrList:any =allEmrList;
-
+  allDoctorData=allDoctorData;
   allFlag = {
   admiFlag:false,
   disFlag:false,

@@ -21,28 +21,28 @@
 
     <app-accordion projectTowards="sidebar" [accordionData]="accordionData"
         (accordionrEmitData)="accordionrEmitData($event)">
-        <app-form projectTowards="sidebar" *ngIf="formDateCommAdd" [formJSON]="formDateCommAdd" [editData]="editData"
+        <app-form projectTowards="sidebar" *ngIf="formDateCommAdd" [formJSON]="formDateCommAdd" [editData]="addressEditData"
             (formData)="saveAddress($event)" (changeEvents)="changeAddressEvent($event)"></app-form>
     </app-accordion>
     <app-accordion projectTowards="sidebar" [accordionData]="accordionTabTwo">
         <app-tabular-forms projectTowards="sidebar" [tabularJSON]="tabularFormData"
         (tabularEmitData)="tabularValue($event)">
 
-        <app-form *ngIf="perAddressFormData && tabularIndex==0" projectTowards="sidebar" [formJSON]="perAddressFormData"
-            [editData]="addressEditData" (formData)="saveAddress($event)" (changeEvents)="changePerAddressEvent($event)"></app-form>
+        <app-form *ngIf="perAddressEditData && tabularIndex==0" projectTowards="sidebar" [formJSON]="perAddressFormData"
+            [editData]="perAddressEditData" (formData)="savePerAddress($event)" (changeEvents)="changePerAddressEvent($event)"></app-form>
 
         <app-form *ngIf="hospitalAssFormData && tabularIndex==1" projectTowards="sidebar" [formJSON]="hospitalAssFormData"
-            [editData]="hospitalEditData" (formData)="saveFormThree($event)"></app-form>
+            [editData]="hospitalEditData" (formData)="savePrivilege($event)"></app-form>
 
         <app-form *ngIf="insuranceDetailsFormData && tabularIndex==2" projectTowards="sidebar" [formJSON]="insuranceDetailsFormData"
-            [editData]="insorunceEditData" (formData)="saveFormFour($event)"></app-form>
+            [editData]="insorunceEditData" (formData)="saveInsurance($event)"></app-form>
 
         <app-form *ngIf="medicalHisFormData && tabularIndex==3" projectTowards="sidebar" [formJSON]="medicalHisFormData"
-            [editData]="medicalEditData" (formData)="saveFormFive($event)"
+            [editData]="medicalEditData" (formData)="saveMh($event)"
             (changeEvents)="changeSelect($event)"></app-form>
 
         <app-form *ngIf="addDetailsFormData && tabularIndex==4" projectTowards="sidebar" [formJSON]="addDetailsFormData"
-            [editData]="addEditData" (formData)="saveFormSix($event)"></app-form>
+            [editData]="addEditData" (formData)="savePai($event)"></app-form>
 
         <app-form *ngIf="formDataMLC && tabularIndex==5" projectTowards="sidebar" [formJSON]="formDataMLC" [editData]="mlcEditData"
             (formData)="saveFormMLC($event)"></app-form>
@@ -50,7 +50,7 @@
     </app-tabular-forms>
     </app-accordion>
     <div *ngIf="isShowServices" projectTowards="sidebar">
-        <app-super-grid *ngIf="servData" [configurations]="serviceConfig" [tableData]="servData"
+        <app-super-grid *ngIf="opdData" [configurations]="serviceConfig" [tableData]="opdData"
             [tableConfig]="configServ" (sideBarEvent)="closeSidebarData($event)" (confirmAction)="confirmAction($event)"
             (changeEvents)="changeSelectItem($event)" (onAdd)="onAdd($event)"
             (onEdit)="onEdit($event)" (isActive)="isActive($event)"

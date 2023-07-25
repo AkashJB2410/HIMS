@@ -3,6 +3,7 @@
 
 <h3 class="Sidebar-title-md"><i class="bi bi-file-earmark-medical"></i>All Masters</h3>
 <app-vertical-tabular [tabularData]="tabularSideData" (renderComponents)="renderComponents($event)">
+  <!-- Unit Configuration -->
   <div *ngIf="allFlag.unitFlag">
     <div class="row ">
       <div class="col-md-2 " *ngFor="let cards of allUnitList.card">
@@ -18,6 +19,22 @@
      
     </div><br>
   </div>
+<!-- MST Doctor -->
+<div *ngIf="allFlag.docFlag">
+  <div class="row ">
+    <div class="col-md-2 " *ngFor="let cards of allDoctorData.card">
+      <div class="avatar-section mb-4">
+      <p-avatar [title]="title"  routerLink="{{cards.routerLink}}"
+      image="{{cards.imgSrc}}"
+      size="xlarge"
+      shape="circle"
+    ></p-avatar>     
+    <h3 style="font-weight: bold;">{{cards.label}}</h3>
+  </div>
+  </div>
+   
+  </div><br>
+</div>
 
   <div class="row" *ngIf="allFlag.otFlag">
     <div class="col-md-4">

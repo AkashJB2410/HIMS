@@ -19,7 +19,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
-                "defaultValue":"1",
+                "defaultValue":1,
                 "formControlName": "selectCountry",
                 "values": [
                     {
@@ -28,7 +28,7 @@
                     },
                     {
                         "name": "India",
-                        "code": "1"
+                        "code": 1
                     }
                 ],
                 "message": {
@@ -65,10 +65,10 @@
                             },
                             {
                                 "name": "Maharashtra",
-                                "code": "1"                            },
+                                "code": 1                            },
                             {
                                 "name": "Bihar",
-                                "code": "2"
+                                "code": 2
                             }
                         ]
                     },
@@ -82,28 +82,28 @@
                             },
                             {
                                 "name": "Pune",
-                                "code": "1",
-                                "Mcode": "1"
+                                "code": 1,
+                                "Mcode": 1
                             },
                             {
                                 "name": "Satara",
-                                "code": "2",
-                                "Mcode": "1"
+                                "code": 2,
+                                "Mcode": 1
                             },
                             {
                                 "name": "Sangli",
-                                "code": "3",
-                                "Mcode": "1"
+                                "code": 3,
+                                "Mcode": 1
                             },
                             {
                                 "name": "Patna",
-                                "code": "4",
-                                "Mcode": "2"
+                                "code": 4,
+                                "Mcode": 2
                             },
                             {
                                 "name": "Mujjafarpur",
-                                "code": "5",
-                                "Mcode": "2"
+                                "code": 5,
+                                "Mcode": 2
                             }
                         ]
                     },
@@ -116,18 +116,18 @@
                             },
                             {
                                 "name": "Ambegaon",
-                                "code": "1",
-                                "Mcode": "1"
+                                "code": 1,
+                                "Mcode": 1
                             },
                             {
                                 "name": "Punecity",
-                                "code": "2",
-                                "Mcode": "1"
+                                "code": 2,
+                                "Mcode": 1
                             },
                             {
                                 "name": "Khed",
-                                "code": "3",
-                                "Mcode": "1"
+                                "code": 3,
+                                "Mcode": 1
                             }
                         ]
                     }
@@ -148,7 +148,6 @@
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
-                "defaultValue":"1",
                 "formControlName": "selectVillage",
                 "values": [
                     {
@@ -157,11 +156,11 @@
                     },
                     {
                         "name": "Pimpari",
-                        "code": "1"
+                        "code": 1
                     },
                     {
                         "name": "Chikhali",
-                        "code": "2"
+                        "code": 2
                     }
                 ],
                 "message": {
