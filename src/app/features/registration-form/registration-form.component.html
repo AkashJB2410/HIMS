@@ -11,7 +11,7 @@
     <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="formData" [editData]="editData"
         (formData)="saveRegistartionForm($event)" (changeEvents)="changeSelectItem($event)">
     
-        <app-super-grid *ngIf="data" [configurations]="mobileConfig" [filterJSON]="filterData"
+        <app-super-grid *ngIf="mobileGridData" [configurations]="mobileConfig" [filterJSON]="filterData"
         (fiteredData)="fiteredData($event)" [tableData]="mobileGridData" [tableConfig]="configMobi"
         (sideBarEvent)="closeSidebarData($event)" (confirmAction)="confirmAction($event)"
         (changeEvents)="changeSelectItem($event)" (onAdd)="onAdd($event)"

@@ -345,22 +345,23 @@ export class RegistrationFormComponent implements OnInit {
   }
   rowClickData(e: any) { }
   mobileRowClickData(e: any) {
+    this.form$.showModal(false);
     console.log("Mobile data =>", e);
-    this.form$.reRenderForm(this.formData.form.formControls[4], e.patientTitleId, 'autofill');
-    this.form$.reRenderForm(this.formData.form.formControls[5], e.patientFirstname, 'autofill');
-    this.form$.reRenderForm(this.formData.form.formControls[6], e.patientMiddlename, 'autofill');
-    this.form$.reRenderForm(this.formData.form.formControls[7], e.patientLastname, 'autofill');
-    this.form$.reRenderForm(this.formData.form.formControls[8], e.patientMobileNumber, 'autofill');
-    this.form$.reRenderForm(this.formData.form.formControls[9], e.patientEmail, 'autofill');
-    this.form$.reRenderForm(this.formData.form.formControls[10], e.patientIdentificationTypeId, 'autofill');
-    this.form$.reRenderForm(this.formData.form.formControls[11], e.patientIdentificationTypeNumber, 'autofill');
-    this.form$.reRenderForm(this.formData.form.formControls[13], e.patientDob, 'autofill');
-    this.form$.reRenderForm(this.formData.form.formControls[15], e.patientAge, 'autofill');
-    this.form$.reRenderForm(this.formData.form.formControls[16], e.patientGenderId, 'autofill');
-    this.form$.reRenderForm(this.formData.form.formControls[17], e.patientBloodGroupId, 'autofill');
-    this.form$.reRenderForm(this.formData.form.formControls[18], e.patientEthinicityId, 'autofill');
-    this.form$.reRenderForm(this.formData.form.formControls[19], e.patientReligion, 'autofill');
-    this.form$.reRenderForm(this.formData.form.formControls[20], e.patientMaritalStatusId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[0], e.patientMobileNumber, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[3], e.patientTitleId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[4], e.patientFirstname, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[5], e.patientMiddlename, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[6], e.patientLastname, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[7], e.patientGenderId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[8], e.patientIdentificationTypeId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[9], e.patientIdentificationTypeNumber, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[10], e.patientEmail, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[12], e.patientDob, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[14], e.patientAge, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[15], e.patientBloodGroupId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[16], e.patientEthinicityId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[17], e.patientReligion, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[18], e.patientMaritalStatusId, 'autofill');
 
   }
   assignDropDownOptions() {
@@ -625,10 +626,13 @@ export class RegistrationFormComponent implements OnInit {
 
       this.mobileGridData = undefined;
       this.http.mobileSerchData(e[0]).subscribe((data: any) => {
+        if(data[1].result.length===0){
+          this.messageService.add({ severity: 'success', summary: 'Message form User component', detail: 'New mobile number for registration.' });
+        }else {
         this.mobileGridData = data[1].result;
         this.form$.showModal(true);
         console.log("this.mobileGridData ===>", this.mobileGridData)
-
+      }
       });
     }
     if (e[1].fieldName == "selectIdentificationType" && e[0].value != "") {
