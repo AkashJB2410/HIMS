@@ -1,0 +1,39 @@
+{
+    "card":[
+      {
+        "label": "Super Speciality",
+        "routerLink": "/master-page/all-masters/super-speciality",
+        "imgSrc": "assets/unit-configuration/Organizations.png"
+      },
+      {
+        "label": "Clinical Procedure Master",
+        "routerLink": "/master-page/group-module",
+        "imgSrc": "assets/unit-configuration/action-sub-module.png"
+      },
+      {
+        "label": "Procedure",
+        "routerLink": "/master-page/sub-module",
+        "imgSrc": "assets/unit-configuration/action-sub-module.png"
+      },
+      {
+        "label": "Disease Sub Category Master",
+        "routerLink": "/master-page/sub-module",
+        "imgSrc": "assets/unit-configuration/action-sub-module.png"
+      },
+      {
+        "label": "ICD Code Masterr",
+        "routerLink": "/master-page/sub-module",
+        "imgSrc": "assets/unit-configuration/action-sub-module.png"
+      },
+    {
+        "label": " Clinical Forms",
+        "routerLink": "/master-page/sub-module",
+        "imgSrc": "assets/unit-configuration/action-sub-module.png"
+      },
+      {
+        "label": "Template",
+        "routerLink": "/master-page/sub-module",
+        "imgSrc": "assets/unit-configuration/action-sub-module.png"
+      }
+    ]
+  }
