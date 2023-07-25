@@ -1366,4 +1366,13 @@ border: 2px solid #959595;
 width:30px;
 height:30px;
 }
-
+.theme{
+  font-weight: 500;
+  color: black;
+  text-align: center;
+  }
+  .headerTheme{
+    font-size: 14px !important;
+    color:#1769aa;
+    font-weight:600
+  }

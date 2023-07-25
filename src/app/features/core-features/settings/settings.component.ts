@@ -15,9 +15,12 @@ export class SettingsComponent implements OnInit {
   activeState: any;
   activeList: any;
   Theme: string;
+  
   allFlag = {
     Personalization: true,
     EditForm: false,
+    changePassword:false,
+    appearance:false
 
   }
   themeOptins: any = []
@@ -56,6 +59,8 @@ export class SettingsComponent implements OnInit {
     this.allFlag = {
       Personalization: false,
       EditForm: false,
+      changePassword:false,
+      appearance:false
  
 
     }
@@ -74,6 +79,10 @@ export class SettingsComponent implements OnInit {
       switch (list.label) {
         case "Personalization": this.restFlag(); this.allFlag.Personalization = true; break
         case "Profile Details": this.restFlag(); this.allFlag.EditForm = true; break
+        case "Change Password": this.restFlag(); this.allFlag.changePassword = true; break
+        case "Appearance": this.restFlag(); this.allFlag.appearance = true; break
+
+
         default:
           break;
       }

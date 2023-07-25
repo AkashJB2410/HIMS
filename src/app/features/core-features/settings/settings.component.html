@@ -16,31 +16,47 @@
             </ul>
         </div>
     </div>
-    <!-- <div *ngIf="allFlag.theme" class={{verticalTabs.cardClass}}>
-        <div class="cardDesign">
-            <p-card class="verticalCards">
-                <p class="headerTheme"> Change Theme </p>
-                <p-menubar [class.optionActive]="themeOptins === activeStateButton"
-                    (click)="setActiveButton(themeOptins)" #menu pTooltip="Setting" tooltipPosition="bottom"
-                    [model]="themeOptins">
-                    <a (click)="changeTheme('dark-theme')" class="mr-3 cursor-pointer"></a>
-                </p-menubar>
-            </p-card>
-        </div>
-    </div> -->
+
     <div *ngIf="allFlag.Personalization" class={{verticalTabs.cardClass}}>
         <div class="cardDesign">
             <p-card class="verticalCards">
                 <app-personalization></app-personalization>
             </p-card>
         </div>
-       
+
     </div>
     <div *ngIf="allFlag.EditForm" class={{verticalTabs.cardClass}}>
         <div class="cardDesign">
             <p-card class="verticalCards">
                 <!-- <p class="headerTheme">Edit Profile</p> -->
-             <app-edit-profile></app-edit-profile>
+                <app-edit-profile></app-edit-profile>
+            </p-card>
+        </div>
+    </div>
+    <div *ngIf="allFlag.changePassword" class={{verticalTabs.cardClass}}>
+        <div class="cardDesign">
+            <p-card class="verticalCards">
+                <!-- <p class="headerTheme">Edit Profile</p> -->
+                <app-change-password></app-change-password>
+            </p-card>
+        </div>
+    </div>
+    <div *ngIf="allFlag.appearance" class={{verticalTabs.cardClass}}>
+        <div class="cardDesign">
+            <p-card class="verticalCards">
+                <p class="headerTheme"> Change Theme </p>
+                <div class="row">
+                    <div class="col-2">
+                        <img src="../../../../assets/core_assets/darkThemeCircle.png"
+                            (click)="changeTheme('dark-theme')" style="margin-left: 10px;" class="mb-2 cursor-pointer">
+                        <h5 (click)="changeTheme('dark-theme')" class="theme">Dark Mode</h5>
+                    </div>
+                    <div class="col-2">
+                        <img src="../../../../assets/core_assets/lightThemeCircle.png"
+                            (click)="changeTheme('light-theme')" style="margin-left: 10px;" class="mb-2 cursor-pointer">
+                        <h5 (click)="changeTheme('light-theme')" class="theme">Light Mode</h5>
+                    </div>
+                </div>
             </p-card>
         </div>
     </div>
