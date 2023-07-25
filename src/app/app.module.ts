@@ -55,6 +55,10 @@ import { SelfRegistrationComponent } from './features/self-registration/self-reg
 import { ClusterComponent } from './features/cluster/cluster.component';
 import { SpetialityComponent } from './features/spetiality/spetiality.component';
 import { CoreFeaturesComponent } from './features/core-features/core-features.component';
+import { DoctorScheduleComponent } from './features/doctor-schedule/doctor-schedule.component';
+import { DoctorCabinComponent } from './features/doctor-cabin/doctor-cabin.component';
+import { DayMasterComponent } from './features/day-master/day-master.component';
+
 
 @NgModule({
   declarations: [
@@ -100,6 +104,10 @@ import { CoreFeaturesComponent } from './features/core-features/core-features.co
     ClusterComponent,
     SpetialityComponent,
     CoreFeaturesComponent,
+    DoctorScheduleComponent,
+    DoctorCabinComponent,
+    DayMasterComponent,
+   
   ],
   imports: [
     CommonModule,
