@@ -84,6 +84,7 @@ import { SettingsComponent } from 'src/app/features/core-features/settings/setti
 import { Settings } from '@cornerstonejs/core';
 import { PersonalizationComponent } from 'src/app/features/core-features/personalization/personalization.component';
 import { EditProfileComponent } from 'src/app/features/core-features/edit-profile/edit-profile.component';
+import { ChangePasswordComponent } from 'src/app/features/core-features/change-password/change-password.component';
 import { Interceptor } from '../service/interceptor';
 import { CommonService } from '../service/common.service';
 import { AccordionModule } from 'primeng/accordion';
@@ -129,7 +130,8 @@ import { AccordionComponent } from '../../accordion/accordion.component';
         SettingsComponent,
         PersonalizationComponent,
         EditProfileComponent,
-        AccordionComponent
+        AccordionComponent,
+        ChangePasswordComponent
     ],
     imports: [
         CommonModule,
@@ -225,6 +227,7 @@ import { AccordionComponent } from '../../accordion/accordion.component';
         PersonalizationComponent,
         EditProfileComponent,
         AccordionComponent,
+        ChangePasswordComponent,
         //============= Core Imports =============
 
         FormsModule,
