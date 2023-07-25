@@ -57,11 +57,6 @@ ul p.verticaltab {
   margin-left: 11px;
   margin-bottom: 8px;
 }
-.headerTheme{
-  font-size: 14px !important;
-  color:#1769aa;
-  font-weight:600
-}
 .optionActive .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link{
   background-color: red;
 }

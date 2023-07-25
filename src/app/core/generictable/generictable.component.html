@@ -48,11 +48,7 @@
                 <th style="width: 1rem; text-align: center; max-width: 1rem;" *ngIf="config.isCheckbox">
                     <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                 </th>
-                <th style="width: 1rem; text-align: center; max-width: 1rem;" *ngIf="config.isRadioButton">
-                    
-                    <!-- <p-tableRadioButton></p-tableRadioButton> -->
-
-                </th>
+                <th style="width: 1rem; text-align: center; max-width: 1rem;" *ngIf="config.isRadioButton"></th>
                 <th style="width : 7rem; padding: 0.25rem 0.25rem;" pSortableColumn="{{col.field}}"
                     *ngFor="let col of columns" pResizableColumn pReorderableColumn>
                     <div class="flex justify-content-center align-items-center">
@@ -123,7 +119,7 @@
                         </button>
 
                         <button *ngIf="config.isActions.includes('Delete')" pTooltip="Delete" tooltipPosition="top"
-                            class="shorcut-iocns" id="abc{{rowData.id}}" [disabled]="!rowData.isActive"><i>
+                            class="shorcut-iocns" id="abc{{rowData.id}}" [disabled]="!rowData.is_Active"><i>
                                 <img src="../../../assets/core_assets/Delete (2).png"
                                     (click)="ondelete(rowData);disable(rowData)" class="image-size"></i></button>
 
@@ -160,7 +156,7 @@
                         <div *ngIf="config.isActions.includes('isActive')"
                             class="form-check form-switch form-check-inline">
                             <input class="form-check-input float-end" id="abc{{rowData.id}}"
-                                (click)="active($event,rowData)" [checked]="rowData.isActive" pTooltip="Active"
+                                (click)="active($event,rowData)" [checked]="rowData.is_Active" pTooltip="Active"
                                 tooltipPosition="top" type="checkbox" role="switch">
                         </div>
 
