@@ -32,7 +32,7 @@
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "transient": false,
+                "transient": true,
                 "label": "",
                 "data":"PERSONAL DETAILS",
                 "type": "divider",

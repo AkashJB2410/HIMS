@@ -118,24 +118,24 @@ export class RegistrationFormComponent implements OnInit {
     "addressPatientId": "",
     "addressPinCode": "",
     "permanentAddressCityId": "",
-    "permanentAddressCityName": "string",
+    "permanentAddressCityName": "",
     "permanentAddressCountryId": "",
-    "permanentAddressCountryName": "string",
+    "permanentAddressCountryName": "",
     "permanentAddressLandmark": "",
     "permanentAddressLine": "",
     "permanentAddressPinCode": "",
     "permanentAddressStateId": "",
-    "permanentAddressStateName": "string",
+    "permanentAddressStateName": "",
     "permanentAddressTalukaId": "",
-    "permanentAddressTalukaName": "string",
+    "permanentAddressTalukaName": "",
     "permanentAddressVillageId": "",
     "permanentAddressVillageName": "",
-    "permanentAddressblock": "string"
+    "permanentAddressblock": ""
   };
   mstPerAddress: any;
   mstHospitalAss: any = {
     "privilegeId": "",
-    "privilegeName": "string",
+    "privilegeName": "",
     "privilegePatientId": ""
   };
   mstInsurance: any =
@@ -170,9 +170,9 @@ export class RegistrationFormComponent implements OnInit {
   };
   mstMLC: any = {
     "mlcPoliceStationId": "",
-    "mlcPoliceStationName": "string",
+    "mlcPoliceStationName": "",
     "mlcTypeId": "",
-    "mlcTypeName": "string",
+    "mlcTypeName": "",
     "mlcPatientId": "",
   };
   merged: any;
@@ -860,6 +860,7 @@ export class RegistrationFormComponent implements OnInit {
           this.gridData.push(patientData);
         })
         console.log("this gridData =====>>>>>", this.gridData);
+        //mst_address
         api2Response[1].result.forEach((e: any) => {
           this.addressData.push(e);
         })
@@ -871,8 +872,9 @@ export class RegistrationFormComponent implements OnInit {
           } else {
             this.mergedGridData.push(res);
           }
-          console.log('fsdaysfdy', this.mergedGridData);
+          console.log('mergedGridData ====>', this.mergedGridData);
         })
+        //mst_privilege
         this.merged = '';
         api3Response[1].result.forEach((e: any) => {
           this.privilegeData.push(e);
@@ -887,6 +889,7 @@ export class RegistrationFormComponent implements OnInit {
           }
           console.log('mergedPrivalegeGridData', this.mergedPrivalegeGridData);
         })
+        //mst_insurance
         this.merged = '';
         api4Response[1].result.forEach((e: any) => {
           this.insuranceData.push(e);
@@ -901,6 +904,7 @@ export class RegistrationFormComponent implements OnInit {
           }
           console.log('mergedInsuranceGridData', this.mergedInsuranceGridData);
         })
+      //mst_mh
         this.merged = '';
         api5Response[1].result.forEach((e: any) => {
           this.mhData.push(e);
@@ -915,6 +919,7 @@ export class RegistrationFormComponent implements OnInit {
           }
           console.log('mergedMhGridData', this.mergedMhGridData);
         })
+      //mst_pai
         this.merged = '';
         api6Response[1].result.forEach((e: any) => {
           this.paiData.push(e);
@@ -929,12 +934,13 @@ export class RegistrationFormComponent implements OnInit {
           }
           console.log('mergedPaiGridData', this.mergedPaiGridData);
         })
+        //mst_mlc
         this.merged = '';
         api7Response[1].result.forEach((e: any) => {
           this.mlcData.push(e);
         })
         this.mergedPaiGridData.forEach(res => {
-          let data = this.paiData.find(data => data.mlcPatientId === res.patientId);
+          let data = this.mlcData.find(data => data.mlcPatientId === res.patientId);
           if (data) {
             this.merged = this.mergeObjects(res, data);
             this.mergedMlcGridData.push(this.merged);
@@ -945,6 +951,7 @@ export class RegistrationFormComponent implements OnInit {
         })
         this.merged = '';
         this.data = [...this.mergedMlcGridData];
+        console.log('API Data ===>>>:', this.data);
         this.gridData = [];
         this.mergedGridData = [];
         this.mergedInsuranceGridData = [];
@@ -952,7 +959,7 @@ export class RegistrationFormComponent implements OnInit {
         this.mergedMlcGridData = [];
         this.mergedPaiGridData = [];
         this.mergedPrivalegeGridData = [];
-        console.log('API Data ===>>>:', this.data);
+       
       },
       error => {
         // Handle any errors
@@ -1206,9 +1213,11 @@ export class RegistrationFormComponent implements OnInit {
 
     if (this.flagAddressIsReady == true) {
       this.addressMerge = this.mergeObjects(this.mstAddress, this.mstPerAddress)
-      console.log("merge =>", this.addressMerge);
-      this.flagPerAddIsReady = true;
+    }else {
+      this.addressMerge=this.mstPerAddress;
     }
+    this.flagPerAddIsReady = true;
+    console.log("merge =>", this.addressMerge);
     this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
   }
 
@@ -1261,10 +1270,10 @@ export class RegistrationFormComponent implements OnInit {
       "paiOccupation": e.occupation || '',
       "paiPhoneNumber": e.phoneNo || '',
       "paiReferredBy": e.refferedBy || '',
-      "paiAadharNumber": e.paiAadharNumber || '',
-      "paiUsshIdNumber": e.paiUsshIdNumber || '',
-      "paiUhIdNumber": e.paiUhIdNumber || '',
-      "paiAbhaIdNumber": e.paiAbhaIdNumber || '',
+      "paiAadharNumber": e.aadharNo || '',
+      "paiUsshIdNumber": e.usshId || '',
+      "paiUhIdNumber": e.uhId || '',
+      "paiAbhaIdNumber": e.abhaId || '',
       "paiPatientId": "",
     }
     this.flagAdditionalDetailsIsReady = true;
@@ -1355,6 +1364,7 @@ export class RegistrationFormComponent implements OnInit {
     }
     this.editData = edit;
     let address = {
+      "addressId":e.editRow.addressId,
       "addressCountryId": e.editRow.addressCountryId,
       "dependentdropdown": [e.editRow.addressStateId, e.editRow.addressCityId, e.editRow.addressTalukaId],
       "addressVillageId": e.editRow.addressVillageId,
@@ -1413,8 +1423,7 @@ export class RegistrationFormComponent implements OnInit {
       "paiAbhaIdNumber": e.editRow.paiAbhaIdNumber,
       "paiUhIdNumber": e.editRow.paiUhIdNumber,
       "paiAadharNumber": e.editRow.paiAadharNumber,
-      "paiUsshIdNumber": e.editRow.paiUsshIdNumber,
-
+      "paiUsshIdNumber": e.editRow.paiUsshIdNumber
     }
     this.addEditData = additionDetailsEdit;
 
