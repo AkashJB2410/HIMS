@@ -1,0 +1,17 @@
+{
+    "card":[
+        {
+            "label":"Doctor Schedule",
+            "routerLink":"mst-doctor",
+            "imgSrc":"assets/unit-configuration/Organizations.png"
+        },{
+            "label":"Day Master",
+            "routerLink":"mst-doctor",
+            "imgSrc":"assets/unit-configuration/Organizations.png"
+        },{
+            "label":"Cabin",
+            "routerLink":"mst-doctor",
+            "imgSrc":"assets/unit-configuration/Organizations.png"
+        }
+    ]
+}
