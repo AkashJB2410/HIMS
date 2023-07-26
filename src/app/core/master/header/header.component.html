@@ -60,10 +60,10 @@
                 class="userlogo" alt="Profile Pic">
             <p-overlayPanel #op1  [showCloseIcon]="false">
                 <ul style="padding:0px" >
-                    <li class="profileItems"><i class="pi pi-user iconcss"></i>{{userDetails.userName}}</li>
+                    <li class="profileItems"><i class="pi pi-user iconcss"></i>{{userDetails.userNameId}}</li>
                     <p-divider class="dividerCss"></p-divider>
-                    <li class="profileItems" (click)="setting()"><i class="pi pi-cog iconcss"></i> Setting</li>
-                    <li class="profileItems"> <i class="pi pi-user iconcss"></i>Change Password</li>
+                    <li class="profileItems" (click)="setting()"><i class="pi pi-cog iconcss"></i>Settings</li>
+                    <!-- <li class="profileItems"> <i class="pi pi-user iconcss"></i>Change Password</li> -->
                     <li class="profileItems" (click)="logOut()"><i class="pi pi-power-off iconcss"></i> Logout</li>
                 </ul>
             </p-overlayPanel>

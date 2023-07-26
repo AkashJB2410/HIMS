@@ -13,13 +13,12 @@ export class PersonalizationService {
 
 
   addPersonalization(e: any): Observable<any> {
-    const url = myConstants.LOCALHOSTURL + "personalization/addPersonalization";
+    const url = myConstants.LOCALHOSTURL + "personalization/create";
     return this.http.post<any>(url, e);
   }
   updatePersonalization(e: any): Observable<any> {
-    const url = myConstants.LOCALHOSTURL + "personalization/updatePersonalization/" + e.personalizationId;
+    const url = myConstants.LOCALHOSTURL + "personalization/update/" + e.personalizationId;
     return this.http.put<any>(url, e);
-
   }
   DeletePersonalization(e: any): Observable<any> {
     const url = myConstants.LOCALHOSTURL + "personalization/deletePersonalization/" + e;
@@ -27,7 +26,7 @@ export class PersonalizationService {
 
   }
   getallPersonalization() {
-    const url = myConstants.LOCALHOSTURL + "personalization/getAllPersonalizationData?page=0&size=10";
+    const url = myConstants.LOCALHOSTURL + "personalization/list?page=0&size=10";
     return this.http.get<any>(url);
   }
 }

@@ -6,11 +6,16 @@
                 <div class="d-flex flex-column align-items-center text-center side-line">
                     <input type="file" formControlName="profileImage" id="input" (change)="onFileChange($event)"
                         style="display:none;">
-                    <label *ngIf="Imageshow" for="input"><img class="rounded-circle" id="image" width="150px" height="150px"
-                        src="../../../../assets/core_assets/userDp.png" >
+                    <label *ngIf="Imageshow" for="input"><img class="rounded-circle" id="image" width="150px"
+                            height="150px" src="../../../../assets/core_assets/userDp.png"><button type="button"
+                            class="btn butn-prmry CameraIcon"> <span class="bi bi-camera"></span></button>
+                        <!-- <h6>Add Image</h6> -->
                     </label>
-                    <label *ngIf="!Imageshow" for="input"><img class="rounded-circle" id="image" width="150px" height="150px"
-                        src="{{image}}" >
+                    <label *ngIf="!Imageshow" for="input"><img class="rounded-circle" id="image" width="150px"
+                            height="150px" src="{{image}}"> <button type="button" class="btn butn-prmry CameraIcon">
+                            <span class="bi bi-camera"></span></button>
+                        <!-- <h6>Change Image</h6> -->
+                        <h5 style="margin-top: 10px; font-weight: 600;">{{logindata.userNameId}}</h5>
                     </label>
                     <h4 class="name-title">{{user}}</h4>
                 </div>
@@ -23,8 +28,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group mb-6">
                                         <label for="username" class="label-txt">Username</label>
-                                        <input type="text" formControlName="userName" class="input-box login-input"
-                                        
+                                        <input type="text" formControlName="userNameId" class="input-box login-input"
                                             placeholder="Enter username">
                                     </div>
                                 </div>
@@ -47,7 +51,6 @@
                                 <button class="btn butn-custom-dark-blue savebtn">Save
                                 </button>
                             </div>
-
                         </div>
                     </form>
                 </div>
