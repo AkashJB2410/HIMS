@@ -1151,3 +1151,13 @@ ul p.verticaltab{
   padding: 5px;
 }
 */
+.theme{
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  }
+  .headerTheme{
+    font-size: 14px !important;
+    color:white;
+    font-weight:600
+  }
