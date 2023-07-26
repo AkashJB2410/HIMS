@@ -1,14 +1,24 @@
 {
     "itemsList": [
         {
-            "label": "Adminitration",
+            "label": "Configuration",
             "icon": "",
             "routerLink": ""
         },
         {
+            "label": "All Masters",
+            "icon": "",
+            "routerLink": "/master-page/all-masters"
+        },
+        {
+            "label": "Unit Configuration",
+            "icon": "",
+            "routerLink": "/master-page/all-masters"
+        },
+        {
             "label": "Group Module",
             "icon": "",
-            "routerLink": "/master-page/group-module"
+            "routerLink": "/master-page/all-masters/group-module"
         }
     ]
 }

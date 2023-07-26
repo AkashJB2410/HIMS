@@ -10,16 +10,16 @@
         "formControls": [
             {
                 "id": 0,
-                "isEditable": true,
+                "isEditable": false,
                 "isVisible": false,
-                "label": "Id",
+                "label": "ID",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
                 "lblclass": "",
                 "valueclass": "input-box",
                 "placeholder": "",
-                "formControlName": "idInput",
+                "formControlName": "moduleId",
                 "mandatoryMessage": "Code is required",
                 "message": "Code is required",                
                 "validations": {
@@ -37,7 +37,7 @@
                 "lblclass":"",
                 "valueclass":"input-box",
                 "placeholder": "Enter label...",
-                "formControlName": "labelInput",
+                "formControlName": "label",
                 "message": {
                     "required": "Label is required",
                     "pattern": "Only Alphabets & Numbers are Allowed."
@@ -58,7 +58,7 @@
                 "lblclass":"",
                 "valueclass":"input-box",
                 "placeholder": "Enter icon name...",
-                "formControlName": "iconInput",
+                "formControlName": "icon",
                 "message": {
                     "required": "Icon name is required",
                     "pattern": "Only Alphabets and Numbers are Allowed."
@@ -80,7 +80,7 @@
                 "lblclass":"",
                 "valueclass":"input-box",
                 "placeholder": "Enter router Link...",
-                "formControlName": "routerLinkInput",
+                "formControlName": "routerLink",
                 "message": {
                     "required": "router Link is required",
                     "pattern": "Only Numbers and Alphabates are allowed."
@@ -100,7 +100,7 @@
                 "lblclass":"",
                 "valueclass":"input-box",
                 "placeholder": "Enter sequence...",
-                "formControlName": "sequenceInput",
+                "formControlName": "sequence",
                 "message": {
                     "required": "Sequence is required",
                     "pattern": "Alphabets are not Allowed"

@@ -42,38 +42,6 @@
             "header": "Sequence",
             "iseditable": false,
             "class": ""
-        },
-        {
-            "field": "is_Active",
-            "header": "isActive",
-            "iseditable": false,
-            "class": ""
-        }
-    ],
-    "PdfHeaders": [
-        {
-            "field": "mstLabel",
-            "header": "Master Module"
-        },
-        {
-            "field": "groupLabel",
-            "header": "Group Module"
-        },
-        {
-            "field": "label",
-            "header": "Label"
-        },
-        {
-            "field": "icon",
-            "header": "Icon"
-        },
-        {
-            "field": "routerLink",
-            "header": "Router Link"
-        },
-        {
-            "field": "SubModuleSequence",
-            "header": "Sequence"
         }
     ],
     "globalFilter": [
@@ -96,15 +64,18 @@
     "loading": false,
     "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
     "isCheckbox": true,
+    "isRadioButton":false,
     "resizableColumns": true,
+    "isDragAndDrop":true,
     "isActions": [
         "Edit",
         "Delete",
         "isActive"
     ],
     "editicon": "../../../assets/icons/Group 1823.png",
-    "isVisible": false,
-    "buttonlbl": "Add SubModule",
+    "expand":false,
+    "buttonlbl":"",
     "textLength": 16,
-    "sidebar":"p-sidebar-sm"
+    "sidebar":"p-sidebar-sm",
+    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
 }
