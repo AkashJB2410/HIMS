@@ -15,16 +15,16 @@ export class MasterService {
   }
 
   getAllSideNavData(){
-    const url = "http://localhost:8083/mstModule/allSideNavFormData";
+    const url = "http://localhost:8085/mstModule/allSideNavFormData";
     return this.http.get<any>(url);
   }
   
   getAllNotifications(){
-    const url = "http://localhost:8080/api/v1/allNotificationData";
+    const url = "http://localhost:8080/notification/list";
     return this.http.get<any>(url);
   }
   countNotification(){
-    const url = "http://localhost:8080/api/v1/countNotification";
+    const url = "http://localhost:8080/notification/count";
     return this.http.get<any>(url);
   }
   
@@ -32,7 +32,7 @@ export class MasterService {
     const param = {
       "id": data      
     };
-    const url = "http://localhost:8080/api/v1/readNotification/"+data;
+    const url = "http://localhost:8080/notification/readById/"+data;
     return this.http.put<any>(url,param);
   }
 }

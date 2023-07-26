@@ -17,8 +17,21 @@
             "imgCss":"verticalCardImage",
             "theme" : false
 
+        },
+        {
+            "label": "Change Password",
+            "image":"/assets/verticalCard.png",
+            "imgCss":"verticalCardImage",
+            "theme" : false
+
+        },
+        {
+            "label": "Appearance",
+            "image":"/assets/verticalCard.png",
+            "imgCss":"verticalCardImage",
+            "theme" : false
+
         }
-    
         
     ]
 

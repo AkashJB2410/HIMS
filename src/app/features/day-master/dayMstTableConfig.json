@@ -1,0 +1,70 @@
+{
+    "tableName": "Day Master Table",
+    "tableHeaders": [
+        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":"text-center"},
+    
+        {
+            "field": "dayName",
+            "header": "Day Name",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "startDayInWeek",
+            "header": "Start day in week",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "endDayInWeek",
+            "header": "End Day In Week",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "is_Active",
+            "header": "IsActive",
+            "iseditable": false,
+            "class": ""
+        }
+    ],
+    "PdfHeaders": [
+        {"field": "srNumber","header": "Sr Number"},
+
+        { "field": "day_name",
+        "header": "Day Name"
+        },
+        {
+            "field": "start_day_in_week",
+            "header": "Start day in week"
+        },
+        {
+            "field": "end_day_in_week",
+            "header": "Type Of Field"
+        }
+    ],
+    "globalFilter": [
+        "day_name",
+        "start_day_in_week",
+        "end_day_in_week",
+        "is_Active"
+    ],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [15,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "isRadioButton":false,
+    "resizableColumns": true,
+    "isDragAndDrop":true,
+    "isActions": ["Edit", "Delete" ,"isActive"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "expand":false,
+    "buttonlbl":"",
+    "textLength":16,
+    "sidebar": "p-sidebar-sm",
+    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
+}
