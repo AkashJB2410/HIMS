@@ -5,8 +5,8 @@
     [configurations]="configurations" 
     [tableData]="data" 
     [tableConfig]="tableConfig"
-    [sidebarJSON]="" 
-    (sideBarEvent)="sidebarData($event)" 
+    [sidebarJSON]="DayMasterForm" 
+    (sideBarEvent)="closeSidebarData($event)" 
     (confirmAction)="confirmAction($event)"
     (Bulkdelete)="BulkDeleteRows($event)"
     (editRow)="editRow($event)" 
@@ -14,5 +14,5 @@
     (isActive)="isActive($event)"
     (onAdd)="onAdd($event)"
     (onEdit)="onEdit($event)">
-    <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="" [editData]="editData" (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
+    <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="DayMasterForm" [editData]="editData" (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
 </app-super-grid>

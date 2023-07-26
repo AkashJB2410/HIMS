@@ -1,7 +1,7 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "LOV Value",
+        "formTitle": "DAY  MASTER",
         "formTitleClass": "Sidebar-title-sm",
         "formTitleLogo": "bi bi-file-earmark-medical",
         "formName": "Form1",
@@ -11,17 +11,16 @@
             {
                 "isEditable": false,
                 "isVisible": true,
-                "transient": false,
-                "label": "LOV List ID",
+                "label": "Day ID",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Enter lovlistId",
-                "formControlName": "lovlistId",
+                "placeholder": "Enter dayId",
+                "formControlName": "dayId",
                 "message": {
-                    "required": "groupId is required",
+                    "required": "dayId is required",
                     "pattern": "pattern is not match"
                 },
                 "validations": {
@@ -32,40 +31,14 @@
             {
                 "isEditable": true,
                 "isVisible": true,
-                "transient": false,
-                "label": "LOV TypeID",
-                "type": "select",
-                "class": "col-md-12  my-1",
-                "lblclass": "custom-label",
-                "valueclass": "",
-                "placeholder": "Select option",
-                "formControlName": "selectlovType",
-                "message": {
-                    "required": "lovtypeID is required",
-                    "pattern": "pattern is not match"
-                },
-                "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    }
-                ],
-                "validations": {
-                    "required": true,
-                    "pattern": ""
-                }
-            },
-            {
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Value",
+                "label": "Day Name",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter value",
-                "formControlName": "value",
+                "formControlName": "dayName",
                 "message": {
                     "required": "value is required",
                     "pattern": "pattern is not match"
@@ -78,40 +51,32 @@
             {
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Type Of Field",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-12 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter type of field",
-                "formControlName": "typeOfField",
+                "transient": false,
+                "type": "radio",
+                "class": "col-md-12",
+                "valueclass": " radio-button mt-3",
+                "formControlName": "dayRad",
+                "defaultValue": [
+                    true
+                ],
                 "message": {
-                    "required": "description is required",
-                    "pattern": "pattern is not match"
+                    "required": "Gender is required",
+                    "pattern": ""
                 },
+                "values": [
+                    {
+                        "name": "Start day in week",
+                        "code": true,
+                        "editable": true
+                    },
+                    {
+                        "name": "End day in week",
+                        "code": false,
+                        "editable": true
+                    }
+                ],
                 "validations": {
                     "required": false,
-                    "pattern": "^[A-Za-z\\s-/]+$"
-                }
-            },
-            {
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Description",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-12 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter description",
-                "formControlName": "description",
-                "message": {
-                    "required": "description is required",
-                    "pattern": "pattern is not match"
-                },
-                "validations": {
-                    "required": true,
                     "pattern": ""
                 }
             },

@@ -2577,8 +2577,8 @@ body {
 }
 
 .p-divider.p-divider-horizontal {
-  margin-top: 10px !important;
-  margin-bottom: 10px !important;
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
 }
 
 .p-divider.p-divider-horizontal .p-divider-content {

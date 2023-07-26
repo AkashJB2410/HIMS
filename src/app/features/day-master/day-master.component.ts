@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { CommonService } from 'src/app/core/shared/service/common.service';
-
+import dayMasterForm from './dayForm.json';
+import dayTableConfig from './dayMstTableConfig.json'
+import { FeaturescommonService } from '../shared/featurescommon.service';
 @Component({
   selector: 'app-day-master',
   templateUrl: './day-master.component.html',
@@ -11,17 +13,21 @@ export class DayMasterComponent implements OnInit {
 
   tableConfig: any;
   visibleSidebar: boolean = true;
-  // LOVFormData: any = LOVForm;
+  DayMasterForm: any = dayMasterForm;
   // LOV_breadcrumb = LOV_breadcrumb
   configurations: any;
-  data: any;
+  data: any=[];
   formdata: any;
   isdataReady = false;
-  LOVData: any = [];
+  dayData: any = [];
   flag: any;
-  editData:any
- 
-  constructor(private messageService: MessageService, private common:CommonService) { }
+  editData: any
+  apiGet = "mstDay/list";
+  apiAdd = "mstDay/create";
+  apiUpdate = "mstDay/update";
+  apidelete = "mstDay/inActivate";
+  apiactive = "mstDay/activate";
+  constructor(private messageService: MessageService, private common: CommonService, private http: FeaturescommonService) { }
 
   ngOnInit(): void {
     this.configurations = {
@@ -31,33 +37,29 @@ export class DayMasterComponent implements OnInit {
       "isConfirmation": true
     };
     this.getConfigForTable();
-    this.getAllLovValue();
-    this.assignOptions();
+    this.getAllDayMaster();
   }
 
   getConfigForTable() {
-    // this.tableConfig = LOVTable;
+    this.tableConfig = dayTableConfig;
   }
   onAdd(e: any) {
-    this.editData=[]
+    this.editData = []
     this.flag = e.add;
   }
-  onEdit(e:any){
-    this.flag=e.edit
+  onEdit(e: any) {
+    this.flag = e.edit
     let obj = {
-      "lovListId": e.editRow.lovListId,
-      "lovTypeId": e.editRow.lovTypeId,
-      "value": e.editRow.value,
-      "typeOfField": e.editRow.typeOfField,
-      "description": e.editRow.description,
-      "lovTypeName": e.editRow.lovTypeName,
-      "is_Active": e.editRow.is_Active,
+      "day_id": e.editRow.day_id,
+      "dayName": e.editRow.dayName,
+      "startDayInWeek": e.editRow.startDayInWeek,
+      "endDayInWeek": e.editRow.endDayInWeek,
     }
-    this.editData=obj;
+    this.editData = obj;
   }
-  buttonEvent(e:any){
-    this.editData=undefined;
-this.common.sendEditData(false);
+  buttonEvent(e: any) {
+    this.editData = undefined;
+    this.common.sendEditData(false);
   }
   editRow(e: any) {
     this.visibleSidebar = true;
@@ -66,14 +68,13 @@ this.common.sendEditData(false);
     this.visibleSidebar = true;
   }
   BulkDeleteRows(e: any) {
-    this.LOVData = [];
     if (e != '') {
       e.forEach((data: any) => {
         if (data.is_Active != false) {
           let obj = {
-            "lovListId": data.lovListId,
+            "day_id": data.day_id,
           }
-          this.deleteLovValue(obj.lovListId);
+          this.deleteDayMaster(obj.day_id);
         } else {
           this.messageService.add({
             severity: 'error',
@@ -96,17 +97,20 @@ this.common.sendEditData(false);
     }
   }
 
+  closeSidebarData(e: any) {
+    this.editData = undefined;
+  }
   sidebarData(e: any) {
     if (e != 'reset') {
       if (this.flag == "edit") {
-        this.updateLovValue(e);
+        this.updateDayMaster(e);
         this.messageService.add({
           severity: 'success',
           summary: 'success',
           detail: 'Data updated successfull.',
         });
       } else {
-        this.submitLovValue(e);
+        this.submitDayMaster(e);
         this.messageService.add({
           severity: 'success',
           summary: 'success',
@@ -118,7 +122,7 @@ this.common.sendEditData(false);
 
   confirmAction(e: any) {
     if (e != false) {
-      this.deleteLovValue(e.lovListId);
+      this.deleteDayMaster(e.dayId);
       this.messageService.add({
         severity: 'success',
         summary: 'Message form User component',
@@ -126,83 +130,70 @@ this.common.sendEditData(false);
       });
     }
   }
-
-  getAllLovValue() {
-    this.data = undefined;
-    this.LOVData = [];
-    // this.http.GetAllLovValueData().subscribe((res) => {
-    //   // for (let i = 0; i < this.data.length; i++) {
-    //   //   this.data[i].srNumber = i + 1;
-    //   // }
-    //   res.forEach((e: any, index:any) => {
-    //     let obj = {
-    //       "id":index,
-    //       "lovListId": e.lovListId,
-    //       "lovTypeId": e.mstLovType.lovTypeId,
-    //       "value": e.value,
-    //       "typeOfField": e.typeOfField,
-    //       "description": e.description,
-    //       "lovTypeName": e.mstLovType.name,
-    //       "is_Active": e.is_Active,
-    //     }
-    //     this.LOVData.push(obj);
-    //   })
-    //   this.data = [...this.LOVData];
-    //   this.isdataReady = true;
-    //   for (let i = 0; i < this.data.length; i++) {
-    //     this.data[i].srNumber = i + 1;
-    //   }
-    //   this.data;
-    // })
-  }
-
-  updateLovValue(LOV_ValueId: any) {
-    // this.http.updateLovValueData(LOV_ValueId).subscribe((data) => {
-    //   this.data = undefined;
-    //   this.getAllLovValue();
-    // });
-  }
-
-  deleteLovValue(LOV_ValueId: any) {
-    // this.http.deleteLovValueData(LOV_ValueId).subscribe((data) => {
-    //   this.data = undefined;
-    //   this.getAllLovValue();
-    // });
-  }
-
-  submitLovValue(LOV_ValueId: any) {
-    // this.http.saveLovValueData(LOV_ValueId).subscribe((data) => {
-    //   this.data = undefined;
-    //   this.getAllLovValue();
-    // });
-  }
-  isActive(event: string) {
-    // this.http.isActiveData(event).subscribe((data) => {
-    //   this.data = undefined;
-    //   this.getAllLovValue();
-    // });
-  }
-  
-  assignOptions() {
-    // this.formdata = Object.assign({}, LOVForm);
-    this.formdata.form.formControls.forEach((data: any) => {
-      data.values = [];
-      if (data.formControlName === "selectlovType") {
-        let defaultObj = {
-          "name": "Select LOV Type",
-          "code": "0"
+  startday: any
+  endday:any
+  getAllDayMaster() {
+    this.http.getData(this.apiGet).subscribe(res => {
+      this.isdataReady = true;
+      res.content.forEach((e: any)=> {
+        if (e.startDayInWeek == true) {
+          this.startday = "Yes"
+        } else {
+          this.startday = "NO"
         }
-        data.values.push(defaultObj);
-        // this.http.GetAllLovTypeData().subscribe(item => {
-        //   item.forEach((e: any) => {
-        //     let obj = {
-        //       "name": e.name,
-        //       "code": e.lovTypeId
-        //     }
-        //     data.values.push(obj);
-        //   })
-        // })
+        if (e.endDayInWeek == true) {
+          this.endday = "Yes"
+        } else {
+          this.endday = "NO"
+        }
+        let obj = {
+          "dayId": e.dayId,
+          "dayName": e.dayName,
+          "startDayInWeek": this.startday,
+          "endDayInWeek": this.endday,
+        }
+        this.data.push(obj);
+      })
+      console.log("data ==>>",this.data)
+      for (let i = 0; i < this.data.length; i++) {
+        this.data[i].id = i + 1;
       }
     })
   }
+
+  updateDayMaster(dayId: any) {
+    this.http.updateData(dayId, this.apiUpdate).subscribe((data) => {
+      this.data = undefined;
+      this.getAllDayMaster();
+    });
+  }
+
+  deleteDayMaster(dayId: any) {
+    this.http.deleteData(dayId, this.apidelete).subscribe((data) => {
+      this.data = undefined;
+      this.getAllDayMaster();
+    });
+  }
+
+  submitDayMaster(dayId: any) {
+    this.http.addData(dayId, this.apiAdd).subscribe((data) => {
+      this.data = [];
+      this.getAllDayMaster();
+    });
+  }
+  isActive(data: string) {
+
+    // if(!data.isActive){
+    //   this.http.reactiveData(this.apiactive, data, data.orgId)
+    //     .subscribe(b_Data => {
+    //       this.data = undefined;
+    //       this.getAllDayMaster()
+    //     })
+    //     this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Organization Enable Successfully' });  
+    // }
+    // else if(data.isActive){
+    //   this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Organization is already Active' });
+    // }
+  }
+
 }

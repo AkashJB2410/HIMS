@@ -10,6 +10,7 @@
             {
                 "isEditable": false,
                 "isVisible": true,
+                "transient":false,
                 "label": "ID",
                 "type": "text",
                 "inputType": "text",

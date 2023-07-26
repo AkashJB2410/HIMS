@@ -22,7 +22,7 @@
                 "placeholder": "Enter lovlistId",
                 "formControlName": "lovlistId",
                 "message": {
-                    "required": "groupId is required",
+                    "required": "lovId is required",
                     "pattern": "pattern is not match"
                 },
                 "validations": {
