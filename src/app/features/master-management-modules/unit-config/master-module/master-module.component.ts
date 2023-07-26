@@ -5,7 +5,7 @@ import mstModuleData from './masterModuleSidebarConfig.json';
 import * as mstModule_table_config from './masterModuleTableConfig.json';
 import Application_breadcrumb from './breadcrum.json'
 import { CommonService } from 'src/app/core/shared/service/common.service';
-import { MasterPageComponent } from './../master-page/master-page.component'
+import { MasterPageComponent } from '../../../master-page/master-page.component'
 @Component({
   selector: 'app-master-module',
   templateUrl: './master-module.component.html',

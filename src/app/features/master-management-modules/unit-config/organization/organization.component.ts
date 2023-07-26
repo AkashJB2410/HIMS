@@ -4,7 +4,7 @@ import addneworg from './organizationForm.json'
 import { MessageService } from 'primeng/api';
 import organization_breadcrumb from './organization-breadcrumb.json'
 import { CommonService } from 'src/app/core/shared/service/common.service';
-import { FeaturescommonService } from '../shared/featurescommon.service';
+import { FeaturescommonService } from '../../../shared/featurescommon.service';
 
 @Component({
   selector: 'app-organization',
