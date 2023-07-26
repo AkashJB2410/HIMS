@@ -11,7 +11,7 @@ login_job:
   tags:
     - docker
   script:
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD_STDIN $CI_REGISTRY
+    - docker login -u $CI_REGISTRY_USER -p --password-stdin $CI_REGISTRY
     
 
 build_job:
