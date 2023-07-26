@@ -5,7 +5,7 @@ import { CommonService } from 'src/app/core/shared/service/common.service';
 import breadcrumb from './super-speciality-breadcrumb.json';
 import speciality_Table_Config from './super-speciality-tableConfig.json';
 import speciality_Form from './super-speciality.json'
-import { FeaturescommonService } from '../shared/featurescommon.service';
+import { FeaturescommonService } from '../../../../shared/featurescommon.service';
 
 @Component({
   selector: 'app-super-speciality',
