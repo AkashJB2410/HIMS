@@ -1,6 +1,6 @@
 <!-- <p-breadcrumb [model]="items.itemsList"></p-breadcrumb> -->
 
-<h3 class="Sidebar-title-md "><i class="bi bi-file-earmark-medical"></i>{{formTitle}}</h3>
+<h3 class="Sidebar-title-md "><i class="bi bi-file-earmark-medical"></i>Patient Registration</h3>
 
 <app-super-grid *ngIf="data" [configurations]="configurations" [filterJSON]="filterData"
     (fiteredData)="fiteredData($event)" [tableData]="data" [tableConfig]="config"
@@ -49,13 +49,13 @@
 
     </app-tabular-forms>
     </app-accordion>
-    <div *ngIf="isShowServices" projectTowards="sidebar">
+    <!-- <div *ngIf="isShowServices" projectTowards="sidebar">
         <app-super-grid *ngIf="opdData" [configurations]="serviceConfig" [tableData]="opdData"
             [tableConfig]="configServ" (sideBarEvent)="closeSidebarData($event)" (confirmAction)="confirmAction($event)"
             (changeEvents)="changeSelectItem($event)" (onAdd)="onAdd($event)"
             (onEdit)="onEdit($event)" (isActive)="isActive($event)"
             (rowClickData)="rowClickData($event)"></app-super-grid>
-    </div>
+    </div> -->
    
     <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="sidebarButtonJSON" [editData]="editData"
         (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
