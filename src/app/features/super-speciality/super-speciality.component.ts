@@ -5,6 +5,7 @@ import { CommonService } from 'src/app/core/shared/service/common.service';
 import breadcrumb from './super-speciality-breadcrumb.json';
 import speciality_Table_Config from './super-speciality-tableConfig.json';
 import speciality_Form from './super-speciality.json'
+import { FeaturescommonService } from '../shared/featurescommon.service';
 
 @Component({
   selector: 'app-super-speciality',
@@ -13,184 +14,185 @@ import speciality_Form from './super-speciality.json'
 })
 export class SuperSpecialityComponent implements OnInit {
 
- data:any;
- speciality:any =[];
- config: any;
- configurations: any;
- table_Config: any;
- isDataReady: boolean = false;
- visibleSiderbar: boolean = false;
- table_Data: any;
- sidebar_Update_Input: any = speciality_Form;
- breadcrumb = breadcrumb;
- editData: any
- flag: any;
- constructor(private http: SuperSpecialityService, private messageService: MessageService, private common: CommonService) {}
+  // orgDetails:any
+  addnewss:any = speciality_Form;
+  configurations: any
+  data:any;
+  config: any;
+  visibleSidebar: boolean = true;
+  isdataReady = false;
+  saveMethod: boolean=false;
+  breadcrumb = breadcrumb;
+  editData:any;
+  apiGet="mstSuperSpeciality/list";
+  apiAdd="addMstSuperSpeciality/create";
+  apiUpdate="updateMstSuperSpeciality/update";
+  apidelete="deleteMstSuperSpeciality/inActivate";
+  apiactive="reactiveMstSuperSpeciality/activate";
 
- ngOnInit(): void {
-   this.configurations = {
-     "isFilter": false,
-     "isTable": true,
-     "isSideBar": true,
-     "isConfirmation": true
-   };
+  constructor(private messageService: MessageService, private common:CommonService, private http:FeaturescommonService) { }
+  
+  ngOnInit(): void {
+    
+    this.configurations = {
+      "isFilter": false,
+      "isTable": true,
+      "isSideBar": true,
+      "isConfirmation": true
+    };
+    this.getAllSs();
+    this.getConfigForTable();
+  }
 
-   this.getConfigForTable();
-   this.getAllSuperSpeciality();
- }
+  buttonClick(e: any) {
+    if (e == 'next') {
+      console.log(e)
+    } else if (e == 'cancel') {
+      console.log(e)
+    }
+  }
 
- getConfigForTable() {
-   this.config = speciality_Table_Config;
- }
+  getConfigForTable() {    
+    this.config = speciality_Table_Config;
+  }
 
- onAdd(e: any) {
-   this.editData = []
-   this.flag = e.add;
- }
+  editRow(e: any) {
+    this.visibleSidebar = true;
+  }
 
- getAllSuperSpeciality() {
-   this.data = undefined;
-   this.speciality = [];
-   this.http.getAllSuperSpeciality().subscribe(res => {
-     console.log('All data=>', res)
-     res.forEach((e: any, index: any) => {
-       let obj = {
-         "id": index,
-         "ssName": e.ssName,
+  buttonEvent(e:any){
+    this.editData=undefined;
+    this.common.sendEditData(false);
+  }
 
-         "is_Active": e.is_Active,
-         "ssId": e.ssId,
+  saveSSpeciality(e:any){
+    this.addnewss.form.formControls[0].isVisible=false;
+    this.saveMethod = true;
+    this.editData=[];
+    this.common.sendEditData(false);
+  }
 
-       }
-       this.speciality.push(obj)
-     })
-     this.data = [...this.speciality];
-     this.isDataReady = true;
-     console.log('All data=>', this.data)
-     for (let i = 0; i < this.data.length; i++) {
-       this.data[i].srNumber = i + 1;
-     }
-   })
+  editSSpeciality(e:any){
+    this.addnewss.form.formControls[0].isVisible=true;
+    this.editData=e.editRow;
+  }
 
-   this.isDataReady = true;
- }
+  isActive(data:any){
+    if(!data.isActive){
+      this.http.reactiveData(this.apiactive, data, data.ss_id)
+        .subscribe(b_Data => {
+          this.data = undefined;
+          this.getAllSs();
+        })
+        this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Super Speciality Enable Successfully' });  
+    }
+    else if(data.isActive){
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Super Speciality is already Active' });
+    }
+  }
 
- buttonEvent(e: any) {
-   this.editData = undefined;
-   this.common.sendEditData(false);
- }
 
- editRow(e: any) {
-   this.visibleSiderbar = true;
-   console.log(e);
- }
+  sidebarData(e: any) {
+    console.log("From User Management ==> ", e);
+    if (e == 'reset') {
+      console.log(e)
+    } else if (this.saveMethod) {
+      console.log(e)      
+      this.submitSs(e);
+      this.messageService.add({ severity: 'success', summary: 'Added', detail: 'Super Speciality Added Successfully' });
+      this.saveMethod=false;
+    } else {
+      console.log(e);      
+      this.updateSs(e);
+      this.messageService.add({ severity: 'success', summary: 'Updated', detail: 'Super Speciality Updated Successfully.' });      
+    }
+  }  
 
- addRow(e: any) {
-   this.visibleSiderbar = true;
- }
+  submitSs(ssData: any) {
+    console.log("hello");
+    this.http.addData(ssData, this.apiAdd)
+      .subscribe(data => {
+        this.data = undefined;
+        this.getAllSs();
+        console.log("data" + data)
+      })
+  } 
 
- onEdit(e: any) {
-   this.editData = e.editRow;
-   this.flag = false;
- }
- 
- isActive(event: string) {
-  //  this.http.reactiveDepartment(event).subscribe((data) => {
-  //    this.data = undefined;
-  //    this.getAllDepartment();
-  //  });
- }
+  getAllSs() {
+    this.http.getData(this.apiGet).subscribe(res => {
+      this.data = res.content;
+      this.isdataReady = true;
+      for(let i=0; i<this.data.length;i++){
+        this.data[i].id=i+1;
+      }
+      this.data;
+    })
+  }
 
- confirmAction(e: any) {
-  //  if (e.is_Active == true) {
-  //    // this.table_Data = undefined;
-  //    this.deleteDepartment(e.departmentId);
-  //    this.messageService.add({
-  //      severity: 'success',
-  //      summary: 'Disabled',
-  //      detail: 'Department Disabled Successfully'
-  //    });
-  //  } else if (e.is_Active == false) {
-  //    this.messageService.add({
-  //      severity: 'error',
-  //      summary: 'Error',
-  //      detail: 'Department is already Disabled'
-  //    });
-  //  } else {}
- }
+  updateSs(ssData:any){
+    this.http.updateData(ssData, this.apiUpdate)
+    .subscribe(data => {
+      this.data = undefined;
+      this.getAllSs();
+      console.log("data" + data)
+    })
+  }
 
- closeSidebarData(e: any) {
-  //  this.editData = undefined;
- }
 
- sidebarData(e: any) {
-  //  if (e != 'reset') {
-  //    if (this.flag == "add") {
-  //      this.addDepartment(e);
-  //      console.log("sidebardata =>", e)
-  //      this.messageService.add({
-  //        severity: 'success',
-  //        summary: 'Added',
-  //        detail: 'Department Added Successfully'
-  //      });
-  //      this.flag = false;
-  //    } else {
-  //      this.updateDepartment(e);
-  //      this.messageService.add({
-  //        severity: 'success',
-  //        summary: 'Updated',
-  //        detail: 'Department Updated Successfully.'
-  //      });
-  //    }
-  //  }
- }
+  deleteSs(ssData: any) {
+    this.http.deleteData(this.apidelete, ssData.ss_id)
+      .subscribe(data => {
+        this.data = undefined;
+        this.getAllSs();
+        console.log("data" + data)
+      })
+  }
+  
+  confirmAction(e: any) {
+    if(e.isActive==true){
+      this.data=undefined;
+    this.deleteSs(e);    
+    this.messageService.add({ severity: 'success', summary: 'Disabled', detail: 'Super Speciality Disabled Successfully' });
+    }
+    else if (e.isActive==false){
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Super Speciality is already Disabled' });
+    }
+    else{}
+  }
 
- addDepartment(department: any) {
-  //  this.http.addDepartment(department)
-  //    .subscribe(b_Data => {
-  //      this.table_Data = undefined;
-  //      this.getAllDepartment();
-  //      console.log("data" + b_Data)
-
-  //    })
- }
-
- updateDepartment(e: any) {
-  //  this.http.updateDepartment(e)
-  //    .subscribe(d_Data => {
-  //      console.log('update fill=>', e)
-  //      this.table_Data = undefined;
-  //      this.getAllDepartment();
-  //      console.log("data" + d_Data)
-  //    })
- }
-
- deleteDepartment(e: any) {
-  //  this.http.deleteDepartment(e)
-  //    .subscribe(d_Data => {
-  //      this.data = undefined;
-  //      this.getAllDepartment();
-  //      console.log("data" + d_Data)
-  //    })
- }
-
- BulkDeleteRow(e: any) {
-  //  this.data = [];
-  //  if (e != '') {
-  //    e.forEach((data: any) => {
-  //      let obj = {
-  //        "departmentId": data.departmentId,
-  //      }
-  //      this.deleteDepartment(obj.departmentId);
-  //    });
-
-  //  } else {
-  //    this.messageService.add({
-  //      severity: 'error',
-  //      summary: 'select Rows',
-  //      detail: 'Rows are not selected.',
-  //    });
-  //  }
- }
+  bulkDeleteRows(bulk_Data: any) {
+    let count = 0;
+    if (bulk_Data != '') {
+      bulk_Data.forEach((ssData: any) => {
+        if (ssData.isActive == true) {
+          this.deleteSs(ssData);
+          count++;
+        }
+      });
+      if (count == 0) {
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'The Selected Rows are Already Disabled',
+        });
+        this.data = undefined;
+        this.getAllSs();
+      }
+      else if (count != 0) {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Bulk Deleted',
+          detail: 'Successful Disabled',
+        });
+      }
+    }
+    else {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'No Row Selected',
+      });
+    }
+  }
 
 }

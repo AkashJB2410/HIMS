@@ -18,7 +18,7 @@
                 "lblclass": "",
                 "valueclass": "input-box",
                 "placeholder": "",
-                "formControlName": "departmentId",
+                "formControlName": "ss_id",
                 "mandatoryMessage": "Code is required",
                 "message": "Code is required",                
                 "validations": {
@@ -30,16 +30,16 @@
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Enter Department Name",
+                "label": "Enter Super Speciality Name",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
-                "placeholder": "Department Name",
-                "formControlName": "departmentName",
+                "placeholder": "Super Speciality Name",
+                "formControlName": "ss_name",
                 "message": {
-                    "required": "Plase Enter Department Name",
+                    "required": "Plase Enter Super Speciality Name",
                     "pattern": "Only Alphabete are allow"
                 },
                 "validations": {
