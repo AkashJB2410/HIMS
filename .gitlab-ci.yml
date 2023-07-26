@@ -18,9 +18,10 @@ build_image:
   services:
     - docker:dind
   script:
-    - docker build -t generic-hmis:latest .
-    - docker login -u superuser -p Tech@123 $CI_REGISTRY
-    - docker push gitlab.techjivaaindia.in/administrators/generic-hmis
+    - docker build -t generic-hmis:latest -f gitlab.techjivaaindia.in/administrators/generic-hmis
+    - docker login gitlab.techjivaaindia.in
+    - docker push genericui:latest
+    - docker run -d --name generic-hmis:latest -p 4200:8080 generic-hmis:latest
 # Define the job to deploy the Docker image
 deploy_image:
   stage: deploy
