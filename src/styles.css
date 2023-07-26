@@ -12,12 +12,15 @@
   
   #google_translate_element select{
     background-color: #ffffff;
-    color: #000;
-    border: 1px solid #000;
-    border-radius: 11px !important;
-    padding: 5px 8px;
-    margin-top: 25px !important;
-    margin-left: 10px;
+    border-radius: 3px !important;
+    padding: 4px 8px;
+    margin-top: 21px !important;
+    margin-left: 20px;
+    font-size: 11px;
+    width: 122px;
+    height: 25px;
+    color:#403f3f;
+    border-color: #cfc8c8;
   }
   
   .goog-logo-link{

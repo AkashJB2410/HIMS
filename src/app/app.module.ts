@@ -32,6 +32,9 @@ import { ClusterComponent } from './features/master-management-modules/unit-conf
 import { SpetialityComponent } from './features/master-management-modules/unit-config/spetiality/spetiality.component';
 import { CoreFeaturesComponent } from './features/core-features/core-features.component';
 import { OpdRegistrationComponent } from './features/opd-registration/opd-registration.component';
+import { DoctorScheduleComponent } from './features/doctor-schedule/doctor-schedule.component';
+import { DoctorCabinComponent } from './features/doctor-cabin/doctor-cabin.component';
+import { DayMasterComponent } from './features/day-master/day-master.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,9 @@ import { OpdRegistrationComponent } from './features/opd-registration/opd-regist
     SpetialityComponent,
     CoreFeaturesComponent,
     OpdRegistrationComponent,
+    DoctorScheduleComponent,
+    DoctorCabinComponent,
+    DayMasterComponent,
   ],
   imports: [
     CommonModule,

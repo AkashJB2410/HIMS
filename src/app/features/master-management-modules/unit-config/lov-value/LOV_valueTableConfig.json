@@ -1,5 +1,5 @@
 {
-    "tableName": "Unit Table",
+    "tableName": "LOV Table",
     "tableHeaders": [
         {"field": "srNumber","header": "Sr. No","iseditable": false , "class":"text-center"},
     

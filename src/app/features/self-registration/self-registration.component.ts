@@ -31,11 +31,11 @@ export class SelfRegistrationComponent implements OnInit {
   editData: any;
   selfFormData: any;
   selfRegData: any
-  MobileNumber:any
+  MobileNumber: any
   paramObj: any = {
 
   };
-  otp:boolean=false;
+  otp: boolean = false;
   constructor(
     private elementRef: ElementRef,
     public datepipe: DatePipe,
@@ -54,7 +54,7 @@ export class SelfRegistrationComponent implements OnInit {
     this.tableConfig = selfTable;
   }
 
-  
+
   ngAfterViewInit() {
     let s = document.createElement('script');
     s.type = 'text/javascript';
@@ -67,13 +67,18 @@ export class SelfRegistrationComponent implements OnInit {
   changeEvents(ch: any) {
     console.log(ch)
     if (ch[1].fieldName == "mobileNo") {
-      this.MobileNumber=ch[1].fieldValue;
-      this.otp=true
-      this.form.showModal(true)
+      if (ch[1].fieldValue != undefined) {
+        this.MobileNumber = ch[1].fieldValue;
+        this.otp = true
+        this.form.showModal(true)
+      }else{
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: "Please Enter mobile number" });
+      }
+     
       // this.getAllSelfReg();
     }
     if (ch[1].fieldName == "userDOB") {
-      this.otp=false
+      this.otp = false
       // this.getAllSelfReg();
       this.age = this.datepipe.transform(ch[1].fieldValue, "MM/dd/yyyy")
     }
@@ -100,9 +105,9 @@ export class SelfRegistrationComponent implements OnInit {
       this.FormData(e);
     }
   }
-age:any 
+  age: any
   sidebarData(e: any) {
-    
+
     if (e != 'reset') {
       const param = {
         "patientTitleName": e.selectTitle,
@@ -121,7 +126,7 @@ age:any
       this.selfFormData = param;
     }
   }
- 
+
   getAllSelfReg() {
     this.data = undefined;
     this.selfRegData = [];
@@ -154,13 +159,13 @@ age:any
   }
 
   // send otp
-  sendOTPButton:boolean=true
+  sendOTPButton: boolean = true
   timeLeft: any = 60;
-  sendOTP(e:any){
-    this.sendOTPButton=false
+  sendOTP(e: any) {
+    this.sendOTPButton = false
   }
-  verifyOTP(e:any){
-    this.otp=false
+  verifyOTP(e: any) {
+    this.otp = false
     this.getAllSelfReg();
   }
 }
