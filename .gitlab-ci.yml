@@ -6,10 +6,6 @@ stages:
   - Push
   - Logout
   
-
-variables:
-  CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:test
-
 login_job:
   stage: Login
   tags:
