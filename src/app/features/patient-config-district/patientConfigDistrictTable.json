@@ -1,0 +1,39 @@
+{
+    "tableName": "District Table",
+    "tableHeaders": [
+        {
+            "field":"district_id",
+            "header":"District Id",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "district_name",
+            "header": "District Code",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "district_state_id",
+            "header": "District Name",
+            "iseditable": false , "class":"text-center"
+        }
+    ],
+    "globalFilter": ["district_id","district_name","district_state_id"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [15,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "isRadioButton":false,
+    "resizableColumns": true,
+    "isDragAndDrop":true,
+    "isActions": ["Edit", "Delete" ,"isActive"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "expand":false,
+    "buttonlbl":"",
+    "textLength":16,
+    "sidebar": "p-sidebar-sm",
+    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
+}

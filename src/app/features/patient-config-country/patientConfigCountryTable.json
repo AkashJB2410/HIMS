@@ -1,0 +1,49 @@
+{
+    "tableName": "Country Table",
+    "tableHeaders": [
+        {
+            "field":"countryId",
+            "header":"Country Id",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "countryCode",
+            "header": "Country Code",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "countryName",
+            "header": "Country Name",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "countryIsdCode",
+            "header": "Country Isd Code",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "countryIsdCodeMLen",
+            "header": "Country Isd Code MLen",
+            "iseditable": false , "class":"text-center"
+        }
+    ],
+    "globalFilter": ["countryId","countryCode","countryName","countryIsdCode","countryIsdCodeMLen"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [15,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "isRadioButton":false,
+    "resizableColumns": true,
+    "isDragAndDrop":true,
+    "isActions": ["Edit", "Delete" ,"isActive"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "expand":false,
+    "buttonlbl":"",
+    "textLength":16,
+    "sidebar": "p-sidebar-sm",
+    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
+}

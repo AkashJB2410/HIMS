@@ -1,0 +1,29 @@
+{
+    "card": [
+        {
+            "label": "Country",
+            "routerLink": "/master-page/PatientConfigCountry",
+            "imgSrc": "assets/unit-configuration/Organizations.png"
+        },
+        {
+            "label": "State",
+            "routerLink": "/master-page/PatientConfigState",
+            "imgSrc": "assets/unit-configuration/action-sub-module.png"
+        },
+        {
+            "label": "District",
+            "routerLink": "/master-page/PatientConfigDistrict",
+            "imgSrc": "assets/unit-configuration/Organizations.png"
+        },
+        {
+            "label": "City",
+            "routerLink": "/master-page/PatientConfigCity",
+            "imgSrc": "assets/unit-configuration/Organizations.png"
+        },
+        {
+            "label": "Village",
+            "routerLink": "/master-page/PatientConfigVillage",
+            "imgSrc": "assets/unit-configuration/Organizations.png"
+        }
+    ]
+}

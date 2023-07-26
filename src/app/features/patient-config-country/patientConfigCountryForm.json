@@ -1,24 +1,24 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Add Organization",
-        "formTitleClass": "Sidebar-title-md",
+        "formTitle": "Add Country",
+        "formTitleClass": "Sidebar-title-sm",
         "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
-        "sidebar": "p-sidebar-md",
+        "sidebar": "p-sidebar-sm",
         "formControls": [
             {
                 "isEditable": false,
                 "isVisible": true,
                 "transient":false,
-                "label": "ID",
+                "label": "Country Id",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-6 my-1",
+                "class": "col-md-12 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
-                "placeholder": "Enter ID",
-                "formControlName": "orgId",
+                "placeholder": "Enter Country Id",
+                "formControlName": "countryId",
                 "message": {
                     "required": "Id is required",
                     "pattern": ""
@@ -32,17 +32,38 @@
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Enter Name",
+                "label": "Country Code",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-6 my-1",
+                "class": "col-md-12 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
-                "placeholder": "Organization Name",
-                "formControlName": "orgName",
+                "placeholder": "Enter Country Code",
+                "formControlName": "countryCode",
                 "message": {
-                    "required": "Plase Enter Organization Name",
+                    "required": "Plase Enter countryCode",
                     "pattern": "Only Alphabete are allow"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^(\\+91|91)$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Country Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter Country Name",
+                "formControlName": "countryName",
+                "message": {
+                    "required": "Plase Enter countryName",
+                    "pattern": "Enter a Vaild countryName"
                 },
                 "validations": {
                     "required": true,
@@ -53,105 +74,42 @@
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Enter Email",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-6 my-1",
-                "lblclass":"",
-                "valueclass":"input-box",
-                "placeholder": "Organization Email",
-                "formControlName": "orgEmail",
-                "message": {
-                    "required": "Plase Enter Organization Email",
-                    "pattern": "Enter a Vaild Email"
-                },
-                "validations": {
-                    "required": true,
-                    "pattern": "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,6}$"
-                }
-            },
-            {
-                "id": 1,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Enter Mobile No.",
+                "label": "Enter countryIsdCode",
                 "type": "text",
                 "inputType": "number",
-                "class": "col-md-6 my-1",
+                "class": "col-md-12 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
-                "placeholder": "Organization Mobile No.",
-                "formControlName": "orgMobile",
+                "placeholder": "countryIsdCode.",
+                "formControlName": "countryIsdCode",
                 "message": {
-                    "required": "Plase Enter Organization Mobile No.",
-                    "pattern": "Enter a Vaild Mobile Number with Country Code"
+                    "required": "Plase Enter countryIsdCode",
+                    "pattern": "Enter a Vaild countryIsdCode"
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^(\\+91|91)[6-9]\\d{9}$"
+                    "pattern": "^[0-9]+$"
                 }
             },
             {
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Enter Address",
+                "label": "Enter countryIsdCodeMLen",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-6 my-1",
+                "class": "col-md-12 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
-                "placeholder": "Organization Address",
-                "formControlName": "orgAddress",
+                "placeholder": "countryIsdCodeMLen",
+                "formControlName": "countryIsdCodeMLen",
                 "message": {
-                    "required": "Plase Enter Organization Address",
+                    "required": "Plase Enter countryIsdCodeMLen",
                     "pattern": "Only Alphanumeric, dot, comma, backslash, space, and hyphen are Allowed"
                 },
                 "validations": {
                     "required": true,
                     "pattern": "^[a-zA-Z0-9.,\\s-]+$"
-                }
-            },
-            {
-                "id": 1,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Enter Contact Person Name",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-6 my-1",
-                "lblclass":"",
-                "valueclass":"input-box",
-                "placeholder": "Organization Contact Person",
-                "formControlName": "orgContactPerson",
-                "message": {
-                    "required": "Plase Enter Organization Contact Person",
-                    "pattern": "Only Capital Letters are Allowed"
-                },
-                "validations": {
-                    "required": true,
-                    "pattern": "^[A-Z ]+$"
-                }
-            },
-            {
-                "id": 1,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Enter Phone No.",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-6 my-1",
-                "lblclass":"",
-                "valueclass":"input-box",
-                "placeholder": "Organization Phone No.",
-                "formControlName": "orgPhone",
-                "message": {
-                    "required": "Plase Enter Organization Phone No.",
-                    "pattern": "Enter a Vaild Mobile Number"
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": "^[6-9]\\d{9}$"
                 }
             },
             {
@@ -161,7 +119,7 @@
                 "transient": true,
                 "type": "button",
                 "subtype": "save",
-                "class": "col-md-3",
+                "class": "col-md-6",
                 "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",
@@ -180,7 +138,7 @@
                 "type": "button",
                 "subtype": "reset",
                 "btnLabel": "Back",
-                "class": "col-md-3",
+                "class": "col-md-6",
                 "valueclass": "button-login-yellow",
                 "icon": "",
                 "isDisabled": false,

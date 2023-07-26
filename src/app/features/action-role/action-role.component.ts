@@ -143,20 +143,31 @@ this.common.sendEditData(false);
         let obj = {
           id:index,
           arId: e.arId,
-          arRoleId: e.arRoleId.roleId,
-          asmActionModuleId: e.arActionSubModuleMst.asmActionModuleId.actionModuleId,
           arActionSubModuleMst_Id: e.arActionSubModuleMst.asmId,
-          arAdd: e.arAdd,
-          arApprove: e.arApprove,
-          arDelete: e.arDelete,
+
+ 
+
+          
           arEdit: e.arEdit,
+          asmActionModuleId: e.arActionSubModuleMst.asmActionModuleId.actionModuleId,
+       
+        
+         
+          arActionSubModuleMst: e.arActionSubModuleMst.actionSubModuleName,
+          arAdd: e.arAdd,
           arSearch: e.arSearch,
+          
+      
+          arRoleId_Name: e.arRoleId.roleName,
+          arActionModuleMst:e.arActionSubModuleMst.asmActionModuleId.actionModuleName,
+          arDelete: e.arDelete,
+          arApprove: e.arApprove,
+          arRoleId: e.arRoleId.roleId,
           arView: e.arView,
           is_Active: e.is_Active,
-          arRoleId_Name: e.arRoleId.roleName,
-          arActionModuleMst:
-            e.arActionSubModuleMst.asmActionModuleId.actionModuleName,
-          arActionSubModuleMst: e.arActionSubModuleMst.actionSubModuleName,
+      
+
+      
         };
         this.actionRole.push(obj);
         for (let i = 0; i < this.actionRole.length; i++) {

@@ -1,0 +1,132 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Add State",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formName": "Form1",
+        "sidebar": "p-sidebar-sm",
+        "formControls": [
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "transient":false,
+                "label": "stateId",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "stateId",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "stateCountryId",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "stateCountryId",
+                "formControlName": "stateCountryId",
+                "message": {
+                    "required": "Plase Enter stateCountryId",
+                    "pattern": "Only Alphabete are allow"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z 0-9 ]+$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter stateName",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "stateName",
+                "formControlName": "stateName",
+                "message": {
+                    "required": "Plase Enter stateName",
+                    "pattern": "Enter a Vaild stateName"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z0-9]+$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter stateCode",
+                "type": "text",
+                "inputType": "number",
+                "class": "col-md-6 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "stateCode.",
+                "formControlName": "stateCode",
+                "message": {
+                    "required": "Plase Enter stateCode",
+                    "pattern": "Enter a Vaild stateCode"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[0-9]+$"
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-3",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-3",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

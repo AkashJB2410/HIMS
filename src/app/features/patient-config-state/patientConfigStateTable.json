@@ -1,0 +1,44 @@
+{
+    "tableName": "State Table",
+    "tableHeaders": [
+        {
+            "field":"stateId",
+            "header":"State Id",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "stateCountryId",
+            "header": "State Country Id",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "stateName",
+            "header": "State Name",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "stateCode",
+            "header": "State Code",
+            "iseditable": false , "class":"text-center"
+        }
+    ],
+    "globalFilter": ["stateId","stateCountryId","stateName","stateCode"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [15,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "isRadioButton":false,
+    "resizableColumns": true,
+    "isDragAndDrop":true,
+    "isActions": ["Edit", "Delete" ,"isActive"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "expand":false,
+    "buttonlbl":"",
+    "textLength":16,
+    "sidebar": "p-sidebar-sm",
+    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
+}
