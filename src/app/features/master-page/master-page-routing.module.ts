@@ -15,6 +15,16 @@ const routes: Routes = [
       { path: 'ipd-registration-form', loadChildren: () => import('./../registration-form/registration-form.module').then(m => m.RegistrationFormModule) },
       { path: 'self-registration', loadChildren: () => import('./../self-registration/self-registration.module').then(m => m.SelfRegistrationModule) },
       { path: 'configurations', loadChildren: () => import('./../configurations/configurations.module').then(m => m.ConfigurationsModule) },
+      // { path: 'all-master/cluster', loadChildren: () => import('./../cluster/cluster-routing.module').then(m => m.ClusterRoutingModule) },
+      // { path: 'all-masters/spetiality', loadChildren: () => import('./../spetiality/spetiality.module').then(m => m.SpetialityModule) },
+      { path: 'all-masters/super-speciality', loadChildren: () => import('../master-management-modules/emr-config/template/super-speciality/super-speciality.module').then(m => m.SuperSpecialityModule) },
+      { path: 'all-masters/clinical-forms', loadChildren: () => import('../master-management-modules/emr-config/template/clinical-forms/clinical-forms.module').then(m => m.ClinicalModule) },
+      { path: 'all-masters/clinical-procedure', loadChildren: () => import('../master-management-modules/emr-config/template/clinical-procedure/clinical-procedure.module').then(m => m.ClinicalProcedureModule) },
+      { path: 'all-masters/disease-sub-category', loadChildren: () => import('../master-management-modules/emr-config/template/disease-sub-category/disease-sub-category.module').then(m => m.DiseaseModule) },
+      { path: 'all-masters/document-category', loadChildren: () => import('../master-management-modules/emr-config/template/document-category/document-category.module').then(m => m.DocumentCategoryModule) },
+      { path: 'all-masters/icd-code', loadChildren: () => import('../master-management-modules/emr-config/template/icd-code/icd-code.module').then(m => m.IcdCodeModule) },
+      { path: 'all-masters/procedure', loadChildren: () => import('../master-management-modules/emr-config/template/procedure/procedure.module').then(m => m.ProcedureModule) },
+      // { path: 'all-masters/template', loadChildren: () => import('../master-management-modules/emr-config/template/template.module').then(m => m.TemplateModule) },
       { path: 'core-features', loadChildren: () => import('../core-features/core-features.module').then(m => m.CoreFeaturesModule) },
 
     //  Doctor Routing
