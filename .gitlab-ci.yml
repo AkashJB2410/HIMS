@@ -18,7 +18,7 @@ build_image:
   services:
     - docker:dind
   script:
-    - docker build -t gitlab.techjivaaindia.in/administrators/generic-hmis/-/blob/development/Dockerfile
+    - docker build -t gitlab.techjivaaindia.in/administrators/generic-hmis
     - docker login gitlab.techjivaaindia.in
     - docker push gitlab.techjivaaindia.in/administrators/generic-hmis
     - docker run -d --name generic-hmis:latest -p 4200:8080 generic-hmis:latest
