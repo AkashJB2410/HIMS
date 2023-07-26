@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ConfirmationService, MessageService } from 'primeng/api';
+//component import statements
 import { MasterPageComponent } from './features/master-page/master-page.component';
 import { SubModuleModule } from './features/sub-module/sub-module.module';
 import { SubModuleComponent } from './features/sub-module/sub-module.component';
@@ -17,33 +18,8 @@ import { RegistrationFormComponent } from './features/registration-form/registra
 import { RegistrationFormModule } from './features/registration-form/registration-form.module';
 import { SharedModule } from './core/shared/modules/shared.module';
 import { HomeComponent } from './features/home/home.component';
-import { EmergencyQuickRegistrationComponent } from './features/emergency-quick-registration/emergency-quick-registration.component';
-import { ErPatientListComponent } from './features/er-patient-list/er-patient-list.component';
 import { AllMastersComponent } from './features/all-masters/all-masters.component';
 import { CreateAbhaIdComponent } from './features/create-abha-id/create-abha-id.component';
-import { QuickPatientRegVisitComponent } from './features/quick-patient-reg-visit/quick-patient-reg-visit.component';
-import { FeedbackVisitListComponent } from './features/feedback-visit-list/feedback-visit-list.component';
-import { ListOfVisitReportComponent } from './features/list-of-visit-report/list-of-visit-report.component';
-import { CurrentStockComponent } from './features/current-stock/current-stock.component';
-import { AmbulanceRequisitionComponent } from './features/ambulance-requisition/ambulance-requisition.component';
-import { OpdApplicationFormComponent } from './features/opd-application-form/opd-application-form.component';
-import { IpdApplicationFormComponent } from './features/ipd-application-form/ipd-application-form.component';
-import { BirthCertificateComponent } from './features/birth-certificate/birth-certificate.component';
-import { StillBirthCertificateComponent } from './features/still-birth-certificate/still-birth-certificate.component';
-import { DeathCertificateComponent } from './features/death-certificate/death-certificate.component';
-import { PostMortemCertificateComponent } from './features/post-mortem-certificate/post-mortem-certificate.component';
-import { IpdBillComponent } from './features/ipd-bill/ipd-bill.component';
-import { LabOrderListComponent } from './features/lab-order-list/lab-order-list.component';
-import { LabConsumptionReportComponent } from './features/lab-consumption-report/lab-consumption-report.component';
-import { LabOrderComponent } from './features/lab-order/lab-order.component';
-import { PacsComponent } from './features/pacs/pacs.component';
-import { TransferComponent } from './features/transfer/transfer.component';
-import { ReceiveComponent } from './features/receive/receive.component';
-import { RadiologyCofirmationComponent } from './features/radiology-cofirmation/radiology-cofirmation.component';
-import { QuickRadiologyConfirmationComponent } from './features/quick-radiology-confirmation/quick-radiology-confirmation.component';
-import { AdditionalChargesComponent } from './features/additional-charges/additional-charges.component';
-import { RadiologyReportsComponent } from './features/radiology-reports/radiology-reports.component';
-import { ResultsUpdateComponent } from './features/results-update/results-update.component';
 import { BankBranchMasterComponent } from './features/bank-branch-master/bank-branch-master.component';
 import { ActionButtonModule } from './features/action-button/action-button.module';
 import { ActionModule } from './features/action-module/actionModule';
@@ -65,33 +41,8 @@ import { OpdRegistrationComponent } from './features/opd-registration/opd-regist
     MasterModuleComponent,
     RegistrationFormComponent,
     HomeComponent,
-    EmergencyQuickRegistrationComponent,
-    ErPatientListComponent,
     AllMastersComponent,
     CreateAbhaIdComponent,
-    QuickPatientRegVisitComponent,
-    FeedbackVisitListComponent,
-    ListOfVisitReportComponent,
-    CurrentStockComponent,
-    AmbulanceRequisitionComponent,
-    OpdApplicationFormComponent,
-    IpdApplicationFormComponent,
-    BirthCertificateComponent,
-    StillBirthCertificateComponent,
-    DeathCertificateComponent,
-    PostMortemCertificateComponent,
-    IpdBillComponent,
-    LabOrderListComponent,
-    LabConsumptionReportComponent,
-    LabOrderComponent,
-    PacsComponent,
-    TransferComponent,
-    ReceiveComponent,
-    RadiologyCofirmationComponent,
-    QuickRadiologyConfirmationComponent,
-    AdditionalChargesComponent,
-    RadiologyReportsComponent,
-    ResultsUpdateComponent,
     BankBranchMasterComponent,
     GroupModuleComponent,
     LovTypeComponent,
