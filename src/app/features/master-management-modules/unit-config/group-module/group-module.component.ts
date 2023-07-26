@@ -5,7 +5,7 @@ import Group_breadcrumb from './Group_breadcrumb.json';
 import { GroupModuleService } from './group-module.service';
 import { MessageService } from 'primeng/api';
 import { CommonService } from 'src/app/core/shared/service/common.service';
-import { MasterPageComponent } from '../master-page/master-page.component';
+
 @Component({
   selector: 'app-group-module',
   templateUrl: './group-module.component.html',
