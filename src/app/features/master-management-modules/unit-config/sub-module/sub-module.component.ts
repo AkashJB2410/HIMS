@@ -5,7 +5,7 @@ import { MessageService } from 'primeng/api';
 import { SubModuleService } from './sub-module.service';
 import Application_breadcrumb from './breadcrum.json';
 import { CommonService } from 'src/app/core/shared/service/common.service';
-import { MasterPageComponent } from '../master-page/master-page.component';
+
 @Component({
   selector: 'app-sub-module',
   templateUrl: './sub-module.component.html',

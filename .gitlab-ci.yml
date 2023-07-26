@@ -1,44 +1,56 @@
-image: docker:latest
-
-# This is a basic CI/CD pipeline configuration for GitLab integrated with Docker.
+image: docker:19.03.12
+services:
+  - docker:19.03.12-dind
 
 stages:
-  - build
-  - deploy
+  - Build
 
 variables:
-  # Set your Docker image name and tag here
-  DOCKER_IMAGE: genericui
-  DOCKER_TAG: latest
+  CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:latest
 
-# Define the job to build the Docker image
-build_image:
-  stage: build
-  image: docker:stable
-  services:
-    - docker:dind
+build_job:
+  stage: Build
   script:
-<<<<<<< HEAD
-    - docker build -t https://gitlab.techjivaaindia.in/administrators/generic-hmis/-/blob/development/Dockerfile
-    - docker login https://gitlab.techjivaaindia.in
-    - docker push https://gitlab.techjivaaindia.in/administrators/generic-hmis
-=======
-    - docker build -t gitlab.techjivaaindia.in/administrators/generic-hmis
-    - docker login gitlab.techjivaaindia.in
-    - docker push gitlab.techjivaaindia.in/administrators/generic-hmis
->>>>>>> 287e06bb7c6e1324677955186c3100707b17416d
-    - docker run -d --name generic-hmis:latest -p 4200:8080 generic-hmis:latest
-# Define the job to deploy the Docker image
-deploy_image:
-  stage: deploy
-  image: docker:stable
-  services:
-    - docker:dind
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CONTAINER_TEST_IMAGE .
+    - docker push $CONTAINER_TEST_IMAGE
+    - docker logout
+
+stages:
+  - Login
+  - Build
+  - Push
+  - Logout
+
+
+variables:
+  CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:test
+
+login_job:
+  stage: Login
+  tags:
+    - docker
   script:
-<<<<<<< HEAD
-    - docker login https://gitlab.techjivaaindia.in
-=======
-    - docker login gitlab.techjivaaindia.in
->>>>>>> 287e06bb7c6e1324677955186c3100707b17416d
-    - docker pull generic-hmis
-    # Add your deployment steps here, such as deploying the image to a server or a Kubernetes cluster.
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+
+
+build_job:
+  stage: Build
+  tags:
+    - docker
+  script:
+    - docker build -t $CONTAINER_TEST_IMAGE .
+
+push_job:
+  stage: Push
+  tags:
+    - docker
+  script:
+    - docker push $CONTAINER_TEST_IMAGE
+
+logout_job:
+  stage: Logout
+  tags:
+    - docker
+  script:
+    - docker logout $CI_REGISTRY
