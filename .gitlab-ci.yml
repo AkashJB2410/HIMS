@@ -49,6 +49,7 @@ push_job:
   script:
     - docker push registry.techjivaaindia.in:5005/administrators/generic-hmis
 
+
 # logout_job:
 #   stage: Logout
 #   tags:
