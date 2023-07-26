@@ -16,7 +16,7 @@ export class OrganizationServiceService {
   
 
   GetAllOrgData() {
-    const url = "http://localhost:8081/api/v1/allMstOrgStatus";
+    const url = "http://localhost:8084/mstOrganization/list?page=0&size=10&sort&col";
     return this.http.get<any>(url);
   }
 
@@ -29,7 +29,7 @@ export class OrganizationServiceService {
         "orgContactPerson": data.orgContactPerson,
         "orgPhone": data.orgPhone
     };
-    const url = "http://localhost:8081/api/v1/updateMstOrgStatus/"+data.orgId;
+    const url = "http://localhost:8084/mstOrganization/update/"+data.orgId;
     return this.http.put<any>(url, param);
   }
 
@@ -43,18 +43,18 @@ export class OrganizationServiceService {
       "orgContactPerson": data.orgContactPerson,
       "orgPhone": data.orgPhone
     };
-    const url = "http://localhost:8081/api/v1/addMstOrgStatus";
+    const url = "http://localhost:8084/mstOrganization/create";
     return this.PostCall(url, param);
   }
 
 
   deleteOrgData(orgId: any) {
-    const url = "http://localhost:8081/api/v1/deleteMstOrgStatus/" + orgId;
+    const url = "http://localhost:8084/mstOrganization/inActivate/" + orgId;
     return this.http.delete<any>(url);
   }
 
   reactiveOrgData(org:any){
-    const url = "http://localhost:8081/api/v1/reactiveMstOrgStatus/"+org.orgId
+    const url = "http://localhost:8084/mstOrganization/activate/"+org.orgId
     ;
     return this.http.post<any>(url, org)
   }

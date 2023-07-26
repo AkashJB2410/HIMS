@@ -1,9 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "",
-        "formTitleClass": "",
-        "formTitleLogo":"",
+        "sideBarTitle":"",
+        "sidebarTitleClass": "",
+        "sidebarTitleLogo": "",
         "formName": "Form1",
         "formType": "edit",
         "sidebar": "p-sidebar-lg",
@@ -52,19 +52,19 @@
                     },
                     {
                         "name": "Platinium",
-                        "code": "1"
+                        "code": 1
                     },
                     {
                         "name": "Gold",
-                        "code": "2"
+                        "code": 2
                     },
                     {
                         "name": "Silver",
-                        "code": "3"
+                        "code": 3
                     }
                 ],
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -72,11 +72,35 @@
                 "id": 10,
                 "isEditable": true,
                 "isVisible": true,
+                "transient":true,
                 "label": "",
                 "inputType": "empty",
                 "type": "staticText",
                 "data": "",
                 "class": "col-md-6 my-1 ",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "staticText",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "transient":true,
+                "label": "",
+                "inputType": "empty",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-10 my-1 ",
                 "lblclass": "custom-label",
                 "valueclass": "custom-text",
                 "placeholder": "",

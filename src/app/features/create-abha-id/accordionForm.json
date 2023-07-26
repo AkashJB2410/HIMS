@@ -1,0 +1,208 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "",
+        "formTitleClass": "",
+        "formTitleLogo": "",
+        "formId":"2",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar": "p-sidebar-lg",
+        "formControls": [
+            {
+                
+                "isEditable": false,
+                "isVisible": true,
+                "transient": false,
+                "label": "Full Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "...",
+                "formControlName": "fullName",
+                "defaultValue": "",
+                "maxlength": "",
+                "minlength": "",
+                "message": {
+                    "required": "Full Name is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "transient": false,
+                "label": "Address",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-6",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "...",
+                "formControlName": "address",
+                "defaultValue": "",
+                "maxlength": "",
+                "minlength": "",
+                "message": {
+                    "required": "Address is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "transient": false,
+                "label": "DOB",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "...",
+                "formControlName": "dob",
+                "defaultValue": "",
+                "maxlength": "",
+                "minlength": "",
+                "message": {
+                    "required": "Date of Birth is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "transient": false,
+                "label": "Gender",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "...",
+                "formControlName": "gender",
+                "defaultValue": "",
+                "maxlength": "",
+                "minlength": "",
+                "message": {
+                    "required": "Gender is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "transient": false,
+                "label": "State",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "...",
+                "formControlName": "state",
+                "defaultValue": "",
+                "maxlength": "",
+                "minlength": "",
+                "message": {
+                    "required": "State is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },{
+                "isEditable": false,
+                "isVisible": true,
+                "transient": false,
+                "label": "District",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "...",
+                "formControlName": "district",
+                "defaultValue": "",
+                "maxlength": "",
+                "minlength": "",
+                "message": {
+                    "required": "district is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isVisible": true,
+                "type": "icon",
+                "label": "",
+                "class": "col-md-1",
+                "icons": [
+                    {
+                        "class": "bi bi-file-pdf",
+                        "isDisabled": false,
+                        "subtype": "pdf",
+                        "valueclass": "icon-button-primary",
+                        "tooltip": "Download Card PDF",
+                        "toolPosition": "top"
+                    }
+                ]
+            },
+            {
+                "isVisible": true,
+                "type": "icon",
+                "label": "",
+                "class": "col-md-9",
+                "icons": [
+                    {
+                        "class": "bi bi-filetype-png",
+                        "isDisabled": false,
+                        "subtype": "png",
+                        "valueclass": "icon-button-primary",
+                        "tooltip": "Download Card PNG",
+                        "toolPosition": "top"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-2",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Next",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

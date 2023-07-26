@@ -1,18 +1,32 @@
 {
     "tableName": "Registration Table",
     "tableHeaders": [
-        {"field": "patientFullname","header": "Patient Name","iseditable": false , "class":""},
+       
         {"field": "patientMrNo","header": "MR.No","iseditable": false , "class":""},
+        {"field": "patientTitleName","header": "Title","iseditable": false , "class":""},
+        {"field": "patientFullname","header": "Full Name","iseditable": false , "class":""},
+        {"field": "patientFirstname","header": "First Name","iseditable": false , "class":""},
+        {"field": "patientMiddlename","header": "Middle Name","iseditable": false , "class":""},
+        {"field": "patientLastname","header": "Last Name","iseditable": false , "class":""},
+        {"field": "patientMobileNumber","header": "Mobile No.","iseditable": false , "class":"text-center"},
+        {"field": "patientEmail","header": "Email Id","iseditable": false , "class":""},
         {"field": "patientDob","header": "DOB","iseditable": false , "class":"text-center"},
-        {"field": "patientMobileNumber","header": "MobileNo","iseditable": false , "class":"text-center"}
+        {"field": "patientAge","header": "Age","iseditable": false , "class":"text-center"},
+        {"field": "patientBloodGroupName","header": "Blood Group","iseditable": false , "class":""},
+        {"field": "patientGenderName","header": "Gender","iseditable": false , "class":""},
+        {"field": "patientIdentificationTypeName","header": "Identification Type","iseditable": false },
+        {"field": "patientIdentificationTypeNumber","header": "Identification No.","iseditable": false , "class":""},
+        {"field": "patientMaritalStatusName","header": "Marital Status","iseditable": false , "class":""},
+        {"field": "patientReligion","header": "Religion","iseditable": false , "class":""},
+        {"field": "patientEthinicityName","header": "Ethinicity","iseditable": false , "class":""},
+        {"field": "patientUploadImage","header": "Upload Image","iseditable": false , "class":""}
+       
         
     ],
     "PdfHeaders": [
         {"field": "patientFullname","header": "Patient Name"},
-        {"field": "patientMiddlename","header": "MiddleName"},
-        {"field": "patientLastname","header": "LastName"},
-        {"field": "patientDob","header": "Age"},
-        {"field": "patientMobileNumber","header": "MobileNo"} 
+        {"field": "patientMiddlename","header": "MiddleName"}
+       
     ],
     "globalFilter": ["patientFirstname","patientMiddlename","patientLastname","patientAge","patientMobileNumber"],
     "rows" : 10,
@@ -25,12 +39,13 @@
     "isCheckbox" : true,
     "resizableColumns": true,
 	"isDragAndDrop":true,
-    "isActions": ["Edit", "Delete" ,"isActive","Scanner","Emergency","IPD","OPD","Servies"],
+    "isActions": ["Edit","Scanner","Emergency","IPD","OPD","Servies"],
     "editicon":"../../../assets/icons/Group 1823.png",
     "expand":false,
     "addButton":true,
     "buttonlbl":"",
     "textLength":16,
     "sidebar":"p-sidebar-xl",
-	 "bulkAction":["PDF","EXCEL"]
+	"bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL"],
+    "isProfileDisplay":true  
 }

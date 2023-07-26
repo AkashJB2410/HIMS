@@ -10,6 +10,13 @@ export class SuperFormComponent implements OnInit {
   superFormArray: any = [];
   @Input() superFormData: any;
   @Output() superFormOutput = new EventEmitter<any>;
+  tabIndex: any;
+
+  config: any;
+  index: any = 0
+  activeIndex: any = 0;
+  StoredData: any = [];
+
 
   constructor() { }
 
@@ -26,6 +33,7 @@ export class SuperFormComponent implements OnInit {
   }
 
   tabularData(event: any, index: any) {
+    this.tabIndex = index;
     this.superFormArray[index] = event;
   }
 

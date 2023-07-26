@@ -1,9 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as table_config from './registrationForm_table_config.json';
-import registrationForm from "./registrationForm.json";
+import * as mobile_table_config from './mobileSerch_table_config.json';
 import { MessageService } from 'primeng/api';
 import { RegistrationFormService } from './registration-form.service';
-import * as role_table_config from './registrationForm_table_config.json';
 import rgistrationData from './registrationForm.json';
 import { FormService } from 'src/app/core/shared/service/form.service';
 import Breadcrumbs from './breadcrumb.json';
@@ -11,12 +10,11 @@ import { DatePipe } from '@angular/common';
 import filterdata from './filter.json';
 import { CommonService } from 'src/app/core/shared/service/common.service';
 import patientTabularFormData from './tabular.json';
-import form1Data from './form1.json';
-import form2Data from './form2.json';
-import form3Data from './form3.json';
-import form4Data from './form4.json';
-import form5Data from './form5.json';
-import form6Data from './form6.json';
+import permanentAddressFormData from './permanentAddress.json';
+import hospitalAssociationFormData from './hospitalAssociation.json';
+import insuranceDetailsFormData from './insuranceDetails.json';
+import medicalHistoryFormData from './medicalHistory.json';
+import additionalDetailsFormData from './additionalDetails.json';
 import MLCFormData from './MLC .json';
 import commAddFromData from './communicationAddress.json';
 import rgistBUttonData from './RegistButton.json';
@@ -27,6 +25,7 @@ import configService from './service_table_config.json';
 import { dataOPD } from "./serviceData";
 import { dataIPD } from './servIPDData';
 
+
 @Component({
   selector: 'app-registration-form',
   templateUrl: './registration-form.component.html',
@@ -34,47 +33,64 @@ import { dataIPD } from './servIPDData';
 })
 export class RegistrationFormComponent implements OnInit {
 
-  toast: any = {};
-  showToast: any;
-  Message: any;
   data: any[];
+  opdData: any[];
+  dataInfo: any[];
+  mobileGridData: any[];
   config: any;
   configServ: any;
+  configMobi: any;
   visibleSidebar: boolean = false;
   configurations: any;
   serviceConfig: any;
+  mobileConfig: any;
   tableConfig: any;
   isdataReady = false;
   sidebarJSON: any = rgistrationData;
   sidebarButtonJSON: any = rgistBUttonData;
-  formData: any;
-  formData1: any = '';
-  formData2: any = '';
-  formData3: any = '';
-  formData4: any = '';
-  formData5: any = '';
-  formData6: any = '';
-  formDataMLC: any = '';
+  formData: any = rgistrationData;
+  perAddressFormData: any = permanentAddressFormData;
+  hospitalAssFormData: any = hospitalAssociationFormData;
+  insuranceDetailsFormData: any = insuranceDetailsFormData;
+  medicalHisFormData: any = medicalHistoryFormData;
+  addDetailsFormData: any = additionalDetailsFormData;
+  formDataMLC: any = MLCFormData;
   formDateCommAdd: any = commAddFromData;
   accordionData = {
     "id": 0,
     "label": "COMMUNICATION ADDRESS"
-};
+  };
+  accordionTabTwo = {
+    "id": 1,
+    "label": "ADDITIONAL INFORMATION"
+  }
   registartionFormData: any[] = [];
   isForm: any = true;
   flag: any;
   gridData: any[] = [];
+  addressData: any[] = [];
+  privilegeData: any[] = [];
+  insuranceData: any[] = [];
+  mhData: any[] = [];
+  paiData: any[] = [];
+  mlcData: any[] = [];
+  mergedGridData: any[] = [];
+  mergedAddGridData: any[] = [];
+  mergedInsuranceGridData: any[] = [];
+  mergedMlcGridData: any[] = [];
+  mergedPrivalegeGridData: any[] = [];
+  mergedPaiGridData: any[] = [];
+  mergedMhGridData: any[] = [];
   isAddEditFlag: any;
   items: any = Breadcrumbs;
   imgName: any
-  dateOfBirth: any;
   getage: any;
   agemon: any;
   agedday: any;
 
   filterData: any;
   editData: any;
-  demoEditData: any;
+  perAddressEditData: any;
   addressEditData: any;
   hospitalEditData: any;
   insorunceEditData: any;
@@ -84,8 +100,86 @@ export class RegistrationFormComponent implements OnInit {
   tabularFormData = patientTabularFormData;
   isShowServices = false;
   servData: any[] = [];
+  mstPatient: any;
+  mstAddress: any = {
+    "addressLine1": "",
+    "addressLine2": "",
+    "addressblock": "",
+    "addressVillageId": "",
+    "addressVillageName": "",
+    "addressTalukaId": "",
+    "addressTalukaName": "",
+    "addressCityId": "",
+    "addressCityName": "",
+    "addressStateId": "",
+    "addressStateName": "",
+    "addressCountryId": "",
+    "addressCountryName": "",
+    "addressPatientId": "",
+    "addressPinCode": "",
+    "permanentAddressCityId": "",
+    "permanentAddressCityName": "string",
+    "permanentAddressCountryId": "",
+    "permanentAddressCountryName": "string",
+    "permanentAddressLandmark": "",
+    "permanentAddressLine": "",
+    "permanentAddressPinCode": "",
+    "permanentAddressStateId": "",
+    "permanentAddressStateName": "string",
+    "permanentAddressTalukaId": "",
+    "permanentAddressTalukaName": "string",
+    "permanentAddressVillageId": "",
+    "permanentAddressVillageName": "",
+    "permanentAddressblock": "string"
+  };
+  mstPerAddress: any;
+  mstHospitalAss: any = {
+    "privilegeId": "",
+    "privilegeName": "string",
+    "privilegePatientId": ""
+  };
+  mstInsurance: any =
+    {
+      "insuranceCompanyName": "",
+      "insuranceCompanyNumber": "",
+      "insuranceNumber": "",
+      "insurancePolicyNumber": "",
+      "insurancePatientId": ""
+    };
+  mstMedicalHistory: any = {
+    "mhIsAlcoholConsume": "",
+    "mhIsAlcoholConsumeYear": "",
+    "mhIsMedicationHistory": "",
+    "mhIsMedicationHistoryYear": "",
+    "mhIsPreviousDiagnosis": "",
+    "mhIsPreviousDiagnosisYear": "",
+    "mhIsSmoker": "",
+    "mhIsSmokerYear": "",
+    "mhIsSurgicalHistory": "",
+    "mhIsSurgicalHistoryYear": "",
+    "mhIsTobacoConsume": "",
+    "mhIsTobacoConsumeYear": "",
+    "mhPatientId": ""
+  };
+  mstAdditionalDetails: any = {
+    "paiLanguages": "",
+    "paiOccupation": "",
+    "paiPhoneNumber": "",
+    "paiReferredBy": "",
+    "paiPatientId": "",
+  };
+  mstMLC: any = {
+    "mlcPoliceStationId": "",
+    "mlcPoliceStationName": "string",
+    "mlcTypeId": "",
+    "mlcTypeName": "string",
+    "mlcPatientId": "",
+  };
+  merged: any;
+  tabularIndex: any;
+  accordionIndex: any;
   paramObj: any = {
-    "id":"",
+    "id": "",
     "patientId": "",
     "patientMrNo": "",
     "patientTitleId": "",
@@ -111,7 +205,6 @@ export class RegistrationFormComponent implements OnInit {
     "patientHealthNumber": "",
     "patientUploadImage": "",
     "patientRegistrationSource": "",
-
     "demographicsId": "",
     "demographicsAge": "",
     "demographicsGenderId": "",
@@ -154,43 +247,75 @@ export class RegistrationFormComponent implements OnInit {
     "permanentAddressCountryId": "",
     "permanentAddressCountryName": "",
     "permanentAddressPinCode": "",
+    "privilegeId": "",
+    "privilegeName": "",
+    "privilegePatientId": "",
+    "insuranceId": "",
+    "insuranceNumber": "",
+    "insurancePolicyNumber": "",
+    "insuranceCompanyNumber": "",
+    "insuranceCompanyName": "",
+    "insurencePatientId": "",
+    "mhId": "",
+    "mhIsTobacoConsume": false,
+    "mhIsTobacoConsumeYear": "",
+    "mhIsAlcoholConsume": false,
+    "mhIsAlcoholConsumeYear": "",
+    "mhIsHaveSugar": false,
+    "mhIsHaveSugarYear": "",
+    "mhPatientId": "",
+    "patientAddId": "",
+    "patientAddOccupation": "",
+    "patientAddReferredBy": "",
+    "patientAddLanguages": "",
+    "patientAddPhoneNumber": "",
+    "patientAddInfoPatientId": "",
     "isActive": ""
 
   };
   receivedData: any;
+  startDate: any = "";
+  endDate: any = "";
+  formTitle: any;
+  flagPatientIsReady = false;
+  flagAddressIsReady = false;
+  flagPerAddIsReady = false;
+  flagHospitalAssIsReady = false;
+  flagInsuranceIsReady = false;
+  flagMedicalHistoryIsReady = false;
+  flagAdditionalDetailsIsReady = false;
+  flagMLCIsReady = false;
+  saveMstPatientData: any;
+  addressMerge: any;
   private subscription: Subscription;
-  constructor(private messageService: MessageService, private common: CommonService, public datepipe: DatePipe, private http: RegistrationFormService, private form$: FormService, private dataService: DataServiceService) {
-    // this.patient=this.http.GetAllMstPatientData().subscribe(res => {})
-    // this.address=this.http.GetAllMstAddress().subscribe(res=>{})
-    // forkJoin([this.patient, this.address])
-    // .subscribe(res => {
-    //   this.data = res;
-    //   console.log ('User and Post', res);
-    // });
+  constructor(private messageService: MessageService, private common: CommonService, public datepipe: DatePipe,
+    private http: RegistrationFormService, private form$: FormService, private dataService: DataServiceService) {
   }
 
-
   ngOnInit(): void {
-    this.formData = Object.assign({}, rgistrationData);
-    this.formData.form.formControls[0].isVisible = false;
-    this.formData.form.formControls[1].isVisible = false;
-    this.subscription = this.dataService.outputData$.subscribe(
-      data => {
-        this.receivedData = data;
-        console.log("label label====>>", this.receivedData.label);
-        if (this.receivedData.label == "Quick Patient Reg + Visit" && this.formData.form.formControls[0].formControlName == "OPDRad") {
-          this.formData.form.formControls[0].isVisible = true;
-          this.isShowServices = !this.isShowServices;
-          this.servData = dataOPD;
-        } else if (this.receivedData.label == "IPD Quick Registration" && this.formData.form.formControls[1].formControlName == "IPDRad") {
-          this.formData.form.formControls[1].isVisible = true;
-          this.isShowServices = !this.isShowServices;
-          this.servData = dataIPD;
-        }
-      }
-    );
+    this.isShowServices = !this.isShowServices;
+    // this.servData = dataOPD;
+    this.getOPDService();
+    this.formTitle = "OPD REGISTRATION";
+    // this.subscription = this.dataService.outputData$.subscribe(
+    //   data => {
+    //     this.receivedData = data;
+    //     this.receivedData.group.forEach((e: any)=>{
+    //       if (e.label == "OPD" && e.routerLink=="/master-page/opd-registration-form") {
+    //         this.isShowServices = !this.isShowServices;
+    //         this.servData = dataOPD;
+    //         this.formTitle = "OPD REGISTRATION";
+    //       } else if (e == "IPD" && e.routerLink=="/master-page/ipd-registration-form") {
+    //         this.isShowServices = !this.isShowServices;
+    //         this.servData = dataIPD;
+    //         this.formTitle = "IPD REGISTRATION";
+    //       }
+    //     })
 
-    this.assignDropDownOptions();
+    //   }
+    // );
+
+    // this.assignDropDownOptions();
     this.configurations = {
       "isFilter": true,
       "isTable": true,
@@ -203,10 +328,15 @@ export class RegistrationFormComponent implements OnInit {
       "isSideBar": false,
       "isConfirmation": true
     };
-    this.getAllPatientData();
+    this.mobileConfig = {
+      "isFilter": false,
+      "isTable": true,
+      "isSideBar": false,
+      "isConfirmation": true
+    }
+    // this.getAllPatientData();
     this.getAllData();
     this.filterData = filterdata;
-    // this.getAllUserData();
     this.getConfigForTable();
 
   }
@@ -214,6 +344,25 @@ export class RegistrationFormComponent implements OnInit {
 
   }
   rowClickData(e: any) { }
+  mobileRowClickData(e: any) {
+    console.log("Mobile data =>", e);
+    this.form$.reRenderForm(this.formData.form.formControls[4], e.patientTitleId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[5], e.patientFirstname, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[6], e.patientMiddlename, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[7], e.patientLastname, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[8], e.patientMobileNumber, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[9], e.patientEmail, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[10], e.patientIdentificationTypeId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[11], e.patientIdentificationTypeNumber, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[13], e.patientDob, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[15], e.patientAge, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[16], e.patientGenderId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[17], e.patientBloodGroupId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[18], e.patientEthinicityId, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[19], e.patientReligion, 'autofill');
+    this.form$.reRenderForm(this.formData.form.formControls[20], e.patientMaritalStatusId, 'autofill');
+
+  }
   assignDropDownOptions() {
     this.formData = Object.assign({}, rgistrationData);
     this.formData.form.formControls.forEach((data: any) => {
@@ -472,117 +621,121 @@ export class RegistrationFormComponent implements OnInit {
   }
   changeSelectItem(e: any) {
     console.log("changeSelectItem e => ", e)
+    if (e[1].fieldName == "mobileNoInput" && e[0] != "") {
+
+      this.mobileGridData = undefined;
+      this.http.mobileSerchData(e[0]).subscribe((data: any) => {
+        this.mobileGridData = data[1].result;
+        this.form$.showModal(true);
+        console.log("this.mobileGridData ===>", this.mobileGridData)
+
+      });
+    }
     if (e[1].fieldName == "selectIdentificationType" && e[0].value != "") {
-      this.form$.reRenderForm(this.formData.form.formControls[11], true, 'isEditable');
-      if (e[0].value == "1") {
+      this.form$.reRenderForm(this.formData.form.formControls[9], true, 'isEditable');
+      if (e[0].value == 1) {
         let validations = {
           "required": true,
           "pattern": "^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
-      } else if (e[0].value == "2") {
+        this.form$.reRenderForm(this.formData.form.formControls[9], validations, 'validations');
+      } else if (e[0].value == 2) {
         let validations = {
           "required": true,
           "pattern": "^[A-PR-WY][1-9]\\d\\s?\\d{4}[1-9]$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
-      } else if (e[0].value == "3") {
+        this.form$.reRenderForm(this.formData.form.formControls[9], validations, 'validations');
+      } else if (e[0].value == 3) {
         let validations = {
           "required": true,
           "pattern": "[A-Z]{3}[0-9]{4}[A-Z]{1}"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
-      } else if (e[0].value == "4") {
+        this.form$.reRenderForm(this.formData.form.formControls[9], validations, 'validations');
+      } else if (e[0].value == 4) {
         let validations = {
           "required": true,
           "pattern": "^[A-Z]{3}[0-9]{7}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
-      } else if (e[0].value == "3") {
+        this.form$.reRenderForm(this.formData.form.formControls[9], validations, 'validations');
+      } else if (e[0].value == 5) {
         let validations = {
           "required": true,
           "pattern": "^\\d{10,12}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
-      } else if (e[0].value == "6") {
+        this.form$.reRenderForm(this.formData.form.formControls[9], validations, 'validations');
+      } else if (e[0].value == 6) {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[9], validations, 'validations');
       }
-      else if (e[0].value == "7") {
+      else if (e[0].value == 7) {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
-      } else if (e[0].value == "8") {
+        this.form$.reRenderForm(this.formData.form.formControls[9], validations, 'validations');
+      } else if (e[0].value == 8) {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
-      } else if (e[0].value == "9") {
+        this.form$.reRenderForm(this.formData.form.formControls[9], validations, 'validations');
+      } else if (e[0].value == 9) {
         let validations = {
           "required": true,
           "pattern": "^(([A-Z]{2}[0-9]{2})( )|([A-Z]{2}-[0-9]{2}))((19|20)[0-9][0-9])[0-9]{7}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
-      } else if (e[0].value == "10") {
+        this.form$.reRenderForm(this.formData.form.formControls[9], validations, 'validations');
+      } else if (e[0].value == 10) {
         let validations = {
           "required": true,
           "pattern": ""
         }
-        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
-      } else if (e[0].value == "11") {
+        this.form$.reRenderForm(this.formData.form.formControls[9], validations, 'validations');
+      } else if (e[0].value == 11) {
         let validations = {
           "required": true,
           "pattern": "^[1-9]{2}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
         }
-        this.form$.reRenderForm(this.formData.form.formControls[11], validations, 'validations');
+        this.form$.reRenderForm(this.formData.form.formControls[9], validations, 'validations');
       }
     }
 
     if (e[1].fieldName == "selectTitle") {
       if (e[0].value == "0") {
         // this.form$.reRenderForm(this.formData.form.formControls[13], "1", 'autofill');
-      } else if (e[0].value == "1") {
-        this.form$.reRenderForm(this.formData.form.formControls[14], "1", 'autofill');
-      } else if (e[0].value == "2") {
-        this.form$.reRenderForm(this.formData.form.formControls[14], "2", 'autofill');
-      } else if (e[0].value == "3") {
-        this.form$.reRenderForm(this.formData.form.formControls[14], "1", 'autofill');
-      } else if (e[0].value == "4") {
-        this.form$.reRenderForm(this.formData.form.formControls[14], "2", 'autofill');
-      } else if (e[0].value == "5") {
-        this.form$.reRenderForm(this.formData.form.formControls[14], "1", 'autofill');
-      } else if (e[0].value == "6") {
-        this.form$.reRenderForm(this.formData.form.formControls[14], "1", 'autofill');
-      } else if (e[0].value == "7") {
-        this.form$.reRenderForm(this.formData.form.formControls[14], "2", 'autofill');
-      } else if (e[0].value == "8") {
-        this.form$.reRenderForm(this.formData.form.formControls[14], "2", 'autofill');
-      } else if (e[0].value == "9") {
-        this.form$.reRenderForm(this.formData.form.formControls[14], "1", 'autofill');
-      } else if (e[0].value == "10") {
-        this.form$.reRenderForm(this.formData.form.formControls[14], "2", 'autofill');
+      } else if (e[0].value == 1) {
+        this.form$.reRenderForm(this.formData.form.formControls[7], 1, 'autofill');
+      } else if (e[0].value == 2) {
+        this.form$.reRenderForm(this.formData.form.formControls[7], 2, 'autofill');
+      } else if (e[0].value == 3) {
+        this.form$.reRenderForm(this.formData.form.formControls[7], 1, 'autofill');
+      } else if (e[0].value == 4) {
+        this.form$.reRenderForm(this.formData.form.formControls[7], 2, 'autofill');
+      } else if (e[0].value == 5) {
+        this.form$.reRenderForm(this.formData.form.formControls[7], 1, 'autofill');
+      } else if (e[0].value == 6) {
+        this.form$.reRenderForm(this.formData.form.formControls[7], 1, 'autofill');
+      } else if (e[0].value == 7) {
+        this.form$.reRenderForm(this.formData.form.formControls[7], 2, 'autofill');
+      } else if (e[0].value == 8) {
+        this.form$.reRenderForm(this.formData.form.formControls[7], 2, 'autofill');
+      } else if (e[0].value == 9) {
+        this.form$.reRenderForm(this.formData.form.formControls[7], 1, 'autofill');
+      } else if (e[0].value == 10) {
+        this.form$.reRenderForm(this.formData.form.formControls[7], 2, 'autofill');
       }
     }
 
     if (e[1].fieldName == "DOBRad" && e[0].value == "DOB") {
-      this.form$.reRenderForm(this.formData.form.formControls[11], true, 'isEditable');
-      this.form$.reRenderForm(this.formData.form.formControls[13], false, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[12], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[14], false, 'isEditable');
 
     } else if (e[1].fieldName == "DOBRad" && e[0].value == "Age") {
-      this.form$.reRenderForm(this.formData.form.formControls[13], true, 'isEditable');
-      this.form$.reRenderForm(this.formData.form.formControls[11], false, 'isEditable');
-    }
-    if (e[1].fieldName == "IPDRad" && e[0].value == "IPD") {
-      this.form$.reRenderForm(this.formData.form.formControls[30], true, 'isEditable');
-      this.form$.reRenderForm(this.formData.form.formControls[31], true, 'isEditable');
-      this.form$.reRenderForm(this.formData.form.formControls[32], true, 'isEditable');
-      this.form$.reRenderForm(this.formData.form.formControls[33], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[14], true, 'isEditable');
+      this.form$.reRenderForm(this.formData.form.formControls[12], false, 'isEditable');
     }
 
     if (e[1].fieldName == "imgUpl") {
@@ -596,55 +749,86 @@ export class RegistrationFormComponent implements OnInit {
       console.log("date of birth => ", e[0])
       let age = this.datepipe.transform(e[0], "MM/dd/yyyy")
       this.calculateAge(age);
-      this.form$.reRenderForm(this.formData.form.formControls[13], this.getage, 'autofill');
+      this.form$.reRenderForm(this.formData.form.formControls[14], this.getage, 'autofill');
     }
 
   }
   changeSelect(e: any) {
     if (e[1].fieldName == "surgicalRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[5], true, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[5], true, 'isEditable');
     } else if (e[1].fieldName == "surgicalRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[5], false, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[5], false, 'isEditable');
     }
     if (e[1].fieldName == "medicationRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[7], true, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[7], true, 'isEditable');
     } else if (e[1].fieldName == "medicationRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[7], false, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[7], false, 'isEditable');
     }
     if (e[1].fieldName == "diagnosticsRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[9], true, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[9], true, 'isEditable');
     } else if (e[1].fieldName == "diagnosticsRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[9], false, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[9], false, 'isEditable');
     }
     if (e[1].fieldName == "alcoholRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[11], true, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[11], true, 'isEditable');
     } else if (e[1].fieldName == "alcoholRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[11], false, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[11], false, 'isEditable');
     }
     if (e[1].fieldName == "tobacooRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[13], true, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[13], true, 'isEditable');
     } else if (e[1].fieldName == "tobacooRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[13], false, 'isEditable');
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[13], false, 'isEditable');
     }
-    if (e[1].fieldName == "diabetesRad" && e[0].value == "true") {
-      this.form$.reRenderForm(this.formData5.form.formControls[15], true, 'isEditable');
-    } else if (e[1].fieldName == "diabetesRad" && e[0].value == "false") {
-      this.form$.reRenderForm(this.formData5.form.formControls[15], false, 'isEditable');
+    if (e[1].fieldName == "smokingRad" && e[0].value == "true") {
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[15], true, 'isEditable');
+    } else if (e[1].fieldName == "smokingRad" && e[0].value == "false") {
+      this.form$.reRenderForm(this.medicalHisFormData.form.formControls[15], false, 'isEditable');
     }
+  }
 
+  changeAddressEvent(e: any) {
+    console.log("chnage event address => ", e);
+  }
+
+  changePerAddressEvent(e: any) {
+    console.log("chnage event address => ", e);
+    if (e[0].checked[0] == true) {
+      this.form$.reRenderForm(this.perAddressFormData.form.formControls[4], "2", 'autofill');
+      this.form$.reRenderForm(this.perAddressFormData.form.formControls[5], "2", 'autofill');
+      this.form$.reRenderForm(this.perAddressFormData.form.formControls[6], "2", 'autofill');
+      this.form$.reRenderForm(this.perAddressFormData.form.formControls[7], "2", 'autofill');
+    }
+  }
+
+  mergeObjects<T extends object>(target: T, ...sources: object[]): T {
+    return Object.assign(target, ...sources);
+  }
+
+  getOPDService() {
+    this.http.getOPDService().subscribe((res) => {
+      this.opdData = [];
+      this.opdData = res[1].result;
+      console.log("get all data getOPDService ====>>>>", res)
+      this.isdataReady = true;
+    });
   }
 
   getAllData() {
     this.http.getDataFromApis().subscribe(
-      ([api1Response, api2Response]) => {
+      ([api1Response, api2Response, api3Response, api4Response, api5Response, api6Response, api7Response]) => {
         // Handle the responses from both APIs
-        console.log('API 1 Response:', api1Response);
-        console.log('API 2 Response:', api2Response);
+        console.log('API 1 Response:', api1Response[1].result);
+        console.log('API 2 Response:', api2Response[1].result);
+        console.log('API 3 Response:', api3Response[1].result);
+        console.log('API 4 Response:', api4Response[1].result);
+        console.log('API 5 Response:', api5Response[1].result);
+        console.log('API 6 Response:', api6Response[1].result);
+        console.log('API 7 Response:', api7Response[1].result);
         api1Response[1].result.forEach((e: any, index: any) => {
           let date = this.datepipe.transform(
             e.patientDob, "MM/dd/yyyy"
           );
-          this.paramObj = {
+          let patientData = {
             "id": index,
             "patientId": e.patientId,
             "patientMrNo": e.patientMrNo,
@@ -658,21 +842,117 @@ export class RegistrationFormComponent implements OnInit {
             "patientEmail": e.patientEmail,
             "patientIdentificationTypeId": e.patientIdentificationTypeId,
             "patientIdentificationTypeName": e.patientIdentificationTypeName,
-            "patientIdentificationNo": "",
+            "patientIdentificationTypeNumber": e.patientIdentificationTypeNumber,
             "patientMaritalStatusId": e.patientMaritalStatusId,
             "patientMaritalStatusName": e.patientMaritalStatusName,
             "patientDob": date,
-            "isActive": e.isActive
+            "image": e.patientUploadImage,
+            "isActive": e.isActive,
+            "patientAge": e.patientAge,
+            "patientBloodGroupId": e.patientBloodGroupId,
+            "patientBloodGroupName": e.patientBloodGroupName,
+            "patientEthinicityId": e.patientEthinicityId,
+            "patientEthinicityName": e.patientEthinicityName,
+            "patientGenderId": e.patientGenderId,
+            "patientGenderName": e.patientGenderName,
+            "patientReligion": e.patientReligion
           }
-
+          this.gridData.push(patientData);
         })
-
-
-        this.gridData.push(api1Response[1].result);
-        console.log('API 1 Response this.gridData:', this.gridData);
-        this.gridData.push(api2Response[1].result);
-        console.log('API 2 Response this.gridData:', this.gridData);
-
+        console.log("this gridData =====>>>>>", this.gridData);
+        api2Response[1].result.forEach((e: any) => {
+          this.addressData.push(e);
+        })
+        this.gridData.forEach(res => {
+          let data = this.addressData.find(data => data.addressPatientId === res.patientId);
+          if (data) {
+            this.merged = this.mergeObjects(res, data);
+            this.mergedGridData.push(this.merged);
+          } else {
+            this.mergedGridData.push(res);
+          }
+          console.log('fsdaysfdy', this.mergedGridData);
+        })
+        this.merged = '';
+        api3Response[1].result.forEach((e: any) => {
+          this.privilegeData.push(e);
+        })
+        this.mergedGridData.forEach(res => {
+          let data = this.privilegeData.find(data => data.privilegePatientId === res.patientId);
+          if (data) {
+            this.merged = this.mergeObjects(res, data);
+            this.mergedPrivalegeGridData.push(this.merged);
+          } else {
+            this.mergedPrivalegeGridData.push(res);
+          }
+          console.log('mergedPrivalegeGridData', this.mergedPrivalegeGridData);
+        })
+        this.merged = '';
+        api4Response[1].result.forEach((e: any) => {
+          this.insuranceData.push(e);
+        })
+        this.mergedPrivalegeGridData.forEach(res => {
+          let data = this.insuranceData.find(data => data.insurancePatientId === res.patientId);
+          if (data) {
+            this.merged = this.mergeObjects(res, data);
+            this.mergedInsuranceGridData.push(this.merged);
+          } else {
+            this.mergedInsuranceGridData.push(res);
+          }
+          console.log('mergedInsuranceGridData', this.mergedInsuranceGridData);
+        })
+        this.merged = '';
+        api5Response[1].result.forEach((e: any) => {
+          this.mhData.push(e);
+        })
+        this.mergedInsuranceGridData.forEach(res => {
+          let data = this.mhData.find(data => data.mhPatientId === res.patientId);
+          if (data) {
+            this.merged = this.mergeObjects(res, data);
+            this.mergedMhGridData.push(this.merged);
+          } else {
+            this.mergedMhGridData.push(res);
+          }
+          console.log('mergedMhGridData', this.mergedMhGridData);
+        })
+        this.merged = '';
+        api6Response[1].result.forEach((e: any) => {
+          this.paiData.push(e);
+        })
+        this.mergedMhGridData.forEach(res => {
+          let data = this.paiData.find(data => data.paiPatientId === res.patientId);
+          if (data) {
+            this.merged = this.mergeObjects(res, data);
+            this.mergedPaiGridData.push(this.merged);
+          } else {
+            this.mergedPaiGridData.push(res);
+          }
+          console.log('mergedPaiGridData', this.mergedPaiGridData);
+        })
+        this.merged = '';
+        api7Response[1].result.forEach((e: any) => {
+          this.mlcData.push(e);
+        })
+        this.mergedPaiGridData.forEach(res => {
+          let data = this.paiData.find(data => data.mlcPatientId === res.patientId);
+          if (data) {
+            this.merged = this.mergeObjects(res, data);
+            this.mergedMlcGridData.push(this.merged);
+          } else {
+            this.mergedMlcGridData.push(res);
+          }
+          console.log('mergedMlcGridData', this.mergedMlcGridData);
+        })
+        this.merged = '';
+        this.data = [...this.mergedMlcGridData];
+        this.gridData = [];
+        this.mergedGridData = [];
+        this.mergedInsuranceGridData = [];
+        this.mergedMhGridData = [];
+        this.mergedMlcGridData = [];
+        this.mergedPaiGridData = [];
+        this.mergedPrivalegeGridData = [];
+        console.log('API Data ===>>>:', this.data);
       },
       error => {
         // Handle any errors
@@ -681,124 +961,10 @@ export class RegistrationFormComponent implements OnInit {
     );
   }
 
-  getAllPatientData() {
-    this.http.GetAllMstPatientData().subscribe(res => {
-      res[1].result.forEach((e: any, index: any) => {
-        console.log("Patient data => ", e)
-        let date = this.datepipe.transform(
-          e.patientDob, "MM/dd/yyyy"
-        );
-        console.log("date birth date => ", date)
-        let obj = {
-          "id": index,
-          "patientId": e.patientId,
-          "patientMrNo": e.patientMrNo,
-          "patientTitleId": e.patientTitleId,
-          "patientTitleName": e.patientTitleName,
-          "patientFirstname": e.patientFirstname,
-          "patientMiddlename": e.patientMiddlename,
-          "patientLastname": e.patientLastname,
-          "patientFullname": e.patientFullname,
-          "patientMobileNumber": e.patientMobileNumber,
-          "patientEmail": e.patientEmail,
-          "patientIdentificationTypeId": e.patientIdentificationTypeId,
-          "patientIdentificationTypeName": e.patientIdentificationTypeName,
-          "patientIdentificationNo": "",
-          "patientMaritalStatusId": e.patientMaritalStatusId,
-          "patientMaritalStatusName": e.patientMaritalStatusName,
-          "patientDob": date,
-          "isActive": e.isActive
-        }
-        this.gridData.push(obj);
-        console.log("mst_patient => ", this.gridData);
-      })
-
-      this.data = [...this.gridData];
-      // for (let i = 0; i < this.data.length; i++) {
-      //   this.data[i].srNumber = i + 1;
-      // }
-      this.isdataReady = true;
-    })
-  }
-
-  getAllMstDemographicsData() {
-    this.http.GetAllDemographicsData().subscribe(res => {
-      res[1].result.forEach((e: any, index: any) => {
-        // let obj = {
-        //   "demographicsId": e.demographicsId,
-        //   "demographicsAge": e.demographicsAge,
-        //   "demographicsGenderId": e.demographicsGenderId,
-        //   "demographicsGenderName": e.demographicsGenderName,
-        //   "demographicsBloodGroupId": e.demographicsBloodGroupId,
-        //   "demographicsBloodGroupName": e.demographicsBloodGroupName,
-        //   "demographicsEthinicityId": e.demographicsEthinicityId,
-        //   "demographicsEthinicityName": e.demographicsEthinicityName,
-        //   "demographicsReligion": e.demographicsReligion,
-        //   "demographicsSocialStatusId": e.demographicsSocialStatusId,
-        //   "demographicsSocialStatusName": e.demographicsSocialStatusName,
-        //   "demographicsPatientId": e.demographicsPatientId,
-        //   "isActive": e.isActive
-
-        // }
-        // this.gridData.push(e);
-      })
-      // this.data = [...this.gridData];
-      // for (let i = 0; i < this.data.length; i++) {
-      //   this.data[i].srNumber = i + 1;
-      // }
-    })
-
-    console.log("mst_patient => ", this.gridData);
-  }
-
-  getAllAddDetatils() {
-    this.http.GetAllDemographicsData().subscribe(res => {
-      res[1].result.forEach((e: any, index: any) => {
-        // let obj = {
-        //   "addressId": e.addressId,
-        //   "addressLine1": e.addressLine1,
-        //   "addressLine2": e.addressLine2,
-        //   "addressblock": e.addressblock,
-        //   "addressVillageId": e.addressVillageId,
-        //   "addressVillageName": e.addressVillageName,
-        //   "addressTalukaId": e.addressTalukaId,
-        //   "addressTalukaName": e.addressTalukaName,
-        //   "addressCityId": e.addressCityId,
-        //   "addressCityName": e.addressCityName,
-        //   "addressStateId": e.addressStateId,
-        //   "addressStateName": e.addressStateName,
-        //   "addressCountryId": e.addressCountryId,
-        //   "addressCountryName": e.addressCountryName,
-        //   "addressPatientId": e.addressPatientId,
-        //   "addressPinCode": e.addressPinCode,
-        //   "permanentAddressLine1": e.permanentAddressLine1,
-        //   "permanentAddressLine2": e.permanentAddressLine2,
-        //   "permanentAddressblock": e.permanentAddressblock,
-        //   "permanentAddressVillageId": e.permanentAddressVillageId,
-        //   "permanentAddressVillageName": e.permanentAddressVillageName,
-        //   "permanentAddressTalukaId": e.permanentAddressTalukaId,
-        //   "permanentAddressTalukaName": e.permanentAddressTalukaName,
-        //   "permanentAddressCityId": e.permanentAddressCityId,
-        //   "permanentAddressCityName": e.permanentAddressCityName,
-        //   "permanentAddressStateId": e.permanentAddressStateId,
-        //   "permanentAddressStateName": e.permanentAddressStateName,
-        //   "permanentAddressCountryId": e.permanentAddressCountryId,
-        //   "permanentAddressCountryName": e.permanentAddressCountryName,
-        //   "permanentAddressPinCode": e.permanentAddressPinCode,
-        //   "isActive": true,
-        //   "isDeleted": false
-        // }
-        // this.gridData.push(e);
-      })
-      console.log("mst_patient_address => ", this.gridData);
-      // this.data = [...this.gridData];
-    })
-  }
-
   getConfigForTable() {
-    // this.data = data;
-    this.config = role_table_config;
+    this.config = table_config;
     this.configServ = configService;
+    this.configMobi = mobile_table_config;
   }
 
   editRow(e: any) {
@@ -806,11 +972,8 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   confirmAction(e: any) {
-    // this.messageService.add({ severity: 'success', summary: 'Message form User component', detail: 'Deleted Sucessfully' });
-    // console.log(e)
     this.data = undefined;
     this.deletePatientData(e.patientId);
-
     this.messageService.add({ severity: 'success', summary: 'Message form User component', detail: 'Deleted Sucessfully' });
     console.log("Deleted" + JSON.stringify(e))
   }
@@ -818,176 +981,326 @@ export class RegistrationFormComponent implements OnInit {
   deletePatientData(patientId: any) {
     this.http.deletePatientData(patientId)
       .subscribe(data => {
-        this.getAllPatientData();
+        this.getAllData();
       })
   }
   isActive(event: string) {
     this.http.isActiveData(event).subscribe((data: any) => {
       this.data = undefined;
-      this.getAllPatientData();
+      this.getAllData();
     });
   }
 
-  BulkDeleteRows(e: any) {
-    this.data = [];
-    if (e != '') {
-      e.forEach((data: any) => {
-        if (data.is_Active != false) {
-          let obj = {
-            "userId": data.userId,
-          }
-          this.deletePatientData(obj.userId);
-        } else {
-          this.messageService.add({
-            severity: 'error',
-            summary: 'selected Rows',
-            detail: ' Deleted.',
-          });
-        }
-      });
-      this.messageService.add({
-        severity: 'success',
-        summary: 'success',
-        detail: 'Delete All Data successfull.',
-      });
-    } else {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'select Rows',
-        detail: 'Rows are not selected.',
-      });
-    }
-
-  }
   closeSidebarData(e: any) {
     this.editData = undefined;
+  }
+
+  submitMstPatient(Data: any) {
+    this.http.saveMstPatient(Data).subscribe((res: any) => {
+      console.log("mstPatient ==>> res ", res[1].result);
+      this.mstAddress.addressPatientId = res[1].result.patientId;
+      this.mstHospitalAss.privilegePatientId = res[1].result.patientId;
+      this.mstInsurance.insurancePatientId = res[1].result.patientId;
+      this.mstMedicalHistory.mhPatientId = res[1].result.patientId;
+      this.mstAdditionalDetails.paiPatientId = res[1].result.patientId;
+      this.mstMLC.mlcPatientId = res[1].result.patientId;
+    });
+  }
+
+  updateMstPatient(data: any) {
+    this.http.updateMstPatient(data)
+      .subscribe((res: any) => {
+        this.mstAddress.addressPatientId = res[1].result.patientId;
+        this.mstHospitalAss.privilegePatientId = res[1].result.patientId;
+        this.mstInsurance.insurancePatientId = res[1].result.patientId;
+        this.mstMedicalHistory.mhPatientId = res[1].result.patientId;
+        this.mstAdditionalDetails.paiPatientId = res[1].result.patientId;
+        this.mstMLC.mlcPatientId = res[1].result.patientId;
+        this.data = undefined;
+        this.getAllData();
+      })
   }
   sidebarData(e: any) {
     console.log("sidebar data => ", e)
     if (e == 'reset') {
       console.log(e);
     } else if (this.isAddEditFlag.add == "add") {
-      this.submitUserData(this.paramObj);
+      if (this.flagPatientIsReady == true) {
+        this.submitMstPatient(this.mstPatient);
+      }
+      setTimeout(() => {
+        if (this.flagPerAddIsReady == true) {
+          this.http.saveMstAddress(this.addressMerge).subscribe((res: any) => {
+            console.log("mstPatient merge ==>> res ", res[1].result);
+          });
+        } else if (this.flagAddressIsReady == true) {
+          this.http.saveMstAddress(this.mstAddress).subscribe((res: any) => {
+            console.log("mstPatient ==>> res ", res[1].result);
+          });
+        }
+        if (this.flagHospitalAssIsReady == true) {
+          this.http.saveMstPrivilege(this.mstHospitalAss).subscribe((res: any) => {
+            console.log("mstPatient ==>> res ", res[1].result);
+          });
+        }
+        if (this.flagInsuranceIsReady == true) {
+          this.http.saveMstInsurance(this.mstInsurance).subscribe((res: any) => {
+            console.log("mstPatient ==>> res ", res[1].result);
+          });
+        }
+        if (this.flagMedicalHistoryIsReady == true) {
+          this.http.saveMstMedicalHistory(this.mstMedicalHistory).subscribe((res: any) => {
+            console.log("mstPatient ==>> res ", res[1].result);
+          });
+        }
+        if (this.flagAdditionalDetailsIsReady == true) {
+          this.http.saveMstPatientAddInfo(this.mstAdditionalDetails).subscribe((res: any) => {
+            console.log("mstPatient ==>> res ", res[1].result);
+          });
+        }
+        if (this.flagMLCIsReady == true) {
+          this.http.saveMstMedicalLegalCase(this.mstMLC).subscribe((res: any) => {
+            console.log("mstPatient ==>> res ", res[1].result);
+          });
+        }
+      }, 1000)
+      // setTimeout(() => {
+      //   this.http.saveDataFromApis(this.mstAddress, this.mstHospitalAss, this.mstInsurance, this.mstMedicalHistory, this.mstAdditionalDetails, this.mstMLC).subscribe(
+      //     (response: any[]) => {
+      //       this.data = undefined;
+      //       this.getAllData();
+      //       // Handle the responses from all the POST requests
+      //       // console.log('Response 1:', response);
+      //       console.log('Response 2:', response[0][1].result);
+      //       console.log('Response 3:', response[1][1].result);
+      //       console.log('Response 4:', response[2][1].result);
+      //       console.log('Response 5:', response[3][1].result);
+      //       console.log('Response 6:', response[4][1].result);
+      //       console.log('Response 7:', response[5][1].result);
+      //     },
+      //     (error: any) => {
+      //       console.error('Error:', error);
+      //     });
+      //   this.messageService.add({ severity: 'success', summary: 'success', detail: 'Your registration has been successfully completed!' });
+      // }, 1000)
       this.messageService.add({ severity: 'success', summary: 'success', detail: 'Your registration has been successfully completed!' });
-
     } else {
-      this.updateUserData(this.paramObj);
+      if (this.flagPatientIsReady == true) {
+        this.updateMstPatient(this.mstPatient);
+      }
+      setTimeout(() => {
+        if (this.flagPerAddIsReady == true) {
+          this.http.updateMstAddress(this.addressMerge).subscribe((res: any) => {
+            console.log("mstPatient merge ==>> res ", res[1].result);
+          });
+        } else if (this.flagAddressIsReady == true) {
+          this.http.updateMstAddress(this.mstAddress).subscribe((res: any) => {
+            console.log("mstPatient ==>> res ", res[1].result);
+          });
+        }
+        if (this.flagHospitalAssIsReady == true) {
+          this.http.updateMstPrivilege(this.mstHospitalAss).subscribe((res: any) => {
+            console.log("mstPatient ==>> res ", res[1].result);
+          });
+        }
+        if (this.flagInsuranceIsReady == true) {
+          this.http.updateMstInsurance(this.mstInsurance).subscribe((res: any) => {
+            console.log("mstPatient ==>> res ", res[1].result);
+          });
+        }
+        if (this.flagMedicalHistoryIsReady == true) {
+          this.http.updateMstMedicalHistory(this.mstMedicalHistory).subscribe((res: any) => {
+            console.log("mstPatient ==>> res ", res[1].result);
+          });
+        }
+        if (this.flagAdditionalDetailsIsReady == true) {
+          this.http.updateMstPatientAddInfo(this.mstAdditionalDetails).subscribe((res: any) => {
+            console.log("mstPatient ==>> res ", res[1].result);
+          });
+        }
+        if (this.flagMLCIsReady == true) {
+          this.http.updateMstMedicalLegalCaseSave(this.mstMLC).subscribe((res: any) => {
+            console.log("mstPatient ==>> res ", res[1].result);
+          });
+        }
+      }, 1000)
       this.messageService.add({ severity: 'success', summary: 'success', detail: 'Data updated successfull.' });
-
     }
   }
 
-  // <<<<<<< HEAD
-  //   submitUserData(userData: any, img: any) {
-  //     this.http.saveUserData(userData, img)
-  //       .subscribe((data: any) => {
-  // =======
   saveRegistartionForm(e: any) {
-    console.log("saveRegistartionForm => ", this.paramObj);
-    this.paramObj = {
-      "patientIdentificationTypeId": e.selectIdentificationType,
-      "patientTitleId": e.selectTitle,
-      "patientFirstname": e.firstNameInput,
-      "patientMiddlename": e.middleNameInput,
-      "patientLastname": e.lastNameInput,
-      "patientDob": e.userBirthdate,
-      "patientAge": e.ageText,
-      "patientBloodGroupId": e.selectBlood,
-      "patientMaritalStatusId": e.selectMaritalStatus,
-      "patientMobileNumber": e.mobileNoInput,
-      "patientAddressLine1": e.addressLine1Input,
-      "patientAddressLine2": e.addressLine2Input,
-      "patientCityId": e.selectCity,
-      "patientStateId": e.selectState,
-      "patientCountryId": e.selectCountry,
-      "patientId": e.patientId,
-      "patientRegistrationSource": "Counter"
+    let date = this.datepipe.transform(
+      e.userBirthdate, "MM/dd/yyyy"
+    );
+    this.mstPatient = {
+      "patientAge": e.ageText || '',
+      "patientBloodGroupId": e.selectBlood != undefined ? e.selectBlood.code : "",
+      "patientBloodGroupName": e.selectBlood != undefined ? e.selectBlood.name : "",
+      "patientDob": date || '',
+      "patientEmail": e.emailInput || '',
+      "patientEthinicityId": e.selectEthincity != undefined ? e.selectEthincity.code : "",
+      "patientEthinicityName": e.selectEthincity != undefined ? e.selectEthincity.name : "",
+      "patientFirstname": e.firstNameInput || '',
+      "patientGenderId": e.selectGender != undefined ? e.selectGender.code : "",
+      "patientGenderName": e.selectGender != undefined ? e.selectGender.name : "",
+      "patientIdentificationTypeId": e.selectIdentificationType != undefined ? e.selectIdentificationType.code : "",
+      "patientIdentificationTypeName": e.selectIdentificationType != undefined ? e.selectIdentificationType.name : "",
+      "patientIdentificationTypeNumber": e.identificationNoInput || '',
+      "patientLastname": e.lastNameInput || '',
+      "patientMaritalStatusId": e.selectMaritalStatus != undefined ? e.selectMaritalStatus.code : "",
+      "patientMaritalStatusName": e.selectMaritalStatus != undefined ? e.selectMaritalStatus.name : "",
+      "patientMiddlename": e.middleNameInput || '',
+      "patientMobileNumber": e.mobileNoInput || '',
+      "patientRegistrationSource": "Conter",
+      "patientReligion": e.religionInput || '',
+      "patientTitleId": e.selectTitle != undefined ? e.selectTitle.code : "",
+      "patientTitleName": e.selectTitle != undefined ? e.selectTitle.name : "",
+      "patientUploadImage": ""
+    }
+    console.log("mstPatient => ", this.mstPatient);
+    this.flagPatientIsReady = true;
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
+  }
 
+  saveAddress(e: any) {
+    this.mstAddress = {
+      "addressLine": e.addressInput || "",
+      "addressLandmark": e.landmarkInput || "",
+      "addressblock": "",
+      "addressVillageId": e.selectVillage != undefined ? e.selectVillage.code : "",
+      "addressVillageName": e.selectVillage != undefined ? e.selectVillage.name : "",
+      "addressTalukaId": e.dependentdropdown != undefined ? e.dependentdropdown[2] : "",
+      "addressTalukaName": "",
+      "addressCityId": e.dependentdropdown != undefined ? e.dependentdropdown[1] : "",
+      "addressCityName": "",
+      "addressStateId": e.dependentdropdown != undefined ? e.dependentdropdown[0] : "",
+      "addressStateName": "",
+      "addressCountryId": e.selectCountry != undefined ? e.selectCountry.code : "",
+      "addressCountryName": e.selectCountry != undefined ? e.selectCountry.name : "",
+      "addressPatientId": "",
+      "addressPinCode": e.pinCodeInput || "",
     }
-    console.log("saveRegistartionForm => ", this.paramObj);
+    console.log("mstAddress=> ", this.mstAddress);
+    this.flagAddressIsReady = true;
     this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
   }
-  saveFormOne(e: any) {
-    this.paramObj = {
-      "patientEthinicityId": e.selectEthincity,
-      "patientReligion": e.religionInput,
-    }
-    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
-    console.log("saveFormOne => ", this.paramObj);
-  }
-  saveFormTwo(e: any) {
-    this.paramObj = {
-      "patientStateId": [e.selectState[0], e.selectState[1]],
 
+  savePerAddress(e: any) {
+    this.mstPerAddress = {
+      "permanentAddressCityId": e.perAddDependentdropdown != undefined ? e.perAddDependentdropdown[1] : "",
+      "permanentAddressCityName": "string",
+      "permanentAddressCountryId": e.perAddSelectCountry != undefined ? e.perAddSelectCountry.code : "",
+      "permanentAddressCountryName": e.perAddSelectCountry != undefined ? e.perAddSelectCountry.name : "",
+      "permanentAddressLandmark": e.perAddLandmarkInput || "",
+      "permanentAddressLine": e.perAddAddressInput || "",
+      "permanentAddressPinCode": e.perAddPinCodeInput || "",
+      "permanentAddressStateId": e.perAddDependentdropdown != undefined ? e.perAddDependentdropdown[0] : "",
+      "permanentAddressStateName": "string",
+      "permanentAddressTalukaId": e.perAddDependentdropdown != undefined ? e.perAddDependentdropdown[2] : "",
+      "permanentAddressTalukaName": "string",
+      "permanentAddressVillageId": e.perAddSelectVillage != undefined ? e.perAddSelectVillage.code : "",
+      "permanentAddressVillageName": e.perAddSelectVillage != undefined ? e.perAddSelectVillage.name : "",
+      "permanentAddressblock": "string"
     }
-    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
-    console.log("saveRegistartionForm => ", this.paramObj);
-  }
-  saveFormThree(e: any) {
-    this.paramObj = {
-      "patientPrnNumber": e.PRNNumber,
-      "patientPrivilageId": e.privilageType,
-    }
-    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
-    console.log("saveRegistartionForm => ", this.paramObj);
-  }
-  saveFormFour(e: any) {
-    this.paramObj = {
-      "patientInsuranceNumber": e.insuranceNo,
-      "patientInsurancePolicyNumber": e.policyNo,
-      "patientInsuranceCompanyNumber": e.companyNo,
-      "patientInsuranceCompanyName": e.companyName
-    }
-    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
-    console.log("saveRegistartionForm => ", this.paramObj);
-  }
-  saveFormFive(e: any) {
-    this.paramObj = {
-      "patientIsTobacoConsume": e.alcoholRad,
-      "patientIsTobacoConsumeYear": e.alcoholQuestion1,
-      "patientIsAlcoholConsume": e.tobacooRad,
-      "patientIsAlcoholConsumeYear": e.tobacooQuestion1,
+    console.log("mstAddress=> ", this.mstPerAddress);
 
+    if (this.flagAddressIsReady == true) {
+      this.addressMerge = this.mergeObjects(this.mstAddress, this.mstPerAddress)
+      console.log("merge =>", this.addressMerge);
+      this.flagPerAddIsReady = true;
     }
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
+  }
+
+  savePrivilege(e: any) {
+    this.mstHospitalAss = {
+      "privilegeId": e.privilageType != undefined ? e.privilageType.code : "",
+      "privilegeName": e.privilageType != undefined ? e.privilageType.name : "",
+      "privilegePatientId": ""
+    }
+    this.flagHospitalAssIsReady = true;
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
+    console.log("mstHospitalAss => ", this.mstHospitalAss);
+  }
+  saveInsurance(e: any) {
+    this.mstInsurance =
+    {
+      "insuranceCompanyName": e.companyName || '',
+      "insuranceCompanyNumber": e.companyNo || '',
+      "insuranceNumber": e.insuranceNo || '',
+      "insurancePolicyNumber": e.policyNo || '',
+      "insurancePatientId": ""
+    }
+    this.flagInsuranceIsReady = true;
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue..' });
+    console.log("mstInsurance => ", this.mstInsurance);
+  }
+  saveMh(e: any) {
+    this.mstMedicalHistory = {
+      "mhIsAlcoholConsume": e.alcoholRad || '',
+      "mhIsAlcoholConsumeYear": e.alcoholQuestion1 || '',
+      "mhIsMedicationHistory": e.medicationRad || '',
+      "mhIsMedicationHistoryYear": e.medicationDetails || '',
+      "mhIsPreviousDiagnosis": e.DiagnosisRad || '',
+      "mhIsPreviousDiagnosisYear": e.DiagnosissDetails || '',
+      "mhIsSmoker": e.smokingRad || '',
+      "mhIsSmokerYear": e.smokingQuestion1 || '',
+      "mhIsSurgicalHistory": e.surgeriesDetails || '',
+      "mhIsSurgicalHistoryYear": e.surgicalRad || '',
+      "mhIsTobacoConsume": e.tobacooRad || '',
+      "mhIsTobacoConsumeYear": e.tobacooQuestion1 || '',
+      "mhPatientId": ""
+    }
+    this.flagMedicalHistoryIsReady = true;
     this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue.' });
-    console.log("saveRegistartionForm => ", this.paramObj);
+    console.log("mstMedicalHistory => ", this.mstMedicalHistory);
   }
-  saveFormSix(e: any) {
-    this.paramObj = {
-      "patientOccupation": e.occupation,
-      "patientReferredBy": e.refferedBy,
-      "patientLanguages": e.language,
-      "patientPhoneNumber": e.phoneNo,
+  savePai(e: any) {
+    this.mstAdditionalDetails = {
+      "paiLanguages": e.language || '',
+      "paiOccupation": e.occupation || '',
+      "paiPhoneNumber": e.phoneNo || '',
+      "paiReferredBy": e.refferedBy || '',
+      "paiAadharNumber": e.paiAadharNumber || '',
+      "paiUsshIdNumber": e.paiUsshIdNumber || '',
+      "paiUhIdNumber": e.paiUhIdNumber || '',
+      "paiAbhaIdNumber": e.paiAbhaIdNumber || '',
+      "paiPatientId": "",
     }
+    this.flagAdditionalDetailsIsReady = true;
     this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue.' });
-    console.log("saveRegistartionForm => ", this.paramObj);
+    console.log("mstAdditionalDetails => ", this.mstAdditionalDetails);
   }
 
   saveFormMLC(e: any) {
-
-  }
-  submitUserData(userData: any) {
-    this.http.savePatientData(userData)
-      .subscribe(data => {
-        this.data = undefined;
-        this.getAllPatientData();
-      })
-  }
-
-  updateUserData(userId: any) {
-    this.http.updateUserData(userId)
-      .subscribe((data: any) => {
-        this.data = undefined;
-        this.getAllPatientData();
-      })
+    this.mstMLC = {
+      "mlcPoliceStationId": e.selectPoliceStation != undefined ? e.selectPoliceStation.code : "",
+      "mlcPoliceStationName": e.selectPoliceStation != undefined ? e.selectPoliceStation.name : "",
+      "mlcTypeId": e.selectMLCType != undefined ? e.selectMLCType.code : "",
+      "mlcTypeName": e.selectMLCType != undefined ? e.selectMLCType.name : "",
+      "mlcPatientId": "",
+    }
+    this.flagMLCIsReady = true;
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Save And Continue.' });
+    console.log("mstMLC => ", this.mstMLC);
   }
 
   fiteredData(e: any) {
     this.data = undefined;
-    this.http.getFilterData(e)
+    if (e.startDateInput != "") {
+      this.startDate = this.datepipe.transform(
+        e.startDateInput, "yyyy-MM-dd"
+      );
+    }
+    if (e.endDateInput != "") {
+      this.endDate = this.datepipe.transform(
+        e.endDateInput, "yyyy-MM-dd"
+      );
+    }
+
+    this.http.getFilterData(e, this.startDate, this.endDate)
       .subscribe((data: any[]) => {
         this.data = undefined;
-
         this.data = data[1].result;
       })
   }
@@ -1010,166 +1323,117 @@ export class RegistrationFormComponent implements OnInit {
       e.editRow.patientDob, "MM/dd/yyyy"
     );
     let edit = {
-      "OPDRad": "",
-      "IPDRad": "",
+      "patientMobileNumber": e.editRow.patientMobileNumber,
       "divider1": "",
       "patientId": e.editRow.patientId,
       "patientTitleId": e.editRow.patientTitleId,
       "patientFirstname": e.editRow.patientFirstname,
       "patientMiddlename": e.editRow.patientMiddlename,
       "patientLastname": e.editRow.patientLastname,
-      "patientMobileNumber": e.editRow.patientMobileNumber,
+      "patientGenderId": e.editRow.patientGenderId,
       "patientIdentificationTypeId": e.editRow.patientIdentificationTypeId,
-      "patientIdentificationNumber": "2234 1234 1234",
-      "patientMaritalStatusId": e.editRow.patientMaritalStatusId,
+      "patientIdentificationTypeNumber": e.editRow.patientIdentificationTypeNumber,
+      "patientEmail": e.editRow.patientEmail,
       "DOBRad": "",
       "patientDob": date,
       "AgeRad": ["Age"],
       "patientAge": e.editRow.patientAge,
-      "patientGender": "2",
-      "divider2": "",
-      "dependentdropdown": [e.editRow.patientCountryId, e.editRow.patientStateId, e.editRow.patientCityId],
-      // "patientCountryId": ,
-      // "patientStateId": ,
-      // "patientCityId": ,
-      "patientAddressLine1": e.editRow.patientAddressLine1,
-      "patientAddressLine2": e.editRow.patientAddressLine2,
-      "staticText1": "",
+      "patientBloodGroupId": e.editRow.patientBloodGroupId,
+      "patientEthinicityId": e.editRow.patientEthinicityId,
+      "patientReligion": e.editRow.patientReligion,
+      "patientMaritalStatusId": e.editRow.patientMaritalStatusId,
+      "patientUploadImage": e.editRow.patientUploadImage,
+      "patientEthinicityName": e.editRow.patientEthinicityName,
+      "patientGenderName": e.editRow.patientGenderName,
       "patientCountryName": e.editRow.patientCountryName,
       "patientMaritalStatusName": e.editRow.patientMaritalStatusName,
       "patientTitleName": e.editRow.patientTitleName,
       "profileImage": e.editRow.profileImage,
-      "patientEmail": e.editRow.patientEmail,
       "patientCityName": e.editRow.patientCityName,
       "patientStateName": e.editRow.patientStateName,
-      "patientHealthId": e.editRow.patientHealthId,
-      "patientHealthNumber": e.editRow.patientHealthNumber,
-      "patientSocialStatusId": e.editRow.patientSocialStatusId,
-      "patientSocialStatusName": e.editRow.patientSocialStatusName,
-      "patientBlock": e.editRow.patientBlock,
-
-
-
-      // "patientOccupation": e.editRow.patientOccupation,
-      // "patientReferredBy": e.editRow.patientReferredBy,
-      // "patientLanguages": e.editRow.patientLanguages,
-      // "patientPhoneNumber": e.editRow.patientPhoneNumber,
-      "patientUploadImage": e.editRow.patientUploadImage,
-      "patientRegistrationSource": e.editRow.patientRegistrationSource,
-      "isActive": e.editRow.isActive,
-      "patientMrNo": e.editRow.patientMrNo,
-      "patientIdentificationTypeName": e.editRow.patientIdentificationTypeName,
-
-
+      "patientIdentificationTypeName": e.editRow.patientIdentificationTypeName
     }
     this.editData = edit;
-    let demogarfic = {
-      "patientBloodGroupId": e.editRow.patientBloodGroupId,
-      "patientEthinicityId": e.editRow.patientEthinicityId,
-      "patientReligion": e.editRow.patientReligion,
-      "patientBloodGroupName": e.editRow.patientBloodGroupName,
-      "patientEthinicityName": e.editRow.patientEthinicityName
-    }
-    this.demoEditData = demogarfic;
     let address = {
-      "patientSocialStatusId": e.editRow.patientSocialStatusId,
-      "patientSocialStatusName": e.editRow.patientSocialStatusName,
+      "addressCountryId": e.editRow.addressCountryId,
+      "dependentdropdown": [e.editRow.addressStateId, e.editRow.addressCityId, e.editRow.addressTalukaId],
+      "addressVillageId": e.editRow.addressVillageId,
+      "addressLine": e.editRow.addressLine,
+      "addressLandmark": e.editRow.addressLandmark,
+      "addressPinCode": e.editRow.addressPinCode,
 
     }
     this.addressEditData = address;
+    let perAddress = {
+      "checkBox": false,
+      "permanentAddressCountryId": e.editRow.permanentAddressCountryId,
+      "dependentdropdown": [e.editRow.permanentAddressStateId, e.editRow.permanentAddressCityId, e.editRow.permanentAddressTalukaId],
+      "permanentAddressVillageId": e.editRow.permanentAddressVillageId,
+      "permanentAddressLine": e.editRow.permanentAddressLine,
+      "permanentAddressLandmark": e.editRow.permanentAddressLandmark,
+      "permanentAddressPinCode": e.editRow.permanentAddressPinCode
+    }
+    this.perAddressEditData = perAddress;
     let hospital = {
       "patientPrnNumber": e.editRow.patientPrnNumber,
-      "patientPrivilageId": e.editRow.patientPrivilageId,
-      "patientPrivilageName": e.editRow.patientPrivilageName,
+      "privilegePatientId": e.editRow.privilegePatientId,
+      "privilegeName": e.editRow.privilegeName,
     }
     this.hospitalEditData = hospital;
     let insorunce = {
-      "patientInsuranceNumber": e.editRow.patientInsuranceNumber,
-      "patientInsurancePolicyNumber": e.editRow.patientInsurancePolicyNumber,
-      "patientInsuranceCompanyNumber": e.editRow.patientInsuranceCompanyNumber,
-      "patientInsuranceCompanyName": e.editRow.patientInsuranceCompanyName,
+      "insuranceNumber": e.editRow.insuranceNumber,
+      "insurancePolicyNumber": e.editRow.insurancePolicyNumber,
+      "insuranceCompanyNumber": e.editRow.insuranceCompanyNumber,
+      "insuranceCompanyName": e.editRow.insuranceCompanyName,
 
     }
     this.insorunceEditData = insorunce;
     let medical = {
-      "patientIsAlcoholConsume": [e.editRow.patientIsAlcoholConsume],
-      "patientIsAlcoholConsumeYear": e.editRow.patientIsAlcoholConsumeYear,
-      "patientIsTobacoConsume": [e.editRow.patientIsTobacoConsume],
-      "patientIsTobacoConsumeYear": e.editRow.patientIsTobacoConsumeYear,
-      "statix": "",
-      "patientIsHaveDiabeties": [e.editRow.patientIsHaveDiabeties],
-      "patientIsHaveDiabetiesYear": e.editRow.patientIsHaveDiabetiesYear,
-      // "patientIsHaveSugar": e.editRow.patientIsHaveSugar,
-      // "patientIsHaveSugarYear": e.editRow.patientIsHaveSugarYear,
+      "mhId": e.editRow.mhId,
+      "mhIsTobacoConsume": [e.editRow.mhIsTobacoConsume],
+      "mhIsTobacoConsumeYear": e.editRow.mhIsTobacoConsumeYear,
+      "mhIsAlcoholConsume": [e.editRow.mhIsAlcoholConsume],
+      "mhIsAlcoholConsumeYear": e.editRow.mhIsAlcoholConsumeYear,
+      "mhIsSmoker": [e.editRow.mhIsSmoker],
+      "mhIsSmokerYear": e.editRow.mhIsSmokerYear,
+      "mhIsSurgicalHistoryYear": e.editRow.mhIsSurgicalHistoryYear,
+      "mhIsSurgicalHistory": [e.editRow.mhIsSurgicalHistory],
+      "mhIsPreviousDiagnosisYear": e.editRow.mhIsPreviousDiagnosisYear,
+      "mhIsPreviousDiagnosis": [e.editRow.mhIsPreviousDiagnosis],
+      "mhIsMedicationHistoryYear": e.editRow.mhIsMedicationHistoryYear,
+      "mhIsMedicationHistory": [e.editRow.mhIsMedicationHistory]
 
     }
     this.medicalEditData = medical;
     let additionDetailsEdit = {
-
-      "patientOccupation": e.editRow.patientOccupation,
-      "patientReferredBy": e.editRow.patientReferredBy,
-      "patientLanguages": e.editRow.patientLanguages,
-      "patientPhoneNumber": e.editRow.patientPhoneNumber
+      "paiOccupation": e.editRow.paiOccupation,
+      "paiReferredBy": e.editRow.paiReferredBy,
+      "paiLanguages": e.editRow.paiLanguages,
+      "paiPhoneNumber": e.editRow.paiPhoneNumber,
+      "paiAbhaIdNumber": e.editRow.paiAbhaIdNumber,
+      "paiUhIdNumber": e.editRow.paiUhIdNumber,
+      "paiAadharNumber": e.editRow.paiAadharNumber,
+      "paiUsshIdNumber": e.editRow.paiUsshIdNumber,
 
     }
     this.addEditData = additionDetailsEdit;
 
     let mlcEditDataObj = {
-
+      "mlcId": e.editRow.mlcId,
+      "mlcTypeId": e.editRow.mlcTypeId,
+      "mlcPoliceStationId": e.editRow.mlcPoliceStationId,
+      "mlcTypeName": e.editRow.mlcTypeName,
+      "mlcPoliceStationName": e.editRow.mlcPoliceStationName,
     }
     this.mlcEditData = mlcEditDataObj;
-
-
-    // this.common.sendEditData(e.editRow);
-    // this.form$.reRenderForm(this.sidebarJSON.form.formControls[1], false, 'isVisible');
   }
+  accordionrEmitData(e: any) {
+    console.log("accordion => ", e);
+    this.accordionIndex = e;
 
+  }
   tabularValue(e: any) {
-    console.log("tabular => ", e);
-    if (e.id == 0) {
-      this.formData2 = form2Data;
-      this.formData3 = '';
-      this.formData4 = '';
-      this.formData5 = '';
-      this.formData6 = '';
-      this.formDataMLC = '';
-    } else if (e.id == 1) {
-      this.formData2 = '';
-      this.formData3 = form3Data;
-      this.formData4 = '';
-      this.formData5 = '';
-      this.formData6 = '';
-      this.formDataMLC = '';
-    } else if (e.id == 2) {
-      this.formData2 = '';
-      this.formData3 = '';
-      this.formData4 = form4Data;
-      this.formData5 = '';
-      this.formData6 = '';
-      this.formDataMLC = '';
-    } else if (e.id == 3) {
-      this.formData2 = '';
-      this.formData3 = '';
-      this.formData4 = '';
-      this.formData5 = form5Data;
-      this.formData6 = '';
-      this.formDataMLC = '';
-    } else if (e.id == 4) {
-      this.formData2 = '';
-      this.formData3 = '';
-      this.formData4 = '';
-      this.formData5 = '';
-      this.formData6 = form6Data;
-      this.formDataMLC = '';
-    } else if (e.id == 5) {
-      this.formData2 = '';
-      this.formData3 = '';
-      this.formData4 = '';
-      this.formData5 = '';
-      this.formData6 = '';
-      this.formDataMLC = MLCFormData;
-    }
-
+    this.tabularIndex = e.id;
   }
 
   calculateAge(dateString: any) {
@@ -1205,22 +1469,9 @@ export class RegistrationFormComponent implements OnInit {
         yearAge--;
       }
     }
-
-    console.log("monthAge =======> ", monthAge)
-    console.log("dateAge =======> ", dateAge)
-    console.log("yearAge =======> ", yearAge)
     this.getage = yearAge;
     this.agemon = monthAge;
     this.agedday = dateAge;
-
-    console.log("age =======> ", this.getage)
-    console.log("agemon =======> ", this.agemon)
-    console.log("agedat =======> ", this.agedday)
-
   }
-}
-
-function moment(dob: any) {
-  throw new Error('Function not implemented.');
 }
 

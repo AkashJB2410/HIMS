@@ -1,9 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "",
-        "formTitleClass": "",
-        "formTitleLogo":"",
+        "sideBarTitle":"",
+        "sidebarTitleClass": "",
+        "sidebarTitleLogo": "",
         "formName": "Form1",
         "formType": "edit",
         "sidebar": "p-sidebar-lg",
@@ -19,8 +19,8 @@
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
-                "defaultValue":"1",
-                "formControlName": "selectPoliceStation",
+                "defaultValue":1,
+                "formControlName": "selectCountry",
                 "values": [
                     {
                         "name": "Select an Option",
@@ -28,7 +28,7 @@
                     },
                     {
                         "name": "India",
-                        "code": "1"
+                        "code": 1
                     }
                 ],
                 "message": {
@@ -43,7 +43,7 @@
             {
                 "isEditable": true,
                 "isVisible": true,
-                "transient": true,
+                "transient": false,
                 "label": "",
                 "type": "dependentdropdown",
                 "class": "col-md-9",
@@ -52,7 +52,7 @@
                 "placeholder": "Select option",
                 "formControlName": "dependentdropdown",
                 "message": {
-                    "required": "Gender is required",
+                    "required": "",
                     "pattern": ""
                 },
                 "values": [
@@ -65,10 +65,10 @@
                             },
                             {
                                 "name": "Maharashtra",
-                                "code": "1"                            },
+                                "code": 1                            },
                             {
                                 "name": "Bihar",
-                                "code": "2"
+                                "code": 2
                             }
                         ]
                     },
@@ -82,28 +82,28 @@
                             },
                             {
                                 "name": "Pune",
-                                "code": "1",
-                                "Mcode": "1"
+                                "code": 1,
+                                "Mcode": 1
                             },
                             {
                                 "name": "Satara",
-                                "code": "2",
-                                "Mcode": "1"
+                                "code": 2,
+                                "Mcode": 1
                             },
                             {
                                 "name": "Sangli",
-                                "code": "3",
-                                "Mcode": "1"
+                                "code": 3,
+                                "Mcode": 1
                             },
                             {
                                 "name": "Patna",
-                                "code": "4",
-                                "Mcode": "2"
+                                "code": 4,
+                                "Mcode": 2
                             },
                             {
                                 "name": "Mujjafarpur",
-                                "code": "5",
-                                "Mcode": "2"
+                                "code": 5,
+                                "Mcode": 2
                             }
                         ]
                     },
@@ -116,22 +116,57 @@
                             },
                             {
                                 "name": "Ambegaon",
-                                "code": "1",
-                                "Mcode": "1"
+                                "code": 1,
+                                "Mcode": 1
                             },
                             {
                                 "name": "Punecity",
-                                "code": "2",
-                                "Mcode": "1"
+                                "code": 2,
+                                "Mcode": 1
                             },
                             {
                                 "name": "Khed",
-                                "code": "3",
-                                "Mcode": "1"
+                                "code": 3,
+                                "Mcode": 1
                             }
                         ]
                     }
                 ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Village",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectVillage",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Pimpari",
+                        "code": 1
+                    },
+                    {
+                        "name": "Chikhali",
+                        "code": 2
+                    }
+                ],
+                "message": {
+                    "required": "Police Station is required",
+                    "pattern": ""
+                },
                 "validations": {
                     "required": false,
                     "pattern": ""
@@ -149,13 +184,13 @@
                 "valueclass": "textarea-custom",
                 "row": "2",
                 "placeholder": "",
-                "formControlName": "address",
+                "formControlName": "addressInput",
                 "message": {
                     "required": "Address is required",
                     "pattern": "invalid"
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": "^[a-zA-Z0-9.,\\s-]+$"
                 }
             },
@@ -171,7 +206,7 @@
                 "valueclass": "textarea-custom",
                 "row": "2",
                 "placeholder": "",
-                "formControlName": "address",
+                "formControlName": "landmarkInput",
                 "message": {
                     "required": "Address is required",
                     "pattern": "invalid"
@@ -206,11 +241,12 @@
                 "id": 10,
                 "isEditable": true,
                 "isVisible": true,
+                "transient":true,
                 "label": "",
                 "inputType": "empty",
                 "type": "staticText",
                 "data": "",
-                "class": "col-md-3 my-1 ",
+                "class": "col-md-10 my-1 ",
                 "lblclass": "custom-label",
                 "valueclass": "custom-text",
                 "placeholder": "",

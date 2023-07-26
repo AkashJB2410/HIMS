@@ -31,6 +31,7 @@ import { SelfRegistrationComponent } from './features/self-registration/self-reg
 import { ClusterComponent } from './features/cluster/cluster.component';
 import { SpetialityComponent } from './features/spetiality/spetiality.component';
 import { CoreFeaturesComponent } from './features/core-features/core-features.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,7 @@ import { CoreFeaturesComponent } from './features/core-features/core-features.co
     SelfRegistrationComponent,
     ClusterComponent,
     SpetialityComponent,
-    CoreFeaturesComponent
+    CoreFeaturesComponent,
   ],
   imports: [
     CommonModule,

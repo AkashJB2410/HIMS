@@ -5,6 +5,16 @@
         {"field": "name","header": "Name","iseditable": true, "class":""},
         {"field": "inventoryStatus","header": "Inventory Status","iseditable": false, "class":""},
         {"field": "category","header": "Category","iseditable": false, "class":""},
+        {"field": "quantity","header": "Quantity","iseditable": false, "class":"text-center"},
+        {"field": "code","header": "Code","iseditable": false , "class":""} ,
+        {"field": "name","header": "Name","iseditable": true, "class":""},
+        {"field": "inventoryStatus","header": "Inventory Status","iseditable": false, "class":""},
+        {"field": "category","header": "Category","iseditable": false, "class":""},
+        {"field": "quantity","header": "Quantity","iseditable": false, "class":"text-center"},
+        {"field": "code","header": "Code","iseditable": false , "class":""} ,
+        {"field": "name","header": "Name","iseditable": true, "class":""},
+        {"field": "inventoryStatus","header": "Inventory Status","iseditable": false, "class":""},
+        {"field": "category","header": "Category","iseditable": false, "class":""},
         {"field": "quantity","header": "Quantity","iseditable": false, "class":"text-center"}
     ],
     "getColors":[
@@ -21,6 +31,7 @@
     "loading" : false,
     "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
     "isCheckbox" : true,
+    "isRadioButton":true,
     "resizableColumns": true,
     "isDragAndDrop":true,
     "isActions": ["Edit", "Delete" ,"isActive","Viewer","Scanner","Emergency","IPD","OPD","Servies"],
@@ -29,6 +40,5 @@
     "buttonlbl":"",
     "textLength":16,
     "sidebar": "p-sidebar-lg",
-    "addButton":true,
-    "bulkAction":["PDF","EXCEL","Delete"]   
+    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
 }

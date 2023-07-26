@@ -1,19 +1,23 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import * as myConstants from '../objects/constants';
+import { DecryptPipe } from '../pipes/encrypt-decrypt.pipe';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SessionService {
-  constructor(private http: HttpClient) {}
-  headers = new HttpHeaders().set('Content-type', 'application/json');
+  constructor(private http: HttpClient, private decrypt: DecryptPipe) { }
+
+  refreshAccessToken(): Observable<any> {
+    const url = myConstants.LOCALHOSTURL + 'authentication/refreshToken';
+    return this.http.post<any>(url, JSON.parse(this.decrypt.transform(localStorage.getItem('refreshToken'))));
+  }
 
   Logincheck(obj: any): Observable<any> {
     const url = myConstants.LOCALHOSTURL + 'authentication/userLogin';
-    const headers = new HttpHeaders().set('Content-type', 'application/json');
-    return this.http.post<any>(url, obj, { headers });
+    return this.http.post<any>(url, obj);
   }
 
   GetAllCollectionData() {
@@ -34,8 +38,8 @@ export class SessionService {
       };
     }
     const url = myConstants.LOCALHOSTURL + 'authentication/verify';
-    const headers = new HttpHeaders().set('Content-type', 'application/json');
-    return this.http.post<any>(url, param, { headers });
+    
+    return this.http.post<any>(url, param);
   }
 
   // To send OTP on verified number
@@ -60,14 +64,13 @@ export class SessionService {
         var url = myConstants.LOCALHOSTURL + 'authentication/sendOTPWhatsApp';
       }
     }
-    const headers = new HttpHeaders().set('Content-type', 'application/json');
-    return this.http.post<any>(url, param, { headers });
+    
+    return this.http.post<any>(url, param);
   }
 
   // To verify OTP
   verifyOTP(otp: any, data: any): Observable<any> {
     var param;
-
     if (data.emailId != '') {
       param = {
         emailId: data.emailId,
@@ -80,8 +83,7 @@ export class SessionService {
       };
     }
     const url = myConstants.LOCALHOSTURL + 'authentication/verifyOTP';
-    const headers = new HttpHeaders().set('Content-type', 'application/json');
-    return this.http.post<any>(url, param, { headers });
+    return this.http.post<any>(url, param);
   }
 
   // To update password
@@ -101,7 +103,7 @@ export class SessionService {
     const url = myConstants.LOCALHOSTURL + 'authentication/passwordUpdate';
     return this.http.put<any>(url, param);
   }
-  
+
   orgData(email: any) {
     const url =
       myConstants.LOCALHOSTURL +
@@ -110,10 +112,9 @@ export class SessionService {
     return this.http.get<any>(url);
   }
 
-  editProfile(data: any ,id:any): Observable<any> {
-    const url = myConstants.LOCALHOSTURL + "authentication/editProfile/" + id;
+  editProfile(data: any, id: any): Observable<any> {
+    const url = myConstants.LOCALHOSTURL + "authentication/editProfile/"+ id;
     return this.http.put<any>(url, data);
-
   }
 }
 

@@ -22,14 +22,22 @@ export class EditProfileComponent implements OnInit {
   base64Image: any;
   image: any;
   user: any;
+  Imageshow = false;
+  userID: any;
   constructor(private decrypt: DecryptPipe, private http: SessionService, private base64: Base64ConverterService,
     private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.logindata = JSON.parse(this.decrypt.transform(sessionStorage.getItem("loggedUser")))
     this.image = this.logindata.profileImage
+    this.userID = this.logindata.userId
+    if (this.image !="") {
+      this.Imageshow = false;
+    } else {
+      this.Imageshow = true;
+    }
     this.editForm = new FormGroup({
-      userName: new FormControl(this.logindata.userName || "", [Validators.required]),
+      userNameId: new FormControl(this.logindata.userNameId || "", [Validators.required]),
       mobileNo: new FormControl(this.logindata.mobileNo || "", [Validators.required]),
       emailId: new FormControl(this.logindata.emailId || "", [Validators.required]),
       profileImage: new FormControl(this.logindata.profileImage, [Validators.required]),
@@ -38,16 +46,14 @@ export class EditProfileComponent implements OnInit {
     });
   }
   onSubmit() {
-    if (this.logindata.userId = !"") {
-      this.http.editProfile(this.editForm.getRawValue(), this.logindata.userId).subscribe(data => {
+    if (this.editForm.valid) {
+      this.http.editProfile(this.editForm.getRawValue(), this.userID).subscribe(data => {
+        this.messageService.add({ severity: 'success', summary: 'Login', detail: 'Profile updated successfully.' });
       })
-      this.messageService.add({ severity: 'success', summary: 'Login', detail: 'Profile updated successfully.' });
-
     }
     else {
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid details' });
     }
-
   }
   onFileChange(event: any) {
     this.base64.covertToBase64(event.target.files[0]).subscribe(res => {

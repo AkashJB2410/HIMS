@@ -2,74 +2,34 @@
     "form": {
         "class": "row",
         "formId":"patientRegistration",
-        "formTitle": "Patient Registration",
-        "formTitleClass": "Sidebar-title-md ",
-        "formTitleLogo":"bi bi-file-earmark-medical",
-        "formName": "Form1",
         "formType": "edit",
-        "sidebar": "p-sidebar-lg",
+        "sideBarTitle":"Registration",
+        "sidebarTitleClass": "Sidebar-title-md",
+        "sidebarTitleLogo": "bi bi-file-earmark-medical",
         "formControls": [
             {
                 "id": 0,
                 "isEditable": true,
-                "isVisible": false,
-                "label": "",
-                "inputType": "radio",
-                "type": "radio",
-                "class": "col-md-1 mt-1 my-1",
+                "isVisible": true,
+                "label": "Mobile No.",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1 mt-2",
                 "lblclass": "custom-label",
-                "valueclass": " radio-button",
-                "placeholder": "********",
-                "formControlName": "OPDRad",
-                "defaultValue":["OPD"],
+                "valueclass": "input-box",
+                "placeholder": "Enter Mobile No.",
+                "formControlName": "mobileNoInput",
                 "message": {
-                    "required": "OPD is required",
-                    "pattern": ""
+                    "required": "Mobile No. is required",
+                    "pattern": "Please re-enter using a valid 10-digit mobile number."
                 },
-                "values": [
-                    {
-                        "name": "OPD",
-                        "code": "OPD",
-                        "editable": false
-                    }
-                ],
                 "validations": {
                     "required": true,
-                    "pattern": ""
+                    "pattern": "^\\d{10}$"
                 }
             },
             {
                 "id": 1,
-                "isEditable": true,
-                "isVisible": false,
-                "label": "",
-                "inputType": "radio",
-                "type": "radio",
-                "class": "col-md-1 mt-1 my-1",
-                "lblclass": "custom-label",
-                "valueclass": " radio-button",
-                "placeholder": "********",
-                "defaultValue":["IPD"],
-                "formControlName": "IPDRad",
-                "message": {
-                    "required": "IPD is required",
-                    "pattern": ""
-                },
-                "values": [
-                    {
-                        "name": "IPD",
-                        "code": "IPD",
-                        "editable": false
-                    }
-                ],
-                "validations": {
-                    "required": true,
-                    "pattern": ""
-                }
-            },
-            
-            {
-                "id": 2,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -91,7 +51,7 @@
                 }
             },
             {
-                "id": 3,
+                "id": 2,
                 "isEditable": false,
                 "isVisible": false,
                 "label": "Patient Id",
@@ -112,7 +72,7 @@
                 }
             },
             {
-                "id": 4,
+                "id": 3,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Title",
@@ -134,43 +94,43 @@
                     },
                     {
                         "name": "Mr",
-                        "code": "Mr"
+                        "code": 1
                     },
                     {
                         "name": "Mrs.",
-                        "code": "Mrs."
+                        "code": 2
                     },
                     {
                         "name": "B/O Boy",
-                        "code": "B/O Boy"
+                        "code": 3
                     },
                     {
                         "name": "B/O Girl",
-                        "code": "B/O Girl"
+                        "code": 4
                     },
                     {
                         "name": "Dr.",
-                        "code": "Dr."
+                        "code": 5
                     },
                     {
                         "name": "Dr. Mr",
-                        "code": "Dr. Mr"
+                        "code": 6
                     },
                     {
                         "name": "Dr. Ms",
-                        "code": "Dr. Ms"
+                        "code": 7
                     },
                     {
                         "name": "Miss.",
-                        "code": "Miss."
+                        "code": 8
                     },
                     {
                         "name": "Master",
-                        "code": "Master"
+                        "code": 9
                     },
                     {
                         "name": "Smt.",
-                        "code": "Smt."
+                        "code": 10
                     }
                 ],
                 "validations": {
@@ -180,7 +140,7 @@
             },
             
             {
-                "id": 5,
+                "id": 4,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "First Name",
@@ -201,7 +161,7 @@
                 }
             },
             {
-                "id": 6,
+                "id": 5,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Middle Name",
@@ -222,7 +182,7 @@
                 }
             },
             {
-                "id": 7,
+                "id": 6,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Last Name",
@@ -243,28 +203,138 @@
                 }
             },
             {
+                "id": 7,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Gender",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-2",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectGender",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Male",
+                        "code": 1
+                    },
+                    {
+                        "name": "Female",
+                        "code": 2
+                    },
+                    {
+                        "name": "Other",
+                        "code": 3
+                    }
+                ],
+                "message": {
+                    "required": "Gender is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
                 "id": 8,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Mobile No.",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1 mt-2",
+                "label": "Identification Type",
+                "type": "select",
+                "value": "M",
+                "class": "col-md-3  mt-2 my-1",
                 "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter Mobile No.",
-                "formControlName": "mobileNoInput",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectIdentificationType",
+                "values": [
+                    {
+                            "name": "Select Identification Type",
+                            "code": ""
+                     },
+                     {
+                        "name": "Aadhar Card",
+                        "code": 1
+                     },
+                     {
+                        "name": "Passport",
+                        "code": 2
+                     },
+                     {
+                        "name": "Pan Card",
+                        "code": 3
+                     },
+                     {
+                        "name": "Voter Card",
+                        "code": 4
+                     },
+                     {
+                        "name": "Ration Card",
+                        "code": 5
+                     },
+                     {
+                        "name": "ANC Number",
+                        "code": 6
+                     },
+                     {
+                        "name": "CHS Number",
+                        "code": 7
+                     },
+                     {
+                        "name": "Army Identify Card",
+                        "code": 8
+                     },
+                     {
+                        "name": "Driving Licence",
+                        "code": 9
+                     },
+                     {
+                        "name": "Other",
+                        "code": 10
+                     },
+                     {
+                        "name": "ABHA Id",
+                        "code": 11
+                     }
+                ],
                 "message": {
-                    "required": "Mobile No. is required",
-                    "pattern": "Please re-enter using a valid 10-digit mobile number."
+                    "required": "Identification Type is required",
+                    "pattern": "Invalid pattern"
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^\\d{10}$"
+                    "pattern": ""
                 }
             },
             {
                 "id": 9,
+                "isEditable": false,
+                "isVisible": true,
+                "label": "Identification Number",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 mt-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Identification Number",
+                "formControlName": "identificationNoInput",
+                "message": {
+                    "required": "Identification Number is required",
+                    "pattern": "Pattern is not match"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 10,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Email ID",
@@ -286,99 +356,7 @@
                 }
             },
             {
-                "id": 10,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Identification Type",
-                "type": "select",
-                "value": "M",
-                "class": "col-md-3  mt-2 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "",
-                "placeholder": "Select option",
-                "formControlName": "selectIdentificationType",
-                "values": [
-                    {
-                            "name": "Select Identification Type",
-                            "code": "0"
-                     },
-                     {
-                        "name": "Aadhar Card",
-                        "code": "1"
-                     },
-                     {
-                        "name": "Passport",
-                        "code": "2"
-                     },
-                     {
-                        "name": "Pan Card",
-                        "code": "3"
-                     },
-                     {
-                        "name": "Voter Card",
-                        "code": "4"
-                     },
-                     {
-                        "name": "Ration Card",
-                        "code": "5"
-                     },
-                     {
-                        "name": "ANC Number",
-                        "code": "6"
-                     },
-                     {
-                        "name": "CHS Number",
-                        "code": "7"
-                     },
-                     {
-                        "name": "Army Identify Card",
-                        "code": "8"
-                     },
-                     {
-                        "name": "Driving Licence",
-                        "code": "9"
-                     },
-                     {
-                        "name": "Other",
-                        "code": "10"
-                     },
-                     {
-                        "name": "ABHA Id",
-                        "code": "11"
-                     }
-                ],
-                "message": {
-                    "required": "Identification Type is required",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": true,
-                    "pattern": ""
-                }
-            },
-            {
                 "id": 11,
-                "isEditable": false,
-                "isVisible": true,
-                "label": "Identification Number",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 mt-2 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter Identification Number",
-                "formControlName": "identificationNoInput",
-                "message": {
-                    "required": "Identification Number is required",
-                    "pattern": "Pattern is not match"
-                },
-                "validations": {
-                    "required": true,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 12,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "",
@@ -406,8 +384,8 @@
                 }
             },
             {
-                "id": 13,
-                "isEditable": true,
+                "id": 12,
+                "isEditable": false,
                 "isVisible": true,
                 "transient": false,
                 "label": "",
@@ -428,7 +406,7 @@
                 }
             },
             {
-                "id": 14,
+                "id": 13,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "",
@@ -456,7 +434,7 @@
                 }
             },
             {
-                "id": 15,
+                "id": 14,
                 "isEditable": false,
                 "isVisible": true,
                 "label": "",
@@ -477,46 +455,7 @@
                 }
             },
             {
-                "id": 16,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Gender",
-                "type": "select",
-                "value": "",
-                "class": "col-md-3  my-2",
-                "lblclass": "custom-label",
-                "valueclass": "",
-                "placeholder": "Select option",
-                "formControlName": "selectGender",
-                "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    },
-                    {
-                        "name": "Male",
-                        "code": "M"
-                    },
-                    {
-                        "name": "Female",
-                        "code": "F"
-                    },
-                    {
-                        "name": "Other",
-                        "code": "o"
-                    }
-                ],
-                "message": {
-                    "required": "Gender is required",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 17,
+                "id": 15,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Blood Group",
@@ -534,35 +473,35 @@
                     },
                     {
                         "name": "A+",
-                        "code": "1"
+                        "code": 1
                     },
                     {
                         "name": "B+",
-                        "code": "2"
+                        "code": 2
                     },
                     {
                         "name": "o+",
-                        "code": "3"
+                        "code": 3
                     },
                     {
                         "name": "AB+",
-                        "code": "4"
+                        "code": 4
                     },
                     {
                         "name": "A-",
-                        "code": "5"
+                        "code": 5
                     },
                     {
                         "name": "B-",
-                        "code": "6"
+                        "code": 6
                     },
                     {
                         "name": "o-",
-                        "code": "7"
+                        "code": 7
                     },
                     {
                         "name": "AB-",
-                        "code": "8"
+                        "code": 8
                     }
                 ],
                 "message": {
@@ -575,7 +514,7 @@
                 }
             },
             {
-                "id": 18,
+                "id": 16,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Ethincity",
@@ -593,11 +532,11 @@
                     },
                     {
                         "name": " Telagu",
-                        "code": "1"
+                        "code": 1
                     },
                     {
                         "name": "Kamati",
-                        "code": "2"
+                        "code": 2
                     }
                 ],
                 "message": {
@@ -610,7 +549,7 @@
                 }
             },
             {
-                "id": 19,
+                "id": 17,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Religion",
@@ -631,7 +570,7 @@
                 }
             },
             {
-                "id": 20,
+                "id": 18,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Marital Status",
@@ -649,11 +588,11 @@
                     },
                     {
                         "name": "Married ",
-                        "code": "1"
+                        "code": 1
                     },
                     {
                         "name": "Unmarried ",
-                        "code": "2"
+                        "code": 2
                     }
                 ],
                 "message": {
@@ -666,7 +605,7 @@
                 }
             },
             {
-                "id": 21,
+                "id": 19,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -688,7 +627,30 @@
                 }
             },
             {
-                "id": 23,
+                "id": 20,
+                "isEditable": true,
+                "isVisible": true,
+                "transient":true,
+                "label": "",
+                "inputType": "empty",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-10 my-1 ",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "staticText",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 21,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,
@@ -706,16 +668,16 @@
                 }
             },
             {
-                "id": 24,
+                "id": 22,
                 "isEditable": true,
                 "isVisible": true,
-                "transient": false,
+                "transient": true,
                 "label": "",
                 "data":"",
                 "type": "divider",
                 "class": "col-md-12 my-1",
                 "lblclass": "custom-label",
-                "defaultValue":"01/2023",
+                "defaultValue":"",
                 "valueclass": "",
                 "formControlName": "divider",
                 "message": {

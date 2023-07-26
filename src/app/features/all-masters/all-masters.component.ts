@@ -3,7 +3,7 @@ import tabularData from './all-masters.json';
 import allUnitList from './allUnitList.json';
 import Breadcrumbs from './breadcrumb.json';
 import { AllMastersService } from './all-masters.service';
-
+import allDoctorData from './allMSTDoctor.json'
 
 @Component({
   selector: 'app-all-masters',
@@ -16,6 +16,7 @@ export class AllMastersComponent implements OnInit {
   items:any= Breadcrumbs
   tabularSideData=tabularData;
   allUnitList:any =allUnitList;
+  allDoctorData=allDoctorData;
   allFlag = {
   admiFlag:false,
   disFlag:false,

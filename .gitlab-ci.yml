@@ -18,9 +18,15 @@ build_image:
   services:
     - docker:dind
   script:
+<<<<<<< HEAD
     - docker build -t https://gitlab.techjivaaindia.in/administrators/generic-hmis/-/blob/development/Dockerfile
     - docker login https://gitlab.techjivaaindia.in
     - docker push https://gitlab.techjivaaindia.in/administrators/generic-hmis
+=======
+    - docker build -t gitlab.techjivaaindia.in/administrators/generic-hmis
+    - docker login gitlab.techjivaaindia.in
+    - docker push gitlab.techjivaaindia.in/administrators/generic-hmis
+>>>>>>> 287e06bb7c6e1324677955186c3100707b17416d
     - docker run -d --name generic-hmis:latest -p 4200:8080 generic-hmis:latest
 # Define the job to deploy the Docker image
 deploy_image:
@@ -29,6 +35,10 @@ deploy_image:
   services:
     - docker:dind
   script:
+<<<<<<< HEAD
     - docker login https://gitlab.techjivaaindia.in
+=======
+    - docker login gitlab.techjivaaindia.in
+>>>>>>> 287e06bb7c6e1324677955186c3100707b17416d
     - docker pull generic-hmis
     # Add your deployment steps here, such as deploying the image to a server or a Kubernetes cluster.

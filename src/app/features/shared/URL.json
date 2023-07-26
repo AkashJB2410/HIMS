@@ -1,4 +1,4 @@
 {
-    "LOCALHOST": "http://localhost:8085/",
+    "LOCALHOST": "http://localhost:8084/",
     "PAGELIST": "?page=0&size=10&sort&col"
 }

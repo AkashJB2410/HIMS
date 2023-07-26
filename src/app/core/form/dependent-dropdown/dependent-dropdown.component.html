@@ -1,9 +1,10 @@
 <div class="row" *ngIf="data.length == 2">
     <div class="col">
-        <label for="{{data[0].code}}">{{data[0].label}}</label>
+        <label for="{{data[0].code}}">{{data[0].label}} <span *ngIf="formData.validations.required"
+            style="color: red;"> * </span></label>
         <p-dropdown [options]="dropdown1" [(ngModel)]="drop1DefaultValue" [inputId]="data.code" optionLabel="name"
             optionValue="code" [showClear]="true" [showClear]="false"
-            (onChange)="renderSecondDrop($event)"></p-dropdown>
+            (onChange)="renderSecondDrop($event)" [required]="data.required"></p-dropdown>
     </div>
     <div class="col">
         <label for="{{data[1].code}}">{{data[1].label}}</label>
@@ -13,13 +14,10 @@
     </div>
 </div>
 
-<!-- <div class="error-txt-msg" *ngIf="data.length == 0">
-    {{data.message.required}}
-</div>  -->
-
 <div class="row" *ngIf="data.length == 3">
     <div class="col">
-        <label for="{{data[0].code}}">{{data[0].label}}</label>
+        <label for="{{data[0].code}}">{{data[0].label}} <span *ngIf="formData.validations.required"
+            style="color: red;"> * </span></label>
         <p-dropdown [options]="dropdown1" [(ngModel)]="drop1DefaultValue" [inputId]="data.code" optionLabel="name"
             optionValue="code" [showClear]="true" [showClear]="false"
             (onChange)="renderSecondDrop($event)"></p-dropdown>
@@ -37,8 +35,3 @@
             (onChange)="thirdDropValue($event)"></p-dropdown>
     </div>
 </div>
-<!-- <div class="error-txt-msg" *ngIf="data.length == 3">
-    {{formData.message.required}}
-</div> -->
-
-
