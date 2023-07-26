@@ -32,6 +32,9 @@ export class OpdRegistrationComponent implements OnInit {
   changeEvent(e:any){
 
   }
+  buttonEvent(e:any){
+    
+  }
   getOPDService() {
     this.http.getOPDService().subscribe((res) => {
       this.opdData = [];
