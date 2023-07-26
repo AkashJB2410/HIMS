@@ -50,16 +50,15 @@
     "resizableColumns": true,
     "isActions": [
         "Edit",
-        "Delete",
-        "isActive"
+        "Delete"
     ],
     "sidebar":"p-sidebar-md",
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
-    "buttonlbl": "ADD",
+    "buttonlbl": "",
     "textLength": 16,
     "addButton":true,
-    "bulkAction":["PDF","EXCEL","Delete"],
+    "bulkAction":[ "Multiselect","Search","Addbutton", "PDF","EXCEL"],
     "isDragAndDrop":true
 
 

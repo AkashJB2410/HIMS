@@ -42,16 +42,25 @@ body {
     cursor: pointer;
     border: solid 1px #BA68C8
 }
-.savebtn{
+
+.savebtn {
     margin-top: 20px;
-    float:left;
+    float: left;
     width: 15%;
 }
-.name-title{
-    font-size: 25px!important;
+
+.name-title {
+    font-size: 25px !important;
     margin-top: 1rem;
 }
-.rounded-circle{
-    border:0.2rem solid rgb(139 139 139 / 20%);
+
+.rounded-circle {
+    border: 0.2rem solid rgb(139 139 139 / 20%);
 }
 
+.CameraIcon {
+    position: absolute;
+    left: 769px;
+    top: 230px;
+
+}
