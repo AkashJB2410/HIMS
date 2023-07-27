@@ -1,27 +1,31 @@
 {
     "form": {
+        "formId": "moduleForm",
         "class": "row",
         "formTitle": "Add Master Module",
         "formTitleClass": "Sidebar-title-sm",
         "formTitleLogo":"bi bi-file-earmark-medical",
-        "formName": "Form1",
-        "formType": "edit",
         "sidebar":"p-sidebar-sm",
         "formControls": [
             {
                 "id": 0,
-                "isEditable": true,
+                "isEditable": false,
                 "isVisible": false,
-                "label": "Id",
+                "transient": false,
+                "label": "Module ID",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
-                "lblclass": "",
+                "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "",
-                "formControlName": "idInput",
-                "mandatoryMessage": "Code is required",
-                "message": "Code is required",                
+                "formControlName": "moduleId",
+                "maxlength": "",
+                "minlength": "1",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
                 "validations": {
                     "required": false,
                     "pattern": ""
@@ -30,14 +34,17 @@
             {
                 "isEditable": true,
                 "isVisible": true,
+                "transient": false,
                 "label": "Label",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
-                "lblclass":"",
+                "lblclass":"custom-label",
                 "valueclass":"input-box",
                 "placeholder": "Enter label...",
-                "formControlName": "labelInput",
+                "formControlName": "label",
+                "maxlength": "",
+                "minlength": "",
                 "message": {
                     "required": "Label is required",
                     "pattern": "Only Alphabets & Numbers are Allowed."
@@ -51,14 +58,17 @@
             {
                 "isEditable": true,
                 "isVisible": true,
+                "transient": false,
                 "label": "Icon",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
-                "lblclass":"",
+                "lblclass":"custom-label",
                 "valueclass":"input-box",
                 "placeholder": "Enter icon name...",
-                "formControlName": "iconInput",
+                "formControlName": "icon",
+                "maxlength": "",
+                "minlength": "",
                 "message": {
                     "required": "Icon name is required",
                     "pattern": "Only Alphabets and Numbers are Allowed."
@@ -73,14 +83,17 @@
             {
                 "isEditable": true,
                 "isVisible": true,
+                "transient": false,
                 "label": "Router Link",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
-                "lblclass":"",
+                "lblclass":"custom-label",
                 "valueclass":"input-box",
                 "placeholder": "Enter router Link...",
-                "formControlName": "routerLinkInput",
+                "formControlName": "routerLink",
+                "maxlength": "",
+                "minlength": "",
                 "message": {
                     "required": "router Link is required",
                     "pattern": "Only Numbers and Alphabates are allowed."
@@ -93,14 +106,17 @@
             {
                 "isEditable": true,
                 "isVisible": true,
+                "transient": false,
                 "label": "Sequence",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
-                "lblclass":"",
+                "lblclass":"custom-label",
                 "valueclass":"input-box",
                 "placeholder": "Enter sequence...",
-                "formControlName": "sequenceInput",
+                "formControlName": "sequence",
+                "maxlength": "",
+                "minlength": "",
                 "message": {
                     "required": "Sequence is required",
                     "pattern": "Alphabets are not Allowed"
@@ -112,36 +128,24 @@
             },
             
             {
-                "isEditable": true,
                 "isVisible": true,
                 "type": "button",
-                "subtype": "save",
+                "subtype": "submit",
+                "btnLabel": "Save",
                 "class": "col-md-4",
                 "valueclass": "butn-custom-dark-blue",
-                "btnLabel": "Save",
                 "icon": "",
-                "isDisabled": false,
-                "formControlName": "",
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
+                "isDisabled": false
             },
             {
-                "isEditable": true,
                 "isVisible": true,
                 "type": "button",
-                "subtype": "reset",
+                "subtype": "cancel",
                 "btnLabel": "Back",
                 "class": "col-md-4",
                 "valueclass": "butn-custom-wrng",
                 "icon": "",
-                "isDisabled": false,
-                "formControlName": "",
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
+                "isDisabled": false
             }
         ]
     }

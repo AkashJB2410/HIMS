@@ -1,24 +1,21 @@
-
-<p-breadcrumb [model]="Application_breadcrumb.itemsList" ></p-breadcrumb>
+<p-breadcrumb [model]="applicationBreadcrumb.itemsList" ></p-breadcrumb>
 <h3 class="Sidebar-title-md"><i class="bi bi-file-earmark-medical"></i>Master Module</h3>
-<app-super-grid
-    *ngIf="data"
-    [configurations]="configurations" 
-    [tableData]="data" 
-    [tableConfig] = "config"
-    [sidebarJSON] = "sidebarJSON"
+
+    <app-super-grid
+    *ngIf="isDataReady"
+    [configurations]="gridConfigurations" 
+    [tableData]="mstModuleData" 
+    [tableConfig] = "tableConfig"
+    [sidebarJSON] = "sidebarConfig"
     (sideBarEvent)="closeSidebarData($event)"
     (confirmAction)="confirmAction($event)"
-    (fiteredData)="fiteredData($event)"
+    (isActive)="toggleModuleStatus($event)"
+    (Bulkdelete)="bulkDeleteMstModules($event)"
     (onEdit)="onEdit($event)"
-    (isActive)="isActive($event)"
-    (Bulkdelete)="Bulkdelete($event)"
-    (onEdit)="onEdit($event)"
-    (onAdd)="onAdd($event)"
-    [editData]="editData">
+    (onAdd)="initializeAddForm($event)"
+    [editData]="selectedModuleData">
 
-    
-    <app-form projectTowards="sidebar" *ngIf="editData" [formJSON]="sidebarJSON" [editData]="editData"
-    (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
->
+    <app-form projectTowards="sidebar" *ngIf="selectedModuleData" [formJSON]="sidebarConfig" [editData]="selectedModuleData"
+    (btnEvent)="handleButtonClick($event)" (formData)="sidebarData($event)"></app-form>
+
 </app-super-grid>
