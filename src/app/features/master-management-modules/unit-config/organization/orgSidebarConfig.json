@@ -1,10 +1,10 @@
 {
     "form": {
+        "formId": "orgForm",
         "class": "row",
         "formTitle": "Add Organization",
         "formTitleClass": "Sidebar-title-md",
         "formTitleLogo":"bi bi-file-earmark-medical",
-        "formName": "Form1",
         "sidebar": "p-sidebar-md",
         "formControls": [
             {
@@ -155,40 +155,24 @@
                 }
             },
             {
-                "id": 2,
-                "isEditable": true,
                 "isVisible": true,
-                "transient": true,
                 "type": "button",
-                "subtype": "save",
-                "class": "col-md-3",
-                "valueclass": "butn-custom-dark-blue",
+                "subtype": "submit",
                 "btnLabel": "Save",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue",
                 "icon": "",
-                "isDisabled": false,
-                "formControlName": "",
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
+                "isDisabled": false
             },
             {
-                "id": 3,
-                "isEditable": true,
                 "isVisible": true,
-                "transient": true,
                 "type": "button",
-                "subtype": "reset",
+                "subtype": "cancel",
                 "btnLabel": "Back",
-                "class": "col-md-3",
-                "valueclass": "button-login-yellow",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-wrng",
                 "icon": "",
-                "isDisabled": false,
-                "formControlName": "",
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
+                "isDisabled": false
             }
         ]
     }
