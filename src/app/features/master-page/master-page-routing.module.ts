@@ -26,7 +26,7 @@ const routes: Routes = [
       { path: 'all-masters', loadChildren: () => import('../master-management-modules/all-masters/all-masters.module').then(m => m.AllMastersModule) },
       { path: 'all-masters/master-module', loadChildren: () => import('../master-management-modules/unit-config/master-module/master-module.module').then(m => m.MasterModuleModule) },
       { path: 'all-masters/sub-module', loadChildren: () => import('../master-management-modules/unit-config/sub-module/sub-module.module').then(m => m.SubModuleModule) },
-      { path: 'all-masters/organization', loadChildren: () => import('../master-management-modules/unit-config/organization/organizationModule').then(m => m.OrganizationModule) },
+      { path: 'all-masters/organization', loadChildren: () => import('../master-management-modules/unit-config/organization/organization.module').then(m => m.OrganizationModule) },
       { path: 'all-masters/role-management', loadChildren: () => import('../master-management-modules/unit-config/role-management/role-management.module').then(m => m.RoleManagementModule) },
       { path: 'all-masters/bank-master', loadChildren: () => import('../master-management-modules/unit-config/bank-master/bank-master.module').then(m => m.BankMasterModule) },
       { path: 'all-masters/employee-status', loadChildren: () => import('../master-management-modules/unit-config/employee-status/employee-status.module').then(m => m.EmployeeStatusModule) },

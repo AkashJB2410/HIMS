@@ -13,7 +13,7 @@ import { SubModuleComponent } from './features/master-management-modules/unit-co
 import { MasterModuleComponent } from './features/master-management-modules/unit-config/master-module/master-module.component';
 import { MasterModuleModule } from './features/master-management-modules/unit-config/master-module/master-module.module';
 import { RoleManagementModule } from './features/master-management-modules/unit-config/role-management/role-management.module';
-import { OrganizationModule } from './features/master-management-modules/unit-config/organization/organizationModule';
+import { OrganizationModule } from './features/master-management-modules/unit-config/organization/organization.module';
 import { RegistrationFormComponent } from './features/registration-form/registration-form.component';
 import { RegistrationFormModule } from './features/registration-form/registration-form.module';
 import { SharedModule } from './core/shared/modules/shared.module';
@@ -34,6 +34,7 @@ import { CoreFeaturesComponent } from './features/core-features/core-features.co
 import { DoctorScheduleComponent } from './features/doctor-schedule/doctor-schedule.component';
 import { DoctorCabinComponent } from './features/doctor-cabin/doctor-cabin.component';
 import { DayMasterComponent } from './features/day-master/day-master.component';
+import { OrganizationComponent } from './features/master-management-modules/unit-config/organization/organization.component';
 
 
 @NgModule({
@@ -58,7 +59,7 @@ import { DayMasterComponent } from './features/day-master/day-master.component';
     DoctorScheduleComponent,
     DoctorCabinComponent,
     DayMasterComponent,
-   
+    OrganizationComponent
   ],
   imports: [
     CommonModule,
