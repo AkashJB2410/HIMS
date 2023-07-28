@@ -18,9 +18,9 @@ const routes: Routes = [
       { path: 'core-features', loadChildren: () => import('../core-features/core-features.module').then(m => m.CoreFeaturesModule) },
 
     //  Doctor Routing
-      { path: 'all-masters/doctor-schedule', loadChildren: () => import('../doctor-schedule/doctor-schedule.module').then(m => m.DoctorScheduleModule) },
-      { path: 'all-masters/doctor-cabin', loadChildren: () => import('../doctor-cabin/doctor-cabin.module').then(m => m.DoctorCabinModule) },
-      { path: 'all-masters/day-master', loadChildren: () => import('../day-master/day-master.module').then(m => m.DayMasterModule) },
+      { path: 'all-masters/doctor-schedule', loadChildren: () => import('../master-management-modules/doctor-config/doctor-schedule/doctor-schedule.module').then(m => m.DoctorScheduleModule) },
+      { path: 'all-masters/doctor-cabin', loadChildren: () => import('../master-management-modules/doctor-config/doctor-cabin/doctor-cabin.module').then(m => m.DoctorCabinModule) },
+      { path: 'all-masters/day-master', loadChildren: () => import('../master-management-modules/doctor-config/day-master/day-master.module').then(m => m.DayMasterModule) },
 
       //masters routing link
       { path: 'all-masters', loadChildren: () => import('../master-management-modules/all-masters/all-masters.module').then(m => m.AllMastersModule) },

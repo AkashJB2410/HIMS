@@ -71,10 +71,14 @@ export class SelfRegistrationComponent implements OnInit {
         this.MobileNumber = ch[1].fieldValue;
         this.otp = true
         this.form.showModal(true)
-      }else{
+        this.http.verifyMobileNumber(this.MobileNumber).subscribe((data) => {
+         
+         
+        });
+      } else {
         this.messageService.add({ severity: 'error', summary: 'Error', detail: "Please Enter mobile number" });
       }
-     
+
       // this.getAllSelfReg();
     }
     if (ch[1].fieldName == "userDOB") {
@@ -87,85 +91,104 @@ export class SelfRegistrationComponent implements OnInit {
     if (e == "save") {
       this.http.saveSelfRegData(this.selfFormData).subscribe((resData) => {
         this.data = undefined;
-      }, (error) => {                              //Error callback
+      }, );
+      console.log(this.addressData)
+      this.http.saveMstAddress(this.addressData).subscribe((resData) => {
+        this.data = undefined;
+      },(error) => {                              //Error callback
         this.errorFlag = true;
         this.messageService.add({ severity: 'error', summary: 'Error', detail: "This key name is alredy exit" });
       });
-      this.messageService.add({ severity: 'success', summary: 'success', detail: 'Your registration has been successfully completed!' });
-    } else {
-      this.router.navigateByUrl('')
-    }
+    this.messageService.add({ severity: 'success', summary: 'success', detail: 'Your registration has been successfully completed!' });
+  } else {
+  this.router.navigateByUrl('')
+}
   }
 
-  buttonEvent(e: any) {
-    this.editData = undefined;
-    if (e == "reset") {
-      this.router.navigateByUrl('')
-    } else {
-      this.FormData(e);
-    }
+buttonEvent(e: any) {
+  this.editData = undefined;
+  if (e == "reset") {
+    this.router.navigateByUrl('')
+  } else {
+    this.FormData(e);
   }
-  age: any
-  sidebarData(e: any) {
+}
+age: any;
+addressData: any;
+sidebarData(e: any) {
+  if (e != 'reset') {
+    const param = {
+      "patientTitleName": e.selectTitle.name,
+      "patientFirstname": e.firstName,
+      "patientMiddlename": e.middleName,
+      "patientLastname": e.lastName,
+      "patientMobileNumber": e.mobileNo,
+      "patientEmail": e.email,
+      "patientGenderId": e.selectGender.code,
+      "patientBloodGroupId": e.selectBlood,
+      "patientAddress": e.address,
+      "patientDob": this.age,
+      "additionalComment": e.additionalComment,
+      "patientRegistrationSource": "Self"
+    };
+    this.selfFormData = param;
+    const param2 = {
+      "addressLine": e.address,
+      "addressLandmark": e.landmark,
+      "addressVillageName": e.selectVillage,
+      "addressTalukaId": e.state[2],
+      "addressTalukaName": e.addressTalukaName,
+      "addressStateId": e.state[0],
+      "addressStateName": e.addressStateName,
+      "addressCountryId": e.addressCountryId,
+      "addressCountryName": e.addressCountryName, 
+      "addressPinCode": e.pinCode
+    }
+    this.addressData = param2
+  }
+}
 
-    if (e != 'reset') {
-      const param = {
+getAllSelfReg() {
+  this.data = undefined;
+  this.selfRegData = [];
+  this.http.GetAllSelfRegData().subscribe((res) => {
+    console.log(res)
+    res[1].result.forEach((e: any, index: any) => {
+      let obj = {
+        "id": index,
         "patientTitleName": e.selectTitle,
-        "patientFirstname": e.firstName,
+        "patientFirstname": e.patientFirstname,
         "patientMiddlename": e.middleName,
-        "patientLastname": e.lastName,
-        "patientMobileNumber": e.mobileNo,
+        "patientLastname": e.patientLastname,
+        "patientMobileNumber": e.patientMobileNumber,
         "patientEmail": e.email,
         "patientGenderId": e.selectGender,
-        "patientBloodGroupId": e.selectBlood,
         "patientAddress": e.address,
-        "patientDob": this.age,
+        "patientDob": e.userDOB,
         "additionalComment": e.additionalComment,
         "patientRegistrationSource": "Self"
-      };
-      this.selfFormData = param;
-    }
-  }
-
-  getAllSelfReg() {
-    this.data = undefined;
-    this.selfRegData = [];
-    this.http.GetAllSelfRegData().subscribe((res) => {
-      console.log(res)
-      res[1].result.forEach((e: any, index: any) => {
-        let obj = {
-          "id": index,
-          "patientTitleName": e.selectTitle,
-          "patientFirstname": e.patientFirstname,
-          "patientMiddlename": e.middleName,
-          "patientLastname": e.patientLastname,
-          "patientMobileNumber": e.patientMobileNumber,
-          "patientEmail": e.email,
-          "patientGenderId": e.selectGender,
-          "patientAddress": e.address,
-          "patientDob": e.userDOB,
-          "additionalComment": e.additionalComment,
-          "patientRegistrationSource": "Self"
-        }
-        this.selfRegData.push(obj);
-      })
-      this.data = [...this.selfRegData];
-      this.isdataReady = true;
-      for (let i = 0; i < this.data.length; i++) {
-        this.data[i].srNumber = i + 1;
       }
-      this.form.showModal(true);
+      this.selfRegData.push(obj);
     })
-  }
+    this.data = [...this.selfRegData];
+    this.isdataReady = true;
+    for (let i = 0; i < this.data.length; i++) {
+      this.data[i].srNumber = i + 1;
+    }
+    this.form.showModal(true);
+  })
+}
+// //mobile number api 
 
-  // send otp
-  sendOTPButton: boolean = true
-  timeLeft: any = 60;
-  sendOTP(e: any) {
-    this.sendOTPButton = false
-  }
-  verifyOTP(e: any) {
-    this.otp = false
-    this.getAllSelfReg();
-  }
+
+// send otp
+sendOTPButton: boolean = true
+timeLeft: any = 60;
+sendOTP(e: any) {
+  this.sendOTPButton = false
+}
+verifyOTP(e: any) {
+  this.otp = false
+  this.getAllSelfReg();
+}
 }

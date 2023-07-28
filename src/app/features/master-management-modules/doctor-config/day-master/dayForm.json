@@ -91,7 +91,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter id",
-                "formControlName": "is_Active",
+                "formControlName": "isActive",
                 "message": {
                     "required": "Id is required",
                     "pattern": ""

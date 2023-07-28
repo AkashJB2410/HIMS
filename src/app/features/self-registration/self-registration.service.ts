@@ -22,7 +22,14 @@ return this.http.get<any>(url);
     const url = " http://localhost:8082/mst_patient/create";
     return this.PostCall(url, data);
   }
-
+  saveMstAddress(mstAddress: any): Observable<any> {
+    const url = "http://localhost:8082/mst_address/create";
+    return this.PostCall(url, mstAddress);
+  }
+  verifyMobileNumber(data: any): Observable<any>{
+  const url = "http://localhost:8082/mst_patient/byMobileNumber/"+data;
+  return this.http.get<any>(url)
+  }
 
    // To send OTP on verified number
    sendOTP(data: any): Observable<any> {

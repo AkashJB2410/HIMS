@@ -1,7 +1,7 @@
 {
     "tableName": "Day Master Table",
     "tableHeaders": [
-        {"field": "srNumber","header": "Sr. No","iseditable": false , "class":"text-center"},
+        {"field": "id","header": "Sr. No","iseditable": false , "class":"text-center"},
     
         {
             "field": "dayName",
@@ -29,7 +29,7 @@
         }
     ],
     "PdfHeaders": [
-        {"field": "srNumber","header": "Sr Number"},
+        {"field": "id","header": "Sr Number"},
 
         { "field": "day_name",
         "header": "Day Name"
