@@ -1,44 +1,96 @@
 {
     "tableName": "Products Table",
     "tableHeaders": [
-        {"field": "code","header": "Code","iseditable": false , "class":""} ,
-        {"field": "name","header": "Name","iseditable": true, "class":""},
-        {"field": "inventoryStatus","header": "Inventory Status","iseditable": false, "class":""},
-        {"field": "category","header": "Category","iseditable": false, "class":""},
-        {"field": "quantity","header": "Quantity","iseditable": false, "class":"text-center"},
-        {"field": "code","header": "Code","iseditable": false , "class":""} ,
-        {"field": "name","header": "Name","iseditable": true, "class":""},
-        {"field": "inventoryStatus","header": "Inventory Status","iseditable": false, "class":""},
-        {"field": "category","header": "Category","iseditable": false, "class":""},
-        {"field": "quantity","header": "Quantity","iseditable": false, "class":"text-center"},
-        {"field": "code","header": "Code","iseditable": false , "class":""} ,
-        {"field": "name","header": "Name","iseditable": true, "class":""},
-        {"field": "inventoryStatus","header": "Inventory Status","iseditable": false, "class":""},
-        {"field": "category","header": "Category","iseditable": false, "class":""},
-        {"field": "quantity","header": "Quantity","iseditable": false, "class":"text-center"}
+        {
+            "field": "name",
+            "header": "NAME",
+            "iseditable": true,
+            "class": ""
+        },
+        {
+            "field": "code",
+            "header": "CODE",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "inventoryStatus",
+            "header": "INVENTORY STATUS",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "category",
+            "header": "CATEGORY",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "quantity",
+            "header": "QUANTITY",
+            "iseditable": false,
+            "class": "text-center"
+        }
     ],
-    "getColors":[
-        { "status":"INSTOCK", "color": "#119C2B"},
-        { "status":"LOWSTOCK", "color": "#FF792E"},
-        { "status":"OUTOFSTOCK", "color": "red"}
+    "getColors": [
+        {
+            "status": "INSTOCK",
+            "color": "#119C2B"
+        },
+        {
+            "status": "LOWSTOCK",
+            "color": "#FF792E"
+        },
+        {
+            "status": "OUTOFSTOCK",
+            "color": "red"
+        }
     ],
-    "globalFilter": ["code","name","quantity","inventoryStatus"],
-    "rows" : 16,
-    "showCurrentPageReport" : true,
-    "rowsPerPageOptions" : [15,25,50],
-    "paginator":true,
-    "rowHover" : true,
-    "loading" : false,
-    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
-    "isCheckbox" : true,
-    "isRadioButton":true,
+    "globalFilter": [
+        "code",
+        "name",
+        "quantity",
+        "inventoryStatus"
+    ],
+    "rows": 13,
+    "showCurrentPageReport": true,
+    "rowsPerPageOptions": [
+        15,
+        25,
+        50
+    ],
+    "paginator": true,
+    "rowHover": true,
+    "loading": false,
+    "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox": true,
+    "isRadioButton": false,
     "resizableColumns": true,
-    "isDragAndDrop":true,
-    "isActions": ["Edit", "Delete" ,"isActive","Viewer","Scanner","Emergency","IPD","OPD","Servies"],
-    "editicon":"../../../assets/icons/Group 1823.png",
-    "expand":true,
-    "buttonlbl":"",
-    "textLength":16,
+    "isDragAndDrop": true,
+    "isProfileDisplay": true,
+    "isActions": [
+        "Edit",
+        "Delete",
+        "isActive",
+        "Viewer",
+        "Scanner",
+        "Emergency",
+        "IPD",
+        "OPD",
+        "Servies"
+    ],
+    "editicon": "../../../assets/icons/Group 1823.png",
+    "expand": true,
+    "buttonlbl": "",
+    "textLength": 60,
     "sidebar": "p-sidebar-lg",
-    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
+    "bulkAction": [
+        "Multiselect",
+        "Search",
+        "Addbutton",
+        "PDF",
+        "EXCEL",
+        "Delete"
+    ],
+    "name": "AbmName"
 }

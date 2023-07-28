@@ -2,7 +2,7 @@ export const data =
     [
         {
             "id": "1000",
-            "code": "f230fkgjktjkjktjksfkv;fjbkltjligjlktjl gjhthgjtlijgtkjljluliueivujkh0g3 f230fkgjktjkjktjksfkv;fjbkltjligjlktjl gjhthgjtlijgtkjljluliueivujkh0g3f230fkgjktjkjktjksfkv;fjbkltjligjlktjl gjhthgjtlijgtkjljluliueivujkh0g3f230fkgjktjkjktjksfkv;fjbkltjligjlktjl gjhthgjtlijgtkjljluliueivujkh0g3f230fkgjktjkjktjksfkv;fjbkltjligjlktjl gjhthgjtlijgtkjljluliueivujkh0g3",
+            "code": "f230fkgjk",
             "name":"Satyam",
             "description": "Product",
             "profilePic": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
@@ -201,7 +201,7 @@ export const data =
         {
             "id": "1015",
             "code": "vb34btbg5",
-            "name": "Light Green T-Shirt",
+            "name": "Sagar",
             "description": "Product Description",
             "profilePic": "",
             "price": 49,

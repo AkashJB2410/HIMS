@@ -1,6 +1,11 @@
 {
-    "tableName": "MasterModule Table",
+    "tableName": "Master Module Table",
     "tableHeaders": [
+        {
+            "field":"id",
+            "header":"Sr. No.",
+            "iseditable": false , "class":"text-center"
+        },
         {
             "field": "label",
             "header": "Label",
@@ -24,38 +29,14 @@
             "header": "Sequence",
             "iseditable": false,
             "class": "text-center"
-        },
-        {
-            "field": "is_Active",
-            "header": "isActive",
-            "iseditable": false,
-            "class": "text-center"
-        }
-    ],
-    "PdfHeaders": [
-        {
-            "field": "label",
-            "header": "Label"
-        },
-        {
-            "field": "icon",
-            "header": "Icon"
-        },
-        {
-            "field": "routerLink",
-            "header": "Router Link"
-        },
-        {
-            "field": "sequence",
-            "header": "Sequence"
         }
     ],
     "globalFilter": [
         "icon","label",
         "routerLink",
-        "sequence"
+        "sequence","id"
     ],
-    "rows": 15,
+    "rows": 10,
     "showCurrentPageReport": true,
     "rowsPerPageOptions": [
         10,
@@ -67,7 +48,9 @@
     "loading": false,
     "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
     "isCheckbox": true,
+    "isRadioButton":false,
     "resizableColumns": true,
+    "isDragAndDrop":true,
     "isActions": [
         "Edit",
         "Delete",
@@ -75,7 +58,8 @@
     ],
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
-    "buttonlbl": "Add MasterModule",
-    "textLength": 16,
-    "sidebar":"p-sidebar-sm"
+    "buttonlbl": "",
+    "textLength": 20,
+    "sidebar":"p-sidebar-sm",
+    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
 }

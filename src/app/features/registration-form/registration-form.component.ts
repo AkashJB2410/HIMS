@@ -626,7 +626,7 @@ export class RegistrationFormComponent implements OnInit {
       this.mobileGridData = undefined;
       this.http.mobileSerchData(e[0]).subscribe((data: any) => {
         this.mobileGridData = data[1].result;
-        this.form$.showModal(true);
+        this.form$.showModal(true,"");
         console.log("this.mobileGridData ===>", this.mobileGridData)
 
       });

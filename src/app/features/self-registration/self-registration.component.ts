@@ -70,7 +70,7 @@ export class SelfRegistrationComponent implements OnInit {
       if (ch[1].fieldValue != undefined) {
         this.MobileNumber = ch[1].fieldValue;
         this.otp = true
-        this.form.showModal(true)
+        this.form.showModal(true,"Verity page")
         this.http.verifyMobileNumber(this.MobileNumber).subscribe((data) => {
          
          
@@ -168,14 +168,14 @@ getAllSelfReg() {
         "additionalComment": e.additionalComment,
         "patientRegistrationSource": "Self"
       }
-      this.selfRegData.push(obj);
+        this.selfRegData.push(obj);
     })
     this.data = [...this.selfRegData];
     this.isdataReady = true;
     for (let i = 0; i < this.data.length; i++) {
       this.data[i].srNumber = i + 1;
     }
-    this.form.showModal(true);
+    this.form.showModal(true,"Verity Page");
   })
 }
 // //mobile number api 

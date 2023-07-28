@@ -28,7 +28,7 @@
         },
         {
             "field": "orgContactPerson",
-            "header": "Contact Person",
+            "header": "Contact Person Name",
             "iseditable": false , "class":""
         },
         {
@@ -37,7 +37,7 @@
             "iseditable": false , "class":""
         }
     ],
-    "globalFilter": ["id","orgName","orgEmail","orgMobile","orgAddress","orgContactPerson", "orgPhone", "is_Active"],
+    "globalFilter": ["id","orgName","orgEmail","orgMobile","orgAddress","orgContactPerson", "orgPhone"],
     "rows" : 10,
     "showCurrentPageReport" : true,
     "rowsPerPageOptions" : [15,25,50],
@@ -53,7 +53,7 @@
     "editicon":"../../../assets/icons/Group 1823.png",
     "expand":false,
     "buttonlbl":"",
-    "textLength":16,
+    "textLength":20,
     "sidebar": "p-sidebar-lg",
     "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
 }

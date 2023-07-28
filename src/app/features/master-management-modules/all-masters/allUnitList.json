@@ -46,11 +46,6 @@
       "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
-      "label": "Super Speciality",
-      "routerLink": "/master-page/all-masters/super-speciality",
-      "imgSrc": "assets/unit-configuration/action-sub-module.png"
-    },
-    {
       "label": "Staff",
       "routerLink": "/master-page/all-masters/staff",
       "imgSrc": "assets/unit-configuration/action-sub-module.png"
