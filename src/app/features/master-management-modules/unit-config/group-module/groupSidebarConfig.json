@@ -12,8 +12,8 @@
             {
                 "isEditable": false,
                 "isVisible": true,
-                "transient": true,
-                "label": "ID",
+                "transient": false,
+                "label": "Group ID",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
@@ -34,23 +34,18 @@
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
-                "label": "MstModule_ModuleID",
+                "label": "Master Modules",
                 "type": "select",
                 "class": "col-md-12  my-1",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
-                "formControlName": "selectmstModule",
+                "formControlName": "mstModule",
                 "message": {
-                    "required": "ModuleID is required",
+                    "required": "Module is required",
                     "pattern": "pattern is not match"
                 },
-                "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    }
-                ],
+                "values": [],
                 "validations": {
                     "required": true,
                     "pattern": ""
@@ -59,41 +54,47 @@
             {
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Label",
+                "transient": false,
+                "label": "Group Module Label",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter unit cluster",
+                "lblclass":"custom-label",
+                "valueclass":"input-box",
+                "placeholder": "Enter label...",
                 "formControlName": "lable",
+                "maxlength": "",
+                "minlength": "",
                 "message": {
-                    "required": "lable is required",
-                    "pattern": "pattern is not match"
+                    "required": "Label is required",
+                    "pattern": "Only Alphabets & Numbers are Allowed."
                 },
                 "validations": {
                     "required": true,
-                    "pattern": ""
+                    "pattern": "^[a-zA-Z _0-9- ]+$"
                 }
             },
             {
                 "isEditable": true,
                 "isVisible": true,
+                "transient": false,
                 "label": "Icon",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter icon name",
+                "lblclass":"custom-label",
+                "valueclass":"input-box",
+                "placeholder": "Enter icon name...",
                 "formControlName": "icon",
+                "maxlength": "",
+                "minlength": "",
                 "message": {
-                    "required": "icon is required",
-                    "pattern": "pattern is not match"
+                    "required": "Icon name is required",
+                    "pattern": "Only Alphabets and Numbers are Allowed."
                 },
                 "validations": {
                     "required": false,
-                    "pattern": "^[A-Za-z\\s-/]+$"
+                    "pattern": "^[a-zA-Z\\s- 0-9]+$"
                 }
             },
            
@@ -101,99 +102,68 @@
             {
                 "isEditable": true,
                 "isVisible": true,
+                "transient": false,
                 "label": "Router Link",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter router link",
+                "lblclass":"custom-label",
+                "valueclass":"input-box",
+                "placeholder": "Enter router Link...",
                 "formControlName": "routerLink",
+                "maxlength": "",
+                "minlength": "",
                 "message": {
-                    "required": "routerLink is required",
-                    "pattern": "pattern is not match"
+                    "required": "router Link is required",
+                    "pattern": "Only Numbers and Alphabates are allowed."
                 },
                 "validations": {
                     "required": false,
-                    "pattern": ""
+                    "pattern": "^[a-zA-Z\\s-/ _/0-9]+$"
                 }
             },
             {
                 "isEditable": true,
                 "isVisible": true,
+                "transient": false,
                 "label": "Sequence",
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Enter Sequence",
+                "lblclass":"custom-label",
+                "valueclass":"input-box",
+                "placeholder": "Enter sequence...",
                 "formControlName": "sequence",
+                "maxlength": "",
+                "minlength": "",
                 "message": {
-                    "required": "sequence is required",
-                    "pattern": "pattern is not match"
+                    "required": "Sequence is required",
+                    "pattern": "Alphabets are not Allowed"
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[0-9]+$"
+                    "pattern": "^[0-9.]+$"
                 }
             },
             {
-                "isEditable": false,
-                "isVisible": false,
-                "transient": false,
-                "label": "is_Active",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-12 my-1",
-                "lblclass": "custom-label",
-                "valueclass":"input-box",
-                "placeholder": "Enter id",
-                "formControlName": "is_Active",
-                "message": {
-                    "required": "Id is required",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 1,
-                "isEditable": true,
                 "isVisible": true,
-                "transient": true,
                 "type": "button",
-                "subtype": "save",
-                "class": "col-md-4",
-                "valueclass": "butn-custom-dark-blue ",
+                "subtype": "submit",
                 "btnLabel": "Save",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue",
                 "icon": "",
-                "isDisabled": false,
-                "formControlName": "",
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },            
+                "isDisabled": false
+            },
             {
-                "id": 2,
-                "isEditable": true,
                 "isVisible": true,
-                "transient": true,
                 "type": "button",
-                "subtype": "reset",
+                "subtype": "cancel",
                 "btnLabel": "Back",
                 "class": "col-md-4",
-                "valueclass": "button-login-yellow",
+                "valueclass": "butn-custom-wrng",
                 "icon": "",
-                "isDisabled": false,
-                "formControlName": "",
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
+                "isDisabled": false
             }
         ]
     }

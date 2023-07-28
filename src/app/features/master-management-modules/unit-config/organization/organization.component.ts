@@ -18,6 +18,7 @@ import { FeaturescommonService } from 'src/app/features/shared/featurescommon.se
 })
 
 export class OrganizationComponent implements OnInit {  
+    //variable declarations
   selectedOrgData: any;
   isEditMode: boolean;
   applicationBreadcrumb = organization_breadcrumb;
@@ -27,7 +28,8 @@ export class OrganizationComponent implements OnInit {
   isDataReady = false;
   sidebarConfig: any = orgSidebarConfig;
   deleteMsg = false;
-
+  
+   //API declarations
   apiGet="mstOrganization/list";
   apiAdd="mstOrganization/create";
   apiUpdate="mstOrganization/update";
@@ -60,6 +62,7 @@ export class OrganizationComponent implements OnInit {
           ...item,
           id: index + 1,
         }));
+         //changing the value of isDataReady to refresh the gird
         this.isDataReady = true;
       },
       (error) => {
@@ -76,12 +79,14 @@ export class OrganizationComponent implements OnInit {
           ...item,
           id: index + 1,
         }));
+         //changing the value of isDataReady to refresh the gird
         this.isDataReady = true;
         this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
       },
       (error) => {
         this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
       });
+       //changing the value of isDataReady to refresh the gird
     this.isDataReady = false;
   }
 
@@ -94,12 +99,14 @@ export class OrganizationComponent implements OnInit {
           ...item,
           id: index + 1,
         }));
+         //changing the value of isDataReady to refresh the gird
         this.isDataReady = true;
         this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
       },
       (error) => {
         this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
       });
+       //changing the value of isDataReady to refresh the gird
     this.isDataReady = false;
   }
 
@@ -112,18 +119,20 @@ export class OrganizationComponent implements OnInit {
           ...item,
           id: index + 1,
         }));
+         //changing the value of isDataReady to refresh the gird
         this.isDataReady = true;
         this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
       },
       (error) => {
         this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
       });
+       //changing the value of isDataReady to refresh the gird
     this.isDataReady = false;
   }
 
   toggleOrgStatus(orgData: any) {
     if (orgData.isActive == false) {
-      //reactiveting data into database
+      //reactiveting data form database
       this.featurescommonService.reactiveData(this.apiactive, orgData, orgData.orgId).subscribe(
         (response) => {
           //response stored in OrgData with id as index
@@ -131,12 +140,14 @@ export class OrganizationComponent implements OnInit {
             ...item,
             id: index + 1,
           }));
+             //changing the value of isDataReady to refresh the gird
           this.isDataReady = true;
           this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message })
         },
         (error) => {
           this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
         });
+           //changing the value of isDataReady to refresh the gird
       this.isDataReady = false;
     }
     else {
@@ -147,6 +158,7 @@ export class OrganizationComponent implements OnInit {
   bulkDeleteOrg(arrayOfOrgData: any[]) {
     if (arrayOfOrgData.length != 0) {
       this.isDataReady = false;
+       //send one by one orData to delete method
       arrayOfOrgData.forEach((orgData: any) => {
         this.deleteOrgForBulk(orgData);
       })
@@ -167,12 +179,15 @@ export class OrganizationComponent implements OnInit {
           ...item,
           id: index + 1,
         }));
+          //changing the value of isDataReady to refresh the gird
         this.isDataReady = true;
+         //changing the value of deleteMsg to display the delete message
         this.deleteMsg = false;
       },
       (error) => {
         console.log('delete API Error', error);
       });
+      //changing the value of isDataReady to refresh the gird
     this.isDataReady = false;
   }
 
@@ -188,6 +203,7 @@ export class OrganizationComponent implements OnInit {
   }
 
   closeSidebarData(e: any) {
+    //removing last selectedOrgData
     this.selectedOrgData = undefined;
   }
 
@@ -214,6 +230,7 @@ export class OrganizationComponent implements OnInit {
   }
 
   handleButtonClick(e: any) {
+     //removing last selectedOrgData
     this.selectedOrgData = undefined;
     this.common.sendEditData(false);
   }  

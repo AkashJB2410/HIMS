@@ -54,6 +54,6 @@
     "expand":false,
     "buttonlbl":"",
     "textLength":20,
-    "sidebar": "p-sidebar-lg",
+    "sidebar": "p-sidebar-sm",
     "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
 }
