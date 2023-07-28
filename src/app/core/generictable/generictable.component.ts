@@ -12,7 +12,7 @@ import { MessageService } from 'primeng/api';
 })
 
 export class GenerictableComponent implements OnInit {
-  checked: true
+  checked: true;
   status: any = false;
   rowObject: any = []
   exportColumns: any;
@@ -31,7 +31,9 @@ export class GenerictableComponent implements OnInit {
   contextmenu = false;
   contextmenuX = 0;
   contextmenuY = 0;
-  Is_active = true
+  Is_active = true;
+  radiobutton: any = [];
+  chekboxes: any = [];
   contextMenus: any = [
     { "menu": "Edit", "img": "../../../assets/core_assets/edit.png" },
     { "menu": "Duplicate", "img": "../../../assets/core_assets/duplicate.png" },
@@ -39,10 +41,9 @@ export class GenerictableComponent implements OnInit {
     { "menu": "Remove", "img": "../../../assets/core_assets/bin.png" },
     { "menu": "Properties", "img": "../../../assets/core_assets/tool.png" }
   ]
-  radiobutton:any =[];
-  chekboxes: any = [];
   @Input() config: any;
   @Input() tableData: any[];
+  @Input() permissions: any;
   @Output() onCheckboxClick = new EventEmitter<string>();
   @Output() onEdit = new EventEmitter<string>();
   @Output() onDelete = new EventEmitter<string>();
@@ -59,29 +60,31 @@ export class GenerictableComponent implements OnInit {
 
   constructor(private toast: MessageService) { }
   ngOnInit() {
-    // JSON.parse(localStorage.getItem('Selected Column Value'))
-    JSON.parse(localStorage.getItem(this.pdfName))
+    this.rows = this.config.rows;
+    this.pdfName = this.config.tableName;
     if (this.tableData == undefined)
       this.tableData = data;
-
     if (this.config == undefined)
       this.config = this.config;
-
-
+    if (this.permissions != undefined && this.permissions.actions != undefined)
+      this.config.isActions = this.permissions.actions;
     this.exportColumns = this.config.tableHeaders.map((config: any) => ({ title: config.header, dataKey: config.field }));
-    this.colNames = this.config.tableHeaders
+    this.colNames = this.config.tableHeaders;
 
-    this.rows = this.config.rows;
+    // if (JSON.parse(localStorage.getItem(this.pdfName)) != null) {
+    //   this._selectedColumns = JSON.parse(localStorage.getItem(this.pdfName))
+    // } else {
+    //   this._selectedColumns = this.colNames
+    // }
+    if (this.permissions != undefined && this.permissions.columns != undefined)
+      this.colNames = this.colNames.filter((ele: any) => {
+        if (this.permissions.columns.includes(ele.field)) {
+          return ele;
+        }
+      })
 
-    this.pdfName = this.config.tableName;
-    if (JSON.parse(localStorage.getItem(this.pdfName)) != null) {
-      this._selectedColumns = JSON.parse(localStorage.getItem(this.pdfName))
-    }
-    else {
-      this._selectedColumns = this.colNames
-    }
-
-  
+    this._selectedColumns = this.colNames;
+    // this.colNames = this._selectedColumns;
   }
 
   onrightClick(event: any, rowdata: any) {
@@ -244,5 +247,7 @@ export class GenerictableComponent implements OnInit {
   serviceClick(event: any, e: any) {
     this.OnServiceclick.emit(e);
   }
+
+
 }
 

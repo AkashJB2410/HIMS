@@ -1161,3 +1161,17 @@ ul p.verticaltab{
     color:white;
     font-weight:600
   }
+  .text-center {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    color: white;
+}
+.label-txt {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.3px;
+  align-items: center;
+  color: white;
+}

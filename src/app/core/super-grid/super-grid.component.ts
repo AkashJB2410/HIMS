@@ -25,6 +25,7 @@ export class SuperGridComponent implements OnInit {
   @Input() tableData: any;
   @Input() filterJSON: any;
   @Input() sidebarJSON: any;
+  @Input() permissions: any;
   @Output() sideBarEvent = new EventEmitter;
   @Output() confirmAction = new EventEmitter;
   @Output() fiteredData = new EventEmitter;

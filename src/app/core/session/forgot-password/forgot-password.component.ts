@@ -85,9 +85,7 @@ export class ForgotPasswordComponent implements OnInit {
           detail: this.errorMessage,
         });
 
-      }
-        
-      
+      } 
     });
   }
 

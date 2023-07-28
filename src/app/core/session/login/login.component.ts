@@ -34,13 +34,16 @@ export class LoginComponent implements OnInit {
   country: string = '';
   province: string = '';
   location: any;
+  lat: any;
+  lng: any;
   constructor(private router: Router,
     private messageService: MessageService,
     private http: SessionService,
     private encrypt: EncryptPipe,
-    private decrypt: DecryptPipe,
-    private visitorsService: LocationService
-  ) { }
+    private visitorsService: LocationService) {
+    sessionStorage.clear();
+    localStorage.clear();
+  }
 
   ngOnInit() {
     // localStorage.clear();
@@ -62,6 +65,7 @@ export class LoginComponent implements OnInit {
       this.location = res;
       sessionStorage.setItem("location", this.location.city)
     });
+   
   }
 
   getEmail(e: any) {
@@ -116,6 +120,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     // if (this.loginForm.value.captcha && this.loginForm.value.organisation.organization_Id != "") {
     if (this.loginForm.value.captcha) {
+      // this.http.Logincheck(this.loginForm.value,this.location.latitude,this.location.longitude)
       this.http.Logincheck(this.loginForm.value)
         .subscribe({
           next: data => {
@@ -166,5 +171,6 @@ export class LoginComponent implements OnInit {
       localStorage.clear();
     }
   }
-}
 
+
+}
