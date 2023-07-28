@@ -33,8 +33,11 @@ export class FormComponent implements OnInit {
   formValid: boolean = false;
   primeNgComponents: Array<string> = ['month', 'select', 'radio', 'checkbox', 'date', 'dateRange', 'password'];
   displayModal: any;
+  modalTitle: any;
+  number: string = "1234567891"
   @Input() formJSON: any;
   @Input() editData: any;
+  @Input() permissions: any;
   @Output() formData = new EventEmitter<any>();
   @Output() btnEvent = new EventEmitter<any>();
   @Output() changeEvents = new EventEmitter<any>();
@@ -44,6 +47,7 @@ export class FormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, public datepipe: DatePipe, public customDate: CustomDatePipe, private form$: FormService, private base64: Base64ConverterService) { }
 
   ngOnInit(): void {
+    this.permissions
     this.formJson = this.formJSON.form;
     this.form = this.formBuilder.group({});
     this.setForm();
@@ -114,7 +118,9 @@ export class FormComponent implements OnInit {
     }
   }
   showModal(data: any) {
-    this.displayModal = data;
+    console.log(data.titleName)
+    this.displayModal = data.value;
+    this.modalTitle = data.titleName;
   }
 
   resetControl(data: any) {
@@ -196,7 +202,7 @@ export class FormComponent implements OnInit {
         fieldType: control.type || '',
         inputType: control.inputType || '',
         placeholder: control.placeholder || '',
-        editable: control.isEditable || '',
+        editable: (this.permissions != undefined) ? (this.permissions.form[i].isEditable) ? true : false : control.isEditable || '',
         class: control.class || '',
         lblclass: control.lblclass || '',
         valueclass: control.valueclass || '',
@@ -204,7 +210,7 @@ export class FormComponent implements OnInit {
         values: control.values || '',
         validations: control.validations || '',
         data: control.data || '',
-        visible: control.isVisible || '',
+        visible: (this.permissions != undefined) ? (this.permissions.form[i].isVisible) ? true : false : control.isVisible || '',
         format: control.format || '',
         subtype: control.subtype || '',
         icon: control.icon || '',
@@ -218,12 +224,15 @@ export class FormComponent implements OnInit {
         maxlength: control.maxlength || '',
         minlength: control.minlength || '',
       };
+      if (control.type == 'hiddentext') {
+        ctrl.fieldValue = this.Inputnumbermasking(control.placeholder)
+      }
       this.formControls.push(ctrl);
     });
     this.formValidation();
     this.form = new FormGroup(this.group);
   }
-
+  // (this.permissions.form[i].permission == "V") ? true : false,
   btnClick(event: any) {
     if (event == 'cancel') {
       this.btnEvent.emit(event);
@@ -306,6 +315,19 @@ export class FormComponent implements OnInit {
       } else {
         this.group[field.fieldName] = new FormControl({ value: field.fieldValue || '', disabled: !field.editable, });
       }
+    }
+  }
+
+  Inputnumbermasking(_number: string) {
+    var mask = "";
+    if (_number) {
+      for (let i = 0; i <= _number.length - 2; i++) {
+        mask += "X";
+      }
+      return mask + _number.slice(8, 12);
+    }
+    else {
+      return null;
     }
   }
 }

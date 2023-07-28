@@ -58,5 +58,6 @@ export enum FormControlTypes {
     ICON = "icon",
     DEPENDENTDROPDOWN = "dependentdropdown",
     DIVIDER = "divider",
-    MULTISELECT = "multiselect"
+    MULTISELECT = "multiselect",
+    HIDETEXT="hiddentext"
 }

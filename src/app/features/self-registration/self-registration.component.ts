@@ -70,7 +70,7 @@ export class SelfRegistrationComponent implements OnInit {
       if (ch[1].fieldValue != undefined) {
         this.MobileNumber = ch[1].fieldValue;
         this.otp = true
-        this.form.showModal(true)
+        this.form.showModal(true,"")
       }else{
         this.messageService.add({ severity: 'error', summary: 'Error', detail: "Please Enter mobile number" });
       }
@@ -154,7 +154,7 @@ export class SelfRegistrationComponent implements OnInit {
       for (let i = 0; i < this.data.length; i++) {
         this.data[i].srNumber = i + 1;
       }
-      this.form.showModal(true);
+      this.form.showModal(true,"");
     })
   }
 
