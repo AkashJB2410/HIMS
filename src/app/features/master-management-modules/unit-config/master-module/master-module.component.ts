@@ -11,6 +11,7 @@ import { FeaturescommonService } from 'src/app/features/shared/featurescommon.se
   templateUrl: './master-module.component.html',
 })
 export class MasterModuleComponent implements OnInit {
+  //variable declarations
   selectedModuleData: any;
   isEditMode: boolean;
   applicationBreadcrumb = Application_breadcrumb;
@@ -21,6 +22,7 @@ export class MasterModuleComponent implements OnInit {
   sidebarConfig: any = mstModuleSidebarConfig;
   deleteMsg = false;
 
+  //API declarations
   apiGet = 'mstModule/list';
   apiAdd = 'mstModule/create';
   apiUpdate = 'mstModule/update';
@@ -52,11 +54,12 @@ export class MasterModuleComponent implements OnInit {
     //fetch Data from API
     this.featurescommonService.getData(this.apiGet).subscribe(
       (response) => {
-        //response stored in mustMouldeData with id as index
+        //response stored in mstMouldeData with id as index
         this.mstModuleData = response.content.map((item: any, index: number) => ({
           ...item,
           id: index + 1,
         }));
+         //changing the value of isDataReady to refresh the gird
         this.isDataReady = true;
       },
       (error) => {
@@ -68,17 +71,19 @@ export class MasterModuleComponent implements OnInit {
     //adding data into database
     this.featurescommonService.addData(moduleData, this.apiAdd).subscribe(
       (response) => {
-        //response stored in mustMouldeData with id as index
+        //response stored in mstMouldeData with id as index
         this.mstModuleData = response.result.map((item: any, index: number) => ({
           ...item,
           id: index + 1,
         }));
+         //changing the value of isDataReady to refresh the gird
         this.isDataReady = true;
         this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
       },
       (error) => {
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
       });
+       //changing the value of isDataReady to refresh the gird
     this.isDataReady = false;
   }
 
@@ -86,17 +91,19 @@ export class MasterModuleComponent implements OnInit {
     //updating data into database
     this.featurescommonService.updateData(moduleData, this.apiUpdate).subscribe(
       (response) => {
-        //response stored in mustMouldeData with id as index
+        //response stored in mstMouldeData with id as index
         this.mstModuleData = response.result.map((item: any, index: number) => ({
           ...item,
           id: index + 1,
         }));
+         //changing the value of isDataReady to refresh the gird
         this.isDataReady = true;
         this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
       },
       (error) => {
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
       });
+       //changing the value of isDataReady to refresh the gird
     this.isDataReady = false;
   }
 
@@ -104,36 +111,40 @@ export class MasterModuleComponent implements OnInit {
     // deleting data from database
     this.featurescommonService.deleteData(this.apidelete, moduleData.moduleId).subscribe(
       (response) => {
-        //response stored in mustMouldeData with id as index
+        //response stored in mstMouldeData with id as index
         this.mstModuleData = response.result.map((item: any, index: number) => ({
           ...item,
           id: index + 1,
         }));
+         //changing the value of isDataReady to refresh the gird
         this.isDataReady = true;
         this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
       },
       (error) => {
-        this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
       });
+       //changing the value of isDataReady to refresh the gird
     this.isDataReady = false;
   }
 
   toggleModuleStatus(moduleData: any) {
     if (moduleData.isActive == false) {
-      //reactiveting data into database
+      //reactiveting data form database
       this.featurescommonService.reactiveData(this.apiactive, moduleData, moduleData.moduleId).subscribe(
         (response) => {
-          //response stored in mustMouldeData with id as index
+          //response stored in mstMouldeData with id as index
           this.mstModuleData = response.result.map((item: any, index: number) => ({
             ...item,
             id: index + 1,
           }));
+           //changing the value of isDataReady to refresh the gird
           this.isDataReady = true;
           this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message })
         },
         (error) => {
-          this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
         });
+        //changing the value of isDataReady to refresh the gird
       this.isDataReady = false;
     }
     else {
@@ -144,11 +155,13 @@ export class MasterModuleComponent implements OnInit {
   bulkDeleteMstModules(arrayOfModuleData: any[]) {
     if (arrayOfModuleData.length != 0) {
       this.isDataReady = false;
+      //send one by one moduledata to delete method
       arrayOfModuleData.forEach((moduleData: any) => {
         this.deleteMstModuleForBulk(moduleData);
       })
       if (this.deleteMsg) {
         this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Bulk Delete' });
+        this.deleteMsg=false;
       }
     }
     else {
@@ -164,12 +177,15 @@ export class MasterModuleComponent implements OnInit {
           ...item,
           id: index + 1,
         }));
+         //changing the value of isDataReady to refresh the gird
         this.isDataReady = true;
+        //changing the value of deleteMsg to display the delete message
         this.deleteMsg = false;
       },
       (error) => {
         console.log('delete API Error', error);
       });
+      //changing the value of isDataReady to refresh the gird
     this.isDataReady = false;
   }
 
@@ -185,18 +201,15 @@ export class MasterModuleComponent implements OnInit {
   }
 
   closeSidebarData(e: any) {
+      //removing last selectedModuleData
     this.selectedModuleData = undefined;
   }
 
   sidebarData(e: any) {
-    console.log('From User Management ==> ', e);
-    if (e === 'reset') {
-      console.log(e);
-    } else if (this.isEditMode) {
-      console.log(e);
+    if (e === 'reset') {} 
+    else if (this.isEditMode) {
       this.addMstModuleData(e);
     } else {
-      console.log(e);
       this.updateMstModule(e);
     }
   }
@@ -215,6 +228,7 @@ export class MasterModuleComponent implements OnInit {
   }
 
   handleButtonClick(e: any) {
+     //removing last selectedModuleData
     this.selectedModuleData = undefined;
     this.common.sendEditData(false);
   }
