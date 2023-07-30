@@ -19,11 +19,11 @@
     
     </app-form>
 
-    <app-accordion projectTowards="sidebar" [accordionData]="accordionData"
+    <!-- <app-accordion projectTowards="sidebar" [accordionData]="accordionData"
         (accordionrEmitData)="accordionrEmitData($event)">
         <app-form projectTowards="sidebar" *ngIf="formDateCommAdd && addressEditData" [formJSON]="formDateCommAdd" [editData]="addressEditData"
             (formData)="saveAddress($event)" (changeEvents)="changeAddressEvent($event)"></app-form>
-    </app-accordion>
+    </app-accordion> -->
     <app-accordion projectTowards="sidebar" [accordionData]="accordionTabTwo">
         <app-tabular-forms projectTowards="sidebar" [tabularJSON]="tabularFormData"
         (tabularEmitData)="tabularValue($event)">
@@ -46,6 +46,9 @@
 
         <app-form *ngIf="formDataMLC && tabularIndex==5" projectTowards="sidebar" [formJSON]="formDataMLC" [editData]="mlcEditData"
             (formData)="saveFormMLC($event)"></app-form>
+
+        <app-form *ngIf="emergencyContactFormData && tabularIndex==6" projectTowards="sidebar" [formJSON]="emergencyContactFormData" [editData]="emergencyContactEditData"
+            (formData)="saveFormEmergencyContact($event)"></app-form>
 
     </app-tabular-forms>
     </app-accordion>
