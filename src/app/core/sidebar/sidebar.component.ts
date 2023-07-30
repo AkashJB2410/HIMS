@@ -31,7 +31,7 @@ export class SidebarComponent implements OnInit {
     // this.handelBackdrop();
     this.Sidebardata=this.sidebarJSON
     this.common.getEditData().subscribe(data => {
-      if (!data) {
+      if (data) {
         this.visibleSidebar = data;
       }
     })

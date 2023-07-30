@@ -1,0 +1,36 @@
+{
+    "tableName": "Additional Services",
+    "tableHeaders": [
+       
+        {"field": "serviceCode","header": "Code","iseditable": false , "class":""},
+        {"field": "serviceName","header": "Name","iseditable": false , "class":""},
+        {"field": "serviceAbbreviations","header": "Abbreviations","iseditable": false , "class":""}
+       
+        
+    ],
+    "PdfHeaders": [
+        {"field": "patientFullname","header": "Patient Name"},
+        {"field": "patientMiddlename","header": "MiddleName"}
+       
+    ],
+    "globalFilter": ["patientFirstname","patientMiddlename","patientLastname","patientAge","patientMobileNumber"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [10,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "resizableColumns": true,
+	"isDragAndDrop":true,
+    "isActions": false,
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "expand":false,
+    "addButton":true,
+    "buttonlbl":"",
+    "textLength":60,
+    "sidebar":"p-sidebar-xl",
+	"bulkAction":[],
+    "isProfileDisplay":false  
+}

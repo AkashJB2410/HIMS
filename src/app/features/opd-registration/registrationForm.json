@@ -6,6 +6,7 @@
         "sideBarTitle":"Registration",
         "sidebarTitleClass": "Sidebar-title-md",
         "sidebarTitleLogo": "bi bi-file-earmark-medical",
+        "sidebar": "p-sidebar-lg",
         "formControls": [
             {
                 "id": 0,
@@ -14,7 +15,7 @@
                 "label": "Mobile No.",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-3 my-1",
+                "class": "col-md-3 my-1 mt-2",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Mobile No.",

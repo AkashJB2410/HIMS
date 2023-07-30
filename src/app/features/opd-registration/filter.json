@@ -1,0 +1,72 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "",
+        "formName": "Form1",
+        "formControls": [
+            {
+                "id": 0,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Search Services",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-9 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Search Services...",
+                "defaultValue":"",
+                "formControlName": "searchServicesInput",
+                "message": {
+                    "required": "Search Services is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isVisible": true,
+                "label": "",
+                "type": "icon",
+                "class": "col-md-3",
+                "icons": [
+                    {
+                        "class": "pi pi-search",
+                        "isDisabled": false,
+                        "subtype": "search",
+                        "valueclass": "icon-button-primary",
+                        "tooltip": "Search",
+                        "toolPosition": "top"
+                    },
+                    {
+                        "class": "pi pi-filter",
+                        "isDisabled": false,
+                        "subtype": "openFilter",
+                        "valueclass": "icon-button-primary",
+                        "tooltip": "Filter",
+                        "toolPosition": "top"
+                    },
+                    {
+                        "class": "pi pi-save",
+                        "isDisabled": false,
+                        "subtype": "submit",
+                        "valueclass": "icon-button-succes",
+                        "tooltip": "Save Filter",
+                        "toolPosition": "top"
+                    },
+                    {
+                        "class": "pi pi-sync",
+                        "isDisabled": false,
+                        "subtype": "reset",
+                        "valueclass": "icon-button-warn",
+                        "tooltip": "Reset",
+                        "toolPosition": "top"
+                    }
+                  
+                ]
+            }
+        ]
+    }
+}

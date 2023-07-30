@@ -3,7 +3,7 @@
         "class": "row",
         "formId":"opdRegistration",
         "formType": "edit",
-        "sideBarTitle":"Registration",
+        "sideBarTitle":"OPD Registration",
         "sidebarTitleClass": "Sidebar-title-md",
         "sidebarTitleLogo": "bi bi-file-earmark-medical",
         "formControls": [
@@ -14,43 +14,22 @@
                 "label": "Mobile No.",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-2 my-1 mt-2",
+                "class": "col-md-2 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Mobile No.",
-                "formControlName": "mobileNoInput",
+                "formControlName": "mobileNo",
                 "message": {
                     "required": "Mobile No. is required",
                     "pattern": "Please re-enter using a valid 10-digit mobile number."
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": "^\\d{10}$"
                 }
             },
             {
-                "id": 2,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Aadhar No.",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-2 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Aadhar No.",
-                "formControlName": "aadharNo",
-                "message": {
-                    "required": "Aadhar No. is required",
-                    "pattern": "Invalid Aadhar no."
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": "^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$"
-                }
-            },
-            {
-                "id": 2,
+                "id": 1,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "ABHA ID",
@@ -60,7 +39,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "ABHA ID",
-                "formControlName": "abhaId",
+                "formControlName": "abhaIdInput",
                 "message": {
                     "required": "ABHA ID is required",
                     "pattern": "Invalid ABHA Id"
@@ -81,7 +60,7 @@
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "UH ID",
-                "formControlName": "uhId",
+                "formControlName": "uhIdInput",
                 "message": {
                     "required": "UH ID is required",
                     "pattern": ""
@@ -92,7 +71,28 @@
                 }
             },
             {
-                "id": 20,
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Aadhar No.",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-2 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Aadhar No.",
+                "formControlName": "aadharNo",
+                "message": {
+                    "required": "Aadhar No. is required",
+                    "pattern": "Invalid Aadhar no."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$"
+                }
+            },
+            {
+                "id": 4,
                 "isEditable": true,
                 "isVisible": true,
                 "transient":true,
@@ -115,7 +115,7 @@
                 }
             },
             {
-                "id": 21,
+                "id": 5,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,
@@ -133,7 +133,7 @@
                 }
             },
             {
-                "id": 1,
+                "id": 6,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -155,7 +155,7 @@
                 }
             },
             {
-                "id": 2,
+                "id": 7,
                 "isEditable": false,
                 "isVisible": false,
                 "label": "Patient Id",
@@ -176,7 +176,7 @@
                 }
             },
             {
-                "id": 3,
+                "id": 8,
                 "isEditable": false,
                 "isVisible": true,
                 "label": "Title",
@@ -244,7 +244,7 @@
             },
             
             {
-                "id": 4,
+                "id": 9,
                 "isEditable": false,
                 "isVisible": true,
                 "label": "First Name",
@@ -260,12 +260,12 @@
                     "pattern": "Only Alphabets are Allowed"
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": "^[A-Za-z]+$"
                 }
             },
             {
-                "id": 5,
+                "id": 10,
                 "isEditable": false,
                 "isVisible": true,
                 "label": "Middle Name",
@@ -286,7 +286,7 @@
                 }
             },
             {
-                "id": 6,
+                "id": 11,
                 "isEditable": false,
                 "isVisible": true,
                 "label": "Last Name",
@@ -307,7 +307,7 @@
                 }
             },
             {
-                "id": 7,
+                "id": 12,
                 "isEditable": false,
                 "isVisible": true,
                 "label": "Gender",
@@ -346,7 +346,7 @@
                 }
             },
             {
-                "id": 12,
+                "id": 13,
                 "isEditable": false,
                 "isVisible": true,
                 "transient": false,
@@ -363,7 +363,7 @@
                     "pattern": ""
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
@@ -384,12 +384,12 @@
                     "pattern": "Numbers not allowed."
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": ""
                 }
             },
             {
-                "id": 0,
+                "id": 15,
                 "isEditable": false,
                 "isVisible": true,
                 "label": "Mobile No.",
@@ -405,12 +405,12 @@
                     "pattern": "Please re-enter using a valid 10-digit mobile number."
                 },
                 "validations": {
-                    "required": true,
+                    "required": false,
                     "pattern": "^\\d{10}$"
                 }
             },
             {
-                "id": 22,
+                "id": 16,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,

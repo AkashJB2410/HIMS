@@ -1,4 +1,18 @@
 <h3 class="Sidebar-title-md "><i class="bi bi-file-earmark-medical"></i>OPD Registration</h3>
-<app-form projectTowards="sidebar"  [formJSON]="formJSON" (changeEvents)="changeEvent($event)" (btnEvent)="buttonEvent($event)"></app-form>
+<app-form [formJSON]="formJSON" (changeEvents)="changeEvent($event)"
+    (btnEvent)="buttonEvent($event)">
+    <app-super-grid *ngIf="mobileGridData" [configurations]="mobileConfig" [tableData]="mobileGridData"
+        [tableConfig]="configMobi" (rowClickData)="mobileRowClickData($event)"></app-super-grid>
+</app-form>
+<app-sidebar [sidebarJSON]="sidebarJSON">
+    <app-form projectTowards="sidebar" *ngIf="formData" [formJSON]="formData" [editData]="editData"
+    (formData)="saveRegistartionForm($event)" (changeEvents)="changeSelectItem($event)" ></app-form>
+</app-sidebar>
 <app-super-grid *ngIf="opdData" [configurations]="serviceConfig" [tableData]="opdData"
-            [tableConfig]="configServ"></app-super-grid>
+    [tableConfig]="configServ" (rowClickData)="rowClickDataComService($event)"></app-super-grid>
+<app-accordion [accordionData]="accordionData">
+    <app-super-grid *ngIf="data" [configurations]="configurations" [filterJSON]="filterData" (fiteredData)="fiteredData($event)"
+        [tableData]="data" [tableConfig]="config" (rowClickData)="rowClickData($event)"></app-super-grid>
+</app-accordion>
+<app-form  *ngIf="sidebarButtonJSON" [formJSON]="sidebarButtonJSON" 
+(btnEvent)="buttonEventSubmit($event)"></app-form>
