@@ -35,5 +35,37 @@ export class OpdRegistrationService {
     const url = "http://localhost:8087/trnVisitServices/createlist";
     return this.PostCall(url, serviceArr);
   }
-  
+  saveMstPatient(mstPatient: any): Observable<any> {
+    const url = "http://localhost:8082/mst_patient/create";
+    return this.PostCall(url, mstPatient);
+  }
+  saveMstAddress(mstAddress: any): Observable<any> {
+    const url = "http://localhost:8082/mst_address/create";
+    return this.PostCall(url, mstAddress);
+  }
+  saveMstPrivilege(mstPrivilege: any): Observable<any> {
+    const url = "http://localhost:8082/mst_privilege/create";
+    return this.PostCall(url, mstPrivilege);
+  }
+  saveMstInsurance(mstInsurance: any): Observable<any> {
+    const url = "http://localhost:8082/mst_insurance/create";
+    return this.PostCall(url, mstInsurance);
+  }
+  saveMstMedicalHistory(mstMedicalHistory: any): Observable<any> {
+    const url = "http://localhost:8082/mst_medical_history/create";
+    return this.PostCall(url, mstMedicalHistory);
+  }
+  saveMstPatientAddInfo(mstPatientAddInfo: any): Observable<any> {
+    const url = "http://localhost:8082/mst_patient_add_info/create";
+    return this.PostCall(url, mstPatientAddInfo);
+  }
+  saveMstMedicalLegalCase(mstMedicalLegalCaseSave: any): Observable<any> {
+    const url = "http://localhost:8082/mst_medical_legal_case/create";
+    return this.PostCall(url, mstMedicalLegalCaseSave);
+  }
+
+  saveMstEmergencyContact(mstEmergencyContact: any): Observable<any> {
+    const url = "http://localhost:8082/mst_emergency_contact/create";
+    return this.PostCall(url, mstEmergencyContact);
+  }
 }

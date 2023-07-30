@@ -1,18 +1,53 @@
 <h3 class="Sidebar-title-md "><i class="bi bi-file-earmark-medical"></i>OPD Registration</h3>
-<app-form [formJSON]="formJSON" (changeEvents)="changeEvent($event)"
-    (btnEvent)="buttonEvent($event)">
+<app-form [formJSON]="formJSON" (changeEvents)="changeEvent($event)" (btnEvent)="buttonEvent($event)">
     <app-super-grid *ngIf="mobileGridData" [configurations]="mobileConfig" [tableData]="mobileGridData"
         [tableConfig]="configMobi" (rowClickData)="mobileRowClickData($event)"></app-super-grid>
 </app-form>
+<!-- Sidebar registration form -->
 <app-sidebar [sidebarJSON]="sidebarJSON">
     <app-form projectTowards="sidebar" *ngIf="formData" [formJSON]="formData" [editData]="editData"
-    (formData)="saveRegistartionForm($event)" (changeEvents)="changeSelectItem($event)" ></app-form>
+        (formData)="saveRegistartionForm($event)" (changeEvents)="changeSelectItem($event)"></app-form>
+
+    <app-accordion projectTowards="sidebar" [accordionData]="accordionTabTwo">
+        <app-tabular-forms projectTowards="sidebar" [tabularJSON]="tabularFormData"
+            (tabularEmitData)="tabularValue($event)">
+
+            <app-form *ngIf="perAddressFormData && tabularIndex==0" projectTowards="sidebar"
+                [formJSON]="perAddressFormData" (formData)="savePerAddress($event)"
+                (changeEvents)="changePerAddressEvent($event)"></app-form>
+
+            <app-form *ngIf="hospitalAssFormData && tabularIndex==1" projectTowards="sidebar"
+                [formJSON]="hospitalAssFormData" (formData)="savePrivilege($event)"></app-form>
+
+            <app-form *ngIf="insuranceDetailsFormData && tabularIndex==2" projectTowards="sidebar"
+                [formJSON]="insuranceDetailsFormData" (formData)="saveInsurance($event)"></app-form>
+
+            <app-form *ngIf="medicalHisFormData && tabularIndex==3" projectTowards="sidebar"
+                [formJSON]="medicalHisFormData" (formData)="saveMh($event)"
+                (changeEvents)="changeSelect($event)"></app-form>
+
+            <app-form *ngIf="addDetailsFormData && tabularIndex==4" projectTowards="sidebar"
+                [formJSON]="addDetailsFormData" (formData)="savePai($event)"></app-form>
+
+            <app-form *ngIf="formDataMLC && tabularIndex==5" projectTowards="sidebar" [formJSON]="formDataMLC"
+                (formData)="saveFormMLC($event)"></app-form>
+
+            <app-form *ngIf="emergencyContactFormData && tabularIndex==6" projectTowards="sidebar"
+                [formJSON]="emergencyContactFormData" (formData)="saveFormEmergencyContact($event)"></app-form>
+
+        </app-tabular-forms>
+    </app-accordion>
+
+    <app-form projectTowards="sidebar" *ngIf="sidebarButtonJSON" [formJSON]="sidebarButtonJSON"
+        (btnEvent)="sidebarButtonEvent($event)" (formData)="sidebarDataSave($event)"></app-form>
 </app-sidebar>
-<app-super-grid *ngIf="opdData" [configurations]="serviceConfig" [tableData]="opdData"
-    [tableConfig]="configServ" (rowClickData)="rowClickDataComService($event)"></app-super-grid>
+<!-- sidebar -->
+<app-super-grid *ngIf="opdData" [configurations]="serviceConfig" [tableData]="opdData" [tableConfig]="configServ"
+    (rowClickData)="rowClickDataComService($event)"></app-super-grid>
 <app-accordion [accordionData]="accordionData">
-    <app-super-grid *ngIf="data" [configurations]="configurations" [filterJSON]="filterData" (fiteredData)="fiteredData($event)"
-        [tableData]="data" [tableConfig]="config" (rowClickData)="rowClickData($event)"></app-super-grid>
+    <app-super-grid *ngIf="data" [configurations]="configurations" [filterJSON]="filterData"
+        (fiteredData)="fiteredData($event)" [tableData]="data" [tableConfig]="config"
+        (rowClickData)="rowClickData($event)"></app-super-grid>
 </app-accordion>
-<app-form  *ngIf="sidebarButtonJSON" [formJSON]="sidebarButtonJSON" 
-(btnEvent)="buttonEventSubmit($event)"></app-form>
+
+<app-form *ngIf="opdButtonJSON" [formJSON]="opdButtonJSON" (btnEvent)="buttonEventSubmit($event)"></app-form>

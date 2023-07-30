@@ -1,0 +1,192 @@
+{
+    "form": {
+        "class": "row",
+        "sideBarTitle":"",
+        "sidebarTitleClass": "",
+        "sidebarTitleLogo": "",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar": "p-sidebar-lg",
+        "formControls": [
+            {
+                "id": 0,
+                "isEditable": false,
+                "isVisible": false,
+                "label": "MLC Id",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "MLC Id",
+                "formControlName": "mlcId",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Type of MLC",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-2",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectMLCType",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Assault and battery, including domestic violence and child abuse",
+                        "code": 1
+                    },
+                    {
+                        "name": "Accidents like Road Traffic Accidents (RTA), industrial accidents etc.",
+                        "code": 2
+                    },
+                    {
+                        "name": "Cases of trauma with suspicion of foul play",
+                        "code": 3
+                    },
+                    {
+                        "name": "Electrical injuries",
+                        "code": 4
+                    },
+                    {
+                        "name": "Poisoning, Alcohol Intoxication 3",
+                        "code": 5
+                    },
+                    {
+                        "name": "Undiagnosed coma",
+                        "code": 6
+                    },
+                    {
+                        "name": "Chemical injuries",
+                        "code": 7
+                    },
+                    {
+                        "name": "Burns and Scalds",
+                        "code": 8
+                    }
+                ],
+                "message": {
+                    "required": "Type of MLC is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Police Station",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-2",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectPoliceStation",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Pimpri",
+                        "code": 1
+                    },
+                    {
+                        "name": "Chinchwad",
+                        "code": 2
+                    }
+                ],
+                "message": {
+                    "required": "Police Station is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient":true,
+                "label": "",
+                "inputType": "empty",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-6 my-1 ",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "staticText",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "transient":true,
+                "label": "",
+                "inputType": "empty",
+                "type": "staticText",
+                "data": "",
+                "class": "col-md-10 my-1 ",
+                "lblclass": "custom-label",
+                "valueclass": "custom-text",
+                "placeholder": "",
+                "formControlName": "staticText",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-2",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}
