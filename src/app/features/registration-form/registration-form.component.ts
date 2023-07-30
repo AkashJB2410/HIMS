@@ -360,7 +360,7 @@ export class RegistrationFormComponent implements OnInit {
   }
   rowClickData(e: any) { }
   mobileRowClickData(e: any) {
-    this.form$.showModal(false);
+    this.form$.showModal(false,"");
     console.log("Mobile data =>", e);
     this.form$.reRenderForm(this.formData.form.formControls[0], e.patientMobileNumber, 'autofill');
     this.form$.reRenderForm(this.formData.form.formControls[3], e.patientTitleId, 'autofill');
@@ -645,7 +645,7 @@ export class RegistrationFormComponent implements OnInit {
           this.messageService.add({ severity: 'success', summary: 'Message form User component', detail: 'New mobile number for registration.' });
         } else {
           this.mobileGridData = data[1].result;
-          this.form$.showModal(true);
+          this.form$.showModal(true,"");
           console.log("this.mobileGridData ===>", this.mobileGridData)
         }
       });

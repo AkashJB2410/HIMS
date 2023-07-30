@@ -452,8 +452,8 @@ body {
   border: 0px solid #EEEEEE;
   border-radius: 5px;
   width: 100%;
-  padding: 0.25rem 0.5rem !important;
-  height: 30px;
+  padding: 0.15rem 0.3rem !important;
+  height: 25px;
   font-size: 11px;
 }
 
@@ -501,11 +501,11 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.38);
   transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
   border-radius: 5px !important;
-  height: 30px !important;
+  height: 25px !important;
 }
 
 .p-dropdown .p-dropdown-label {
-  margin-top: 3px !important;
+  margin-top: 2px !important;
 }
 
 .p-inputtext {
@@ -524,7 +524,7 @@ body {
   position: relative !important;
   display: inline-flex !important;
   width: 100% !important;
-  height: 30px !important;
+  height: 25px !important;
   background-color: #EDF9FF;
   border-radius: 5px !important;
 }
@@ -882,9 +882,10 @@ body {
   box-sizing: border-box;
   border: 1px solid #B4B4B4;
   border-radius: 5px;
+  padding: 0.15rem 0.3rem;
+  color: #9a9a9a !important;
   /* background-color: #EDF9FF; */
   font-size: 16px;
-  margin-bottom: 25px;
 }
 
 .custom-label {
@@ -1591,8 +1592,8 @@ body {
   border: 0px solid #EEEEEE;
   border-radius: 5px;
   width: 100%;
-  padding: 0.25rem 0.5rem !important;
-  height: 30px;
+  padding: 0.15rem 0.3rem !important;
+  height: 25px;
   font-size: 11px;
 }
 
@@ -1624,7 +1625,7 @@ body {
 }
 
 .p-dropdown .p-inputtext {
-  padding: 0.25rem 0.5rem !important;
+  padding: 0.15rem 0.3rem !important;
 }
 
 /*-------------------------Dropdown End-------------------------------------*/
@@ -1845,12 +1846,6 @@ body {
   width: 1.5rem;
 }
 
-.tableFeatures {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 .chkbox {
   border: 2px solid #ced4da;
   background: #ffffff;
@@ -1964,10 +1959,6 @@ body {
   display: flex !important;
 }
 
-.tableFeatures {
-  justify-content: none !important;
-}
-
 ::placeholder {
   color: #212529 !important;
   opacity: 10 !important;
@@ -2021,6 +2012,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  justify-content: none !important;
 }
 
 .item1 {
@@ -2281,31 +2273,31 @@ body {
 }
 
 .icon-button-primary {
-  width: 2rem !important;
+  width: 27px !important;
   border-radius: 8px !important;
   margin: 4px 4px !important;
   border: none !important;
-  height: 2rem !important;
+  height: 27px !important;
 }
 
 .icon-button-warn {
-  width: 2rem !important;
+  width: 27px !important;
   border-radius: 8px !important;
   margin: 4px 4px !important;
   border: none !important;
-  height: 2rem !important;
+  height: 27px !important;
 }
 
 .icon-button-succes {
-  width: 2rem !important;
+  width: 27px !important;
   border-radius: 8px !important;
   margin: 4px 4px !important;
   border: none !important;
-  height: 2rem !important;
+  height: 27px !important;
 }
 
 .filterBG {
-  padding-bottom: 0.7rem;
+  padding-bottom: 0.3rem;
   padding-left: 1rem;
 }
 
@@ -2577,8 +2569,8 @@ body {
 }
 
 .p-divider.p-divider-horizontal {
-  margin-top: 10px !important;
-  margin-bottom: 10px !important;
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
 }
 
 .p-divider.p-divider-horizontal .p-divider-content {
@@ -2688,15 +2680,15 @@ body {
 }
 
 .p-dialog .p-dialog-content {
-  background: #F5F5F5 !important;
+  background: #F4F3F3 !important;
 }
 
 .p-dialog .p-dialog-header {
-  background: #F5F5F5 !important;
+  background:#F4F3F3 !important;
 }
 
 .p-dialog .p-dialog-footer {
-  background: #F5F5F5 !important;
+  background: #F4F3F3 !important;
 }
 
 .p-dialog .p-dialog-header .p-dialog-title {
@@ -2753,4 +2745,26 @@ body {
 .cntr {
   justify-content: center !important;
   display: flex !important;
+}
+
+.shorcut-iocns {
+  border-radius: 6px;
+  height: 24px !important;
+  width: 24px !important;
+  border: none !important;
+  /* background: rgba(240, 240, 240, 1) !important; */
+  margin: 2px !important;
+  padding-left: 3px !important
+}
+
+.image-size {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.imagereducer {
+  border-radius: 50px;
+  border: 2px solid #959595;
+  width: 25px;
+  height: 25px;
 }

@@ -1,0 +1,21 @@
+<p-breadcrumb [model]="applicationBreadcrumb.itemsList" ></p-breadcrumb>
+<h3 class="Sidebar-title-md"><i class="bi bi-file-earmark-medical"></i>Master Module</h3>
+
+    <app-super-grid
+    *ngIf="isDataReady"
+    [configurations]="gridConfigurations" 
+    [tableData]="orgData" 
+    [tableConfig] = "tableConfig"
+    [sidebarJSON] = "sidebarConfig"
+    (sideBarEvent)="closeSidebarData($event)"
+    (confirmAction)="confirmAction($event)"
+    (isActive)="toggleOrgStatus($event)"
+    (Bulkdelete)="bulkDeleteOrg($event)"
+    (onEdit)="onEdit($event)"
+    (onAdd)="initializeAddForm($event)"
+    [editData]="selectedOrgData">
+
+    <app-form projectTowards="sidebar" *ngIf="selectedOrgData" [formJSON]="sidebarConfig" [editData]="selectedOrgData"
+    (btnEvent)="handleButtonClick($event)" (formData)="sidebarData($event)"></app-form>
+
+</app-super-grid>

@@ -1,9 +1,9 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "SELF REGISTRATION",
-        "formTitleClass": "Sidebar-title-lg mt-2",
-        "formTitleLogo": "bi bi-file-earmark-medical",
+        "formTitle": "",
+        "formTitleClass": "",
+        "formTitleLogo": "",
         "formName": "Form1",
         "formType": "edit",
         "sidebar": "p-sidebar-lg",
@@ -16,7 +16,7 @@
                 "type": "text",
                 "maxlength": "10",
                 "inputType": "text",
-                "class": "col-md-3 my-1",
+                "class": "col-md-3",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Mobile No.",
@@ -45,7 +45,7 @@
                 "label": "Patient UID",
                 "inputType": "text",
                 "type": "text",
-                "class": "col-md-3 my-1",
+                "class": "col-md-3 ",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Patient UID",
@@ -66,7 +66,7 @@
                 "label": "Title",
                 "type": "select",
                 "value": "M",
-                "class": "col-md-3 my-1",
+                "class": "col-md-3 ",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "",
@@ -105,7 +105,7 @@
                 "label": "First Name",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-3 my-1",
+                "class": "col-md-3 ",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter First Name...",
@@ -126,7 +126,7 @@
                 "label": "Middle Name",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-3 my-1",
+                "class": "col-md-3 ",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Middle Name...",
@@ -147,7 +147,7 @@
                 "label": "Last Name",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-3 my-1",
+                "class": "col-md-3 ",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "Enter Last Name...",
@@ -168,7 +168,7 @@
                 "label": "Gender",
                 "type": "select",
                 "value": "",
-                "class": "col-md-3  my-1",
+                "class": "col-md-2 ",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
@@ -207,7 +207,7 @@
                 "label": "DOB",
                 "type": "date",
                 "format": "MM-dd",
-                "class": "col-md-3 my-1",
+                "class": "col-md-2",
                 "lblclass": "custom-label",
                 "valueclass": "custom-p-calendar",
                 "value": "04/22/2023",
@@ -229,7 +229,7 @@
                 "label": "Email ID",
                 "type": "text",
                 "inputType": "email",
-                "class": "col-md-3  my-1",
+                "class": "col-md-3 ",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "xyz123@example.com",
@@ -244,16 +244,55 @@
                 }
             },
             {
+                "id": 6,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Mothe/Father/spouse",
+                "type": "select",
+                "value": "",
+                "class": "col-md-2 ",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectRelation",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Mother",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Father",
+                        "code": "2"
+                    },
+                    {
+                        "name": "Spouse",
+                        "code": "3"
+                    }
+                ],
+                "message": {
+                    "required": "Mothe/Father/spouse is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
                 "id": 5,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Mother Name",
+                "label": "",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-3 my-1",
+                "class": "col-md-3 mt-3",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Enter Last Name...",
+                "placeholder": "Enter mother/father/spouse name...",
                 "formControlName": "MotherName",
                 "message": {
                     "required": "Last Name is required",
@@ -264,116 +303,23 @@
                     "pattern": ""
                 }
             },
+            
             {
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
-                "data": "APPOINTEMENT DETAILS",
+                "data": "REQUESTED VISIT DETAILS",
                 "type": "divider",
                 "class": "col-md-12"
-            },
-            {
-                "id": 2,
-                "isEditable": true,
-                "isVisible": true,
-                "transient": false,
-                "label": "",
-                "type": "dependentdropdown",
-                "class": "col-md-6 mt-1",
-                "lblclass": "custom-label",
-                "valueclass": "",
-                "placeholder": "Select option",
-                "formControlName": "department",
-                "message": {
-                    "required": "Department is required",
-                    "pattern": ""
-                },
-                "values": [
-                    {
-                        "label": "Department",
-                        "values": [
-                            {
-                                "name": "Select an Option",
-                                "code": ""
-                            },
-                            {
-                                "name": "Surgical unit VI..",
-                                "code": "1"
-                            },
-                            {
-                                "name": "Chest Medicine",
-                                "code": "2"
-                            },
-                            {
-                                "name": "Dental Care",
-                                "code": "3"
-                            }
-                        ]
-                    },
-                    {
-                        "label": "Sub-Department",
-                        "values": [
-                            {
-                                "name": "Select an Option",
-                                "code": "",
-                                "Mcode": ""
-                            },
-                            {
-                                "name": "Surgical unit 6th",
-                                "code": "1",
-                                "Mcode": "1"
-                            },
-                            {
-                                "name": "Dental Care F3",
-                                "code": "2",
-                                "Mcode": "3"
-                            },
-                            {
-                                "name": "Chest Medicine B-5",
-                                "code": "3",
-                                "Mcode": "2"
-                            }
-                        ]
-                    },
-                    {
-                        "label": "Doctor",
-                        "values": [
-                            {
-                                "name": "Select an Option",
-                                "code": "",
-                                "Mcode": ""
-                            },
-                            {
-                                "name": "Sagar Bharate",
-                                "code": "1",
-                                "Mcode": "1"
-                            },
-                            {
-                                "name": "Satyam Singh",
-                                "code": "2",
-                                "Mcode": "3"
-                            },
-                            {
-                                "name": "Pratiksha Bhoite",
-                                "code": "3",
-                                "Mcode": "2"
-                            }
-                        ]
-                    }
-                ],
-                "validations": {
-                    "required": true,
-                    "pattern": ""
-                }
             },
             {
                 "id": 19,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Appointment Date",
+                "label": "Visit Date",
                 "type": "date",
                 "format": "MM-dd",
-                "class": "col-md-3 my-1",
+                "class": "col-md-3",
                 "lblclass": "custom-label",
                 "valueclass": "custom-p-calendar",
                 "value": "04/22/2023",
@@ -392,10 +338,10 @@
                 "id": 20,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Additional Comments",
+                "label": "Visit time",
                 "type": "text",
                 "inputType": "time",
-                "class": "col-md-3 my-1",
+                "class": "col-md-3 ",
                 "lblclass": "custom-label",
                 "valueclass": "textarea-custom",
                 "row": "2",
@@ -447,7 +393,7 @@
                 "label": "Landmark",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-3 my-1",
+                "class": "col-md-3 ",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "",
@@ -578,7 +524,7 @@
                 "label": "Village",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-2 my-3",
+                "class": "col-md-2 ",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "",
@@ -600,7 +546,7 @@
                 "type": "text",
                 "maxlength": "6",
                 "inputType": "text",
-                "class": "col-md-2 my-3",
+                "class": "col-md-2 ",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
                 "placeholder": "",
@@ -622,7 +568,7 @@
                 "inputType": "empty",
                 "type": "staticText",
                 "data": "",
-                "class": "col-md-7 my-1 ",
+                "class": "col-md-7 ",
                 "lblclass": "custom-label",
                 "valueclass": "custom-text",
                 "placeholder": "",

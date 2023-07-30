@@ -1,0 +1,180 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Organization",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar": "p-sidebar-sm",
+        "formControls": [
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "transient":false,
+                "label": "ID",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "orgId",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Organization Name",
+                "formControlName": "orgName",
+                "message": {
+                    "required": "Plase Enter Organization Name",
+                    "pattern": "Only Alphabete are allow"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z ]+$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Email",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Organization Email",
+                "formControlName": "orgEmail",
+                "message": {
+                    "required": "Plase Enter Organization Email",
+                    "pattern": "Enter a Vaild Email"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,6}$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Mobile No.",
+                "type": "text",
+                "inputType": "number",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Organization Mobile No.",
+                "formControlName": "orgMobile",
+                "message": {
+                    "required": "Plase Enter Organization Mobile No.",
+                    "pattern": "Enter a Vaild Mobile Number with Country Code"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^(\\+91|91)[6-9]\\d{9}$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Address",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Organization Address",
+                "formControlName": "orgAddress",
+                "message": {
+                    "required": "Plase Enter Organization Address",
+                    "pattern": "Only Alphanumeric, dot, comma, backslash, space, and hyphen are Allowed"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Contact Person Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Organization Contact Person",
+                "formControlName": "orgContactPerson",
+                "message": {
+                    "required": "Plase Enter Organization Contact Person",
+                    "pattern": "Only Capital Letters are Allowed"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Z ]+$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Phone No.",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Organization Phone No.",
+                "formControlName": "orgPhone",
+                "message": {
+                    "required": "Plase Enter Organization Phone No.",
+                    "pattern": "Enter a Vaild Mobile Number"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[6-9]\\d{9}$"
+                }
+            },
+            {
+                "isVisible": true,
+                "type": "button",
+                "subtype": "submit",
+                "btnLabel": "Save",
+                "class": "col-md-6",
+                "valueclass": "butn-custom-dark-blue",
+                "icon": "",
+                "isDisabled": false
+            },
+            {
+                "isVisible": true,
+                "type": "button",
+                "subtype": "cancel",
+                "btnLabel": "Back",
+                "class": "col-md-6",
+                "valueclass": "butn-custom-wrng",
+                "icon": "",
+                "isDisabled": false
+            }
+        ]
+    }
+}
