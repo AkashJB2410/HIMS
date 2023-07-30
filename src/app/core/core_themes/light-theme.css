@@ -420,7 +420,6 @@
 
 .tableFeatures {
   background-color: none !important;
-  padding: 5px 5px;
 }
 
 /*-------------------------Super Grid CSS End-----------------------------------------*/
@@ -927,15 +926,14 @@ for custom input box size use w-25 , w-50, w-75 on column of it
 .textarea-custom1 {
   display: block;
   width: 100%;
-  padding: 0.375rem 0.75rem;
+  padding: 0.15rem 0.3rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--bs-body-color);
+  color: #9a9a9a !important;
   background-clip: padding-box;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  margin-bottom: 10px;
   border-radius: 5px !important;
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
@@ -986,7 +984,7 @@ for custom input box size use w-25 , w-50, w-75 on column of it
 
 /* -------------icons classes start------------- */
 .headerIcon {
- font-size: 18px !important;
+  font-size: 18px !important;
   color: #415988;
   margin-right: 15px;
 
@@ -1108,6 +1106,7 @@ for custom input box size use w-25 , w-50, w-75 on column of it
   padding-bottom: 16px;
   letter-spacing: 0.8px;
   line-height: 1;
+  margin-bottom: 10px;
 }
 
 .Sidebar-title-md::before,
@@ -1344,15 +1343,18 @@ input[type="file"]::before {
 }
 
 /* -------------------------Date Picker Css End------------------------------- */
+.profileImage {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #374168;
+  font-size: 35px !important;
+  color: #fff;
+  margin: auto !important;
+  border: 1px solid #000000;
+  padding: 0px;
+  font-weight: 500;
 
-.shorcut-iocns {
-  border-radius: 6px;
-  height: 24px !important;
-  width: 24px !important;
-  border: none !important;
-  /* background: rgba(240, 240, 240, 1) !important; */
-  margin: 2px !important;
-  padding-left: 3px !important
 }
 
 .image-size {
@@ -1360,13 +1362,14 @@ input[type="file"]::before {
   height: 18px !important;
 }
 
-.imagereducer{
-border-radius: 50px;
-border: 2px solid #959595;
-width:30px;
-height:30px;
+.imagereducer {
+  border-radius: 50px;
+  border: 2px solid #959595;
+  width: 25px;
+  height: 25px;
 }
-.theme{
+
+.theme {
   font-weight: 500;
   color: black;
   text-align: center;
@@ -1376,3 +1379,17 @@ height:30px;
     color:#1769aa;
     font-weight:600
   }
+  .text-center {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+}
+.label-txt {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0.3px;
+  align-items: center;
+  color: #4F4F4F;
+}

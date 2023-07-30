@@ -1,0 +1,73 @@
+{
+    "tableName": "Group Module Table",
+    "tableHeaders": [
+        {
+            "field":"id",
+            "header":"Sr. No.",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "mstModule",
+            "header": "Master Module",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "lable",
+            "header": "Group Module Label",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "icon",
+            "header": "Icon",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "routerLink",
+            "header": "Router Link",
+            "iseditable": false,
+            "class": ""
+        },
+        {
+            "field": "sequence",
+            "header": "Sequence",
+            "iseditable": false,
+            "class": "text-center"
+        }
+    ],
+    "globalFilter": [
+        "id",
+        "icon",
+        "lable",
+        "mstModuleName",
+        "routerlink"
+    ],
+    "rows": 50,
+    "showCurrentPageReport": true,
+    "rowsPerPageOptions": [
+        10,
+        25,
+        50
+    ],
+    "paginator": true,
+    "rowHover": true,
+    "loading": false,
+    "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox": true,
+    "isRadioButton":false,
+    "resizableColumns": true,
+    "isDragAndDrop":true,
+    "isActions": [
+        "Edit",
+        "Delete",
+        "isActive"
+    ],
+    "editicon": "../../../assets/icons/Group 1823.png",
+    "isVisible": false,
+    "buttonlbl": "",
+    "textLength": 20,
+    "sidebar":"p-sidebar-sm",
+    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
+}

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import organizationDetails from './organization_table-config.json'
-import addneworg from './organizationForm.json'
 import { MessageService } from 'primeng/api';
 import organization_breadcrumb from './organization-breadcrumb.json'
 import { CommonService } from 'src/app/core/shared/service/common.service';
-import { FeaturescommonService } from '../../../shared/featurescommon.service';
+import orgSidebarConfig from './orgSidebarConfig.json'
+import orgTableConfig from './orgTableConfig.json'
+import { FeaturescommonService } from 'src/app/features/shared/featurescommon.service';
 
 @Component({
   selector: 'app-organization',
@@ -18,188 +18,220 @@ import { FeaturescommonService } from '../../../shared/featurescommon.service';
 })
 
 export class OrganizationComponent implements OnInit {  
-
-  orgDetails:any
-  addneworganization:any =addneworg;
-  configurations: any
-  data:any;
-  config: any;
-  visibleSidebar: boolean = true;
-  isdataReady = false;
-  saveMethod: boolean=false;
-  organization_breadcrumb =organization_breadcrumb;
-  editData:any;
+    //variable declarations
+  selectedOrgData: any;
+  isEditMode: boolean;
+  applicationBreadcrumb = organization_breadcrumb;
+  orgData: any[];
+  gridConfigurations: any;
+  tableConfig: any;
+  isDataReady = false;
+  sidebarConfig: any = orgSidebarConfig;
+  deleteMsg = false;
+  
+   //API declarations
   apiGet="mstOrganization/list";
   apiAdd="mstOrganization/create";
   apiUpdate="mstOrganization/update";
   apidelete="mstOrganization/inActivate";
   apiactive="mstOrganization/activate";
 
-  constructor(private messageService: MessageService, private common:CommonService, private http:FeaturescommonService) { }
+  constructor(private messageService: MessageService, private common:CommonService, private featurescommonService:FeaturescommonService) { }
   
   ngOnInit(): void {
-    
-    this.configurations = {
+    this.gridConfigurations = {
       "isFilter": false,
       "isTable": true,
       "isSideBar": true,
       "isConfirmation": true
     };
-    this.getAllOrgData();
     this.getConfigForTable();
+    this.fetchOrgData();
   }
 
-  buttonClick(e: any) {
-    if (e == 'next') {
-      console.log(e)
-    } else if (e == 'cancel') {
-      console.log(e)
-    }
+  getConfigForTable() {
+    this.tableConfig = orgTableConfig;
   }
 
-  getConfigForTable() {    
-    this.orgDetails = organizationDetails;
-  }
-
-  editRow(e: any) {
-    this.visibleSidebar = true;
-  }
-
-  buttonEvent(e:any){
-    this.editData=undefined;
-    this.common.sendEditData(false);
-  }
-
-  saveOrg(e:any){
-    this.addneworganization.form.formControls[0].isVisible=false;
-    this.saveMethod = true;
-    this.editData=[];
-    this.common.sendEditData(false);
-  }
-
-  editOrg(e:any){
-    this.addneworganization.form.formControls[0].isVisible=true;
-    this.editData=e.editRow;
-  }
-
-  isActive(data:any){
-    
-    if(!data.isActive){
-      this.http.reactiveData(this.apiactive, data, data.orgId)
-        .subscribe(b_Data => {
-          this.data = undefined;
-          this.getAllOrgData();
-        })
-        this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Organization Enable Successfully' });  
-    }
-    else if(data.isActive){
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Organization is already Active' });
-    }
-  }
-
-
-  sidebarData(e: any) {
-    console.log("From User Management ==> ", e);
-    if (e == 'reset') {
-      console.log(e)
-    } else if (this.saveMethod) {
-      console.log(e)      
-      this.submitOrgData(e);
-      this.messageService.add({ severity: 'success', summary: 'Added', detail: 'Organization Added Successfully' });
-      this.saveMethod=false;
-    } else {
-      console.log(e);      
-      this.updateOrgData(e);
-      this.messageService.add({ severity: 'success', summary: 'Updated', detail: 'Organization Updated Successfully.' });      
-    }
-  }  
-
-  submitOrgData(orgData: any) {
-    console.log("hello");
-    
-    this.http.addData(orgData, this.apiAdd)
-      .subscribe(data => {
-        this.data = undefined;
-        this.getAllOrgData();
-        console.log("data" + data)
-      })
-  } 
-
-  getAllOrgData() {
-    this.http.getData(this.apiGet).subscribe(res => {
-      this.data = res.content;
-      this.isdataReady = true;
-      for(let i=0; i<this.data.length;i++){
-        this.data[i].id=i+1;
-      }
-      this.data;
-    })
-  }
-
-  updateOrgData(orgData:any){
-    this.http.updateData(orgData, this.apiUpdate)
-    .subscribe(data => {
-      this.data = undefined;
-      this.getAllOrgData();
-      console.log("data" + data)
-    })
-  }
-
-
-  deleteOrgData(orgData: any) {
-    this.http.deleteData(this.apidelete, orgData.orgId)
-      .subscribe(data => {
-        this.data = undefined;
-        this.getAllOrgData();
-        console.log("data" + data)
-      })
-  }
-  
-  confirmAction(e: any) {
-    if(e.isActive==true){
-      this.data=undefined;
-    this.deleteOrgData(e);    
-    this.messageService.add({ severity: 'success', summary: 'Disabled', detail: 'Organization Disabled Successfully' });
-    }
-    else if (e.isActive==false){
-      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Organization is already Disabled' });
-    }
-    else{}
-  }
-
-  bulkDeleteRows(bulk_Data: any) {
-    let count = 0;
-    if (bulk_Data != '') {
-      bulk_Data.forEach((orgData: any) => {
-        if (orgData.isActive == true) {
-          this.deleteOrgData(orgData);
-          count++;
-        }
+  fetchOrgData() {
+    //fetch Data from API
+    this.featurescommonService.getData(this.apiGet).subscribe(
+      (response) => {
+        //response stored in OrgData with id as index
+        this.orgData = response.content.map((item: any, index: number) => ({
+          ...item,
+          id: index + 1,
+        }));
+         //changing the value of isDataReady to refresh the gird
+        this.isDataReady = true;
+      },
+      (error) => {
+        console.error('API Error:', error);
       });
-      if (count == 0) {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Error',
-          detail: 'The Selected Rows are Already Disabled',
+  }
+
+  addOrgData(orgData: any) {
+    //adding data into database
+    this.featurescommonService.addData(orgData, this.apiAdd).subscribe(
+      (response) => {
+        //response stored in OrgData with id as index
+        this.orgData = response.result.map((item: any, index: number) => ({
+          ...item,
+          id: index + 1,
+        }));
+         //changing the value of isDataReady to refresh the gird
+        this.isDataReady = true;
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
+      },
+      (error) => {
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
+      });
+       //changing the value of isDataReady to refresh the gird
+    this.isDataReady = false;
+  }
+
+  updateOrg(orgData: any) {
+    //updating data into database
+    this.featurescommonService.updateData(orgData, this.apiUpdate).subscribe(
+      (response) => {
+        //response stored in OrgData with id as index
+        this.orgData = response.result.map((item: any, index: number) => ({
+          ...item,
+          id: index + 1,
+        }));
+         //changing the value of isDataReady to refresh the gird
+        this.isDataReady = true;
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
+      },
+      (error) => {
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
+      });
+       //changing the value of isDataReady to refresh the gird
+    this.isDataReady = false;
+  }
+
+  deleteOrg(orgData: any) {
+    // deleting data from database
+    this.featurescommonService.deleteData(this.apidelete, orgData.orgId).subscribe(
+      (response) => {
+        //response stored in OrgData with id as index
+        this.orgData = response.result.map((item: any, index: number) => ({
+          ...item,
+          id: index + 1,
+        }));
+         //changing the value of isDataReady to refresh the gird
+        this.isDataReady = true;
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
+      },
+      (error) => {
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
+      });
+       //changing the value of isDataReady to refresh the gird
+    this.isDataReady = false;
+  }
+
+  toggleOrgStatus(orgData: any) {
+    if (orgData.isActive == false) {
+      //reactiveting data form database
+      this.featurescommonService.reactiveData(this.apiactive, orgData, orgData.orgId).subscribe(
+        (response) => {
+          //response stored in OrgData with id as index
+          this.orgData = response.result.map((item: any, index: number) => ({
+            ...item,
+            id: index + 1,
+          }));
+             //changing the value of isDataReady to refresh the gird
+          this.isDataReady = true;
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message })
+        },
+        (error) => {
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
         });
-        this.data = undefined;
-        this.getAllOrgData();
-      }
-      else if (count != 0) {
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Bulk Deleted',
-          detail: 'Successful Disabled',
-        });
+           //changing the value of isDataReady to refresh the gird
+      this.isDataReady = false;
+    }
+    else {
+      this.messageService.add({ severity: 'error', summary: 'Error' })
+    }
+  }
+
+  bulkDeleteOrg(arrayOfOrgData: any[]) {
+    if (arrayOfOrgData.length != 0) {
+      this.isDataReady = false;
+       //send one by one orData to delete method
+      arrayOfOrgData.forEach((orgData: any) => {
+        this.deleteOrgForBulk(orgData);
+      })
+      if (this.deleteMsg) {
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Bulk Delete' });
       }
     }
     else {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Error',
-        detail: 'No Row Selected',
-      });
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'No Row Selected', });
     }
   }
-  
+
+  deleteOrgForBulk(orgData: any) {
+    this.featurescommonService.deleteData(this.apidelete, orgData.orgId).subscribe(
+      (response) => {
+        //response stored in OrgData with id as index
+        this.orgData = response.result.map((item: any, index: number) => ({
+          ...item,
+          id: index + 1,
+        }));
+          //changing the value of isDataReady to refresh the gird
+        this.isDataReady = true;
+         //changing the value of deleteMsg to display the delete message
+        this.deleteMsg = false;
+      },
+      (error) => {
+        console.log('delete API Error', error);
+      });
+      //changing the value of isDataReady to refresh the gird
+    this.isDataReady = false;
+  }
+
+  confirmAction(e: any) {
+    if (e === false) {
+      this.fetchOrgData();
+    } else {
+      if (e.isActive) {
+        this.deleteOrg(e);
+      } else {
+      }
+    }
+  }
+
+  closeSidebarData(e: any) {
+    //removing last selectedOrgData
+    this.selectedOrgData = undefined;
+  }
+
+  sidebarData(e: any) {
+    if (e === 'reset') {}
+     else if (this.isEditMode) {
+      this.addOrgData(e);
+    } else {
+      this.updateOrg(e);
+    }
+  }
+
+  onEdit(e: any) {
+    this.sidebarConfig.form.formControls[0].isVisible = true;
+    this.selectedOrgData = e.editRow;
+    this.isEditMode = false;
+  }
+
+  initializeAddForm(e: any) {
+    this.sidebarConfig.form.formControls[0].isVisible = false;
+    this.selectedOrgData = [];
+    this.isEditMode = true;
+    this.common.sendEditData(false);
+  }
+
+  handleButtonClick(e: any) {
+     //removing last selectedOrgData
+    this.selectedOrgData = undefined;
+    this.common.sendEditData(false);
+  }  
 }

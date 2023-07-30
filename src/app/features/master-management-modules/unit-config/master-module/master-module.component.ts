@@ -1,240 +1,235 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { MasterModuleService } from './master-module.service';
-import mstModuleData from './masterModuleSidebarConfig.json';
-import * as mstModule_table_config from './masterModuleTableConfig.json';
-import Application_breadcrumb from './breadcrum.json'
+import Application_breadcrumb from './breadcrum.json';
+import mstModuleTableConfig from './mstModuleTableConfig.json';
+import mstModuleSidebarConfig from './mstModuleSidebarConfig.json';
 import { CommonService } from 'src/app/core/shared/service/common.service';
-import { MasterPageComponent } from '../../../master-page/master-page.component'
+import { FeaturescommonService } from 'src/app/features/shared/featurescommon.service';
+
 @Component({
   selector: 'app-master-module',
   templateUrl: './master-module.component.html',
-  // styleUrls: ['./master-module.component.css']
-
 })
 export class MasterModuleComponent implements OnInit {
-  editData: any;
-  status: boolean;
-  
-
-
-
-  onEdit(st:any){
-    this.editData=st.editRow;
-    this.status=false;
-    this.st = st;
-    console.log(st);
-  }
-
-  onAdd(e:any){
-    this.editData=[];
-    this.common.sendEditData(false)
-    this.status=true;
-  }
-
-  buttonEvent(e:any){
-    this.editData=undefined
-    this.common.sendEditData(false)
-  }
-
-  
-  Bulkdelete(e:any){
-    if(e.length==1){
-      if(e[0].is_Deleted==false){
-        this.deleteRoleData(e[0].moduleId);
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Message form User component',
-          detail: 'Deleted Sucessfully',
-        });
-      }else{
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Message form User component',
-          detail: 'Allready Deleted',
-        });
-      }
-    }else{
-      let a:boolean;
-      for(let i=0;i<e.length;i++){
-        if(e[i].is_Deleted==false){
-          this.deleteRoleData(e[i].moduleId);
-          a=true;
-        }
-      }
-
-      if(a==true){
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Message form User component',
-          detail: 'Deleted Sucessfully',
-        });
-        a=false;
-      }else{
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Message form User component',
-          detail: 'Allready Deleted',
-        });
-
-      }
-
-    }
-
-  }
-
-
-  Application_breadcrumb=Application_breadcrumb
-  toast: any = {};
-  showToast: any;
-  Message: any;
-  data: any;
-  config: any;
-  visibleSidebar: boolean = false;
-  configurations: any;
+  //variable declarations
+  selectedModuleData: any;
+  isEditMode: boolean;
+  applicationBreadcrumb = Application_breadcrumb;
+  mstModuleData: any[];
+  gridConfigurations: any;
   tableConfig: any;
-  isdataReady = false;
-  sidebarJSON: any = mstModuleData;
-  st: any;
+  isDataReady = false;
+  sidebarConfig: any = mstModuleSidebarConfig;
+  deleteMsg = false;
+
+  //API declarations
+  apiGet = 'mstModule/list';
+  apiAdd = 'mstModule/create';
+  apiUpdate = 'mstModule/update';
+  apidelete = 'mstModule/inActivate';
+  apiactive = 'mstModule/activate';
 
   constructor(
     private messageService: MessageService,
-    private http: MasterModuleService,
-    private common:CommonService,
-  ) {}
+    private featurescommonService: FeaturescommonService,
+    private common: CommonService
+  ) { }
 
   ngOnInit(): void {
-    this.configurations = {
+    this.gridConfigurations = {
       isFilter: false,
       isTable: true,
       isSideBar: true,
       isConfirmation: true,
     };
-    this.getAllMstModuleData();
-    // this.data = roleData;
     this.getConfigForTable();
-  }
-  buttonClick(e: any) {
-    if (e == 'next') {
-      console.log(e);
-    } else if (e == 'cancel') {
-      console.log(e);
-    }
-  }
-  getAllMstModuleData() {
-    this.http.GetAllMstModuleData().subscribe((res) => {
-      this.data=[];
-      this.data = res;
-      console.log("get all data",res)
-      this.isdataReady = true;
-      for (let i = 0; i < this.data.length; i++) {
-        this.data[i].id = i + 1;
-      }
-      this.data;
-    });
+    this.fetchMstModuleData();
   }
 
   getConfigForTable() {
-    // this.data = data;
-    this.config = mstModule_table_config;
+    this.tableConfig = mstModuleTableConfig;
   }
 
-  editRow(e: any) {
-    this.visibleSidebar = true;
+  fetchMstModuleData() {
+    //fetch Data from API
+    this.featurescommonService.getData(this.apiGet).subscribe(
+      (response) => {
+        //response stored in mstMouldeData with id as index
+        this.mstModuleData = response.content.map((item: any, index: number) => ({
+          ...item,
+          id: index + 1,
+        }));
+         //changing the value of isDataReady to refresh the gird
+        this.isDataReady = true;
+      },
+      (error) => {
+        console.error('API Error:', error);
+      });
   }
 
-  isActive(e: any) {
-    if (e.is_Deleted == false) {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Message form User component',
-        detail: 'Allready Enabled',
+  addMstModuleData(moduleData: any) {
+    //adding data into database
+    this.featurescommonService.addData(moduleData, this.apiAdd).subscribe(
+      (response) => {
+        //response stored in mstMouldeData with id as index
+        this.mstModuleData = response.result.map((item: any, index: number) => ({
+          ...item,
+          id: index + 1,
+        }));
+         //changing the value of isDataReady to refresh the gird
+        this.isDataReady = true;
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
+      },
+      (error) => {
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
       });
-    } else {
-      this.http.isActiveData(e).subscribe((data) => {
-        this.data = undefined;
-        this.getAllMstModuleData();
-        console.log('data' + data);
+       //changing the value of isDataReady to refresh the gird
+    this.isDataReady = false;
+  }
+
+  updateMstModule(moduleData: any) {
+    //updating data into database
+    this.featurescommonService.updateData(moduleData, this.apiUpdate).subscribe(
+      (response) => {
+        //response stored in mstMouldeData with id as index
+        this.mstModuleData = response.result.map((item: any, index: number) => ({
+          ...item,
+          id: index + 1,
+        }));
+         //changing the value of isDataReady to refresh the gird
+        this.isDataReady = true;
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
+      },
+      (error) => {
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
       });
-      this.messageService.add({
-        severity: 'success',
-        summary: 'Message form User component',
-        detail: 'Enabled Sucessfully',
+       //changing the value of isDataReady to refresh the gird
+    this.isDataReady = false;
+  }
+
+  deleteMstModule(moduleData: any) {
+    // deleting data from database
+    this.featurescommonService.deleteData(this.apidelete, moduleData.moduleId).subscribe(
+      (response) => {
+        //response stored in mstMouldeData with id as index
+        this.mstModuleData = response.result.map((item: any, index: number) => ({
+          ...item,
+          id: index + 1,
+        }));
+         //changing the value of isDataReady to refresh the gird
+        this.isDataReady = true;
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
+      },
+      (error) => {
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
       });
+       //changing the value of isDataReady to refresh the gird
+    this.isDataReady = false;
+  }
+
+  toggleModuleStatus(moduleData: any) {
+    if (moduleData.isActive == false) {
+      //reactiveting data form database
+      this.featurescommonService.reactiveData(this.apiactive, moduleData, moduleData.moduleId).subscribe(
+        (response) => {
+          //response stored in mstMouldeData with id as index
+          this.mstModuleData = response.result.map((item: any, index: number) => ({
+            ...item,
+            id: index + 1,
+          }));
+           //changing the value of isDataReady to refresh the gird
+          this.isDataReady = true;
+          this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message })
+        },
+        (error) => {
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
+        });
+        //changing the value of isDataReady to refresh the gird
+      this.isDataReady = false;
     }
+    else {
+      this.messageService.add({ severity: 'error', summary: 'Error' })
+    }
+  }
+
+  bulkDeleteMstModules(arrayOfModuleData: any[]) {
+    if (arrayOfModuleData.length != 0) {
+      this.isDataReady = false;
+      //send one by one moduledata to delete method
+      arrayOfModuleData.forEach((moduleData: any) => {
+        this.deleteMstModuleForBulk(moduleData);
+      })
+      if (this.deleteMsg) {
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Bulk Delete' });
+        this.deleteMsg=false;
+      }
+    }
+    else {
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'No Row Selected', });
+    }
+  }
+
+  deleteMstModuleForBulk(moduleData: any) {
+    this.featurescommonService.deleteData(this.apidelete, moduleData.moduleId).subscribe(
+      (response) => {
+        //response stored in mustMouldeData with id as index
+        this.mstModuleData = response.result.map((item: any, index: number) => ({
+          ...item,
+          id: index + 1,
+        }));
+         //changing the value of isDataReady to refresh the gird
+        this.isDataReady = true;
+        //changing the value of deleteMsg to display the delete message
+        this.deleteMsg = false;
+      },
+      (error) => {
+        console.log('delete API Error', error);
+      });
+      //changing the value of isDataReady to refresh the gird
+    this.isDataReady = false;
   }
 
   confirmAction(e: any) {
-   if(e==false){
-    this.getAllMstModuleData();
-   }else{
-    if (e.is_Deleted) {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Message form User component',
-        detail: 'Allready Deleted',
-      });
+    if (e === false) {
+      this.fetchMstModuleData();
     } else {
-      this.deleteRoleData(e.moduleId);
-      this.messageService.add({
-        severity: 'success',
-        summary: 'Message form User component',
-        detail: 'Deleted Sucessfully',
-      });
+      if (e.isActive) {
+        this.deleteMstModule(e);
+      } else {
+      }
     }
-    console.log('Deleted' + JSON.stringify(e));
-   }
   }
-  deleteRoleData(moduleId: any) {
-    this.http.deleteMstModule(moduleId).subscribe((data) => {
-      this.data = undefined;
-      this.getAllMstModuleData();
-      console.log('data' + data);
-    });
+
+  closeSidebarData(e: any) {
+      //removing last selectedModuleData
+    this.selectedModuleData = undefined;
   }
-  closeSidebarData(e:any){
-    this.editData=undefined;
-  }
+
   sidebarData(e: any) {
-    console.log('From User Management ==> ', e);
-    if (e == 'reset') {
-      console.log(e);
-    } else if (this.status == true) {
-      console.log(e);
-      this.submitMstModuleData(e);
-      this.messageService.add({
-        severity: 'success',
-        summary: 'success',
-        detail: 'Data save successfull.',
-      });
+    if (e === 'reset') {} 
+    else if (this.isEditMode) {
+      this.addMstModuleData(e);
     } else {
-      console.log(e);
-      this.updateMstModuleData(e);
-      this.messageService.add({
-        severity: 'success',
-        summary: 'success',
-        detail: 'Data updated successfull.',
-      });
+      this.updateMstModule(e);
     }
   }
 
-  submitMstModuleData(roleData: any) {
-    this.http.saveMstModuleData(roleData).subscribe((data) => {
-      this.data = undefined;
-      this.getAllMstModuleData();
-      console.log('data' + data);
-    });
+  onEdit(e: any) {
+    this.sidebarConfig.form.formControls[0].isVisible = true;
+    this.selectedModuleData = e.editRow;
+    this.isEditMode = false;
   }
 
-  updateMstModuleData(idInput: any) {
-    this.http.updateMstModule(idInput).subscribe((data) => {
-      this.data = undefined;
-      this.getAllMstModuleData();
-      console.log('data' + data);
-    });
+  initializeAddForm(e: any) {
+    this.sidebarConfig.form.formControls[0].isVisible = false;
+    this.selectedModuleData = [];
+    this.isEditMode = true;
+    this.common.sendEditData(false);
   }
 
-  fiteredData(e: any) {
-    this.data = undefined;
+  handleButtonClick(e: any) {
+     //removing last selectedModuleData
+    this.selectedModuleData = undefined;
+    this.common.sendEditData(false);
   }
 }

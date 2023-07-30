@@ -10,6 +10,27 @@
         "formControls": [
             {
                 "id": 2,
+                "isEditable": false,
+                "isVisible": false,
+                "label": "Address Id",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Address Id",
+                "formControlName": "addressId",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 2,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Country",

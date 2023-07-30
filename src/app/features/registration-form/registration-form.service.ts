@@ -49,6 +49,7 @@ export class RegistrationFormService {
   readonly mst_medical_history = 'http://localhost:8082/mst_medical_history/list';
   readonly mst_patient_add_info = 'http://localhost:8082/mst_patient_add_info/list';
   readonly mst_medical_legal_case = 'http://localhost:8082/mst_medical_legal_case/list';
+  readonly mst_emergency_contact = 'http://localhost:8082/mst_emergency_contact/list';
 
   getDataFromApis(): Observable<any[]> {
     const api1Request = this.http.get(this.mst_patient);
@@ -58,18 +59,10 @@ export class RegistrationFormService {
     const api5Request = this.http.get(this.mst_medical_history);
     const api6Request = this.http.get(this.mst_patient_add_info);
     const api7Request = this.http.get(this.mst_medical_legal_case);
+    const api8Request = this.http.get(this.mst_emergency_contact);
 
-    return forkJoin([api1Request, api2Request, api3Request, api4Request, api5Request, api6Request, api7Request]);
+    return forkJoin([api1Request, api2Request, api3Request, api4Request, api5Request, api6Request, api7Request,api8Request]);
   }
-
-  readonly mst_patient_save = 'http://localhost:8082/mst_patient/create';
-  readonly mst_address_save = 'http://localhost:8082/mst_address/create';
-  readonly mst_privilege_save = 'http://localhost:8082/mst_privilege/create';
-  readonly mst_insurance_save = 'http://localhost:8082/mst_insurance/create';
-  readonly mst_medical_history_save = 'http://localhost:8082/mst_medical_history/create';
-  readonly mst_patient_add_info_save = 'http://localhost:8082/mst_patient_add_info/create';
-  readonly mst_medical_legal_case_save = 'http://localhost:8082/mst_medical_legal_case/create';
-
 
   saveMstPatient(mstPatient: any): Observable<any> {
     const url = "http://localhost:8082/mst_patient/create";
@@ -99,6 +92,12 @@ export class RegistrationFormService {
     const url = "http://localhost:8082/mst_medical_legal_case/create";
     return this.PostCall(url, mstMedicalLegalCaseSave);
   }
+
+  saveMstEmergencyContact(mstEmergencyContact: any): Observable<any> {
+    const url = "http://localhost:8082/mst_emergency_contact/create";
+    return this.PostCall(url, mstEmergencyContact);
+  }
+
   updateMstPatient(mstPatient: any): Observable<any> {
     const url = "http://localhost:8082/mst_patient/update";
     return this.http.put<any>(url, mstPatient);
@@ -128,38 +127,12 @@ export class RegistrationFormService {
     return this.http.put<any>(url, mstMedicalLegalCaseSave);
   }
 
-  saveDataFromApis(mstAddress: any, mstPrivilege: any, mstInsurance: any, mstMedicalHistory: any, mstAdditionalInfo: any, mstMLC: any): Observable<any[]> {
-    let postRequest1$, postRequest2$, postRequest3$, postRequest4$, postRequest5$, postRequest6$, postRequest7$;
-    // if (mstPatient != undefined) {
-    //   postRequest1$ = this.http.post(this.mst_patient_save, mstPatient);
-    //   // return forkJoin([postRequest1$]);
-    // }
-
-    // setTimeout(() => {                           // <<<---using ()=> syntax
-    if (mstAddress != undefined) {
-      postRequest2$ = this.http.post(this.mst_address_save, mstAddress);
-      // return forkJoin([postRequest2$]);
-    }
-    if (mstPrivilege != undefined) {
-      postRequest3$ = this.http.post(this.mst_privilege_save, mstPrivilege);
-    }
-    if (mstInsurance != undefined) {
-      postRequest4$ = this.http.post(this.mst_insurance_save, mstInsurance);
-    }
-    if (mstMedicalHistory != undefined) {
-      postRequest5$ = this.http.post(this.mst_medical_history_save, mstMedicalHistory);
-    }
-    if (mstAdditionalInfo != undefined) {
-      postRequest6$ = this.http.post(this.mst_patient_add_info_save, mstAdditionalInfo);
-    }
-    if (mstMLC != undefined) {
-      postRequest7$ = this.http.post(this.mst_medical_legal_case_save, mstMLC);
-    }
-    // }, 3000);
-
-
-    return forkJoin([postRequest2$, postRequest3$, postRequest4$, postRequest5$, postRequest6$, postRequest7$]);
+  updateMstEmergencyContact(mstEmergencyContact: any): Observable<any> {
+    const url = "http://localhost:8082/mst_emergency_contact/update";
+    return this.http.put<any>(url, mstEmergencyContact);
   }
+
+
   //mst_patient APIs
 
   updateUserData(data: any) {

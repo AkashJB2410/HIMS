@@ -32,7 +32,70 @@
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "transient": false,
+                "label": "ABHA No.",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "ABHA No.",
+                "formControlName": "abhaNoInput",
+                "message": {
+                    "required": "ABHA No. is required",
+                    "pattern": "Invalid ABHA Id"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[1-9]{2}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "UH ID",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "UH ID",
+                "formControlName": "uhIdInput",
+                "message": {
+                    "required": "UH ID is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Aadhar No.",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Aadhar No.",
+                "formControlName": "aadharNo",
+                "message": {
+                    "required": "Aadhar No. is required",
+                    "pattern": "Invalid Aadhar no."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$"
+                }
+            },
+            {
+                "id": 4,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
                 "label": "",
                 "data":"PERSONAL DETAILS",
                 "type": "divider",
@@ -51,7 +114,7 @@
                 }
             },
             {
-                "id": 2,
+                "id": 5,
                 "isEditable": false,
                 "isVisible": false,
                 "label": "Patient Id",
@@ -72,7 +135,7 @@
                 }
             },
             {
-                "id": 3,
+                "id": 6,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Title",
@@ -140,7 +203,7 @@
             },
             
             {
-                "id": 4,
+                "id": 7,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "First Name",
@@ -161,7 +224,7 @@
                 }
             },
             {
-                "id": 5,
+                "id": 8,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Middle Name",
@@ -182,7 +245,7 @@
                 }
             },
             {
-                "id": 6,
+                "id": 9,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Last Name",
@@ -203,7 +266,7 @@
                 }
             },
             {
-                "id": 7,
+                "id": 10,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Gender",
@@ -242,7 +305,7 @@
                 }
             },
             {
-                "id": 8,
+                "id": 11,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Identification Type",
@@ -313,7 +376,7 @@
                 }
             },
             {
-                "id": 9,
+                "id": 12,
                 "isEditable": false,
                 "isVisible": true,
                 "label": "Identification Number",
@@ -334,7 +397,7 @@
                 }
             },
             {
-                "id": 10,
+                "id": 13,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Email ID",
@@ -356,7 +419,7 @@
                 }
             },
             {
-                "id": 11,
+                "id": 14,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "",
@@ -384,7 +447,7 @@
                 }
             },
             {
-                "id": 12,
+                "id": 15,
                 "isEditable": false,
                 "isVisible": true,
                 "transient": false,
@@ -406,7 +469,7 @@
                 }
             },
             {
-                "id": 13,
+                "id": 16,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "",
@@ -434,7 +497,7 @@
                 }
             },
             {
-                "id": 14,
+                "id": 17,
                 "isEditable": false,
                 "isVisible": true,
                 "label": "",
@@ -455,7 +518,7 @@
                 }
             },
             {
-                "id": 15,
+                "id": 18,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Blood Group",
@@ -514,69 +577,13 @@
                 }
             },
             {
-                "id": 16,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Ethincity",
-                "type": "select",
-                "value": "",
-                "class": "col-md-3  my-1",
-                "lblclass": "custom-label",
-                "valueclass": "",
-                "placeholder": "Select option",
-                "formControlName": "selectEthincity",
-                "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    },
-                    {
-                        "name": " Telagu",
-                        "code": 1
-                    },
-                    {
-                        "name": "Kamati",
-                        "code": 2
-                    }
-                ],
-                "message": {
-                    "required": "Ethincity is required",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 17,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Religion",
-                "inputType": "text",
-                "type": "text",
-                "class": "col-md-3 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "Religion",
-                "formControlName": "religionInput",
-                "message": {
-                    "required": "",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 18,
+                "id": 19,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Marital Status",
                 "type": "select",
                 "value": "",
-                "class": "col-md-3 mt-2  my-1",
+                "class": "col-md-3  my-1",
                 "lblclass": "custom-label",
                 "valueclass": "",
                 "placeholder": "Select option",
@@ -605,7 +612,7 @@
                 }
             },
             {
-                "id": 19,
+                "id": 20,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": false,
@@ -627,7 +634,341 @@
                 }
             },
             {
-                "id": 20,
+                "id": 21,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Parents/Guardian",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectRelation",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Mother",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Father",
+                        "code": "2"
+                    },
+                    {
+                        "name": "Guardian",
+                        "code": "3"
+                    }
+                ],
+                "message": {
+                    "required": "Parents/Guardian Name is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 22,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Parents/Guardian Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Parents/Guardian Name...",
+                "formControlName": "parentsGuardianName",
+                "message": {
+                    "required": "Parents/Guardian Name is required",
+                    "pattern": "Numbers not allowed."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+
+            {
+                "id": 23,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "label": "",
+                "data":"COMMUNICATION ADDRESS",
+                "type": "divider",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "defaultValue":"",
+                "valueclass": "",
+                "formControlName": "divider",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 24,
+                "isEditable": false,
+                "isVisible": false,
+                "label": "Address Id",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Address Id",
+                "formControlName": "addressId",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 25,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Country",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "defaultValue":1,
+                "formControlName": "selectCountry",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "India",
+                        "code": 1
+                    }
+                ],
+                "message": {
+                    "required": "Police Station is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 26,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "dependentdropdown",
+                "class": "col-md-9",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "dependentdropdown",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "label": "State",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": ""
+                            },
+                            {
+                                "name": "Maharashtra",
+                                "code": 1                            },
+                            {
+                                "name": "Bihar",
+                                "code": 2
+                            }
+                        ]
+                    },
+                    {
+                        "label": "District",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": "",
+                                "Mcode": ""
+                            },
+                            {
+                                "name": "Pune",
+                                "code": 1,
+                                "Mcode": 1
+                            },
+                            {
+                                "name": "Satara",
+                                "code": 2,
+                                "Mcode": 1
+                            },
+                            {
+                                "name": "Sangli",
+                                "code": 3,
+                                "Mcode": 1
+                            },
+                            {
+                                "name": "Patna",
+                                "code": 4,
+                                "Mcode": 2
+                            },
+                            {
+                                "name": "Mujjafarpur",
+                                "code": 5,
+                                "Mcode": 2
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Block/Taluka/Tahsils",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": ""
+                            },
+                            {
+                                "name": "Ambegaon",
+                                "code": 1,
+                                "Mcode": 1
+                            },
+                            {
+                                "name": "Punecity",
+                                "code": 2,
+                                "Mcode": 1
+                            },
+                            {
+                                "name": "Khed",
+                                "code": 3,
+                                "Mcode": 1
+                            }
+                        ]
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 27,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Village",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectVillage",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Pimpari",
+                        "code": 1
+                    },
+                    {
+                        "name": "Chikhali",
+                        "code": 2
+                    }
+                ],
+                "message": {
+                    "required": "Police Station is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 28,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Address",
+                "type": "textarea",
+                "inputType": "textarea",
+                "class": "col-md-3 mt-1",
+                "lblclass": "custom-label",
+                "valueclass": "textarea-custom",
+                "row": "2",
+                "placeholder": "",
+                "formControlName": "addressInput",
+                "message": {
+                    "required": "Address is required",
+                    "pattern": "invalid"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
+                }
+            },
+            {
+                "id": 29,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Landmark",
+                "type": "textarea",
+                "inputType": "textarea",
+                "class": "col-md-3 mt-1",
+                "lblclass": "custom-label",
+                "valueclass": "textarea-custom",
+                "row": "2",
+                "placeholder": "",
+                "formControlName": "landmarkInput",
+                "message": {
+                    "required": "Address is required",
+                    "pattern": "invalid"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
+                }
+            },
+            {
+                "id": 30,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Pin Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter Pin Code...",
+                "formControlName": "pinCodeInput",
+                "message": {
+                    "required": "Pin Code is required",
+                    "pattern": "Please re-enter valid pin code."
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": "^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$"
+                }
+            },
+            {
+                "id": 31,
                 "isEditable": true,
                 "isVisible": true,
                 "transient":true,
@@ -650,7 +991,7 @@
                 }
             },
             {
-                "id": 21,
+                "id": 32,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,
@@ -668,7 +1009,7 @@
                 }
             },
             {
-                "id": 22,
+                "id": 33,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,

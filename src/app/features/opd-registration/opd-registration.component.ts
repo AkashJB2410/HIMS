@@ -82,7 +82,7 @@ export class OpdRegistrationComponent implements OnInit {
       this.mobileGridData = undefined;
       this.http.mobileSerchData(e[0]).subscribe((data: any) => {
         this.mobileGridData = data[1].result;
-        this.form$.showModal(true);
+        this.form$.showModal(true,"");
       });
     }
   }
@@ -108,7 +108,7 @@ export class OpdRegistrationComponent implements OnInit {
     this.form$.reRenderForm(this.formJSON.form.formControls[13], e.patientDob, 'autofill');
     this.form$.reRenderForm(this.formJSON.form.formControls[14], e.patientAge, 'autofill');
     this.form$.reRenderForm(this.formJSON.form.formControls[15], e.patientMobileNumber, 'autofill');
-    this.form$.showModal(false);
+    this.form$.showModal(false,"");
   }
   accordionEmitData(e: any) { }
   fiteredData(e: any) {
