@@ -24,7 +24,7 @@ build_job:
   tags:
     - docker
   script:
-    - docker build -t gitlab.techjivaaindia.in/administrators/generic-hmis
+    -  docker buildx build  -t  generic-hmis  gitlab.techjivaaindia.in/administrators/generic-hmis  
 
 push_job:
   stage: Push
