@@ -1,7 +1,6 @@
 {
     "tableName": "Registration Table",
     "tableHeaders": [
-        {"field": "patientUploadImage","header": "Upload Image","iseditable": false , "class":""},
         {"field": "patientMrNo","header": "MR.No","iseditable": false , "class":""},
         {"field": "patientTitleName","header": "Title","iseditable": false , "class":""},
         {"field": "patientFullname","header": "Full Name","iseditable": false , "class":""},

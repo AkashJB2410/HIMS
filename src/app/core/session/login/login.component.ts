@@ -135,7 +135,8 @@ export class LoginComponent implements OnInit {
               // sessionStorage.setItem('loggedIn', 'true');
               localStorage.setItem('accessToken', this.encrypt.transform(JSON.stringify(data.result.acessToken)));
               localStorage.setItem('refreshToken', this.encrypt.transform(JSON.stringify(data.result.refreshToken)));
-              this.router.navigateByUrl('/master-page/user-management');
+              // this.router.navigateByUrl('/master-page/user-management');
+              this.router.navigateByUrl('/master-page/home');
               sessionStorage.getItem("location")
 
             } else {
