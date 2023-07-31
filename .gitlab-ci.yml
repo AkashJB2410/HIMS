@@ -1,36 +1,41 @@
 image: docker:latest
 
+services:
+  - docker:latest
+
 stages:
   # - Login
   - Build
   - Push
-  - Logout
-  
+  # - Logout
+
+variables:
+  CONTAINER_TEST_IMAGE: generic-hmis:test
+
 # login_job:
 #   stage: Login
 #   tags:
 #     - docker
 #   script:
-#     - docker login -u CI_REGISTRY_USER -p CI_REGISTRY_PASSWORD_STDIN CI_REGISTRY
-    
+#     - docker login -u tech1 -p tech@123 registry.techjivaaindia.in:5005/administrators/generic-hmis 
 
 build_job:
   stage: Build
   tags:
     - docker
   script:
-    - docker build -t CONTAINER_TEST_IMAGE .
-    
+    - docker build -t generic-hmis:test .
+
 push_job:
   stage: Push
   tags:
     - docker
   script:
-    - docker push CONTAINER_TEST_IMAGE
+    - docker push generic-hmis:test
 
-logout_job:
-  stage: Logout
-  tags:
-    - docker
-  script:
-    - docker logout CI_REGISTRY
+# logout_job:
+#   stage: Logout
+#   tags:
+#     - docker
+#   script:
+#     - docker logout registry.techjivaaindia.in:5005/administrators/generic-hmis
