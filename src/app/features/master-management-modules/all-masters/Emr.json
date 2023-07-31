@@ -1,0 +1,565 @@
+{
+    "Forms":[
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Super Speciality",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-bootstrap",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/super-speciality",
+                        "formControlName": "Action Button",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Clinical Procedure Master",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-boxes",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/clinical-procedure-master",
+                        "formControlName": "Action Module",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Procedure",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-people",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/procedure",
+                        "formControlName": "Action Role",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": ".Disease Sub Category Master",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-box",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/disease-sub-category-master",
+                        "formControlName": "Action SubModule",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": " ICD Code Master",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-person",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/icd-Code-Master",
+                        "formControlName": "Action User Role",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Document Category",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-google-play",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/document-category",
+                        "formControlName": "Application Configuration",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": "Clinical Forms",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-bank",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/clinical-forms",
+                        "formControlName": "Bank Branch Master",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        },
+        {
+            "form": {
+                "class": "row",
+                "formTitle": "",
+                "sidebar": "p-sidebar-md",
+                "formControls": [
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "transient": true,
+                        "label": "",
+                        "type": "staticText",
+                        "data": " Template",
+                        "class": "col-md-8  custom-text",
+                        "lblclass": "custom-label",
+                        "valueclass": "custom-text",
+                        "placeholder": "",
+                        "formControlName": "anchor",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": true,
+                            "pattern": ""
+                        }
+                    },
+                    {
+                        "isVisible": true,
+                        "type": "icon",
+                        "label": "",
+                        "class":"col-md-4",
+                        "icons": [
+                            {
+                                "class": "bi bi-bank2",
+                                "isDisabled": false,
+                                "subtype": "submit",
+                                "valueclass": "icon-button-primary",
+                                "tooltip":"Press It",
+                                "toolPosition":"top"
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "isEditable": true,
+                        "isVisible": true,
+                        "label": "",
+                        "type": "anchor",
+                        "inputType": "anchor",
+                        "valueclass": "lbl-end",
+                        "maxLength": 5,
+                        "class": "col-md-12 ",
+                        "lblclass": "lbl-end ",
+                        "id": "anchor",
+                        "placeholder": "/master-page/all-masters/template",
+                        "formControlName": "Bank Master",
+                        "message": {
+                            "required": "",
+                            "pattern": ""
+                        },
+                        "validations": {
+                            "required": false,
+                            "pattern": ""
+                        }
+                    }
+        
+                ]
+            }
+        }
+                ]
+            }
+        

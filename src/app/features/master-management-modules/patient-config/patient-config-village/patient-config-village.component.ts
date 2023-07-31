@@ -92,7 +92,7 @@ export class PatientConfigVillageComponent implements OnInit {
   }
 
   confirmAction(e: any) {
-    if (e.isActive == true) {
+    if (e.is_Active == true) {
       this.data = undefined;
       this.deleteVillageData(e);
       this.messageService.add({

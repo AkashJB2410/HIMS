@@ -1,0 +1,44 @@
+{
+    "card":[
+      {
+        "label": "Super Speciality",
+        "routerLink": "/master-page/all-masters/super-speciality",
+        "imgSrc": "assets/unit-configuration/Organizations.png"
+      },
+      {
+        "label": "Clinical Procedure Master",
+        "routerLink": "/master-page/all-masters/clinical-procedure",
+        "imgSrc": "assets/unit-configuration/action-sub-module.png"
+      },
+      {
+        "label": "Procedure",
+        "routerLink": "/master-page/all-masters/procedure",
+        "imgSrc": "assets/unit-configuration/action-sub-module.png"
+      },
+      {
+        "label": "Disease Sub Category Master",
+        "routerLink": "/master-page/all-masters/disease-sub-category",
+        "imgSrc": "assets/unit-configuration/action-sub-module.png"
+      },
+      {
+        "label": "ICD Code Masterr",
+        "routerLink": "/master-page/all-masters/icd-code",
+        "imgSrc": "assets/unit-configuration/action-sub-module.png"
+      },
+    {
+        "label": " Clinical Forms",
+        "routerLink": "/master-page/all-masters/clinical-forms",
+        "imgSrc": "assets/unit-configuration/action-sub-module.png"
+      },
+      {
+        "label": "Template",
+        "routerLink": "/master-page/all-masters/template",
+        "imgSrc": "assets/unit-configuration/action-sub-module.png"
+      },
+      {
+        "label": " Document Category",
+        "routerLink": "/master-page/all-masters/document-category",
+        "imgSrc": "assets/unit-configuration/action-sub-module.png"
+      }
+    ]
+  }

@@ -7,17 +7,17 @@
     },
     {
       "label": "Master Module",
-      "routerLink": "/master-page/group-module",
+      "routerLink": "/master-page/all-masters/master-module",
       "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "Group Module",
-      "routerLink": "/master-page/sub-module",
+      "routerLink": "/master-page/all-masters/group-module",
       "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
       "label": "Sub Module",
-      "routerLink": "/master-page/sub-module",
+      "routerLink": "/master-page/all-masters/sub-module",
       "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {
@@ -43,11 +43,6 @@
     {
       "label": "Spetiality",
       "routerLink": "/master-page/all-masters/spetiality",
-      "imgSrc": "assets/unit-configuration/action-sub-module.png"
-    },
-    {
-      "label": "Super Speciality",
-      "routerLink": "/master-page/all-masters/super-speciality",
       "imgSrc": "assets/unit-configuration/action-sub-module.png"
     },
     {

@@ -174,8 +174,9 @@ export class FilterComponent implements OnInit {
     this.filterData = undefined;
     this.filterData = data.filterJson;
   }
-  
+
   setStateAsActive(a: any) {
     this.activeState = a;
   }
+
 }

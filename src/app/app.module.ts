@@ -13,7 +13,7 @@ import { SubModuleComponent } from './features/master-management-modules/unit-co
 import { MasterModuleComponent } from './features/master-management-modules/unit-config/master-module/master-module.component';
 import { MasterModuleModule } from './features/master-management-modules/unit-config/master-module/master-module.module';
 import { RoleManagementModule } from './features/master-management-modules/unit-config/role-management/role-management.module';
-import { OrganizationModule } from './features/master-management-modules/unit-config/organization/organizationModule';
+import { OrganizationModule } from './features/master-management-modules/unit-config/organization/organization.module';
 import { RegistrationFormComponent } from './features/registration-form/registration-form.component';
 import { RegistrationFormModule } from './features/registration-form/registration-form.module';
 import { SharedModule } from './core/shared/modules/shared.module';
@@ -37,6 +37,11 @@ import { PatientConfigDistrictComponent } from './features/master-management-mod
 import { PatientConfigCityComponent } from './features/master-management-modules/patient-config/patient-config-city/patient-config-city.component';
 import { PatientConfigVillageComponent } from './features/master-management-modules/patient-config/patient-config-village/patient-config-village.component';
 import { CIPComponent } from './features/master-management-modules/patient-config/cip/cip.component';
+import { DoctorScheduleComponent } from './features/doctor-schedule/doctor-schedule.component';
+import { DoctorCabinComponent } from './features/doctor-cabin/doctor-cabin.component';
+import { DayMasterComponent } from './features/day-master/day-master.component';
+import { OrganizationComponent } from './features/master-management-modules/unit-config/organization/organization.component';
+
 
 @NgModule({
   declarations: [
@@ -63,6 +68,10 @@ import { CIPComponent } from './features/master-management-modules/patient-confi
     PatientConfigCityComponent,
     PatientConfigVillageComponent,
     CIPComponent,
+    DoctorScheduleComponent,
+    DoctorCabinComponent,
+    DayMasterComponent,
+    OrganizationComponent
   ],
   imports: [
     CommonModule,

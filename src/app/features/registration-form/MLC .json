@@ -9,7 +9,7 @@
         "sidebar": "p-sidebar-lg",
         "formControls": [
             {
-                "id": 2,
+                "id": 0,
                 "isEditable": false,
                 "isVisible": false,
                 "label": "MLC Id",
@@ -124,7 +124,7 @@
                 }
             },
             {
-                "id": 10,
+                "id": 3,
                 "isEditable": true,
                 "isVisible": true,
                 "transient":true,

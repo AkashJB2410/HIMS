@@ -1,6 +1,7 @@
 <div class="">
     <!-- <img height="40px" width="40px" src="{{base1}}"> -->
-    <h6 class="{{formJson.formTitleClass}}"><i class="{{formJson.formTitleLogo}}"></i>{{formJson.formTitle | uppercase}}
+    <h6 *ngIf="formJson.formTitle != ''" class="{{formJson.formTitleClass}}"><i
+            class="{{formJson.formTitleLogo}}"></i>{{formJson.formTitle | uppercase}}
     </h6>
     <form [formGroup]="form">
         <div class="{{formJson.class}}">
@@ -63,7 +64,7 @@
                                 [value]="opt.code" [(ngModel)]="formData.fieldValue" [inputId]="opt.code"
                                 (onChange)="changeEvent($event, formData)">
                             </p-checkbox>
-                            <label class="ms-1" for="{{opt.code}}">{{opt.name}}</label>
+                            <label for="{{opt.code}}">{{opt.name}}</label>
                         </div>
                     </div>
                     <div class="{{formData.valueclass}}"
@@ -136,7 +137,8 @@
                     </div>
                     <div class="{{formData.valueclass}}"
                         *ngIf="formData.fieldType === formStaticText.DEPENDENTDROPDOWN">
-                        <app-dependent-dropdown [data]="formData.values" [formData]="formData" [defaultData]="formData.fieldValue"
+                        <app-dependent-dropdown [data]="formData.values" [formData]="formData"
+                            [defaultData]="formData.fieldValue"
                             (dependentDrop)="dependentDrop($event, formData)"></app-dependent-dropdown>
                     </div>
                     <p-multiSelect *ngIf="formData.fieldType == formStaticText.MULTISELECT" [options]="formData.values"
@@ -145,6 +147,15 @@
                         [(ngModel)]="formData.fieldValue" optionLabel="name" optionValue="code" [showClear]="true"
                         class="{{formData.valueclass}}" [showClear]="false" (onChange)="changeEvent($event, formData)">
                     </p-multiSelect>
+
+                    <div *ngIf="formData.fieldType == formStaticText.HIDETEXT">
+                        <input type="{{formData.inputType}}" id="{{formData.fieldName}}" name="{{formData.fieldName}}"
+                            class="form-controls" [formControlName]="formData.fieldName"
+                            [ngClass]="formData.editable ? formData.valueclass : 'input-box1'"
+                            minlength="{{formData.minlength}}" maxlength="{{formData.maxlength}}"
+                            [(ngModel)]="formData.fieldValue" placeholder="{{formData.placeholder}}"
+                            (blur)="blurValue($event.target, formData)">
+                    </div>
                     <!-- Error Messages Here -->
 
                     <div class="error-txt-msg"
@@ -166,6 +177,9 @@
     </form>
 </div>
 
-<p-dialog header="Title" [(visible)]="displayModal" [draggable]="false">
+<p-dialog [(visible)]="displayModal" [draggable]="false" [transitionOptions]="'0ms'" [position]="'top'">
+    <ng-template pTemplate="header" >
+        <span style="margin-left: -11px" class="Sidebar-title-md"><i class="bi bi-file-earmark-medical"></i>{{modalTitle}}</span>
+    </ng-template>
     <ng-content></ng-content>
 </p-dialog>

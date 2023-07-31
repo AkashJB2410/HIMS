@@ -1,7 +1,7 @@
 <div class="">
     <p-table #dt id="dataTable" [value]="tableData" [reorderableColumns]="config.isDragAndDrop"
-        [reorderableColumns]="config.isDragAndDrop" [resizableColumns]="config.resizableColumns" columnResizeMode="fit"
-        [rows]="config.rows" [paginator]="config.paginator" [columns]="selectedColumns" styleClass="{{config.stripped}}"
+        [resizableColumns]="config.resizableColumns" columnResizeMode="fit" [rows]="config.rows"
+        [paginator]="config.paginator" [columns]="selectedColumns" styleClass="{{config.stripped}}"
         [showCurrentPageReport]="config.showCurrentPageReport" [rowsPerPageOptions]="config.rowsPerPageOptions"
         [loading]="config.loading" [(selection)]="chekboxes" selectionMode="single"
         [globalFilterFields]="config.globalFilter" [rowHover]="config.rowHover" dataKey="id"
@@ -25,8 +25,8 @@
                 </div>
                 <div class="item5 mx-1">
                     <button *ngIf="config.bulkAction.includes('Delete')" class="btn butn-dngr me-1"
-                    pTooltip="Bulk Delete" tooltipPosition="top" pRipple (click)="ondeletechecked()"><i
-                        class="pi pi-trash"></i></button>
+                        pTooltip="Bulk Delete" tooltipPosition="top" pRipple (click)="ondeletechecked()"><i
+                            class="pi pi-trash"></i></button>
                     <span *ngIf="config.bulkAction.includes('Addbutton')">
                         <button class="btn butn-prmry me-1" pTooltip="Add New" tooltipPosition="top" pRipple
                             (click)="AddNewProduct($event)">
@@ -38,7 +38,6 @@
                     <button *ngIf="config.bulkAction.includes('EXCEL')" class="btn butn-prmry me-1"
                         pTooltip="Export To Excel" tooltipPosition="top" pRipple (click)="exportExcel()"><i
                             class="pi pi-file-excel"></i></button>
-                   
                 </div>
             </div>
         </ng-template>
@@ -49,8 +48,11 @@
                     <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                 </th>
                 <th style="width: 1rem; text-align: center; max-width: 1rem;" *ngIf="config.isRadioButton"></th>
-                <th style="width : 7rem; padding: 0.25rem 0.25rem;" pSortableColumn="{{col.field}}"
-                    *ngFor="let col of columns" pResizableColumn pReorderableColumn>
+                <th *ngIf="config.isProfileDisplay" style="width : 4rem;">
+                    IMAGE
+                </th>
+                <th style="padding: 0.25rem 0.25rem; " pSortableColumn="{{col.field}}" *ngFor="let col of columns"
+                    pResizableColumn pReorderableColumn>
                     <div class="flex justify-content-center align-items-center">
                         {{col.header}}
                         <!-- <p-columnFilter type="text" field="{{col.field}}" display="menu"></p-columnFilter> -->
@@ -58,11 +60,8 @@
                             field="{{col.field}}"></p-sortIcon>
                     </div>
                 </th>
-                <th *ngIf="config.isProfileDisplay" style="width : 4rem;">
-                    Profile Image
-                </th>
-                <th class=" text-center" *ngIf="config.isActions" style="width : 4rem;">
-                    Actions
+                <th class=" text-center" *ngIf="config.isActions" style="min-width : 5rem; width: 5rem;">
+                    ACTIONS
                 </th>
                 <th style="width: 1rem" *ngIf="config.expand"></th>
             </tr>
@@ -73,11 +72,27 @@
                 <td *ngIf="config.isCheckbox" style="padding: 0.25rem 0.25rem;width: 1rem; text-align: center;">
                     <p-tableCheckbox [value]="rowData" name="abc" ngDefaultControl
                         [(ngModel)]="chekboxes"></p-tableCheckbox>
-                </td>     
+                </td>
                 <td *ngIf="config.isRadioButton" style="padding: 0.25rem 0.25rem;width: 1rem; text-align: center;">
                     <p-radioButton [value]="rowData" name="abc" ngDefaultControl
-                    [(ngModel)]="radiobutton"></p-radioButton>
-                </td>  
+                        [(ngModel)]="radiobutton"></p-radioButton>
+                </td>
+                <td *ngIf="config.isProfileDisplay" class="text-center">
+                    <ng-container
+                        *ngIf="rowData.image != '' && rowData.image!=undefined && rowData.image!=null; else default">
+                        <img [src]="rowData.image" alt="Profile" class="imagereducer" />
+                    </ng-container>
+                    <ng-template #default>
+                        <!-- <img src="../../../../assets/core_assets/defaultuser.jpg" pTooltip="Profile" class="imagereducer"
+                            tooltipPosition="bottom" alt="Profile"> -->
+                        <div class="profileImage">
+                            <span *ngIf="rowData.name.split(' ').length == 1">{{rowData.name.split(" ")[0].substring(0,
+                                1)}}</span>
+                            <span *ngIf="rowData.name.split(' ').length >= 2">{{rowData.name.split(" ")[0].substring(0,
+                                1) + rowData.name.split(" ")[1].substring(0, 1)}}</span>
+                        </div>
+                    </ng-template>
+                </td>
                 <td *ngFor="let col of columns" style="padding: 0.25rem 0.25rem;" pEditableColumn class="{{col.class}}"
                     [ngStyle]="{color: getColor(rowData[col.field])}">
                     <p-cellEditor *ngIf="col.iseditable; else normalText">
@@ -94,35 +109,22 @@
                         <app-moreandless [wordLimit]="config.textLength" [text]="rowData[col.field] "></app-moreandless>
                     </ng-template>
                 </td>
-                <td *ngIf="config.isProfileDisplay" class="text-center">
-                    <ng-container *ngIf="rowData.image != '' && rowData.image!=undefined && rowData.image!=null; else default">
-                        <img [src]="rowData.image"  alt="Profile" class="imagereducer" />
-                    </ng-container>
-                    <ng-template #default>
-                        <img src="../../../../assets/core_assets/defaultuser.jpg" pTooltip="Profile" class="imagereducer"
-                            tooltipPosition="bottom" alt="Profile">
-                    </ng-template>
-                </td>
-
-
                 <!-- <td *ngFor="let col of columns" style="padding: 0.25rem 0.25rem;">
                     <ng-template *ngIf="!col.iseditable">
                         {{rowData[col.field]}}
                     </ng-template>
                 </td> -->
-                <td *ngIf="config.isActions" style="padding: 0.25rem 0.25rem; width: 12rem ; text-align: center;">
+                <td *ngIf="config.isActions" style="padding: 0.25rem 0.25rem; display: flex; align-items: center;">
                     <ng-container>
                         <button *ngIf="config.isActions.includes('Edit')" pTooltip="Edit" tooltipPosition="top"
                             class="shorcut-iocns"><i>
                                 <img src="../../../assets/core_assets/Edit (2).png" class="image-size"
                                     (click)="editProduct(rowData)"></i>
                         </button>
-
                         <button *ngIf="config.isActions.includes('Delete')" pTooltip="Delete" tooltipPosition="top"
-                            class="shorcut-iocns" id="abc{{rowData.id}}" [disabled]="!rowData.is_Active"><i>
+                            class="shorcut-iocns" id="abc{{rowData.id}}" [disabled]="!rowData.isActive"><i>
                                 <img src="../../../assets/core_assets/Delete (2).png"
                                     (click)="ondelete(rowData);disable(rowData)" class="image-size"></i></button>
-
                         <button *ngIf="config.isActions.includes('Scanner')" pTooltip="Scanner" tooltipPosition="top"
                             class="shorcut-iocns"><i>
                                 <img src="../../../assets/core_assets/Scanner.png" class="image-size"
@@ -148,20 +150,16 @@
                                 <img src="../../../assets/core_assets/Services.png" class="image-size"
                                     (click)="serviceClick($event,rowData)"></i>
                         </button>
-
                         <button *ngIf="config.isActions.includes('Viewer')" class="shorcut-iocns" pTooltip="Viewer"
                             tooltipPosition="top" pButton pRipple icon="pi pi-window-maximize"
-                            style="background-color: black;" routerLink="/dicom-viewer"
-                            class="p-button-rounded "></button>
+                            style="background-color: black;" routerLink="/dicom-viewer" class="p-button-rounded ">
+                        </button>
                         <div *ngIf="config.isActions.includes('isActive')"
                             class="form-check form-switch form-check-inline">
                             <input class="form-check-input float-end" id="abc{{rowData.id}}"
-                                (click)="active($event,rowData)" [checked]="rowData.is_Active" pTooltip="Active"
+                                (click)="active($event,rowData)" [checked]="rowData.isActive" pTooltip="Active"
                                 tooltipPosition="top" type="checkbox" role="switch">
                         </div>
-
-
-
                     </ng-container>
                 </td>
                 <td *ngIf="config.expand" style="text-align: center;">

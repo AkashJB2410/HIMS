@@ -2,7 +2,7 @@
 <app-filter *ngIf="configurations.isFilter" [filterData]="filterData" (selectedData)="fitereddata($event)"></app-filter>
 
 <!----------- Generic Table ----------->
-<app-generictable *ngIf="configurations.isTable && data" [config]="config" [tableData]="data" (onEdit)="editRow($event)"
+<app-generictable *ngIf="configurations.isTable && data" [config]="config" [tableData]="data" [permissions]="permissions" (onEdit)="editRow($event)"
     (isActive)="isactive($event)" (onDelete)="deleteRow($event)" (onDeletechecked)="BulkdeleteRow($event)"
     (inlineEdit)="inlineedit($event)" (OnScannerClick)="onScannerClick($event)" (OnOPDclick)="onOPDclick($event)"
     (OnEmergencyClick)="onEmergencyClick($event)" (OnIPDclick)="onIPDclick($event)" (onAdd)="addRow($event)"

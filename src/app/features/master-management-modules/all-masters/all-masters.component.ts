@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import tabularData from './all-masters.json';
 import allUnitList from './allUnitList.json';
 import patientList from './patientConfigCards.json'
+import allEmrList from './allEmrList.json';
 import Breadcrumbs from './breadcrumb.json';
 import { AllMastersService } from './all-masters.service';
 import allDoctorData from './allMSTDoctor.json'
@@ -18,6 +19,7 @@ export class AllMastersComponent implements OnInit {
   tabularSideData=tabularData;
   allUnitList:any =allUnitList;
   patientList:any=patientList;
+  allEmrList:any =allEmrList;
   allDoctorData=allDoctorData;
   allFlag = {
   admiFlag:false,

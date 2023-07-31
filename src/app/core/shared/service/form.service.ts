@@ -14,7 +14,7 @@ export class FormService {
     this.renderNewForm.emit({ formData, value, funtonality });
   }
 
-  showModal(value: any) {
-    this.openModal.next(value);
+  showModal(value: any, titleName: any) {
+    this.openModal.next({value,titleName });
   }
 }

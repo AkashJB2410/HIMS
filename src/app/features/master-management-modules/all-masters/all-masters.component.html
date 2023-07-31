@@ -45,11 +45,24 @@
   </div>
 
   <div class="row" *ngIf="allFlag.emrFlag">
-    <div class="col-md-4">
+    <div class="row ">
+      <div class="col-md-2 " *ngFor="let cards of allEmrList.card">
+        <div class="avatar-section mb-4">
+        <p-avatar [title]="title"  routerLink="{{cards.routerLink}}"
+        image="{{cards.imgSrc}}"
+        size="xlarge"
+        shape="circle"
+      ></p-avatar>     
+      <h3 style="font-weight: bold;">{{cards.label}}</h3>
+    </div>
+    </div>
+     
+    </div><br>
+    <!-- <div class="col-md-4">
       <app-cards>
         EMR Configurations
       </app-cards>
-    </div>
+    </div> -->
   </div>
 
 

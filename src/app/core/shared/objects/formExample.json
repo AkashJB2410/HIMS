@@ -4,7 +4,7 @@
         "class": "row",
         "formTitle": "Page Title",
         "formTitleClass": "Sidebar-title-md",
-        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formTitleLogo": "bi bi-file-earmark-medical",
         "sidebar": "p-sidebar-md",
         "formControls": [
             {
@@ -19,6 +19,30 @@
                 "valueclass": "input-box",
                 "placeholder": "xyz123@example.com",
                 "formControlName": "userEmail",
+                "defaultValue": "DefaultVaule",
+                "maxlength": "10",
+                "minlength": "2",
+                "message": {
+                    "required": "Email is required",
+                    "pattern": "Please enter correct format"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z]+$"
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "iojhuhi0",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-3",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "xyz123@example.com",
+                "formControlName": "hiddentext",
                 "defaultValue": "DefaultVaule",
                 "maxlength": "10",
                 "minlength": "2",
@@ -83,7 +107,9 @@
                 "class": "col-md-2",
                 "valueclass": " radio-button mt-3",
                 "formControlName": "genderRad",
-                "defaultValue": [true],
+                "defaultValue": [
+                    true
+                ],
                 "message": {
                     "required": "Gender is required",
                     "pattern": ""
