@@ -1,11 +1,10 @@
 {
     "form": {
+        "formId": "unitForm",
         "class": "row",
         "formTitle": "Add Unit",
         "formTitleClass": "Sidebar-title-md",
         "formTitleLogo":"bi bi-file-earmark-medical",
-        "formName": "Form1",
-        "formType": "edit",
         "sidebar":"p-sidebar-lg",
         "formControls": [
             {
@@ -186,7 +185,7 @@
                 "formControlName": "unitAddress",
                 "message": {
                     "required": "Id is required",
-                    "pattern": "hello"
+                    "pattern": ""
                 },
                 "validations": {
                     "required": true,
@@ -207,7 +206,7 @@
                 "mandatoryMessage": "Name is required",
                 "message": {
                     "required": "Name is required",
-                    "pattern": "hello"
+                    "pattern": ""
                 },                
                 "validations": {
                     "required": false,
@@ -228,14 +227,9 @@
                 "mandatoryMessage": "Country is required",
                 "message": {
                     "required": "Country is required",
-                    "pattern": "hello"
+                    "pattern": ""
                 }, 
-                "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    }
-                ],               
+                "values": [],               
                 "validations": {
                     "required": true,
                     "pattern": ""
@@ -257,12 +251,7 @@
                     "required": "State is required",
                     "pattern": ""
                 }, 
-                "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    }
-                ],               
+                "values": [],               
                 "validations": {
                     "required": true,
                     "pattern": ""
@@ -284,12 +273,7 @@
                     "required": "City is required",
                     "pattern": ""
                 },  
-                "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    }
-                ],              
+                "values": [],              
                 "validations": {
                     "required": true,
                     "pattern": ""
@@ -331,12 +315,7 @@
                     "required": "Id is required",
                     "pattern": ""
                 },
-                "values": [
-                    {
-                        "name": "Select an Option",
-                        "code": ""
-                    }
-                ],
+                "values": [],
                 "validations": {
                     "required": true,
                     "pattern": ""
@@ -584,92 +563,31 @@
                     "required": "",
                     "pattern": ""
                 },
-                "values": [
-                    {
-                        "name": "",
-                        "code": ""
-                    }
-                ],
+                "values": [],
                 "validations": {
                     "required": false,
                     "pattern": ""
                 }
             },
             {
-                "isEditable": true,
-                "isVisible": false,
-                "label": "is_Active",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-4 my-1",
-                "lblclass": "custom-label",
-                "valueclass":"input-box",
-                "placeholder": "Enter id",
-                "formControlName": "isActive",
-                "message": {
-                    "required": "",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "isEditable": true,
                 "isVisible": true,
-                "label": "",
-                "type": "statictext",
-                "inputType": "text",
-                "class": "col-md-6 my-1",
-                "lblclass":"custom-label",
-                "valueclass":"input-box",
-                "placeholder": "Enter ID",
-                "formControlName": "static",
-                "message": {
-                    "required": "",
-                    "pattern": ""
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "id": 1,
-                "isEditable": true,
-                "isVisible": true,
-                "transient": true,
                 "type": "button",
-                "subtype": "save",
-                "class": "col-md-2",
-                "valueclass": "butn-custom-dark-blue ",
+                "subtype": "submit",
                 "btnLabel": "Save",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue",
                 "icon": "",
-                "isDisabled": false,
-                "formControlName": "",
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },            
+                "isDisabled": false
+            },
             {
-                "id": 3,
-                "isEditable": true,
                 "isVisible": true,
-                "transient": true,
                 "type": "button",
-                "subtype": "reset",
+                "subtype": "cancel",
                 "btnLabel": "Back",
-                "class": "col-md-2",
-                "valueclass": "button-login-yellow",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-wrng",
                 "icon": "",
-                "isDisabled": false,
-                "formControlName": "",
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
+                "isDisabled": false
             }
         ]
     }

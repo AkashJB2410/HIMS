@@ -35,6 +35,7 @@ import { DoctorScheduleComponent } from './features/doctor-schedule/doctor-sched
 import { DoctorCabinComponent } from './features/doctor-cabin/doctor-cabin.component';
 import { DayMasterComponent } from './features/day-master/day-master.component';
 import { OrganizationComponent } from './features/master-management-modules/unit-config/organization/organization.component';
+import { UnitComponent } from './features/master-management-modules/unit-config/unit/unit.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { OrganizationComponent } from './features/master-management-modules/unit
     DoctorScheduleComponent,
     DoctorCabinComponent,
     DayMasterComponent,
-    OrganizationComponent
+    OrganizationComponent,
+    UnitComponent
   ],
   imports: [
     CommonModule,
