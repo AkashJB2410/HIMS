@@ -8,7 +8,6 @@
         "formType": "edit",
         "sidebar":"p-sidebar-sm",
         "formControls": [
-           
             {
                 "isEditable": false,
                 "isVisible": true,
