@@ -122,7 +122,7 @@
                                     (click)="editProduct(rowData)"></i>
                         </button>
                         <button *ngIf="config.isActions.includes('Delete')" pTooltip="Delete" tooltipPosition="top"
-                            class="shorcut-iocns" id="abc{{rowData.id}}" [disabled]="!rowData.is_Active"><i>
+                            class="shorcut-iocns" id="abc{{rowData.id}}" [disabled]="!rowData.isActive"><i>
                                 <img src="../../../assets/core_assets/Delete (2).png"
                                     (click)="ondelete(rowData);disable(rowData)" class="image-size"></i></button>
                         <button *ngIf="config.isActions.includes('Scanner')" pTooltip="Scanner" tooltipPosition="top"
@@ -157,7 +157,7 @@
                         <div *ngIf="config.isActions.includes('isActive')"
                             class="form-check form-switch form-check-inline">
                             <input class="form-check-input float-end" id="abc{{rowData.id}}"
-                                (click)="active($event,rowData)" [checked]="rowData.is_Active" pTooltip="Active"
+                                (click)="active($event,rowData)" [checked]="rowData.isActive" pTooltip="Active"
                                 tooltipPosition="top" type="checkbox" role="switch">
                         </div>
                     </ng-container>
