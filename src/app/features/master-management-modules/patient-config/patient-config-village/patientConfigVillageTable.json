@@ -2,18 +2,23 @@
     "tableName": "Village Table",
     "tableHeaders": [
         {
-            "field":"village_id",
-            "header":"Village Id",
-            "iseditable": false , "class":"text-center"
-        },
-        {
-            "field": "village_name",
-            "header": "Village Code",
-            "iseditable": false , "class":"text-center"
-        },
-        {
-            "field": "village_city_id",
+            "field": "villageName",
             "header": "Village Name",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "cityName",
+            "header": "City Name",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "districtName",
+            "header": "District Name",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "stateName",
+            "header": "State Name",
             "iseditable": false , "class":"text-center"
         }
     ],

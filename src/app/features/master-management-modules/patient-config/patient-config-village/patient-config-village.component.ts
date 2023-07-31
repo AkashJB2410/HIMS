@@ -12,7 +12,7 @@ import table from './patientConfigVillageTable.json';
 })
 export class PatientConfigVillageComponent implements OnInit {
 
-  data: any=[];
+  data: any;
   breadcrumb = breadcrumb;
   apiGet = 'mstVillage/list';
   apiAdd = 'mstVillage/create';
@@ -87,6 +87,10 @@ export class PatientConfigVillageComponent implements OnInit {
     this.common.sendEditData(false);
   }
 
+  sideBarEvent(e:any){
+    this.editData=undefined;
+  }
+
   confirmAction(e: any) {
     if (e.isActive == true) {
       this.data = undefined;
@@ -111,6 +115,11 @@ export class PatientConfigVillageComponent implements OnInit {
       this.data = res.content;
       for(let i=0; i<this.data.length;i++){
         this.data[i].id=i+1;
+        this.data[i].stateName=this.data[i].villageCityId.cityStateId.stateName
+        this.data[i].districtName=this.data[i].villageCityId.cityDistrictId.districtName
+        this.data[i].cityName=this.data[i].villageCityId.cityName
+        this.data[i].is_Active=this.data[i].isActive
+
       }
       this.data;
     });
@@ -125,7 +134,7 @@ export class PatientConfigVillageComponent implements OnInit {
   }
 
   deleteVillageData(villageData: any) {
-    this.http.deleteData(this.apidelete, villageData.village_id).subscribe((data) => {
+    this.http.deleteData(this.apidelete, villageData.villageId).subscribe((data) => {
       this.data = undefined;
       this.getAllVillageData();
       console.log('data' + data);
@@ -144,7 +153,7 @@ export class PatientConfigVillageComponent implements OnInit {
   isActive(data: any) {
     if (!data.isActive) {
       this.http
-        .reactiveData(this.apiactive, data, data.village_id)
+        .reactiveData(this.apiactive, data, data.villageId)
         .subscribe((b_Data) => {
           this.data = undefined;
           this.getAllVillageData();

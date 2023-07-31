@@ -2,27 +2,27 @@
     "tableName": "City Table",
     "tableHeaders": [
         {
-            "field":"city_id",
-            "header":"Country Id",
+            "field":"countryName",
+            "header":"countryName",
             "iseditable": false , "class":"text-center"
         },
         {
-            "field": "city_name",
-            "header": "Country Code",
+            "field": "stateName",
+            "header": "stateName",
             "iseditable": false , "class":"text-center"
         },
         {
-            "field": "city_district_id",
-            "header": "Country Name",
+            "field": "districtName",
+            "header": "districtName",
             "iseditable": false , "class":"text-center"
         },
         {
-            "field": "city_state_id",
-            "header": "Country Isd Code",
+            "field": "cityName",
+            "header": "cityName",
             "iseditable": false , "class":"text-center"
         }
     ],
-    "globalFilter": ["city_id","city_name","city_district_id","city_state_id"],
+    "globalFilter": ["countryName","stateName","districtName","cityName"],
     "rows" : 10,
     "showCurrentPageReport" : true,
     "rowsPerPageOptions" : [15,25,50],

@@ -12,9 +12,10 @@ import { CommonService } from 'src/app/core/shared/service/common.service';
   styleUrls: ['./patient-config-state.component.css']
 })
 export class PatientConfigStateComponent implements OnInit {
-  data: any=[];
+  data: any;
   breadcrumb = breadcrumb;
   apiGet = 'mstState/list';
+  apiGetCountry='mstCountry/list';
   apiAdd = 'mstState/create';
   apiUpdate = 'mstState/update';
   apidelete = 'mstState/inActivate';
@@ -31,6 +32,7 @@ export class PatientConfigStateComponent implements OnInit {
   visibleSidebar: boolean;
   saveMethod: boolean;
   tableConfig:any=table;
+  data1: any;
   constructor(
     private messageService: MessageService,
     private http: FeaturescommonService,
@@ -45,6 +47,7 @@ export class PatientConfigStateComponent implements OnInit {
       isConfirmation: true,
     };
     this.getAllStateData();
+    this.getAllCountryData();
     this.form=form1;
   }
 
@@ -67,6 +70,9 @@ export class PatientConfigStateComponent implements OnInit {
       }
     }
   }
+  sideBarEvent(e:any){
+    this.editData=undefined;
+  }
 
   save(e: any) {
     this.saveMethod = true;
@@ -76,6 +82,15 @@ export class PatientConfigStateComponent implements OnInit {
 
   edit(e: any) {
     this.editData = e.editRow;
+    let obj={
+      "stateId":e.editRow.stateId,      
+      "countryId":e.editRow.stateCountryId.countryId,
+      "stateName":e.editRow.stateName,
+      "stateCode":e.editRow.stateCode,
+      "stateLgdCode":e.editRow.stateLgdCode,
+    }
+    this.editData=obj
+    this.flag=e.edit
   }
 
   editRow(e: any) {
@@ -110,14 +125,45 @@ export class PatientConfigStateComponent implements OnInit {
     this.http.getData(this.apiGet).subscribe((res) => {
       this.data = res.content;
       for(let i=0; i<this.data.length;i++){
-        this.data[i].id=i+1;
+        this.data[i].id=i+1;        
+        this.data[i].is_Active=this.data[i].isActive;
+        this.data[i].state_Country_Id=this.data[i].stateCountryId.countryName;
       }
       this.data;
     });
   }
+  getAllCountryData() {
+    this.http.getData(this.apiGetCountry).subscribe((res) => {
+      this.data1 = res.content;
+      let obj={
+        "name": "Select an Option",
+        "code": ""
+      }
+      this.form.form.formControls[1].values.push(obj);
+      
+      for(let j=0;j<this.data1.length;j++){
+        let obj={
+          "name": this.data1[j].countryName,
+          "code": this.data1[j].countryId
+        }
+        this.form.form.formControls[1].values.push(obj);
+      }
+      this.data1;
+      this.form.form.formControls[1].values;
+    });
+  }
 
   updateStateData(stateData: any) {
-    this.http.updateData(stateData, this.apiUpdate).subscribe((data) => {
+    let obj={ 
+      "stateId":stateData.stateId,     
+      "stateCountryId":{
+        "countryId":stateData.countryId.code
+      },
+      "stateName":stateData.stateName,
+      "stateCode":stateData.stateCode,
+      "stateLgdCode":stateData.stateLgdCode
+    }
+    this.http.updateData(obj, this.apiUpdate).subscribe((data) => {
       this.data = undefined;
       this.getAllStateData();
       console.log('data' + data);
@@ -134,7 +180,16 @@ export class PatientConfigStateComponent implements OnInit {
   
 
   submitStateData(stateData: any) {
-    this.http.addData(stateData, this.apiAdd).subscribe((data) => {
+    let obj={      
+      "stateCountryId":{
+        "countryId":stateData.countryId.code
+      },
+      "stateName":stateData.stateName,
+      "stateCode":stateData.stateCode,
+      "stateLgdCode":stateData.stateLgdCode
+    }
+    // stateData.stateCountryId.countryId=stateData.stateCountryId
+    this.http.addData(obj, this.apiAdd).subscribe((data) => {
       this.data = undefined;
       this.getAllStateData();
       console.log('data' + data);

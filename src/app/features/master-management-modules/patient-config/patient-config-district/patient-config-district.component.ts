@@ -12,9 +12,11 @@ import { CommonService } from 'src/app/core/shared/service/common.service';
 })
 export class PatientConfigDistrictComponent implements OnInit {
 
-  data: any=[];
+  data: any;
   breadcrumb = breadcrumb;
   apiGet = 'mstDistrict/list';
+  apiGetCountry='mstCountry/list';
+  apiGetState='mstState/list';
   apiAdd = 'mstDistrict/create';
   apiUpdate = 'mstDistrict/update';
   apidelete = 'mstDistrict/inActivate';
@@ -31,6 +33,8 @@ export class PatientConfigDistrictComponent implements OnInit {
   visibleSidebar: boolean;
   saveMethod: boolean = false;
   table:any=table;
+  Country: any;
+  State: any;
   constructor(
     private messageService: MessageService,
     private http: FeaturescommonService,
@@ -45,6 +49,8 @@ export class PatientConfigDistrictComponent implements OnInit {
       isConfirmation: true,
     };
     this.getAllDistrictData();
+    this.getAllCountryData();
+    this.getAllStateData();
     this.form=form1;
   }
 
@@ -75,7 +81,14 @@ export class PatientConfigDistrictComponent implements OnInit {
   }
 
   edit(e: any) {
-    this.editData = e.editRow;
+    let obj={
+      "districtId":e.editRow.districtId,
+      "countryId":e.editRow.districtStateId.stateCountryId.countryId,
+      "stateId":e.editRow.districtStateId.stateId,
+      "districtName":e.editRow.districtName,
+      "districtLgdCod":e.editRow.districtLgdCode
+    }
+    this.editData = obj;
   }
 
   editRow(e: any) {
@@ -85,6 +98,9 @@ export class PatientConfigDistrictComponent implements OnInit {
   buttonEvent(e: any) {
     this.editData = undefined;
     this.common.sendEditData(false);
+  }
+  sideBarEvent(e:any){
+    this.editData=undefined;
   }
 
   confirmAction(e: any) {
@@ -111,8 +127,42 @@ export class PatientConfigDistrictComponent implements OnInit {
       this.data = res.content;
       for(let i=0; i<this.data.length;i++){
         this.data[i].id=i+1;
+        this.data[i].district_State_Id=this.data[i].districtStateId.stateName;
+        this.data[i].countryName=this.data[i].districtStateId.stateCountryId.countryName;
+        this.data[i].is_Active=this.data[i].isActive;
       }
       this.data;
+    });
+  }
+
+  getAllCountryData() {
+    this.http.getData(this.apiGetCountry).subscribe((res) => {
+      this.Country = res.content;      
+      for(let j=0;j<this.Country.length;j++){
+        let obj={
+          "name": this.Country[j].countryName,
+          "code": this.Country[j].countryId
+        }
+        this.form.form.formControls[1].values[0].values.push(obj);
+      }
+      this.Country;
+      this.form.form.formControls[1].values[0].values;
+    });
+  }
+
+  getAllStateData() {
+    this.http.getData(this.apiGetState).subscribe((res) => {
+      this.State = res.content;      
+      for(let j=0;j<this.State.length;j++){
+        let obj={
+          "name": this.State[j].stateName,
+          "code": this.State[j].stateId,
+          "Mcode": this.State[j].stateCountryId.countryId
+        }
+        this.form.form.formControls[1].values[1].values.push(obj);
+      }
+      this.State;
+      this.form.form.formControls[1].values[1].values;
     });
   }
 
@@ -125,7 +175,7 @@ export class PatientConfigDistrictComponent implements OnInit {
   }
 
   deleteDistrictData(districtData: any) {
-    this.http.deleteData(this.apidelete, districtData.district_id).subscribe((data) => {
+    this.http.deleteData(this.apidelete, districtData.districtId).subscribe((data) => {
       this.data = undefined;
       this.getAllDistrictData();
       console.log('data' + data);
@@ -133,9 +183,21 @@ export class PatientConfigDistrictComponent implements OnInit {
   }
   
 
-  submitDistrictData(districtData: any) {
-    this.http.addData(districtData, this.apiAdd).subscribe((data) => {
-      this.data = undefined;
+  submitDistrictData(districtData: any) {    
+
+      let obj={
+        "districtStateId":{
+          "stateId":districtData.state[1].code,
+          "stateCountryId":{
+            "countryId":districtData.state[0].code,
+          }
+        },        
+        "districtName":districtData.district_name,
+        "districtLgdCode":districtData.districtLgdCode
+      }
+      this.http.addData(obj, this.apiAdd).subscribe((data) => {
+        this.data = undefined;
+
       this.getAllDistrictData();
       console.log('data' + data);
     });
@@ -144,7 +206,7 @@ export class PatientConfigDistrictComponent implements OnInit {
   isActive(data: any) {
     if (!data.isActive) {
       this.http
-        .reactiveData(this.apiactive, data, data.district_id)
+        .reactiveData(this.apiactive, data, data.districtId)
         .subscribe((b_Data) => {
           this.data = undefined;
           this.getAllDistrictData();

@@ -36,6 +36,7 @@ import { PatientConfigStateComponent } from './features/master-management-module
 import { PatientConfigDistrictComponent } from './features/master-management-modules/patient-config/patient-config-district/patient-config-district.component';
 import { PatientConfigCityComponent } from './features/master-management-modules/patient-config/patient-config-city/patient-config-city.component';
 import { PatientConfigVillageComponent } from './features/master-management-modules/patient-config/patient-config-village/patient-config-village.component';
+import { CIPComponent } from './features/master-management-modules/patient-config/cip/cip.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { PatientConfigVillageComponent } from './features/master-management-modu
     PatientConfigDistrictComponent,
     PatientConfigCityComponent,
     PatientConfigVillageComponent,
+    CIPComponent,
   ],
   imports: [
     CommonModule,

@@ -11,14 +11,14 @@
                 "isEditable": false,
                 "isVisible": true,
                 "transient":false,
-                "label": "city_id",
+                "label": "City Id",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-6 my-1",
+                "class": "col-md-12 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
                 "placeholder": "Enter ID",
-                "formControlName": "city_id",
+                "formControlName": "cityId",
                 "message": {
                     "required": "Id is required",
                     "pattern": ""
@@ -29,13 +29,97 @@
                 }
             },
             {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "label": "",
+                "type": "dependentdropdown",
+                "class": "col-md-12",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "country",
+                "defaultValue": "",
+                "message": {
+                    "required": "Country two and three are required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "label": "Country",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": "",
+                                "disabled": "disabled"
+                            },
+                            {
+                                "name": "India",
+                                "code": "I"
+                            },
+                            {
+                                "name": "China",
+                                "code": "C"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "State",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": "",
+                                "Mcode": "",
+                                "disabled": "disabled"
+                            },
+                            {
+                                "name": "Maharashtra",
+                                "code": "MH",
+                                "Mcode": "I"
+                            },
+                            {
+                                "name": "Wuhan",
+                                "code": "WU",
+                                "Mcode": "C"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "District",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": "",
+                                "Mcode": "",
+                                "disabled": "disabled"
+                            },
+                            {
+                                "name": "Pune",
+                                "code": "P",
+                                "Mcode": "MH"
+                            },
+                            {
+                                "name": "Shang-Chi",
+                                "code": "Sh",
+                                "Mcode": "WU"
+                            }
+                        ]
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "city_name",
+                "label": "City Name",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-6 my-1",
+                "class": "col-md-12 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
                 "placeholder": "city_name",
@@ -50,55 +134,13 @@
                 }
             },
             {
-                "id": 1,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Enter city_district_id",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-6 my-1",
-                "lblclass":"",
-                "valueclass":"input-box",
-                "placeholder": "city_district_id",
-                "formControlName": "city_district_id",
-                "message": {
-                    "required": "Plase Enter city_district_id",
-                    "pattern": "Enter a Vaild city_district_id"
-                },
-                "validations": {
-                    "required": true,
-                    "pattern": "^[A-Za-z0-9]+$"
-                }
-            },
-            {
-                "id": 1,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "Enter city_state_id",
-                "type": "text",
-                "inputType": "number",
-                "class": "col-md-6 my-1",
-                "lblclass":"",
-                "valueclass":"input-box",
-                "placeholder": "city_state_id.",
-                "formControlName": "city_state_id",
-                "message": {
-                    "required": "Plase Enter city_state_id",
-                    "pattern": "Enter a Vaild city_state_id"
-                },
-                "validations": {
-                    "required": true,
-                    "pattern": "^[0-9]+$"
-                }
-            },
-            {
                 "id": 2,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,
                 "type": "button",
                 "subtype": "save",
-                "class": "col-md-3",
+                "class": "col-md-6",
                 "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",
@@ -117,7 +159,7 @@
                 "type": "button",
                 "subtype": "reset",
                 "btnLabel": "Back",
-                "class": "col-md-3",
+                "class": "col-md-6",
                 "valueclass": "button-login-yellow",
                 "icon": "",
                 "isDisabled": false,

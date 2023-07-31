@@ -7,7 +7,7 @@
             "iseditable": false , "class":"text-center"
         },
         {
-            "field": "stateCountryId",
+            "field": "state_Country_Id",
             "header": "State Country Id",
             "iseditable": false , "class":"text-center"
         },
@@ -19,6 +19,11 @@
         {
             "field": "stateCode",
             "header": "State Code",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "stateLgdCode",
+            "header": "State Lgd Code",
             "iseditable": false , "class":"text-center"
         }
     ],

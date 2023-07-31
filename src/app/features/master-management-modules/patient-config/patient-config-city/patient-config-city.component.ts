@@ -12,7 +12,7 @@ import table from './patientConfigCityTable.json';
 })
 export class PatientConfigCityComponent implements OnInit {
 
-  data: any=[];
+  data: any;
   breadcrumb = breadcrumb;
   apiGet = 'mstCity/list';
   apiAdd = 'mstCity/create';
@@ -87,6 +87,10 @@ export class PatientConfigCityComponent implements OnInit {
     this.common.sendEditData(false);
   }
 
+  sideBarEvent(e:any){
+    this.editData=undefined;
+  }
+
   confirmAction(e: any) {
     if (e.isActive == true) {
       this.data = undefined;
@@ -109,7 +113,10 @@ export class PatientConfigCityComponent implements OnInit {
   getAllCityData() {
     this.http.getData(this.apiGet).subscribe((res) => {
       this.data = res.content;
-      for(let i=0; i<this.data.length;i++){
+      for(let i=0; i<this.data.length;i++){              
+        this.data[i].countryName=this.data[i].cityStateId.stateCountryId.countryName,
+        this.data[i].stateName=this.data[i].cityStateId.stateName,
+        this.data[i].districtName=this.data[i].cityDistrictId.districtName,
         this.data[i].id=i+1;
       }
       this.data;
@@ -144,7 +151,7 @@ export class PatientConfigCityComponent implements OnInit {
   isActive(data: any) {
     if (!data.isActive) {
       this.http
-        .reactiveData(this.apiactive, data, data.city_id)
+        .reactiveData(this.apiactive, data, data.cityId)
         .subscribe((b_Data) => {
           this.data = undefined;
           this.getAllCityData();

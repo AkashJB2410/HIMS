@@ -2,18 +2,28 @@
     "tableName": "District Table",
     "tableHeaders": [
         {
-            "field":"district_id",
+            "field":"districtId",
             "header":"District Id",
             "iseditable": false , "class":"text-center"
         },
         {
-            "field": "district_name",
-            "header": "District Code",
+            "field": "countryName",
+            "header": "Country Name",
             "iseditable": false , "class":"text-center"
         },
         {
-            "field": "district_state_id",
+            "field": "district_State_Id",
+            "header": "State Name",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "districtName",
             "header": "District Name",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "districtLgdCode",
+            "header": "districtLgdCode",
             "iseditable": false , "class":"text-center"
         }
     ],

@@ -25,5 +25,29 @@
             "routerLink": "/master-page/PatientConfigVillage",
             "imgSrc": "assets/unit-configuration/Organizations.png"
         }
+        ,
+        {
+            "label": "Citizen Id Proof",
+            "routerLink": "/master-page/CIP",
+            "imgSrc": "assets/unit-configuration/Organizations.png"
+        }
+        ,
+        {
+            "label": "Immunization and Vaccination Chart",
+            "routerLink": "/master-page/IVC",
+            "imgSrc": "assets/unit-configuration/Organizations.png"
+        }
+        ,
+        {
+            "label": "Diet Item",
+            "routerLink": "/master-page/DietItem",
+            "imgSrc": "assets/unit-configuration/Organizations.png"
+        }
+        ,
+        {
+            "label": "Referring Entity",
+            "routerLink": "/master-page/PatientConfigVillage",
+            "imgSrc": "assets/unit-configuration/Organizations.png"
+        }
     ]
 }

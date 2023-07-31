@@ -10,7 +10,8 @@
     (onAdd)="save($event)"
     (onEdit)="edit($event)"
     (isActive)="isActive($event)"
-    (Bulkdelete)="bulkDeleteRows($event)" >
+    (Bulkdelete)="bulkDeleteRows($event)"
+    (sideBarEvent)="sideBarEvent($event)" >
     <app-form
     projectTowards="sidebar" *ngIf="editData" [formJSON]="form" [editData]="editData"
     (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"

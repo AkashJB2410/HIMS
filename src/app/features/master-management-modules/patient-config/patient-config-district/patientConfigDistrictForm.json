@@ -11,16 +11,16 @@
                 "isEditable": false,
                 "isVisible": true,
                 "transient":false,
-                "label": "district_id",
+                "label": "District Id",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-6 my-1",
+                "class": "col-md-12 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
                 "placeholder": "Enter ID",
                 "formControlName": "district_id",
                 "message": {
-                    "required": "Id is required",
+                    "required": "District Id is required",
                     "pattern": ""
                 },
                 "validations": {
@@ -29,41 +29,74 @@
                 }
             },
             {
-                "id": 1,
+                "id": 9,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "district_name",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-6 my-1",
-                "lblclass":"",
-                "valueclass":"input-box",
-                "placeholder": "district_name",
-                "formControlName": "district_name",
+                "transient": false,
+                "label": "",
+                "type": "dependentdropdown",
+                "class": "col-md-12",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "state",
                 "message": {
-                    "required": "Plase Enter district_name",
-                    "pattern": "Only Alphabete are allow"
+                    "required": "Country and State is required",
+                    "pattern": ""
                 },
+                "values": [
+                    {
+                        "label": "Coutry",
+                        "values": [
+                            {
+                                "name": "Select Country",
+                                "code": "",
+                                "disabled": "disabled"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "State",
+                        "values": [
+                            {
+                                "name": "Select State",
+                                "code": "",
+                                "Mcode": "",
+                                "disabled": "disabled"
+                            },
+                            {
+                                "name": "Maharashtra",
+                                "code": "MH",
+                                "Mcode": "I"
+                            },
+                            {
+                                "name": "Texas",
+                                "code": "T",
+                                "Mcode": "A"
+                            }
+                        ]
+                    }
+                ],
                 "validations": {
                     "required": true,
-                    "pattern": "^[A-Za-z 0-9 ]+$"
+                    "pattern": ""
                 }
             },
             {
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Enter district_state_id",
+                "label": "District Lgd Code",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-6 my-1",
+                "class": "col-md-12 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
-                "placeholder": "district_state_id",
-                "formControlName": "district_state_id",
+                "placeholder": "Enter District Lgd Code",
+                "formControlName": "districtLgdCode",
                 "message": {
-                    "required": "Plase Enter district_state_id",
-                    "pattern": "Enter a Vaild district_state_id"
+                    "required": "Plase Enter District Lgd Code",
+                    "pattern": "Enter a Vaild District Lgd Code"
                 },
                 "validations": {
                     "required": true,
@@ -71,13 +104,35 @@
                 }
             },
             {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "District Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter District Name",
+                "formControlName": "district_name",
+                "message": {
+                    "required": "Plase Enter District Name",
+                    "pattern": "Only Alphabete are allow"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z ]+$"
+                }
+            },
+            
+            {
                 "id": 2,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,
                 "type": "button",
                 "subtype": "save",
-                "class": "col-md-3",
+                "class": "col-md-6",
                 "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",
@@ -96,7 +151,7 @@
                 "type": "button",
                 "subtype": "reset",
                 "btnLabel": "Back",
-                "class": "col-md-3",
+                "class": "col-md-6",
                 "valueclass": "button-login-yellow",
                 "icon": "",
                 "isDisabled": false,

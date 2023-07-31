@@ -1,11 +1,7 @@
 {
     "tableName": "Country Table",
     "tableHeaders": [
-        {
-            "field":"countryId",
-            "header":"Country Id",
-            "iseditable": false , "class":"text-center"
-        },
+        
         {
             "field": "countryCode",
             "header": "Country Code",

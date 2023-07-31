@@ -74,6 +74,10 @@ export class PatientConfigCountryComponent implements OnInit {
     this.common.sendEditData(false);
   }
 
+  sideBarEvent(e:any){
+    this.editData=undefined;
+  }
+
   edit(e: any) {
     this.editData = e.editRow;
   }
@@ -111,6 +115,7 @@ export class PatientConfigCountryComponent implements OnInit {
       this.data = res.content;
       for(let i=0; i<this.data.length;i++){
         this.data[i].id=i+1;
+        this.data[i].is_Active=this.data[i].isActive;
       }
       this.data;
     });

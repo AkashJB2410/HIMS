@@ -46,6 +46,7 @@ const routes: Routes = [
       { path: 'all-masters/lov-value', loadChildren: () => import('../master-management-modules/unit-config/lov-value/lov-value-routing.module').then(m => m.LovValueRoutingModule) },
       { path: 'all-master/cluster', loadChildren: () => import('../master-management-modules/unit-config/cluster/cluster-routing.module').then(m => m.ClusterRoutingModule) },
       { path: 'all-masters/spetiality', loadChildren: () => import('../master-management-modules/unit-config/spetiality/spetiality.module').then(m => m.SpetialityModule) },
+      { path: 'CIP', loadChildren: () => import('../master-management-modules/patient-config/cip/cip-routing.module').then(m => m.CIPRoutingModule) },
     ],
     // canActivate: [AuthGuardGuard]
   }];

@@ -11,13 +11,13 @@
                 "isEditable": false,
                 "isVisible": true,
                 "transient":false,
-                "label": "stateId",
+                "label": "State Id",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-6 my-1",
+                "class": "col-md-12 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
-                "placeholder": "Enter ID",
+                "placeholder": "Enter State ID",
                 "formControlName": "stateId",
                 "message": {
                     "required": "Id is required",
@@ -29,66 +29,88 @@
                 }
             },
             {
-                "id": 1,
+                "id": 5,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "stateCountryId",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-6 my-1",
-                "lblclass":"",
-                "valueclass":"input-box",
-                "placeholder": "stateCountryId",
-                "formControlName": "stateCountryId",
+                "transient": false,
+                "label": "Country",
+                "type": "select",
+                "class": "col-md-12",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select Country",
+                "formControlName": "countryId",
                 "message": {
-                    "required": "Plase Enter stateCountryId",
-                    "pattern": "Only Alphabete are allow"
+                    "required": "Country is required",
+                    "pattern": ""
                 },
+                "values": [],
                 "validations": {
                     "required": true,
-                    "pattern": "^[A-Za-z 0-9 ]+$"
+                    "pattern": ""
                 }
             },
             {
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Enter stateName",
+                "label": "State Name",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-6 my-1",
+                "class": "col-md-12 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
-                "placeholder": "stateName",
+                "placeholder": "Enter State Name",
                 "formControlName": "stateName",
                 "message": {
-                    "required": "Plase Enter stateName",
-                    "pattern": "Enter a Vaild stateName"
+                    "required": "Plase Enter State Name",
+                    "pattern": "Enter a Vaild State Name"
                 },
                 "validations": {
                     "required": true,
-                    "pattern": "^[A-Za-z0-9]+$"
+                    "pattern": "^[A-Za-z ]+$"
                 }
             },
             {
                 "id": 1,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Enter stateCode",
+                "label": "State Code",
                 "type": "text",
-                "inputType": "number",
-                "class": "col-md-6 my-1",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
-                "placeholder": "stateCode.",
+                "placeholder": "Enter State Code.",
                 "formControlName": "stateCode",
                 "message": {
-                    "required": "Plase Enter stateCode",
-                    "pattern": "Enter a Vaild stateCode"
+                    "required": "Plase Enter State Code",
+                    "pattern": "Enter a Vaild State Code"
                 },
                 "validations": {
                     "required": true,
                     "pattern": "^[0-9]+$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "State Lgd Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter State Lgd Code.",
+                "formControlName": "stateLgdCode",
+                "message": {
+                    "required": "Plase Enter State Lgd Code",
+                    "pattern": "Enter a Vaild State Lgd Code"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[0-9 ]+$"
                 }
             },
             {
@@ -98,7 +120,7 @@
                 "transient": true,
                 "type": "button",
                 "subtype": "save",
-                "class": "col-md-3",
+                "class": "col-md-6",
                 "valueclass": "butn-custom-dark-blue",
                 "btnLabel": "Save",
                 "icon": "",
@@ -117,7 +139,7 @@
                 "type": "button",
                 "subtype": "reset",
                 "btnLabel": "Back",
-                "class": "col-md-3",
+                "class": "col-md-6",
                 "valueclass": "button-login-yellow",
                 "icon": "",
                 "isDisabled": false,
