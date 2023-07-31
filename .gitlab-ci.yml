@@ -17,25 +17,25 @@ variables:
 #   tags:
 #     - docker
 #   script:
-#     - docker login -u tech1 -p tech@123 registry.techjivaaindia.in:5005/administrators/generic-hmis 
+#     - docker login -u tech1 -p tech@123 gitlab.techjivaaindia.in/administrators/generic-hmis 
 
 build_job:
   stage: Build
   tags:
     - docker
   script:
-    - docker build -t generic-hmis:test .
+    - docker build -t gitlab.techjivaaindia.in/administrators/generic-hmis
 
 push_job:
   stage: Push
   tags:
     - docker
   script:
-    - docker push generic-hmis:test
+    - docker push gitlab.techjivaaindia.in/administrators/generic-hmis
 
 # logout_job:
 #   stage: Logout
 #   tags:
 #     - docker
 #   script:
-#     - docker logout registry.techjivaaindia.in:5005/administrators/generic-hmis
+#     - docker logout gitlab.techjivaaindia.in/administrators/generic-hmis
