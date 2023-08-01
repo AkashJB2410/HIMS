@@ -2,10 +2,10 @@
     "tableName": "Unit Table",
     "tableHeaders": [
         {
-            "field": "srNumber",
+            "field": "id",
             "header": "Sr. No",
             "iseditable": false,
-            "class": ""
+            "class":"text-center"
         },
         {
             "field": "unitName",
@@ -26,20 +26,8 @@
             "class": "text-center"
         },
         {
-            "field": "unitPhone",
-            "header": "Phone",
-            "iseditable": false,
-            "class": ""
-        },
-        {
             "field": "unitContactPerson",
             "header": "Contact Person",
-            "iseditable": false,
-            "class": ""
-        },
-        {
-            "field": "orgId",
-            "header": "Org Unit",
             "iseditable": false,
             "class": ""
         },
@@ -48,34 +36,10 @@
             "header": "Unit Code",
             "iseditable": false,
             "class": ""
-        },
-        {
-            "field": "is_Active",
-            "header": "IsActive",
-            "iseditable": false,
-            "class": ""
-        }
-    ],
-    "PdfHeaders": [
-        {
-            "field": "srNumber",
-            "header": "Sr. No"
-        },
-        {
-            "field": "unitId",
-            "header": "Unit Id"
-        },
-        {
-            "field": "unitName",
-            "header": "Unit Name"
-        },
-        {
-            "field": "is_Active",
-            "header": "IsActive"
         }
     ],
     "globalFilter": [
-        "unitId",
+        "id",
         "unitName",
         "unitEmail",
         "unitMobile",
@@ -90,9 +54,7 @@
         "unitTradeNo",
         "unitServer",
         "unitDatabase",
-        "unitFaxNo",
-        "actionModuleName",
-        "is_Active"
+        "unitFaxNo"
     ],
     "rows": 10,
     "showCurrentPageReport": true,
@@ -105,16 +67,19 @@
     "rowHover": true,
     "loading": false,
     "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
-    "isCheckbox": true,
+    "isCheckbox": true, 
+    "isRadioButton":false,
     "resizableColumns": true,
+    "isDragAndDrop":true,
     "isActions": [
         "Edit",
         "Delete",
         "isActive"
     ],
-    "sidebar":"p-sidebar-sm",
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
-    "buttonlbl": "Add Unit",
-    "textLength": 30
+    "buttonlbl": "",
+    "textLength": 30,
+    "sidebar":"p-sidebar-lg",
+    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]
 }

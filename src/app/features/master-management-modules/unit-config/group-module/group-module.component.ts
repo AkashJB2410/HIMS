@@ -264,7 +264,7 @@ export class GroupModuleComponent implements OnInit {
     this.selectedGroupData = {
       id: $event.editRow.groupId,
       mstModule: $event.editRow.mstMduleId,
-      label: $event.editRow.label,
+      label: $event.editRow.lable,
       icon: $event.editRow.icon,
       routerLink: $event.editRow.routerLink,
       sequence: $event.editRow.sequence
