@@ -64,4 +64,8 @@
         (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"></app-form>
 
 </app-super-grid>
+<app-sidebar *ngIf="configurations.isSideBar" [visibleSidebar]="visibleSidebar" [sidebarJSON]="formData"
+    [sidebarConfig]="config" (sidebarData)="sidebarData($event)">
+    <ng-content select="[projectTowards=sidebar]"></ng-content>
+</app-sidebar>
 <p-toast></p-toast>

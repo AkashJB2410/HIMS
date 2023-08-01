@@ -17,6 +17,14 @@ export class OpdRegistrationService {
     const url = "http://localhost:8087/mstSubServices/listByDepartmentId/1";
     return this.http.get<any>(url);
   }
+  getIPDService(){
+    const url = "http://localhost:8087/mstSubServices/listByDepartmentId/2";
+    return this.http.get<any>(url);
+  }
+  getEmergencyService(){
+    const url = "http://localhost:8087/mstSubServices/listByDepartmentId/3";
+    return this.http.get<any>(url);
+  }
   mobileSerchData(mobileNo: any): Observable<any> {
     const url = "http://localhost:8082/mst_patient/byMobileNumber/" + mobileNo;
     return this.http.get(url);

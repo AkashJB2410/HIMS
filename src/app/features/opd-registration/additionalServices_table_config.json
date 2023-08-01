@@ -1,12 +1,8 @@
 {
     "tableName": "Additional Services",
     "tableHeaders": [
-       
-        {"field": "serviceCode","header": "Code","iseditable": false , "class":""},
         {"field": "serviceName","header": "Name","iseditable": false , "class":""},
         {"field": "serviceAbbreviations","header": "Abbreviations","iseditable": false , "class":""}
-       
-        
     ],
     "PdfHeaders": [
         {"field": "patientFullname","header": "Patient Name"},

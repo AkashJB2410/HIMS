@@ -48,35 +48,35 @@
                     },
                     {
                         "name": "Assault and battery, including domestic violence and child abuse",
-                        "code": 1
+                        "code": "1"
                     },
                     {
                         "name": "Accidents like Road Traffic Accidents (RTA), industrial accidents etc.",
-                        "code": 2
+                        "code": "2"
                     },
                     {
                         "name": "Cases of trauma with suspicion of foul play",
-                        "code": 3
+                        "code": "3"
                     },
                     {
                         "name": "Electrical injuries",
-                        "code": 4
+                        "code": "4"
                     },
                     {
                         "name": "Poisoning, Alcohol Intoxication 3",
-                        "code": 5
+                        "code": "5"
                     },
                     {
                         "name": "Undiagnosed coma",
-                        "code": 6
+                        "code": "6"
                     },
                     {
                         "name": "Chemical injuries",
-                        "code": 7
+                        "code": "7"
                     },
                     {
                         "name": "Burns and Scalds",
-                        "code": 8
+                        "code": "8"
                     }
                 ],
                 "message": {

@@ -6,6 +6,7 @@
         "sideBarTitle":"Registration",
         "sidebarTitleClass": "Sidebar-title-md",
         "sidebarTitleLogo": "bi bi-file-earmark-medical",
+        "sidebar": "p-sidebar-xl",
         "formControls": [
             {
                 "id": 0,
@@ -652,15 +653,15 @@
                     },
                     {
                         "name": "Mother",
-                        "code": "1"
+                        "code": 1
                     },
                     {
                         "name": "Father",
-                        "code": "2"
+                        "code": 2
                     },
                     {
                         "name": "Guardian",
-                        "code": "3"
+                        "code": 3
                     }
                 ],
                 "message": {

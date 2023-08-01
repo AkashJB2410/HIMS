@@ -1,4 +1,4 @@
-<h3 class="Sidebar-title-md "><i class="bi bi-file-earmark-medical"></i>OPD Registration</h3>
+<h3 class="Sidebar-title-md "><i class="bi bi-file-earmark-medical"></i>{{formTitle}}</h3>
 <app-form [formJSON]="formJSON" (changeEvents)="changeEvent($event)" (btnEvent)="buttonEvent($event)">
     <app-super-grid *ngIf="mobileGridData" [configurations]="mobileConfig" [tableData]="mobileGridData"
         [tableConfig]="configMobi" (rowClickData)="mobileRowClickData($event)"></app-super-grid>

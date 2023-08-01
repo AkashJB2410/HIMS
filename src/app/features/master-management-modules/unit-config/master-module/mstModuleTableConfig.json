@@ -61,5 +61,7 @@
     "buttonlbl": "",
     "textLength": 20,
     "sidebar":"p-sidebar-sm",
-    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
+    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"],
+    "isProfileDisplay":false 
+
 }

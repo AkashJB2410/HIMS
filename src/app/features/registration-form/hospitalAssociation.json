@@ -52,15 +52,15 @@
                     },
                     {
                         "name": "Platinium",
-                        "code": 1
+                        "code": "Platinium"
                     },
                     {
                         "name": "Gold",
-                        "code": 2
+                        "code": "Gold"
                     },
                     {
                         "name": "Silver",
-                        "code": 3
+                        "code": "Silver"
                     }
                 ],
                 "validations": {

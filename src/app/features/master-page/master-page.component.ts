@@ -17,14 +17,9 @@ export class MasterPageComponent implements OnInit {
 
   SideNav(e:any){
     console.log("sidenav items =>",e);
-    
       // this.sideBarLabel.emit(e);
-      this.emitData(e);
-
+      // this.emitData(e);
+      this.dataService.emitOutputData(e);
   }
 
-  emitData(e:any) {
-    // const data = 'Some output data';
-    this.dataService.emitOutputData(e);
-  }
 }

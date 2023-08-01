@@ -23,8 +23,6 @@ import { DataServiceService } from '../master-page/data-service.service';
 import { Subscription, forkJoin } from 'rxjs';
 import acc from "./accordionData.json";
 import configService from './service_table_config.json';
-import { dataOPD } from "./serviceData";
-import { dataIPD } from './servIPDData';
 
 
 @Component({
@@ -762,7 +760,7 @@ export class RegistrationFormComponent implements OnInit {
             "patientFirstname": e.patientFirstname,
             "patientMiddlename": e.patientMiddlename,
             "patientLastname": e.patientLastname,
-            "patientFullname": e.patientFullname,
+            "name": e.patientFullname,
             "patientMobileNumber": e.patientMobileNumber,
             "patientAadharNumber": e.patientAadharNumber,
             "patientUhIdNumber": e.patientUhIdNumber,
@@ -1183,7 +1181,7 @@ export class RegistrationFormComponent implements OnInit {
 
   savePrivilege(e: any) {
     this.mstHospitalAss = {
-      "privilegeId": e.privilageType != undefined ? e.privilageType.code : "",
+      "privilegeId": e.privilegeId,
       "privilegeName": e.privilageType != undefined ? e.privilageType.name : "",
       "privilegePatientId": ""
     }

@@ -20,6 +20,8 @@ import MLCFormData from './MLC .json';
 import emergencyContactFormData from './emergencyContactDetails.json';
 import rgistBUttonData from './RegistButton.json';
 import { DatePipe } from '@angular/common';
+import { DataServiceService } from '../master-page/data-service.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -163,10 +165,34 @@ export class OpdRegistrationComponent implements OnInit {
     "ecPatientId": ""
   }
   isAddEditFlag: any;
-
-  constructor(private http: OpdRegistrationService, private comService: CommonService, private form$: FormService, private messageService: MessageService, public datepipe: DatePipe) { }
+  receivedData: any;
+  formTitle: any;
+  private subscription: Subscription;
+  constructor(private http: OpdRegistrationService, private comService: CommonService, private form$: FormService, private messageService: MessageService, public datepipe: DatePipe,private dataService: DataServiceService) { }
 
   ngOnInit(): void {
+    this.subscription = this.dataService.outputData$.subscribe(
+      data => {
+        this.receivedData = data;
+        console.log("this.receivedData ==>>",this.receivedData)
+        // this.receivedData.forEach((e: any)=>{
+          if (this.receivedData.label == "OPD" && this.receivedData.routerLink=="/master-page/opd-registration") {
+            // this.isShowServices = !this.isShowServices;
+            this.formTitle = "OPD REGISTRATION";
+            this.opdData =undefined;
+            this.getOPDService();
+            
+          } else if (this.receivedData.label == "IPD" && this.receivedData.routerLink=="/master-page/opd-registration") {
+            // this.isShowServices = !this.isShowServices;
+            this.formTitle = "IPD REGISTRATION";
+            this.opdData =undefined;
+            this.getIPDService();
+            
+          }
+        // })
+
+      }
+    );
     this.serviceConfig = {
       "isFilter": false,
       "isTable": true,
@@ -187,7 +213,7 @@ export class OpdRegistrationComponent implements OnInit {
     };
     this.filterData = filterdata;
     this.getConfigForTable();
-    this.getOPDService();
+    
     this.additionalServices(this.varPage, this.varSize, this.varSort, this.VarQString);
   }
   getConfigForTable() {
@@ -211,6 +237,7 @@ export class OpdRegistrationComponent implements OnInit {
   }
   sidebarButtonEvent(e: any) {
     if (e === "reset") {
+      this.editData = undefined;
       this.comService.sendEditData(false);
     }
 
@@ -286,7 +313,12 @@ export class OpdRegistrationComponent implements OnInit {
       this.opdData = res[1].result;
     });
   }
-
+  getIPDService() {
+    this.http.getIPDService().subscribe((res) => {
+      // this.opdData = [];
+      this.opdData = res[1].result;
+    });
+  }
   mobileRowClickData(e: any) {
     this.varPatientId = e.patientId;
     this.form$.reRenderForm(this.formJSON.form.formControls[8], e.patientTitleId, 'autofill');
@@ -304,6 +336,7 @@ export class OpdRegistrationComponent implements OnInit {
     this.data = undefined;
     this.VarQString = e.searchServicesInput;
     this.additionalServices(this.varPage, this.varSize, this.varSort, this.VarQString);
+    console.log("data additionalServices filter==>", this.data)
   }
   rowClickDataComService(e: any) {
     console.log("rowClickDataComService ==>", e)
@@ -349,6 +382,7 @@ export class OpdRegistrationComponent implements OnInit {
     console.log("addition service =>", this.serviceArr)
   }
   additionalServices(page: any, size: any, sort: any, qString: any) {
+    this.addData=[];
     this.http.getAdditionalServices(page, size, sort, qString).subscribe((res) => {
       res[1].result.forEach((e: any, index: any) => {
         let obj = {

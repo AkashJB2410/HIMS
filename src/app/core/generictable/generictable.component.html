@@ -82,9 +82,7 @@
                         *ngIf="rowData.image != '' && rowData.image!=undefined && rowData.image!=null; else default">
                         <img [src]="rowData.image" alt="Profile" class="imagereducer" />
                     </ng-container>
-                    <ng-template #default>
-                        <!-- <img src="../../../../assets/core_assets/defaultuser.jpg" pTooltip="Profile" class="imagereducer"
-                            tooltipPosition="bottom" alt="Profile"> -->
+                    <ng-template #default>      
                         <div class="profileImage">
                             <span *ngIf="rowData.name.split(' ').length == 1">{{rowData.name.split(" ")[0].substring(0,
                                 1)}}</span>

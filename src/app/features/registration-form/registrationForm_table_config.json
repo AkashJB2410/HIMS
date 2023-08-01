@@ -15,9 +15,7 @@
         {"field": "patientGenderName","header": "Gender","iseditable": false , "class":""},
         {"field": "patientIdentificationTypeName","header": "Identification Type","iseditable": false },
         {"field": "patientIdentificationTypeNumber","header": "Identification No.","iseditable": false , "class":""},
-        {"field": "patientMaritalStatusName","header": "Marital Status","iseditable": false , "class":""},
-        {"field": "patientReligion","header": "Religion","iseditable": false , "class":""},
-        {"field": "patientEthinicityName","header": "Ethinicity","iseditable": false , "class":""}
+        {"field": "patientMaritalStatusName","header": "Marital Status","iseditable": false , "class":""}
        
     ],
     "PdfHeaders": [
