@@ -90,46 +90,6 @@ export class OrganizationComponent implements OnInit {
     this.isDataReady = false;
   }
 
-  // addOrgData(orgData: any) {
-  //   //adding data into database
-  //   this.featurescommonService.addData(orgData, this.apiAdd).subscribe(
-  //     (response) => {
-  //       //response stored in OrgData with id as index
-  //       this.orgData = response.result.map((item: any, index: number) => ({
-  //         ...item,
-  //         id: index + 1,
-  //       }));
-  //        //changing the value of isDataReady to refresh the gird
-  //       this.isDataReady = true;
-  //       this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
-  //     },
-  //     (error) => {
-  //       this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
-  //     });
-  //      //changing the value of isDataReady to refresh the gird
-  //   this.isDataReady = false;
-  // }
-
-  // updateOrg(orgData: any) {
-  //   //updating data into database
-  //   this.featurescommonService.updateData(orgData, this.apiUpdate).subscribe(
-  //     (response) => {
-  //       //response stored in OrgData with id as index
-  //       this.orgData = response.result.map((item: any, index: number) => ({
-  //         ...item,
-  //         id: index + 1,
-  //       }));
-  //        //changing the value of isDataReady to refresh the gird
-  //       this.isDataReady = true;
-  //       this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
-  //     },
-  //     (error) => {
-  //       this.messageService.add({ severity: 'error', summary: 'Error', detail: error });
-  //     });
-  //      //changing the value of isDataReady to refresh the gird
-  //   this.isDataReady = false;
-  // }
-
   deleteOrg(orgData: any) {
     this.featurescommonService.deleteData(this.apidelete, orgData.orgId).subscribe(
       (response) => {

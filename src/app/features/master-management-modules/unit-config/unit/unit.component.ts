@@ -38,7 +38,7 @@ export class UnitComponent implements OnInit {
   apiStateGet = 'mstState/list'
   apiCityGet = 'mstCity/list'
   apiOrgGet='mstOrganization/list'
-  apiCluGet='/list'
+  apiClusterGet='mstCluster/list'
 
   constructor(
     private messageService: MessageService,
@@ -161,11 +161,47 @@ export class UnitComponent implements OnInit {
       (response) => {
         //update the mstUnitData with the API response
         this.mstUnitData = response.content.map((item: any, index: number) => ({
-          ...item,
-          id: index + 1
+            id: index + 1,
+            "unitId": item.unitId,
+            "unitName": item.unitName,
+            "unitpostfix": item.unitpostfix,
+            "unitcenter": item.unitcenter,
+            "unitAddress": item.unitAddress,
+            "unitEmail": item.unitEmail,
+            "unitMobile": item.unitMobile,
+            "unitPhone": item.unitPhone,
+            "unitContactPerson": item.unitContactPerson,
+            "unitCode": item.unitCode,
+            "unitClinicContactNo": item.unitClinicContactNo,
+            "unitPharmacyLicenseNo": item.unitPharmacyLicenseNo,
+            "unitPharmacyStoreName": item.unitPharmacyStoreName,
+            "unitPharmacyGstNo": item.unitPharmacyGstNo,
+            "unitClinicRegistrationNo": item.unitClinicRegistrationNo,
+            "unitShopAndEstablishmentNo": item.unitShopAndEstablishmentNo,
+            "unitTradeNo": item.unitTradeNo,
+            "unitServer": item.unitServer,
+            "unitDatabase": item.unitDatabase,
+            "unitFaxNo": item.unitFaxNo,
+            "unitAddressZip": item.unitAddressZip,
+            "unitAddressArea": item.unitAddressArea,
+            "unitXHipId": item.unitXHipId,
+            "unitOrgId": item.unitOrgId.orgId,
+            "unitOrgName":item.unitOrgId.orgName,
+            "unitCountryId": item.unitCountryId.countryId,
+            "unitCountryName":item.unitCountryId.countryName,
+            "unitDistrictId": item.unitDistrictId.districtId,
+            "unitDistrictName":item.unitDistrictId.districtName,
+            "unitStateId": item.unitStateId.stateId,
+            "unitStateName":item.unitStateId.stateName,
+            "unitCityId": item.unitCityId.cityId,
+            "unitCityName":item.unitCityId.cityName,
+            "unitClusterId":item.unitClusterId.clusterId,
+            "unitClusterName":item.unitClusterId.clusterName,
         }));
         //set the flag to indicate that data is ready for refreshing he grid
         this.isDataReady = true;
+        console.log(this.mstUnitData);
+        
       },
       (error) => {
         console.error('API Error:', error)
@@ -184,7 +220,6 @@ export class UnitComponent implements OnInit {
             "unitMobile": unitData.unitMobile,
             "unitPhone": unitData.unitPhone,
             "unitContactPerson": unitData.unitContactPerson,
-            "unitOrgId": unitData.unitOrg.code,
             "unitCode": unitData.unitCode,
             "unitClinicContactNo": unitData.unitClinicContactNo,
             "unitPharmacyLicenseNo": unitData.unitPharmacyLicenseNo,
@@ -196,15 +231,15 @@ export class UnitComponent implements OnInit {
             "unitServer": unitData.unitServer,
             "unitDatabase": unitData.unitDatabase,
             "unitFaxNo": unitData.unitFaxNo,
-            "unitCountryId": unitData.selectCountryStateCity[0],
-            // "unitDistrictId": unitData.unitDistrictiId,
-            "unitStateId": unitData.selectCountryStateCity[1],
-            "unitCityId": unitData.selectCountryStateCity[2],
-            // "unitClusterId": unitData.unitClusterId.code,
             "unitAddressZip": unitData.unitAddressZip,
             "unitAddressArea": unitData.unitAddressArea,
-            // "unitXHipId": unitData.unitXHipId,
-         
+            "unitXHipId": unitData.unitXHipId,
+            "unitOrgId": unitData.unitOrg.code,
+            "unitCountryId": unitData.selectCountryStateCity[0],
+            "unitDistrictId": unitData.unitDistrictiId,
+            "unitStateId": unitData.selectCountryStateCity[1],
+            "unitCityId": unitData.selectCountryStateCity[2],
+            "unitClusterId": unitData.unitClusterId.code,
     }
     // Determine the API endpoint based on the 'isEditMode' flag
     const apiEndpoint = isEditMode ? this.apiUpdate : this.apiAdd;
@@ -228,18 +263,90 @@ export class UnitComponent implements OnInit {
    this.isDataReady = false;
  }
 
+ deleteMstUnit(unitData:any){
+  this.featurescommonService.deleteData(this.apidelete, unitData.unitId).subscribe(
+    (response)=>{
+       //update the mstUnitData with the API response
+       this.mstUnitData=response.result.map((item:any, index:number)=>({
+        ...item,
+        id:index+1
+      }));
+     // Set the flag to indicate that data is ready for refreshing the grid
+     this.isDataReady = true;
+     this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
+   },
+   (error) => {
+     this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
+   }
+ );
+   // Reset the flag to indicate that data is not ready for refreshing the grid yet
+ this.isDataReady = false;
+}
+
+toggleMstUnitStatus(unitData: any) {
+  if(!unitData.isActive){
+    this.featurescommonService.reactiveData(this.apiactive, unitData, unitData.unitId).subscribe(
+      (response)=>{
+        //update the mstUnitData with the API response
+        this.mstUnitData=response.result.map((item:any, index:number)=>({
+          ...item,
+          id:index+1
+        }));
+       // Set the flag to indicate that data is ready for refreshing the grid
+       this.isDataReady = true;
+       this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
+     },
+     (error) => {
+       this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
+     }
+   );
+     // Reset the flag to indicate that data is not ready for refreshing the grid yet
+   this.isDataReady = false;
+  }
+}
+
+bulkDeleteMstUnit(arrayOfUnitData: any) {
+  if(arrayOfUnitData!=0){
+    this.isDataReady=false;
+    arrayOfUnitData.forEach((unitData:any)=>{
+      this.deleteMstUnitForBulk(unitData);
+    })
+    if(this.deleteMsg){
+      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Bulk Delete' });
+      this.deleteMsg = false;
+    }
+  }
+  else {
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'No Row Selected' })
+  }
+}
+
+deleteMstUnitForBulk(unitData:any){
+  this.featurescommonService.deleteData(this.apidelete, unitData.unitId).subscribe(
+    (response)=>{
+        //update the mstUnitData with the API response
+        this.mstUnitData=response.result.map((item:any, index:number)=>({
+          ...item,
+          id:index+1
+        }));
+       // Set the flag to indicate that data is ready for refreshing the grid
+       this.isDataReady = true;
+       this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
+     },
+     (error) => {
+       this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
+     }
+   );
+     // Reset the flag to indicate that data is not ready for refreshing the grid yet
+   this.isDataReady = false;
+  }
+
   closeSidebarData($event: any) {
     // Clears the selectedUnitData when closing the sidebar
     this.selectedUnitData = undefined;
   }
 
 
-  toggleMstUnitStatus($event: string) {
-
-  }
-  bulkDeleteMstUnit($event: any) {
-
-  }
 
   confirmAction($event: any) {
     if($event==false){
@@ -247,7 +354,7 @@ export class UnitComponent implements OnInit {
     }
     else{
       if($event.isActive){
-
+        this.deleteMstUnit($event)
       }
       else{
         this.messageService.add({ severity: 'error', summary: 'Error' })
@@ -255,7 +362,7 @@ export class UnitComponent implements OnInit {
     }
   }
   onEdit($event: any) {
-   // let countryStateCity=[$event.editRow.selectCountryStateCity]
+    let countryStateCity=[$event.editRow.unitCountryId.countryId, $event.editRow.unitStateId.stateId, $event.editRow.unitCityId.cityId]
     this.sidebarConfig.form.formControls[0].isVisible = true;
     this.selectedUnitData={
       unitId:$event.editRow.unitId,
@@ -267,11 +374,11 @@ export class UnitComponent implements OnInit {
       unitPhone:$event.editRow.unitPhone,
       unitContactPerson:$event.editRow.unitContactPerson,
       UnitDatabase:$event.editRow.UnitDatabase,
-      unitClusterId:$event.editRow,
-      unitOrg:$event.editRow.unitOrg.code,
+      unitClusterId:$event.editRow.unitClusterId.clusterId,
+      unitOrgId:$event.editRow.unitOrgId.orgId,
       unitServer:$event.editRow.unitServer,
       unitFaxNo:$event.editRow.unitFaxNo,
-      selectCountryStateCity:$event.editRow.selectCountryStateCity,
+      selectCountryStateCity:countryStateCity,
       unitAddress:$event.editRow.unitAddress,
       unitAddressArea:$event.editRow.unitAddressArea,
       unitAddressZip:$event.editRow.unitAddressZip,

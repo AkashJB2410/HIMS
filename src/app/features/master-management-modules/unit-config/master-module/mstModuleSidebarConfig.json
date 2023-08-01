@@ -2,10 +2,10 @@
     "form": {
         "formId": "moduleForm",
         "class": "row",
-        "formTitle": "Add Master Module",
-        "formTitleClass": "Sidebar-title-sm",
-        "formTitleLogo":"bi bi-file-earmark-medical",
-        "sidebar":"p-sidebar-sm",
+        "sideBarTitle": "Master Module",
+        "sidebarTitleClass": "Sidebar-title-sm",
+        "sidebarTitleLogo": "bi bi-file-earmark-medical",
+        "sidebar": "p-sidebar-sm",
         "formControls": [
             {
                 "id": 0,
@@ -39,8 +39,8 @@
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
-                "lblclass":"custom-label",
-                "valueclass":"input-box",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
                 "placeholder": "Enter label...",
                 "formControlName": "label",
                 "maxlength": "",
@@ -54,7 +54,6 @@
                     "pattern": "^[a-zA-Z _0-9- ]+$"
                 }
             },
-            
             {
                 "isEditable": true,
                 "isVisible": true,
@@ -63,8 +62,8 @@
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
-                "lblclass":"custom-label",
-                "valueclass":"input-box",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
                 "placeholder": "Enter icon name...",
                 "formControlName": "icon",
                 "maxlength": "",
@@ -78,8 +77,6 @@
                     "pattern": "^[a-zA-Z\\s- 0-9]+$"
                 }
             },
-            
-            
             {
                 "isEditable": true,
                 "isVisible": true,
@@ -88,8 +85,8 @@
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
-                "lblclass":"custom-label",
-                "valueclass":"input-box",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
                 "placeholder": "Enter router Link...",
                 "formControlName": "routerLink",
                 "maxlength": "",
@@ -111,8 +108,8 @@
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-12 my-1",
-                "lblclass":"custom-label",
-                "valueclass":"input-box",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
                 "placeholder": "Enter sequence...",
                 "formControlName": "sequence",
                 "maxlength": "",

@@ -16,13 +16,13 @@ export class MasterModuleComponent implements OnInit {
   isEditMode: boolean;
   applicationBreadcrumb = Application_breadcrumb;
   mstModuleData: any[];
-  gridConfigurations= {
+  gridConfigurations = {
     isFilter: false,
     isTable: true,
     isSideBar: true,
     isConfirmation: true,
   };
-  tableConfig=mstModuleTableConfig;
+  tableConfig = mstModuleTableConfig;
   isDataReady = false;
   sidebarConfig: any = mstModuleSidebarConfig;
   deleteMsg = false;
@@ -49,12 +49,12 @@ export class MasterModuleComponent implements OnInit {
     //fetch Data from API
     this.featurescommonService.getData(this.apiGet).subscribe(
       (response) => {
-       // Update the mstMouldeData with the API response
+        // Update the mstMouldeData with the API response
         this.mstModuleData = response.content.map((item: any, index: number) => ({
           ...item,
           id: index + 1,
         }));
-          // Set the flag to indicate that data is ready for refreshing the grid
+        // Set the flag to indicate that data is ready for refreshing the grid
         this.isDataReady = true;
       },
       (error) => {
@@ -62,68 +62,28 @@ export class MasterModuleComponent implements OnInit {
       });
   }
 
-  addOrUpdateMstModuleData(moduleData:any, isEditMode:boolean){
-     // Determine the API endpoint based on the 'isEditMode' flag
-     const apiEndpoint = isEditMode ? this.apiUpdate : this.apiAdd;
-      // Call the corresponding API method (addData or updateData) based on the 'isEditMode' flag
-      this.featurescommonService[isEditMode?'updateData':'addData'](moduleData,apiEndpoint).subscribe(
-        (response)=>{
-           // Update the mstMouldeData with the API response
-           this.mstModuleData = response.result.map((item: any, index: number) => ({
-            ...item,
-            id: index + 1,
-          }));
-           // Set the flag to indicate that data is ready for refreshing the grid
-          this.isDataReady = true;
-          this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
-        },
-        (error) => {
-          this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
-        }
-      );
-        // Reset the flag to indicate that data is not ready for refreshing the grid yet
-      this.isDataReady = false;
-    }
-
-  // addMstModuleData(moduleData: any) {
-  //   //adding data into database
-  //   this.featurescommonService.addData(moduleData, this.apiAdd).subscribe(
-  //     (response) => {
-  //       //response stored in mstMouldeData with id as index
-  //       this.mstModuleData = response.result.map((item: any, index: number) => ({
-  //         ...item,
-  //         id: index + 1,
-  //       }));
-  //        //changing the value of isDataReady to refresh the gird
-  //       this.isDataReady = true;
-  //       this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
-  //     },
-  //     (error) => {
-  //       this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
-  //     });
-  //      //changing the value of isDataReady to refresh the gird
-  //   this.isDataReady = false;
-  // }
-
-  // updateMstModule(moduleData: any) {
-  //   //updating data into database
-  //   this.featurescommonService.updateData(moduleData, this.apiUpdate).subscribe(
-  //     (response) => {
-  //       //response stored in mstMouldeData with id as index
-  //       this.mstModuleData = response.result.map((item: any, index: number) => ({
-  //         ...item,
-  //         id: index + 1,
-  //       }));
-  //        //changing the value of isDataReady to refresh the gird
-  //       this.isDataReady = true;
-  //       this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
-  //     },
-  //     (error) => {
-  //       this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
-  //     });
-  //      //changing the value of isDataReady to refresh the gird
-  //   this.isDataReady = false;
-  // }
+  addOrUpdateMstModuleData(moduleData: any, isEditMode: boolean) {
+    // Determine the API endpoint based on the 'isEditMode' flag
+    const apiEndpoint = isEditMode ? this.apiUpdate : this.apiAdd;
+    // Call the corresponding API method (addData or updateData) based on the 'isEditMode' flag
+    this.featurescommonService[isEditMode ? 'updateData' : 'addData'](moduleData, apiEndpoint).subscribe(
+      (response) => {
+        // Update the mstMouldeData with the API response
+        this.mstModuleData = response.result.map((item: any, index: number) => ({
+          ...item,
+          id: index + 1,
+        }));
+        // Set the flag to indicate that data is ready for refreshing the grid
+        this.isDataReady = true;
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
+      },
+      (error) => {
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
+      }
+    );
+    // Reset the flag to indicate that data is not ready for refreshing the grid yet
+    this.isDataReady = false;
+  }
 
   deleteMstModule(moduleData: any) {
     this.featurescommonService.deleteData(this.apidelete, moduleData.moduleId).subscribe(
@@ -133,14 +93,14 @@ export class MasterModuleComponent implements OnInit {
           ...item,
           id: index + 1,
         }));
-         // Set the flag to indicate that data is ready for refreshing the grid
+        // Set the flag to indicate that data is ready for refreshing the grid
         this.isDataReady = true;
         this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
       },
       (error) => {
         this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
       });
-        // Reset the flag to indicate that data is not ready for refreshing the grid yet
+    // Reset the flag to indicate that data is not ready for refreshing the grid yet
     this.isDataReady = false;
   }
 
@@ -153,7 +113,7 @@ export class MasterModuleComponent implements OnInit {
             ...item,
             id: index + 1,
           }));
-         // Set the flag to indicate that data is ready for refreshing the grid
+          // Set the flag to indicate that data is ready for refreshing the grid
           this.isDataReady = true;
           this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message })
         },
@@ -176,7 +136,7 @@ export class MasterModuleComponent implements OnInit {
       })
       if (this.deleteMsg) {
         this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Bulk Delete' });
-        this.deleteMsg=false;
+        this.deleteMsg = false;
       }
     }
     else {
@@ -187,20 +147,20 @@ export class MasterModuleComponent implements OnInit {
   deleteMstModuleForBulk(moduleData: any) {
     this.featurescommonService.deleteData(this.apidelete, moduleData.moduleId).subscribe(
       (response) => {
-       // Update the mstMouldeData with the API response
+        // Update the mstMouldeData with the API response
         this.mstModuleData = response.result.map((item: any, index: number) => ({
           ...item,
           id: index + 1,
         }));
-         // Set the flag to indicate that data is ready for refreshing the grid
+        // Set the flag to indicate that data is ready for refreshing the grid
         this.isDataReady = true;
-       // Set the flag to indicate that message for delete
+        // Set the flag to indicate that message for delete
         this.deleteMsg = false;
       },
       (error) => {
         console.log('delete API Error', error);
       });
-      // Reset the flag to indicate that data is not ready for refreshing the grid yet
+    // Reset the flag to indicate that data is not ready for refreshing the grid yet
     this.isDataReady = false;
   }
 
@@ -217,14 +177,14 @@ export class MasterModuleComponent implements OnInit {
   }
 
   closeSidebarData(e: any) {
-      // Clears the selectedGroupData when closing the sidebar
+    // Clears the selectedGroupData when closing the sidebar
     this.selectedModuleData = undefined;
   }
 
   sidebarData(e: any) {
-    if (e === 'reset') {} 
+    if (e === 'reset') { }
     else {
-     this.addOrUpdateMstModuleData(e, this.isEditMode);
+      this.addOrUpdateMstModuleData(e, this.isEditMode);
     }
   }
 
@@ -242,7 +202,7 @@ export class MasterModuleComponent implements OnInit {
   }
 
   handleButtonClick(e: any) {
-     // Clears the selectedGroupData when closing the sidebar
+    // Clears the selectedGroupData when closing the sidebar
     this.selectedModuleData = undefined;
     this.common.sendEditData(false);
   }

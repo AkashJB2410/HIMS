@@ -1,12 +1,12 @@
 {
     "form": {
         "class": "row",
-        "formTitle": "Sub Module Form",
-        "formTitleClass": "Sidebar-title-sm",
-        "formTitleLogo":"bi bi-file-earmark-medical",
+        "sideBarTitle": "Sub Module",
+        "sidebarTitleClass": "Sidebar-title-md",
+        "sidebarTitleLogo": "bi bi-file-earmark-medical",
         "formName": "Form1",
         "formType": "edit",
-        "sidebar":"p-sidebar-md",
+        "sidebar": "p-sidebar-md",
         "formControls": [
             {
                 "id": 0,
@@ -68,8 +68,8 @@
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-6 my-1",
-                "lblclass":"",
-                "valueclass":"input-box",
+                "lblclass": "",
+                "valueclass": "input-box",
                 "placeholder": "Enter label...",
                 "formControlName": "label",
                 "message": {
@@ -89,8 +89,8 @@
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-6 my-1",
-                "lblclass":"",
-                "valueclass":"input-box",
+                "lblclass": "",
+                "valueclass": "input-box",
                 "placeholder": "Enter icon name...",
                 "formControlName": "icon",
                 "message": {
@@ -110,8 +110,8 @@
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-6 my-1",
-                "lblclass":"",
-                "valueclass":"input-box",
+                "lblclass": "",
+                "valueclass": "input-box",
                 "placeholder": "Enter router Link...",
                 "formControlName": "routerLink",
                 "message": {
@@ -131,8 +131,8 @@
                 "type": "text",
                 "inputType": "text",
                 "class": "col-md-6 my-1",
-                "lblclass":"custom-label",
-                "valueclass":"input-box",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
                 "placeholder": "Enter sequence...",
                 "formControlName": "sequence",
                 "maxlength": "",

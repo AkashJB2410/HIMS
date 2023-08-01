@@ -12,12 +12,12 @@ import { FeaturescommonService } from 'src/app/features/shared/featurescommon.se
   styleUrls: ['./group-module.component.css']
 })
 export class GroupModuleComponent implements OnInit {
-    //variable declarations
+  //variable declarations
   selectedGroupData: any;
   isEditMode: boolean;
   applicationBreadcrumb = Application_breadcrumb;
   mstGroupData: any[];
-  gridConfigurations= {
+  gridConfigurations = {
     "isFilter": false,
     "isTable": true,
     "isSideBar": true,
@@ -28,7 +28,7 @@ export class GroupModuleComponent implements OnInit {
   sidebarConfig: any = groupSidebarConfig;
   deleteMsg = false;
 
-   //API declarations
+  //API declarations
   apiGet = 'mstGroup/list';
   apiAdd = 'mstGroup/create';
   apiUpdate = 'mstGroup/update';
@@ -55,14 +55,14 @@ export class GroupModuleComponent implements OnInit {
     }
     this.featurescommonService.getData(this.mstModuleApiGet).subscribe(
       (response) => {
-        this.sidebarConfig.form.formControls[1].values=[
-            //pushing the master module values in sidebar form
-          ...response.content.map((module:any)=>({
-            name:module.label,
-            code:module.moduleId
+        this.sidebarConfig.form.formControls[1].values = [
+          //pushing the master module values in sidebar form
+          ...response.content.map((module: any) => ({
+            name: module.label,
+            code: module.moduleId
           }))
           //sorting the array of master module
-        ].sort((a:any, b:any)=> a.name.localeCompare(b.name));
+        ].sort((a: any, b: any) => a.name.localeCompare(b.name));
         //shifting the first object in master module array
         this.sidebarConfig.form.formControls[1].values.unshift(defaultValues)
       },
@@ -87,7 +87,7 @@ export class GroupModuleComponent implements OnInit {
           isActive: item.isActive,
           mstMduleId: item.groupModuleId.moduleId
         }));
-            // Set the flag to indicate that data is ready for refreshing the grid
+        // Set the flag to indicate that data is ready for refreshing the grid
         this.isDataReady = true;
       },
       (error) => {
@@ -97,7 +97,7 @@ export class GroupModuleComponent implements OnInit {
   }
 
   addOrUpdateMstGroup(groupData: any, isEditMode: boolean) {
-     // Prepare the object to be sent in the API request
+    // Prepare the object to be sent in the API request
     let obj = {
       lable: groupData.lable,
       icon: groupData.icon,
@@ -108,12 +108,12 @@ export class GroupModuleComponent implements OnInit {
         lable: groupData.mstModule.name
       }
     };
-     // Determine the API endpoint based on the 'isEditMode' flag
+    // Determine the API endpoint based on the 'isEditMode' flag
     const apiEndpoint = isEditMode ? this.apiUpdate : this.apiAdd;
-     // Call the corresponding API method (addData or updateData) based on the 'isEditMode' flag
+    // Call the corresponding API method (addData or updateData) based on the 'isEditMode' flag
     this.featurescommonService[isEditMode ? 'updateData' : 'addData'](obj, apiEndpoint).subscribe(
       (response) => {
-         // Update the mstGroupData with the API response
+        // Update the mstGroupData with the API response
         this.mstGroupData = response.result.map((item: any, index: number) => ({
           id: index + 1,
           groupId: item.groupId,
@@ -125,7 +125,7 @@ export class GroupModuleComponent implements OnInit {
           isActive: item.isActive,
           mstMduleId: item.groupModuleId.moduleId
         }));
-         // Set the flag to indicate that data is ready for refreshing the grid
+        // Set the flag to indicate that data is ready for refreshing the grid
         this.isDataReady = true;
         this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
       },
@@ -133,14 +133,14 @@ export class GroupModuleComponent implements OnInit {
         this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
       }
     );
-      // Reset the flag to indicate that data is not ready for refreshing the grid yet
+    // Reset the flag to indicate that data is not ready for refreshing the grid yet
     this.isDataReady = false;
   }
 
   deleteMstGroup(groupData: any) {
     this.featurescommonService.deleteData(this.apidelete, groupData.groupId).subscribe(
       (response) => {
-           // Update the mstGroupData with the API response
+        // Update the mstGroupData with the API response
         this.mstGroupData = response.result.map((item: any, index: number) => ({
           id: index + 1,
           groupId: item.groupId,
@@ -152,7 +152,7 @@ export class GroupModuleComponent implements OnInit {
           isActive: item.isActive,
           mstMduleId: item.groupModuleId.moduleId
         }));
-             // Set the flag to indicate that data is ready for refreshing the grid
+        // Set the flag to indicate that data is ready for refreshing the grid
         this.isDataReady = true;
         this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message })
       },
@@ -160,7 +160,7 @@ export class GroupModuleComponent implements OnInit {
         this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message })
       }
     );
-     // Reset the flag to indicate that data is not ready for refreshing the grid yet
+    // Reset the flag to indicate that data is not ready for refreshing the grid yet
     this.isDataReady = false;
   }
 
@@ -180,7 +180,7 @@ export class GroupModuleComponent implements OnInit {
             isActive: item.isActive,
             mstMduleId: item.groupModuleId.moduleId
           }));
-               // Set the flag to indicate that data is ready for refreshing the grid
+          // Set the flag to indicate that data is ready for refreshing the grid
           this.isDataReady = true;
           this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message })
         },
@@ -188,7 +188,7 @@ export class GroupModuleComponent implements OnInit {
           this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message })
         }
       );
-          // Reset the flag to indicate that data is not ready for refreshing the grid yet
+      // Reset the flag to indicate that data is not ready for refreshing the grid yet
       this.isDataReady = false
     }
     else {
@@ -215,7 +215,7 @@ export class GroupModuleComponent implements OnInit {
   deleteMstGroupForBulk(groupData: any) {
     this.featurescommonService.deleteData(this.apidelete, groupData.groupId).subscribe(
       (response) => {
-         // Update the mstGroupData with the API response
+        // Update the mstGroupData with the API response
         this.mstGroupData = response.result.map((item: any, index: number) => ({
           id: index + 1,
           groupId: item.groupId,
@@ -227,15 +227,15 @@ export class GroupModuleComponent implements OnInit {
           isActive: item.isActive,
           mstMduleId: item.groupModuleId.moduleId
         }));
-            // Set the flag to indicate that data is ready for refreshing the grid
+        // Set the flag to indicate that data is ready for refreshing the grid
         this.isDataReady = true;
-         // Set the flag to indicate that message for delete
+        // Set the flag to indicate that message for delete
         this.deleteMsg = false;
       },
       (error) => {
         console.log('delete API Error', error);
       });
-           // Reset the flag to indicate that data is not ready for refreshing the grid yet
+    // Reset the flag to indicate that data is not ready for refreshing the grid yet
     this.isDataReady = false;
   }
 
@@ -278,7 +278,7 @@ export class GroupModuleComponent implements OnInit {
     this.common.sendEditData(false);
   }
   handleButtonClick($event: any) {
-     // Clears the selectedGroupData when closing the sidebar
+    // Clears the selectedGroupData when closing the sidebar
     this.selectedGroupData = undefined;
     this.common.sendEditData(false);
   }
