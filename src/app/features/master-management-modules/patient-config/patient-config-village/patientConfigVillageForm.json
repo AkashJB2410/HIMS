@@ -1,0 +1,177 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Add Village",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formName": "Form1",
+        "sidebar": "p-sidebar-sm",
+        "formControls": [
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "transient":false,
+                "label": "Village Id",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "village_id",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Village Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Village Name",
+                "formControlName": "village_name",
+                "message": {
+                    "required": "Plase Enter Village Name",
+                    "pattern": "Only Alphabete are allowd"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z 0-9 ]+$"
+                }
+            },
+            {
+                "id": 10,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "label": "",
+                "type": "dependentdropdown",
+                "class": "col-md-12",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "country",
+                "defaultValue": "",
+                "message": {
+                    "required": "Country two and three are required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "label": "State",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": "",
+                    
+                                "disabled": "disabled"
+                            },
+                            {
+                                "name": "Maharashtra",
+                                "code": "MH"
+                                
+                            },
+                            {
+                                "name": "Wuhan",
+                                "code": "WU"
+                                
+                            }
+                        ]
+                    },
+                    {
+                        "label": "District",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": "",
+                                "Mcode": "",
+                                "disabled": "disabled"
+                            },
+                            {
+                                "name": "Pune",
+                                "code": "P",
+                                "Mcode": "MH"
+                            },
+                            {
+                                "name": "Shang-Chi",
+                                "code": "Sh",
+                                "Mcode": "WU"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "City",
+                        "values": [
+                            {
+                                "name": "Select an Option",
+                                "code": "",
+                                "Mcode": "",
+                                "disabled": "disabled"
+                            },
+                            {
+                                "name": "Pune",
+                                "code": "P",
+                                "Mcode": "MH"
+                            },
+                            {
+                                "name": "Shang-Chi",
+                                "code": "Sh",
+                                "Mcode": "WU"
+                            }
+                        ]
+                    }
+                ],
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-6",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-6",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

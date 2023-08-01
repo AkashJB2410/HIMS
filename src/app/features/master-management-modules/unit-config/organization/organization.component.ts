@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import organization_breadcrumb from './organization-breadcrumb.json'
+import organization_breadcrumb from './organization-breadcrumb.json';
 import { CommonService } from 'src/app/core/shared/service/common.service';
 import orgSidebarConfig from './orgSidebarConfig.json'
 import orgTableConfig from './orgTableConfig.json'
@@ -10,11 +10,13 @@ import { FeaturescommonService } from 'src/app/features/shared/featurescommon.se
   selector: 'app-organization',
   templateUrl: './organization.component.html',
   // styleUrls: ['./organization.component.css']
-  styles: [`
-  :host ::ng-deep .p-component-overlay {
-    width: 100%;
-  }
-`]
+  styles: [
+    `
+      :host ::ng-deep .p-component-overlay {
+        width: 100%;
+      }
+    `,
+  ],
 })
 
 export class OrganizationComponent implements OnInit {

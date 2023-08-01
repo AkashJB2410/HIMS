@@ -1,0 +1,44 @@
+{
+    "tableName": "Village Table",
+    "tableHeaders": [
+        {
+            "field": "villageName",
+            "header": "Village Name",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "cityName",
+            "header": "City Name",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "districtName",
+            "header": "District Name",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "stateName",
+            "header": "State Name",
+            "iseditable": false , "class":"text-center"
+        }
+    ],
+    "globalFilter": ["village_id","village_name","village_city_id"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [15,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "isRadioButton":false,
+    "resizableColumns": true,
+    "isDragAndDrop":true,
+    "isActions": ["Edit", "Delete" ,"isActive"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "expand":false,
+    "buttonlbl":"",
+    "textLength":16,
+    "sidebar": "p-sidebar-sm",
+    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
+}
