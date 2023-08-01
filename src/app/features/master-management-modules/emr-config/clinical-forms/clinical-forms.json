@@ -1,0 +1,187 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Add Clinical Forms",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formName": "Form1",
+        "sidebar": "p-sidebar-sm",
+        "formControls": [
+            {
+                "id": 0,
+                "isEditable": false,
+                "isVisible": true,
+                "label": "Id",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12  my-1",
+                "lblclass": "",
+                "valueclass": "input-box",
+                "placeholder": "",
+                "formControlName": "cf_id",
+                "mandatoryMessage": "Code is required",
+                "message": "Code is required",                
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Clinical Forms Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Clinical Forms Name",
+                "formControlName": "form_name",
+                "message": {
+                    "required": "Plase Enter Clinical Forms Name",
+                    "pattern": "Only Alphabete are allow"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Clinical Forms Field Type",
+                "type": "select",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"",
+                "placeholder": "Clinical Field Type",
+                "formControlName": "cf_field_type",
+                "message": {
+                    "required": "Plase Enter Clinical Forms Field Type",
+                    "pattern": "Only Alphabete are allow"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Clinical Forms Speciality ID",
+                "type": "select",
+                "class": "col-md-12 my-1",
+                "lblclass":"custom-label",
+                "valueclass":"",
+                "placeholder": "Speciality ID",
+                "formControlName": "cf_speciality_id",
+                "message": {
+                    "required": "Speciality ID is required",
+                    "pattern": "Only Alphabete are allow"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Sequence Number",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Sequence Number",
+                "formControlName": "sequence_no",
+                "message": {
+                    "required": "Plase Enter Sequence Number",
+                    "pattern": "Only Alphabete are allow"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Description",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"custom-label",
+                "valueclass":"textarea-custom",
+                "placeholder": "",
+                "formControlName": "description",
+                "message": {
+                    "required": "Plase Enter Description",
+                    "pattern": "Only Alphabete are allow"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Enter Question",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Question",
+                "formControlName": "question",
+                "message": {
+                    "required": "Plase Enter Question",
+                    "pattern": "Only Alphabete are allow"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z ]*$"
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-6",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-6",
+                "valueclass": "butn-custom-wrng",
+                "icon": "",
+                "isDisabled": false,
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

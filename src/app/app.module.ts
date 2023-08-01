@@ -34,6 +34,12 @@ import { CoreFeaturesComponent } from './features/core-features/core-features.co
 import { DoctorScheduleComponent } from './features/doctor-schedule/doctor-schedule.component';
 import { DoctorCabinComponent } from './features/doctor-cabin/doctor-cabin.component';
 import { DayMasterComponent } from './features/day-master/day-master.component';
+import { TemplatesComponent } from './features/master-management-modules/emr-config/template/templates/templates.component';
+import { ClinicalProceduresComponent } from './features/master-management-modules/emr-config/clinical-procedures/clinical-procedures.component';
+import { ProceduresComponent } from './features/master-management-modules/emr-config/procedures/procedures.component';
+import { DiseaseSubCategorysComponent } from './features/master-management-modules/emr-config/disease-sub-categorys/disease-sub-categorys.component';
+import { IcdCodeMasterComponent } from './features/master-management-modules/emr-config/icd-code-master/icd-code-master.component';
+import { DocumentCategorysComponent } from './features/master-management-modules/emr-config/document-categorys/document-categorys.component';
 
 
 @NgModule({
@@ -58,6 +64,12 @@ import { DayMasterComponent } from './features/day-master/day-master.component';
     DoctorScheduleComponent,
     DoctorCabinComponent,
     DayMasterComponent,
+    TemplatesComponent,
+    ClinicalProceduresComponent,
+    ProceduresComponent,
+    DiseaseSubCategorysComponent,
+    IcdCodeMasterComponent,
+    DocumentCategorysComponent,
    
   ],
   imports: [

@@ -7,22 +7,22 @@
       },
       {
         "label": "Clinical Procedure Master",
-        "routerLink": "/master-page/all-masters/clinical-procedure",
+        "routerLink": "/master-page/all-masters/clinical-procedures",
         "imgSrc": "assets/unit-configuration/action-sub-module.png"
       },
       {
         "label": "Procedure",
-        "routerLink": "/master-page/all-masters/procedure",
+        "routerLink": "/master-page/all-masters/procedures",
         "imgSrc": "assets/unit-configuration/action-sub-module.png"
       },
       {
         "label": "Disease Sub Category Master",
-        "routerLink": "/master-page/all-masters/disease-sub-category",
+        "routerLink": "/master-page/all-masters/disease-sub-categorys",
         "imgSrc": "assets/unit-configuration/action-sub-module.png"
       },
       {
         "label": "ICD Code Masterr",
-        "routerLink": "/master-page/all-masters/icd-code",
+        "routerLink": "/master-page/all-masters/icd-code-master",
         "imgSrc": "assets/unit-configuration/action-sub-module.png"
       },
     {
@@ -32,12 +32,12 @@
       },
       {
         "label": "Template",
-        "routerLink": "/master-page/all-masters/template",
+        "routerLink": "/master-page/all-masters/templates",
         "imgSrc": "assets/unit-configuration/action-sub-module.png"
       },
       {
         "label": " Document Category",
-        "routerLink": "/master-page/all-masters/document-category",
+        "routerLink": "/master-page/all-masters/document-categorys",
         "imgSrc": "assets/unit-configuration/action-sub-module.png"
       }
     ]

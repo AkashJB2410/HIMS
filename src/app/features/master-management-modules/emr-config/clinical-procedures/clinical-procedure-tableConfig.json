@@ -1,0 +1,53 @@
+{
+    "tableName": "Clinical Procedure Table",
+    "tableHeaders":[
+        {
+            "field": "srNumber","header": "Sr. No","iseditable": false,"class":"text-center"
+        },
+        {
+            "field":"cp_name","header":"Clinical Procedure Name","iseditable": false , "class":""
+        },
+        {
+            "field":" cp_speciality_id","header":"Clinical Procedure Name","iseditable": false , "class":""
+        },
+        {
+            "field": "is_Active","header": "isActive","iseditable": false,"class":""
+        }
+
+
+    ],
+    "PdfHeaders":[
+        {
+           "field":"cp_id","header":"Id"
+        },
+        {
+            "field":"cp_name","header":"Clinical Procedure Name"
+        },
+        {
+            "field":" cp_speciality_id","header":"Clinical Procedure Name"
+        },
+        {
+            "field":"is_Active", "header":"isActive"
+        }
+       
+    ],
+    "globalFilter":["cp_id","cp_name","cp_speciality_id","is_Active"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [10,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "resizableColumns": true,
+    "isActions": ["Edit", "Delete", "isActive"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "isVisible":false,
+    "buttonlbl":"",
+    "addButton":true,
+    "textLength":16,
+    "isDragAndDrop":true,
+    "bulkAction":["PDF","EXCEL","Delete","Multiselect","Search","Addbutton"]
+
+}

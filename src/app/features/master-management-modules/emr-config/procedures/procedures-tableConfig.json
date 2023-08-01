@@ -1,0 +1,102 @@
+
+{
+    "tableName": "Super Speciality Table",
+    "tableHeaders":[
+        {
+            "field": "id","header": "Sr. No","iseditable": false,"class":"text-center"
+        },
+        {
+            "field":"procedure_name","header":"Super Speciality Name","iseditable": false , "class":""
+        },
+        {
+            "field":"procedure_code_name","header":"Super Speciality Name","iseditable": false , "class":""
+        },
+         {
+            "field":"procedure_duration","header":"Super Speciality Name","iseditable": false , "class":""
+        },
+         {
+            "field":"remark","header":"Super Speciality Name", "iseditable": false , "class":""
+        },
+         {
+            "field":"mst_procedure_anesthesia_type","header":"Super Speciality Name","iseditable": false , "class":""
+        },
+        {
+            "field":"mst_procedure_code_type","header":"Super Speciality Name","iseditable": false , "class":""
+        },
+        {
+            "field":"mst_procedure_doctor_id","header":"Super Speciality Name","iseditable": false , "class":""
+        },
+        {
+            "field":"mst_procedure_gender_id","header":"Super Speciality Name","iseditable": false , "class":""
+        },
+        {
+            "field":"mst_procedureptype","header":"Super Speciality Name","iseditable": false , "class":""
+        },
+        {
+            "field":"mst_procedure_speciality_id","header":"Super Speciality Name","iseditable": false , "class":""
+        },
+        {
+            "field": "is_Active","header": "isActive","iseditable": false,"class":""
+        }
+
+
+    ],
+    "PdfHeaders":[
+        {
+           "field":"procedure_id","header":"Id"
+        },
+        {
+            "field":"procedure_name","header":"Super Speciality Name"
+        },
+        {
+            "field":"procedure_code_name","header":"Super Speciality Name"
+        },
+         {
+            "field":"procedure_duration","header":"Super Speciality Name"
+        },
+         {
+            "field":"remark","header":"Super Speciality Name"
+        },
+         {
+            "field":"mst_procedure_anesthesia_type","header":"Super Speciality Name"
+        },
+        {
+            "field":"mst_procedure_code_type","header":"Super Speciality Name"
+        },
+        {
+            "field":"mst_procedure_doctor_id","header":"Super Speciality Name"
+        },
+        {
+            "field":"mst_procedure_gender_id","header":"Super Speciality Name"
+        },
+        {
+            "field":"mst_procedureptype","header":"Super Speciality Name"
+        },
+        {
+            "field":"mst_procedure_speciality_id","header":"Super Speciality Name"
+        },
+        {
+            "field":"is_Active", "header":"isActive"
+        }
+     
+    ],
+    "globalFilter":["procedure_id","procedure_name","procedure_code_name","procedure_duration","remark","mst_procedure_anesthesia_type","mst_procedure_code_type","mst_procedure_doctor_id","mst_procedure_gender_id","mst_procedureptype","mst_procedure_speciality_id","is_Active"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [10,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "resizableColumns": true,
+    "isActions": ["Edit", "Delete", "isActive"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "isVisible":false,
+    "buttonlbl":"",
+    "addButton":true,
+    "textLength":16,
+    "isDragAndDrop":true,
+    "bulkAction":["PDF","EXCEL","Delete","Multiselect","Search","Addbutton"]
+
+}

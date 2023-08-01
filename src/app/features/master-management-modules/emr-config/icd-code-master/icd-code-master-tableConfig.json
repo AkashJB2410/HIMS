@@ -1,0 +1,67 @@
+
+{
+    "tableName": "Super Speciality Table",
+    "tableHeaders":[
+        {
+            "field": "id","header": "Sr. No","iseditable": false,"class":"text-center"
+        },
+        {
+            "field":"discription","header":"Discription","iseditable": false,"class":"text-center"
+        },
+        {
+            "field":"icddisease_category_id","header":"ICD Disease Category","iseditable": false,"class":"text-center"
+        },
+        {
+            "field":"msticdcode_disease_sub_category_id","header":"ICD Disease Sub Category","iseditable": false,"class":"text-center"
+        },
+        {
+            "field":"msticdcode_disease_type","header":"ICD Code Disease Type","iseditable": false,"class":"text-center"
+        },
+        
+        {
+            "field": "is_Active","header": "isActive","iseditable": false,"class":""
+        }
+
+
+    ],
+    "PdfHeaders":[
+        {
+           "field":"icdcode_id","header":"Id"
+        },
+        {
+            "field":"discription","header":"Discription"
+        },
+        {
+            "field":"icddisease_category_id","header":"ICD Disease Category"
+        },
+        {
+            "field":"msticdcode_disease_sub_category_id","header":"ICD Disease Sub Category"
+        },
+        {
+            "field":"msticdcode_disease_type","header":"ICD Code Disease Type"
+        },
+        {
+            "field":"is_Active", "header":"isActive"
+        }
+     
+    ],
+    "globalFilter":["icdcode_id","discription","icddisease_category_id","msticdcode_disease_sub_category_id","msticdcode_disease_type","is_Active"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [10,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "resizableColumns": true,
+    "isActions": ["Edit", "Delete", "isActive"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "isVisible":false,
+    "buttonlbl":"",
+    "addButton":true,
+    "textLength":16,
+    "isDragAndDrop":true,
+    "bulkAction":["PDF","EXCEL","Delete","Multiselect","Search","Addbutton"]
+
+}

@@ -1,0 +1,53 @@
+
+{
+    "tableName": "Disease Sub Category Table",
+    "tableHeaders":[
+        {
+            "field": "id","header": "Sr. No","iseditable": false,"class":"text-center"
+        },
+        {
+            "field":"dscName", "header":"Disease Name","iseditable": false , "class":""
+        },
+        {
+            "field":"dscDiseaseCategoryId", "header":"Disease Category","iseditable": false , "class":""
+        },
+        {
+            "field": "isActive","header": "isActive","iseditable": false,"class":""
+        }
+
+
+    ],
+    "PdfHeaders":[
+        {
+           "field":"dsc_id","header":"Id"
+        },
+        {
+            "field":"dscName","header":"Disease Name"
+        },
+        {
+            "field":"dscDiseaseCategoryId","header":"Disease Category"
+        },
+        {
+            "field":"is_Active", "header":"isActive"
+        }
+        
+    ],
+    "globalFilter":["dsc_id","dsc_name","dsc_disease_category_id","is_Active"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [10,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "resizableColumns": true,
+    "isActions": ["Edit", "Delete", "isActive"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "isVisible":false,
+    "buttonlbl":"",
+    "addButton":true,
+    "textLength":16,
+    "isDragAndDrop":true,
+    "bulkAction":["PDF","EXCEL","Delete","Multiselect","Search","Addbutton"]
+}

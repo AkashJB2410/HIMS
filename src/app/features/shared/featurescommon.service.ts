@@ -7,6 +7,7 @@ import URL from './URL.json'
   providedIn: 'root'
 })
 export class FeaturescommonService {
+  getAllSs: any;
 
   constructor(private http: HttpClient) { }
 
