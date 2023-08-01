@@ -1,17 +1,21 @@
-<p-breadcrumb [model]="organization_breadcrumb.itemsList" ></p-breadcrumb>
+<p-breadcrumb [model]="applicationBreadcrumb.itemsList" ></p-breadcrumb>
 <h3 class="Sidebar-title-md"><i class="bi bi-file-earmark-medical"></i>Organization</h3>
-<app-super-grid
-    *ngIf="data"
-    [configurations] ="configurations" 
-    [tableConfig] = "orgDetails"
-    [tableData]= "data"
+
+    <app-super-grid
+    *ngIf="isDataReady"
+    [configurations]="gridConfigurations" 
+    [tableData]="orgData" 
+    [tableConfig] = "tableConfig"
+    [sidebarJSON] = "sidebarConfig"
+    (sideBarEvent)="closeSidebarData($event)"
     (confirmAction)="confirmAction($event)"
-    (onAdd)="saveOrg($event)"
-    (onEdit)="editOrg($event)"
-    (isActive)="isActive($event)"
-    (Bulkdelete)="bulkDeleteRows($event)" >
-    <app-form
-    projectTowards="sidebar" *ngIf="editData" [formJSON]="addneworganization" [editData]="editData"
-    (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"
-   ></app-form>
-></app-super-grid>
+    (isActive)="toggleOrgStatus($event)"
+    (Bulkdelete)="bulkDeleteOrg($event)"
+    (onEdit)="onEdit($event)"
+    (onAdd)="initializeAddForm($event)"
+    [editData]="selectedOrgData">
+
+    <app-form projectTowards="sidebar" *ngIf="selectedOrgData" [formJSON]="sidebarConfig" [editData]="selectedOrgData"
+    (btnEvent)="handleButtonClick($event)" (formData)="sidebarData($event)"></app-form>
+
+</app-super-grid>

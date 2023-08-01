@@ -9,6 +9,27 @@
         "sidebar": "p-sidebar-lg",
         "formControls": [
             {
+                "id": 0,
+                "isEditable": false,
+                "isVisible": false,
+                "label": "PAI Id",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "PAI Id",
+                "formControlName": "paiId",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
                 "id": 2,
                 "isEditable": true,
                 "isVisible": true,
@@ -30,7 +51,7 @@
                 }
             },
             {
-                "id": 2,
+                "id": 1,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Reffered By",
@@ -72,7 +93,7 @@
                 }
             },
             {
-                "id": 2,
+                "id": 3,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Phone No.",
@@ -93,40 +114,33 @@
                 }
             },
             {
-                "id": 2,
+                "id": 4,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "ABHA ID",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1",
+                "label": "Ethincity",
+                "type": "select",
+                "value": "",
+                "class": "col-md-3  my-1",
                 "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "ABHA ID",
-                "formControlName": "abhaId",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectEthincity",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": " Telagu",
+                        "code": 1
+                    },
+                    {
+                        "name": "Kamati",
+                        "code": 2
+                    }
+                ],
                 "message": {
-                    "required": "ABHA ID is required",
-                    "pattern": "Invalid ABHA Id"
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": "^[1-9]{2}-[0-9]{4}-[0-9]{4}-[0-9]{4}$"
-                }
-            },
-            {
-                "id": 2,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "UH ID",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "UH ID",
-                "formControlName": "uhId",
-                "message": {
-                    "required": "UH ID is required",
+                    "required": "Ethincity is required",
                     "pattern": ""
                 },
                 "validations": {
@@ -135,40 +149,19 @@
                 }
             },
             {
-                "id": 2,
+                "id": 5,
                 "isEditable": true,
                 "isVisible": true,
-                "label": "Aadhar No.",
-                "type": "text",
+                "label": "Religion",
                 "inputType": "text",
+                "type": "text",
                 "class": "col-md-3 my-1",
                 "lblclass": "custom-label",
                 "valueclass": "input-box",
-                "placeholder": "Aadhar No.",
-                "formControlName": "aadharNo",
+                "placeholder": "Religion",
+                "formControlName": "religionInput",
                 "message": {
-                    "required": "Aadhar No. is required",
-                    "pattern": "Invalid Aadhar no."
-                },
-                "validations": {
-                    "required": false,
-                    "pattern": "^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$"
-                }
-            },
-            {
-                "id": 2,
-                "isEditable": true,
-                "isVisible": true,
-                "label": "USSH ID",
-                "type": "text",
-                "inputType": "text",
-                "class": "col-md-3 my-1",
-                "lblclass": "custom-label",
-                "valueclass": "input-box",
-                "placeholder": "USSH ID",
-                "formControlName": "usshId",
-                "message": {
-                    "required": "USSH ID is required",
+                    "required": "",
                     "pattern": ""
                 },
                 "validations": {
@@ -177,7 +170,7 @@
                 }
             },
             {
-                "id": 10,
+                "id": 6,
                 "isEditable": true,
                 "isVisible": true,
                 "transient":true,
@@ -200,7 +193,7 @@
                 }
             },
             {
-                "id": 32,
+                "id": 7,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,

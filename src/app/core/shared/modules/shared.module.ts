@@ -89,6 +89,12 @@ import { Interceptor } from '../service/interceptor';
 import { CommonService } from '../service/common.service';
 import { AccordionModule } from 'primeng/accordion';
 import { AccordionComponent } from '../../accordion/accordion.component';
+import { DataViewModule } from 'primeng/dataview';
+import { SuperCardComponent } from '../../super-card/super-card.component';
+import { GenericCardComponent } from '../../generic-card/generic-card.component';
+
+
+
 
 @NgModule({
     declarations: [
@@ -131,7 +137,9 @@ import { AccordionComponent } from '../../accordion/accordion.component';
         PersonalizationComponent,
         EditProfileComponent,
         AccordionComponent,
-        ChangePasswordComponent
+        SuperCardComponent,
+        ChangePasswordComponent,
+        GenericCardComponent
     ],
     imports: [
         CommonModule,
@@ -185,7 +193,8 @@ import { AccordionComponent } from '../../accordion/accordion.component';
         MultiSelectModule,
         AvatarModule,
         AvatarGroupModule,
-        AccordionModule
+        AccordionModule,
+        DataViewModule
     ],
     exports: [
         //============= Core Components =============
@@ -227,7 +236,10 @@ import { AccordionComponent } from '../../accordion/accordion.component';
         PersonalizationComponent,
         EditProfileComponent,
         AccordionComponent,
+        SuperCardComponent,
         ChangePasswordComponent,
+        GenericCardComponent,
+
         //============= Core Imports =============
 
         FormsModule,
@@ -275,7 +287,8 @@ import { AccordionComponent } from '../../accordion/accordion.component';
         MultiSelectModule,
         AvatarModule,
         AvatarGroupModule,
-        AccordionModule
+        AccordionModule,
+        DataViewModule
     ],
     providers: [
         MessageService,

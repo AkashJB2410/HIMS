@@ -13,7 +13,7 @@ import { SubModuleComponent } from './features/master-management-modules/unit-co
 import { MasterModuleComponent } from './features/master-management-modules/unit-config/master-module/master-module.component';
 import { MasterModuleModule } from './features/master-management-modules/unit-config/master-module/master-module.module';
 import { RoleManagementModule } from './features/master-management-modules/unit-config/role-management/role-management.module';
-import { OrganizationModule } from './features/master-management-modules/unit-config/organization/organizationModule';
+import { OrganizationModule } from './features/master-management-modules/unit-config/organization/organization.module';
 import { RegistrationFormComponent } from './features/registration-form/registration-form.component';
 import { RegistrationFormModule } from './features/registration-form/registration-form.module';
 import { SharedModule } from './core/shared/modules/shared.module';
@@ -31,6 +31,12 @@ import { SelfRegistrationComponent } from './features/self-registration/self-reg
 import { ClusterComponent } from './features/master-management-modules/unit-config/cluster/cluster.component';
 import { SpetialityComponent } from './features/master-management-modules/unit-config/spetiality/spetiality.component';
 import { CoreFeaturesComponent } from './features/core-features/core-features.component';
+import { PatientConfigCountryComponent } from './features/master-management-modules/patient-config/patient-config-country/patient-config-country.component';
+import { PatientConfigStateComponent } from './features/master-management-modules/patient-config/patient-config-state/patient-config-state.component';
+import { PatientConfigDistrictComponent } from './features/master-management-modules/patient-config/patient-config-district/patient-config-district.component';
+import { PatientConfigCityComponent } from './features/master-management-modules/patient-config/patient-config-city/patient-config-city.component';
+import { PatientConfigVillageComponent } from './features/master-management-modules/patient-config/patient-config-village/patient-config-village.component';
+import { CIPComponent } from './features/master-management-modules/patient-config/cip/cip.component';
 import { DoctorScheduleComponent } from './features/doctor-schedule/doctor-schedule.component';
 import { DoctorCabinComponent } from './features/doctor-cabin/doctor-cabin.component';
 import { DayMasterComponent } from './features/day-master/day-master.component';
@@ -40,6 +46,7 @@ import { ProceduresComponent } from './features/master-management-modules/emr-co
 import { DiseaseSubCategorysComponent } from './features/master-management-modules/emr-config/disease-sub-categorys/disease-sub-categorys.component';
 import { IcdCodeMasterComponent } from './features/master-management-modules/emr-config/icd-code-master/icd-code-master.component';
 import { DocumentCategorysComponent } from './features/master-management-modules/emr-config/document-categorys/document-categorys.component';
+import { OrganizationComponent } from './features/master-management-modules/unit-config/organization/organization.component';
 
 
 @NgModule({
@@ -61,6 +68,12 @@ import { DocumentCategorysComponent } from './features/master-management-modules
     ClusterComponent,
     SpetialityComponent,
     CoreFeaturesComponent,
+    PatientConfigCountryComponent,
+    PatientConfigStateComponent,
+    PatientConfigDistrictComponent,
+    PatientConfigCityComponent,
+    PatientConfigVillageComponent,
+    CIPComponent,
     DoctorScheduleComponent,
     DoctorCabinComponent,
     DayMasterComponent,
@@ -70,7 +83,8 @@ import { DocumentCategorysComponent } from './features/master-management-modules
     DiseaseSubCategorysComponent,
     IcdCodeMasterComponent,
     DocumentCategorysComponent,
-   
+    OrganizationComponent
+
   ],
   imports: [
     CommonModule,
@@ -85,7 +99,7 @@ import { DocumentCategorysComponent } from './features/master-management-modules
     RegistrationFormModule,
     ActionButtonModule,
     ActionModule,
-    BankBranchMasterModule
+    BankBranchMasterModule,
 
   ],
   providers: [

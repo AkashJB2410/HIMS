@@ -13,4 +13,5 @@ export class LocationService {
     return this.http
       .get('https://ipapi.co/json')
   }
+
 }

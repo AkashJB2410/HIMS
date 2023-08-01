@@ -9,7 +9,28 @@
         "sidebar": "p-sidebar-lg",
         "formControls": [
             {
-                "id": 2,
+                "id": 0,
+                "isEditable": false,
+                "isVisible": false,
+                "label": "Insurance Id",
+                "inputType": "text",
+                "type": "text",
+                "class": "col-md-3 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Insurance Id",
+                "formControlName": "insuranceId",
+                "message": {
+                    "required": "",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Insurance No.",
@@ -51,7 +72,7 @@
                 }
             },
             {
-                "id": 2,
+                "id": 3,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Company No.",
@@ -72,7 +93,7 @@
                 }
             },
             {
-                "id": 2,
+                "id": 4,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Company Name",
@@ -93,7 +114,7 @@
                 }
             },
             {
-                "id": 10,
+                "id": 5,
                 "isEditable": true,
                 "isVisible": true,
                 "transient":true,
@@ -116,7 +137,7 @@
                 }
             },
             {
-                "id": 32,
+                "id": 6,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,

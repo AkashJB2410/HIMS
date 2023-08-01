@@ -1,0 +1,44 @@
+{
+    "tableName": "City Table",
+    "tableHeaders": [
+        {
+            "field":"countryName",
+            "header":"countryName",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "stateName",
+            "header": "stateName",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "districtName",
+            "header": "districtName",
+            "iseditable": false , "class":"text-center"
+        },
+        {
+            "field": "cityName",
+            "header": "cityName",
+            "iseditable": false , "class":"text-center"
+        }
+    ],
+    "globalFilter": ["countryName","stateName","districtName","cityName"],
+    "rows" : 10,
+    "showCurrentPageReport" : true,
+    "rowsPerPageOptions" : [15,25,50],
+    "paginator":true,
+    "rowHover" : true,
+    "loading" : false,
+    "stripped" : "p-datatable-striped p-datatable-sm p-datatable-gridlines",
+    "isCheckbox" : true,
+    "isRadioButton":false,
+    "resizableColumns": true,
+    "isDragAndDrop":true,
+    "isActions": ["Edit", "Delete" ,"isActive"],
+    "editicon":"../../../assets/icons/Group 1823.png",
+    "expand":false,
+    "buttonlbl":"",
+    "textLength":16,
+    "sidebar": "p-sidebar-sm",
+    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
+}

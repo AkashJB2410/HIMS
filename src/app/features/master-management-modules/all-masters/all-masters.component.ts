@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import tabularData from './all-masters.json';
 import allUnitList from './allUnitList.json';
+import patientList from './patientConfigCards.json'
 import allEmrList from './allEmrList.json';
 import Breadcrumbs from './breadcrumb.json';
 import { AllMastersService } from './all-masters.service';
@@ -17,6 +18,7 @@ export class AllMastersComponent implements OnInit {
   items:any= Breadcrumbs
   tabularSideData=tabularData;
   allUnitList:any =allUnitList;
+  patientList:any=patientList;
   allEmrList:any =allEmrList;
   allDoctorData=allDoctorData;
   allFlag = {
@@ -29,9 +31,9 @@ export class AllMastersComponent implements OnInit {
   otFlag:false,
   pathFlag:false,
   radFlag:false,
-  patFlag:false,
   unitFlag:false,
-  nurFlag:false
+  nurFlag:false,
+  patientFlag:false
   }
   constructor(private allMastersService:AllMastersService) { }
 
@@ -53,9 +55,9 @@ export class AllMastersComponent implements OnInit {
       otFlag:false,
       pathFlag:false,
       radFlag:false,
-      patFlag:false,
       unitFlag:false,
-      nurFlag:false
+      nurFlag:false,
+      patientFlag:false
       }
   }
 
@@ -72,7 +74,7 @@ export class AllMastersComponent implements OnInit {
       case "OT Configuration": this.allFlag.otFlag=true; break
       case "Pathology Configuration": this.allFlag.pathFlag=true; break
       case "Radiology Configuration": this.allFlag.radFlag=true; break
-      case "Patient Configuration": this.allFlag.patFlag=true; break
+      case "Patient Configuration": this.allFlag.patientFlag=true; break
       case "Unit Configuration": this.allFlag.unitFlag=true; break
       case "Nursing Station Configuration": this.allFlag.nurFlag=true; break
       default:

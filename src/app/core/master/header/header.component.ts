@@ -120,7 +120,8 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   }
 
   logOut() {
-    sessionStorage.clear()
+    sessionStorage.clear();
+    localStorage.clear();
     this.router.navigateByUrl('login')
   }
 

@@ -1,0 +1,11 @@
+<!-- --------- Super Card Start ------------>
+<p-dataView [value]="cardData">
+    <ng-template let-rowData pTemplate="listItem">
+        <p-card>
+            {{rowData|json}}
+            <!-- <p-button (onClick)="AddNewCard($event)">side bar</p-button> -->
+        </p-card>
+    </ng-template>
+</p-dataView>
+<!----------- Super Card End ---------- -->
+

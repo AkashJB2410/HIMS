@@ -4,34 +4,20 @@ services:
   - docker:latest
 
 stages:
-  - Build
-
-variables:
-  CONTAINER_TEST_IMAGE: generic-hmis:latest
-
-build_job:
-  stage: Build
-  script:
-    - docker login -u tech1 -p tech@123 registry.techjivaaindia.in:5005/administrators/generic-hmis 
-    - docker build -t generic-hmis:test .
-    - docker push generic-hmis:test
-    - docker logout
-
-stages:
-  - Login
+  # - Login
   - Build
   - Push
-  # - Logout
+  - Logout
 
 variables:
   CONTAINER_TEST_IMAGE: generic-hmis:test
 
-login_job:
-  stage: Login
-  tags:
-    - docker
-  script:
-    - docker login -u tech1 -p tech@123 registry.techjivaaindia.in:5005/administrators/generic-hmis 
+# login_job:
+#   stage: Login
+#   tags:
+#     - docker
+#   script:
+#     - docker login -u tech1 -p tech@123 gitlab.techjivaaindia.in:5005/administrators/generic-hmis 
 
 build_job:
   stage: Build
@@ -47,9 +33,9 @@ push_job:
   script:
     - docker push generic-hmis:test
 
-# logout_job:
-#   stage: Logout
-#   tags:
-#     - docker
-#   script:
-#     - docker logout registry.techjivaaindia.in:5005/administrators/generic-hmis
+logout_job:
+  stage: Logout
+  tags:
+    - docker
+  script:
+    - docker logout registry.techjivaaindia.in:5005/administrators/generic-hmis

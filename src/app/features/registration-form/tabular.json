@@ -29,6 +29,11 @@
             "id": 5,
             "label": "MLC",
             "icon": "pi pi-fw pi-cog"
+        },
+        {
+            "id": 6,
+            "label": "Emergency Contact",
+            "icon": "pi pi-fw pi-cog"
         }
     ]
 }

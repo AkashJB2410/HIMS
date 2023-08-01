@@ -24,6 +24,13 @@ const routes: Routes = [
       { path: 'all-masters/icd-code-master', loadChildren: () => import('../master-management-modules/emr-config/icd-code-master/icd-code-master.module').then(m => m.IcdCodeMasterModule) },
       { path: 'all-masters/templates', loadChildren: () => import('../master-management-modules/emr-config/template/templates/templates.module').then(m => m.TemplatesModule) },
       { path: 'core-features', loadChildren: () => import('../core-features/core-features.module').then(m => m.CoreFeaturesModule) },
+      { path: 'PatientConfigCountry', loadChildren: () => import('../master-management-modules/patient-config/patient-config-country/patient-config-country.module').then(m => m.PatientConfigCountryModule) },
+      { path: 'PatientConfigState', loadChildren: () => import('../master-management-modules/patient-config/patient-config-state/patient-config-state.module').then(m => m.PatientConfigStateModule) },
+      { path: 'PatientConfigDistrict', loadChildren: () => import('../master-management-modules/patient-config/patient-config-district/patient-config-district.module').then(m => m.PatientConfigDistrictModule) },
+      { path: 'PatientConfigCity', loadChildren: () => import('../master-management-modules/patient-config/patient-config-city/patient-config-city.module').then(m => m.PatientConfigCityModule) },
+      { path: 'PatientConfigVillage', loadChildren: () => import('../master-management-modules/patient-config/patient-config-village/patient-config-village.module').then(m => m.PatientConfigVillageModule) },
+      
+    // {path:'all-masters/mst-doctor', loadChildren:()=> import('../mst-doctor/mst-doctor-routing.module').then(m=> m.MstDoctorRoutingModule)}
 
     //  Doctor Routing
       { path: 'all-masters/doctor-schedule', loadChildren: () => import('../doctor-schedule/doctor-schedule.module').then(m => m.DoctorScheduleModule) },
@@ -34,7 +41,7 @@ const routes: Routes = [
       { path: 'all-masters', loadChildren: () => import('../master-management-modules/all-masters/all-masters.module').then(m => m.AllMastersModule) },
       { path: 'all-masters/master-module', loadChildren: () => import('../master-management-modules/unit-config/master-module/master-module.module').then(m => m.MasterModuleModule) },
       { path: 'all-masters/sub-module', loadChildren: () => import('../master-management-modules/unit-config/sub-module/sub-module.module').then(m => m.SubModuleModule) },
-      { path: 'all-masters/organization', loadChildren: () => import('../master-management-modules/unit-config/organization/organizationModule').then(m => m.OrganizationModule) },
+      { path: 'all-masters/organization', loadChildren: () => import('../master-management-modules/unit-config/organization/organization.module').then(m => m.OrganizationModule) },
       { path: 'all-masters/role-management', loadChildren: () => import('../master-management-modules/unit-config/role-management/role-management.module').then(m => m.RoleManagementModule) },
       { path: 'all-masters/bank-master', loadChildren: () => import('../master-management-modules/unit-config/bank-master/bank-master.module').then(m => m.BankMasterModule) },
       { path: 'all-masters/employee-status', loadChildren: () => import('../master-management-modules/unit-config/employee-status/employee-status.module').then(m => m.EmployeeStatusModule) },
@@ -53,6 +60,8 @@ const routes: Routes = [
       { path: 'all-masters/lov-value', loadChildren: () => import('../master-management-modules/unit-config/lov-value/lov-value-routing.module').then(m => m.LovValueRoutingModule) },
       { path: 'all-master/cluster', loadChildren: () => import('../master-management-modules/unit-config/cluster/cluster-routing.module').then(m => m.ClusterRoutingModule) },
       { path: 'all-masters/spetiality', loadChildren: () => import('../master-management-modules/unit-config/spetiality/spetiality.module').then(m => m.SpetialityModule) },
+
+      { path: 'CIP', loadChildren: () => import('../master-management-modules/patient-config/cip/cip-routing.module').then(m => m.CIPRoutingModule) },
 
     ],
     // canActivate: [AuthGuardGuard]
