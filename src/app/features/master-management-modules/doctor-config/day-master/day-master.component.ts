@@ -3,7 +3,7 @@ import { MessageService } from 'primeng/api';
 import { CommonService } from 'src/app/core/shared/service/common.service';
 import dayMasterForm from './dayForm.json';
 import dayTableConfig from './dayMstTableConfig.json'
-import { FeaturescommonService } from '../shared/featurescommon.service';
+import { FeaturescommonService } from '../../../shared/featurescommon.service';
 @Component({
   selector: 'app-day-master',
   templateUrl: './day-master.component.html',
@@ -22,6 +22,8 @@ export class DayMasterComponent implements OnInit {
   dayData: any = [];
   flag: any;
   editData: any
+  startday: any
+  endday:any
   apiGet = "mstDay/list";
   apiAdd = "mstDay/create";
   apiUpdate = "mstDay/update";
@@ -36,8 +38,10 @@ export class DayMasterComponent implements OnInit {
       "isSideBar": true,
       "isConfirmation": true
     };
-    this.getConfigForTable();
+    this.tableConfig = dayTableConfig;
+    // this.getConfigForTable();
     this.getAllDayMaster();
+
   }
 
   getConfigForTable() {
@@ -50,10 +54,11 @@ export class DayMasterComponent implements OnInit {
   onEdit(e: any) {
     this.flag = e.edit
     let obj = {
-      "day_id": e.editRow.day_id,
+      "day_id": e.editRow.dayId,
       "dayName": e.editRow.dayName,
       "startDayInWeek": e.editRow.startDayInWeek,
       "endDayInWeek": e.editRow.endDayInWeek,
+      "is_Active":e.editRow.is_Active
     }
     this.editData = obj;
   }
@@ -70,11 +75,12 @@ export class DayMasterComponent implements OnInit {
   BulkDeleteRows(e: any) {
     if (e != '') {
       e.forEach((data: any) => {
-        if (data.is_Active != false) {
+
+        if (data.isActive != false) {
           let obj = {
-            "day_id": data.day_id,
+            "dayId": data.dayId,
           }
-          this.deleteDayMaster(obj.day_id);
+          this.deleteDayMaster(obj.dayId);
         } else {
           this.messageService.add({
             severity: 'error',
@@ -130,8 +136,7 @@ export class DayMasterComponent implements OnInit {
       });
     }
   }
-  startday: any
-  endday:any
+
   getAllDayMaster() {
     this.http.getData(this.apiGet).subscribe(res => {
       this.isdataReady = true;
@@ -151,6 +156,7 @@ export class DayMasterComponent implements OnInit {
           "dayName": e.dayName,
           "startDayInWeek": this.startday,
           "endDayInWeek": this.endday,
+          "is_Active":e.isActive
         }
         this.data.push(obj);
       })
@@ -161,18 +167,25 @@ export class DayMasterComponent implements OnInit {
     })
   }
 
-  updateDayMaster(dayId: any) {
-    this.http.updateData(dayId, this.apiUpdate).subscribe((data) => {
-      this.data = undefined;
+  updateDayMaster(e: any) {
+    const obj={
+      "dayId": e.dayId,
+        "dayName": e.dayName,
+        "startDayInWeek": this.startday,
+        "endDayInWeek": this.endday,
+        "is_Active":e.isActive
+    }
+    this.http.updateData(obj, this.apiUpdate).subscribe((data) => {
+     
       this.getAllDayMaster();
     });
   }
 
   deleteDayMaster(dayId: any) {
-    this.http.deleteData(dayId, this.apidelete).subscribe((data) => {
-      this.data = undefined;
-      this.getAllDayMaster();
+    this.http.deleteData( this.apidelete ,dayId).subscribe((data) => {
     });
+    this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Day Master Enable Successfully' });  
+    this.getAllDayMaster();
   }
 
   submitDayMaster(dayId: any) {
@@ -181,19 +194,27 @@ export class DayMasterComponent implements OnInit {
       this.getAllDayMaster();
     });
   }
-  isActive(data: string) {
 
-    // if(!data.isActive){
-    //   this.http.reactiveData(this.apiactive, data, data.orgId)
-    //     .subscribe(b_Data => {
-    //       this.data = undefined;
-    //       this.getAllDayMaster()
-    //     })
-    //     this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Organization Enable Successfully' });  
-    // }
-    // else if(data.isActive){
-    //   this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Organization is already Active' });
-    // }
+  isActive(e: any) {
+    if(e.is_Active==false){
+      const obj={
+        "dayId": e.dayId,
+          "dayName": e.dayName,
+          "startDayInWeek": this.startday,
+          "endDayInWeek": this.endday,
+          "is_Active":e.isActive
+      }
+      this.http.reactiveData(this.apiactive, obj, e.dayId)
+        .subscribe(b_Data => {
+          
+        })
+        this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Day Master Enable Successfully' });  
+        this.getAllDayMaster();
+    }
+    else{
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Day is already Active' });
+    }
   }
+
 
 }

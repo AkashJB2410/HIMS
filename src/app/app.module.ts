@@ -31,15 +31,15 @@ import { SelfRegistrationComponent } from './features/self-registration/self-reg
 import { ClusterComponent } from './features/master-management-modules/unit-config/cluster/cluster.component';
 import { SpetialityComponent } from './features/master-management-modules/unit-config/spetiality/spetiality.component';
 import { CoreFeaturesComponent } from './features/core-features/core-features.component';
+import { DoctorScheduleComponent } from './features/master-management-modules/doctor-config/doctor-schedule/doctor-schedule.component';
+import { DoctorCabinComponent } from './features/master-management-modules/doctor-config/doctor-cabin/doctor-cabin.component';
+import { DayMasterComponent } from './features/master-management-modules/doctor-config/day-master/day-master.component';
 import { PatientConfigCountryComponent } from './features/master-management-modules/patient-config/patient-config-country/patient-config-country.component';
 import { PatientConfigStateComponent } from './features/master-management-modules/patient-config/patient-config-state/patient-config-state.component';
 import { PatientConfigDistrictComponent } from './features/master-management-modules/patient-config/patient-config-district/patient-config-district.component';
 import { PatientConfigCityComponent } from './features/master-management-modules/patient-config/patient-config-city/patient-config-city.component';
 import { PatientConfigVillageComponent } from './features/master-management-modules/patient-config/patient-config-village/patient-config-village.component';
 import { CIPComponent } from './features/master-management-modules/patient-config/cip/cip.component';
-import { DoctorScheduleComponent } from './features/doctor-schedule/doctor-schedule.component';
-import { DoctorCabinComponent } from './features/doctor-cabin/doctor-cabin.component';
-import { DayMasterComponent } from './features/day-master/day-master.component';
 import { OrganizationComponent } from './features/master-management-modules/unit-config/organization/organization.component';
 
 

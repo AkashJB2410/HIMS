@@ -9,7 +9,7 @@
         "sidebar": "p-sidebar-lg",
         "formControls": [
             {
-                "id": 7,
+                "id": 1,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "Mobile No.",
@@ -39,7 +39,7 @@
                 "class": "col-md-12"
             },
             {
-                "id": 1,
+                "id": 2,
                 "isEditable": false,
                 "isVisible": false,
                 "label": "Patient UID",
@@ -60,8 +60,8 @@
                 }
             },
             {
-                "id": 2,
-                "isEditable": true,
+                "id": 3,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Title",
                 "type": "select",
@@ -99,8 +99,8 @@
                 }
             },
             {
-                "id": 3,
-                "isEditable": true,
+                "id": 4,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "First Name",
                 "type": "text",
@@ -120,8 +120,8 @@
                 }
             },
             {
-                "id": 4,
-                "isEditable": true,
+                "id": 5,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Middle Name",
                 "type": "text",
@@ -141,8 +141,8 @@
                 }
             },
             {
-                "id": 5,
-                "isEditable": true,
+                "id": 6,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Last Name",
                 "type": "text",
@@ -162,8 +162,8 @@
                 }
             },
             {
-                "id": 6,
-                "isEditable": true,
+                "id": 7,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Gender",
                 "type": "select",
@@ -201,8 +201,8 @@
                 }
             },
             {
-                "id": 19,
-                "isEditable": true,
+                "id": 8,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "DOB",
                 "type": "date",
@@ -223,8 +223,8 @@
                 }
             },
             {
-                "id": 8,
-                "isEditable": true,
+                "id": 9,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Email ID",
                 "type": "text",
@@ -244,8 +244,8 @@
                 }
             },
             {
-                "id": 6,
-                "isEditable": true,
+                "id": 10,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Mothe/Father/spouse",
                 "type": "select",
@@ -283,8 +283,8 @@
                 }
             },
             {
-                "id": 5,
-                "isEditable": true,
+                "id": 11,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "",
                 "type": "text",
@@ -303,7 +303,6 @@
                     "pattern": ""
                 }
             },
-            
             {
                 "isEditable": true,
                 "isVisible": true,
@@ -313,8 +312,8 @@
                 "class": "col-md-12"
             },
             {
-                "id": 19,
-                "isEditable": true,
+                "id": 12,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Visit Date",
                 "type": "date",
@@ -324,9 +323,9 @@
                 "valueclass": "custom-p-calendar",
                 "value": "04/22/2023",
                 "placeholder": "",
-                "formControlName": "userAppointment",
+                "formControlName": "visitDate",
                 "message": {
-                    "required": "AppointmentDate is required",
+                    "required": "visitDate is required",
                     "pattern": ""
                 },
                 "validations": {
@@ -335,8 +334,8 @@
                 }
             },
             {
-                "id": 20,
-                "isEditable": true,
+                "id": 13,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Visit time",
                 "type": "text",
@@ -346,9 +345,9 @@
                 "valueclass": "textarea-custom",
                 "row": "2",
                 "placeholder": "",
-                "formControlName": "appointmentTime",
+                "formControlName": "visitTime",
                 "message": {
-                    "required": "Appointment Time is required",
+                    "required": "Visit Time is required",
                     "pattern": ""
                 },
                 "validations": {
@@ -365,8 +364,8 @@
                 "class": "col-md-12"
             },
             {
-                "id": 0,
-                "isEditable": true,
+                "id": 14,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Address",
                 "type": "textarea",
@@ -387,8 +386,8 @@
                 }
             },
             {
-                "id": 1,
-                "isEditable": true,
+                "id": 15,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Landmark",
                 "type": "text",
@@ -408,8 +407,8 @@
                 }
             },
             {
-                "id": 2,
-                "isEditable": true,
+                "id": 16,
+                "isEditable": false,
                 "isVisible": true,
                 "transient": false,
                 "label": "",
@@ -518,8 +517,8 @@
                 }
             },
             {
-                "id": 3,
-                "isEditable": true,
+                "id": 17,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Village",
                 "type": "text",
@@ -539,8 +538,8 @@
                 }
             },
             {
-                "id": 4,
-                "isEditable": true,
+                "id": 18,
+                "isEditable": false,
                 "isVisible": true,
                 "label": "Pin Code",
                 "type": "text",
@@ -561,7 +560,7 @@
                 }
             },
             {
-                "id": 5,
+                "id": 19,
                 "isEditable": true,
                 "isVisible": true,
                 "label": "",
@@ -583,7 +582,7 @@
                 }
             },
             {
-                "id": 32,
+                "id": 20,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,
@@ -601,7 +600,7 @@
                 }
             },
             {
-                "id": 33,
+                "id": 21,
                 "isEditable": true,
                 "isVisible": true,
                 "transient": true,

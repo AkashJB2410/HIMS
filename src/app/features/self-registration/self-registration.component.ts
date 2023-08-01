@@ -70,11 +70,11 @@ export class SelfRegistrationComponent implements OnInit {
       if (ch[1].fieldValue != undefined) {
         this.MobileNumber = ch[1].fieldValue;
         this.otp = true
-        this.form.showModal(true,"")
-      }else{
+        this.form.showModal(true, "Verity Number")
+      } else {
         this.messageService.add({ severity: 'error', summary: 'Error', detail: "Please Enter mobile number" });
       }
-     
+
       // this.getAllSelfReg();
     }
     if (ch[1].fieldName == "userDOB") {
@@ -87,6 +87,10 @@ export class SelfRegistrationComponent implements OnInit {
     if (e == "save") {
       this.http.saveSelfRegData(this.selfFormData).subscribe((resData) => {
         this.data = undefined;
+      },);
+      console.log(this.addressData)
+      this.http.saveMstAddress(this.addressData).subscribe((resData) => {
+        this.data = undefined;
       }, (error) => {                              //Error callback
         this.errorFlag = true;
         this.messageService.add({ severity: 'error', summary: 'Error', detail: "This key name is alredy exit" });
@@ -97,6 +101,8 @@ export class SelfRegistrationComponent implements OnInit {
     }
   }
 
+
+
   buttonEvent(e: any) {
     this.editData = undefined;
     if (e == "reset") {
@@ -105,18 +111,18 @@ export class SelfRegistrationComponent implements OnInit {
       this.FormData(e);
     }
   }
-  age: any
+  age: any;
+  addressData: any;
   sidebarData(e: any) {
-
     if (e != 'reset') {
       const param = {
-        "patientTitleName": e.selectTitle,
+        "patientTitleName": e.selectTitle.name,
         "patientFirstname": e.firstName,
         "patientMiddlename": e.middleName,
         "patientLastname": e.lastName,
         "patientMobileNumber": e.mobileNo,
         "patientEmail": e.email,
-        "patientGenderId": e.selectGender,
+        "patientGenderId": e.selectGender.code,
         "patientBloodGroupId": e.selectBlood,
         "patientAddress": e.address,
         "patientDob": this.age,
@@ -124,6 +130,19 @@ export class SelfRegistrationComponent implements OnInit {
         "patientRegistrationSource": "Self"
       };
       this.selfFormData = param;
+      const param2 = {
+        "addressLine": e.address,
+        "addressLandmark": e.landmark,
+        "addressVillageName": e.selectVillage,
+        "addressTalukaId": e.state[2],
+        "addressTalukaName": e.addressTalukaName,
+        "addressStateId": e.state[0],
+        "addressStateName": e.addressStateName,
+        "addressCountryId": e.addressCountryId,
+        "addressCountryName": e.addressCountryName,
+        "addressPinCode": e.pinCode
+      }
+      this.addressData = param2
     }
   }
 
@@ -154,18 +173,69 @@ export class SelfRegistrationComponent implements OnInit {
       for (let i = 0; i < this.data.length; i++) {
         this.data[i].srNumber = i + 1;
       }
-      this.form.showModal(true,"");
+      this.form.showModal(true, "Verity Page");
     })
   }
 
+  // Start timer to enter OTP
+  startTimer() {
+    setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+      }
+    }, 1000);
+  }
+
+
+
   // send otp
   sendOTPButton: boolean = true
-  timeLeft: any = 60;
+  timeLeft: any = 120;
   sendOTP(e: any) {
-    this.sendOTPButton = false
+    this.startTimer();
+    this.http.sendOTPMobile(this.MobileNumber).subscribe((data)=>{
+
+      if (data.status == "ok") {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'OTP sent Successfully.',
+          detail: '',
+        });
+        this.startTimer();
+        this.sendOTPButton = false
+      }
+
+    })
+    // this.sendOTPButton = false
   }
   verifyOTP(e: any) {
     this.otp = false
-    this.getAllSelfReg();
+    this.http.verifyMobileNumber(this.MobileNumber).subscribe((data) => {
+      if (data[1].result[0].patientMobileNumber == this.MobileNumber) {
+        this.getAllSelfReg();
+      }
+      else {
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: "Number is not Register" });
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[3], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[4], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[5], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[6], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[7], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[8], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[9], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[10], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[11], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[13], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[14], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[16], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[17], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[18], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[19], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[20], true, 'isEditable');
+        this.form.reRenderForm(this.selfRegFormData.form.formControls[21], true, 'isEditable');
+      }
+    });
+
+
   }
 }

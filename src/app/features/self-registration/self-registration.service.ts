@@ -22,32 +22,19 @@ return this.http.get<any>(url);
     const url = " http://localhost:8082/mst_patient/create";
     return this.PostCall(url, data);
   }
-
+  saveMstAddress(mstAddress: any): Observable<any> {
+    const url = "http://localhost:8082/mst_address/create";
+    return this.PostCall(url, mstAddress);
+  }
+  verifyMobileNumber(data: any){
+  const url = "http://localhost:8082/mst_patient/byMobileNumber/"+data;
+  return this.http.get<any>(url)
+  }
 
    // To send OTP on verified number
-   sendOTP(data: any): Observable<any> {
-    var param = {};
-    var str = data.mobileNo;
-    var re = /whatsapp/gi;
-    if (data.emailId != '') {
-      param = {
-        emailId: data.emailId,
-      };
-      var url = "http://localhost:8080/authentication/sendOTP";
-    } else if (data.mobileNo != '') {
-      param = {
-        mobileNo: data.mobileNo,
-      };
-      if (str.search(re) == -1) {
-        console.log('Not Found');
-        var url = "http://localhost:8080/authentication/sendOTP";
-      } else {
-        console.log('Found');
-        var url = "http://localhost:8080/authentication/sendOTPWhatsApp";
-      }
-    }
-    const headers = new HttpHeaders().set('Content-type', 'application/json');
-    return this.http.post<any>(url, param, { headers });
+   sendOTPMobile(data: any): Observable<any> {
+        const url = "http://localhost:8082/send_sms/sendOtpForRegister/" +data;
+    return this.http.get<any>(url);
   }
 //Mobile verify
 headers = new HttpHeaders().set('Content-type', 'application/json');

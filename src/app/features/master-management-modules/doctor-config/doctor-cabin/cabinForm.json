@@ -1,0 +1,149 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "DAY  MASTER",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo": "bi bi-file-earmark-medical",
+        "formName": "Form1",
+        "formType": "edit",
+        "sidebar": "p-sidebar-sm",
+        "formControls": [
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "label": "Cabin ID",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter dayId",
+                "formControlName": "cabinId",
+                "message": {
+                    "required": "dayId is required",
+                    "pattern": "pattern is not match"
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Cabin Number",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter value",
+                "formControlName": "cabinNumber",
+                "message": {
+                    "required": "value is required",
+                    "pattern": "pattern is not match"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 6,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Cabin Unit",
+                "type": "select",
+                "value": "",
+                "class": "col-md-12",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "selectUnit",
+                "values": [
+                    {
+                        "name": "Select an Option",
+                        "code": ""
+                    },
+                    {
+                        "name": "Pune",
+                        "code": "1"
+                    },
+                    {
+                        "name": "Mumbai",
+                        "code": "2"
+                    },
+                    {
+                        "name": "Satara",
+                        "code": "3"
+                    }
+                ],
+                "message": {
+                    "required": "Mothe/Father/spouse is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": false,
+                "isVisible": false,
+                "transient": false,
+                "label": "is_Active",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass": "custom-label",
+                "valueclass": "input-box",
+                "placeholder": "Enter id",
+                "formControlName": "isActive",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-4",
+                "valueclass": "butn-custom-dark-blue ",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-4",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}
