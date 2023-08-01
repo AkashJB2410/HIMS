@@ -167,18 +167,25 @@ export class DayMasterComponent implements OnInit {
     })
   }
 
-  updateDayMaster(dayId: any) {
-    this.http.updateData(dayId, this.apiUpdate).subscribe((data) => {
-      this.data = undefined;
+  updateDayMaster(e: any) {
+    const obj={
+      "dayId": e.dayId,
+        "dayName": e.dayName,
+        "startDayInWeek": this.startday,
+        "endDayInWeek": this.endday,
+        "is_Active":e.isActive
+    }
+    this.http.updateData(obj, this.apiUpdate).subscribe((data) => {
+     
       this.getAllDayMaster();
     });
   }
 
   deleteDayMaster(dayId: any) {
     this.http.deleteData( this.apidelete ,dayId).subscribe((data) => {
-      this.data = undefined;
-      this.getAllDayMaster();
     });
+    this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Day Master Enable Successfully' });  
+    this.getAllDayMaster();
   }
 
   submitDayMaster(dayId: any) {
@@ -189,13 +196,20 @@ export class DayMasterComponent implements OnInit {
   }
 
   isActive(e: any) {
-    if(e.isActive==false){
-      this.http.reactiveData(this.apiactive, e, e.dayId)
+    if(e.is_Active==false){
+      const obj={
+        "dayId": e.dayId,
+          "dayName": e.dayName,
+          "startDayInWeek": this.startday,
+          "endDayInWeek": this.endday,
+          "is_Active":e.isActive
+      }
+      this.http.reactiveData(this.apiactive, obj, e.dayId)
         .subscribe(b_Data => {
-          this.data = undefined;
-          this.getAllDayMaster()
+          
         })
         this.messageService.add({ severity: 'success', summary: 'Enable', detail: 'Day Master Enable Successfully' });  
+        this.getAllDayMaster();
     }
     else{
       this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Day is already Active' });

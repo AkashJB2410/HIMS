@@ -153,10 +153,14 @@ data: any=[];
         this.data[i].id = i + 1;
       }
     })
+   
   }
 
   updateCabinData(cabinId: any) {
+    this.data=undefined;
+    this.data=[]
     this.http.updateData(cabinId, this.apiUpdate).subscribe((data) => {
+     
       data.result.forEach((e: any)=> {
         let obj = {
           "cabinId": e.cabinId,
@@ -166,6 +170,7 @@ data: any=[];
         }
         this.data.push(obj);
       })
+    
     });
   }
 
