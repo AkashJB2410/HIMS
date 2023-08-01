@@ -1,0 +1,166 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Add District",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formName": "Form1",
+        "sidebar": "p-sidebar-sm",
+        "formControls": [
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "transient":false,
+                "label": "District Id",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter ID",
+                "formControlName": "district_id",
+                "message": {
+                    "required": "District Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 9,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "",
+                "type": "dependentdropdown",
+                "class": "col-md-12",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "state",
+                "message": {
+                    "required": "Country and State is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "label": "Coutry",
+                        "values": [
+                            {
+                                "name": "Select Country",
+                                "code": "",
+                                "disabled": "disabled"
+                            }
+                        ]
+                    },
+                    {
+                        "label": "State",
+                        "values": [
+                            {
+                                "name": "Select State",
+                                "code": "",
+                                "Mcode": "",
+                                "disabled": "disabled"
+                            },
+                            {
+                                "name": "Maharashtra",
+                                "code": "MH",
+                                "Mcode": "I"
+                            },
+                            {
+                                "name": "Texas",
+                                "code": "T",
+                                "Mcode": "A"
+                            }
+                        ]
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "District Lgd Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter District Lgd Code",
+                "formControlName": "districtLgdCode",
+                "message": {
+                    "required": "Plase Enter District Lgd Code",
+                    "pattern": "Enter a Vaild District Lgd Code"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z0-9]+$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "District Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter District Name",
+                "formControlName": "district_name",
+                "message": {
+                    "required": "Plase Enter District Name",
+                    "pattern": "Only Alphabete are allow"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z ]+$"
+                }
+            },
+            
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-6",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-6",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}

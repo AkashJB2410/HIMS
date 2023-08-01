@@ -1,331 +1,337 @@
 import { Component, OnInit } from '@angular/core';
-import subModuleData from './subModuleSidebarConfig.json';
-import * as subModule_table_config from './subModuleTableConfig.json';
 import { MessageService } from 'primeng/api';
-import { SubModuleService } from './sub-module.service';
 import Application_breadcrumb from './breadcrum.json';
+import subTableConfig from './subModuleTableConfig.json'
+import subSidebarConfig from './subModuleSidebarConfig.json'
 import { CommonService } from 'src/app/core/shared/service/common.service';
+import { FeaturescommonService } from 'src/app/features/shared/featurescommon.service';
 
 @Component({
   selector: 'app-sub-module',
   templateUrl: './sub-module.component.html',
 })
 export class SubModuleComponent implements OnInit {
-  editData: any;
-  status: boolean;
-  st: any;
-  temp: any;
+  //variable declarations
+  selectedSubData: any;
+  isEditMode: boolean;
+  applicationBreadcrumb = Application_breadcrumb;
+  mstSubData: any[];
+  gridConfigurations = {
+    "isFilter": false,
+    "isTable": true,
+    "isSideBar": true,
+    "isConfirmation": true
+  };
+  tableConfig=subTableConfig;
+  isDataReady = false;
+  sidebarConfig: any = subSidebarConfig;
+  deleteMsg = false;
 
-  onEdit(st: any) {
-    let array = []
-    array.push(st.editRow.mstId);
-    array.push(st.editRow.groupId);
-    let obj = {
-      "submoduleId": st.editRow.submoduleId,
-      "label": st.editRow.label,
-      "icon": st.editRow.icon,
-      "routerLink": st.editRow.routerLink,
-      "SubModuleSequence": st.editRow.SubModuleSequence,
-      "mstId": array,
-    };
-    this.editData = obj;
-    this.status = false;
-    this.st = st;
-    console.log(st);
-  }
-
-  onAdd(e: any) {
-    this.editData = [];
-    this.common.sendEditData(false);
-    this.status = true;
-  }
-
-  buttonEvent(e: any) {
-    this.editData = undefined;
-    this.common.sendEditData(false);
-  }
-
-  Bulkdelete(e: any) {
-    if (e.length == 1) {
-      if (e[0].is_Active == true) {
-        this.deleteSubModuleData(e[0].submoduleId);
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Message form User component',
-          detail: 'Deleted Sucessfully',
-        });
-      } else {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Message form User component',
-          detail: 'Allready Deleted',
-        });
-      }
-    } else {
-      let a: boolean;
-      for (let i = 0; i < e.length; i++) {
-        if (e[i].is_Active == true) {
-          this.deleteSubModuleData(e[i].submoduleId);
-          a = true;
-        }
-      }
-      if (a == true) {
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Message form User component',
-          detail: 'Deleted Sucessfully',
-        });
-        a = false;
-      } else {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Message form User component',
-          detail: 'Allready Deleted',
-        });
-      }
-    }
-  }
-  Application_breadcrumb = Application_breadcrumb;
-  toast: any = {};
-  showToast: any;
-  Message: any;
-  gridData: any[] = [];
-  dataGrid: any = [];
-  jsonData: any[] = [];
-  config: any;
-  visibleSidebar: boolean = false;
-  configurations: any;
-  tableConfig: any;
-  isdataReady = false;
-  formdata: any;
-  mstDropDwon: any[] = [];
-  mstModuleList: any[] = [];
-  sidebarJSON =subModuleData ;
-  map = new Map<String, String>();
-  mstModulesId: any;
-  mstModulesName: any;
+  //API declarations
+  apiGet = 'mstSubModule/list';
+  apiAdd = 'mstSubModule/create';
+  apiUpdate = 'mstSubModule/update';
+  apidelete = 'mstSubModule/inActivate';
+  apiactive = 'mstSubModule/activate';
+  mstModuleApiGet = 'mstModule/list';
+  mstGroupApiGet = 'mstGroup/list';
 
   constructor(
     private messageService: MessageService,
-    private http: SubModuleService,
+    private featurescommonService: FeaturescommonService,
     private common: CommonService,
-  ) {}
-
+  ) { }
   ngOnInit(): void {
-    // this.getMstData();
-    this.assignOptions();
-    this.configurations = {
-      isFilter: false,
-      isTable: true,
-      isSideBar: true,
-      isConfirmation: true,
+    this.getMasterModule();
+    this.getMasterGroupModule();
+    this.fetchMstSubModuleData();
+  }
+
+// Filling master module dropdown
+getMasterModule() {
+  // Default option for "Select Master Module"
+  const defaultModule = {
+    name: 'Select Master Module',
+    code: '0',
+  };
+  // API call to get master modules
+  this.featurescommonService.getData(this.mstModuleApiGet).subscribe(
+    (response) => {
+      // Extract module objects from the API response
+      const moduleObjects = response.content.map((module: any) => ({
+        name: module.label,
+        code: module.moduleId,
+      }));
+      // Sort moduleObjects based on the "name" property
+      moduleObjects.sort((a: any, b: any) => a.name.localeCompare(b.name));
+      // Add the default option to the beginning of the array
+      moduleObjects.unshift(defaultModule);
+      // Push the sorted and updated moduleObjects to the sidebar form control
+      this.sidebarConfig.form.formControls[1].values[0].values = moduleObjects;
+    },
+    (error) => {
+      console.error('API Error:', error);
+    }
+  );
+}
+
+// Filling master sub-module dropdown
+getMasterGroupModule() {
+  // API call to get master sub-modules
+  this.featurescommonService.getData(this.mstGroupApiGet).subscribe(
+    (response) => {
+      // Extract group module objects from the API response
+      const groupModuleObjects = response.content.map((groupmodule: any) => ({
+        name: groupmodule.lable,
+        code: groupmodule.groupId,
+        Mcode: groupmodule.groupModuleId.moduleId,
+      }));
+      // Sort groupModuleObjects based on the "name" property
+      groupModuleObjects.sort((a: any, b: any) => a.name.localeCompare(b.name));
+      // Push the sorted groupModuleObjects to the sidebar form control
+      this.sidebarConfig.form.formControls[1].values[1].values = groupModuleObjects;
+    },
+    (error) => {
+      console.error('API Error:', error);
+    }
+  );
+}
+
+
+  fetchMstSubModuleData(){
+    //fetch Data form API
+    this.featurescommonService.getData(this.apiGet).subscribe(
+      (response)=>{
+         // Update the mstSubData with the API response
+        this.mstSubData=response.content.map((item:any, index:number)=>({
+          id:index+1,
+          smId:item.smId,
+          label:item.label,
+          routerLink:item.routerLink,
+          sequence:item.sequence,
+          isActive:item.isActive,
+          mstModule:item.sbGroupId.groupModuleId.label,
+          mstModuleId:item.sbGroupId.groupModuleId.moduleId,
+          mstGroup:item.sbGroupId.lable,
+          mstGroupId:item.sbGroupId.groupId
+        }));
+           // Set the flag to indicate that data is ready for refreshing the grid
+        this.isDataReady=true;
+      },
+      (error)=>{
+        console.log('API Error:', error);
+      }
+    )
+  }
+
+  addOrUpdateMstSub(subData:any, isEditMode:boolean){
+       // Prepare the object to be sent in the API request
+       if(subData.mstModuleMstGroup[1].code){
+       let obj={
+        smId:subData.smId,
+        label:subData.label,
+        icon:subData.icon,
+        routerLink:subData.routerLink,
+        sequence:subData.sequence,
+        sbGroupId:{
+          groupId:subData.mstModuleMstGroup[1].code,
+          lable:subData.mstModuleMstGroup[1].name,
+          groupModuleId:{
+            moduleId:subData.mstModuleMstGroup[0].code,
+            label:subData.mstModuleMstGroup[0].name
+          }
+        }
+       };
+          // Determine the API endpoint based on the 'isEditMode' flag
+    const apiEndpoint = isEditMode ? this.apiUpdate : this.apiAdd;
+    // Call the corresponding API method (addData or updateData) based on the 'isEditMode' flag
+    this.featurescommonService[isEditMode?'updateData':'addData'](obj, apiEndpoint).subscribe(
+      (response)=>{
+         // Update the mstSubData with the API response
+        this.mstSubData=response.result.map((item:any, index:number)=>({
+          id:index+1,
+          smId:item.smId,
+          label:item.label,
+          routerLink:item.routerLink,
+          sequence:item.sequence,
+          isActive:item.isActive,
+          mstModule:item.sbGroupId.groupModuleId.label,
+          mstModuleId:item.sbGroupId.groupModuleId.moduleId,
+          mstGroup:item.sbGroupId.lable,
+          mstGroupId:item.sbGroupId.groupId
+        })); // Set the flag to indicate that data is ready for refreshing the grid
+        this.isDataReady = true;
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
+      },
+      (error) => {
+        this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message });
+      }
+    );
+      // Reset the flag to indicate that data is not ready for refreshing the grid yet
+    this.isDataReady = false;
+  }
+  else{
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Add First Group Module' });
+  }
+}
+
+deleteMstSub(subData:any){
+  this.featurescommonService.deleteData(this.apidelete,subData.smId).subscribe(
+    (response)=>{
+       // Update the mstSubData with the API response
+      this.mstSubData=response.result.map((item:any, index:number)=>({
+          id:index+1,
+          smId:item.smId,
+          label:item.label,
+          routerLink:item.routerLink,
+          sequence:item.sequence,
+          isActive:item.isActive,
+          mstModule:item.sbGroupId.groupModuleId.label,
+          mstModuleId:item.sbGroupId.groupModuleId.moduleId,
+          mstGroup:item.sbGroupId.lable,
+          mstGroupId:item.sbGroupId.groupId
+        })); // Set the flag to indicate that data is ready for refreshing the grid
+        this.isDataReady = true;
+        this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message });
+    },(error)=>{
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message })
+    }
+  );
+   // Reset the flag to indicate that data is not ready for refreshing the grid yet
+  this.isDataReady = false;
+}
+
+toggleMstSubStatus(subData:any){
+  if(!subData.isActive){
+    this.featurescommonService.reactiveData(this.apiactive, subData, subData.smId).subscribe(
+      (response)=>{
+         // Update the mstSubData with the API response
+         this.mstSubData=response.result.map((item:any,index:number)=>({
+          id:index+1,
+          smId:item.smId,
+          label:item.label,
+          routerLink:item.routerLink,
+          sequence:item.sequence,
+          isActive:item.isActive,
+          mstModule:item.sbGroupId.groupModuleId.label,
+          mstModuleId:item.sbGroupId.groupModuleId.moduleId,
+          mstGroup:item.sbGroupId.lable,
+          mstGroupId:item.sbGroupId.groupId
+        }));
+        // Set the flag to indicate that data is ready for refreshing the grid
+   this.isDataReady = true;
+   this.messageService.add({ severity: 'success', summary: 'Success', detail: response.metadata.message })
+ },
+ (error) => {
+   this.messageService.add({ severity: 'error', summary: 'Error', detail: error.message })
+ }
+);
+   // Reset the flag to indicate that data is not ready for refreshing the grid yet
+this.isDataReady = false
+}
+else {
+this.messageService.add({ severity: 'error', summary: 'Error' })
+}
+}
+
+bulkDeleteMstSubModule(arrayOfSubData:any){
+  if(arrayOfSubData!=0){
+    this.isDataReady=false;
+    arrayOfSubData.forEach((subData:any)=>{
+      this.deleteMstGroupForBulk(subData);
+    })
+    if(this.deleteMsg){
+      this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Bulk Delete' });
+      this.deleteMsg = false;
+    }
+  }
+  else {
+    this.messageService.add({ severity: 'error', summary: 'Error', detail: 'No Row Selected' })
+  }
+}
+
+deleteMstGroupForBulk(subData:any){
+  this.featurescommonService.deleteData(this.apidelete, subData.smId).subscribe(
+    (response)=>{
+        // Update the mstSubData with the API response
+        this.mstSubData=response.result.map((item:any,index:number)=>({
+          id:index+1,
+          smId:item.smId,
+          label:item.label,
+          routerLink:item.routerLink,
+          sequence:item.sequence,
+          isActive:item.isActive,
+          mstModule:item.sbGroupId.groupModuleId.label,
+          mstModuleId:item.sbGroupId.groupModuleId.moduleId,
+          mstGroup:item.sbGroupId.lable,
+          mstGroupId:item.sbGroupId.groupId
+        }));
+        // Set the flag to indicate that data is ready for refreshing the grid
+   this.isDataReady = true;
+   //set the flag to indicate that message for delete
+   this.deleteMsg=false;
+    },
+    (error)=>{
+      console.log('delete API Error', error);
+    });
+      // Reset the flag to indicate that data is not ready for refreshing the grid yet
+    this.isDataReady=false;
+}
+
+  closeSidebarData($event:any){
+      // Clears the selectedGroupData when closing the sidebar
+    this.selectedSubData=undefined;
+  }
+
+  confirmAction($event:any){
+    if($event==false){
+      this.fetchMstSubModuleData();
+    }
+    else{
+      if($event.isActive){
+        this.deleteMstSub($event);
+      }
+      else{
+        this.messageService.add({ severity: 'error', summary: 'Error' })
+      }
+    }
+  }
+
+  onEdit($event: any) {
+    // Extract properties from the editRow of the event
+    const { mstModuleId, mstGroupId, label, icon, routerLink, sequence } = $event.editRow;
+    this.sidebarConfig.form.formControls[0].isVisible = true;
+     //Prepares the selected MST group data to be edited in the sidebar
+    this.selectedSubData = {
+      smId: $event.editRow.smId,
+      mstModuleMstGroup: [mstModuleId, mstGroupId],
+      label,
+      icon,
+      routerLink,
+      sequence
     };
-    this.getAllSubModuleData();
-    // this.data = roleData;
-    this.getConfigForTable();
+    this.isEditMode = true;
   }
-  buttonClick(e: any) {
-    if (e == 'next') {
-      console.log(e);
-    } else if (e == 'cancel') {
-      console.log(e);
-    }
-  }
-  getMstData() {
-    this.mstModuleList = [];
-    this.http.GetAllMstModuleData().subscribe((data) => {
-      data.forEach((e: any) => {
-        let data = {
-          name: e.label,
-          code: e.module_Id,
-        };
-        this.mstModuleList.push(data);
-      });
-      this.assignDropDownOptions();
-    });
+  
+
+  initializeAddForm($event:any){
+    this.sidebarConfig.form.formControls[0].isVisible=false;
+    this.selectedSubData=[];
+    this.isEditMode=false;
+    this.common.sendEditData(false);
   }
 
-  assignDropDownOptions() {
-    this.formdata = Object.assign({}, subModuleData);
-    this.formdata.form.formControls.forEach((data: any) => {
-      if (data.formControlName === 'selectInput') {
-        data.values = this.mstModuleList;
-      }
-    });
-    // console.log("formdata=>", JSON.stringify(this.formdata));
+  handleButtonClick($event:any){
+     // Clears the selectedGroupData when closing the sidebar
+    this.selectedSubData=undefined;
+    this.common.sendEditData(false);
   }
 
-  assignOptions() {
-    this.formdata = Object.assign({}, subModuleData);
-    this.formdata.form.formControls.forEach((data: any) => {
-      // data.values=[];
-      if (data.formControlName === 'selectInput') {
-        // data.values = this.mstModuleList;
-        let defaultObj = {
-          name: 'Select Master Module',
-          code: '',
-        };
-        data.values[0].values.push(defaultObj);
-        this.http.GetAllMstModuleData().subscribe((item) => {
-          item.forEach((e: any) => {
-            let obj = {
-              name: e.label,
-              code: e.moduleId,
-            };
-            data.values[0].values.push(obj);
-            data.values[0].values;
-          });
-        });
-
-        let fakeObj = {
-          name: 'Select Group Module',
-          code: '',
-          Mcode: '',
-        };
-        data.values[1].values.push(fakeObj);
-        this.http.GetAllGroupModuleData().subscribe((item1) => {
-          item1.forEach((e: any) => {
-            let obj1 = {
-              name: e.lable,
-              code: e.groupId,
-              Mcode: e.mstModule.moduleId,
-            };
-            data.values[1].values.push(obj1);
-            data.values[1].values;
-          });
-        });
-      }
-    });
-  }
-  getAllSubModuleData() {
-    this.dataGrid = undefined;
-    this.gridData = [];
-    this.http.GetAllSubModuleData().subscribe((res) => {
-      res.forEach((e: any) => {
-        let obj = {
-          "submoduleId": e.subModuleId,
-          "label": e.label,
-          "icon": e.icon,
-          "routerLink": e.routerLink,
-          "SubModuleSequence": e.sequence,
-
-          "mstId": e.mstGroup.mstModule.moduleId,
-          "mstLabel": e.mstGroup.mstModule.label,
-
-          "groupId": e.mstGroup.groupId,
-          "groupLabel": e.mstGroup.lable,
-
-          "is_Active": e.is_Active,
-        };
-        this.gridData.push(obj);
-        console.log('objet ==>', obj);
-      });
-      for (let i = 0; i < this.gridData.length; i++) {
-        this.gridData[i].id = i + 1;
-      }
-      this.gridData;
-      this.dataGrid = [...this.gridData];
-      this.isdataReady = true;
-    });
-  }
-
-  getConfigForTable() {
-    // this.data = data;
-    this.config = subModule_table_config;
-  }
-
-  editRow(e: any) {
-    this.visibleSidebar = true;
-  }
-
-  confirmAction(e: any) {
-    if (e == false) {
-      this.getAllSubModuleData();
-    } else {
-      console.log('Deleted' + JSON.stringify(e));
-      if (e.is_Active == false) {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Message form User component',
-          detail: 'Allready Deleted',
-        });
-      } else {
-        this.deleteSubModuleData(e.submoduleId);
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Message form User component',
-          detail: 'Deleted Sucessfully',
-        });
-      }
+  sidebarData($event:any){
+    if($event=='reset'){ }
+    else{
+      this.addOrUpdateMstSub($event, this.isEditMode);
     }
   }
 
-  deleteSubModuleData(subModuleId: any) {
-    this.http.deleteSubModule(subModuleId).subscribe((data) => {
-      this.dataGrid = undefined;
-      this.getAllSubModuleData();
-    });
-  }
-  sidebarData(e: any) {
-    console.log('From User Management ==> ', e);
-    if (e == 'reset') {
-      console.log(e);
-    } else if (this.status == true) {
-      console.log(e);
-      this.dataGrid = undefined;
-      this.submitSubModuleData(e);
-      this.messageService.add({
-        severity: 'success',
-        summary: 'success',
-        detail: 'Data save successfull.',
-      });
-    } else {
-      console.log(e);
-      this.dataGrid = undefined;
-      this.updateSubModuleData(e);
-      this.messageService.add({
-        severity: 'success',
-        summary: 'success',
-        detail: 'Data updated successfull.',
-      });
-    }
-  }
-  submitSubModuleData(roleData: any) {
-    this.http.saveSubModuleData(roleData).subscribe((dataGrid) => {
-      this.dataGrid = undefined;
-      this.getAllSubModuleData();
-    });
-  }
-
-  updateSubModuleData(roleData: any) {
-    this.http.updateSubModule(roleData).subscribe((dataGrid) => {
-      this.dataGrid = undefined;
-      this.getAllSubModuleData();
-    });
-  }
-
-  fiteredData(e: any) {
-    this.dataGrid = undefined;
-  }
-
-  isActive(e: any) {
-    if (e.is_Active) {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Message form User component',
-        detail: 'Allready Enabled',
-      });
-    } else {
-      this.http.isActiveData(e).subscribe((data) => {
-        this.dataGrid = undefined;
-        this.getAllSubModuleData();
-        console.log('data' + data);
-      });
-      this.messageService.add({
-        severity: 'success',
-        summary: 'Message form User component',
-        detail: 'Enabled Sucessfully',
-      });
-    }
-  }
 }

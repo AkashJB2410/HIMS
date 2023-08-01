@@ -1,0 +1,19 @@
+
+<p-breadcrumb [model]="breadcrumb.itemsList" ></p-breadcrumb>
+<h3 class="Sidebar-title-md"><i class="bi bi-file-earmark-medical"></i>City</h3>
+<app-super-grid
+    *ngIf="data"
+    [configurations] ="configurations" 
+    [tableConfig] = "table"
+    [tableData]= "data"
+    (confirmAction)="confirmAction($event)"
+    (onAdd)="save($event)"
+    (onEdit)="edit($event)"
+    (isActive)="isActive($event)"
+    (Bulkdelete)="bulkDeleteRows($event)"
+    (sideBarEvent)="sideBarEvent($event)" >
+    <app-form
+    projectTowards="sidebar" *ngIf="editData" [formJSON]="form" [editData]="editData"
+    (btnEvent)="buttonEvent($event)" (formData)="sidebarData($event)"
+   ></app-form>
+></app-super-grid>

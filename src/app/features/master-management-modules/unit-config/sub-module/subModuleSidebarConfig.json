@@ -6,39 +6,72 @@
         "formTitleLogo":"bi bi-file-earmark-medical",
         "formName": "Form1",
         "formType": "edit",
-        "sidebar":"p-sidebar-sm",
+        "sidebar":"p-sidebar-md",
         "formControls": [
             {
                 "id": 0,
-                "isEditable": true,
-                "isVisible": false,
-                "label": "Id",
+                "isEditable": false,
+                "isVisible": true,
+                "transient": false,
+                "label": "Sub Module ID",
                 "type": "text",
                 "inputType": "number",
-                "class": "col-md-4  my-1",
+                "class": "col-md-12 my-1",
                 "lblclass": "",
                 "valueclass": "input-box",
                 "placeholder": "",
-                "formControlName": "idInput",
-                "mandatoryMessage": "Code is required",
-                "message": "Code is required",                
+                "formControlName": "smId",
+                "message": {
+                    "required": "Sub Module is required",
+                    "pattern": "pattern is not match"
+                },
                 "validations": {
                     "required": false,
                     "pattern": ""
                 }
             },
-            
             {
                 "isEditable": true,
                 "isVisible": true,
-                "label": "SubModule",
+                "transient": false,
+                "label": "",
+                "type": "dependentdropdown",
+                "class": "col-md-12 ",
+                "lblclass": "custom-label",
+                "valueclass": "",
+                "placeholder": "Select option",
+                "formControlName": "mstModuleMstGroup",
+                "message": {
+                    "required": "Master Module and Master Group is required",
+                    "pattern": ""
+                },
+                "values": [
+                    {
+                        "label": "Master Module",
+                        "values": []
+                    },
+                    {
+                        "label": "Group Module",
+                        "values": []
+                    }
+                ],
+                "validations": {
+                    "required": true,
+                    "pattern": ""
+                }
+            },
+            {
+                "isEditable": true,
+                "isVisible": true,
+                "transient": false,
+                "label": "Sub Module Label",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-12 my-1",
+                "class": "col-md-6 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
                 "placeholder": "Enter label...",
-                "formControlName": "labelInput",
+                "formControlName": "label",
                 "message": {
                     "required": "Label is required",
                     "pattern": "Only Alphabets are Allowed."
@@ -51,14 +84,15 @@
             {
                 "isEditable": true,
                 "isVisible": true,
+                "transient": false,
                 "label": "Icon",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-12 my-1",
+                "class": "col-md-6 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
                 "placeholder": "Enter icon name...",
-                "formControlName": "iconInput",
+                "formControlName": "icon",
                 "message": {
                     "required": "Icon name is required",
                     "pattern": "Only Alphabets and hyphen are Allowed."
@@ -71,14 +105,15 @@
             {
                 "isEditable": true,
                 "isVisible": true,
+                "transient": false,
                 "label": "Router Link",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-12 my-1",
+                "class": "col-md-6 my-1",
                 "lblclass":"",
                 "valueclass":"input-box",
                 "placeholder": "Enter router Link...",
-                "formControlName": "routerLinkInput",
+                "formControlName": "routerLink",
                 "message": {
                     "required": "router Link is required",
                     "pattern": "Numbers and special characters are not allowed."
@@ -88,18 +123,20 @@
                     "pattern": "^[a-z\\s-/ _ 0-9]+$"
                 }
             },
-            
             {
                 "isEditable": true,
                 "isVisible": true,
+                "transient": false,
                 "label": "Sequence",
                 "type": "text",
                 "inputType": "text",
-                "class": "col-md-12 my-1",
-                "lblclass":"",
+                "class": "col-md-6 my-1",
+                "lblclass":"custom-label",
                 "valueclass":"input-box",
                 "placeholder": "Enter sequence...",
-                "formControlName": "sequenceInput",
+                "formControlName": "sequence",
+                "maxlength": "",
+                "minlength": "",
                 "message": {
                     "required": "Sequence is required",
                     "pattern": "Alphabets are not Allowed"
@@ -110,66 +147,24 @@
                 }
             },
             {
-                "isEditable": true,
-                "isVisible": true,
-                "label": "",
-                "type": "dependentdropdown",
-                "class": "col-md-12 ",
-                "lblclass": "custom-label",
-                "valueclass": "",
-                "placeholder": "Select option",
-                "formControlName": "selectInput",
-                "defaultValues":[],
-                "message": {
-                    "required": "State is required",
-                    "pattern": ""
-                },
-                "values": [
-                    {
-                        "label": "masterModule",
-                        "values": []
-                    },
-                    {
-                        "label": "groupModule",
-                        "values": []
-                    }
-                ],
-                "validations": {
-                    "required": true,
-                    "pattern": ""
-                }
-            },
-            {
-                "isEditable": true,
                 "isVisible": true,
                 "type": "button",
-                "subtype": "reset",
+                "subtype": "submit",
+                "btnLabel": "Save",
+                "class": "col-md-2",
+                "valueclass": "butn-custom-dark-blue",
+                "icon": "",
+                "isDisabled": false
+            },
+            {
+                "isVisible": true,
+                "type": "button",
+                "subtype": "cancel",
                 "btnLabel": "Back",
-                "class": "col-md-4",
+                "class": "col-md-2",
                 "valueclass": "butn-custom-wrng",
                 "icon": "",
-                "isDisabled": false,
-                "formControlName": "",
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
-            },
-            {
-                "isEditable": true,
-                "isVisible": true,
-                "type": "button",
-                "subtype": "save",
-                "class": "col-md-4",
-                "valueclass": "butn-custom-dark-blue",
-                "btnLabel": "Save",
-                "icon": "",
-                "isDisabled": false,
-                "formControlName": "",
-                "validations": {
-                    "required": false,
-                    "pattern": ""
-                }
+                "isDisabled": false
             }
         ]
     }

@@ -1,27 +1,27 @@
 {
-    "tableName": "SubModule Table",
+    "tableName": "Sub Module Table",
     "tableHeaders": [
         {
             "field": "id",
             "header": "Sr.No",
             "iseditable": false,
-            "class": ""
+            "class":"text-center"
         },
         {
-            "field": "mstLabel",
-            "header": "MstrModule",
+            "field": "mstModule",
+            "header": "Master Module",
             "iseditable": false,
             "class": ""
         },
         {
-            "field": "groupLabel",
-            "header": "GrpModule",
+            "field": "mstGroup",
+            "header": "Group Module",
             "iseditable": false,
             "class": ""
         },
         {
             "field": "label",
-            "header": "SubModule",
+            "header": "Sub Module Label",
             "iseditable": false,
             "class": ""
         },
@@ -38,51 +38,19 @@
             "class": ""
         },
         {
-            "field": "SubModuleSequence",
+            "field": "sequence",
             "header": "Sequence",
             "iseditable": false,
-            "class": ""
-        },
-        {
-            "field": "is_Active",
-            "header": "isActive",
-            "iseditable": false,
-            "class": ""
-        }
-    ],
-    "PdfHeaders": [
-        {
-            "field": "mstLabel",
-            "header": "Master Module"
-        },
-        {
-            "field": "groupLabel",
-            "header": "Group Module"
-        },
-        {
-            "field": "label",
-            "header": "Label"
-        },
-        {
-            "field": "icon",
-            "header": "Icon"
-        },
-        {
-            "field": "routerLink",
-            "header": "Router Link"
-        },
-        {
-            "field": "SubModuleSequence",
-            "header": "Sequence"
+            "class": "text-center"
         }
     ],
     "globalFilter": [
-        "mstLabel",
+        "id",
+        "mstModule",
+        "mstGroup",
         "icon",
         "label",
-        "routerLink",
-        "SubModuleSequence",
-        "groupLabel"
+        "routerLink"
     ],
     "rows": 10,
     "showCurrentPageReport": true,
@@ -96,7 +64,9 @@
     "loading": false,
     "stripped": "p-datatable-striped p-datatable-sm p-datatable-gridlines",
     "isCheckbox": true,
+    "isRadioButton":false,
     "resizableColumns": true,
+    "isDragAndDrop":true,
     "isActions": [
         "Edit",
         "Delete",
@@ -104,7 +74,8 @@
     ],
     "editicon": "../../../assets/icons/Group 1823.png",
     "isVisible": false,
-    "buttonlbl": "Add SubModule",
-    "textLength": 16,
-    "sidebar":"p-sidebar-sm"
+    "buttonlbl": "",
+    "textLength": 20,
+    "sidebar":"p-sidebar-md",
+    "bulkAction":["Multiselect","Search","Addbutton","PDF","EXCEL","Delete"]   
 }

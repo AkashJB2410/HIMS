@@ -26,6 +26,13 @@ const routes: Routes = [
       { path: 'all-masters/procedure', loadChildren: () => import('../master-management-modules/emr-config/template/procedure/procedure.module').then(m => m.ProcedureModule) },
       // { path: 'all-masters/template', loadChildren: () => import('../master-management-modules/emr-config/template/template.module').then(m => m.TemplateModule) },
       { path: 'core-features', loadChildren: () => import('../core-features/core-features.module').then(m => m.CoreFeaturesModule) },
+      { path: 'PatientConfigCountry', loadChildren: () => import('../master-management-modules/patient-config/patient-config-country/patient-config-country.module').then(m => m.PatientConfigCountryModule) },
+      { path: 'PatientConfigState', loadChildren: () => import('../master-management-modules/patient-config/patient-config-state/patient-config-state.module').then(m => m.PatientConfigStateModule) },
+      { path: 'PatientConfigDistrict', loadChildren: () => import('../master-management-modules/patient-config/patient-config-district/patient-config-district.module').then(m => m.PatientConfigDistrictModule) },
+      { path: 'PatientConfigCity', loadChildren: () => import('../master-management-modules/patient-config/patient-config-city/patient-config-city.module').then(m => m.PatientConfigCityModule) },
+      { path: 'PatientConfigVillage', loadChildren: () => import('../master-management-modules/patient-config/patient-config-village/patient-config-village.module').then(m => m.PatientConfigVillageModule) },
+      
+    // {path:'all-masters/mst-doctor', loadChildren:()=> import('../mst-doctor/mst-doctor-routing.module').then(m=> m.MstDoctorRoutingModule)}
 
     //  Doctor Routing
       { path: 'all-masters/doctor-schedule', loadChildren: () => import('../master-management-modules/doctor-config/doctor-schedule/doctor-schedule.module').then(m => m.DoctorScheduleModule) },
@@ -55,6 +62,8 @@ const routes: Routes = [
       { path: 'all-masters/lov-value', loadChildren: () => import('../master-management-modules/unit-config/lov-value/lov-value-routing.module').then(m => m.LovValueRoutingModule) },
       { path: 'all-master/cluster', loadChildren: () => import('../master-management-modules/unit-config/cluster/cluster-routing.module').then(m => m.ClusterRoutingModule) },
       { path: 'all-masters/spetiality', loadChildren: () => import('../master-management-modules/unit-config/spetiality/spetiality.module').then(m => m.SpetialityModule) },
+
+      { path: 'CIP', loadChildren: () => import('../master-management-modules/patient-config/cip/cip-routing.module').then(m => m.CIPRoutingModule) },
 
     ],
     // canActivate: [AuthGuardGuard]

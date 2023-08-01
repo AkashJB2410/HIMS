@@ -1,0 +1,153 @@
+{
+    "form": {
+        "class": "row",
+        "formTitle": "Add Country",
+        "formTitleClass": "Sidebar-title-sm",
+        "formTitleLogo":"bi bi-file-earmark-medical",
+        "formName": "Form1",
+        "sidebar": "p-sidebar-sm",
+        "formControls": [
+            {
+                "isEditable": false,
+                "isVisible": true,
+                "transient":false,
+                "label": "Country Id",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter Country Id",
+                "formControlName": "countryId",
+                "message": {
+                    "required": "Id is required",
+                    "pattern": ""
+                },
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Country Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter Country Code",
+                "formControlName": "countryCode",
+                "message": {
+                    "required": "Plase Enter Country Code",
+                    "pattern": "Only numbers and + is allowed"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[ + ||0-9]+$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Country Name",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter Country Name",
+                "formControlName": "countryName",
+                "message": {
+                    "required": "Plase Enter Country Name",
+                    "pattern": "Enter a Vaild Country Name"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[A-Za-z ]+$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Country Isd Code",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter Country Isd Code.",
+                "formControlName": "countryIsdCode",
+                "message": {
+                    "required": "Plase Enter Country Isd Code",
+                    "pattern": "Enter a Vaild Country Isd Code"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[ + 0-9]+$"
+                }
+            },
+            {
+                "id": 1,
+                "isEditable": true,
+                "isVisible": true,
+                "label": "Country Isd Code Max Length",
+                "type": "text",
+                "inputType": "text",
+                "class": "col-md-12 my-1",
+                "lblclass":"",
+                "valueclass":"input-box",
+                "placeholder": "Enter Country Isd Code Max Length",
+                "formControlName": "countryIsdCodeMLen",
+                "message": {
+                    "required": "Plase Enter Country Isd Code Max Length",
+                    "pattern": "Onlynumbers are allowed"
+                },
+                "validations": {
+                    "required": true,
+                    "pattern": "^[a-zA-Z0-9.,\\s-]+$"
+                }
+            },
+            {
+                "id": 2,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "save",
+                "class": "col-md-6",
+                "valueclass": "butn-custom-dark-blue",
+                "btnLabel": "Save",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            },
+            {
+                "id": 3,
+                "isEditable": true,
+                "isVisible": true,
+                "transient": true,
+                "type": "button",
+                "subtype": "reset",
+                "btnLabel": "Back",
+                "class": "col-md-6",
+                "valueclass": "button-login-yellow",
+                "icon": "",
+                "isDisabled": false,
+                "formControlName": "",
+                "validations": {
+                    "required": false,
+                    "pattern": ""
+                }
+            }
+        ]
+    }
+}
